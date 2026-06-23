@@ -17,10 +17,20 @@ The shared design identity system. See `README.md` for the full overview. In sho
 
 ## Structure
 
-- `tokens/` — CSS custom properties (primitives + semantic). The portable source of truth.
-- `components/` — component classes for reused elements.
-- `syncfusion-bridge.*` — token → Syncfusion theme variable mapping.
-- `docs/` — design decisions and identity rationale.
+- `identity/` — human-readable design decisions, one Markdown file per category. The creative source the token layers transcribe from.
+- `primitives/` — raw literal CSS custom properties (no meaning, no `var()`). The portable source of truth.
+- `semantics/` — meaning mapped onto primitives (`--color-primary`, `--btn-height`). The single seam components and the bridge reference. Dark theme is handled **inline** here (`[data-theme="dark"]`), no separate `themes/` folder.
+- `components/` — thin component classes for reused elements, consuming semantic tokens.
+- `bridge/library-theme.css` — semantic tokens → component-library (Syncfusion) theme variables.
+- `index.css` — single entry point. Import order is fixed: **`primitives/` → `semantics/` → `components/` → `bridge/`**.
+
+## Categories
+
+Four measurable categories carry through `identity/`, `primitives/`, and `semantics/` as same-named files: **color, typography, layout, motion**. A fifth, **feel** (density, icons, taste rules, base-theme choice), is `identity/`-only — it has no token file.
+
+- `layout` is the combined structural/spatial system: spacing, sizing, radius, border widths, elevation (shadows), and z-index / layers.
+- **Surface boundary:** surface *colors* live in `color` (they theme in dark mode); surface *shadow + stacking* live in `layout`.
+- **Cross-category rule:** a semantic category file references only the matching primitive category (semantic `color.css` → primitive color tokens only, etc.).
 
 ## Releases
 

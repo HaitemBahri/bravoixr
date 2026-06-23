@@ -8,9 +8,10 @@ The single source of truth for design identity: the values and styling that make
 
 ## Contents
 
-- **Design tokens** — two-tier CSS custom properties (primitives → semantic). The portable source of truth.
-- **Component classes** — thin classes for reused elements (buttons, inputs, cards, badges) that apply the semantic tokens. Behavior is not implemented here.
-- **Syncfusion bridge** — a stylesheet mapping the semantic tokens onto Syncfusion's theme variables, so Syncfusion components match the hand-built UI.
+- **Identity decisions** (`identity/`) — human-readable Markdown documenting the design taste, one file per category. The source everything else transcribes from.
+- **Design tokens** — two tiers in separate folders: `primitives/` (raw literal values) → `semantics/` (meaning). The portable source of truth.
+- **Component classes** (`components/`) — thin classes for reused elements (buttons, inputs, cards) that apply the semantic tokens. Behavior is not implemented here.
+- **Library bridge** (`bridge/`) — a stylesheet mapping the semantic tokens onto the component library's (Syncfusion) theme variables, so library components match the hand-built UI.
 
 ## Principles
 
@@ -22,11 +23,24 @@ The single source of truth for design identity: the values and styling that make
 ## Layers
 
 | Layer | Job |
-| -- | -- |
+| --- | --- |
 | Primitive tokens | Raw values, no meaning (`--blue-600`) |
 | Semantic tokens | Meaning mapped onto primitives (`--color-primary`, `--btn-height`) |
 | Component classes | Apply semantic tokens to reused elements (`.btn-regular`) |
-| Syncfusion bridge | Map semantic tokens onto Syncfusion theme variables |
+| Library bridge | Map semantic tokens onto the component library's (Syncfusion) theme variables |
+
+## Structure
+
+```
+identity/      design decisions, one Markdown file per category
+primitives/    raw literal CSS values (color, typography, layout, motion)
+semantics/     meaning mapped onto primitives (+ inline dark theme)
+components/    component classes for reused elements
+bridge/        semantic tokens → library theme variables
+index.css      single entry — import order: primitives → semantics → components → bridge
+```
+
+Four measurable categories (color, typography, layout, motion) run through `identity/`, `primitives/`, and `semantics/`. **Feel** (density, icons, taste, base theme) is `identity/`-only. `layout` combines spacing, sizing, radius, borders, elevation, and z-index.
 
 ## Releases
 

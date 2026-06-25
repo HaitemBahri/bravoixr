@@ -26,7 +26,7 @@ The shared design identity system. See `README.md` for the full overview. In sho
 
 ## Categories
 
-Four measurable categories carry through `identity/`, `primitives/`, and `semantics/` as same-named files: **color, typography, layout, motion**. A fifth, **feel** (density, icons, taste rules, base-theme choice), is `identity/`-only — it has no token file.
+Five measurable categories carry through `identity/`, `primitives/`, and `semantics/` as same-named files: **color, typography, layout, motion, icons**. Two further categories are `identity/`-only with no token file: **feel** (density, taste rules, base-theme choice) and **media** (decorative-artwork direction).
 
 - `layout` is the combined structural/spatial system: spacing, sizing, radius, border widths, elevation (shadows), and z-index / layers.
 - **Surface boundary:** surface *colors* live in `color` (they theme in dark mode); surface *shadow + stacking* live in `layout`.

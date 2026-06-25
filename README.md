@@ -40,7 +40,7 @@ bridge/        semantic tokens → library theme variables
 index.css      single entry — import order: primitives → semantics → components → bridge
 ```
 
-Five measurable categories (color, typography, layout, motion, icons) run through `identity/`, `primitives/`, and `semantics/`. **Feel** (density, taste, base theme) is `identity/`-only. `layout` combines spacing, sizing, radius, borders, elevation, and z-index.
+Five measurable categories (color, typography, layout, motion, icons) run through `identity/`, `primitives/`, and `semantics/`. **Feel** (density, taste, base theme) and **media** (decorative-artwork direction) are `identity/`-only. `layout` combines spacing, sizing, radius, borders, elevation, and z-index.
 
 ## Releases
 

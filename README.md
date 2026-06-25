@@ -33,14 +33,14 @@ The single source of truth for design identity: the values and styling that make
 
 ```
 identity/      design decisions, one Markdown file per category
-primitives/    raw literal CSS values (color, typography, layout, motion)
+primitives/    raw literal CSS values (color, typography, layout, motion, icons)
 semantics/     meaning mapped onto primitives (+ inline dark theme)
 components/    component classes for reused elements
 bridge/        semantic tokens → library theme variables
 index.css      single entry — import order: primitives → semantics → components → bridge
 ```
 
-Four measurable categories (color, typography, layout, motion) run through `identity/`, `primitives/`, and `semantics/`. **Feel** (density, icons, taste, base theme) is `identity/`-only. `layout` combines spacing, sizing, radius, borders, elevation, and z-index.
+Five measurable categories (color, typography, layout, motion, icons) run through `identity/`, `primitives/`, and `semantics/`. **Feel** (density, taste, base theme) is `identity/`-only. `layout` combines spacing, sizing, radius, borders, elevation, and z-index.
 
 ## Releases
 

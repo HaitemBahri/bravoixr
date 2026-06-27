@@ -1,3 +1,18 @@
 /* Primitive — Motion
  * Raw, literal motion values transcribed from identity/motion.md.
- * Duration scale (ms) and easing curves (cubic-bezier). No functions. */
+ * Duration scale (ms) and easing curves (cubic-bezier). No var/calc/color-mix. */
+
+:root {
+  /* Durations — base (200ms) is the default; instant is the reduced-motion target */
+  --duration-instant: 0ms;
+  --duration-fast: 150ms;
+  --duration-base: 200ms;
+  --duration-slow: 300ms;
+  --duration-slower: 500ms;
+
+  /* Easing curves */
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --ease-decelerate: cubic-bezier(0, 0, 0, 1);
+  --ease-accelerate: cubic-bezier(0.3, 0, 1, 1);
+  --ease-linear: linear;
+}

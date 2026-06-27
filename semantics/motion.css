@@ -1,0 +1,18 @@
+/* Semantic — Motion
+ * Role tokens mapped onto motion primitives via var(). Not themed.
+ * Duration and easing roles. */
+
+:root {
+  /* Duration roles */
+  --duration-default: var(--duration-base);
+  --duration-hover: var(--duration-fast);
+  --duration-panel: var(--duration-slow);
+  --duration-modal: var(--duration-slower);
+  --duration-none: var(--duration-instant);
+
+  /* Easing roles */
+  --ease-default: var(--ease-standard);
+  --ease-enter: var(--ease-decelerate);
+  --ease-exit: var(--ease-accelerate);
+  --ease-loop: var(--ease-linear);
+}

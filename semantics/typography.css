@@ -1,0 +1,43 @@
+/* Semantic — Typography
+ * Flat role tokens mapped onto typography primitives via var(). Not themed.
+ * Each role maps to one (desktop) scale step; responsive elevator lives in components. */
+
+:root {
+  /* Font families */
+  --font-heading: var(--font-latin);
+  --font-body: var(--font-latin);
+  --font-body-arabic: var(--font-arabic);
+  --font-code: var(--font-mono);
+
+  /* Size roles (desktop steps) */
+  --text-page-title: var(--text-h1);
+  --text-section-title: var(--text-h2);
+  --text-subsection-title: var(--text-h3);
+  --text-minor-heading: var(--text-h4);
+  --text-context-title: var(--text-body1);
+  --text-body: var(--text-body3);
+  --text-label: var(--text-body4);
+  --text-helper: var(--text-body5);
+  --text-code-block: var(--text-code);
+
+  /* Weight roles (per typography.md role map) */
+  --weight-page-title: var(--weight-bold);
+  --weight-section-title: var(--weight-bold);
+  --weight-subsection-title: var(--weight-semibold);
+  --weight-minor-heading: var(--weight-semibold);
+  --weight-context-title: var(--weight-regular);
+  --weight-body: var(--weight-light);
+  --weight-label: var(--weight-light);
+  --weight-helper: var(--weight-extralight);
+
+  /* Line-height roles */
+  --leading-display: var(--leading-heading);
+  --leading-prose: var(--leading-body);
+  --leading-prose-arabic: var(--leading-body-arabic);
+  --leading-code-block: var(--leading-code);
+
+  /* Letter-spacing roles */
+  --tracking-display: var(--tracking-heading);
+  --tracking-uppercase: var(--tracking-caps);
+  --tracking-prose: var(--tracking-normal);
+}

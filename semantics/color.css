@@ -1,0 +1,96 @@
+/* Semantic — Color
+ * Role tokens mapped onto color primitives via var(). The themed category:
+ * :root is light, [data-theme="dark"] overrides. References color primitives only. */
+
+:root {
+  /* Brand — primary (blue) */
+  --color-primary: var(--blue-600);
+  --color-primary-hover: var(--blue-700);
+  --color-primary-active: var(--blue-800);
+
+  /* Brand — secondary (teal) */
+  --color-secondary: var(--teal-600);
+  --color-secondary-hover: var(--teal-700);
+  --color-secondary-active: var(--teal-800);
+
+  /* Status — success (green) */
+  --color-success: var(--green-600);
+  --color-success-hover: var(--green-700);
+  --color-success-active: var(--green-800);
+
+  /* Status — warning (yellow) */
+  --color-warning: var(--yellow-600);
+  --color-warning-hover: var(--yellow-700);
+  --color-warning-active: var(--yellow-800);
+
+  /* Status — error (red) */
+  --color-error: var(--red-600);
+  --color-error-hover: var(--red-700);
+  --color-error-active: var(--red-800);
+
+  /* Status — info (reuses blue) */
+  --color-info: var(--blue-600);
+  --color-info-hover: var(--blue-700);
+  --color-info-active: var(--blue-800);
+
+  /* Surfaces — off-white canvas, white raised, sunken wells */
+  --color-surface-page: var(--neutral-50);
+  --color-surface-raised: var(--neutral-0);
+  --color-surface-sunken: var(--neutral-100);
+
+  /* Text — softer than pure black */
+  --color-text: var(--neutral-900);
+  --color-text-muted: var(--neutral-600);
+  --color-text-subtle: var(--neutral-500);
+  --color-text-inverse: var(--neutral-0);
+  --color-text-on-primary: var(--neutral-0);
+
+  /* Border — "just visible" neutrals; focus uses brand */
+  --color-border: var(--neutral-200);
+  --color-border-strong: var(--neutral-300);
+  --color-border-focus: var(--blue-500);
+}
+
+[data-theme="dark"] {
+  /* Brand — lighter steps for legibility on dark surfaces */
+  --color-primary: var(--blue-500);
+  --color-primary-hover: var(--blue-400);
+  --color-primary-active: var(--blue-300);
+
+  --color-secondary: var(--teal-500);
+  --color-secondary-hover: var(--teal-400);
+  --color-secondary-active: var(--teal-300);
+
+  --color-success: var(--green-500);
+  --color-success-hover: var(--green-400);
+  --color-success-active: var(--green-300);
+
+  --color-warning: var(--yellow-500);
+  --color-warning-hover: var(--yellow-400);
+  --color-warning-active: var(--yellow-300);
+
+  --color-error: var(--red-500);
+  --color-error-hover: var(--red-400);
+  --color-error-active: var(--red-300);
+
+  --color-info: var(--blue-500);
+  --color-info-hover: var(--blue-400);
+  --color-info-active: var(--blue-300);
+
+  /* Surfaces — off-black canvas, never pure black */
+  --color-surface-page: var(--neutral-900);
+  --color-surface-raised: var(--neutral-800);
+  --color-surface-sunken: var(--neutral-950);
+
+  /* Text */
+  --color-text: var(--neutral-50);
+  --color-text-muted: var(--neutral-400);
+  --color-text-subtle: var(--neutral-500);
+  --color-text-inverse: var(--neutral-900);
+  --color-text-on-primary: var(--neutral-0);
+
+  /* Border */
+  --color-border: var(--neutral-700);
+  --color-border-strong: var(--neutral-600);
+  --color-border-focus: var(--blue-400);
+}

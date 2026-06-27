@@ -1,3 +1,112 @@
 /* Primitive — Color
  * Raw, literal color ramps transcribed from identity/color.md.
- * No meaning, no theming, no functions. Brand, state, accents, and neutrals only. */
+ * No meaning, no theming, no functions. Brand, state, accents, and neutrals only.
+ * Info reuses the blue ramp (no separate hue). Gradients are not primitives. */
+
+:root {
+  /* Brand — Blue (primary; also serves info) */
+  --blue-50: #f4f6fa;
+  --blue-100: #e6ebf3;
+  --blue-200: #ccd7e6;
+  --blue-300: #a8bbd4;
+  --blue-400: #7e98bb;
+  --blue-500: #5c79a3;
+  --blue-600: #496187;
+  --blue-700: #3d4f6d;
+  --blue-800: #36435b;
+  --blue-900: #2f3a4d;
+  --blue-950: #1f2633;
+
+  /* Brand — Teal (secondary) */
+  --teal-50: #f1f7f7;
+  --teal-100: #ddecec;
+  --teal-200: #bdd8d8;
+  --teal-300: #93bcbc;
+  --teal-400: #659a9b;
+  --teal-500: #487e7f;
+  --teal-600: #3a6667;
+  --teal-700: #325354;
+  --teal-800: #2d4445;
+  --teal-900: #293a3b;
+  --teal-950: #172324;
+
+  /* State — Green (success) */
+  --green-50: #f3f7f1;
+  --green-100: #e4ede0;
+  --green-200: #c8dcc1;
+  --green-300: #a1c197;
+  --green-400: #76a06a;
+  --green-500: #588349;
+  --green-600: #45693a;
+  --green-700: #385330;
+  --green-800: #30442a;
+  --green-900: #293a25;
+  --green-950: #152011;
+
+  /* State — Yellow (warning) */
+  --yellow-50: #faf8f0;
+  --yellow-100: #f3eed9;
+  --yellow-200: #e6dbb2;
+  --yellow-300: #d4c184;
+  --yellow-400: #c0a559;
+  --yellow-500: #a98c40;
+  --yellow-600: #8c7234;
+  --yellow-700: #6f592c;
+  --yellow-800: #5c4a29;
+  --yellow-900: #4f3f26;
+  --yellow-950: #2c2112;
+
+  /* State — Red (error) */
+  --red-50: #faf4f3;
+  --red-100: #f3e3e1;
+  --red-200: #e7c8c4;
+  --red-300: #d6a39d;
+  --red-400: #c1756d;
+  --red-500: #a9544b;
+  --red-600: #8e413a;
+  --red-700: #743530;
+  --red-800: #61302c;
+  --red-900: #532c29;
+  --red-950: #2d1513;
+
+  /* Accent — Purple (tiny usages) */
+  --purple-50: #f6f4fa;
+  --purple-100: #ece7f3;
+  --purple-200: #d9cfe6;
+  --purple-300: #bdacd3;
+  --purple-400: #9c84bb;
+  --purple-500: #7e63a2;
+  --purple-600: #654e84;
+  --purple-700: #524069;
+  --purple-800: #443758;
+  --purple-900: #3a304b;
+  --purple-950: #241d31;
+
+  /* Accent — Pink (tiny usages) */
+  --pink-50: #faf3f6;
+  --pink-100: #f3e2ea;
+  --pink-200: #e7c6d5;
+  --pink-300: #d4a0b7;
+  --pink-400: #bd7494;
+  --pink-500: #a35577;
+  --pink-600: #854460;
+  --pink-700: #6c374e;
+  --pink-800: #5a3042;
+  --pink-900: #4d2b39;
+  --pink-950: #2c1620;
+
+  /* Neutrals — cool gray (0 and 1000 are untinted anchors) */
+  --neutral-0: #ffffff;
+  --neutral-50: #f5f6f9;
+  --neutral-100: #eaecf0;
+  --neutral-200: #d5d8de;
+  --neutral-300: #bbbec5;
+  --neutral-400: #9498a0;
+  --neutral-500: #6f727a;
+  --neutral-600: #565960;
+  --neutral-700: #3d4044;
+  --neutral-800: #282a2e;
+  --neutral-900: #181a1d;
+  --neutral-950: #0b0c0f;
+  --neutral-1000: #000000;
+}

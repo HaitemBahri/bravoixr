@@ -39,3 +39,16 @@
   --tracking-uppercase: var(--tracking-caps);
   --tracking-prose: var(--tracking-normal);
 }
+
+[dir="rtl"], :lang(ar) {
+  /* Font families — Arabic script */
+  --font-heading: var(--font-arabic);
+  --font-body: var(--font-arabic);
+
+  /* Line-height — Arabic body gets a little more vertical room */
+  --leading-prose: var(--leading-body-arabic);
+
+  /* Letter-spacing — Arabic is cursive and joined, so it is never tracked */
+  --tracking-display: var(--tracking-normal);
+  --tracking-uppercase: var(--tracking-normal);
+}

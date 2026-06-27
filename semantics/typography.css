@@ -40,6 +40,19 @@
   --tracking-prose: var(--tracking-normal);
 }
 
+[dir="ltr"] {
+  /* Font families — Latin script (re-asserted for an LTR island inside an RTL page) */
+  --font-heading: var(--font-latin);
+  --font-body: var(--font-latin);
+
+  /* Line-height — Latin body */
+  --leading-prose: var(--leading-body);
+
+  /* Letter-spacing — Latin tracks headings and caps */
+  --tracking-display: var(--tracking-heading);
+  --tracking-uppercase: var(--tracking-caps);
+}
+
 [dir="rtl"], :lang(ar) {
   /* Font families — Arabic script */
   --font-heading: var(--font-arabic);

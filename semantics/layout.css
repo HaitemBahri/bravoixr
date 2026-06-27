@@ -1,3 +1,48 @@
 /* Semantic — Layout
  * Role tokens mapped onto layout primitives via var(). Not themed.
  * Radius, border, sizing, elevation, stacking (--layer-*), and spacing seam. */
+
+:root {
+  /* Radius roles */
+  --radius-control: var(--radius-md);
+  --radius-card: var(--radius-lg);
+  --radius-modal: var(--radius-xl);
+  --radius-chip: var(--radius-sm);
+  --radius-pill: var(--radius-full);
+
+  /* Border-width roles */
+  --border-width: var(--border-default);
+  --border-width-strong: var(--border-strong);
+
+  /* Sizing */
+  --control-height: var(--size-control);
+  --container-max: var(--size-container);
+
+  /* Elevation — floating layers (resting surfaces use borders, no token) */
+  --shadow-menu: var(--shadow-sm);
+  --shadow-toast: var(--shadow-md);
+  --shadow-modal: var(--shadow-lg);
+
+  /* Stacking tiers (--layer-* avoids collision with primitive --z-*) */
+  --layer-base: var(--z-base);
+  --layer-sticky: var(--z-sticky);
+  --layer-dropdown: var(--z-dropdown);
+  --layer-overlay: var(--z-overlay);
+  --layer-modal: var(--z-modal);
+  --layer-popover: var(--z-popover);
+  --layer-toast: var(--z-toast);
+
+  /* Spacing seam — 1:1 re-export of the primitive scale for component use */
+  --spacing-1: var(--space-1);
+  --spacing-2: var(--space-2);
+  --spacing-3: var(--space-3);
+  --spacing-4: var(--space-4);
+  --spacing-5: var(--space-5);
+  --spacing-6: var(--space-6);
+  --spacing-7: var(--space-7);
+  --spacing-8: var(--space-8);
+  --spacing-9: var(--space-9);
+  --spacing-10: var(--space-10);
+  --spacing-11: var(--space-11);
+  --spacing-12: var(--space-12);
+}

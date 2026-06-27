@@ -1,5 +1,6 @@
 /* bravoixr — single entry point.
  * Fixed import order: primitives → semantics → components → bridge.
- * Only the primitive layer exists today; later layers are added by their phases. */
+ * Component and bridge layers are added by their phases. */
 
 @import "./primitives/index.css";
+@import "./semantics/index.css";

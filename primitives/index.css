@@ -1,0 +1,8 @@
+/* Primitives — raw literal token layer.
+ * Imports the five measurable categories in canonical order. */
+
+@import "./color.css";
+@import "./typography.css";
+@import "./layout.css";
+@import "./motion.css";
+@import "./icons.css";

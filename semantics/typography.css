@@ -1,12 +1,11 @@
 /* Semantic — Typography
- * Flat role tokens mapped onto typography primitives via var(). Not themed.
- * Each role maps to one (desktop) scale step; responsive elevator lives in components. */
+ * Role tokens mapped onto typography primitives via var(). The scripted category:
+ * :root is Latin (default), [dir="rtl"]/:lang(ar) overrides. References typography primitives only. */
 
 :root {
-  /* Font families */
+  /* Font families — Latin script */
   --font-heading: var(--font-latin);
   --font-body: var(--font-latin);
-  --font-body-arabic: var(--font-arabic);
   --font-code: var(--font-mono);
 
   /* Size roles (desktop steps) */
@@ -33,11 +32,36 @@
   /* Line-height roles */
   --leading-display: var(--leading-heading);
   --leading-prose: var(--leading-body);
-  --leading-prose-arabic: var(--leading-body-arabic);
   --leading-code-block: var(--leading-code);
 
   /* Letter-spacing roles */
   --tracking-display: var(--tracking-heading);
   --tracking-uppercase: var(--tracking-caps);
   --tracking-prose: var(--tracking-normal);
+}
+
+[dir="ltr"] {
+  /* Font families — Latin script (re-asserted for an LTR island inside an RTL page) */
+  --font-heading: var(--font-latin);
+  --font-body: var(--font-latin);
+
+  /* Line-height — Latin body */
+  --leading-prose: var(--leading-body);
+
+  /* Letter-spacing — Latin tracks headings and caps */
+  --tracking-display: var(--tracking-heading);
+  --tracking-uppercase: var(--tracking-caps);
+}
+
+[dir="rtl"], :lang(ar) {
+  /* Font families — Arabic script */
+  --font-heading: var(--font-arabic);
+  --font-body: var(--font-arabic);
+
+  /* Line-height — Arabic body gets a little more vertical room */
+  --leading-prose: var(--leading-body-arabic);
+
+  /* Letter-spacing — Arabic is cursive and joined, so it is never tracked */
+  --tracking-display: var(--tracking-normal);
+  --tracking-uppercase: var(--tracking-normal);
 }

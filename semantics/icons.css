@@ -1,3 +1,23 @@
 /* Semantic — Icons
  * Role tokens mapped onto icon primitives via var(). Themed for grade only:
  * :root is light grade, [data-theme="dark"] flips to the dark grade. */
+
+:root {
+  /* Family + variable-font axes */
+  --icon-family: var(--icon-font);
+  --icon-weight: var(--icon-wght);
+  --icon-fill-axis: var(--icon-fill);
+  --icon-optical: var(--icon-opsz-floor);
+  --icon-grade: var(--icon-grade-light);
+
+  /* Size roles — md is the default */
+  --icon-sm: var(--icon-size-sm);
+  --icon-md: var(--icon-size-md);
+  --icon-lg: var(--icon-size-lg);
+  --icon-xl: var(--icon-size-xl);
+}
+
+[data-theme="dark"] {
+  /* Lower grade counters stroke halation on dark surfaces */
+  --icon-grade: var(--icon-grade-dark);
+}

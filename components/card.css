@@ -1,2 +1,11 @@
 /* Component — Card
- * Thin class for the reused card surface. Consumes semantic tokens only. */
+ * Thin class for the reused card surface. Consumes semantic tokens only.
+ * Resting raised surface: elevation is carried by the border, never a shadow. */
+
+.card {
+  padding: var(--spacing-5);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-card);
+  background: var(--color-surface-raised);
+  color: var(--color-text);
+}

@@ -1,0 +1,6 @@
+/* Components — thin class layer (semantic tokens applied to reused elements).
+ * Imports the reused component set. Behavior is rented (Syncfusion), only skinned here. */
+
+@import "./button.css";
+@import "./input.css";
+@import "./card.css";

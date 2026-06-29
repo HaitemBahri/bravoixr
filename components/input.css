@@ -1,2 +1,25 @@
 /* Component — Input
- * Thin class for the reused text-input element. Consumes semantic tokens only. */
+ * Thin class for the reused text-input element. Consumes semantic tokens only.
+ * Resting state carries a just-visible border; focus swaps to the 2px emphasis ring. */
+
+.input {
+  box-sizing: border-box; /* absorbs the 1->2px focus border without outer reflow */
+  width: 100%; /* controls are full-width by default; layout owns width */
+  height: var(--control-height);
+  padding: 0 var(--spacing-4);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-control);
+  background: var(--color-surface-raised);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+}
+
+.input::placeholder {
+  color: var(--color-text-subtle);
+}
+
+.input:focus {
+  border-width: var(--border-width-strong);
+  border-color: var(--color-border-focus);
+}

@@ -11,7 +11,8 @@ The single source of truth for design identity: the values and styling that make
 - **Identity decisions** (`identity/`) — human-readable Markdown documenting the design taste, one file per category. The source everything else transcribes from.
 - **Design tokens** — two tiers in separate folders: `primitives/` (raw literal values) → `semantics/` (meaning). The portable source of truth.
 - **Component classes** (`components/`) — thin classes for reused elements (buttons, inputs, cards) that apply the semantic tokens. Behavior is not implemented here.
-- **Library bridge** (`bridge/`) — a stylesheet mapping the semantic tokens onto the component library's (Syncfusion) theme variables, so library components match the hand-built UI.
+
+The system is **framework-agnostic** — it names no component library. Each consuming app maps these semantic tokens onto whatever library it uses, on its own side.
 
 ## Principles
 
@@ -27,7 +28,6 @@ The single source of truth for design identity: the values and styling that make
 | Primitive tokens | Raw values, no meaning (`--blue-600`) |
 | Semantic tokens | Meaning mapped onto primitives (`--color-primary`, `--btn-height`) |
 | Component classes | Apply semantic tokens to reused elements (`.btn-regular`) |
-| Library bridge | Map semantic tokens onto the component library's (Syncfusion) theme variables |
 
 ## Structure
 
@@ -36,11 +36,10 @@ identity/      design decisions, one Markdown file per category
 primitives/    raw literal CSS values (color, typography, layout, motion, icons)
 semantics/     meaning mapped onto primitives (+ inline dark theme)
 components/    component classes for reused elements
-bridge/        semantic tokens → library theme variables
-index.css      single entry — import order: primitives → semantics → components → bridge
+index.css      single entry — import order: primitives → semantics → components
 ```
 
-Five measurable categories (color, typography, layout, motion, icons) run through `identity/`, `primitives/`, and `semantics/`. **Feel** (density, taste, base theme) and **media** (decorative-artwork direction) are `identity/`-only. `layout` combines spacing, sizing, radius, borders, elevation, and z-index.
+Five measurable categories (color, typography, layout, motion, icons) run through `identity/`, `primitives/`, and `semantics/`. **Feel** (density, taste) and **media** (decorative-artwork direction) are `identity/`-only. `layout` combines spacing, sizing, radius, borders, elevation, and z-index.
 
 ## Releases
 
@@ -48,4 +47,4 @@ Versioned with a release cadence. `release.json.currentRelease` is the last ship
 
 ## Targets
 
-Web first (Blazor / JS, Syncfusion). Non-web (MAUI/native) is planned — the token source is kept portable for that.
+Web first (Blazor / JS). Non-web (MAUI/native) is planned — the token source is kept portable for that.

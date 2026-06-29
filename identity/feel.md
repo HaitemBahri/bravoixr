@@ -48,6 +48,7 @@ Each decision lists the **decided value** and a one-line **why**.
 
 ## Component library
 
-- **Deferred to P5.** The system stays **framework-agnostic** for now — no component library or base
-  theme is named here yet.
-  _Why: define the identity and tokens on their own terms before binding to a specific library._
+- **Framework-agnostic.** The system names **no component library or base theme**. UI mechanics are
+  rented from whatever library a consuming app chooses, and that app maps the tokens onto its
+  library's theme on its own side.
+  _Why: the identity and tokens stand on their own terms and stay portable, never bound to one library._

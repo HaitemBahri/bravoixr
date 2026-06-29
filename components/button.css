@@ -1,0 +1,41 @@
+/* Component — Button
+ * Thin class for the reused button element. Consumes semantic tokens only.
+ * Base sets shape/density/type; variants set the brand fill. Behavior is rented. */
+
+.btn {
+  width: 100%; /* controls are full-width by default; layout owns width */
+  height: var(--control-height);
+  padding: 0 var(--spacing-5);
+  border: var(--border-width) solid transparent; /* matches bordered siblings' box */
+  border-radius: var(--radius-control);
+  font-family: var(--font-body);
+  font-size: var(--text-label);
+  font-weight: var(--weight-label);
+  transition: background var(--duration-hover) var(--ease-default);
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: var(--color-text-on-primary);
+}
+
+.btn-primary:hover {
+  background: var(--color-primary-hover);
+}
+
+.btn-primary:active {
+  background: var(--color-primary-active);
+}
+
+.btn-secondary {
+  background: var(--color-secondary);
+  color: var(--color-text-on-primary);
+}
+
+.btn-secondary:hover {
+  background: var(--color-secondary-hover);
+}
+
+.btn-secondary:active {
+  background: var(--color-secondary-active);
+}

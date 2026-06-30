@@ -286,6 +286,38 @@ body {
     'GRAD' var(--icon-grade);
 }
 
+/* Key/value listings (sizing, z-index, breakpoints, leading, tracking) */
+.pv-kv {
+  display: flex;
+  gap: var(--spacing-5);
+  align-items: baseline;
+  max-width: 460px;
+  padding-block: var(--spacing-3);
+  border-block-end: var(--border-width) solid var(--color-border);
+}
+
+.pv-kv .pv-mono:first-child {
+  flex: 0 0 220px;
+}
+
+.pv-kv .pv-val {
+  color: var(--color-text);
+}
+
+/* Icon specimen driven by primitive axes (Primitives page) */
+.pv-symbol-prim {
+  font-family: var(--icon-font);
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  color: var(--color-text);
+  font-variation-settings:
+    'wght' var(--icon-wght),
+    'FILL' var(--icon-fill),
+    'opsz' var(--icon-opsz-floor),
+    'GRAD' var(--icon-grade-light);
+}
+
 /* Motion */
 .pv-motion-box {
   width: 80px;

@@ -33,12 +33,25 @@
   </header>
 
   <main class="pv-main">
-    <h2 style="font-family:var(--font-heading);font-weight:var(--weight-page-title);font-size:var(--text-section-title);margin:0 0 var(--spacing-6)" data-en="Motion" data-ar="الحركة">Motion</h2>
+    <h2 style="font-family:var(--font-heading);font-weight:var(--weight-bold);font-size:var(--text-section-title);margin:0 0 var(--spacing-6)" data-en="Motion" data-ar="الحركة">Motion</h2>
 
     <section class="pv-section">
-      <h3 data-en="Hover the box" data-ar="مرّر فوق المربع">Hover the box</h3>
-      <div class="pv-motion-box" title="transition: --duration-panel --ease-default"></div>
-      <p class="pv-mono">--duration-panel · --ease-default</p>
+      <h3 data-en="Duration scale" data-ar="مقياس المدّة">Duration scale</h3>
+      <div class="pv-kv"><span class="pv-mono">--duration-instant</span><span class="pv-val">0ms</span></div>
+      <div class="pv-kv"><span class="pv-mono">--duration-fast</span><span class="pv-val">150ms</span></div>
+      <div class="pv-kv"><span class="pv-mono">--duration-base</span><span class="pv-val">200ms</span></div>
+      <div class="pv-kv"><span class="pv-mono">--duration-slow</span><span class="pv-val">300ms</span></div>
+      <div class="pv-kv"><span class="pv-mono">--duration-slower</span><span class="pv-val">500ms</span></div>
+    </section>
+
+    <section class="pv-section">
+      <h3 data-en="Easing curves (hover a box)" data-ar="منحنيات التسارع (مرّر فوق مربع)">Easing curves (hover a box)</h3>
+      <div class="pv-tiles">
+        <div class="pv-tile"><div class="pv-motion-box" style="transition:transform var(--duration-slower) var(--ease-standard)"></div><span class="pv-mono">standard</span></div>
+        <div class="pv-tile"><div class="pv-motion-box" style="transition:transform var(--duration-slower) var(--ease-decelerate)"></div><span class="pv-mono">decelerate</span></div>
+        <div class="pv-tile"><div class="pv-motion-box" style="transition:transform var(--duration-slower) var(--ease-accelerate)"></div><span class="pv-mono">accelerate</span></div>
+        <div class="pv-tile"><div class="pv-motion-box" style="transition:transform var(--duration-slower) var(--ease-linear)"></div><span class="pv-mono">linear</span></div>
+      </div>
     </section>
   </main>
 

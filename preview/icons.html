@@ -33,18 +33,34 @@
   </header>
 
   <main class="pv-main">
-    <h2 style="font-family:var(--font-heading);font-weight:var(--weight-page-title);font-size:var(--text-section-title);margin:0 0 var(--spacing-6)" data-en="Icons" data-ar="الأيقونات">Icons</h2>
+    <h2 style="font-family:var(--font-heading);font-weight:var(--weight-bold);font-size:var(--text-section-title);margin:0 0 var(--spacing-6)" data-en="Icons" data-ar="الأيقونات">Icons</h2>
 
     <section class="pv-section">
-      <h3 data-en="Material Symbols (themed grade)" data-ar="رموز Material (درجة متغيّرة)">Material Symbols (themed grade)</h3>
+      <h3 data-en="Font" data-ar="الخط">Font</h3>
+      <div class="pv-kv"><span class="pv-mono">--icon-font</span><span class="pv-val">'Material Symbols Rounded'</span></div>
+    </section>
+
+    <section class="pv-section">
+      <h3 data-en="Size scale" data-ar="مقياس الأحجام">Size scale</h3>
       <div class="pv-icon-row">
-        <span class="pv-symbol" style="font-size:var(--icon-sm)">home</span>
-        <span class="pv-symbol" style="font-size:var(--icon-md)">favorite</span>
-        <span class="pv-symbol" style="font-size:var(--icon-lg)">settings</span>
-        <span class="pv-symbol" style="font-size:var(--icon-xl)">search</span>
-        <span class="pv-symbol" style="font-size:var(--icon-xl);font-variation-settings:'wght' var(--icon-weight),'FILL' 1,'opsz' var(--icon-optical),'GRAD' var(--icon-grade)">favorite</span>
+        <span class="pv-symbol-prim" style="font-size:var(--icon-size-sm)">home</span>
+        <span class="pv-symbol-prim" style="font-size:var(--icon-size-md)">favorite</span>
+        <span class="pv-symbol-prim" style="font-size:var(--icon-size-lg)">settings</span>
+        <span class="pv-symbol-prim" style="font-size:var(--icon-size-xl)">search</span>
       </div>
-      <p class="pv-mono">sm · md · lg · xl · (filled)</p>
+      <div class="pv-kv" style="margin-block-start:var(--spacing-5)"><span class="pv-mono">--icon-size-sm</span><span class="pv-val">16px</span></div>
+      <div class="pv-kv"><span class="pv-mono">--icon-size-md</span><span class="pv-val">20px</span></div>
+      <div class="pv-kv"><span class="pv-mono">--icon-size-lg</span><span class="pv-val">24px</span></div>
+      <div class="pv-kv"><span class="pv-mono">--icon-size-xl</span><span class="pv-val">32px</span></div>
+    </section>
+
+    <section class="pv-section">
+      <h3 data-en="Variable-font axes" data-ar="محاور الخط المتغيّر">Variable-font axes</h3>
+      <div class="pv-kv"><span class="pv-mono">--icon-wght</span><span class="pv-val">400</span></div>
+      <div class="pv-kv"><span class="pv-mono">--icon-fill</span><span class="pv-val">0</span></div>
+      <div class="pv-kv"><span class="pv-mono">--icon-opsz-floor</span><span class="pv-val">20</span></div>
+      <div class="pv-kv"><span class="pv-mono">--icon-grade-light</span><span class="pv-val">0</span></div>
+      <div class="pv-kv"><span class="pv-mono">--icon-grade-dark</span><span class="pv-val">-25</span></div>
     </section>
   </main>
 

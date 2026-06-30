@@ -33,39 +33,63 @@
   </header>
 
   <main class="pv-main">
-    <h2 style="font-family:var(--font-heading);font-weight:var(--weight-page-title);font-size:var(--text-section-title);margin:0 0 var(--spacing-6)" data-en="Layout" data-ar="التخطيط">Layout</h2>
+    <h2 style="font-family:var(--font-heading);font-weight:var(--weight-bold);font-size:var(--text-section-title);margin:0 0 var(--spacing-6)" data-en="Layout" data-ar="التخطيط">Layout</h2>
 
     <section class="pv-section">
-      <h3 data-en="Spacing scale" data-ar="مقياس التباعد">Spacing scale</h3>
+      <h3 data-en="Spacing scale (4px base)" data-ar="مقياس التباعد (أساس 4 بكسل)">Spacing scale (4px base)</h3>
       <div id="pv-spacing"></div>
+    </section>
+
+    <section class="pv-section">
+      <h3 data-en="Sizing" data-ar="الأحجام">Sizing</h3>
+      <div class="pv-kv"><span class="pv-mono">--size-control</span><span class="pv-val">40px</span></div>
+      <div class="pv-kv"><span class="pv-mono">--size-container</span><span class="pv-val">1280px</span></div>
     </section>
 
     <section class="pv-section">
       <h3 data-en="Radius" data-ar="الزوايا">Radius</h3>
       <div class="pv-tiles">
-        <div class="pv-tile"><div class="pv-tile-box" style="border-radius:var(--radius-chip)"></div><span class="pv-mono">chip</span></div>
-        <div class="pv-tile"><div class="pv-tile-box" style="border-radius:var(--radius-control)"></div><span class="pv-mono">control</span></div>
-        <div class="pv-tile"><div class="pv-tile-box" style="border-radius:var(--radius-card)"></div><span class="pv-mono">card</span></div>
-        <div class="pv-tile"><div class="pv-tile-box" style="border-radius:var(--radius-modal)"></div><span class="pv-mono">modal</span></div>
-        <div class="pv-tile"><div class="pv-tile-box" style="border-radius:var(--radius-pill)"></div><span class="pv-mono">pill</span></div>
+        <div class="pv-tile"><div class="pv-tile-box" style="border-radius:var(--radius-none)"></div><span class="pv-mono">none</span></div>
+        <div class="pv-tile"><div class="pv-tile-box" style="border-radius:var(--radius-sm)"></div><span class="pv-mono">sm · 4px</span></div>
+        <div class="pv-tile"><div class="pv-tile-box" style="border-radius:var(--radius-md)"></div><span class="pv-mono">md · 8px</span></div>
+        <div class="pv-tile"><div class="pv-tile-box" style="border-radius:var(--radius-lg)"></div><span class="pv-mono">lg · 12px</span></div>
+        <div class="pv-tile"><div class="pv-tile-box" style="border-radius:var(--radius-xl)"></div><span class="pv-mono">xl · 16px</span></div>
+        <div class="pv-tile"><div class="pv-tile-box" style="border-radius:var(--radius-full)"></div><span class="pv-mono">full</span></div>
       </div>
     </section>
 
     <section class="pv-section">
       <h3 data-en="Border widths" data-ar="سماكات الحدود">Border widths</h3>
       <div class="pv-tiles">
-        <div class="pv-tile"><div class="pv-tile-box" style="border:var(--border-width) solid var(--color-border-strong)"></div><span class="pv-mono">default (1px)</span></div>
-        <div class="pv-tile"><div class="pv-tile-box" style="border:var(--border-width-strong) solid var(--color-border-strong)"></div><span class="pv-mono">strong (2px)</span></div>
+        <div class="pv-tile"><div class="pv-tile-box" style="border:var(--border-default) solid var(--color-border-strong)"></div><span class="pv-mono">default · 1px</span></div>
+        <div class="pv-tile"><div class="pv-tile-box" style="border:var(--border-strong) solid var(--color-border-strong)"></div><span class="pv-mono">strong · 2px</span></div>
       </div>
     </section>
 
     <section class="pv-section">
-      <h3 data-en="Elevation (floating layers)" data-ar="الارتفاع (الطبقات العائمة)">Elevation (floating layers)</h3>
+      <h3 data-en="Shadows (floating layers)" data-ar="الظلال (الطبقات العائمة)">Shadows (floating layers)</h3>
       <div class="pv-tiles">
-        <div class="pv-tile"><div class="pv-elev-card" style="box-shadow:var(--shadow-menu)"></div><span class="pv-mono">shadow-menu</span></div>
-        <div class="pv-tile"><div class="pv-elev-card" style="box-shadow:var(--shadow-toast)"></div><span class="pv-mono">shadow-toast</span></div>
-        <div class="pv-tile"><div class="pv-elev-card" style="box-shadow:var(--shadow-modal)"></div><span class="pv-mono">shadow-modal</span></div>
+        <div class="pv-tile"><div class="pv-elev-card" style="box-shadow:var(--shadow-sm)"></div><span class="pv-mono">sm</span></div>
+        <div class="pv-tile"><div class="pv-elev-card" style="box-shadow:var(--shadow-md)"></div><span class="pv-mono">md</span></div>
+        <div class="pv-tile"><div class="pv-elev-card" style="box-shadow:var(--shadow-lg)"></div><span class="pv-mono">lg</span></div>
       </div>
+    </section>
+
+    <section class="pv-section">
+      <h3 data-en="Z-index tiers" data-ar="طبقات الترتيب">Z-index tiers</h3>
+      <div class="pv-kv"><span class="pv-mono">--z-base</span><span class="pv-val">0</span></div>
+      <div class="pv-kv"><span class="pv-mono">--z-sticky</span><span class="pv-val">10</span></div>
+      <div class="pv-kv"><span class="pv-mono">--z-dropdown</span><span class="pv-val">20</span></div>
+      <div class="pv-kv"><span class="pv-mono">--z-overlay</span><span class="pv-val">30</span></div>
+      <div class="pv-kv"><span class="pv-mono">--z-modal</span><span class="pv-val">40</span></div>
+      <div class="pv-kv"><span class="pv-mono">--z-popover</span><span class="pv-val">50</span></div>
+      <div class="pv-kv"><span class="pv-mono">--z-toast</span><span class="pv-val">60</span></div>
+    </section>
+
+    <section class="pv-section">
+      <h3 data-en="Breakpoints" data-ar="نقاط التوقّف">Breakpoints</h3>
+      <div class="pv-kv"><span class="pv-mono">--breakpoint-tablet</span><span class="pv-val">768px</span></div>
+      <div class="pv-kv"><span class="pv-mono">--breakpoint-desktop</span><span class="pv-val">1024px</span></div>
     </section>
   </main>
 
@@ -77,10 +101,10 @@
         r.className = 'pv-spacing-row';
         var bar = document.createElement('div');
         bar.className = 'pv-spacing-bar';
-        bar.style.width = 'var(--spacing-' + i + ')';
+        bar.style.width = 'var(--space-' + i + ')';
         var name = document.createElement('span');
         name.className = 'pv-mono';
-        name.textContent = '--spacing-' + i;
+        name.textContent = '--space-' + i;
         r.appendChild(bar);
         r.appendChild(name);
         spacing.appendChild(r);

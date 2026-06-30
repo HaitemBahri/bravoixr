@@ -38,22 +38,6 @@ body {
   font-size: var(--text-subsection-title);
 }
 
-.pv-nav {
-  display: flex;
-  gap: var(--spacing-5);
-  flex: 1;
-  margin-inline-start: var(--spacing-6);
-}
-
-.pv-nav a {
-  color: var(--color-text-muted);
-  text-decoration: none;
-}
-
-.pv-nav a:hover {
-  color: var(--color-primary);
-}
-
 .pv-controls {
   display: flex;
   gap: var(--spacing-3);

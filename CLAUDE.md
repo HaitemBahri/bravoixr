@@ -10,6 +10,7 @@ The shared design identity system. See `README.md` for the full overview. In sho
 
 - **Tokens are the only source of values.** Never inline a raw value (color, size, radius) in component CSS or anywhere else — always reference a token.
 - **Two tiers, kept separate.** Primitives (raw literal values) → semantic tokens (meaning). Component classes consume **semantic** tokens only, never primitives.
+- **Classes are the public API.** Consuming projects apply bravoixr's **classes**, not its raw tokens. Classes are built exclusively from semantic tokens and bundle the correct combinations, so consumers can't assemble invalid pairings. Semantic tokens are the internal seam and a *supported escape hatch* for layout/spacing/one-offs no class covers; primitives are never consumed directly. (Detail in **Consumption** below.)
 - **Token values stay portable.** No `calc()`, `color-mix()`, relative color syntax, or nested `var()` math _inside a token's definition_ — store literal values so the token file can be exported to JSON/XAML later. Such functions are fine in component CSS.
 - **Rent the mechanics.** Do not implement modals, dropdowns, popovers, focus management, positioning, or accessibility. Use a component library (or a headless lib) and skin it.
 - **Component class only when reused 2+ times.** No speculative components. One-off styling stays as plain scoped CSS.
@@ -22,6 +23,21 @@ The shared design identity system. See `README.md` for the full overview. In sho
 - `semantics/` — meaning mapped onto primitives (`--color-primary`, `--btn-height`). The single seam components reference. Dark theme is handled **inline** here (`[data-theme="dark"]`), no separate `themes/` folder.
 - `components/` — thin component classes for reused elements, consuming semantic tokens.
 - `index.css` — single entry point. Import order is fixed: **`primitives/` → `semantics/` → `components/`**.
+
+## Consumption
+
+bravoixr is layered as a **public/internal contract**:
+
+- **Primitives** (`--blue-600`) — raw values, no meaning. Internal; never consumed directly.
+- **Semantic tokens** (`--color-primary`, `--control-height`) — meaning mapped onto primitives; single vars. The internal seam — and a *supported escape hatch* consumers may use for layout, spacing, and one-offs no class covers (atomic tokens carry no combination risk).
+- **Classes** — built exclusively from semantic tokens; the **public API**. Consuming projects apply these. Because a class bundles the correct combination, consumers can't produce invalid pairings (low-contrast text on a fill, mismatched control anatomy).
+
+Class types:
+
+- **Component classes** (`.btn`, `.input`, `.card`) — reused elements.
+- **Combination classes** (e.g. `.surface-raised` setting background + text + border together) — how safe colour pairings are delivered, so consumers never hand-assemble colour roles.
+
+The **component class only when reused 2+ times / no speculative** rule still governs; the class catalogue grows with real reuse. Because classes are the contract, semantic-token wiring can be refactored without breaking consumers. Consumers still set `data-theme` / `dir` for theming and load the named fonts themselves (the system declares family stacks only).
 
 ## Categories
 

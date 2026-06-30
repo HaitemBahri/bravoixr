@@ -27,7 +27,9 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: var(--spacing-5);
-  padding: var(--spacing-4) var(--spacing-6);
+  /* Full-width bar; inline content aligned to the centered page column. */
+  padding-block: var(--spacing-4);
+  padding-inline: max(var(--spacing-6), calc((100% - var(--container-max)) / 2 + var(--spacing-6)));
   background: var(--color-surface-raised);
   border-block-end: var(--border-width) solid var(--color-border);
 }

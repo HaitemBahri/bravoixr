@@ -149,3 +149,166 @@ body {
   gap: var(--spacing-5);
   max-width: 360px;
 }
+
+/* ---- Foundations galleries ---- */
+
+.pv-mono {
+  font-family: var(--font-code);
+  font-size: var(--text-helper);
+  color: var(--color-text-subtle);
+}
+
+.pv-section > h3 {
+  font-family: var(--font-heading);
+  font-weight: var(--weight-subsection-title);
+  font-size: var(--text-context-title);
+  margin-block: var(--spacing-6) var(--spacing-4);
+}
+
+/* Color ramps */
+.pv-ramp-label {
+  display: block;
+  font-family: var(--font-code);
+  font-size: var(--text-label);
+  color: var(--color-text-muted);
+  margin-block: var(--spacing-4) var(--spacing-2);
+}
+
+.pv-ramp {
+  display: flex;
+  gap: 2px;
+}
+
+.pv-ramp figure {
+  flex: 1;
+  margin: 0;
+}
+
+.pv-ramp .pv-cell {
+  height: 48px;
+  border-radius: var(--radius-chip);
+  border: var(--border-width) solid var(--color-border);
+}
+
+.pv-ramp figcaption {
+  font-family: var(--font-code);
+  font-size: 10px;
+  color: var(--color-text-subtle);
+  text-align: center;
+  margin-block-start: 4px;
+}
+
+/* Role swatches */
+.pv-swatches {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: var(--spacing-4);
+}
+
+.pv-swatch .pv-cell {
+  height: 64px;
+  border-radius: var(--radius-control);
+  border: var(--border-width) solid var(--color-border);
+}
+
+.pv-swatch .pv-name {
+  display: block;
+  margin-block-start: var(--spacing-2);
+  font-size: var(--text-label);
+}
+
+/* Type scale */
+.pv-type-row {
+  display: flex;
+  align-items: baseline;
+  gap: var(--spacing-6);
+  padding-block: var(--spacing-4);
+  border-block-end: var(--border-width) solid var(--color-border);
+}
+
+.pv-type-meta {
+  flex: 0 0 180px;
+}
+
+.pv-type-meta strong {
+  display: block;
+  font-weight: var(--weight-subsection-title);
+}
+
+.pv-type-specimen {
+  min-width: 0;
+}
+
+/* Spacing */
+.pv-spacing-row {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4);
+  margin-block-end: var(--spacing-2);
+}
+
+.pv-spacing-bar {
+  height: 16px;
+  background: var(--color-primary);
+  border-radius: var(--radius-chip);
+}
+
+/* Radius + borders + elevation */
+.pv-tiles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-7);
+}
+
+.pv-tile {
+  display: grid;
+  gap: var(--spacing-2);
+  justify-items: center;
+}
+
+.pv-tile-box {
+  width: 96px;
+  height: 96px;
+  background: var(--color-surface-raised);
+  border: var(--border-width) solid var(--color-border-strong);
+}
+
+.pv-elev-card {
+  width: 160px;
+  height: 96px;
+  background: var(--color-surface-raised);
+  border-radius: var(--radius-card);
+}
+
+/* Icons */
+.pv-icon-row {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-6);
+}
+
+.pv-symbol {
+  font-family: var(--icon-family);
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  color: var(--color-text);
+  font-variation-settings:
+    'wght' var(--icon-weight),
+    'FILL' var(--icon-fill-axis),
+    'opsz' var(--icon-optical),
+    'GRAD' var(--icon-grade);
+}
+
+/* Motion */
+.pv-motion-box {
+  width: 80px;
+  height: 80px;
+  background: var(--color-secondary);
+  border-radius: var(--radius-card);
+  transition: transform var(--duration-panel) var(--ease-default);
+}
+
+.pv-motion-box:hover {
+  transform: translateX(48px);
+}

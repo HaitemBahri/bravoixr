@@ -41,6 +41,24 @@ index.css      single entry — import order: primitives → semantics → compo
 
 Five measurable categories (color, typography, layout, motion, icons) run through `identity/`, `primitives/`, and `semantics/`. **Feel** (density, taste) and **media** (decorative-artwork direction) are `identity/`-only. `layout` combines spacing, sizing, radius, borders, elevation, and z-index.
 
+## Consuming bravoixr
+
+Import the single entry point and apply the **classes** — they are the public API:
+
+```html
+<link rel="stylesheet" href="bravoixr/index.css">
+
+<button class="btn btn-primary">Save</button>
+<input class="input">
+<div class="card">…</div>
+```
+
+- **Classes first.** Build your UI from bravoixr's classes; each one bundles the correct combination of tokens, so you can't assemble an invalid pairing.
+- **Tokens are the escape hatch.** For layout, spacing, and one-offs no class covers, reference the semantic tokens directly (`gap: var(--spacing-5)`). Never reference primitives.
+- **Theming.** Set `data-theme="dark"` on a root element for dark mode; set `dir="rtl"` / `lang="ar"` for Arabic.
+- **Fonts.** Load the named fonts yourself (Bricolage Grotesque, IBM Plex Sans Arabic, JetBrains Mono, Material Symbols) — the system declares the family stacks only.
+- **Pin a version.** Track a released tag (e.g. `v0.1.0`).
+
 ## Releases
 
 Versioned with a release cadence. `release.json.currentRelease` is the last shipped release; consumers pin a version.

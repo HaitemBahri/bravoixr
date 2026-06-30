@@ -1,0 +1,151 @@
+/* preview.css — SHOWCASE CHROME ONLY. Not part of the bravoixr system.
+ * Layout/scaffolding for the preview pages; consumes the system's semantic
+ * tokens where convenient so the chrome itself themes, but is never imported
+ * by index.css and is not a component class. Raw values are allowed here. */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--color-surface-page);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  line-height: var(--leading-prose);
+}
+
+/* Header / toolbar */
+.pv-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-5);
+  padding: var(--spacing-4) var(--spacing-6);
+  background: var(--color-surface-raised);
+  border-block-end: var(--border-width) solid var(--color-border);
+}
+
+.pv-brand {
+  font-family: var(--font-heading);
+  font-weight: var(--weight-section-title);
+  font-size: var(--text-subsection-title);
+}
+
+.pv-nav {
+  display: flex;
+  gap: var(--spacing-5);
+  flex: 1;
+  margin-inline-start: var(--spacing-6);
+}
+
+.pv-nav a {
+  color: var(--color-text-muted);
+  text-decoration: none;
+}
+
+.pv-nav a:hover {
+  color: var(--color-primary);
+}
+
+.pv-controls {
+  display: flex;
+  gap: var(--spacing-3);
+}
+
+/* Chrome buttons (NOT the system .btn) */
+.pv-btn {
+  min-width: 64px;
+  height: var(--control-height);
+  padding: 0 var(--spacing-4);
+  border: var(--border-width) solid var(--color-border-strong);
+  border-radius: var(--radius-control);
+  background: var(--color-surface-sunken);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: var(--text-label);
+  cursor: pointer;
+}
+
+.pv-btn:hover {
+  border-color: var(--color-border-focus);
+}
+
+/* Main */
+.pv-main {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: var(--spacing-8) var(--spacing-6) var(--spacing-12);
+}
+
+.pv-section {
+  margin-block-end: var(--spacing-10);
+}
+
+.pv-section > h2 {
+  font-family: var(--font-heading);
+  font-weight: var(--weight-section-title);
+  font-size: var(--text-section-title);
+  margin-block: 0 var(--spacing-5);
+}
+
+.pv-lede {
+  color: var(--color-text-muted);
+  max-width: 60ch;
+}
+
+/* Hub link grid */
+.pv-hub-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: var(--spacing-5);
+  margin-block-start: var(--spacing-7);
+}
+
+.pv-hub-card {
+  display: block;
+  padding: var(--spacing-6);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-card);
+  background: var(--color-surface-raised);
+  color: inherit;
+  text-decoration: none;
+  transition: border-color var(--duration-hover) var(--ease-default);
+}
+
+.pv-hub-card:hover {
+  border-color: var(--color-border-focus);
+}
+
+.pv-hub-card h3 {
+  font-family: var(--font-heading);
+  font-weight: var(--weight-subsection-title);
+  font-size: var(--text-context-title);
+  margin-block: 0 var(--spacing-3);
+}
+
+.pv-hub-card p {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: var(--text-label);
+}
+
+/* Demo row — used by component pages to lay specimens out */
+.pv-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-5);
+  align-items: center;
+}
+
+.pv-stack {
+  display: grid;
+  gap: var(--spacing-5);
+  max-width: 360px;
+}

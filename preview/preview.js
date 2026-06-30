@@ -32,11 +32,14 @@
     syncButtons();
   }
 
-  /* Bilingual specimens: elements carry data-en / data-ar. */
+  /* Bilingual specimens: elements carry data-en / data-ar.
+   * Form controls swap their placeholder; everything else swaps text content. */
   function swapText(lang) {
     document.querySelectorAll('[data-en]').forEach(function (el) {
       var value = lang === 'ar' ? el.getAttribute('data-ar') : el.getAttribute('data-en');
-      if (value != null) el.textContent = value;
+      if (value == null) return;
+      if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') el.placeholder = value;
+      else el.textContent = value;
     });
   }
 

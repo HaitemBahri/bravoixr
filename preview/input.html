@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>bravoixr — input</title>
+
+  <script>
+    (function () {
+      var t = localStorage.getItem('bravoixr-theme') || 'light';
+      var l = localStorage.getItem('bravoixr-lang') || 'en';
+      var r = document.documentElement;
+      r.setAttribute('data-theme', t);
+      if (l === 'ar') { r.setAttribute('dir', 'rtl'); r.setAttribute('lang', 'ar'); }
+      else { r.setAttribute('dir', 'ltr'); r.setAttribute('lang', 'en'); }
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=IBM+Plex+Sans+Arabic:wght@200;300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap">
+
+  <link rel="stylesheet" href="../index.css">
+  <link rel="stylesheet" href="preview.css">
+</head>
+<body>
+  <header class="pv-header">
+    <span class="pv-brand">bravoixr</span>
+    <div class="pv-controls">
+      <button class="pv-btn" type="button" data-toggle="theme">☾ Dark</button>
+      <button class="pv-btn" type="button" data-toggle="lang">ع</button>
+    </div>
+  </header>
+
+  <main class="pv-main">
+    <section class="pv-section">
+      <h2 style="font-family:var(--font-heading);font-weight:var(--weight-page-title);font-size:var(--text-section-title);margin:0 0 var(--spacing-3)" data-en="Input" data-ar="حقل إدخال">Input</h2>
+      <p class="pv-lede" data-en="Full-width text field with a just-visible border. Click in and the border becomes the 2px brand focus ring — with no layout shift." data-ar="حقل نصي بعرض كامل بحدّ واضح بالكاد. انقر بداخله فيتحوّل الحدّ إلى حلقة تركيز باللون الأساسي بسماكة 2 بكسل — دون أي إزاحة في التخطيط.">Full-width text field with a just-visible border. Click in and the border becomes the 2px brand focus ring — with no layout shift.</p>
+
+      <div class="pv-stack" style="margin-top:var(--spacing-7)">
+        <input class="input" type="text" placeholder="Type something…" data-en="Type something…" data-ar="اكتب شيئًا…">
+        <input class="input" type="text" placeholder="Another field" data-en="Another field" data-ar="حقل آخر">
+      </div>
+    </section>
+  </main>
+
+  <script src="preview.js"></script>
+</body>
+</html>

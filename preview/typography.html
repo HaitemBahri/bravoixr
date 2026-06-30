@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>bravoixr — typography</title>
+
+  <script>
+    (function () {
+      var t = localStorage.getItem('bravoixr-theme') || 'light';
+      var l = localStorage.getItem('bravoixr-lang') || 'en';
+      var r = document.documentElement;
+      r.setAttribute('data-theme', t);
+      if (l === 'ar') { r.setAttribute('dir', 'rtl'); r.setAttribute('lang', 'ar'); }
+      else { r.setAttribute('dir', 'ltr'); r.setAttribute('lang', 'en'); }
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=IBM+Plex+Sans+Arabic:wght@200;300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap">
+
+  <link rel="stylesheet" href="../index.css">
+  <link rel="stylesheet" href="preview.css">
+</head>
+<body>
+  <header class="pv-header">
+    <span class="pv-brand">bravoixr</span>
+    <div class="pv-controls">
+      <button class="pv-btn" type="button" data-toggle="theme">☾ Dark</button>
+      <button class="pv-btn" type="button" data-toggle="lang">ع</button>
+    </div>
+  </header>
+
+  <main class="pv-main">
+    <h2 style="font-family:var(--font-heading);font-weight:var(--weight-bold);font-size:var(--text-section-title);margin:0 0 var(--spacing-6)" data-en="Typography" data-ar="الطباعة">Typography</h2>
+
+    <section class="pv-section">
+      <h3 data-en="Font stacks" data-ar="عائلات الخطوط">Font stacks</h3>
+      <div class="pv-type-row">
+        <div class="pv-type-meta"><strong>latin</strong><span class="pv-mono">--font-latin</span></div>
+        <div class="pv-type-specimen" style="font-family:var(--font-latin);font-size:var(--text-h6)">Modern &amp; confident</div>
+      </div>
+      <div class="pv-type-row">
+        <div class="pv-type-meta"><strong>arabic</strong><span class="pv-mono">--font-arabic</span></div>
+        <div class="pv-type-specimen" style="font-family:var(--font-arabic);font-size:var(--text-h6)">حديث وواثق</div>
+      </div>
+      <div class="pv-type-row">
+        <div class="pv-type-meta"><strong>mono</strong><span class="pv-mono">--font-mono</span></div>
+        <div class="pv-type-specimen" style="font-family:var(--font-mono);font-size:var(--text-body3)">const token = var(--blue-600);</div>
+      </div>
+    </section>
+
+    <section class="pv-section">
+      <h3 data-en="Heading scale" data-ar="مقياس العناوين">Heading scale</h3>
+      <div class="pv-type-row">
+        <div class="pv-type-meta"><strong>h1 — 84px</strong><span class="pv-mono">--text-h1</span></div>
+        <div class="pv-type-specimen" style="font-family:var(--font-heading);font-size:var(--text-h1);font-weight:var(--weight-bold);line-height:var(--leading-heading);letter-spacing:var(--tracking-heading)" data-en="Heading" data-ar="عنوان">Heading</div>
+      </div>
+      <div class="pv-type-row">
+        <div class="pv-type-meta"><strong>h2 — 65px</strong><span class="pv-mono">--text-h2</span></div>
+        <div class="pv-type-specimen" style="font-family:var(--font-heading);font-size:var(--text-h2);font-weight:var(--weight-bold);line-height:var(--leading-heading);letter-spacing:var(--tracking-heading)" data-en="Heading" data-ar="عنوان">Heading</div>
+      </div>
+      <div class="pv-type-row">
+        <div class="pv-type-meta"><strong>h3 — 51px</strong><span class="pv-mono">--text-h3</span></div>
+        <div class="pv-type-specimen" style="font-family:var(--font-heading);font-size:var(--text-h3);font-weight:var(--weight-semibold);line-height:var(--leading-heading)" data-en="Heading" data-ar="عنوان">Heading</div>
+      </div>
+      <div class="pv-type-row">
+        <div class="pv-type-meta"><strong>h4 — 40px</strong><span class="pv-mono">--text-h4</span></div>
+        <div class="pv-type-specimen" style="font-family:var(--font-heading);font-size:var(--text-h4);font-weight:var(--weight-semibold);line-height:var(--leading-heading)" data-en="Heading" data-ar="عنوان">Heading</div>
+      </div>
+      <div class="pv-type-row">
+        <div class="pv-type-meta"><strong>h5 — 31px</strong><span class="pv-mono">--text-h5</span></div>
+        <div class="pv-type-specimen" style="font-family:var(--font-heading);font-size:var(--text-h5);font-weight:var(--weight-medium);line-height:var(--leading-heading)" data-en="Heading" data-ar="عنوان">Heading</div>
+      </div>
+      <div class="pv-type-row">
+        <div class="pv-type-meta"><strong>h6 — 24px</strong><span class="pv-mono">--text-h6</span></div>
+        <div class="pv-type-specimen" style="font-family:var(--font-heading);font-size:var(--text-h6);font-weight:var(--weight-medium);line-height:var(--leading-heading)" data-en="Heading" data-ar="عنوان">Heading</div>
+      </div>
+    </section>
+
+    <section class="pv-section">
+      <h3 data-en="Body scale" data-ar="مقياس النص">Body scale</h3>
+      <div class="pv-type-row">
+        <div class="pv-type-meta"><strong>body1 — 20px</strong><span class="pv-mono">--text-body1</span></div>
+        <div class="pv-type-specimen" style="font-family:var(--font-body);font-size:var(--text-body1);line-height:var(--leading-body)" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض حجم النص ومدى وضوحه.">The quick brown fox jumps over the lazy dog.</div>
+      </div>
+      <div class="pv-type-row">
+        <div class="pv-type-meta"><strong>body2 — 18px</strong><span class="pv-mono">--text-body2</span></div>
+        <div class="pv-type-specimen" style="font-family:var(--font-body);font-size:var(--text-body2);line-height:var(--leading-body)" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض حجم النص ومدى وضوحه.">The quick brown fox jumps over the lazy dog.</div>
+      </div>
+      <div class="pv-type-row">
+        <div class="pv-type-meta"><strong>body3 — 16px (default)</strong><span class="pv-mono">--text-body3</span></div>
+        <div class="pv-type-specimen" style="font-family:var(--font-body);font-size:var(--text-body3);line-height:var(--leading-body)" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض حجم النص ومدى وضوحه.">The quick brown fox jumps over the lazy dog.</div>
+      </div>
+      <div class="pv-type-row">
+        <div class="pv-type-meta"><strong>body4 — 14px</strong><span class="pv-mono">--text-body4</span></div>
+        <div class="pv-type-specimen" style="font-family:var(--font-body);font-size:var(--text-body4);line-height:var(--leading-body)" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض حجم النص ومدى وضوحه.">The quick brown fox jumps over the lazy dog.</div>
+      </div>
+      <div class="pv-type-row">
+        <div class="pv-type-meta"><strong>body5 — 12px</strong><span class="pv-mono">--text-body5</span></div>
+        <div class="pv-type-specimen" style="font-family:var(--font-body);font-size:var(--text-body5);line-height:var(--leading-body)" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض حجم النص ومدى وضوحه.">The quick brown fox jumps over the lazy dog.</div>
+      </div>
+      <div class="pv-type-row">
+        <div class="pv-type-meta"><strong>code — 14px</strong><span class="pv-mono">--text-code</span></div>
+        <div class="pv-type-specimen" style="font-family:var(--font-mono);font-size:var(--text-code);line-height:var(--leading-code)">--color-primary: var(--blue-600);</div>
+      </div>
+    </section>
+
+    <section class="pv-section">
+      <h3 data-en="Weights" data-ar="الأوزان">Weights</h3>
+      <div class="pv-type-row">
+        <div class="pv-type-meta"><strong>extralight — 200</strong><span class="pv-mono">--weight-extralight</span></div>
+        <div class="pv-type-specimen" style="font-family:var(--font-heading);font-size:var(--text-h6);font-weight:var(--weight-extralight)">Bravoixr</div>
+      </div>
+      <div class="pv-type-row">
+        <div class="pv-type-meta"><strong>light — 300</strong><span class="pv-mono">--weight-light</span></div>
+        <div class="pv-type-specimen" style="font-family:var(--font-heading);font-size:var(--text-h6);font-weight:var(--weight-light)">Bravoixr</div>
+      </div>
+      <div class="pv-type-row">
+        <div class="pv-type-meta"><strong>regular — 400</strong><span class="pv-mono">--weight-regular</span></div>
+        <div class="pv-type-specimen" style="font-family:var(--font-heading);font-size:var(--text-h6);font-weight:var(--weight-regular)">Bravoixr</div>
+      </div>
+      <div class="pv-type-row">
+        <div class="pv-type-meta"><strong>medium — 500</strong><span class="pv-mono">--weight-medium</span></div>
+        <div class="pv-type-specimen" style="font-family:var(--font-heading);font-size:var(--text-h6);font-weight:var(--weight-medium)">Bravoixr</div>
+      </div>
+      <div class="pv-type-row">
+        <div class="pv-type-meta"><strong>semibold — 600</strong><span class="pv-mono">--weight-semibold</span></div>
+        <div class="pv-type-specimen" style="font-family:var(--font-heading);font-size:var(--text-h6);font-weight:var(--weight-semibold)">Bravoixr</div>
+      </div>
+      <div class="pv-type-row">
+        <div class="pv-type-meta"><strong>bold — 700</strong><span class="pv-mono">--weight-bold</span></div>
+        <div class="pv-type-specimen" style="font-family:var(--font-heading);font-size:var(--text-h6);font-weight:var(--weight-bold)">Bravoixr</div>
+      </div>
+    </section>
+
+    <section class="pv-section">
+      <h3 data-en="Line-heights" data-ar="تباعد الأسطر">Line-heights</h3>
+      <div class="pv-kv"><span class="pv-mono">--leading-heading</span><span class="pv-val">1.1</span></div>
+      <div class="pv-kv"><span class="pv-mono">--leading-body</span><span class="pv-val">1.6</span></div>
+      <div class="pv-kv"><span class="pv-mono">--leading-body-arabic</span><span class="pv-val">1.7</span></div>
+      <div class="pv-kv"><span class="pv-mono">--leading-code</span><span class="pv-val">1.5</span></div>
+    </section>
+
+    <section class="pv-section">
+      <h3 data-en="Letter-spacing" data-ar="تباعد الأحرف">Letter-spacing</h3>
+      <div class="pv-kv"><span class="pv-mono">--tracking-heading</span><span class="pv-val">-0.02em</span></div>
+      <div class="pv-kv"><span class="pv-mono">--tracking-caps</span><span class="pv-val">0.06em</span></div>
+      <div class="pv-kv"><span class="pv-mono">--tracking-normal</span><span class="pv-val">0</span></div>
+    </section>
+  </main>
+
+  <script src="preview.js"></script>
+</body>
+</html>

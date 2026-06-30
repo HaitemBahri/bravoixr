@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>bravoixr — layout</title>
+
+  <script>
+    (function () {
+      var t = localStorage.getItem('bravoixr-theme') || 'light';
+      var l = localStorage.getItem('bravoixr-lang') || 'en';
+      var r = document.documentElement;
+      r.setAttribute('data-theme', t);
+      if (l === 'ar') { r.setAttribute('dir', 'rtl'); r.setAttribute('lang', 'ar'); }
+      else { r.setAttribute('dir', 'ltr'); r.setAttribute('lang', 'en'); }
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=IBM+Plex+Sans+Arabic:wght@200;300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap">
+
+  <link rel="stylesheet" href="../index.css">
+  <link rel="stylesheet" href="preview.css">
+</head>
+<body>
+  <header class="pv-header">
+    <span class="pv-brand">bravoixr</span>
+    <div class="pv-controls">
+      <button class="pv-btn" type="button" data-toggle="theme">☾ Dark</button>
+      <button class="pv-btn" type="button" data-toggle="lang">ع</button>
+    </div>
+  </header>
+
+  <main class="pv-main">
+    <h2 style="font-family:var(--font-heading);font-weight:var(--weight-bold);font-size:var(--text-section-title);margin:0 0 var(--spacing-6)" data-en="Layout" data-ar="التخطيط">Layout</h2>
+
+    <section class="pv-section">
+      <h3 data-en="Spacing scale (4px base)" data-ar="مقياس التباعد (أساس 4 بكسل)">Spacing scale (4px base)</h3>
+      <div id="pv-spacing"></div>
+    </section>
+
+    <section class="pv-section">
+      <h3 data-en="Sizing" data-ar="الأحجام">Sizing</h3>
+      <div class="pv-kv"><span class="pv-mono">--size-control</span><span class="pv-val">40px</span></div>
+      <div class="pv-kv"><span class="pv-mono">--size-container</span><span class="pv-val">1280px</span></div>
+    </section>
+
+    <section class="pv-section">
+      <h3 data-en="Radius" data-ar="الزوايا">Radius</h3>
+      <div class="pv-tiles">
+        <div class="pv-tile"><div class="pv-tile-box" style="border-radius:var(--radius-none)"></div><span class="pv-mono">none</span></div>
+        <div class="pv-tile"><div class="pv-tile-box" style="border-radius:var(--radius-sm)"></div><span class="pv-mono">sm · 4px</span></div>
+        <div class="pv-tile"><div class="pv-tile-box" style="border-radius:var(--radius-md)"></div><span class="pv-mono">md · 8px</span></div>
+        <div class="pv-tile"><div class="pv-tile-box" style="border-radius:var(--radius-lg)"></div><span class="pv-mono">lg · 12px</span></div>
+        <div class="pv-tile"><div class="pv-tile-box" style="border-radius:var(--radius-xl)"></div><span class="pv-mono">xl · 16px</span></div>
+        <div class="pv-tile"><div class="pv-tile-box" style="border-radius:var(--radius-full)"></div><span class="pv-mono">full</span></div>
+      </div>
+    </section>
+
+    <section class="pv-section">
+      <h3 data-en="Border widths" data-ar="سماكات الحدود">Border widths</h3>
+      <div class="pv-tiles">
+        <div class="pv-tile"><div class="pv-tile-box" style="border:var(--border-default) solid var(--color-border-strong)"></div><span class="pv-mono">default · 1px</span></div>
+        <div class="pv-tile"><div class="pv-tile-box" style="border:var(--border-strong) solid var(--color-border-strong)"></div><span class="pv-mono">strong · 2px</span></div>
+      </div>
+    </section>
+
+    <section class="pv-section">
+      <h3 data-en="Shadows (floating layers)" data-ar="الظلال (الطبقات العائمة)">Shadows (floating layers)</h3>
+      <div class="pv-tiles">
+        <div class="pv-tile"><div class="pv-elev-card" style="box-shadow:var(--shadow-sm)"></div><span class="pv-mono">sm</span></div>
+        <div class="pv-tile"><div class="pv-elev-card" style="box-shadow:var(--shadow-md)"></div><span class="pv-mono">md</span></div>
+        <div class="pv-tile"><div class="pv-elev-card" style="box-shadow:var(--shadow-lg)"></div><span class="pv-mono">lg</span></div>
+      </div>
+    </section>
+
+    <section class="pv-section">
+      <h3 data-en="Z-index tiers" data-ar="طبقات الترتيب">Z-index tiers</h3>
+      <div class="pv-kv"><span class="pv-mono">--z-base</span><span class="pv-val">0</span></div>
+      <div class="pv-kv"><span class="pv-mono">--z-sticky</span><span class="pv-val">10</span></div>
+      <div class="pv-kv"><span class="pv-mono">--z-dropdown</span><span class="pv-val">20</span></div>
+      <div class="pv-kv"><span class="pv-mono">--z-overlay</span><span class="pv-val">30</span></div>
+      <div class="pv-kv"><span class="pv-mono">--z-modal</span><span class="pv-val">40</span></div>
+      <div class="pv-kv"><span class="pv-mono">--z-popover</span><span class="pv-val">50</span></div>
+      <div class="pv-kv"><span class="pv-mono">--z-toast</span><span class="pv-val">60</span></div>
+    </section>
+
+    <section class="pv-section">
+      <h3 data-en="Breakpoints" data-ar="نقاط التوقّف">Breakpoints</h3>
+      <div class="pv-kv"><span class="pv-mono">--breakpoint-tablet</span><span class="pv-val">768px</span></div>
+      <div class="pv-kv"><span class="pv-mono">--breakpoint-desktop</span><span class="pv-val">1024px</span></div>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      var spacing = document.getElementById('pv-spacing');
+      for (var i = 1; i <= 12; i++) {
+        var r = document.createElement('div');
+        r.className = 'pv-spacing-row';
+        var bar = document.createElement('div');
+        bar.className = 'pv-spacing-bar';
+        bar.style.width = 'var(--space-' + i + ')';
+        var name = document.createElement('span');
+        name.className = 'pv-mono';
+        name.textContent = '--space-' + i;
+        r.appendChild(bar);
+        r.appendChild(name);
+        spacing.appendChild(r);
+      }
+    })();
+  </script>
+  <script src="preview.js"></script>
+</body>
+</html>

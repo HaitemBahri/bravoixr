@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>bravoixr — color</title>
+
+  <script>
+    (function () {
+      var t = localStorage.getItem('bravoixr-theme') || 'light';
+      var l = localStorage.getItem('bravoixr-lang') || 'en';
+      var r = document.documentElement;
+      r.setAttribute('data-theme', t);
+      if (l === 'ar') { r.setAttribute('dir', 'rtl'); r.setAttribute('lang', 'ar'); }
+      else { r.setAttribute('dir', 'ltr'); r.setAttribute('lang', 'en'); }
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=IBM+Plex+Sans+Arabic:wght@200;300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap">
+
+  <link rel="stylesheet" href="../index.css">
+  <link rel="stylesheet" href="preview.css">
+</head>
+<body>
+  <header class="pv-header">
+    <span class="pv-brand">bravoixr</span>
+    <div class="pv-controls">
+      <button class="pv-btn" type="button" data-toggle="theme">☾ Dark</button>
+      <button class="pv-btn" type="button" data-toggle="lang">ع</button>
+    </div>
+  </header>
+
+  <main class="pv-main">
+    <h2 style="font-family:var(--font-heading);font-weight:var(--weight-page-title);font-size:var(--text-section-title);margin:0 0 var(--spacing-6)" data-en="Color" data-ar="اللون">Color</h2>
+
+    <section class="pv-section">
+      <p class="pv-lede" data-en="Eleven-step ramps (50–950) for brand, status, and accent hues; the cool-gray neutral runs 0–1000." data-ar="تدرّجات من 11 درجة (50–950) لألوان العلامة والحالات واللمسات؛ والمحايد الرمادي البارد يمتدّ من 0 إلى 1000.">Eleven-step ramps (50–950) for brand, status, and accent hues; the cool-gray neutral runs 0–1000.</p>
+      <div id="pv-ramps" style="margin-block-start:var(--spacing-5)"></div>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      var hues = {
+        neutral: [0, 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950, 1000],
+        blue: [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950],
+        teal: [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950],
+        green: [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950],
+        yellow: [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950],
+        red: [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950],
+        purple: [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950],
+        pink: [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950]
+      };
+      var ramps = document.getElementById('pv-ramps');
+      Object.keys(hues).forEach(function (hue) {
+        var label = document.createElement('span');
+        label.className = 'pv-ramp-label';
+        label.textContent = hue;
+        ramps.appendChild(label);
+        var row = document.createElement('div');
+        row.className = 'pv-ramp';
+        hues[hue].forEach(function (step) {
+          var fig = document.createElement('figure');
+          var cell = document.createElement('div');
+          cell.className = 'pv-cell';
+          cell.style.background = 'var(--' + hue + '-' + step + ')';
+          var cap = document.createElement('figcaption');
+          cap.textContent = step;
+          fig.appendChild(cell);
+          fig.appendChild(cap);
+          row.appendChild(fig);
+        });
+        ramps.appendChild(row);
+      });
+    })();
+  </script>
+  <script src="preview.js"></script>
+</body>
+</html>

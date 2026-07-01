@@ -1,6 +1,8 @@
 /* Semantic — Icons
- * Role tokens mapped onto icon primitives via var(). Themed for grade only:
- * :root is light grade, [data-theme="dark"] flips to the dark grade. */
+ * Role tokens mapped onto icon primitives via var(). Only --icon-grade is themed, so it lives
+ * solely in the explicit state blocks ([data-theme="light"] / [data-theme="dark"]) with no :root
+ * fallback — keeping the toggle re-entrant at any nesting depth. The context-invariant tokens
+ * (family, axes, sizes) stay in :root and resolve regardless of theme. */
 
 :root {
   /* Family + variable-font axes */
@@ -8,13 +10,16 @@
   --icon-weight: var(--icon-wght);
   --icon-fill-axis: var(--icon-fill);
   --icon-optical: var(--icon-opsz-floor);
-  --icon-grade: var(--icon-grade-light);
 
   /* Size roles — md is the default */
   --icon-sm: var(--icon-size-sm);
   --icon-md: var(--icon-size-md);
   --icon-lg: var(--icon-size-lg);
   --icon-xl: var(--icon-size-xl);
+}
+
+[data-theme="light"] {
+  --icon-grade: var(--icon-grade-light);
 }
 
 [data-theme="dark"] {

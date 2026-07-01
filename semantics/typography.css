@@ -1,11 +1,12 @@
 /* Semantic — Typography
- * Role tokens mapped onto typography primitives via var(). The scripted category:
- * :root is Latin (default), [dir="rtl"]/:lang(ar) overrides. References typography primitives only. */
+ * Role tokens mapped onto typography primitives via var(). The scripted roles live solely in the
+ * explicit state blocks — [dir="ltr"] (Latin) / [dir="rtl"] (Arabic) — with no :root fallback, so a
+ * script must be set via dir on the root element (or any subtree root) and the toggle stays
+ * re-entrant at any nesting depth. :root holds only the script-invariant roles. The size roles also
+ * shift by viewport (see the @media bands below). References typography primitives only. */
 
 :root {
-  /* Font families — Latin script */
-  --font-heading: var(--font-latin);
-  --font-body: var(--font-latin);
+  /* Font family — code is monospace in every script */
   --font-code: var(--font-mono);
 
   /* Size roles (desktop steps) */
@@ -29,19 +30,16 @@
   --weight-label: var(--weight-light);
   --weight-helper: var(--weight-extralight);
 
-  /* Line-height roles */
+  /* Line-height roles (script-invariant; --leading-prose is scripted, see the dir blocks) */
   --leading-display: var(--leading-heading);
-  --leading-prose: var(--leading-body);
   --leading-code-block: var(--leading-code);
 
-  /* Letter-spacing roles */
-  --tracking-display: var(--tracking-heading);
-  --tracking-uppercase: var(--tracking-caps);
+  /* Letter-spacing roles (script-invariant; --tracking-display/-uppercase are scripted, see below) */
   --tracking-prose: var(--tracking-normal);
 }
 
 [dir="ltr"] {
-  /* Font families — Latin script (re-asserted for an LTR island inside an RTL page) */
+  /* Font families — Latin script (the sole home of the Latin roles; no :root fallback) */
   --font-heading: var(--font-latin);
   --font-body: var(--font-latin);
 
@@ -53,7 +51,7 @@
   --tracking-uppercase: var(--tracking-caps);
 }
 
-[dir="rtl"], :lang(ar) {
+[dir="rtl"] {
   /* Font families — Arabic script */
   --font-heading: var(--font-arabic);
   --font-body: var(--font-arabic);

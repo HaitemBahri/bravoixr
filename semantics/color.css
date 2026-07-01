@@ -1,8 +1,11 @@
 /* Semantic — Color
  * Role tokens mapped onto color primitives via var(). The themed category:
- * :root is light, [data-theme="dark"] overrides. References color primitives only. */
+ * every role is themed, so each state is an explicit block — [data-theme="light"] and
+ * [data-theme="dark"], with no :root fallback. A theme must be set on the root element (or any
+ * subtree root) for these roles to resolve; this keeps the toggle re-entrant at any nesting depth.
+ * References color primitives only. */
 
-:root {
+[data-theme="light"] {
   /* Brand — primary (blue) */
   --color-primary: var(--blue-600);
   --color-primary-hover: var(--blue-700);

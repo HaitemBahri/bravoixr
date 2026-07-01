@@ -55,7 +55,7 @@ Import the single entry point and apply the **classes** — they are the public 
 
 - **Classes first.** Build your UI from bravoixr's classes; each one bundles the correct combination of tokens, so you can't assemble an invalid pairing.
 - **Tokens are the escape hatch.** For layout, spacing, and one-offs no class covers, reference the semantic tokens directly (`gap: var(--spacing-5)`). Never reference primitives.
-- **Theming.** Set `data-theme="dark"` on a root element for dark mode; set `dir="rtl"` / `lang="ar"` for Arabic.
+- **Theming is explicit.** Always set both `data-theme` (`light` or `dark`) and `dir` (`ltr` or `rtl`) on the root element — the themed color/icon and scripted typography roles are defined per state with no default, so an unset context leaves them unresolved by design. Both attributes work on any subtree root too, so a nested island (e.g. a `data-theme="light"` card in a dark page, or a `dir="ltr"` block in an RTL page) fully overrides its context.
 - **Fonts.** Load the named fonts yourself (Bricolage Grotesque, IBM Plex Sans Arabic, JetBrains Mono, Material Symbols) — the system declares the family stacks only.
 - **Pin a version.** Track a released tag (e.g. `v0.1.0`).
 

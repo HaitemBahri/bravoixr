@@ -5,7 +5,8 @@
 .btn {
   width: 100%; /* controls are full-width by default; layout owns width */
   height: var(--control-height);
-  padding: 0 var(--spacing-5);
+  padding-block: 0;
+  padding-inline: var(--spacing-5);
   border: var(--border-width) solid transparent; /* matches bordered siblings' box */
   border-radius: var(--radius-control);
   font-family: var(--font-body);

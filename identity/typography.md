@@ -31,7 +31,7 @@ second typeface. Font stacks are kept bare (family + generic only).
 
 - **One grotesque per script does both headings and body.**
   _Why: minimal systems get their hierarchy from size + weight; a second face would add noise without identity._
-- **Script is chosen by language/direction** (`:lang(ar)` / `[dir="rtl"]`), never blended into one
+- **Script is chosen by direction** (`[dir="rtl"]` vs `[dir="ltr"]`), never blended into one
   mixed `font-family` stack.
   _Why: Latin and Arabic need different line-height and letter-spacing rules, so they are switched, not merged._
 - **Mono is for code only** — code blocks and inline code — never for UI text.

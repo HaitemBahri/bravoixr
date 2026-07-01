@@ -6,7 +6,8 @@
   box-sizing: border-box; /* absorbs the 1->2px focus border without outer reflow */
   width: 100%; /* controls are full-width by default; layout owns width */
   height: var(--control-height);
-  padding: 0 var(--spacing-4);
+  padding-block: 0;
+  padding-inline: var(--spacing-4);
   border: var(--border-width) solid var(--color-border);
   border-radius: var(--radius-control);
   background: var(--color-surface-raised);

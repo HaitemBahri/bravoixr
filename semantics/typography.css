@@ -65,3 +65,31 @@
   --tracking-display: var(--tracking-normal);
   --tracking-uppercase: var(--tracking-normal);
 }
+
+/* Viewport axis — the responsive heading "elevator" (identity/typography.md § Responsive behavior).
+ * :root above holds the desktop steps; each band re-points the size roles one step down the fixed
+ * ladder — pure var() indirection, no fluid math, so the ladder stays portable.
+ * The breakpoint px are inlined here because @media conditions can't read var(); they mirror
+ * --breakpoint-tablet (768px) and --breakpoint-desktop (1024px) in primitives/layout.css, offset by
+ * 0.02px to sit just below each min-width boundary. Bands: mobile <768, tablet 768–1023, desktop ≥1024. */
+
+/* Tablet (<1024): headings drop one step; the context title steps once to body2 and holds below. */
+@media (max-width: 1023.98px) {
+  :root {
+    --text-page-title: var(--text-h2);
+    --text-section-title: var(--text-h3);
+    --text-subsection-title: var(--text-h4);
+    --text-minor-heading: var(--text-h5);
+    --text-context-title: var(--text-body2);
+  }
+}
+
+/* Mobile (<768): headings drop one more step; the context title holds body2 from the band above. */
+@media (max-width: 767.98px) {
+  :root {
+    --text-page-title: var(--text-h3);
+    --text-section-title: var(--text-h4);
+    --text-subsection-title: var(--text-h5);
+    --text-minor-heading: var(--text-h6);
+  }
+}

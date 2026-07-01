@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>bravoixr — semantic layout</title>
+
+  <script>
+    (function () {
+      var t = localStorage.getItem('bravoixr-theme') || 'light';
+      var l = localStorage.getItem('bravoixr-lang') || 'en';
+      var r = document.documentElement;
+      r.setAttribute('data-theme', t);
+      if (l === 'ar') { r.setAttribute('dir', 'rtl'); r.setAttribute('lang', 'ar'); }
+      else { r.setAttribute('dir', 'ltr'); r.setAttribute('lang', 'en'); }
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=IBM+Plex+Sans+Arabic:wght@200;300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap">
+
+  <link rel="stylesheet" href="../../index.css">
+  <link rel="stylesheet" href="../preview.css">
+</head>
+<body>
+  <header class="pv-header">
+    <span class="pv-brand">bravoixr</span>
+    <div class="pv-controls">
+      <button class="pv-btn" type="button" data-toggle="theme">☾ Dark</button>
+      <button class="pv-btn" type="button" data-toggle="lang">ع</button>
+    </div>
+  </header>
+
+  <main class="pv-main">
+    <h2 style="font-family:var(--font-heading);font-weight:var(--weight-page-title);font-size:var(--text-section-title);margin:0 0 var(--spacing-3)" data-en="Semantic layout" data-ar="التخطيط الدلالي">Semantic layout</h2>
+    <p class="pv-lede" data-en="Structural roles named for their use — control, card, modal — mapped onto the raw scale. Not themed: these hold across light and dark." data-ar="أدوار بنيوية مسمّاة بحسب استخدامها — عنصر تحكّم، بطاقة، نافذة — مُسنَدة إلى المقياس الخام. غير خاضعة للسمة: تثبت في الوضعين الفاتح والداكن.">Structural roles named for their use — control, card, modal — mapped onto the raw scale. Not themed: these hold across light and dark.</p>
+
+    <section class="pv-section">
+      <h3 data-en="Radius roles" data-ar="أدوار الزوايا">Radius roles</h3>
+      <div class="pv-tiles">
+        <div class="pv-tile"><div class="pv-tile-box" style="border-radius:var(--radius-control)"></div><span class="pv-mono">--radius-control</span></div>
+        <div class="pv-tile"><div class="pv-tile-box" style="border-radius:var(--radius-card)"></div><span class="pv-mono">--radius-card</span></div>
+        <div class="pv-tile"><div class="pv-tile-box" style="border-radius:var(--radius-modal)"></div><span class="pv-mono">--radius-modal</span></div>
+        <div class="pv-tile"><div class="pv-tile-box" style="border-radius:var(--radius-chip)"></div><span class="pv-mono">--radius-chip</span></div>
+        <div class="pv-tile"><div class="pv-tile-box" style="border-radius:var(--radius-pill)"></div><span class="pv-mono">--radius-pill</span></div>
+      </div>
+    </section>
+
+    <section class="pv-section">
+      <h3 data-en="Border-width roles" data-ar="أدوار سماكة الحدود">Border-width roles</h3>
+      <div class="pv-tiles">
+        <div class="pv-tile"><div class="pv-tile-box" style="border:var(--border-width) solid var(--color-border-strong)"></div><span class="pv-mono">--border-width</span></div>
+        <div class="pv-tile"><div class="pv-tile-box" style="border:var(--border-width-strong) solid var(--color-border-strong)"></div><span class="pv-mono">--border-width-strong</span></div>
+      </div>
+    </section>
+
+    <section class="pv-section">
+      <h3 data-en="Sizing roles" data-ar="أدوار الأحجام">Sizing roles</h3>
+      <div class="pv-kv"><span class="pv-mono">--control-height</span><span class="pv-val">40px</span></div>
+      <div class="pv-kv"><span class="pv-mono">--container-max</span><span class="pv-val">1280px</span></div>
+    </section>
+
+    <section class="pv-section">
+      <h3 data-en="Shadow roles (floating layers)" data-ar="أدوار الظلال (الطبقات العائمة)">Shadow roles (floating layers)</h3>
+      <div class="pv-tiles">
+        <div class="pv-tile"><div class="pv-elev-card" style="box-shadow:var(--shadow-menu)"></div><span class="pv-mono">--shadow-menu</span></div>
+        <div class="pv-tile"><div class="pv-elev-card" style="box-shadow:var(--shadow-toast)"></div><span class="pv-mono">--shadow-toast</span></div>
+        <div class="pv-tile"><div class="pv-elev-card" style="box-shadow:var(--shadow-modal)"></div><span class="pv-mono">--shadow-modal</span></div>
+      </div>
+    </section>
+
+    <section class="pv-section">
+      <h3 data-en="Layer roles" data-ar="أدوار الطبقات">Layer roles</h3>
+      <div class="pv-kv"><span class="pv-mono">--layer-base</span><span class="pv-val">0</span></div>
+      <div class="pv-kv"><span class="pv-mono">--layer-sticky</span><span class="pv-val">10</span></div>
+      <div class="pv-kv"><span class="pv-mono">--layer-dropdown</span><span class="pv-val">20</span></div>
+      <div class="pv-kv"><span class="pv-mono">--layer-overlay</span><span class="pv-val">30</span></div>
+      <div class="pv-kv"><span class="pv-mono">--layer-modal</span><span class="pv-val">40</span></div>
+      <div class="pv-kv"><span class="pv-mono">--layer-popover</span><span class="pv-val">50</span></div>
+      <div class="pv-kv"><span class="pv-mono">--layer-toast</span><span class="pv-val">60</span></div>
+    </section>
+
+    <section class="pv-section">
+      <h3 data-en="Spacing seam (1:1 re-export)" data-ar="وصلة التباعد (تصدير 1:1)">Spacing seam (1:1 re-export)</h3>
+      <div id="pv-spacing"></div>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      var spacing = document.getElementById('pv-spacing');
+      for (var i = 1; i <= 12; i++) {
+        var r = document.createElement('div');
+        r.className = 'pv-spacing-row';
+        var bar = document.createElement('div');
+        bar.className = 'pv-spacing-bar';
+        bar.style.width = 'var(--spacing-' + i + ')';
+        var name = document.createElement('span');
+        name.className = 'pv-mono';
+        name.textContent = '--spacing-' + i;
+        r.appendChild(bar);
+        r.appendChild(name);
+        spacing.appendChild(r);
+      }
+    })();
+  </script>
+  <script src="../preview.js"></script>
+</body>
+</html>

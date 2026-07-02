@@ -75,3 +75,9 @@
   font-size: var(--text-code-block);
   line-height: var(--leading-code-block);
 }
+
+.text-code-label {
+  font-family: var(--font-code);
+  font-size: var(--text-code-label);
+  line-height: var(--leading-code-block);
+}

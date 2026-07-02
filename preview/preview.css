@@ -130,6 +130,15 @@ body {
   align-items: center;
 }
 
+/* Forced button states — SHOWCASE ONLY. Mirror the button.css pseudo-classes so
+ * every state can be shown statically, side by side. Token-driven so values track
+ * the system; update the mapping here if button.css's state styling changes. */
+.pv-force-hover.btn-solid  { background: var(--color-primary-hover); }
+.pv-force-active.btn-solid { background: var(--color-primary-active); }
+.pv-force-hover.btn-text   { background: var(--color-surface-sunken); color: var(--color-primary-hover); }
+.pv-force-active.btn-text  { color: var(--color-primary-active); }
+.pv-force-focus            { outline: var(--border-width-strong) solid var(--color-border-focus); outline-offset: var(--spacing-1); }
+
 .pv-stack {
   display: grid;
   gap: var(--spacing-5);

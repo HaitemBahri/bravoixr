@@ -68,6 +68,7 @@
 
   <script>
     (function () {
+      // Each swatch is captioned with its role label and, under it, its var name.
       function swatch(role, caption) {
         var sw = document.createElement('div');
         sw.className = 'pv-swatch';
@@ -77,25 +78,23 @@
         var name = document.createElement('span');
         name.className = 'pv-name';
         name.textContent = caption;
+        var token = document.createElement('span');
+        token.className = 'pv-name pv-mono';
+        token.textContent = role;
         sw.appendChild(cell);
         sw.appendChild(name);
+        sw.appendChild(token);
         return sw;
       }
 
-      // One row per family: a name (+ base token) meta column, then its swatches
-      // laid out horizontally. `pairs` is [role, caption] entries.
-      function buildRow(row, tokenLabel, pairs) {
+      // One row per family: a name meta column, then its swatches laid out
+      // horizontally. `pairs` is [role, caption] entries.
+      function buildRow(row, pairs) {
         var meta = document.createElement('div');
         meta.className = 'pv-type-meta';
         var label = document.createElement('strong');
         label.textContent = row.getAttribute('data-label');
         meta.appendChild(label);
-        if (tokenLabel) {
-          var token = document.createElement('span');
-          token.className = 'pv-mono';
-          token.textContent = tokenLabel;
-          meta.appendChild(token);
-        }
 
         var group = document.createElement('div');
         group.className = 'pv-color-states';
@@ -109,7 +108,7 @@
       var states = [['', 'normal'], ['-hover', 'hover'], ['-active', 'active']];
       document.querySelectorAll('.pv-color-row[data-base]').forEach(function (row) {
         var base = row.getAttribute('data-base');
-        buildRow(row, base, states.map(function (s) { return [base + s[0], s[1]]; }));
+        buildRow(row, states.map(function (s) { return [base + s[0], s[1]]; }));
       });
 
       // Variant families (Surfaces, Text, Border): explicit `token:caption` list.
@@ -117,7 +116,7 @@
         var pairs = row.getAttribute('data-roles').split(',').map(function (r) {
           return r.split(':');
         });
-        buildRow(row, null, pairs);
+        buildRow(row, pairs);
       });
     })();
   </script>

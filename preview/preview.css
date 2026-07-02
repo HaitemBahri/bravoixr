@@ -212,6 +212,12 @@ body {
   font-size: var(--text-label);
 }
 
+/* Var-name line sits directly under the swatch label, smaller and secondary. */
+.pv-swatch .pv-name.pv-mono {
+  margin-block-start: var(--spacing-1);
+  font-size: var(--text-helper);
+}
+
 /* Color family rows — one family per row, states laid horizontally.
  * Mirrors the type-scale row idiom (border-separated flex row + meta column). */
 .pv-color-row {

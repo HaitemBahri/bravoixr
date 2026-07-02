@@ -52,65 +52,72 @@
 
     <section class="pv-section">
       <h3 data-en="Surfaces" data-ar="الأسطح">Surfaces</h3>
-      <div class="pv-swatches" data-roles="--color-surface-page,--color-surface-raised,--color-surface-sunken"></div>
+      <div class="pv-color-row" data-label="surfaces" data-roles="--color-surface-page:page,--color-surface-raised:raised,--color-surface-sunken:sunken"></div>
     </section>
 
     <section class="pv-section">
       <h3 data-en="Text" data-ar="النص">Text</h3>
-      <div class="pv-swatches" data-roles="--color-text,--color-text-muted,--color-text-subtle,--color-text-inverse,--color-text-on-primary"></div>
+      <div class="pv-color-row" data-label="text" data-roles="--color-text:text,--color-text-muted:muted,--color-text-subtle:subtle,--color-text-inverse:inverse,--color-text-on-primary:on-primary"></div>
     </section>
 
     <section class="pv-section">
       <h3 data-en="Border" data-ar="الحدود">Border</h3>
-      <div class="pv-swatches" data-roles="--color-border,--color-border-strong,--color-border-focus"></div>
+      <div class="pv-color-row" data-label="border" data-roles="--color-border:border,--color-border-strong:strong,--color-border-focus:focus"></div>
     </section>
   </main>
 
   <script>
     (function () {
-      function swatch(role, caption, captionMono) {
+      function swatch(role, caption) {
         var sw = document.createElement('div');
         sw.className = 'pv-swatch';
         var cell = document.createElement('div');
         cell.className = 'pv-cell';
         cell.style.background = 'var(' + role + ')';
         var name = document.createElement('span');
-        name.className = captionMono ? 'pv-name pv-mono' : 'pv-name';
+        name.className = 'pv-name';
         name.textContent = caption;
         sw.appendChild(cell);
         sw.appendChild(name);
         return sw;
       }
 
-      // Stateless variant families (Surfaces, Text, Border) — flat swatch grid.
-      document.querySelectorAll('.pv-swatches[data-roles]').forEach(function (grid) {
-        grid.getAttribute('data-roles').split(',').forEach(function (role) {
-          grid.appendChild(swatch(role, role, true));
-        });
-      });
-
-      // State families (Brand, Status) — one row per family, states laid horizontally.
-      var states = [['', 'normal'], ['-hover', 'hover'], ['-active', 'active']];
-      document.querySelectorAll('.pv-color-row[data-base]').forEach(function (row) {
-        var base = row.getAttribute('data-base');
+      // One row per family: a name (+ base token) meta column, then its swatches
+      // laid out horizontally. `pairs` is [role, caption] entries.
+      function buildRow(row, tokenLabel, pairs) {
         var meta = document.createElement('div');
         meta.className = 'pv-type-meta';
         var label = document.createElement('strong');
         label.textContent = row.getAttribute('data-label');
-        var token = document.createElement('span');
-        token.className = 'pv-mono';
-        token.textContent = base;
         meta.appendChild(label);
-        meta.appendChild(token);
+        if (tokenLabel) {
+          var token = document.createElement('span');
+          token.className = 'pv-mono';
+          token.textContent = tokenLabel;
+          meta.appendChild(token);
+        }
 
         var group = document.createElement('div');
         group.className = 'pv-color-states';
-        states.forEach(function (s) {
-          group.appendChild(swatch(base + s[0], s[1], false));
-        });
+        pairs.forEach(function (p) { group.appendChild(swatch(p[0], p[1])); });
 
         row.appendChild(meta);
         row.appendChild(group);
+      }
+
+      // State families (Brand, Status): base token + normal/hover/active steps.
+      var states = [['', 'normal'], ['-hover', 'hover'], ['-active', 'active']];
+      document.querySelectorAll('.pv-color-row[data-base]').forEach(function (row) {
+        var base = row.getAttribute('data-base');
+        buildRow(row, base, states.map(function (s) { return [base + s[0], s[1]]; }));
+      });
+
+      // Variant families (Surfaces, Text, Border): explicit `token:caption` list.
+      document.querySelectorAll('.pv-color-row[data-roles]').forEach(function (row) {
+        var pairs = row.getAttribute('data-roles').split(',').map(function (r) {
+          return r.split(':');
+        });
+        buildRow(row, null, pairs);
       });
     })();
   </script>

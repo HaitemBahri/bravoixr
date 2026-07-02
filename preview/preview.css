@@ -224,6 +224,7 @@ body {
 
 .pv-color-states {
   display: flex;
+  flex-wrap: wrap;
   gap: var(--spacing-4);
 }
 

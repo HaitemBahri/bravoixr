@@ -1,10 +1,15 @@
 /* Component — Button
  * Thin class for the reused button element. Consumes semantic tokens only.
- * Base sets shape/density/type; variants set the brand fill. Behavior is rented. */
+ * Base sets shape/density/type; fills set the look; .btn-square makes an icon box.
+ * Only the primary intent ships. Behavior is rented. */
 
 .btn {
-  width: 100%; /* controls are full-width by default; layout owns width */
-  height: var(--control-height);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-2); /* icon-to-label gap when both are present */
+  inline-size: auto; /* hug content; layout opts into full width */
+  block-size: var(--control-height);
   padding-block: 0;
   padding-inline: var(--spacing-5);
   border: var(--border-width) solid transparent; /* matches bordered siblings' box */
@@ -12,31 +17,61 @@
   font-family: var(--font-body);
   font-size: var(--text-label);
   font-weight: var(--weight-label);
-  transition: background var(--duration-hover) var(--ease-default);
+  cursor: pointer;
+  transition:
+    background var(--duration-hover) var(--ease-default),
+    color var(--duration-hover) var(--ease-default);
 }
 
-.btn-primary {
+.btn:focus-visible {
+  outline: var(--border-width-strong) solid var(--color-border-focus);
+  outline-offset: var(--spacing-1);
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+}
+
+/* Fill — solid: the primary-blue fill. */
+.btn-solid {
   background: var(--color-primary);
   color: var(--color-text-on-primary);
 }
 
-.btn-primary:hover {
+.btn-solid:hover {
   background: var(--color-primary-hover);
 }
 
-.btn-primary:active {
+.btn-solid:active {
   background: var(--color-primary-active);
 }
 
-.btn-secondary {
-  background: var(--color-secondary);
-  color: var(--color-text-on-primary);
+.btn-solid:disabled {
+  background: var(--color-border); /* muted fill (no opacity token) */
+  color: var(--color-text-subtle);
 }
 
-.btn-secondary:hover {
-  background: var(--color-secondary-hover);
+/* Fill — text: transparent, primary-blue label; faint surface on hover. */
+.btn-text {
+  background: transparent;
+  color: var(--color-primary);
 }
 
-.btn-secondary:active {
-  background: var(--color-secondary-active);
+.btn-text:hover {
+  background: var(--color-surface-sunken);
+  color: var(--color-primary-hover);
+}
+
+.btn-text:active {
+  color: var(--color-primary-active);
+}
+
+.btn-text:disabled {
+  color: var(--color-text-subtle);
+}
+
+/* Size — square: a fixed 1:1 box for a single icon/char. */
+.btn-square {
+  inline-size: var(--control-height);
+  padding-inline: 0;
 }

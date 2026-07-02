@@ -73,10 +73,16 @@ Hand-tuned steps (not a strict ratio); `body3` is the default reading size.
 
 _Why: a narrow body band keeps running text calm and consistent; the two top steps cover context titles, the two bottom steps cover labels and helper text._
 
-### Code
+### Code — `code`, `code2`
 
-- **Single size: 14px / 0.875rem** — no mono scale.
-  _Why: code only ever appears as blocks or inline runs, so one well-tuned size is all it needs._
+Two sizes: a default for blocks and inline runs, and a smaller step for compact code labels.
+
+| Token | px | rem | Role |
+| -- | -- | -- | -- |
+| `code` | 14 | 0.875 | code blocks / inline |
+| `code2` | 12 | 0.75 | compact code label |
+
+_Why: code is mostly one well-tuned size; the smaller step covers label-scale code (captions, chips) without borrowing a body size._
 
 ## Weights
 

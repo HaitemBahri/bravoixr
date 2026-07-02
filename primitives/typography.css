@@ -24,8 +24,9 @@
   --text-body4: 0.875rem;
   --text-body5: 0.75rem;
 
-  /* Code — single size (14px) */
+  /* Code — code (14px), code2 (12px) */
   --text-code: 0.875rem;
+  --text-code2: 0.75rem;
 
   /* Weights (200–700, covered by both grotesques) */
   --weight-extralight: 200;

@@ -18,26 +18,13 @@ body {
   line-height: var(--leading-prose);
 }
 
-/* Header / toolbar */
-.pv-header {
-  position: sticky;
-  top: 0;
-  z-index: 10;
+/* Top bar — in-page title + toggles row (replaces the old sticky header). */
+.pv-topbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: var(--spacing-5);
-  /* Full-width bar; inline content aligned to the centered page column. */
-  padding-block: var(--spacing-4);
-  padding-inline: max(var(--spacing-6), calc((100% - var(--container-max)) / 2 + var(--spacing-6)));
-  background: var(--color-surface-raised);
-  border-block-end: var(--border-width) solid var(--color-border);
-}
-
-.pv-brand {
-  font-family: var(--font-heading);
-  font-weight: var(--weight-section-title);
-  font-size: var(--text-subsection-title);
+  margin-block-end: var(--spacing-8);
 }
 
 .pv-controls {
@@ -45,22 +32,9 @@ body {
   gap: var(--spacing-3);
 }
 
-/* Chrome buttons (NOT the system .btn) */
-.pv-btn {
-  min-width: 64px;
-  height: var(--control-height);
-  padding: 0 var(--spacing-4);
-  border: var(--border-width) solid var(--color-border-strong);
-  border-radius: var(--radius-control);
-  background: var(--color-surface-sunken);
-  color: var(--color-text);
-  font-family: var(--font-body);
-  font-size: var(--text-label);
-  cursor: pointer;
-}
-
-.pv-btn:hover {
-  border-color: var(--color-border-focus);
+/* Icon glyph inside a solid button takes the button's text color, not --color-text. */
+.btn .pv-symbol {
+  color: inherit;
 }
 
 /* Main */

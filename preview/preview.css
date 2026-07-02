@@ -212,6 +212,25 @@ body {
   font-size: var(--text-label);
 }
 
+/* Color family rows — one family per row, states laid horizontally.
+ * Mirrors the type-scale row idiom (border-separated flex row + meta column). */
+.pv-color-row {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-6);
+  padding-block: var(--spacing-4);
+  border-block-end: var(--border-width) solid var(--color-border);
+}
+
+.pv-color-states {
+  display: flex;
+  gap: var(--spacing-4);
+}
+
+.pv-color-states .pv-swatch {
+  flex: 0 0 140px;
+}
+
 /* Type scale */
 .pv-type-row {
   display: flex;

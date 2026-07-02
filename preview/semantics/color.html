@@ -38,12 +38,16 @@
 
     <section class="pv-section">
       <h3 data-en="Brand" data-ar="العلامة">Brand</h3>
-      <div class="pv-swatches" data-roles="--color-primary,--color-primary-hover,--color-primary-active,--color-secondary,--color-secondary-hover,--color-secondary-active"></div>
+      <div class="pv-color-row" data-base="--color-primary" data-label="primary"></div>
+      <div class="pv-color-row" data-base="--color-secondary" data-label="secondary"></div>
     </section>
 
     <section class="pv-section">
       <h3 data-en="Status" data-ar="الحالة">Status</h3>
-      <div class="pv-swatches" data-roles="--color-success,--color-success-hover,--color-success-active,--color-warning,--color-warning-hover,--color-warning-active,--color-error,--color-error-hover,--color-error-active,--color-info,--color-info-hover,--color-info-active"></div>
+      <div class="pv-color-row" data-base="--color-success" data-label="success"></div>
+      <div class="pv-color-row" data-base="--color-warning" data-label="warning"></div>
+      <div class="pv-color-row" data-base="--color-error" data-label="error"></div>
+      <div class="pv-color-row" data-base="--color-info" data-label="info"></div>
     </section>
 
     <section class="pv-section">
@@ -64,20 +68,49 @@
 
   <script>
     (function () {
+      function swatch(role, caption, captionMono) {
+        var sw = document.createElement('div');
+        sw.className = 'pv-swatch';
+        var cell = document.createElement('div');
+        cell.className = 'pv-cell';
+        cell.style.background = 'var(' + role + ')';
+        var name = document.createElement('span');
+        name.className = captionMono ? 'pv-name pv-mono' : 'pv-name';
+        name.textContent = caption;
+        sw.appendChild(cell);
+        sw.appendChild(name);
+        return sw;
+      }
+
+      // Stateless variant families (Surfaces, Text, Border) — flat swatch grid.
       document.querySelectorAll('.pv-swatches[data-roles]').forEach(function (grid) {
         grid.getAttribute('data-roles').split(',').forEach(function (role) {
-          var sw = document.createElement('div');
-          sw.className = 'pv-swatch';
-          var cell = document.createElement('div');
-          cell.className = 'pv-cell';
-          cell.style.background = 'var(' + role + ')';
-          var name = document.createElement('span');
-          name.className = 'pv-name pv-mono';
-          name.textContent = role;
-          sw.appendChild(cell);
-          sw.appendChild(name);
-          grid.appendChild(sw);
+          grid.appendChild(swatch(role, role, true));
         });
+      });
+
+      // State families (Brand, Status) — one row per family, states laid horizontally.
+      var states = [['', 'normal'], ['-hover', 'hover'], ['-active', 'active']];
+      document.querySelectorAll('.pv-color-row[data-base]').forEach(function (row) {
+        var base = row.getAttribute('data-base');
+        var meta = document.createElement('div');
+        meta.className = 'pv-type-meta';
+        var label = document.createElement('strong');
+        label.textContent = row.getAttribute('data-label');
+        var token = document.createElement('span');
+        token.className = 'pv-mono';
+        token.textContent = base;
+        meta.appendChild(label);
+        meta.appendChild(token);
+
+        var group = document.createElement('div');
+        group.className = 'pv-color-states';
+        states.forEach(function (s) {
+          group.appendChild(swatch(base + s[0], s[1], false));
+        });
+
+        row.appendChild(meta);
+        row.appendChild(group);
       });
     })();
   </script>

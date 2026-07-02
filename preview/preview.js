@@ -16,7 +16,6 @@
   function applyTheme(theme) {
     root.setAttribute('data-theme', theme);
     localStorage.setItem('bravoixr-theme', theme);
-    syncButtons();
   }
 
   function applyLang(lang) {
@@ -29,7 +28,6 @@
     }
     localStorage.setItem('bravoixr-lang', lang);
     swapText(lang);
-    syncButtons();
   }
 
   /* Bilingual specimens: elements carry data-en / data-ar.
@@ -43,13 +41,6 @@
     });
   }
 
-  function syncButtons() {
-    var themeBtn = document.querySelector('[data-toggle="theme"]');
-    var langBtn = document.querySelector('[data-toggle="lang"]');
-    if (themeBtn) themeBtn.textContent = currentTheme() === 'dark' ? '☀ Light' : '☾ Dark';
-    if (langBtn) langBtn.textContent = currentLang() === 'ar' ? 'EN' : 'ع';
-  }
-
   document.addEventListener('click', function (e) {
     var el = e.target.closest('[data-toggle]');
     if (!el) return;
@@ -61,7 +52,6 @@
   });
 
   /* On load the inline snippet has already set the root attributes;
-   * sync the specimen text and button labels to match. */
+   * sync the specimen text to match. */
   swapText(currentLang());
-  syncButtons();
 })();

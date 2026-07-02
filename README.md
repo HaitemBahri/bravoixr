@@ -48,7 +48,7 @@ Import the single entry point and apply the **classes** — they are the public 
 ```html
 <link rel="stylesheet" href="bravoixr/index.css">
 
-<button class="btn btn-primary">Save</button>
+<button class="btn btn-solid">Save</button>
 <input class="input">
 <div class="card">…</div>
 ```

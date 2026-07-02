@@ -36,6 +36,15 @@
   letter-spacing: var(--tracking-display);
 }
 
+/* Project title — the top-bar wordmark: heading anatomy at body scale for a crisp brand mark */
+.text-project-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-project-title);
+  font-weight: var(--weight-project-title);
+  line-height: var(--leading-display);
+  letter-spacing: var(--tracking-display);
+}
+
 /* Body — body family, prose leading + tracking */
 .text-context-title {
   font-family: var(--font-body);
@@ -65,6 +74,15 @@
   font-family: var(--font-body);
   font-size: var(--text-helper);
   font-weight: var(--weight-helper);
+  line-height: var(--leading-prose);
+  letter-spacing: var(--tracking-prose);
+}
+
+/* Page description — the quiet, light lede under a page title */
+.text-page-description {
+  font-family: var(--font-body);
+  font-size: var(--text-page-description);
+  font-weight: var(--weight-page-description);
   line-height: var(--leading-prose);
   letter-spacing: var(--tracking-prose);
 }

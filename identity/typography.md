@@ -156,10 +156,18 @@ down per breakpoint** across the six-step ladder.
 
 _Why: one ladder serves every breakpoint; desktop uses the top four steps, mobile the bottom four, so nothing overflows the scale._
 
-**Body:** only the **context title** is responsive — `body1` on desktop, **`body2` on tablet and
-mobile** (it steps once and holds). `body2`–`body5` (default, labels, helper) are the same size on
-every breakpoint.
-  _Why: paragraph and UI text must stay readable on small screens; only the oversized context title needs to come down._
+**Body:** the responsive body roles are the **context title**, the **project title**, and the
+**page description** — each is `body1` on desktop and **`body2` on tablet and mobile** (steps once
+and holds). `body2`–`body5` (default, labels, helper) are the same size on every breakpoint.
+  _Why: paragraph and UI text must stay readable on small screens; only the oversized top-of-page roles need to come down._
+
+**Page-structure roles:** two body-scale roles carry the top of every page. The **project title**
+(the top-bar wordmark) takes **heading** anatomy — heading family, `1.1` leading, `−0.02em` tracking
+— at weight **600**, so the brand mark reads crisp and confident. The **page description** (the lede
+under a page title) takes **body** anatomy — body family, `1.6`/`1.7` leading, `0` tracking — at
+weight **300**, so it sits quiet and airy beneath the title. Both ride the body responsive step above
+(`body1` → `body2`, once) and switch script like every other role.
+  _Why: the wordmark and lede are reused on every page, so each earns a named role rather than borrowing the context title._
 
 - **The six-step ladder assumes at most four heading levels in a layout.**
   _Why: a fifth heading level on desktop (`h5`) would need a step below `h6` on mobile, which the ladder doesn't have._

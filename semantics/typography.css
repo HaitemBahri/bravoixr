@@ -19,6 +19,7 @@
   --text-label: var(--text-body4);
   --text-helper: var(--text-body5);
   --text-code-block: var(--text-code);
+  --text-code-label: var(--text-code2);
 
   /* Weight roles (per typography.md role map) */
   --weight-page-title: var(--weight-bold);

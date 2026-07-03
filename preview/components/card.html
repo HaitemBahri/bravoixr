@@ -37,12 +37,30 @@
       <h2 class="text-page-title" data-en="Card" data-ar="بطاقة">Card</h2>
       <p class="pv-lede" data-en="A resting raised surface. Elevation comes from a just-visible border, not a shadow — shadows are reserved for floating layers." data-ar="سطح مرتفع ثابت. الارتفاع يأتي من حدّ واضح بالكاد، لا من ظِل — فالظلال محجوزة للطبقات العائمة.">A resting raised surface. Elevation comes from a just-visible border, not a shadow — shadows are reserved for floating layers.</p>
 
-      <!-- Both specimens side by side, each filling an equal share of the full-width row. -->
-      <div class="pv-row" style="align-items:stretch;margin-top:var(--spacing-7)">
+      <!-- One row per specimen: name + the classes it applies on the left, live preview on the right. -->
+      <div class="pv-row" style="align-items:flex-start;margin-top:var(--spacing-7)">
+        <div style="inline-size:200px">
+          <h3 class="text-minor-heading" style="margin:0 0 var(--spacing-3)" data-en="Default" data-ar="افتراضي">Default</h3>
+          <ul class="pv-classlist">
+            <li class="pv-mono">.card</li>
+            <li class="pv-mono">.btn</li>
+            <li class="pv-mono">.btn-solid</li>
+          </ul>
+        </div>
         <div class="card" style="flex:1">
           <h3 style="font-family:var(--font-heading);font-weight:var(--weight-subsection-title);font-size:var(--text-context-title);margin:0 0 var(--spacing-3)" data-en="Card title" data-ar="عنوان البطاقة">Card title</h3>
           <p style="margin:0 0 var(--spacing-5);color:var(--color-text-muted)" data-en="Raised surface, border-based elevation, and text that follows the theme." data-ar="سطح مرتفع، ارتفاع باعتماد الحدود، ونص يتبع السمة.">Raised surface, border-based elevation, and text that follows the theme.</p>
           <button class="btn btn-solid" type="button" data-en="Open" data-ar="فتح">Open</button>
+        </div>
+      </div>
+
+      <div class="pv-row" style="align-items:flex-start;margin-top:var(--spacing-7)">
+        <div style="inline-size:200px">
+          <h3 class="text-minor-heading" style="margin:0 0 var(--spacing-3)" data-en="With media" data-ar="مع وسائط">With media</h3>
+          <ul class="pv-classlist">
+            <li class="pv-mono">.card</li>
+            <li class="pv-mono">.card-media</li>
+          </ul>
         </div>
         <div class="card" style="flex:1">
           <div class="card-media" style="block-size:120px;background:var(--color-surface-sunken)"></div>

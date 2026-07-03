@@ -127,6 +127,15 @@ body {
   color: var(--color-text-subtle);
 }
 
+/* Class list — the design-system classes a specimen applies, listed beside it */
+.pv-classlist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--spacing-1);
+}
+
 .pv-section > h3 {
   font-family: var(--font-heading);
   font-weight: var(--weight-subsection-title);

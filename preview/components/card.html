@@ -37,20 +37,14 @@
       <h2 class="text-page-title" data-en="Card" data-ar="بطاقة">Card</h2>
       <p class="pv-lede" data-en="A resting raised surface. Elevation comes from a just-visible border, not a shadow — shadows are reserved for floating layers." data-ar="سطح مرتفع ثابت. الارتفاع يأتي من حدّ واضح بالكاد، لا من ظِل — فالظلال محجوزة للطبقات العائمة.">A resting raised surface. Elevation comes from a just-visible border, not a shadow — shadows are reserved for floating layers.</p>
 
-      <!-- Default — the resting card: raised surface, border-based elevation, one action. -->
-      <h3 data-en="Default" data-ar="افتراضي">Default</h3>
-      <div class="pv-row">
-        <div class="card" style="inline-size:200px">
+      <!-- Both specimens side by side, each filling an equal share of the full-width row. -->
+      <div class="pv-row" style="align-items:stretch;margin-top:var(--spacing-7)">
+        <div class="card" style="flex:1">
           <h3 style="font-family:var(--font-heading);font-weight:var(--weight-subsection-title);font-size:var(--text-context-title);margin:0 0 var(--spacing-3)" data-en="Card title" data-ar="عنوان البطاقة">Card title</h3>
           <p style="margin:0 0 var(--spacing-5);color:var(--color-text-muted)" data-en="Raised surface, border-based elevation, and text that follows the theme." data-ar="سطح مرتفع، ارتفاع باعتماد الحدود، ونص يتبع السمة.">Raised surface, border-based elevation, and text that follows the theme.</p>
           <button class="btn btn-solid" type="button" data-en="Open" data-ar="فتح">Open</button>
         </div>
-      </div>
-
-      <!-- With media — full-bleed region cancelling the card padding (placeholder block). -->
-      <h3 data-en="With media" data-ar="مع وسائط">With media</h3>
-      <div class="pv-row">
-        <div class="card" style="inline-size:200px">
+        <div class="card" style="flex:1">
           <div class="card-media" style="block-size:120px;background:var(--color-surface-sunken)"></div>
           <h3 style="font-family:var(--font-heading);font-weight:var(--weight-subsection-title);font-size:var(--text-context-title);margin:0 0 var(--spacing-3)" data-en="With media" data-ar="مع وسائط">With media</h3>
           <p style="margin:0;color:var(--color-text-muted)" data-en="The media region runs edge to edge and clips to the card's top corners." data-ar="تمتد منطقة الوسائط من حافة إلى حافة وتُقتطع عند زاويتي البطاقة العلويتين.">The media region runs edge to edge and clips to the card's top corners.</p>

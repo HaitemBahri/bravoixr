@@ -1,0 +1,9 @@
+/* Component — Page
+ * The page-canvas combination class: sets the base background and the document
+ * text colour together, so a consumer drops one class on the root element and
+ * gets a legible canvas that theme-flips via the semantic dark overrides. */
+
+.page {
+  background: var(--color-surface-page);
+  color: var(--color-text);
+}

@@ -31,14 +31,12 @@
   margin: 0;
 }
 
-/* Anatomy — optional sections stacked inside a card. Dividers are inset: the
- * card owns the inline padding, sections manage only block rhythm + the rule.
+/* Anatomy — optional sections stacked inside a card. No dividers: sections carry
+ * no visible chrome, only block rhythm separating them from the content region.
  * (No .card-body — the card's own padding already serves the content region.) */
 
 .card-header {
   margin-block-end: var(--spacing-4);
-  padding-block-end: var(--spacing-4);
-  border-block-end: var(--border-width) solid var(--color-border);
 }
 
 .card-footer {
@@ -46,8 +44,6 @@
   gap: var(--spacing-3);
   justify-content: flex-end; /* flow-relative in flex; mirrors under RTL */
   margin-block-start: var(--spacing-4);
-  padding-block-start: var(--spacing-4);
-  border-block-start: var(--border-width) solid var(--color-border);
 }
 
 .card-footer .btn {

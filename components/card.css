@@ -52,7 +52,6 @@
 
 /* Media — a full-bleed region that cancels the card's default padding so
  * artwork runs edge to edge, clipped to the card's top corners. */
-
 .card-media {
   margin-block-start: calc(-1 * var(--spacing-5)); /* cancel card block-start pad */
   margin-inline: calc(-1 * var(--spacing-5)); /* cancel card inline pad */

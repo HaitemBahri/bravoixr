@@ -34,61 +34,26 @@
     </div>
 
     <section class="pv-section">
-      <h2 style="font-family:var(--font-heading);font-weight:var(--weight-page-title);font-size:var(--text-section-title);margin:0 0 var(--spacing-3)" data-en="Card" data-ar="بطاقة">Card</h2>
+      <h2 class="text-page-title" data-en="Card" data-ar="بطاقة">Card</h2>
       <p class="pv-lede" data-en="A resting raised surface. Elevation comes from a just-visible border, not a shadow — shadows are reserved for floating layers." data-ar="سطح مرتفع ثابت. الارتفاع يأتي من حدّ واضح بالكاد، لا من ظِل — فالظلال محجوزة للطبقات العائمة.">A resting raised surface. Elevation comes from a just-visible border, not a shadow — shadows are reserved for floating layers.</p>
 
-      <div class="pv-stack" style="margin-top:var(--spacing-7)">
-        <div class="card">
+      <!-- Default — the resting card: raised surface, border-based elevation, one action. -->
+      <h3 data-en="Default" data-ar="افتراضي">Default</h3>
+      <div class="pv-row">
+        <div class="card" style="inline-size:200px">
           <h3 style="font-family:var(--font-heading);font-weight:var(--weight-subsection-title);font-size:var(--text-context-title);margin:0 0 var(--spacing-3)" data-en="Card title" data-ar="عنوان البطاقة">Card title</h3>
           <p style="margin:0 0 var(--spacing-5);color:var(--color-text-muted)" data-en="Raised surface, border-based elevation, and text that follows the theme." data-ar="سطح مرتفع، ارتفاع باعتماد الحدود، ونص يتبع السمة.">Raised surface, border-based elevation, and text that follows the theme.</p>
           <button class="btn btn-solid" type="button" data-en="Open" data-ar="فتح">Open</button>
         </div>
       </div>
 
-      <!-- Anatomy: header + footer with inset dividers and an actions row. -->
-      <div class="pv-stack" style="margin-top:var(--spacing-7)">
-        <div class="card">
-          <div class="card-header">
-            <h3 style="font-family:var(--font-heading);font-weight:var(--weight-subsection-title);font-size:var(--text-context-title);margin:0" data-en="Payment method" data-ar="طريقة الدفع">Payment method</h3>
-          </div>
-          <p style="margin:0;color:var(--color-text-muted)" data-en="Header and footer are optional sections; the dividers sit inset from the card padding." data-ar="الرأس والتذييل قسمان اختياريان؛ ويظهر الفاصلان مُزاحين عن حاشية البطاقة.">Header and footer are optional sections; the dividers sit inset from the card padding.</p>
-          <div class="card-footer">
-            <button class="btn btn-text" type="button" data-en="Cancel" data-ar="إلغاء">Cancel</button>
-            <button class="btn btn-solid" type="button" data-en="Save" data-ar="حفظ">Save</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Media: full-bleed region cancelling the card padding (placeholder block). -->
-      <div class="pv-stack" style="margin-top:var(--spacing-7)">
-        <div class="card">
+      <!-- With media — full-bleed region cancelling the card padding (placeholder block). -->
+      <h3 data-en="With media" data-ar="مع وسائط">With media</h3>
+      <div class="pv-row">
+        <div class="card" style="inline-size:200px">
           <div class="card-media" style="block-size:120px;background:var(--color-surface-sunken)"></div>
           <h3 style="font-family:var(--font-heading);font-weight:var(--weight-subsection-title);font-size:var(--text-context-title);margin:0 0 var(--spacing-3)" data-en="With media" data-ar="مع وسائط">With media</h3>
           <p style="margin:0;color:var(--color-text-muted)" data-en="The media region runs edge to edge and clips to the card's top corners." data-ar="تمتد منطقة الوسائط من حافة إلى حافة وتُقتطع عند زاويتي البطاقة العلويتين.">The media region runs edge to edge and clips to the card's top corners.</p>
-        </div>
-      </div>
-
-      <!-- Density: compact vs roomy padding. -->
-      <div class="pv-row" style="margin-top:var(--spacing-7)">
-        <div class="card card-compact" style="inline-size:200px">
-          <h3 style="font-family:var(--font-heading);font-weight:var(--weight-subsection-title);font-size:var(--text-context-title);margin:0 0 var(--spacing-2)" data-en="Compact" data-ar="مضغوط">Compact</h3>
-          <p style="margin:0;color:var(--color-text-muted)" data-en="Denser padding for lists." data-ar="حاشية أضيق للقوائم.">Denser padding for lists.</p>
-        </div>
-        <div class="card card-roomy" style="inline-size:200px">
-          <h3 style="font-family:var(--font-heading);font-weight:var(--weight-subsection-title);font-size:var(--text-context-title);margin:0 0 var(--spacing-2)" data-en="Roomy" data-ar="فسيح">Roomy</h3>
-          <p style="margin:0;color:var(--color-text-muted)" data-en="Generous padding for feature cards." data-ar="حاشية سخية للبطاقات المميّزة.">Generous padding for feature cards.</p>
-        </div>
-      </div>
-
-      <!-- State: selected vs default border. -->
-      <div class="pv-row" style="margin-top:var(--spacing-7)">
-        <div class="card card-selected" style="inline-size:200px">
-          <h3 style="font-family:var(--font-heading);font-weight:var(--weight-subsection-title);font-size:var(--text-context-title);margin:0 0 var(--spacing-2)" data-en="Selected" data-ar="محدَّد">Selected</h3>
-          <p style="margin:0;color:var(--color-text-muted)" data-en="Border shifts to the focus accent." data-ar="يتحوّل الحدّ إلى لون التركيز.">Border shifts to the focus accent.</p>
-        </div>
-        <div class="card" style="inline-size:200px">
-          <h3 style="font-family:var(--font-heading);font-weight:var(--weight-subsection-title);font-size:var(--text-context-title);margin:0 0 var(--spacing-2)" data-en="Default" data-ar="افتراضي">Default</h3>
-          <p style="margin:0;color:var(--color-text-muted)" data-en="Resting border for comparison." data-ar="الحدّ الافتراضي للمقارنة.">Resting border for comparison.</p>
         </div>
       </div>
     </section>

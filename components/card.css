@@ -50,20 +50,3 @@
   inline-size: 100%;
   block-size: auto;
 }
-
-/* Density — override the resting padding for denser lists or feature cards. */
-
-.card-compact {
-  padding: var(--spacing-3);
-}
-
-.card-roomy {
-  padding: var(--spacing-7);
-}
-
-/* State — selected card: border shifts to the focus accent (later source order
- * overrides the .card border shorthand at equal specificity). */
-
-.card-selected {
-  border-color: var(--color-border-focus);
-}

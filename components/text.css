@@ -1,7 +1,8 @@
 /* Component — Text
  * Combination classes bundling each type role (family + size + weight + leading,
- * plus tracking). Sizes ride the responsive elevator and families/leading/tracking
- * ride the script switch automatically via the semantic layer — no conditionals here. */
+ * plus tracking), followed by color-only text utilities that compose with them.
+ * Sizes ride the responsive elevator and families/leading/tracking ride the script
+ * switch automatically via the semantic layer — no conditionals here. */
 
 /* Headings — heading family, display leading + tracking */
 .text-page-title {
@@ -98,4 +99,19 @@
   font-family: var(--font-code);
   font-size: var(--text-code-label);
   line-height: var(--leading-code-block);
+}
+
+/* Text color — color-only utilities exposing the safe foreground trio, composed with the
+ * type-role classes above (e.g. .text-page-description + .text-color-description). All three
+ * theme automatically via the semantic dark overrides — no conditionals here. */
+.text-color-normal {
+  color: var(--color-text);
+}
+
+.text-color-description {
+  color: var(--color-text-muted);
+}
+
+.text-color-helper {
+  color: var(--color-text-subtle);
 }

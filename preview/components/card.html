@@ -37,20 +37,46 @@
       <h2 class="text-page-title" data-en="Card" data-ar="بطاقة">Card</h2>
       <p class="pv-lede" data-en="A resting raised surface. Elevation comes from a just-visible border, not a shadow — shadows are reserved for floating layers." data-ar="سطح مرتفع ثابت. الارتفاع يأتي من حدّ واضح بالكاد، لا من ظِل — فالظلال محجوزة للطبقات العائمة.">A resting raised surface. Elevation comes from a just-visible border, not a shadow — shadows are reserved for floating layers.</p>
 
-      <!-- One row per specimen: name + the classes it applies on the left, live preview on the right. -->
+      <!-- One row per specimen: name + the classes it applies on the left, three anatomy
+           variants on the right (title+description → +footer → +header). -->
       <div class="pv-row" style="align-items:flex-start;margin-top:var(--spacing-7)">
         <div style="inline-size:200px">
           <h3 class="text-minor-heading" style="margin:0 0 var(--spacing-3)" data-en="Default" data-ar="افتراضي">Default</h3>
           <ul class="pv-classlist">
             <li class="pv-mono">.card</li>
+            <li class="pv-mono">.card-header</li>
+            <li class="pv-mono">.card-title</li>
+            <li class="pv-mono">.card-description</li>
+            <li class="pv-mono">.card-footer</li>
             <li class="pv-mono">.btn</li>
             <li class="pv-mono">.btn-solid</li>
           </ul>
         </div>
-        <div class="card" style="flex:1">
-          <h3 style="font-family:var(--font-heading);font-weight:var(--weight-subsection-title);font-size:var(--text-context-title);margin:0 0 var(--spacing-3)" data-en="Card title" data-ar="عنوان البطاقة">Card title</h3>
-          <p style="margin:0 0 var(--spacing-5);color:var(--color-text-muted)" data-en="Raised surface, border-based elevation, and text that follows the theme." data-ar="سطح مرتفع، ارتفاع باعتماد الحدود، ونص يتبع السمة.">Raised surface, border-based elevation, and text that follows the theme.</p>
-          <button class="btn btn-solid" type="button" data-en="Open" data-ar="فتح">Open</button>
+        <div style="display:flex;flex-wrap:wrap;gap:var(--spacing-5);flex:1;align-items:flex-start">
+          <!-- Title + description -->
+          <div class="card" style="flex:1;min-inline-size:200px">
+            <h3 class="card-title" data-en="Card title" data-ar="عنوان البطاقة">Card title</h3>
+            <p class="card-description" data-en="Raised surface, border-based elevation, and text that follows the theme." data-ar="سطح مرتفع، ارتفاع باعتماد الحدود، ونص يتبع السمة.">Raised surface, border-based elevation, and text that follows the theme.</p>
+          </div>
+          <!-- Title + description + footer -->
+          <div class="card" style="flex:1;min-inline-size:200px">
+            <h3 class="card-title" data-en="Card title" data-ar="عنوان البطاقة">Card title</h3>
+            <p class="card-description" data-en="Raised surface, border-based elevation, and text that follows the theme." data-ar="سطح مرتفع، ارتفاع باعتماد الحدود، ونص يتبع السمة.">Raised surface, border-based elevation, and text that follows the theme.</p>
+            <div class="card-footer">
+              <button class="btn btn-solid" type="button" data-en="Open" data-ar="فتح">Open</button>
+            </div>
+          </div>
+          <!-- Header + title + description + footer -->
+          <div class="card" style="flex:1;min-inline-size:200px">
+            <div class="card-header">
+              <span class="text-code-label">&lt;insert header&gt;</span>
+            </div>
+            <h3 class="card-title" data-en="Card title" data-ar="عنوان البطاقة">Card title</h3>
+            <p class="card-description" data-en="Raised surface, border-based elevation, and text that follows the theme." data-ar="سطح مرتفع، ارتفاع باعتماد الحدود، ونص يتبع السمة.">Raised surface, border-based elevation, and text that follows the theme.</p>
+            <div class="card-footer">
+              <button class="btn btn-solid" type="button" data-en="Open" data-ar="فتح">Open</button>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -60,12 +86,40 @@
           <ul class="pv-classlist">
             <li class="pv-mono">.card</li>
             <li class="pv-mono">.card-media</li>
+            <li class="pv-mono">.card-header</li>
+            <li class="pv-mono">.card-title</li>
+            <li class="pv-mono">.card-description</li>
+            <li class="pv-mono">.card-footer</li>
           </ul>
         </div>
-        <div class="card" style="flex:1">
-          <div class="card-media" style="block-size:120px;background:var(--color-surface-sunken)"></div>
-          <h3 style="font-family:var(--font-heading);font-weight:var(--weight-subsection-title);font-size:var(--text-context-title);margin:0 0 var(--spacing-3)" data-en="With media" data-ar="مع وسائط">With media</h3>
-          <p style="margin:0;color:var(--color-text-muted)" data-en="The media region runs edge to edge and clips to the card's top corners." data-ar="تمتد منطقة الوسائط من حافة إلى حافة وتُقتطع عند زاويتي البطاقة العلويتين.">The media region runs edge to edge and clips to the card's top corners.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:var(--spacing-5);flex:1;align-items:flex-start">
+          <!-- Media + title + description -->
+          <div class="card" style="flex:1;min-inline-size:200px">
+            <div class="card-media" style="block-size:120px;background:var(--color-surface-sunken)"></div>
+            <h3 class="card-title" data-en="Card title" data-ar="عنوان البطاقة">Card title</h3>
+            <p class="card-description" data-en="The media region runs edge to edge and clips to the card's top corners." data-ar="تمتد منطقة الوسائط من حافة إلى حافة وتُقتطع عند زاويتي البطاقة العلويتين.">The media region runs edge to edge and clips to the card's top corners.</p>
+          </div>
+          <!-- Media + title + description + footer -->
+          <div class="card" style="flex:1;min-inline-size:200px">
+            <div class="card-media" style="block-size:120px;background:var(--color-surface-sunken)"></div>
+            <h3 class="card-title" data-en="Card title" data-ar="عنوان البطاقة">Card title</h3>
+            <p class="card-description" data-en="The media region runs edge to edge and clips to the card's top corners." data-ar="تمتد منطقة الوسائط من حافة إلى حافة وتُقتطع عند زاويتي البطاقة العلويتين.">The media region runs edge to edge and clips to the card's top corners.</p>
+            <div class="card-footer">
+              <button class="btn btn-solid" type="button" data-en="Open" data-ar="فتح">Open</button>
+            </div>
+          </div>
+          <!-- Media + header (underneath the image) + title + description + footer -->
+          <div class="card" style="flex:1;min-inline-size:200px">
+            <div class="card-media" style="block-size:120px;background:var(--color-surface-sunken)"></div>
+            <div class="card-header">
+              <span class="text-code-label">&lt;insert header&gt;</span>
+            </div>
+            <h3 class="card-title" data-en="Card title" data-ar="عنوان البطاقة">Card title</h3>
+            <p class="card-description" data-en="The media region runs edge to edge and clips to the card's top corners." data-ar="تمتد منطقة الوسائط من حافة إلى حافة وتُقتطع عند زاويتي البطاقة العلويتين.">The media region runs edge to edge and clips to the card's top corners.</p>
+            <div class="card-footer">
+              <button class="btn btn-solid" type="button" data-en="Open" data-ar="فتح">Open</button>
+            </div>
+          </div>
         </div>
       </div>
     </section>

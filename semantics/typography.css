@@ -14,7 +14,9 @@
   --text-section-title: var(--text-h2);
   --text-subsection-title: var(--text-h3);
   --text-minor-heading: var(--text-h4);
+  --text-project-title: var(--text-body1);
   --text-context-title: var(--text-body1);
+  --text-page-description: var(--text-body1);
   --text-body: var(--text-body3);
   --text-label: var(--text-body4);
   --text-helper: var(--text-body5);
@@ -26,7 +28,9 @@
   --weight-section-title: var(--weight-bold);
   --weight-subsection-title: var(--weight-semibold);
   --weight-minor-heading: var(--weight-semibold);
+  --weight-project-title: var(--weight-semibold);
   --weight-context-title: var(--weight-regular);
+  --weight-page-description: var(--weight-light);
   --weight-body: var(--weight-light);
   --weight-label: var(--weight-light);
   --weight-helper: var(--weight-extralight);
@@ -72,14 +76,17 @@
  * --breakpoint-tablet (768px) and --breakpoint-desktop (1024px) in primitives/layout.css, offset by
  * 0.02px to sit just below each min-width boundary. Bands: mobile <768, tablet 768–1023, desktop ≥1024. */
 
-/* Tablet (<1024): headings drop one step; the context title steps once to body2 and holds below. */
+/* Tablet (<1024): headings drop one step; the body-scale page-structure roles (project title,
+ * context title, page description) step once to body2 and hold below. */
 @media (max-width: 1023.98px) {
   :root {
     --text-page-title: var(--text-h2);
     --text-section-title: var(--text-h3);
     --text-subsection-title: var(--text-h4);
     --text-minor-heading: var(--text-h5);
+    --text-project-title: var(--text-body2);
     --text-context-title: var(--text-body2);
+    --text-page-description: var(--text-body2);
   }
 }
 

@@ -48,11 +48,14 @@ body {
   margin-block-end: var(--spacing-10);
 }
 
-.pv-section > h2 {
-  font-family: var(--font-heading);
-  font-weight: var(--weight-section-title);
-  font-size: var(--text-section-title);
+/* Margin-only rules for the headings that now carry system text classes on the
+ * main page (type comes from the class; the chrome just owns the block rhythm). */
+.pv-section > .text-page-title {
   margin-block: 0 var(--spacing-5);
+}
+
+.pv-section > .text-section-title {
+  margin-block: 0 var(--spacing-4);
 }
 
 .pv-lede {
@@ -68,32 +71,16 @@ body {
   margin-block-start: var(--spacing-7);
 }
 
-.pv-hub-card {
-  display: block;
-  padding: var(--spacing-6);
-  border: var(--border-width) solid var(--color-border);
-  border-radius: var(--radius-card);
-  background: var(--color-surface-raised);
-  color: inherit;
-  text-decoration: none;
-  transition: border-color var(--duration-hover) var(--ease-default);
+/* Hub cards are real .card components; this wrapper right-aligns the square nav
+ * button (inline-level) and mirrors the arrow glyph under RTL. */
+.pv-card-actions {
+  margin-block-start: var(--spacing-4);
+  text-align: end;
 }
 
-.pv-hub-card:hover {
-  border-color: var(--color-border-focus);
-}
-
-.pv-hub-card h3 {
-  font-family: var(--font-heading);
-  font-weight: var(--weight-subsection-title);
-  font-size: var(--text-context-title);
-  margin-block: 0 var(--spacing-3);
-}
-
-.pv-hub-card p {
-  margin: 0;
-  color: var(--color-text-muted);
-  font-size: var(--text-label);
+[dir="rtl"] .pv-card-actions .pv-symbol {
+  display: inline-block;
+  transform: scaleX(-1);
 }
 
 /* Demo row — used by component pages to lay specimens out */

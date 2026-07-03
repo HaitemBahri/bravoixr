@@ -42,6 +42,9 @@
   }
 
   document.addEventListener('click', function (e) {
+    var nav = e.target.closest('[data-href]');
+    if (nav) { window.location.href = nav.getAttribute('data-href'); return; }
+
     var el = e.target.closest('[data-toggle]');
     if (!el) return;
     if (el.getAttribute('data-toggle') === 'theme') {

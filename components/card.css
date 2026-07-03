@@ -10,6 +10,27 @@
   color: var(--color-text);
 }
 
+/* Title + description — the card's text anatomy. Title takes heading family at
+ * context-title size / subsection weight; description is quiet muted body text. */
+
+.card-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-context-title);
+  font-weight: var(--weight-subsection-title);
+  line-height: var(--leading-display);
+  letter-spacing: var(--tracking-display);
+  margin-block: 0 var(--spacing-3);
+}
+
+.card-description {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  font-weight: var(--weight-body);
+  line-height: var(--leading-prose);
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
 /* Anatomy — optional sections stacked inside a card. Dividers are inset: the
  * card owns the inline padding, sections manage only block rhythm + the rule.
  * (No .card-body — the card's own padding already serves the content region.) */

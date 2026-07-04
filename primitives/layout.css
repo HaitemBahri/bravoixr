@@ -20,7 +20,7 @@
 
   /* Sizing */
   --size-control: 40px;
-  --size-container: 1280px;
+  --size-card-min: 220px;
 
   /* Radius — md default for controls, lg for cards */
   --radius-none: 0;
@@ -48,7 +48,8 @@
   --z-popover: 50;
   --z-toast: 60;
 
-  /* Breakpoints — two thresholds splitting mobile / tablet / desktop */
+  /* Breakpoints — thresholds splitting mobile / tablet / desktop, plus the max container tier */
   --breakpoint-tablet: 768px;
   --breakpoint-desktop: 1024px;
+  --breakpoint-max: 1280px;
 }

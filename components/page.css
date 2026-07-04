@@ -17,3 +17,43 @@
 .page *::after {
   box-sizing: inherit;
 }
+
+/* The content column — a centered, breakpoint-snapped max-width with the page's
+ * block/inline padding. Width tier is switched in semantics via --container-max. */
+.page-body {
+  max-inline-size: var(--container-max);
+  margin-inline: auto;
+  padding: var(--spacing-8) var(--spacing-6) var(--spacing-12);
+}
+
+/* The page's top bar — wordmark at the inline-start, controls at the inline-end
+ * (space-between across exactly two children), with the block gap below it. */
+.page-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-5);
+  margin-block-end: var(--spacing-8);
+}
+
+/* The topbar's control cluster — a flex row grouping the toggle buttons with a
+ * small gap. Sits as the inline-end child of .page-topbar. */
+.page-controls {
+  display: flex;
+  gap: var(--spacing-3);
+}
+
+/* A top-level section of the page canvas — carries the block rhythm that
+ * separates one section from the next. */
+.page-section {
+  margin-block-end: var(--spacing-10);
+}
+
+/* A responsive card grid — columns auto-fill from the card minimum, with the
+ * block gap above it separating the grid from its section heading. */
+.page-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--card-min), 1fr));
+  gap: var(--spacing-5);
+  margin-block-start: var(--spacing-7);
+}

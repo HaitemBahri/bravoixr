@@ -23,6 +23,9 @@
   --text-code-block: var(--text-code);
   --text-code-label: var(--text-code2);
 
+  /* Measure roles — max line length */
+  --measure-page-description: var(--measure-prose);
+
   /* Weight roles (per typography.md role map) */
   --weight-page-title: var(--weight-bold);
   --weight-section-title: var(--weight-bold);

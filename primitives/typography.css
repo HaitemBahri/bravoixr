@@ -46,4 +46,7 @@
   --tracking-heading: -0.02em;
   --tracking-caps: 0.06em;
   --tracking-normal: 0;
+
+  /* Measure — max line length for readable prose */
+  --measure-prose: 60ch;
 }

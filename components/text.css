@@ -37,6 +37,7 @@
   font-weight: var(--weight-minor-heading);
   line-height: var(--leading-display);
   letter-spacing: var(--tracking-display);
+  margin-block: var(--spacing-6) var(--spacing-4);
 }
 
 /* Project title — the top-bar wordmark: heading anatomy at body scale for a crisp brand mark */

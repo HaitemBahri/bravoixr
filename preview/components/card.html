@@ -21,35 +21,34 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=IBM+Plex+Sans+Arabic:wght@200;300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap">
 
   <link rel="stylesheet" href="../../index.css">
-  <link rel="stylesheet" href="../preview.css">
 </head>
-<body>
-  <main class="pv-main">
-    <div class="pv-topbar">
-      <span class="text-context-title">bravoixr</span>
-      <div class="pv-controls">
-        <button class="btn btn-solid btn-square" type="button" data-toggle="theme" aria-label="Toggle theme"><span class="pv-symbol" style="font-size:var(--icon-md)">contrast</span></button>
-        <button class="btn btn-solid btn-square" type="button" data-toggle="lang" aria-label="Toggle language"><span class="pv-symbol" style="font-size:var(--icon-md)">translate</span></button>
+<body class="page text-body">
+  <main style="max-inline-size:var(--container-max);margin-inline:auto;padding:var(--spacing-8) var(--spacing-6) var(--spacing-12)">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:var(--spacing-5);margin-block-end:var(--spacing-8)">
+      <span class="text-project-title">bravoixr</span>
+      <div style="display:flex;gap:var(--spacing-3)">
+        <button class="btn btn-solid btn-square" type="button" data-toggle="theme" aria-label="Toggle theme"><span class="icon icon-md">contrast</span></button>
+        <button class="btn btn-solid btn-square" type="button" data-toggle="lang" aria-label="Toggle language"><span class="icon icon-md">translate</span></button>
       </div>
     </div>
 
-    <section class="pv-section">
-      <h2 class="text-page-title" data-en="Card" data-ar="بطاقة">Card</h2>
-      <p class="pv-lede" data-en="A resting raised surface. Elevation comes from a just-visible border, not a shadow — shadows are reserved for floating layers." data-ar="سطح مرتفع ثابت. الارتفاع يأتي من حدّ واضح بالكاد، لا من ظِل — فالظلال محجوزة للطبقات العائمة.">A resting raised surface. Elevation comes from a just-visible border, not a shadow — shadows are reserved for floating layers.</p>
+    <section style="margin-block-end:var(--spacing-10)">
+      <h2 class="text-page-title" style="margin-block:0 var(--spacing-5)" data-en="Card" data-ar="بطاقة">Card</h2>
+      <p class="text-page-description text-color-description" style="max-inline-size:60ch" data-en="A resting raised surface. Elevation comes from a just-visible border, not a shadow — shadows are reserved for floating layers." data-ar="سطح مرتفع ثابت. الارتفاع يأتي من حدّ واضح بالكاد، لا من ظِل — فالظلال محجوزة للطبقات العائمة.">A resting raised surface. Elevation comes from a just-visible border, not a shadow — shadows are reserved for floating layers.</p>
 
       <!-- One row per specimen: name + the classes it applies on the left, three anatomy
            variants on the right (title+description → +footer → +header). -->
-      <div class="pv-row" style="align-items:flex-start;margin-top:var(--spacing-7)">
+      <div style="display:flex;flex-wrap:wrap;gap:var(--spacing-5);align-items:flex-start;margin-block-start:var(--spacing-7)">
         <div style="inline-size:200px">
           <h3 class="text-minor-heading" style="margin:0 0 var(--spacing-3)" data-en="Default" data-ar="افتراضي">Default</h3>
-          <ul class="pv-classlist">
-            <li class="pv-mono">.card</li>
-            <li class="pv-mono">.card-header</li>
-            <li class="pv-mono">.card-title</li>
-            <li class="pv-mono">.card-description</li>
-            <li class="pv-mono">.card-footer</li>
-            <li class="pv-mono">.btn</li>
-            <li class="pv-mono">.btn-solid</li>
+          <ul style="list-style:none;margin:0;padding:0;display:grid;gap:var(--spacing-1)">
+            <li class="text-code-label text-color-helper">.card</li>
+            <li class="text-code-label text-color-helper">.card-header</li>
+            <li class="text-code-label text-color-helper">.card-title</li>
+            <li class="text-code-label text-color-helper">.card-description</li>
+            <li class="text-code-label text-color-helper">.card-footer</li>
+            <li class="text-code-label text-color-helper">.btn</li>
+            <li class="text-code-label text-color-helper">.btn-solid</li>
           </ul>
         </div>
         <div style="display:flex;flex-wrap:wrap;gap:var(--spacing-5);flex:1;align-items:flex-start">
@@ -80,16 +79,16 @@
         </div>
       </div>
 
-      <div class="pv-row" style="align-items:flex-start;margin-top:var(--spacing-7)">
+      <div style="display:flex;flex-wrap:wrap;gap:var(--spacing-5);align-items:flex-start;margin-block-start:var(--spacing-7)">
         <div style="inline-size:200px">
           <h3 class="text-minor-heading" style="margin:0 0 var(--spacing-3)" data-en="With media" data-ar="مع وسائط">With media</h3>
-          <ul class="pv-classlist">
-            <li class="pv-mono">.card</li>
-            <li class="pv-mono">.card-media</li>
-            <li class="pv-mono">.card-header</li>
-            <li class="pv-mono">.card-title</li>
-            <li class="pv-mono">.card-description</li>
-            <li class="pv-mono">.card-footer</li>
+          <ul style="list-style:none;margin:0;padding:0;display:grid;gap:var(--spacing-1)">
+            <li class="text-code-label text-color-helper">.card</li>
+            <li class="text-code-label text-color-helper">.card-media</li>
+            <li class="text-code-label text-color-helper">.card-header</li>
+            <li class="text-code-label text-color-helper">.card-title</li>
+            <li class="text-code-label text-color-helper">.card-description</li>
+            <li class="text-code-label text-color-helper">.card-footer</li>
           </ul>
         </div>
         <div style="display:flex;flex-wrap:wrap;gap:var(--spacing-5);flex:1;align-items:flex-start">

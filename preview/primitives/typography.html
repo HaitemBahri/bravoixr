@@ -21,137 +21,136 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=IBM+Plex+Sans+Arabic:wght@200;300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap">
 
   <link rel="stylesheet" href="../../index.css">
-  <link rel="stylesheet" href="../preview.css">
 </head>
-<body>
-  <main class="pv-main">
-    <div class="pv-topbar">
-      <span class="text-context-title">bravoixr</span>
-      <div class="pv-controls">
-        <button class="btn btn-solid btn-square" type="button" data-toggle="theme" aria-label="Toggle theme"><span class="pv-symbol" style="font-size:var(--icon-md)">contrast</span></button>
-        <button class="btn btn-solid btn-square" type="button" data-toggle="lang" aria-label="Toggle language"><span class="pv-symbol" style="font-size:var(--icon-md)">translate</span></button>
+<body class="page text-body">
+  <main style="max-inline-size:var(--container-max);margin-inline:auto;padding:var(--spacing-8) var(--spacing-6) var(--spacing-12)">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:var(--spacing-5);margin-block-end:var(--spacing-8)">
+      <span class="text-project-title">bravoixr</span>
+      <div style="display:flex;gap:var(--spacing-3)">
+        <button class="btn btn-solid btn-square" type="button" data-toggle="theme" aria-label="Toggle theme"><span class="icon icon-md">contrast</span></button>
+        <button class="btn btn-solid btn-square" type="button" data-toggle="lang" aria-label="Toggle language"><span class="icon icon-md">translate</span></button>
       </div>
     </div>
 
-    <h2 style="font-family:var(--font-heading);font-weight:var(--weight-bold);font-size:var(--text-section-title);margin:0 0 var(--spacing-6)" data-en="Typography" data-ar="الطباعة">Typography</h2>
+    <h2 class="text-section-title" style="margin:0 0 var(--spacing-6)" data-en="Typography" data-ar="الطباعة">Typography</h2>
 
-    <section class="pv-section">
-      <h3 data-en="Font stacks" data-ar="عائلات الخطوط">Font stacks</h3>
-      <div class="pv-type-row">
-        <div class="pv-type-meta"><strong>latin</strong><span class="pv-mono">--font-latin</span></div>
-        <div class="pv-type-specimen" style="font-family:var(--font-latin);font-size:var(--text-h6)">Modern &amp; confident</div>
+    <section style="margin-block-end:var(--spacing-10)">
+      <h3 class="text-minor-heading" style="margin-block:var(--spacing-6) var(--spacing-4)" data-en="Font stacks" data-ar="عائلات الخطوط">Font stacks</h3>
+      <div style="display:flex;align-items:baseline;gap:var(--spacing-6);padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)">
+        <div style="flex:0 0 180px"><strong style="display:block;font-weight:var(--weight-subsection-title)">latin</strong><span class="text-code-label text-color-helper">--font-latin</span></div>
+        <div style="min-inline-size:0;font-family:var(--font-latin);font-size:var(--text-h6)">Modern &amp; confident</div>
       </div>
-      <div class="pv-type-row">
-        <div class="pv-type-meta"><strong>arabic</strong><span class="pv-mono">--font-arabic</span></div>
-        <div class="pv-type-specimen" style="font-family:var(--font-arabic);font-size:var(--text-h6)">حديث وواثق</div>
+      <div style="display:flex;align-items:baseline;gap:var(--spacing-6);padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)">
+        <div style="flex:0 0 180px"><strong style="display:block;font-weight:var(--weight-subsection-title)">arabic</strong><span class="text-code-label text-color-helper">--font-arabic</span></div>
+        <div style="min-inline-size:0;font-family:var(--font-arabic);font-size:var(--text-h6)">حديث وواثق</div>
       </div>
-      <div class="pv-type-row">
-        <div class="pv-type-meta"><strong>mono</strong><span class="pv-mono">--font-mono</span></div>
-        <div class="pv-type-specimen" style="font-family:var(--font-mono);font-size:var(--text-body3)">const token = var(--blue-600);</div>
+      <div style="display:flex;align-items:baseline;gap:var(--spacing-6);padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)">
+        <div style="flex:0 0 180px"><strong style="display:block;font-weight:var(--weight-subsection-title)">mono</strong><span class="text-code-label text-color-helper">--font-mono</span></div>
+        <div style="min-inline-size:0;font-family:var(--font-mono);font-size:var(--text-body3)">const token = var(--blue-600);</div>
       </div>
     </section>
 
-    <section class="pv-section">
-      <h3 data-en="Heading scale" data-ar="مقياس العناوين">Heading scale</h3>
-      <div class="pv-type-row">
-        <div class="pv-type-meta"><strong>h1 — 84px</strong><span class="pv-mono">--text-h1</span></div>
-        <div class="pv-type-specimen" style="font-family:var(--font-heading);font-size:var(--text-h1);font-weight:var(--weight-bold);line-height:var(--leading-heading);letter-spacing:var(--tracking-heading)" data-en="Heading" data-ar="عنوان">Heading</div>
+    <section style="margin-block-end:var(--spacing-10)">
+      <h3 class="text-minor-heading" style="margin-block:var(--spacing-6) var(--spacing-4)" data-en="Heading scale" data-ar="مقياس العناوين">Heading scale</h3>
+      <div style="display:flex;align-items:baseline;gap:var(--spacing-6);padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)">
+        <div style="flex:0 0 180px"><strong style="display:block;font-weight:var(--weight-subsection-title)">h1 — 84px</strong><span class="text-code-label text-color-helper">--text-h1</span></div>
+        <div style="min-inline-size:0;font-family:var(--font-heading);font-size:var(--text-h1);font-weight:var(--weight-bold);line-height:var(--leading-heading);letter-spacing:var(--tracking-heading)" data-en="Heading" data-ar="عنوان">Heading</div>
       </div>
-      <div class="pv-type-row">
-        <div class="pv-type-meta"><strong>h2 — 65px</strong><span class="pv-mono">--text-h2</span></div>
-        <div class="pv-type-specimen" style="font-family:var(--font-heading);font-size:var(--text-h2);font-weight:var(--weight-bold);line-height:var(--leading-heading);letter-spacing:var(--tracking-heading)" data-en="Heading" data-ar="عنوان">Heading</div>
+      <div style="display:flex;align-items:baseline;gap:var(--spacing-6);padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)">
+        <div style="flex:0 0 180px"><strong style="display:block;font-weight:var(--weight-subsection-title)">h2 — 65px</strong><span class="text-code-label text-color-helper">--text-h2</span></div>
+        <div style="min-inline-size:0;font-family:var(--font-heading);font-size:var(--text-h2);font-weight:var(--weight-bold);line-height:var(--leading-heading);letter-spacing:var(--tracking-heading)" data-en="Heading" data-ar="عنوان">Heading</div>
       </div>
-      <div class="pv-type-row">
-        <div class="pv-type-meta"><strong>h3 — 51px</strong><span class="pv-mono">--text-h3</span></div>
-        <div class="pv-type-specimen" style="font-family:var(--font-heading);font-size:var(--text-h3);font-weight:var(--weight-semibold);line-height:var(--leading-heading)" data-en="Heading" data-ar="عنوان">Heading</div>
+      <div style="display:flex;align-items:baseline;gap:var(--spacing-6);padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)">
+        <div style="flex:0 0 180px"><strong style="display:block;font-weight:var(--weight-subsection-title)">h3 — 51px</strong><span class="text-code-label text-color-helper">--text-h3</span></div>
+        <div style="min-inline-size:0;font-family:var(--font-heading);font-size:var(--text-h3);font-weight:var(--weight-semibold);line-height:var(--leading-heading)" data-en="Heading" data-ar="عنوان">Heading</div>
       </div>
-      <div class="pv-type-row">
-        <div class="pv-type-meta"><strong>h4 — 40px</strong><span class="pv-mono">--text-h4</span></div>
-        <div class="pv-type-specimen" style="font-family:var(--font-heading);font-size:var(--text-h4);font-weight:var(--weight-semibold);line-height:var(--leading-heading)" data-en="Heading" data-ar="عنوان">Heading</div>
+      <div style="display:flex;align-items:baseline;gap:var(--spacing-6);padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)">
+        <div style="flex:0 0 180px"><strong style="display:block;font-weight:var(--weight-subsection-title)">h4 — 40px</strong><span class="text-code-label text-color-helper">--text-h4</span></div>
+        <div style="min-inline-size:0;font-family:var(--font-heading);font-size:var(--text-h4);font-weight:var(--weight-semibold);line-height:var(--leading-heading)" data-en="Heading" data-ar="عنوان">Heading</div>
       </div>
-      <div class="pv-type-row">
-        <div class="pv-type-meta"><strong>h5 — 31px</strong><span class="pv-mono">--text-h5</span></div>
-        <div class="pv-type-specimen" style="font-family:var(--font-heading);font-size:var(--text-h5);font-weight:var(--weight-medium);line-height:var(--leading-heading)" data-en="Heading" data-ar="عنوان">Heading</div>
+      <div style="display:flex;align-items:baseline;gap:var(--spacing-6);padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)">
+        <div style="flex:0 0 180px"><strong style="display:block;font-weight:var(--weight-subsection-title)">h5 — 31px</strong><span class="text-code-label text-color-helper">--text-h5</span></div>
+        <div style="min-inline-size:0;font-family:var(--font-heading);font-size:var(--text-h5);font-weight:var(--weight-medium);line-height:var(--leading-heading)" data-en="Heading" data-ar="عنوان">Heading</div>
       </div>
-      <div class="pv-type-row">
-        <div class="pv-type-meta"><strong>h6 — 24px</strong><span class="pv-mono">--text-h6</span></div>
-        <div class="pv-type-specimen" style="font-family:var(--font-heading);font-size:var(--text-h6);font-weight:var(--weight-medium);line-height:var(--leading-heading)" data-en="Heading" data-ar="عنوان">Heading</div>
-      </div>
-    </section>
-
-    <section class="pv-section">
-      <h3 data-en="Body scale" data-ar="مقياس النص">Body scale</h3>
-      <div class="pv-type-row">
-        <div class="pv-type-meta"><strong>body1 — 20px</strong><span class="pv-mono">--text-body1</span></div>
-        <div class="pv-type-specimen" style="font-family:var(--font-body);font-size:var(--text-body1);line-height:var(--leading-body)" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض حجم النص ومدى وضوحه.">The quick brown fox jumps over the lazy dog.</div>
-      </div>
-      <div class="pv-type-row">
-        <div class="pv-type-meta"><strong>body2 — 18px</strong><span class="pv-mono">--text-body2</span></div>
-        <div class="pv-type-specimen" style="font-family:var(--font-body);font-size:var(--text-body2);line-height:var(--leading-body)" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض حجم النص ومدى وضوحه.">The quick brown fox jumps over the lazy dog.</div>
-      </div>
-      <div class="pv-type-row">
-        <div class="pv-type-meta"><strong>body3 — 16px (default)</strong><span class="pv-mono">--text-body3</span></div>
-        <div class="pv-type-specimen" style="font-family:var(--font-body);font-size:var(--text-body3);line-height:var(--leading-body)" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض حجم النص ومدى وضوحه.">The quick brown fox jumps over the lazy dog.</div>
-      </div>
-      <div class="pv-type-row">
-        <div class="pv-type-meta"><strong>body4 — 14px</strong><span class="pv-mono">--text-body4</span></div>
-        <div class="pv-type-specimen" style="font-family:var(--font-body);font-size:var(--text-body4);line-height:var(--leading-body)" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض حجم النص ومدى وضوحه.">The quick brown fox jumps over the lazy dog.</div>
-      </div>
-      <div class="pv-type-row">
-        <div class="pv-type-meta"><strong>body5 — 12px</strong><span class="pv-mono">--text-body5</span></div>
-        <div class="pv-type-specimen" style="font-family:var(--font-body);font-size:var(--text-body5);line-height:var(--leading-body)" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض حجم النص ومدى وضوحه.">The quick brown fox jumps over the lazy dog.</div>
-      </div>
-      <div class="pv-type-row">
-        <div class="pv-type-meta"><strong>code — 14px</strong><span class="pv-mono">--text-code</span></div>
-        <div class="pv-type-specimen" style="font-family:var(--font-mono);font-size:var(--text-code);line-height:var(--leading-code)">--color-primary: var(--blue-600);</div>
-      </div>
-      <div class="pv-type-row">
-        <div class="pv-type-meta"><strong>code2 — 12px</strong><span class="pv-mono">--text-code2</span></div>
-        <div class="pv-type-specimen" style="font-family:var(--font-mono);font-size:var(--text-code2);line-height:var(--leading-code)">--color-primary: var(--blue-600);</div>
+      <div style="display:flex;align-items:baseline;gap:var(--spacing-6);padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)">
+        <div style="flex:0 0 180px"><strong style="display:block;font-weight:var(--weight-subsection-title)">h6 — 24px</strong><span class="text-code-label text-color-helper">--text-h6</span></div>
+        <div style="min-inline-size:0;font-family:var(--font-heading);font-size:var(--text-h6);font-weight:var(--weight-medium);line-height:var(--leading-heading)" data-en="Heading" data-ar="عنوان">Heading</div>
       </div>
     </section>
 
-    <section class="pv-section">
-      <h3 data-en="Weights" data-ar="الأوزان">Weights</h3>
-      <div class="pv-type-row">
-        <div class="pv-type-meta"><strong>extralight — 200</strong><span class="pv-mono">--weight-extralight</span></div>
-        <div class="pv-type-specimen" style="font-family:var(--font-heading);font-size:var(--text-h6);font-weight:var(--weight-extralight)">Bravoixr</div>
+    <section style="margin-block-end:var(--spacing-10)">
+      <h3 class="text-minor-heading" style="margin-block:var(--spacing-6) var(--spacing-4)" data-en="Body scale" data-ar="مقياس النص">Body scale</h3>
+      <div style="display:flex;align-items:baseline;gap:var(--spacing-6);padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)">
+        <div style="flex:0 0 180px"><strong style="display:block;font-weight:var(--weight-subsection-title)">body1 — 20px</strong><span class="text-code-label text-color-helper">--text-body1</span></div>
+        <div style="min-inline-size:0;font-family:var(--font-body);font-size:var(--text-body1);line-height:var(--leading-body)" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض حجم النص ومدى وضوحه.">The quick brown fox jumps over the lazy dog.</div>
       </div>
-      <div class="pv-type-row">
-        <div class="pv-type-meta"><strong>light — 300</strong><span class="pv-mono">--weight-light</span></div>
-        <div class="pv-type-specimen" style="font-family:var(--font-heading);font-size:var(--text-h6);font-weight:var(--weight-light)">Bravoixr</div>
+      <div style="display:flex;align-items:baseline;gap:var(--spacing-6);padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)">
+        <div style="flex:0 0 180px"><strong style="display:block;font-weight:var(--weight-subsection-title)">body2 — 18px</strong><span class="text-code-label text-color-helper">--text-body2</span></div>
+        <div style="min-inline-size:0;font-family:var(--font-body);font-size:var(--text-body2);line-height:var(--leading-body)" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض حجم النص ومدى وضوحه.">The quick brown fox jumps over the lazy dog.</div>
       </div>
-      <div class="pv-type-row">
-        <div class="pv-type-meta"><strong>regular — 400</strong><span class="pv-mono">--weight-regular</span></div>
-        <div class="pv-type-specimen" style="font-family:var(--font-heading);font-size:var(--text-h6);font-weight:var(--weight-regular)">Bravoixr</div>
+      <div style="display:flex;align-items:baseline;gap:var(--spacing-6);padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)">
+        <div style="flex:0 0 180px"><strong style="display:block;font-weight:var(--weight-subsection-title)">body3 — 16px (default)</strong><span class="text-code-label text-color-helper">--text-body3</span></div>
+        <div style="min-inline-size:0;font-family:var(--font-body);font-size:var(--text-body3);line-height:var(--leading-body)" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض حجم النص ومدى وضوحه.">The quick brown fox jumps over the lazy dog.</div>
       </div>
-      <div class="pv-type-row">
-        <div class="pv-type-meta"><strong>medium — 500</strong><span class="pv-mono">--weight-medium</span></div>
-        <div class="pv-type-specimen" style="font-family:var(--font-heading);font-size:var(--text-h6);font-weight:var(--weight-medium)">Bravoixr</div>
+      <div style="display:flex;align-items:baseline;gap:var(--spacing-6);padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)">
+        <div style="flex:0 0 180px"><strong style="display:block;font-weight:var(--weight-subsection-title)">body4 — 14px</strong><span class="text-code-label text-color-helper">--text-body4</span></div>
+        <div style="min-inline-size:0;font-family:var(--font-body);font-size:var(--text-body4);line-height:var(--leading-body)" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض حجم النص ومدى وضوحه.">The quick brown fox jumps over the lazy dog.</div>
       </div>
-      <div class="pv-type-row">
-        <div class="pv-type-meta"><strong>semibold — 600</strong><span class="pv-mono">--weight-semibold</span></div>
-        <div class="pv-type-specimen" style="font-family:var(--font-heading);font-size:var(--text-h6);font-weight:var(--weight-semibold)">Bravoixr</div>
+      <div style="display:flex;align-items:baseline;gap:var(--spacing-6);padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)">
+        <div style="flex:0 0 180px"><strong style="display:block;font-weight:var(--weight-subsection-title)">body5 — 12px</strong><span class="text-code-label text-color-helper">--text-body5</span></div>
+        <div style="min-inline-size:0;font-family:var(--font-body);font-size:var(--text-body5);line-height:var(--leading-body)" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض حجم النص ومدى وضوحه.">The quick brown fox jumps over the lazy dog.</div>
       </div>
-      <div class="pv-type-row">
-        <div class="pv-type-meta"><strong>bold — 700</strong><span class="pv-mono">--weight-bold</span></div>
-        <div class="pv-type-specimen" style="font-family:var(--font-heading);font-size:var(--text-h6);font-weight:var(--weight-bold)">Bravoixr</div>
+      <div style="display:flex;align-items:baseline;gap:var(--spacing-6);padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)">
+        <div style="flex:0 0 180px"><strong style="display:block;font-weight:var(--weight-subsection-title)">code — 14px</strong><span class="text-code-label text-color-helper">--text-code</span></div>
+        <div style="min-inline-size:0;font-family:var(--font-mono);font-size:var(--text-code);line-height:var(--leading-code)">--color-primary: var(--blue-600);</div>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:var(--spacing-6);padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)">
+        <div style="flex:0 0 180px"><strong style="display:block;font-weight:var(--weight-subsection-title)">code2 — 12px</strong><span class="text-code-label text-color-helper">--text-code2</span></div>
+        <div style="min-inline-size:0;font-family:var(--font-mono);font-size:var(--text-code2);line-height:var(--leading-code)">--color-primary: var(--blue-600);</div>
       </div>
     </section>
 
-    <section class="pv-section">
-      <h3 data-en="Line-heights" data-ar="تباعد الأسطر">Line-heights</h3>
-      <div class="pv-kv"><span class="pv-mono">--leading-heading</span><span class="pv-val">1.1</span></div>
-      <div class="pv-kv"><span class="pv-mono">--leading-body</span><span class="pv-val">1.6</span></div>
-      <div class="pv-kv"><span class="pv-mono">--leading-body-arabic</span><span class="pv-val">1.7</span></div>
-      <div class="pv-kv"><span class="pv-mono">--leading-code</span><span class="pv-val">1.5</span></div>
+    <section style="margin-block-end:var(--spacing-10)">
+      <h3 class="text-minor-heading" style="margin-block:var(--spacing-6) var(--spacing-4)" data-en="Weights" data-ar="الأوزان">Weights</h3>
+      <div style="display:flex;align-items:baseline;gap:var(--spacing-6);padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)">
+        <div style="flex:0 0 180px"><strong style="display:block;font-weight:var(--weight-subsection-title)">extralight — 200</strong><span class="text-code-label text-color-helper">--weight-extralight</span></div>
+        <div style="min-inline-size:0;font-family:var(--font-heading);font-size:var(--text-h6);font-weight:var(--weight-extralight)">Bravoixr</div>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:var(--spacing-6);padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)">
+        <div style="flex:0 0 180px"><strong style="display:block;font-weight:var(--weight-subsection-title)">light — 300</strong><span class="text-code-label text-color-helper">--weight-light</span></div>
+        <div style="min-inline-size:0;font-family:var(--font-heading);font-size:var(--text-h6);font-weight:var(--weight-light)">Bravoixr</div>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:var(--spacing-6);padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)">
+        <div style="flex:0 0 180px"><strong style="display:block;font-weight:var(--weight-subsection-title)">regular — 400</strong><span class="text-code-label text-color-helper">--weight-regular</span></div>
+        <div style="min-inline-size:0;font-family:var(--font-heading);font-size:var(--text-h6);font-weight:var(--weight-regular)">Bravoixr</div>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:var(--spacing-6);padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)">
+        <div style="flex:0 0 180px"><strong style="display:block;font-weight:var(--weight-subsection-title)">medium — 500</strong><span class="text-code-label text-color-helper">--weight-medium</span></div>
+        <div style="min-inline-size:0;font-family:var(--font-heading);font-size:var(--text-h6);font-weight:var(--weight-medium)">Bravoixr</div>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:var(--spacing-6);padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)">
+        <div style="flex:0 0 180px"><strong style="display:block;font-weight:var(--weight-subsection-title)">semibold — 600</strong><span class="text-code-label text-color-helper">--weight-semibold</span></div>
+        <div style="min-inline-size:0;font-family:var(--font-heading);font-size:var(--text-h6);font-weight:var(--weight-semibold)">Bravoixr</div>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:var(--spacing-6);padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)">
+        <div style="flex:0 0 180px"><strong style="display:block;font-weight:var(--weight-subsection-title)">bold — 700</strong><span class="text-code-label text-color-helper">--weight-bold</span></div>
+        <div style="min-inline-size:0;font-family:var(--font-heading);font-size:var(--text-h6);font-weight:var(--weight-bold)">Bravoixr</div>
+      </div>
     </section>
 
-    <section class="pv-section">
-      <h3 data-en="Letter-spacing" data-ar="تباعد الأحرف">Letter-spacing</h3>
-      <div class="pv-kv"><span class="pv-mono">--tracking-heading</span><span class="pv-val">-0.02em</span></div>
-      <div class="pv-kv"><span class="pv-mono">--tracking-caps</span><span class="pv-val">0.06em</span></div>
-      <div class="pv-kv"><span class="pv-mono">--tracking-normal</span><span class="pv-val">0</span></div>
+    <section style="margin-block-end:var(--spacing-10)">
+      <h3 class="text-minor-heading" style="margin-block:var(--spacing-6) var(--spacing-4)" data-en="Line-heights" data-ar="تباعد الأسطر">Line-heights</h3>
+      <div style="display:flex;gap:var(--spacing-5);align-items:baseline;max-inline-size:460px;padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)"><span class="text-code-label text-color-helper" style="flex:0 0 220px">--leading-heading</span><span class="text-color-normal">1.1</span></div>
+      <div style="display:flex;gap:var(--spacing-5);align-items:baseline;max-inline-size:460px;padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)"><span class="text-code-label text-color-helper" style="flex:0 0 220px">--leading-body</span><span class="text-color-normal">1.6</span></div>
+      <div style="display:flex;gap:var(--spacing-5);align-items:baseline;max-inline-size:460px;padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)"><span class="text-code-label text-color-helper" style="flex:0 0 220px">--leading-body-arabic</span><span class="text-color-normal">1.7</span></div>
+      <div style="display:flex;gap:var(--spacing-5);align-items:baseline;max-inline-size:460px;padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)"><span class="text-code-label text-color-helper" style="flex:0 0 220px">--leading-code</span><span class="text-color-normal">1.5</span></div>
+    </section>
+
+    <section style="margin-block-end:var(--spacing-10)">
+      <h3 class="text-minor-heading" style="margin-block:var(--spacing-6) var(--spacing-4)" data-en="Letter-spacing" data-ar="تباعد الأحرف">Letter-spacing</h3>
+      <div style="display:flex;gap:var(--spacing-5);align-items:baseline;max-inline-size:460px;padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)"><span class="text-code-label text-color-helper" style="flex:0 0 220px">--tracking-heading</span><span class="text-color-normal">-0.02em</span></div>
+      <div style="display:flex;gap:var(--spacing-5);align-items:baseline;max-inline-size:460px;padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)"><span class="text-code-label text-color-helper" style="flex:0 0 220px">--tracking-caps</span><span class="text-color-normal">0.06em</span></div>
+      <div style="display:flex;gap:var(--spacing-5);align-items:baseline;max-inline-size:460px;padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)"><span class="text-code-label text-color-helper" style="flex:0 0 220px">--tracking-normal</span><span class="text-color-normal">0</span></div>
     </section>
   </main>
 

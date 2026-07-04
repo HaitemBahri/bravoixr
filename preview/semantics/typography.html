@@ -21,129 +21,128 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=IBM+Plex+Sans+Arabic:wght@200;300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap">
 
   <link rel="stylesheet" href="../../index.css">
-  <link rel="stylesheet" href="../preview.css">
 </head>
-<body>
-  <main class="pv-main">
-    <div class="pv-topbar">
-      <span class="text-context-title">bravoixr</span>
-      <div class="pv-controls">
-        <button class="btn btn-solid btn-square" type="button" data-toggle="theme" aria-label="Toggle theme"><span class="pv-symbol" style="font-size:var(--icon-md)">contrast</span></button>
-        <button class="btn btn-solid btn-square" type="button" data-toggle="lang" aria-label="Toggle language"><span class="pv-symbol" style="font-size:var(--icon-md)">translate</span></button>
+<body class="page text-body">
+  <main style="max-inline-size:var(--container-max);margin-inline:auto;padding:var(--spacing-8) var(--spacing-6) var(--spacing-12)">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:var(--spacing-5);margin-block-end:var(--spacing-8)">
+      <span class="text-project-title">bravoixr</span>
+      <div style="display:flex;gap:var(--spacing-3)">
+        <button class="btn btn-solid btn-square" type="button" data-toggle="theme" aria-label="Toggle theme"><span class="icon icon-md">contrast</span></button>
+        <button class="btn btn-solid btn-square" type="button" data-toggle="lang" aria-label="Toggle language"><span class="icon icon-md">translate</span></button>
       </div>
     </div>
 
-    <h2 style="font-family:var(--font-heading);font-weight:var(--weight-page-title);font-size:var(--text-section-title);margin:0 0 var(--spacing-3)" data-en="Semantic typography" data-ar="الطباعة الدلالية">Semantic typography</h2>
-    <p class="pv-lede" data-en="Roles the components speak in — heading, body, section-title — mapped onto the raw scale. Toggle ع and the family roles swap to Arabic; narrow the window and the size roles step down one rung (tablet, then mobile)." data-ar="الأدوار التي تتحدّث بها المكوّنات — عنوان، نص، عنوان قسم — مُسنَدة إلى المقياس الخام. بدّل إلى ع فتتحوّل أدوار العائلة إلى العربية؛ وصغّر النافذة فتنزل أدوار الحجم درجةً (لوحي، ثم جوّال).">Roles the components speak in — heading, body, section-title — mapped onto the raw scale. Toggle ع and the family roles swap to Arabic; narrow the window and the size roles step down one rung (tablet, then mobile).</p>
+    <h2 class="text-section-title" style="margin:0 0 var(--spacing-3)" data-en="Semantic typography" data-ar="الطباعة الدلالية">Semantic typography</h2>
+    <p class="text-page-description text-color-description" style="max-inline-size:60ch" data-en="Roles the components speak in — heading, body, section-title — mapped onto the raw scale. Toggle ع and the family roles swap to Arabic; narrow the window and the size roles step down one rung (tablet, then mobile)." data-ar="الأدوار التي تتحدّث بها المكوّنات — عنوان، نص، عنوان قسم — مُسنَدة إلى المقياس الخام. بدّل إلى ع فتتحوّل أدوار العائلة إلى العربية؛ وصغّر النافذة فتنزل أدوار الحجم درجةً (لوحي، ثم جوّال).">Roles the components speak in — heading, body, section-title — mapped onto the raw scale. Toggle ع and the family roles swap to Arabic; narrow the window and the size roles step down one rung (tablet, then mobile).</p>
 
-    <section class="pv-section">
-      <h3 data-en="Family roles" data-ar="أدوار العائلة">Family roles</h3>
-      <div class="pv-type-row">
-        <div class="pv-type-meta"><strong data-en="heading" data-ar="عنوان">heading</strong><span class="pv-mono">--font-heading</span></div>
-        <div class="pv-type-specimen" style="font-family:var(--font-heading);font-size:var(--text-subsection-title)" data-en="Modern &amp; confident" data-ar="حديث وواثق">Modern &amp; confident</div>
+    <section style="margin-block-end:var(--spacing-10)">
+      <h3 class="text-minor-heading" style="margin-block:var(--spacing-6) var(--spacing-4)" data-en="Family roles" data-ar="أدوار العائلة">Family roles</h3>
+      <div style="display:flex;align-items:baseline;gap:var(--spacing-6);padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)">
+        <div style="flex:0 0 180px"><strong style="display:block;font-weight:var(--weight-subsection-title)" data-en="heading" data-ar="عنوان">heading</strong><span class="text-code-label text-color-helper">--font-heading</span></div>
+        <div style="min-inline-size:0;font-family:var(--font-heading);font-size:var(--text-subsection-title)" data-en="Modern &amp; confident" data-ar="حديث وواثق">Modern &amp; confident</div>
       </div>
-      <div class="pv-type-row">
-        <div class="pv-type-meta"><strong data-en="body" data-ar="نص">body</strong><span class="pv-mono">--font-body</span></div>
-        <div class="pv-type-specimen" style="font-family:var(--font-body);font-size:var(--text-context-title)" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض عائلة الخط ووضوحها.">The quick brown fox jumps over the lazy dog.</div>
+      <div style="display:flex;align-items:baseline;gap:var(--spacing-6);padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)">
+        <div style="flex:0 0 180px"><strong style="display:block;font-weight:var(--weight-subsection-title)" data-en="body" data-ar="نص">body</strong><span class="text-code-label text-color-helper">--font-body</span></div>
+        <div style="min-inline-size:0;font-family:var(--font-body);font-size:var(--text-context-title)" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض عائلة الخط ووضوحها.">The quick brown fox jumps over the lazy dog.</div>
       </div>
-      <div class="pv-type-row">
-        <div class="pv-type-meta"><strong data-en="code" data-ar="شيفرة">code</strong><span class="pv-mono">--font-code</span></div>
-        <div class="pv-type-specimen" style="font-family:var(--font-code);font-size:var(--text-body)">--color-primary: var(--blue-600);</div>
+      <div style="display:flex;align-items:baseline;gap:var(--spacing-6);padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)">
+        <div style="flex:0 0 180px"><strong style="display:block;font-weight:var(--weight-subsection-title)" data-en="code" data-ar="شيفرة">code</strong><span class="text-code-label text-color-helper">--font-code</span></div>
+        <div style="min-inline-size:0;font-family:var(--font-code);font-size:var(--text-body)">--color-primary: var(--blue-600);</div>
       </div>
     </section>
 
-    <section class="pv-section">
-      <h3 data-en="Size roles" data-ar="أدوار الحجم">Size roles</h3>
-      <div class="pv-type-row">
-        <div class="pv-type-meta"><strong>page-title</strong><span class="pv-mono">--text-page-title</span></div>
-        <div class="pv-type-specimen" style="font-family:var(--font-heading);font-size:var(--text-page-title);font-weight:var(--weight-page-title);line-height:var(--leading-display)" data-en="Heading" data-ar="عنوان">Heading</div>
+    <section style="margin-block-end:var(--spacing-10)">
+      <h3 class="text-minor-heading" style="margin-block:var(--spacing-6) var(--spacing-4)" data-en="Size roles" data-ar="أدوار الحجم">Size roles</h3>
+      <div style="display:flex;align-items:baseline;gap:var(--spacing-6);padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)">
+        <div style="flex:0 0 180px"><strong style="display:block;font-weight:var(--weight-subsection-title)">page-title</strong><span class="text-code-label text-color-helper">--text-page-title</span></div>
+        <div style="min-inline-size:0;font-family:var(--font-heading);font-size:var(--text-page-title);font-weight:var(--weight-page-title);line-height:var(--leading-display)" data-en="Heading" data-ar="عنوان">Heading</div>
       </div>
-      <div class="pv-type-row">
-        <div class="pv-type-meta"><strong>section-title</strong><span class="pv-mono">--text-section-title</span></div>
-        <div class="pv-type-specimen" style="font-family:var(--font-heading);font-size:var(--text-section-title);font-weight:var(--weight-section-title);line-height:var(--leading-display)" data-en="Heading" data-ar="عنوان">Heading</div>
+      <div style="display:flex;align-items:baseline;gap:var(--spacing-6);padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)">
+        <div style="flex:0 0 180px"><strong style="display:block;font-weight:var(--weight-subsection-title)">section-title</strong><span class="text-code-label text-color-helper">--text-section-title</span></div>
+        <div style="min-inline-size:0;font-family:var(--font-heading);font-size:var(--text-section-title);font-weight:var(--weight-section-title);line-height:var(--leading-display)" data-en="Heading" data-ar="عنوان">Heading</div>
       </div>
-      <div class="pv-type-row">
-        <div class="pv-type-meta"><strong>subsection-title</strong><span class="pv-mono">--text-subsection-title</span></div>
-        <div class="pv-type-specimen" style="font-family:var(--font-heading);font-size:var(--text-subsection-title);font-weight:var(--weight-subsection-title);line-height:var(--leading-display)" data-en="Heading" data-ar="عنوان">Heading</div>
+      <div style="display:flex;align-items:baseline;gap:var(--spacing-6);padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)">
+        <div style="flex:0 0 180px"><strong style="display:block;font-weight:var(--weight-subsection-title)">subsection-title</strong><span class="text-code-label text-color-helper">--text-subsection-title</span></div>
+        <div style="min-inline-size:0;font-family:var(--font-heading);font-size:var(--text-subsection-title);font-weight:var(--weight-subsection-title);line-height:var(--leading-display)" data-en="Heading" data-ar="عنوان">Heading</div>
       </div>
-      <div class="pv-type-row">
-        <div class="pv-type-meta"><strong>minor-heading</strong><span class="pv-mono">--text-minor-heading</span></div>
-        <div class="pv-type-specimen" style="font-family:var(--font-heading);font-size:var(--text-minor-heading);font-weight:var(--weight-minor-heading);line-height:var(--leading-display)" data-en="Heading" data-ar="عنوان">Heading</div>
+      <div style="display:flex;align-items:baseline;gap:var(--spacing-6);padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)">
+        <div style="flex:0 0 180px"><strong style="display:block;font-weight:var(--weight-subsection-title)">minor-heading</strong><span class="text-code-label text-color-helper">--text-minor-heading</span></div>
+        <div style="min-inline-size:0;font-family:var(--font-heading);font-size:var(--text-minor-heading);font-weight:var(--weight-minor-heading);line-height:var(--leading-display)" data-en="Heading" data-ar="عنوان">Heading</div>
       </div>
-      <div class="pv-type-row">
-        <div class="pv-type-meta"><strong>context-title</strong><span class="pv-mono">--text-context-title</span></div>
-        <div class="pv-type-specimen" style="font-family:var(--font-heading);font-size:var(--text-context-title);font-weight:var(--weight-context-title);line-height:var(--leading-prose)" data-en="Context title" data-ar="عنوان سياقي">Context title</div>
+      <div style="display:flex;align-items:baseline;gap:var(--spacing-6);padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)">
+        <div style="flex:0 0 180px"><strong style="display:block;font-weight:var(--weight-subsection-title)">context-title</strong><span class="text-code-label text-color-helper">--text-context-title</span></div>
+        <div style="min-inline-size:0;font-family:var(--font-heading);font-size:var(--text-context-title);font-weight:var(--weight-context-title);line-height:var(--leading-prose)" data-en="Context title" data-ar="عنوان سياقي">Context title</div>
       </div>
-      <div class="pv-type-row">
-        <div class="pv-type-meta"><strong>body</strong><span class="pv-mono">--text-body</span></div>
-        <div class="pv-type-specimen" style="font-family:var(--font-body);font-size:var(--text-body);font-weight:var(--weight-body);line-height:var(--leading-prose)" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض حجم النص ومدى وضوحه.">The quick brown fox jumps over the lazy dog.</div>
+      <div style="display:flex;align-items:baseline;gap:var(--spacing-6);padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)">
+        <div style="flex:0 0 180px"><strong style="display:block;font-weight:var(--weight-subsection-title)">body</strong><span class="text-code-label text-color-helper">--text-body</span></div>
+        <div style="min-inline-size:0;font-family:var(--font-body);font-size:var(--text-body);font-weight:var(--weight-body);line-height:var(--leading-prose)" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض حجم النص ومدى وضوحه.">The quick brown fox jumps over the lazy dog.</div>
       </div>
-      <div class="pv-type-row">
-        <div class="pv-type-meta"><strong>label</strong><span class="pv-mono">--text-label</span></div>
-        <div class="pv-type-specimen" style="font-family:var(--font-body);font-size:var(--text-label);font-weight:var(--weight-label);line-height:var(--leading-prose)" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض حجم النص ومدى وضوحه.">The quick brown fox jumps over the lazy dog.</div>
+      <div style="display:flex;align-items:baseline;gap:var(--spacing-6);padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)">
+        <div style="flex:0 0 180px"><strong style="display:block;font-weight:var(--weight-subsection-title)">label</strong><span class="text-code-label text-color-helper">--text-label</span></div>
+        <div style="min-inline-size:0;font-family:var(--font-body);font-size:var(--text-label);font-weight:var(--weight-label);line-height:var(--leading-prose)" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض حجم النص ومدى وضوحه.">The quick brown fox jumps over the lazy dog.</div>
       </div>
-      <div class="pv-type-row">
-        <div class="pv-type-meta"><strong>helper</strong><span class="pv-mono">--text-helper</span></div>
-        <div class="pv-type-specimen" style="font-family:var(--font-body);font-size:var(--text-helper);font-weight:var(--weight-helper);line-height:var(--leading-prose)" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض حجم النص ومدى وضوحه.">The quick brown fox jumps over the lazy dog.</div>
+      <div style="display:flex;align-items:baseline;gap:var(--spacing-6);padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)">
+        <div style="flex:0 0 180px"><strong style="display:block;font-weight:var(--weight-subsection-title)">helper</strong><span class="text-code-label text-color-helper">--text-helper</span></div>
+        <div style="min-inline-size:0;font-family:var(--font-body);font-size:var(--text-helper);font-weight:var(--weight-helper);line-height:var(--leading-prose)" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض حجم النص ومدى وضوحه.">The quick brown fox jumps over the lazy dog.</div>
       </div>
-      <div class="pv-type-row">
-        <div class="pv-type-meta"><strong>code-block</strong><span class="pv-mono">--text-code-block</span></div>
-        <div class="pv-type-specimen" style="font-family:var(--font-code);font-size:var(--text-code-block);line-height:var(--leading-code-block)">--text-body: var(--text-body3);</div>
+      <div style="display:flex;align-items:baseline;gap:var(--spacing-6);padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)">
+        <div style="flex:0 0 180px"><strong style="display:block;font-weight:var(--weight-subsection-title)">code-block</strong><span class="text-code-label text-color-helper">--text-code-block</span></div>
+        <div style="min-inline-size:0;font-family:var(--font-code);font-size:var(--text-code-block);line-height:var(--leading-code-block)">--text-body: var(--text-body3);</div>
       </div>
-      <div class="pv-type-row">
-        <div class="pv-type-meta"><strong>code-label</strong><span class="pv-mono">--text-code-label</span></div>
-        <div class="pv-type-specimen" style="font-family:var(--font-code);font-size:var(--text-code-label);line-height:var(--leading-code-block)">--text-body: var(--text-body3);</div>
-      </div>
-    </section>
-
-    <section class="pv-section">
-      <h3 data-en="Weight roles" data-ar="أدوار الوزن">Weight roles</h3>
-      <div class="pv-type-row">
-        <div class="pv-type-meta"><strong>page-title</strong><span class="pv-mono">--weight-page-title</span></div>
-        <div class="pv-type-specimen" style="font-family:var(--font-heading);font-size:var(--text-subsection-title);font-weight:var(--weight-page-title)">Bravoixr</div>
-      </div>
-      <div class="pv-type-row">
-        <div class="pv-type-meta"><strong>section-title</strong><span class="pv-mono">--weight-section-title</span></div>
-        <div class="pv-type-specimen" style="font-family:var(--font-heading);font-size:var(--text-subsection-title);font-weight:var(--weight-section-title)">Bravoixr</div>
-      </div>
-      <div class="pv-type-row">
-        <div class="pv-type-meta"><strong>subsection-title</strong><span class="pv-mono">--weight-subsection-title</span></div>
-        <div class="pv-type-specimen" style="font-family:var(--font-heading);font-size:var(--text-subsection-title);font-weight:var(--weight-subsection-title)">Bravoixr</div>
-      </div>
-      <div class="pv-type-row">
-        <div class="pv-type-meta"><strong>minor-heading</strong><span class="pv-mono">--weight-minor-heading</span></div>
-        <div class="pv-type-specimen" style="font-family:var(--font-heading);font-size:var(--text-subsection-title);font-weight:var(--weight-minor-heading)">Bravoixr</div>
-      </div>
-      <div class="pv-type-row">
-        <div class="pv-type-meta"><strong>context-title</strong><span class="pv-mono">--weight-context-title</span></div>
-        <div class="pv-type-specimen" style="font-family:var(--font-heading);font-size:var(--text-subsection-title);font-weight:var(--weight-context-title)">Bravoixr</div>
-      </div>
-      <div class="pv-type-row">
-        <div class="pv-type-meta"><strong>body</strong><span class="pv-mono">--weight-body</span></div>
-        <div class="pv-type-specimen" style="font-family:var(--font-heading);font-size:var(--text-subsection-title);font-weight:var(--weight-body)">Bravoixr</div>
-      </div>
-      <div class="pv-type-row">
-        <div class="pv-type-meta"><strong>label</strong><span class="pv-mono">--weight-label</span></div>
-        <div class="pv-type-specimen" style="font-family:var(--font-heading);font-size:var(--text-subsection-title);font-weight:var(--weight-label)">Bravoixr</div>
-      </div>
-      <div class="pv-type-row">
-        <div class="pv-type-meta"><strong>helper</strong><span class="pv-mono">--weight-helper</span></div>
-        <div class="pv-type-specimen" style="font-family:var(--font-heading);font-size:var(--text-subsection-title);font-weight:var(--weight-helper)">Bravoixr</div>
+      <div style="display:flex;align-items:baseline;gap:var(--spacing-6);padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)">
+        <div style="flex:0 0 180px"><strong style="display:block;font-weight:var(--weight-subsection-title)">code-label</strong><span class="text-code-label text-color-helper">--text-code-label</span></div>
+        <div style="min-inline-size:0;font-family:var(--font-code);font-size:var(--text-code-label);line-height:var(--leading-code-block)">--text-body: var(--text-body3);</div>
       </div>
     </section>
 
-    <section class="pv-section">
-      <h3 data-en="Line-height roles" data-ar="أدوار تباعد الأسطر">Line-height roles</h3>
-      <div class="pv-kv"><span class="pv-mono">--leading-display</span><span class="pv-val" data-en="1.1 — headings" data-ar="1.1 — العناوين">1.1 — headings</span></div>
-      <div class="pv-kv"><span class="pv-mono">--leading-prose</span><span class="pv-val" data-en="1.6 Latin · 1.7 Arabic (scripted)" data-ar="1.6 لاتيني · 1.7 عربي (حسب النصّ)">1.6 Latin · 1.7 Arabic (scripted)</span></div>
-      <div class="pv-kv"><span class="pv-mono">--leading-code-block</span><span class="pv-val" data-en="1.5 — code" data-ar="1.5 — الشيفرة">1.5 — code</span></div>
+    <section style="margin-block-end:var(--spacing-10)">
+      <h3 class="text-minor-heading" style="margin-block:var(--spacing-6) var(--spacing-4)" data-en="Weight roles" data-ar="أدوار الوزن">Weight roles</h3>
+      <div style="display:flex;align-items:baseline;gap:var(--spacing-6);padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)">
+        <div style="flex:0 0 180px"><strong style="display:block;font-weight:var(--weight-subsection-title)">page-title</strong><span class="text-code-label text-color-helper">--weight-page-title</span></div>
+        <div style="min-inline-size:0;font-family:var(--font-heading);font-size:var(--text-subsection-title);font-weight:var(--weight-page-title)">Bravoixr</div>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:var(--spacing-6);padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)">
+        <div style="flex:0 0 180px"><strong style="display:block;font-weight:var(--weight-subsection-title)">section-title</strong><span class="text-code-label text-color-helper">--weight-section-title</span></div>
+        <div style="min-inline-size:0;font-family:var(--font-heading);font-size:var(--text-subsection-title);font-weight:var(--weight-section-title)">Bravoixr</div>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:var(--spacing-6);padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)">
+        <div style="flex:0 0 180px"><strong style="display:block;font-weight:var(--weight-subsection-title)">subsection-title</strong><span class="text-code-label text-color-helper">--weight-subsection-title</span></div>
+        <div style="min-inline-size:0;font-family:var(--font-heading);font-size:var(--text-subsection-title);font-weight:var(--weight-subsection-title)">Bravoixr</div>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:var(--spacing-6);padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)">
+        <div style="flex:0 0 180px"><strong style="display:block;font-weight:var(--weight-subsection-title)">minor-heading</strong><span class="text-code-label text-color-helper">--weight-minor-heading</span></div>
+        <div style="min-inline-size:0;font-family:var(--font-heading);font-size:var(--text-subsection-title);font-weight:var(--weight-minor-heading)">Bravoixr</div>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:var(--spacing-6);padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)">
+        <div style="flex:0 0 180px"><strong style="display:block;font-weight:var(--weight-subsection-title)">context-title</strong><span class="text-code-label text-color-helper">--weight-context-title</span></div>
+        <div style="min-inline-size:0;font-family:var(--font-heading);font-size:var(--text-subsection-title);font-weight:var(--weight-context-title)">Bravoixr</div>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:var(--spacing-6);padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)">
+        <div style="flex:0 0 180px"><strong style="display:block;font-weight:var(--weight-subsection-title)">body</strong><span class="text-code-label text-color-helper">--weight-body</span></div>
+        <div style="min-inline-size:0;font-family:var(--font-heading);font-size:var(--text-subsection-title);font-weight:var(--weight-body)">Bravoixr</div>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:var(--spacing-6);padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)">
+        <div style="flex:0 0 180px"><strong style="display:block;font-weight:var(--weight-subsection-title)">label</strong><span class="text-code-label text-color-helper">--weight-label</span></div>
+        <div style="min-inline-size:0;font-family:var(--font-heading);font-size:var(--text-subsection-title);font-weight:var(--weight-label)">Bravoixr</div>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:var(--spacing-6);padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)">
+        <div style="flex:0 0 180px"><strong style="display:block;font-weight:var(--weight-subsection-title)">helper</strong><span class="text-code-label text-color-helper">--weight-helper</span></div>
+        <div style="min-inline-size:0;font-family:var(--font-heading);font-size:var(--text-subsection-title);font-weight:var(--weight-helper)">Bravoixr</div>
+      </div>
     </section>
 
-    <section class="pv-section">
-      <h3 data-en="Letter-spacing roles" data-ar="أدوار تباعد الأحرف">Letter-spacing roles</h3>
-      <div class="pv-kv"><span class="pv-mono">--tracking-display</span><span class="pv-val" data-en="-0.02em Latin · 0 Arabic (scripted)" data-ar="-0.02em لاتيني · 0 عربي (حسب النصّ)">-0.02em Latin · 0 Arabic (scripted)</span></div>
-      <div class="pv-kv"><span class="pv-mono">--tracking-prose</span><span class="pv-val">0</span></div>
-      <div class="pv-kv"><span class="pv-mono">--tracking-uppercase</span><span class="pv-val" data-en="0.06em Latin · 0 Arabic (scripted)" data-ar="0.06em لاتيني · 0 عربي (حسب النصّ)">0.06em Latin · 0 Arabic (scripted)</span></div>
+    <section style="margin-block-end:var(--spacing-10)">
+      <h3 class="text-minor-heading" style="margin-block:var(--spacing-6) var(--spacing-4)" data-en="Line-height roles" data-ar="أدوار تباعد الأسطر">Line-height roles</h3>
+      <div style="display:flex;gap:var(--spacing-5);align-items:baseline;max-inline-size:460px;padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)"><span class="text-code-label text-color-helper" style="flex:0 0 220px">--leading-display</span><span class="text-color-normal" data-en="1.1 — headings" data-ar="1.1 — العناوين">1.1 — headings</span></div>
+      <div style="display:flex;gap:var(--spacing-5);align-items:baseline;max-inline-size:460px;padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)"><span class="text-code-label text-color-helper" style="flex:0 0 220px">--leading-prose</span><span class="text-color-normal" data-en="1.6 Latin · 1.7 Arabic (scripted)" data-ar="1.6 لاتيني · 1.7 عربي (حسب النصّ)">1.6 Latin · 1.7 Arabic (scripted)</span></div>
+      <div style="display:flex;gap:var(--spacing-5);align-items:baseline;max-inline-size:460px;padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)"><span class="text-code-label text-color-helper" style="flex:0 0 220px">--leading-code-block</span><span class="text-color-normal" data-en="1.5 — code" data-ar="1.5 — الشيفرة">1.5 — code</span></div>
+    </section>
+
+    <section style="margin-block-end:var(--spacing-10)">
+      <h3 class="text-minor-heading" style="margin-block:var(--spacing-6) var(--spacing-4)" data-en="Letter-spacing roles" data-ar="أدوار تباعد الأحرف">Letter-spacing roles</h3>
+      <div style="display:flex;gap:var(--spacing-5);align-items:baseline;max-inline-size:460px;padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)"><span class="text-code-label text-color-helper" style="flex:0 0 220px">--tracking-display</span><span class="text-color-normal" data-en="-0.02em Latin · 0 Arabic (scripted)" data-ar="-0.02em لاتيني · 0 عربي (حسب النصّ)">-0.02em Latin · 0 Arabic (scripted)</span></div>
+      <div style="display:flex;gap:var(--spacing-5);align-items:baseline;max-inline-size:460px;padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)"><span class="text-code-label text-color-helper" style="flex:0 0 220px">--tracking-prose</span><span class="text-color-normal">0</span></div>
+      <div style="display:flex;gap:var(--spacing-5);align-items:baseline;max-inline-size:460px;padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)"><span class="text-code-label text-color-helper" style="flex:0 0 220px">--tracking-uppercase</span><span class="text-color-normal" data-en="0.06em Latin · 0 Arabic (scripted)" data-ar="0.06em لاتيني · 0 عربي (حسب النصّ)">0.06em Latin · 0 Arabic (scripted)</span></div>
     </section>
   </main>
 

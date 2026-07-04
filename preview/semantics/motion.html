@@ -21,37 +21,36 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=IBM+Plex+Sans+Arabic:wght@200;300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap">
 
   <link rel="stylesheet" href="../../index.css">
-  <link rel="stylesheet" href="../preview.css">
 </head>
-<body>
-  <main class="pv-main">
-    <div class="pv-topbar">
-      <span class="text-context-title">bravoixr</span>
-      <div class="pv-controls">
-        <button class="btn btn-solid btn-square" type="button" data-toggle="theme" aria-label="Toggle theme"><span class="pv-symbol" style="font-size:var(--icon-md)">contrast</span></button>
-        <button class="btn btn-solid btn-square" type="button" data-toggle="lang" aria-label="Toggle language"><span class="pv-symbol" style="font-size:var(--icon-md)">translate</span></button>
+<body class="page text-body">
+  <main style="max-inline-size:var(--container-max);margin-inline:auto;padding:var(--spacing-8) var(--spacing-6) var(--spacing-12)">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:var(--spacing-5);margin-block-end:var(--spacing-8)">
+      <span class="text-project-title">bravoixr</span>
+      <div style="display:flex;gap:var(--spacing-3)">
+        <button class="btn btn-solid btn-square" type="button" data-toggle="theme" aria-label="Toggle theme"><span class="icon icon-md">contrast</span></button>
+        <button class="btn btn-solid btn-square" type="button" data-toggle="lang" aria-label="Toggle language"><span class="icon icon-md">translate</span></button>
       </div>
     </div>
 
-    <h2 style="font-family:var(--font-heading);font-weight:var(--weight-page-title);font-size:var(--text-section-title);margin:0 0 var(--spacing-3)" data-en="Semantic motion" data-ar="الحركة الدلالية">Semantic motion</h2>
-    <p class="pv-lede" data-en="Duration and easing roles named for the surface they move — hover, panel, modal — mapped onto the raw scale. Hover a box to feel each easing role." data-ar="أدوار المدّة والتسارع مسمّاة بحسب السطح الذي تحرّكه — تمرير، لوحة، نافذة — مُسنَدة إلى المقياس الخام. مرّر فوق مربّع لتشعر بكل دور تسارع.">Duration and easing roles named for the surface they move — hover, panel, modal — mapped onto the raw scale. Hover a box to feel each easing role.</p>
+    <h2 class="text-section-title" style="margin:0 0 var(--spacing-3)" data-en="Semantic motion" data-ar="الحركة الدلالية">Semantic motion</h2>
+    <p class="text-page-description text-color-description" style="max-inline-size:60ch" data-en="Duration and easing roles named for the surface they move — hover, panel, modal — mapped onto the raw scale. Hover a box to feel each easing role." data-ar="أدوار المدّة والتسارع مسمّاة بحسب السطح الذي تحرّكه — تمرير، لوحة، نافذة — مُسنَدة إلى المقياس الخام. مرّر فوق مربّع لتشعر بكل دور تسارع.">Duration and easing roles named for the surface they move — hover, panel, modal — mapped onto the raw scale. Hover a box to feel each easing role.</p>
 
-    <section class="pv-section">
-      <h3 data-en="Duration roles" data-ar="أدوار المدّة">Duration roles</h3>
-      <div class="pv-kv"><span class="pv-mono">--duration-none</span><span class="pv-val">0ms</span></div>
-      <div class="pv-kv"><span class="pv-mono">--duration-hover</span><span class="pv-val">150ms</span></div>
-      <div class="pv-kv"><span class="pv-mono">--duration-default</span><span class="pv-val">200ms</span></div>
-      <div class="pv-kv"><span class="pv-mono">--duration-panel</span><span class="pv-val">300ms</span></div>
-      <div class="pv-kv"><span class="pv-mono">--duration-modal</span><span class="pv-val">500ms</span></div>
+    <section style="margin-block-end:var(--spacing-10)">
+      <h3 class="text-minor-heading" style="margin-block:var(--spacing-6) var(--spacing-4)" data-en="Duration roles" data-ar="أدوار المدّة">Duration roles</h3>
+      <div style="display:flex;gap:var(--spacing-5);align-items:baseline;max-inline-size:460px;padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)"><span class="text-code-label text-color-helper" style="flex:0 0 220px">--duration-none</span><span class="text-color-normal">0ms</span></div>
+      <div style="display:flex;gap:var(--spacing-5);align-items:baseline;max-inline-size:460px;padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)"><span class="text-code-label text-color-helper" style="flex:0 0 220px">--duration-hover</span><span class="text-color-normal">150ms</span></div>
+      <div style="display:flex;gap:var(--spacing-5);align-items:baseline;max-inline-size:460px;padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)"><span class="text-code-label text-color-helper" style="flex:0 0 220px">--duration-default</span><span class="text-color-normal">200ms</span></div>
+      <div style="display:flex;gap:var(--spacing-5);align-items:baseline;max-inline-size:460px;padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)"><span class="text-code-label text-color-helper" style="flex:0 0 220px">--duration-panel</span><span class="text-color-normal">300ms</span></div>
+      <div style="display:flex;gap:var(--spacing-5);align-items:baseline;max-inline-size:460px;padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)"><span class="text-code-label text-color-helper" style="flex:0 0 220px">--duration-modal</span><span class="text-color-normal">500ms</span></div>
     </section>
 
-    <section class="pv-section">
-      <h3 data-en="Easing roles (hover a box)" data-ar="أدوار التسارع (مرّر فوق مربّع)">Easing roles (hover a box)</h3>
-      <div class="pv-tiles">
-        <div class="pv-tile"><div class="pv-motion-box" style="transition:transform var(--duration-modal) var(--ease-default)"></div><span class="pv-mono">--ease-default</span></div>
-        <div class="pv-tile"><div class="pv-motion-box" style="transition:transform var(--duration-modal) var(--ease-enter)"></div><span class="pv-mono">--ease-enter</span></div>
-        <div class="pv-tile"><div class="pv-motion-box" style="transition:transform var(--duration-modal) var(--ease-exit)"></div><span class="pv-mono">--ease-exit</span></div>
-        <div class="pv-tile"><div class="pv-motion-box" style="transition:transform var(--duration-modal) var(--ease-loop)"></div><span class="pv-mono">--ease-loop</span></div>
+    <section style="margin-block-end:var(--spacing-10)">
+      <h3 class="text-minor-heading" style="margin-block:var(--spacing-6) var(--spacing-4)" data-en="Easing roles (hover a box)" data-ar="أدوار التسارع (مرّر فوق مربّع)">Easing roles (hover a box)</h3>
+      <div style="display:flex;flex-wrap:wrap;gap:var(--spacing-7)">
+        <div style="display:grid;gap:var(--spacing-2);justify-items:center"><div style="inline-size:80px;block-size:80px;background:var(--color-secondary);border-radius:var(--radius-card);transition:transform var(--duration-modal) var(--ease-default)" onmouseover="this.style.transform='translateX(48px)'" onmouseout="this.style.transform=''"></div><span class="text-code-label text-color-helper">--ease-default</span></div>
+        <div style="display:grid;gap:var(--spacing-2);justify-items:center"><div style="inline-size:80px;block-size:80px;background:var(--color-secondary);border-radius:var(--radius-card);transition:transform var(--duration-modal) var(--ease-enter)" onmouseover="this.style.transform='translateX(48px)'" onmouseout="this.style.transform=''"></div><span class="text-code-label text-color-helper">--ease-enter</span></div>
+        <div style="display:grid;gap:var(--spacing-2);justify-items:center"><div style="inline-size:80px;block-size:80px;background:var(--color-secondary);border-radius:var(--radius-card);transition:transform var(--duration-modal) var(--ease-exit)" onmouseover="this.style.transform='translateX(48px)'" onmouseout="this.style.transform=''"></div><span class="text-code-label text-color-helper">--ease-exit</span></div>
+        <div style="display:grid;gap:var(--spacing-2);justify-items:center"><div style="inline-size:80px;block-size:80px;background:var(--color-secondary);border-radius:var(--radius-card);transition:transform var(--duration-modal) var(--ease-loop)" onmouseover="this.style.transform='translateX(48px)'" onmouseout="this.style.transform=''"></div><span class="text-code-label text-color-helper">--ease-loop</span></div>
       </div>
     </section>
   </main>

@@ -4,6 +4,16 @@
  * gets a legible canvas that theme-flips via the semantic dark overrides. */
 
 .page {
+  box-sizing: border-box;
   background: var(--color-surface-page);
   color: var(--color-text);
+}
+
+/* Propagate border-box to everything on the canvas — box-sizing doesn't inherit
+ * on its own, so descendants inherit it explicitly. This gives the page a global
+ * box model without the system shipping a separate universal reset. */
+.page *,
+.page *::before,
+.page *::after {
+  box-sizing: inherit;
 }

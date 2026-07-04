@@ -24,142 +24,141 @@
 
   <!-- The system under test, then the preview chrome. -->
   <link rel="stylesheet" href="../index.css">
-  <link rel="stylesheet" href="preview.css">
 </head>
-<body>
-  <main class="pv-main">
-    <div class="pv-topbar">
+<body class="page text-body">
+  <main style="max-inline-size:var(--container-max);margin-inline:auto;padding:var(--spacing-8) var(--spacing-6) var(--spacing-12)">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:var(--spacing-5);margin-block-end:var(--spacing-8)">
       <span class="text-project-title">bravoixr</span>
-      <div class="pv-controls">
-        <button class="btn btn-solid btn-square" type="button" data-toggle="theme" aria-label="Toggle theme"><span class="pv-symbol" style="font-size:var(--icon-md)">contrast</span></button>
-        <button class="btn btn-solid btn-square" type="button" data-toggle="lang" aria-label="Toggle language"><span class="pv-symbol" style="font-size:var(--icon-md)">translate</span></button>
+      <div style="display:flex;gap:var(--spacing-3)">
+        <button class="btn btn-solid btn-square" type="button" data-toggle="theme" aria-label="Toggle theme"><span class="icon icon-md">contrast</span></button>
+        <button class="btn btn-solid btn-square" type="button" data-toggle="lang" aria-label="Toggle language"><span class="icon icon-md">translate</span></button>
       </div>
     </div>
 
-    <section class="pv-section">
-      <h1 class="text-page-title" data-en="Design identity preview" data-ar="معاينة الهوية البصرية">Design identity preview</h1>
-      <p class="text-page-description pv-lede" data-en="Evaluate v0.1.0 hands-on — real fonts, light/dark, and English/Arabic. Toggle from the top of any page; the setting follows you across every page."
+    <section style="margin-block-end:var(--spacing-10)">
+      <h1 class="text-page-title" style="margin-block:0 var(--spacing-5)" data-en="Design identity preview" data-ar="معاينة الهوية البصرية">Design identity preview</h1>
+      <p class="text-page-description text-color-description" style="max-inline-size:60ch" data-en="Evaluate v0.1.0 hands-on — real fonts, light/dark, and English/Arabic. Toggle from the top of any page; the setting follows you across every page."
          data-ar="قيّم الإصدار 0.1.0 مباشرةً — بالخطوط الحقيقية، الوضع الفاتح/الداكن، والعربية/الإنجليزية. بدّل من الأعلى، ويبقى الإعداد معك عبر كل الصفحات.">Evaluate v0.1.0 hands-on — real fonts, light/dark, and English/Arabic. Toggle from the top of any page; the setting follows you across every page.</p>
     </section>
 
-    <section class="pv-section">
-      <h2 class="text-section-title" data-en="Primitives" data-ar="الأوّليات">Primitives</h2>
-      <div class="pv-hub-grid">
+    <section style="margin-block-end:var(--spacing-10)">
+      <h2 class="text-section-title" style="margin-block:0 var(--spacing-4)" data-en="Primitives" data-ar="الأوّليات">Primitives</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:var(--spacing-5);margin-block-start:var(--spacing-7)">
         <div class="card">
           <h3 class="card-title" data-en="Color" data-ar="اللون">Color</h3>
           <p class="card-description" data-en="Brand, status, and accent ramps plus neutrals." data-ar="تدرّجات العلامة والحالات واللمسات، بالإضافة إلى المحايدات.">Brand, status, and accent ramps plus neutrals.</p>
-          <div class="pv-card-actions">
-            <button class="btn btn-solid btn-square" type="button" data-href="primitives/color.html" aria-label="Open Color"><span class="pv-symbol" style="font-size:var(--icon-md)">arrow_forward</span></button>
+          <div style="margin-block-start:var(--spacing-4);text-align:end">
+            <button class="btn btn-solid btn-square" type="button" data-href="primitives/color.html" aria-label="Open Color"><span class="icon icon-md">arrow_forward</span></button>
           </div>
         </div>
         <div class="card">
           <h3 class="card-title" data-en="Typography" data-ar="الطباعة">Typography</h3>
           <p class="card-description" data-en="Font stacks, size scales, weights, leading, tracking." data-ar="عائلات الخطوط، المقاييس، الأوزان، تباعد الأسطر والأحرف.">Font stacks, size scales, weights, leading, tracking.</p>
-          <div class="pv-card-actions">
-            <button class="btn btn-solid btn-square" type="button" data-href="primitives/typography.html" aria-label="Open Typography"><span class="pv-symbol" style="font-size:var(--icon-md)">arrow_forward</span></button>
+          <div style="margin-block-start:var(--spacing-4);text-align:end">
+            <button class="btn btn-solid btn-square" type="button" data-href="primitives/typography.html" aria-label="Open Typography"><span class="icon icon-md">arrow_forward</span></button>
           </div>
         </div>
         <div class="card">
           <h3 class="card-title" data-en="Layout" data-ar="التخطيط">Layout</h3>
           <p class="card-description" data-en="Spacing, sizing, radius, borders, shadows, z-index." data-ar="التباعد، الأحجام، الزوايا، الحدود، الظلال، ترتيب الطبقات.">Spacing, sizing, radius, borders, shadows, z-index.</p>
-          <div class="pv-card-actions">
-            <button class="btn btn-solid btn-square" type="button" data-href="primitives/layout.html" aria-label="Open Layout"><span class="pv-symbol" style="font-size:var(--icon-md)">arrow_forward</span></button>
+          <div style="margin-block-start:var(--spacing-4);text-align:end">
+            <button class="btn btn-solid btn-square" type="button" data-href="primitives/layout.html" aria-label="Open Layout"><span class="icon icon-md">arrow_forward</span></button>
           </div>
         </div>
         <div class="card">
           <h3 class="card-title" data-en="Motion" data-ar="الحركة">Motion</h3>
           <p class="card-description" data-en="Duration scale and easing curves." data-ar="مقياس المدّة ومنحنيات التسارع.">Duration scale and easing curves.</p>
-          <div class="pv-card-actions">
-            <button class="btn btn-solid btn-square" type="button" data-href="primitives/motion.html" aria-label="Open Motion"><span class="pv-symbol" style="font-size:var(--icon-md)">arrow_forward</span></button>
+          <div style="margin-block-start:var(--spacing-4);text-align:end">
+            <button class="btn btn-solid btn-square" type="button" data-href="primitives/motion.html" aria-label="Open Motion"><span class="icon icon-md">arrow_forward</span></button>
           </div>
         </div>
         <div class="card">
           <h3 class="card-title" data-en="Icons" data-ar="الأيقونات">Icons</h3>
           <p class="card-description" data-en="Icon font, variable axes, and size scale." data-ar="خط الأيقونات، المحاور المتغيّرة، ومقياس الأحجام.">Icon font, variable axes, and size scale.</p>
-          <div class="pv-card-actions">
-            <button class="btn btn-solid btn-square" type="button" data-href="primitives/icons.html" aria-label="Open Icons"><span class="pv-symbol" style="font-size:var(--icon-md)">arrow_forward</span></button>
+          <div style="margin-block-start:var(--spacing-4);text-align:end">
+            <button class="btn btn-solid btn-square" type="button" data-href="primitives/icons.html" aria-label="Open Icons"><span class="icon icon-md">arrow_forward</span></button>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="pv-section">
-      <h2 class="text-section-title" data-en="Semantic tokens" data-ar="الرموز الدلالية">Semantic tokens</h2>
-      <div class="pv-hub-grid">
+    <section style="margin-block-end:var(--spacing-10)">
+      <h2 class="text-section-title" style="margin-block:0 var(--spacing-4)" data-en="Semantic tokens" data-ar="الرموز الدلالية">Semantic tokens</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:var(--spacing-5);margin-block-start:var(--spacing-7)">
         <div class="card">
           <h3 class="card-title" data-en="Color" data-ar="اللون">Color</h3>
           <p class="card-description" data-en="Role tokens for brand, status, surfaces, text, and borders — themed light/dark." data-ar="رموز الأدوار للعلامة والحالات والأسطح والنصوص والحدود — بسمة فاتحة/داكنة.">Role tokens for brand, status, surfaces, text, and borders — themed light/dark.</p>
-          <div class="pv-card-actions">
-            <button class="btn btn-solid btn-square" type="button" data-href="semantics/color.html" aria-label="Open Color"><span class="pv-symbol" style="font-size:var(--icon-md)">arrow_forward</span></button>
+          <div style="margin-block-start:var(--spacing-4);text-align:end">
+            <button class="btn btn-solid btn-square" type="button" data-href="semantics/color.html" aria-label="Open Color"><span class="icon icon-md">arrow_forward</span></button>
           </div>
         </div>
         <div class="card">
           <h3 class="card-title" data-en="Typography" data-ar="الطباعة">Typography</h3>
           <p class="card-description" data-en="Family, size, weight, leading, and tracking roles — scripted and responsive." data-ar="أدوار العائلة والحجم والوزن وتباعد الأسطر والأحرف — حسب النصّ والمقاس.">Family, size, weight, leading, and tracking roles — scripted and responsive.</p>
-          <div class="pv-card-actions">
-            <button class="btn btn-solid btn-square" type="button" data-href="semantics/typography.html" aria-label="Open Typography"><span class="pv-symbol" style="font-size:var(--icon-md)">arrow_forward</span></button>
+          <div style="margin-block-start:var(--spacing-4);text-align:end">
+            <button class="btn btn-solid btn-square" type="button" data-href="semantics/typography.html" aria-label="Open Typography"><span class="icon icon-md">arrow_forward</span></button>
           </div>
         </div>
         <div class="card">
           <h3 class="card-title" data-en="Layout" data-ar="التخطيط">Layout</h3>
           <p class="card-description" data-en="Radius, border, sizing, shadow, layer, and spacing roles." data-ar="أدوار الزوايا والحدود والأحجام والظلال والطبقات والتباعد.">Radius, border, sizing, shadow, layer, and spacing roles.</p>
-          <div class="pv-card-actions">
-            <button class="btn btn-solid btn-square" type="button" data-href="semantics/layout.html" aria-label="Open Layout"><span class="pv-symbol" style="font-size:var(--icon-md)">arrow_forward</span></button>
+          <div style="margin-block-start:var(--spacing-4);text-align:end">
+            <button class="btn btn-solid btn-square" type="button" data-href="semantics/layout.html" aria-label="Open Layout"><span class="icon icon-md">arrow_forward</span></button>
           </div>
         </div>
         <div class="card">
           <h3 class="card-title" data-en="Motion" data-ar="الحركة">Motion</h3>
           <p class="card-description" data-en="Duration and easing roles for hovers, panels, and modals." data-ar="أدوار المدّة والتسارع للتمرير واللوحات والنوافذ.">Duration and easing roles for hovers, panels, and modals.</p>
-          <div class="pv-card-actions">
-            <button class="btn btn-solid btn-square" type="button" data-href="semantics/motion.html" aria-label="Open Motion"><span class="pv-symbol" style="font-size:var(--icon-md)">arrow_forward</span></button>
+          <div style="margin-block-start:var(--spacing-4);text-align:end">
+            <button class="btn btn-solid btn-square" type="button" data-href="semantics/motion.html" aria-label="Open Motion"><span class="icon icon-md">arrow_forward</span></button>
           </div>
         </div>
         <div class="card">
           <h3 class="card-title" data-en="Icons" data-ar="الأيقونات">Icons</h3>
           <p class="card-description" data-en="Family, axis, and size roles — with a theme-aware grade." data-ar="أدوار العائلة والمحاور والأحجام — مع درجة تتبع السمة.">Family, axis, and size roles — with a theme-aware grade.</p>
-          <div class="pv-card-actions">
-            <button class="btn btn-solid btn-square" type="button" data-href="semantics/icons.html" aria-label="Open Icons"><span class="pv-symbol" style="font-size:var(--icon-md)">arrow_forward</span></button>
+          <div style="margin-block-start:var(--spacing-4);text-align:end">
+            <button class="btn btn-solid btn-square" type="button" data-href="semantics/icons.html" aria-label="Open Icons"><span class="icon icon-md">arrow_forward</span></button>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="pv-section">
-      <h2 class="text-section-title" data-en="Components" data-ar="المكوّنات">Components</h2>
-      <div class="pv-hub-grid">
+    <section style="margin-block-end:var(--spacing-10)">
+      <h2 class="text-section-title" style="margin-block:0 var(--spacing-4)" data-en="Components" data-ar="المكوّنات">Components</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:var(--spacing-5);margin-block-start:var(--spacing-7)">
         <div class="card">
           <h3 class="card-title" data-en="Button" data-ar="زر">Button</h3>
           <p class="card-description" data-en="Primary and secondary, with hover, active, and focus." data-ar="أساسي وثانوي، مع حالات التمرير والضغط والتركيز.">Primary and secondary, with hover, active, and focus.</p>
-          <div class="pv-card-actions">
-            <button class="btn btn-solid btn-square" type="button" data-href="components/button.html" aria-label="Open Button"><span class="pv-symbol" style="font-size:var(--icon-md)">arrow_forward</span></button>
+          <div style="margin-block-start:var(--spacing-4);text-align:end">
+            <button class="btn btn-solid btn-square" type="button" data-href="components/button.html" aria-label="Open Button"><span class="icon icon-md">arrow_forward</span></button>
           </div>
         </div>
         <div class="card">
           <h3 class="card-title" data-en="Input" data-ar="حقل إدخال">Input</h3>
           <p class="card-description" data-en="Text field with placeholder and the 2px focus ring." data-ar="حقل نصي مع نص إرشادي وحلقة تركيز بسماكة 2 بكسل.">Text field with placeholder and the 2px focus ring.</p>
-          <div class="pv-card-actions">
-            <button class="btn btn-solid btn-square" type="button" data-href="components/input.html" aria-label="Open Input"><span class="pv-symbol" style="font-size:var(--icon-md)">arrow_forward</span></button>
+          <div style="margin-block-start:var(--spacing-4);text-align:end">
+            <button class="btn btn-solid btn-square" type="button" data-href="components/input.html" aria-label="Open Input"><span class="icon icon-md">arrow_forward</span></button>
           </div>
         </div>
         <div class="card">
           <h3 class="card-title" data-en="Card" data-ar="بطاقة">Card</h3>
           <p class="card-description" data-en="Raised surface with border-based elevation." data-ar="سطح مرتفع باعتماد الحدود لإظهار الارتفاع.">Raised surface with border-based elevation.</p>
-          <div class="pv-card-actions">
-            <button class="btn btn-solid btn-square" type="button" data-href="components/card.html" aria-label="Open Card"><span class="pv-symbol" style="font-size:var(--icon-md)">arrow_forward</span></button>
+          <div style="margin-block-start:var(--spacing-4);text-align:end">
+            <button class="btn btn-solid btn-square" type="button" data-href="components/card.html" aria-label="Open Card"><span class="icon icon-md">arrow_forward</span></button>
           </div>
         </div>
         <div class="card">
           <h3 class="card-title" data-en="Text" data-ar="النص">Text</h3>
           <p class="card-description" data-en="Type-role classes bundling family, size, weight, leading, and tracking." data-ar="أصناف الأدوار الطباعية تجمع العائلة والحجم والوزن وتباعد الأسطر والأحرف.">Type-role classes bundling family, size, weight, leading, and tracking.</p>
-          <div class="pv-card-actions">
-            <button class="btn btn-solid btn-square" type="button" data-href="components/text.html" aria-label="Open Text"><span class="pv-symbol" style="font-size:var(--icon-md)">arrow_forward</span></button>
+          <div style="margin-block-start:var(--spacing-4);text-align:end">
+            <button class="btn btn-solid btn-square" type="button" data-href="components/text.html" aria-label="Open Text"><span class="icon icon-md">arrow_forward</span></button>
           </div>
         </div>
         <div class="card">
           <h3 class="card-title" data-en="Divider" data-ar="فاصل">Divider</h3>
           <p class="card-description" data-en="Standalone separator lines in normal and strong weights." data-ar="خطوط فاصلة مستقلة بوزنين عادي وقوي.">Standalone separator lines in normal and strong weights.</p>
-          <div class="pv-card-actions">
-            <button class="btn btn-solid btn-square" type="button" data-href="components/divider.html" aria-label="Open Divider"><span class="pv-symbol" style="font-size:var(--icon-md)">arrow_forward</span></button>
+          <div style="margin-block-start:var(--spacing-4);text-align:end">
+            <button class="btn btn-solid btn-square" type="button" data-href="components/divider.html" aria-label="Open Divider"><span class="icon icon-md">arrow_forward</span></button>
           </div>
         </div>
       </div>

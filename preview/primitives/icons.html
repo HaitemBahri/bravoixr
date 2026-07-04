@@ -21,46 +21,46 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=IBM+Plex+Sans+Arabic:wght@200;300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap">
 
   <link rel="stylesheet" href="../../index.css">
-  <link rel="stylesheet" href="../preview.css">
 </head>
-<body>
-  <main class="pv-main">
-    <div class="pv-topbar">
-      <span class="text-context-title">bravoixr</span>
-      <div class="pv-controls">
-        <button class="btn btn-solid btn-square" type="button" data-toggle="theme" aria-label="Toggle theme"><span class="pv-symbol" style="font-size:var(--icon-md)">contrast</span></button>
-        <button class="btn btn-solid btn-square" type="button" data-toggle="lang" aria-label="Toggle language"><span class="pv-symbol" style="font-size:var(--icon-md)">translate</span></button>
+<body class="page text-body">
+  <main style="max-inline-size:var(--container-max);margin-inline:auto;padding:var(--spacing-8) var(--spacing-6) var(--spacing-12)">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:var(--spacing-5);margin-block-end:var(--spacing-8)">
+      <span class="text-project-title">bravoixr</span>
+      <div style="display:flex;gap:var(--spacing-3)">
+        <button class="btn btn-solid btn-square" type="button" data-toggle="theme" aria-label="Toggle theme"><span class="icon icon-md">contrast</span></button>
+        <button class="btn btn-solid btn-square" type="button" data-toggle="lang" aria-label="Toggle language"><span class="icon icon-md">translate</span></button>
       </div>
     </div>
 
-    <h2 style="font-family:var(--font-heading);font-weight:var(--weight-bold);font-size:var(--text-section-title);margin:0 0 var(--spacing-6)" data-en="Icons" data-ar="الأيقونات">Icons</h2>
+    <h2 class="text-section-title" style="margin:0 0 var(--spacing-6)" data-en="Icons" data-ar="الأيقونات">Icons</h2>
 
-    <section class="pv-section">
-      <h3 data-en="Font" data-ar="الخط">Font</h3>
-      <div class="pv-kv"><span class="pv-mono">--icon-font</span><span class="pv-val">'Material Symbols Rounded'</span></div>
+    <section style="margin-block-end:var(--spacing-10)">
+      <h3 class="text-minor-heading" style="margin-block:var(--spacing-6) var(--spacing-4)" data-en="Font" data-ar="الخط">Font</h3>
+      <div style="display:flex;gap:var(--spacing-5);align-items:baseline;max-inline-size:460px;padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)"><span class="text-code-label text-color-helper" style="flex:0 0 220px">--icon-font</span><span class="text-color-normal">'Material Symbols Rounded'</span></div>
     </section>
 
-    <section class="pv-section">
-      <h3 data-en="Size scale" data-ar="مقياس الأحجام">Size scale</h3>
-      <div class="pv-icon-row">
-        <span class="pv-symbol-prim" style="font-size:var(--icon-size-sm)">home</span>
-        <span class="pv-symbol-prim" style="font-size:var(--icon-size-md)">favorite</span>
-        <span class="pv-symbol-prim" style="font-size:var(--icon-size-lg)">settings</span>
-        <span class="pv-symbol-prim" style="font-size:var(--icon-size-xl)">search</span>
+    <section style="margin-block-end:var(--spacing-10)">
+      <h3 class="text-minor-heading" style="margin-block:var(--spacing-6) var(--spacing-4)" data-en="Size scale" data-ar="مقياس الأحجام">Size scale</h3>
+      <!-- Specimens render through the PRIMITIVE icon axes (this is the primitives page). -->
+      <div style="display:flex;align-items:center;gap:var(--spacing-6)">
+        <span style="font-family:var(--icon-font);font-weight:normal;font-style:normal;line-height:1;color:var(--color-text);font-variation-settings:'wght' var(--icon-wght),'FILL' var(--icon-fill),'opsz' var(--icon-opsz-floor),'GRAD' var(--icon-grade-light);font-size:var(--icon-size-sm)">home</span>
+        <span style="font-family:var(--icon-font);font-weight:normal;font-style:normal;line-height:1;color:var(--color-text);font-variation-settings:'wght' var(--icon-wght),'FILL' var(--icon-fill),'opsz' var(--icon-opsz-floor),'GRAD' var(--icon-grade-light);font-size:var(--icon-size-md)">favorite</span>
+        <span style="font-family:var(--icon-font);font-weight:normal;font-style:normal;line-height:1;color:var(--color-text);font-variation-settings:'wght' var(--icon-wght),'FILL' var(--icon-fill),'opsz' var(--icon-opsz-floor),'GRAD' var(--icon-grade-light);font-size:var(--icon-size-lg)">settings</span>
+        <span style="font-family:var(--icon-font);font-weight:normal;font-style:normal;line-height:1;color:var(--color-text);font-variation-settings:'wght' var(--icon-wght),'FILL' var(--icon-fill),'opsz' var(--icon-opsz-floor),'GRAD' var(--icon-grade-light);font-size:var(--icon-size-xl)">search</span>
       </div>
-      <div class="pv-kv" style="margin-block-start:var(--spacing-5)"><span class="pv-mono">--icon-size-sm</span><span class="pv-val">16px</span></div>
-      <div class="pv-kv"><span class="pv-mono">--icon-size-md</span><span class="pv-val">20px</span></div>
-      <div class="pv-kv"><span class="pv-mono">--icon-size-lg</span><span class="pv-val">24px</span></div>
-      <div class="pv-kv"><span class="pv-mono">--icon-size-xl</span><span class="pv-val">32px</span></div>
+      <div style="display:flex;gap:var(--spacing-5);align-items:baseline;max-inline-size:460px;padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border);margin-block-start:var(--spacing-5)"><span class="text-code-label text-color-helper" style="flex:0 0 220px">--icon-size-sm</span><span class="text-color-normal">16px</span></div>
+      <div style="display:flex;gap:var(--spacing-5);align-items:baseline;max-inline-size:460px;padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)"><span class="text-code-label text-color-helper" style="flex:0 0 220px">--icon-size-md</span><span class="text-color-normal">20px</span></div>
+      <div style="display:flex;gap:var(--spacing-5);align-items:baseline;max-inline-size:460px;padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)"><span class="text-code-label text-color-helper" style="flex:0 0 220px">--icon-size-lg</span><span class="text-color-normal">24px</span></div>
+      <div style="display:flex;gap:var(--spacing-5);align-items:baseline;max-inline-size:460px;padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)"><span class="text-code-label text-color-helper" style="flex:0 0 220px">--icon-size-xl</span><span class="text-color-normal">32px</span></div>
     </section>
 
-    <section class="pv-section">
-      <h3 data-en="Variable-font axes" data-ar="محاور الخط المتغيّر">Variable-font axes</h3>
-      <div class="pv-kv"><span class="pv-mono">--icon-wght</span><span class="pv-val">400</span></div>
-      <div class="pv-kv"><span class="pv-mono">--icon-fill</span><span class="pv-val">0</span></div>
-      <div class="pv-kv"><span class="pv-mono">--icon-opsz-floor</span><span class="pv-val">20</span></div>
-      <div class="pv-kv"><span class="pv-mono">--icon-grade-light</span><span class="pv-val">0</span></div>
-      <div class="pv-kv"><span class="pv-mono">--icon-grade-dark</span><span class="pv-val">-25</span></div>
+    <section style="margin-block-end:var(--spacing-10)">
+      <h3 class="text-minor-heading" style="margin-block:var(--spacing-6) var(--spacing-4)" data-en="Variable-font axes" data-ar="محاور الخط المتغيّر">Variable-font axes</h3>
+      <div style="display:flex;gap:var(--spacing-5);align-items:baseline;max-inline-size:460px;padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)"><span class="text-code-label text-color-helper" style="flex:0 0 220px">--icon-wght</span><span class="text-color-normal">400</span></div>
+      <div style="display:flex;gap:var(--spacing-5);align-items:baseline;max-inline-size:460px;padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)"><span class="text-code-label text-color-helper" style="flex:0 0 220px">--icon-fill</span><span class="text-color-normal">0</span></div>
+      <div style="display:flex;gap:var(--spacing-5);align-items:baseline;max-inline-size:460px;padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)"><span class="text-code-label text-color-helper" style="flex:0 0 220px">--icon-opsz-floor</span><span class="text-color-normal">20</span></div>
+      <div style="display:flex;gap:var(--spacing-5);align-items:baseline;max-inline-size:460px;padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)"><span class="text-code-label text-color-helper" style="flex:0 0 220px">--icon-grade-light</span><span class="text-color-normal">0</span></div>
+      <div style="display:flex;gap:var(--spacing-5);align-items:baseline;max-inline-size:460px;padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)"><span class="text-code-label text-color-helper" style="flex:0 0 220px">--icon-grade-dark</span><span class="text-color-normal">-25</span></div>
     </section>
   </main>
 

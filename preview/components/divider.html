@@ -23,29 +23,29 @@
   <link rel="stylesheet" href="../../index.css">
   <link rel="stylesheet" href="../preview.css">
 </head>
-<body>
-  <main class="pv-main">
-    <div class="pv-topbar">
-      <span class="text-context-title">bravoixr</span>
-      <div class="pv-controls">
-        <button class="btn btn-solid btn-square" type="button" data-toggle="theme" aria-label="Toggle theme"><span class="pv-symbol" style="font-size:var(--icon-md)">contrast</span></button>
-        <button class="btn btn-solid btn-square" type="button" data-toggle="lang" aria-label="Toggle language"><span class="pv-symbol" style="font-size:var(--icon-md)">translate</span></button>
+<body class="page text-body">
+  <main style="max-inline-size:var(--container-max);margin-inline:auto;padding:var(--spacing-8) var(--spacing-6) var(--spacing-12)">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:var(--spacing-5);margin-block-end:var(--spacing-8)">
+      <span class="text-project-title">bravoixr</span>
+      <div style="display:flex;gap:var(--spacing-3)">
+        <button class="btn btn-solid btn-square" type="button" data-toggle="theme" aria-label="Toggle theme"><span class="icon icon-md">contrast</span></button>
+        <button class="btn btn-solid btn-square" type="button" data-toggle="lang" aria-label="Toggle language"><span class="icon icon-md">translate</span></button>
       </div>
     </div>
 
-    <section class="pv-section">
-      <h2 style="font-family:var(--font-heading);font-weight:var(--weight-page-title);font-size:var(--text-section-title);margin:0 0 var(--spacing-3)" data-en="Divider" data-ar="فاصل">Divider</h2>
-      <p class="pv-lede" data-en="A standalone separator line between content. Two strengths bundle the matching border-width and border-color roles, so the weight steps up together — thicker and darker — for a firmer break. Both recolor with the theme; being horizontal, they read the same in either script." data-ar="خطّ فاصل مستقل بين المحتوى. وزنان يجمع كلٌّ منهما دورَي سماكة الحدّ ولونه معًا، فيشتدّ الوزن دفعةً واحدة — أثخن وأغمق — لفصلٍ أوضح. كلاهما يتبع السمة في ألوانه؛ ولأنّه أفقي فإنّه يبدو نفسه في كلا النصّين.">A standalone separator line between content. Two strengths bundle the matching border-width and border-color roles, so the weight steps up together — thicker and darker — for a firmer break. Both recolor with the theme; being horizontal, they read the same in either script.</p>
+    <section style="margin-block-end:var(--spacing-10)">
+      <h2 class="text-section-title" style="margin:0 0 var(--spacing-3)" data-en="Divider" data-ar="فاصل">Divider</h2>
+      <p class="text-page-description text-color-description" style="max-inline-size:60ch" data-en="A standalone separator line between content. Two strengths bundle the matching border-width and border-color roles, so the weight steps up together — thicker and darker — for a firmer break. Both recolor with the theme; being horizontal, they read the same in either script." data-ar="خطّ فاصل مستقل بين المحتوى. وزنان يجمع كلٌّ منهما دورَي سماكة الحدّ ولونه معًا، فيشتدّ الوزن دفعةً واحدة — أثخن وأغمق — لفصلٍ أوضح. كلاهما يتبع السمة في ألوانه؛ ولأنّه أفقي فإنّه يبدو نفسه في كلا النصّين.">A standalone separator line between content. Two strengths bundle the matching border-width and border-color roles, so the weight steps up together — thicker and darker — for a firmer break. Both recolor with the theme; being horizontal, they read the same in either script.</p>
 
-      <div style="margin-top:var(--spacing-7)">
-        <span class="pv-mono">.divider</span>
+      <div style="margin-block-start:var(--spacing-7)">
+        <span class="text-code-label text-color-helper">.divider</span>
         <p style="margin:var(--spacing-2) 0 0;color:var(--color-text-muted)" data-en="Content above the line." data-ar="محتوى فوق الخطّ.">Content above the line.</p>
         <hr class="divider" style="margin-block:var(--spacing-4)">
         <p style="margin:0;color:var(--color-text-muted)" data-en="Content below the line." data-ar="محتوى تحت الخطّ.">Content below the line.</p>
       </div>
 
-      <div style="margin-top:var(--spacing-8)">
-        <span class="pv-mono">.divider-strong</span>
+      <div style="margin-block-start:var(--spacing-8)">
+        <span class="text-code-label text-color-helper">.divider-strong</span>
         <p style="margin:var(--spacing-2) 0 0;color:var(--color-text-muted)" data-en="Content above the line." data-ar="محتوى فوق الخطّ.">Content above the line.</p>
         <hr class="divider-strong" style="margin-block:var(--spacing-4)">
         <p style="margin:0;color:var(--color-text-muted)" data-en="Content below the line." data-ar="محتوى تحت الخطّ.">Content below the line.</p>

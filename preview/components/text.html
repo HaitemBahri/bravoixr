@@ -23,98 +23,98 @@
   <link rel="stylesheet" href="../../index.css">
   <link rel="stylesheet" href="../preview.css">
 </head>
-<body>
-  <main class="pv-main">
-    <div class="pv-topbar">
+<body class="page text-body">
+  <main style="max-inline-size:var(--container-max);margin-inline:auto;padding:var(--spacing-8) var(--spacing-6) var(--spacing-12)">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:var(--spacing-5);margin-block-end:var(--spacing-8)">
       <span class="text-project-title">bravoixr</span>
-      <div class="pv-controls">
-        <button class="btn btn-solid btn-square" type="button" data-toggle="theme" aria-label="Toggle theme"><span class="pv-symbol" style="font-size:var(--icon-md)">contrast</span></button>
-        <button class="btn btn-solid btn-square" type="button" data-toggle="lang" aria-label="Toggle language"><span class="pv-symbol" style="font-size:var(--icon-md)">translate</span></button>
+      <div style="display:flex;gap:var(--spacing-3)">
+        <button class="btn btn-solid btn-square" type="button" data-toggle="theme" aria-label="Toggle theme"><span class="icon icon-md">contrast</span></button>
+        <button class="btn btn-solid btn-square" type="button" data-toggle="lang" aria-label="Toggle language"><span class="icon icon-md">translate</span></button>
       </div>
     </div>
 
-    <section class="pv-section">
-      <h2 style="font-family:var(--font-heading);font-weight:var(--weight-page-title);font-size:var(--text-section-title);margin:0 0 var(--spacing-3)" data-en="Text" data-ar="النص">Text</h2>
-      <p class="pv-lede" data-en="Each class bundles a full type role — family, size, weight, leading, and tracking — so you apply one class, not five tokens. Toggle ع and the family, leading, and tracking swap to Arabic; narrow the window and the heading sizes step down (tablet, then mobile)." data-ar="كل صنف يجمع دورًا طباعيًّا كاملًا — العائلة والحجم والوزن وتباعد الأسطر والأحرف — فتطبّق صنفًا واحدًا لا خمسة رموز. بدّل إلى ع فتتحوّل العائلة وتباعد الأسطر والأحرف إلى العربية؛ وصغّر النافذة فتنزل أحجام العناوين درجةً (لوحي، ثم جوّال).">Each class bundles a full type role — family, size, weight, leading, and tracking — so you apply one class, not five tokens. Toggle ع and the family, leading, and tracking swap to Arabic; narrow the window and the heading sizes step down (tablet, then mobile).</p>
+    <section style="margin-block-end:var(--spacing-10)">
+      <h2 class="text-section-title" style="margin:0 0 var(--spacing-3)" data-en="Text" data-ar="النص">Text</h2>
+      <p class="text-page-description text-color-description" style="max-inline-size:60ch" data-en="Each class bundles a full type role — family, size, weight, leading, and tracking — so you apply one class, not five tokens. Toggle ع and the family, leading, and tracking swap to Arabic; narrow the window and the heading sizes step down (tablet, then mobile)." data-ar="كل صنف يجمع دورًا طباعيًّا كاملًا — العائلة والحجم والوزن وتباعد الأسطر والأحرف — فتطبّق صنفًا واحدًا لا خمسة رموز. بدّل إلى ع فتتحوّل العائلة وتباعد الأسطر والأحرف إلى العربية؛ وصغّر النافذة فتنزل أحجام العناوين درجةً (لوحي، ثم جوّال).">Each class bundles a full type role — family, size, weight, leading, and tracking — so you apply one class, not five tokens. Toggle ع and the family, leading, and tracking swap to Arabic; narrow the window and the heading sizes step down (tablet, then mobile).</p>
     </section>
 
-    <section class="pv-section">
-      <h3 data-en="Headings" data-ar="العناوين">Headings</h3>
-      <div class="pv-type-row">
-        <div class="pv-type-meta"><strong>page-title</strong><span class="pv-mono">.text-page-title</span></div>
-        <div class="text-page-title pv-type-specimen" data-en="The bold headline" data-ar="العنوان العريض">The bold headline</div>
+    <section style="margin-block-end:var(--spacing-10)">
+      <h3 class="text-minor-heading" style="margin-block:var(--spacing-6) var(--spacing-4)" data-en="Headings" data-ar="العناوين">Headings</h3>
+      <div style="display:flex;align-items:baseline;gap:var(--spacing-6);padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)">
+        <div style="flex:0 0 180px"><strong style="display:block;font-weight:var(--weight-subsection-title)">page-title</strong><span class="text-code-label text-color-helper">.text-page-title</span></div>
+        <div class="text-page-title" style="min-inline-size:0" data-en="The bold headline" data-ar="العنوان العريض">The bold headline</div>
       </div>
-      <div class="pv-type-row">
-        <div class="pv-type-meta"><strong>section-title</strong><span class="pv-mono">.text-section-title</span></div>
-        <div class="text-section-title pv-type-specimen" data-en="The bold headline" data-ar="العنوان العريض">The bold headline</div>
+      <div style="display:flex;align-items:baseline;gap:var(--spacing-6);padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)">
+        <div style="flex:0 0 180px"><strong style="display:block;font-weight:var(--weight-subsection-title)">section-title</strong><span class="text-code-label text-color-helper">.text-section-title</span></div>
+        <div class="text-section-title" style="min-inline-size:0" data-en="The bold headline" data-ar="العنوان العريض">The bold headline</div>
       </div>
-      <div class="pv-type-row">
-        <div class="pv-type-meta"><strong>subsection-title</strong><span class="pv-mono">.text-subsection-title</span></div>
-        <div class="text-subsection-title pv-type-specimen" data-en="The bold headline" data-ar="العنوان العريض">The bold headline</div>
+      <div style="display:flex;align-items:baseline;gap:var(--spacing-6);padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)">
+        <div style="flex:0 0 180px"><strong style="display:block;font-weight:var(--weight-subsection-title)">subsection-title</strong><span class="text-code-label text-color-helper">.text-subsection-title</span></div>
+        <div class="text-subsection-title" style="min-inline-size:0" data-en="The bold headline" data-ar="العنوان العريض">The bold headline</div>
       </div>
-      <div class="pv-type-row">
-        <div class="pv-type-meta"><strong>minor-heading</strong><span class="pv-mono">.text-minor-heading</span></div>
-        <div class="text-minor-heading pv-type-specimen" data-en="The bold headline" data-ar="العنوان العريض">The bold headline</div>
-      </div>
-    </section>
-
-    <section class="pv-section">
-      <h3 data-en="Page structure" data-ar="بنية الصفحة">Page structure</h3>
-      <div class="pv-type-row">
-        <div class="pv-type-meta"><strong>project-title</strong><span class="pv-mono">.text-project-title</span></div>
-        <div class="text-project-title pv-type-specimen" data-en="bravoixr" data-ar="bravoixr">bravoixr</div>
-      </div>
-      <div class="pv-type-row">
-        <div class="pv-type-meta"><strong>page-description</strong><span class="pv-mono">.text-page-description</span></div>
-        <div class="text-page-description pv-type-specimen" data-en="A quiet, airy lede that sits under the page title." data-ar="سطر تمهيدي هادئ يقع تحت عنوان الصفحة.">A quiet, airy lede that sits under the page title.</div>
+      <div style="display:flex;align-items:baseline;gap:var(--spacing-6);padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)">
+        <div style="flex:0 0 180px"><strong style="display:block;font-weight:var(--weight-subsection-title)">minor-heading</strong><span class="text-code-label text-color-helper">.text-minor-heading</span></div>
+        <div class="text-minor-heading" style="min-inline-size:0" data-en="The bold headline" data-ar="العنوان العريض">The bold headline</div>
       </div>
     </section>
 
-    <section class="pv-section">
-      <h3 data-en="Body" data-ar="النص">Body</h3>
-      <div class="pv-type-row">
-        <div class="pv-type-meta"><strong>context-title</strong><span class="pv-mono">.text-context-title</span></div>
-        <div class="text-context-title pv-type-specimen" data-en="Context title" data-ar="عنوان سياقي">Context title</div>
+    <section style="margin-block-end:var(--spacing-10)">
+      <h3 class="text-minor-heading" style="margin-block:var(--spacing-6) var(--spacing-4)" data-en="Page structure" data-ar="بنية الصفحة">Page structure</h3>
+      <div style="display:flex;align-items:baseline;gap:var(--spacing-6);padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)">
+        <div style="flex:0 0 180px"><strong style="display:block;font-weight:var(--weight-subsection-title)">project-title</strong><span class="text-code-label text-color-helper">.text-project-title</span></div>
+        <div class="text-project-title" style="min-inline-size:0" data-en="bravoixr" data-ar="bravoixr">bravoixr</div>
       </div>
-      <div class="pv-type-row">
-        <div class="pv-type-meta"><strong>body</strong><span class="pv-mono">.text-body</span></div>
-        <div class="text-body pv-type-specimen" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض العائلة والحجم ومدى الوضوح.">The quick brown fox jumps over the lazy dog.</div>
-      </div>
-      <div class="pv-type-row">
-        <div class="pv-type-meta"><strong>label</strong><span class="pv-mono">.text-label</span></div>
-        <div class="text-label pv-type-specimen" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض العائلة والحجم ومدى الوضوح.">The quick brown fox jumps over the lazy dog.</div>
-      </div>
-      <div class="pv-type-row">
-        <div class="pv-type-meta"><strong>helper</strong><span class="pv-mono">.text-helper</span></div>
-        <div class="text-helper pv-type-specimen" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض العائلة والحجم ومدى الوضوح.">The quick brown fox jumps over the lazy dog.</div>
+      <div style="display:flex;align-items:baseline;gap:var(--spacing-6);padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)">
+        <div style="flex:0 0 180px"><strong style="display:block;font-weight:var(--weight-subsection-title)">page-description</strong><span class="text-code-label text-color-helper">.text-page-description</span></div>
+        <div class="text-page-description" style="min-inline-size:0" data-en="A quiet, airy lede that sits under the page title." data-ar="سطر تمهيدي هادئ يقع تحت عنوان الصفحة.">A quiet, airy lede that sits under the page title.</div>
       </div>
     </section>
 
-    <section class="pv-section">
-      <h3 data-en="Code" data-ar="الشيفرة">Code</h3>
-      <div class="pv-type-row">
-        <div class="pv-type-meta"><strong>code</strong><span class="pv-mono">.text-code</span></div>
-        <div class="text-code pv-type-specimen">--color-primary: var(--blue-600);</div>
+    <section style="margin-block-end:var(--spacing-10)">
+      <h3 class="text-minor-heading" style="margin-block:var(--spacing-6) var(--spacing-4)" data-en="Body" data-ar="النص">Body</h3>
+      <div style="display:flex;align-items:baseline;gap:var(--spacing-6);padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)">
+        <div style="flex:0 0 180px"><strong style="display:block;font-weight:var(--weight-subsection-title)">context-title</strong><span class="text-code-label text-color-helper">.text-context-title</span></div>
+        <div class="text-context-title" style="min-inline-size:0" data-en="Context title" data-ar="عنوان سياقي">Context title</div>
       </div>
-      <div class="pv-type-row">
-        <div class="pv-type-meta"><strong>code-label</strong><span class="pv-mono">.text-code-label</span></div>
-        <div class="text-code-label pv-type-specimen">--color-primary: var(--blue-600);</div>
+      <div style="display:flex;align-items:baseline;gap:var(--spacing-6);padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)">
+        <div style="flex:0 0 180px"><strong style="display:block;font-weight:var(--weight-subsection-title)">body</strong><span class="text-code-label text-color-helper">.text-body</span></div>
+        <div class="text-body" style="min-inline-size:0" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض العائلة والحجم ومدى الوضوح.">The quick brown fox jumps over the lazy dog.</div>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:var(--spacing-6);padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)">
+        <div style="flex:0 0 180px"><strong style="display:block;font-weight:var(--weight-subsection-title)">label</strong><span class="text-code-label text-color-helper">.text-label</span></div>
+        <div class="text-label" style="min-inline-size:0" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض العائلة والحجم ومدى الوضوح.">The quick brown fox jumps over the lazy dog.</div>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:var(--spacing-6);padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)">
+        <div style="flex:0 0 180px"><strong style="display:block;font-weight:var(--weight-subsection-title)">helper</strong><span class="text-code-label text-color-helper">.text-helper</span></div>
+        <div class="text-helper" style="min-inline-size:0" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض العائلة والحجم ومدى الوضوح.">The quick brown fox jumps over the lazy dog.</div>
       </div>
     </section>
 
-    <section class="pv-section">
-      <h3 data-en="Text color" data-ar="لون النص">Text color</h3>
-      <div class="pv-type-row">
-        <div class="pv-type-meta"><strong>normal</strong><span class="pv-mono">.text-color-normal</span></div>
-        <div class="text-body text-color-normal pv-type-specimen" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض لون النصّ الأساسي.">The quick brown fox jumps over the lazy dog.</div>
+    <section style="margin-block-end:var(--spacing-10)">
+      <h3 class="text-minor-heading" style="margin-block:var(--spacing-6) var(--spacing-4)" data-en="Code" data-ar="الشيفرة">Code</h3>
+      <div style="display:flex;align-items:baseline;gap:var(--spacing-6);padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)">
+        <div style="flex:0 0 180px"><strong style="display:block;font-weight:var(--weight-subsection-title)">code</strong><span class="text-code-label text-color-helper">.text-code</span></div>
+        <div class="text-code" style="min-inline-size:0">--color-primary: var(--blue-600);</div>
       </div>
-      <div class="pv-type-row">
-        <div class="pv-type-meta"><strong>description</strong><span class="pv-mono">.text-color-description</span></div>
-        <div class="text-body text-color-description pv-type-specimen" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض لون الوصف المخفّف.">The quick brown fox jumps over the lazy dog.</div>
+      <div style="display:flex;align-items:baseline;gap:var(--spacing-6);padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)">
+        <div style="flex:0 0 180px"><strong style="display:block;font-weight:var(--weight-subsection-title)">code-label</strong><span class="text-code-label text-color-helper">.text-code-label</span></div>
+        <div class="text-code-label" style="min-inline-size:0">--color-primary: var(--blue-600);</div>
       </div>
-      <div class="pv-type-row">
-        <div class="pv-type-meta"><strong>helper</strong><span class="pv-mono">.text-color-helper</span></div>
-        <div class="text-body text-color-helper pv-type-specimen" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض لون النصّ المساعد الخافت.">The quick brown fox jumps over the lazy dog.</div>
+    </section>
+
+    <section style="margin-block-end:var(--spacing-10)">
+      <h3 class="text-minor-heading" style="margin-block:var(--spacing-6) var(--spacing-4)" data-en="Text color" data-ar="لون النص">Text color</h3>
+      <div style="display:flex;align-items:baseline;gap:var(--spacing-6);padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)">
+        <div style="flex:0 0 180px"><strong style="display:block;font-weight:var(--weight-subsection-title)">normal</strong><span class="text-code-label text-color-helper">.text-color-normal</span></div>
+        <div class="text-body text-color-normal" style="min-inline-size:0" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض لون النصّ الأساسي.">The quick brown fox jumps over the lazy dog.</div>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:var(--spacing-6);padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)">
+        <div style="flex:0 0 180px"><strong style="display:block;font-weight:var(--weight-subsection-title)">description</strong><span class="text-code-label text-color-helper">.text-color-description</span></div>
+        <div class="text-body text-color-description" style="min-inline-size:0" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض لون الوصف المخفّف.">The quick brown fox jumps over the lazy dog.</div>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:var(--spacing-6);padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)">
+        <div style="flex:0 0 180px"><strong style="display:block;font-weight:var(--weight-subsection-title)">helper</strong><span class="text-code-label text-color-helper">.text-color-helper</span></div>
+        <div class="text-body text-color-helper" style="min-inline-size:0" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض لون النصّ المساعد الخافت.">The quick brown fox jumps over the lazy dog.</div>
       </div>
     </section>
   </main>

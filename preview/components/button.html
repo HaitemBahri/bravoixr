@@ -23,58 +23,58 @@
   <link rel="stylesheet" href="../../index.css">
   <link rel="stylesheet" href="../preview.css">
 </head>
-<body>
-  <main class="pv-main">
-    <div class="pv-topbar">
-      <span class="text-context-title">bravoixr</span>
-      <div class="pv-controls">
-        <button class="btn btn-solid btn-square" type="button" data-toggle="theme" aria-label="Toggle theme"><span class="pv-symbol" style="font-size:var(--icon-md)">contrast</span></button>
-        <button class="btn btn-solid btn-square" type="button" data-toggle="lang" aria-label="Toggle language"><span class="pv-symbol" style="font-size:var(--icon-md)">translate</span></button>
+<body class="page text-body">
+  <main style="max-inline-size:var(--container-max);margin-inline:auto;padding:var(--spacing-8) var(--spacing-6) var(--spacing-12)">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:var(--spacing-5);margin-block-end:var(--spacing-8)">
+      <span class="text-project-title">bravoixr</span>
+      <div style="display:flex;gap:var(--spacing-3)">
+        <button class="btn btn-solid btn-square" type="button" data-toggle="theme" aria-label="Toggle theme"><span class="icon icon-md">contrast</span></button>
+        <button class="btn btn-solid btn-square" type="button" data-toggle="lang" aria-label="Toggle language"><span class="icon icon-md">translate</span></button>
       </div>
     </div>
 
-    <section class="pv-section">
-      <h2 style="font-family:var(--font-heading);font-weight:var(--weight-page-title);font-size:var(--text-section-title);margin:0 0 var(--spacing-3)" data-en="Button" data-ar="زر">Button</h2>
-      <p class="pv-lede" data-en="One primary intent in two fills — solid and text — each as a normal button that hugs its label or a square icon button. Every variant is shown across its five states." data-ar="نيّة أساسية واحدة بامتلاءين — ممتلئ ونصّي — كلٌّ كزرّ عادي يحتضن نصّه أو كزرّ أيقونة مربّع. كل نوع معروض عبر حالاته الخمس.">One primary intent in two fills — solid and text — each as a normal button that hugs its label or a square icon button. Every variant is shown across its five states.</p>
+    <section style="margin-block-end:var(--spacing-10)">
+      <h2 class="text-section-title" style="margin:0 0 var(--spacing-3)" data-en="Button" data-ar="زر">Button</h2>
+      <p class="text-page-description text-color-description" style="max-inline-size:60ch" data-en="One primary intent in two fills — solid and text — each as a normal button that hugs its label or a square icon button. Every variant is shown across its five states." data-ar="نيّة أساسية واحدة بامتلاءين — ممتلئ ونصّي — كلٌّ كزرّ عادي يحتضن نصّه أو كزرّ أيقونة مربّع. كل نوع معروض عبر حالاته الخمس.">One primary intent in two fills — solid and text — each as a normal button that hugs its label or a square icon button. Every variant is shown across its five states.</p>
 
       <!-- Solid, normal — five states. -->
-      <h3 data-en="Solid" data-ar="ممتلئ">Solid</h3>
-      <div class="pv-row">
-        <div class="pv-tile"><button class="btn btn-solid" type="button" data-en="Button" data-ar="زر">Button</button><span class="pv-mono" data-en="Default" data-ar="افتراضي">Default</span></div>
-        <div class="pv-tile"><button class="btn btn-solid pv-force-hover" type="button" data-en="Button" data-ar="زر">Button</button><span class="pv-mono" data-en="Hover" data-ar="تمرير">Hover</span></div>
-        <div class="pv-tile"><button class="btn btn-solid pv-force-active" type="button" data-en="Button" data-ar="زر">Button</button><span class="pv-mono" data-en="Pressed" data-ar="مضغوط">Pressed</span></div>
-        <div class="pv-tile"><button class="btn btn-solid pv-force-focus" type="button" data-en="Button" data-ar="زر">Button</button><span class="pv-mono" data-en="Focus" data-ar="تركيز">Focus</span></div>
-        <div class="pv-tile"><button class="btn btn-solid" type="button" disabled data-en="Button" data-ar="زر">Button</button><span class="pv-mono" data-en="Disabled" data-ar="معطّل">Disabled</span></div>
+      <h3 class="text-minor-heading" style="margin-block:var(--spacing-6) var(--spacing-4)" data-en="Solid" data-ar="ممتلئ">Solid</h3>
+      <div style="display:flex;flex-wrap:wrap;gap:var(--spacing-5);align-items:center">
+        <div style="display:grid;gap:var(--spacing-2);justify-items:center"><button class="btn btn-solid" type="button" data-en="Button" data-ar="زر">Button</button><span class="text-code-label text-color-helper" data-en="Default" data-ar="افتراضي">Default</span></div>
+        <div style="display:grid;gap:var(--spacing-2);justify-items:center"><button class="btn btn-solid" type="button" style="background:var(--color-primary-hover)" data-en="Button" data-ar="زر">Button</button><span class="text-code-label text-color-helper" data-en="Hover" data-ar="تمرير">Hover</span></div>
+        <div style="display:grid;gap:var(--spacing-2);justify-items:center"><button class="btn btn-solid" type="button" style="background:var(--color-primary-active)" data-en="Button" data-ar="زر">Button</button><span class="text-code-label text-color-helper" data-en="Pressed" data-ar="مضغوط">Pressed</span></div>
+        <div style="display:grid;gap:var(--spacing-2);justify-items:center"><button class="btn btn-solid" type="button" style="outline:var(--border-width-strong) solid var(--color-border-focus);outline-offset:var(--spacing-1)" data-en="Button" data-ar="زر">Button</button><span class="text-code-label text-color-helper" data-en="Focus" data-ar="تركيز">Focus</span></div>
+        <div style="display:grid;gap:var(--spacing-2);justify-items:center"><button class="btn btn-solid" type="button" disabled data-en="Button" data-ar="زر">Button</button><span class="text-code-label text-color-helper" data-en="Disabled" data-ar="معطّل">Disabled</span></div>
       </div>
 
       <!-- Text, normal — five states. -->
-      <h3 data-en="Text" data-ar="نصّي">Text</h3>
-      <div class="pv-row">
-        <div class="pv-tile"><button class="btn btn-text" type="button" data-en="Button" data-ar="زر">Button</button><span class="pv-mono" data-en="Default" data-ar="افتراضي">Default</span></div>
-        <div class="pv-tile"><button class="btn btn-text pv-force-hover" type="button" data-en="Button" data-ar="زر">Button</button><span class="pv-mono" data-en="Hover" data-ar="تمرير">Hover</span></div>
-        <div class="pv-tile"><button class="btn btn-text pv-force-active" type="button" data-en="Button" data-ar="زر">Button</button><span class="pv-mono" data-en="Pressed" data-ar="مضغوط">Pressed</span></div>
-        <div class="pv-tile"><button class="btn btn-text pv-force-focus" type="button" data-en="Button" data-ar="زر">Button</button><span class="pv-mono" data-en="Focus" data-ar="تركيز">Focus</span></div>
-        <div class="pv-tile"><button class="btn btn-text" type="button" disabled data-en="Button" data-ar="زر">Button</button><span class="pv-mono" data-en="Disabled" data-ar="معطّل">Disabled</span></div>
+      <h3 class="text-minor-heading" style="margin-block:var(--spacing-6) var(--spacing-4)" data-en="Text" data-ar="نصّي">Text</h3>
+      <div style="display:flex;flex-wrap:wrap;gap:var(--spacing-5);align-items:center">
+        <div style="display:grid;gap:var(--spacing-2);justify-items:center"><button class="btn btn-text" type="button" data-en="Button" data-ar="زر">Button</button><span class="text-code-label text-color-helper" data-en="Default" data-ar="افتراضي">Default</span></div>
+        <div style="display:grid;gap:var(--spacing-2);justify-items:center"><button class="btn btn-text" type="button" style="background:var(--color-surface-sunken);color:var(--color-primary-hover)" data-en="Button" data-ar="زر">Button</button><span class="text-code-label text-color-helper" data-en="Hover" data-ar="تمرير">Hover</span></div>
+        <div style="display:grid;gap:var(--spacing-2);justify-items:center"><button class="btn btn-text" type="button" style="color:var(--color-primary-active)" data-en="Button" data-ar="زر">Button</button><span class="text-code-label text-color-helper" data-en="Pressed" data-ar="مضغوط">Pressed</span></div>
+        <div style="display:grid;gap:var(--spacing-2);justify-items:center"><button class="btn btn-text" type="button" style="outline:var(--border-width-strong) solid var(--color-border-focus);outline-offset:var(--spacing-1)" data-en="Button" data-ar="زر">Button</button><span class="text-code-label text-color-helper" data-en="Focus" data-ar="تركيز">Focus</span></div>
+        <div style="display:grid;gap:var(--spacing-2);justify-items:center"><button class="btn btn-text" type="button" disabled data-en="Button" data-ar="زر">Button</button><span class="text-code-label text-color-helper" data-en="Disabled" data-ar="معطّل">Disabled</span></div>
       </div>
 
       <!-- Solid, square — five states. -->
-      <h3 data-en="Solid · square" data-ar="ممتلئ · مربّع">Solid · square</h3>
-      <div class="pv-row">
-        <div class="pv-tile"><button class="btn btn-solid btn-square" type="button" aria-label="Add"><span class="pv-symbol" style="font-size:var(--icon-md);color:inherit">add</span></button><span class="pv-mono" data-en="Default" data-ar="افتراضي">Default</span></div>
-        <div class="pv-tile"><button class="btn btn-solid btn-square pv-force-hover" type="button" aria-label="Add"><span class="pv-symbol" style="font-size:var(--icon-md);color:inherit">add</span></button><span class="pv-mono" data-en="Hover" data-ar="تمرير">Hover</span></div>
-        <div class="pv-tile"><button class="btn btn-solid btn-square pv-force-active" type="button" aria-label="Add"><span class="pv-symbol" style="font-size:var(--icon-md);color:inherit">add</span></button><span class="pv-mono" data-en="Pressed" data-ar="مضغوط">Pressed</span></div>
-        <div class="pv-tile"><button class="btn btn-solid btn-square pv-force-focus" type="button" aria-label="Add"><span class="pv-symbol" style="font-size:var(--icon-md);color:inherit">add</span></button><span class="pv-mono" data-en="Focus" data-ar="تركيز">Focus</span></div>
-        <div class="pv-tile"><button class="btn btn-solid btn-square" type="button" disabled aria-label="Add"><span class="pv-symbol" style="font-size:var(--icon-md);color:inherit">add</span></button><span class="pv-mono" data-en="Disabled" data-ar="معطّل">Disabled</span></div>
+      <h3 class="text-minor-heading" style="margin-block:var(--spacing-6) var(--spacing-4)" data-en="Solid · square" data-ar="ممتلئ · مربّع">Solid · square</h3>
+      <div style="display:flex;flex-wrap:wrap;gap:var(--spacing-5);align-items:center">
+        <div style="display:grid;gap:var(--spacing-2);justify-items:center"><button class="btn btn-solid btn-square" type="button" aria-label="Add"><span class="icon icon-md">add</span></button><span class="text-code-label text-color-helper" data-en="Default" data-ar="افتراضي">Default</span></div>
+        <div style="display:grid;gap:var(--spacing-2);justify-items:center"><button class="btn btn-solid btn-square" type="button" style="background:var(--color-primary-hover)" aria-label="Add"><span class="icon icon-md">add</span></button><span class="text-code-label text-color-helper" data-en="Hover" data-ar="تمرير">Hover</span></div>
+        <div style="display:grid;gap:var(--spacing-2);justify-items:center"><button class="btn btn-solid btn-square" type="button" style="background:var(--color-primary-active)" aria-label="Add"><span class="icon icon-md">add</span></button><span class="text-code-label text-color-helper" data-en="Pressed" data-ar="مضغوط">Pressed</span></div>
+        <div style="display:grid;gap:var(--spacing-2);justify-items:center"><button class="btn btn-solid btn-square" type="button" style="outline:var(--border-width-strong) solid var(--color-border-focus);outline-offset:var(--spacing-1)" aria-label="Add"><span class="icon icon-md">add</span></button><span class="text-code-label text-color-helper" data-en="Focus" data-ar="تركيز">Focus</span></div>
+        <div style="display:grid;gap:var(--spacing-2);justify-items:center"><button class="btn btn-solid btn-square" type="button" disabled aria-label="Add"><span class="icon icon-md">add</span></button><span class="text-code-label text-color-helper" data-en="Disabled" data-ar="معطّل">Disabled</span></div>
       </div>
 
       <!-- Text, square — five states. -->
-      <h3 data-en="Text · square" data-ar="نصّي · مربّع">Text · square</h3>
-      <div class="pv-row">
-        <div class="pv-tile"><button class="btn btn-text btn-square" type="button" aria-label="Favorite"><span class="pv-symbol" style="font-size:var(--icon-md);color:inherit">favorite</span></button><span class="pv-mono" data-en="Default" data-ar="افتراضي">Default</span></div>
-        <div class="pv-tile"><button class="btn btn-text btn-square pv-force-hover" type="button" aria-label="Favorite"><span class="pv-symbol" style="font-size:var(--icon-md);color:inherit">favorite</span></button><span class="pv-mono" data-en="Hover" data-ar="تمرير">Hover</span></div>
-        <div class="pv-tile"><button class="btn btn-text btn-square pv-force-active" type="button" aria-label="Favorite"><span class="pv-symbol" style="font-size:var(--icon-md);color:inherit">favorite</span></button><span class="pv-mono" data-en="Pressed" data-ar="مضغوط">Pressed</span></div>
-        <div class="pv-tile"><button class="btn btn-text btn-square pv-force-focus" type="button" aria-label="Favorite"><span class="pv-symbol" style="font-size:var(--icon-md);color:inherit">favorite</span></button><span class="pv-mono" data-en="Focus" data-ar="تركيز">Focus</span></div>
-        <div class="pv-tile"><button class="btn btn-text btn-square" type="button" disabled aria-label="Favorite"><span class="pv-symbol" style="font-size:var(--icon-md);color:inherit">favorite</span></button><span class="pv-mono" data-en="Disabled" data-ar="معطّل">Disabled</span></div>
+      <h3 class="text-minor-heading" style="margin-block:var(--spacing-6) var(--spacing-4)" data-en="Text · square" data-ar="نصّي · مربّع">Text · square</h3>
+      <div style="display:flex;flex-wrap:wrap;gap:var(--spacing-5);align-items:center">
+        <div style="display:grid;gap:var(--spacing-2);justify-items:center"><button class="btn btn-text btn-square" type="button" aria-label="Favorite"><span class="icon icon-md">favorite</span></button><span class="text-code-label text-color-helper" data-en="Default" data-ar="افتراضي">Default</span></div>
+        <div style="display:grid;gap:var(--spacing-2);justify-items:center"><button class="btn btn-text btn-square" type="button" style="background:var(--color-surface-sunken);color:var(--color-primary-hover)" aria-label="Favorite"><span class="icon icon-md">favorite</span></button><span class="text-code-label text-color-helper" data-en="Hover" data-ar="تمرير">Hover</span></div>
+        <div style="display:grid;gap:var(--spacing-2);justify-items:center"><button class="btn btn-text btn-square" type="button" style="color:var(--color-primary-active)" aria-label="Favorite"><span class="icon icon-md">favorite</span></button><span class="text-code-label text-color-helper" data-en="Pressed" data-ar="مضغوط">Pressed</span></div>
+        <div style="display:grid;gap:var(--spacing-2);justify-items:center"><button class="btn btn-text btn-square" type="button" style="outline:var(--border-width-strong) solid var(--color-border-focus);outline-offset:var(--spacing-1)" aria-label="Favorite"><span class="icon icon-md">favorite</span></button><span class="text-code-label text-color-helper" data-en="Focus" data-ar="تركيز">Focus</span></div>
+        <div style="display:grid;gap:var(--spacing-2);justify-items:center"><button class="btn btn-text btn-square" type="button" disabled aria-label="Favorite"><span class="icon icon-md">favorite</span></button><span class="text-code-label text-color-helper" data-en="Disabled" data-ar="معطّل">Disabled</span></div>
       </div>
     </section>
   </main>

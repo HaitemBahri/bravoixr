@@ -23,20 +23,20 @@
   <link rel="stylesheet" href="../../index.css">
 </head>
 <body class="page text-body">
-  <main style="max-inline-size:var(--container-max);margin-inline:auto;padding:var(--spacing-8) var(--spacing-6) var(--spacing-12)">
-    <div style="display:flex;align-items:center;justify-content:space-between;gap:var(--spacing-5);margin-block-end:var(--spacing-8)">
+  <main class="page-body">
+    <div class="page-topbar">
       <span class="text-project-title">bravoixr</span>
-      <div style="display:flex;gap:var(--spacing-3)">
+      <div class="page-controls">
         <button class="btn btn-solid btn-square" type="button" data-toggle="theme" aria-label="Toggle theme"><span class="icon icon-md">contrast</span></button>
         <button class="btn btn-solid btn-square" type="button" data-toggle="lang" aria-label="Toggle language"><span class="icon icon-md">translate</span></button>
       </div>
     </div>
 
-    <h2 class="text-section-title" style="margin:0 0 var(--spacing-3)" data-en="Semantic layout" data-ar="التخطيط الدلالي">Semantic layout</h2>
-    <p class="text-page-description text-color-description" style="max-inline-size:60ch" data-en="Structural roles named for their use — control, card, modal — mapped onto the raw scale. Not themed: these hold across light and dark." data-ar="أدوار بنيوية مسمّاة بحسب استخدامها — عنصر تحكّم، بطاقة، نافذة — مُسنَدة إلى المقياس الخام. غير خاضعة للسمة: تثبت في الوضعين الفاتح والداكن.">Structural roles named for their use — control, card, modal — mapped onto the raw scale. Not themed: these hold across light and dark.</p>
+    <h2 class="text-section-title" data-en="Semantic layout" data-ar="التخطيط الدلالي">Semantic layout</h2>
+    <p class="text-page-description text-color-description" data-en="Structural roles named for their use — control, card, modal — mapped onto the raw scale. Not themed: these hold across light and dark." data-ar="أدوار بنيوية مسمّاة بحسب استخدامها — عنصر تحكّم، بطاقة، نافذة — مُسنَدة إلى المقياس الخام. غير خاضعة للسمة: تثبت في الوضعين الفاتح والداكن.">Structural roles named for their use — control, card, modal — mapped onto the raw scale. Not themed: these hold across light and dark.</p>
 
-    <section style="margin-block-end:var(--spacing-10)">
-      <h3 class="text-minor-heading" style="margin-block:var(--spacing-6) var(--spacing-4)" data-en="Radius roles" data-ar="أدوار الزوايا">Radius roles</h3>
+    <section class="page-section">
+      <h3 class="text-minor-heading" data-en="Radius roles" data-ar="أدوار الزوايا">Radius roles</h3>
       <div style="display:flex;flex-wrap:wrap;gap:var(--spacing-7)">
         <div style="display:grid;gap:var(--spacing-2);justify-items:center"><div style="inline-size:96px;block-size:96px;background:var(--color-surface-raised);border:var(--border-width) solid var(--color-border-strong);border-radius:var(--radius-control)"></div><span class="text-code-label text-color-helper">--radius-control</span></div>
         <div style="display:grid;gap:var(--spacing-2);justify-items:center"><div style="inline-size:96px;block-size:96px;background:var(--color-surface-raised);border:var(--border-width) solid var(--color-border-strong);border-radius:var(--radius-card)"></div><span class="text-code-label text-color-helper">--radius-card</span></div>
@@ -46,22 +46,24 @@
       </div>
     </section>
 
-    <section style="margin-block-end:var(--spacing-10)">
-      <h3 class="text-minor-heading" style="margin-block:var(--spacing-6) var(--spacing-4)" data-en="Border-width roles" data-ar="أدوار سماكة الحدود">Border-width roles</h3>
+    <section class="page-section">
+      <h3 class="text-minor-heading" data-en="Border-width roles" data-ar="أدوار سماكة الحدود">Border-width roles</h3>
       <div style="display:flex;flex-wrap:wrap;gap:var(--spacing-7)">
         <div style="display:grid;gap:var(--spacing-2);justify-items:center"><div style="inline-size:96px;block-size:96px;background:var(--color-surface-raised);border:var(--border-width) solid var(--color-border-strong)"></div><span class="text-code-label text-color-helper">--border-width</span></div>
         <div style="display:grid;gap:var(--spacing-2);justify-items:center"><div style="inline-size:96px;block-size:96px;background:var(--color-surface-raised);border:var(--border-width-strong) solid var(--color-border-strong)"></div><span class="text-code-label text-color-helper">--border-width-strong</span></div>
       </div>
     </section>
 
-    <section style="margin-block-end:var(--spacing-10)">
-      <h3 class="text-minor-heading" style="margin-block:var(--spacing-6) var(--spacing-4)" data-en="Sizing roles" data-ar="أدوار الأحجام">Sizing roles</h3>
-      <div style="display:flex;gap:var(--spacing-5);align-items:baseline;max-inline-size:460px;padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)"><span class="text-code-label text-color-helper" style="flex:0 0 220px">--control-height</span><span class="text-color-normal">40px</span></div>
-      <div style="display:flex;gap:var(--spacing-5);align-items:baseline;max-inline-size:460px;padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)"><span class="text-code-label text-color-helper" style="flex:0 0 220px">--container-max</span><span class="text-color-normal">1280px</span></div>
+    <section class="page-section">
+      <h3 class="text-minor-heading" data-en="Sizing roles" data-ar="أدوار الأحجام">Sizing roles</h3>
+      <div style="display:grid;grid-template-columns:max-content max-content;align-items:baseline">
+        <span class="text-code-label text-color-helper" style="padding-block:var(--spacing-3);padding-inline-end:var(--spacing-5);border-block-end:var(--border-width) solid var(--color-border)">--control-height</span><span class="text-color-normal" style="padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)">40px</span>
+        <span class="text-code-label text-color-helper" style="padding-block:var(--spacing-3);padding-inline-end:var(--spacing-5);border-block-end:var(--border-width) solid var(--color-border)">--container-max</span><span class="text-color-normal" style="padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)">1280px</span>
+      </div>
     </section>
 
-    <section style="margin-block-end:var(--spacing-10)">
-      <h3 class="text-minor-heading" style="margin-block:var(--spacing-6) var(--spacing-4)" data-en="Shadow roles (floating layers)" data-ar="أدوار الظلال (الطبقات العائمة)">Shadow roles (floating layers)</h3>
+    <section class="page-section">
+      <h3 class="text-minor-heading" data-en="Shadow roles (floating layers)" data-ar="أدوار الظلال (الطبقات العائمة)">Shadow roles (floating layers)</h3>
       <div style="display:flex;flex-wrap:wrap;gap:var(--spacing-7)">
         <div style="display:grid;gap:var(--spacing-2);justify-items:center"><div style="inline-size:160px;block-size:96px;background:var(--color-surface-raised);border-radius:var(--radius-card);box-shadow:var(--shadow-menu)"></div><span class="text-code-label text-color-helper">--shadow-menu</span></div>
         <div style="display:grid;gap:var(--spacing-2);justify-items:center"><div style="inline-size:160px;block-size:96px;background:var(--color-surface-raised);border-radius:var(--radius-card);box-shadow:var(--shadow-toast)"></div><span class="text-code-label text-color-helper">--shadow-toast</span></div>
@@ -69,19 +71,21 @@
       </div>
     </section>
 
-    <section style="margin-block-end:var(--spacing-10)">
-      <h3 class="text-minor-heading" style="margin-block:var(--spacing-6) var(--spacing-4)" data-en="Layer roles" data-ar="أدوار الطبقات">Layer roles</h3>
-      <div style="display:flex;gap:var(--spacing-5);align-items:baseline;max-inline-size:460px;padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)"><span class="text-code-label text-color-helper" style="flex:0 0 220px">--layer-base</span><span class="text-color-normal">0</span></div>
-      <div style="display:flex;gap:var(--spacing-5);align-items:baseline;max-inline-size:460px;padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)"><span class="text-code-label text-color-helper" style="flex:0 0 220px">--layer-sticky</span><span class="text-color-normal">10</span></div>
-      <div style="display:flex;gap:var(--spacing-5);align-items:baseline;max-inline-size:460px;padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)"><span class="text-code-label text-color-helper" style="flex:0 0 220px">--layer-dropdown</span><span class="text-color-normal">20</span></div>
-      <div style="display:flex;gap:var(--spacing-5);align-items:baseline;max-inline-size:460px;padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)"><span class="text-code-label text-color-helper" style="flex:0 0 220px">--layer-overlay</span><span class="text-color-normal">30</span></div>
-      <div style="display:flex;gap:var(--spacing-5);align-items:baseline;max-inline-size:460px;padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)"><span class="text-code-label text-color-helper" style="flex:0 0 220px">--layer-modal</span><span class="text-color-normal">40</span></div>
-      <div style="display:flex;gap:var(--spacing-5);align-items:baseline;max-inline-size:460px;padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)"><span class="text-code-label text-color-helper" style="flex:0 0 220px">--layer-popover</span><span class="text-color-normal">50</span></div>
-      <div style="display:flex;gap:var(--spacing-5);align-items:baseline;max-inline-size:460px;padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)"><span class="text-code-label text-color-helper" style="flex:0 0 220px">--layer-toast</span><span class="text-color-normal">60</span></div>
+    <section class="page-section">
+      <h3 class="text-minor-heading" data-en="Layer roles" data-ar="أدوار الطبقات">Layer roles</h3>
+      <div style="display:grid;grid-template-columns:max-content max-content;align-items:baseline">
+        <span class="text-code-label text-color-helper" style="padding-block:var(--spacing-3);padding-inline-end:var(--spacing-5);border-block-end:var(--border-width) solid var(--color-border)">--layer-base</span><span class="text-color-normal" style="padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)">0</span>
+        <span class="text-code-label text-color-helper" style="padding-block:var(--spacing-3);padding-inline-end:var(--spacing-5);border-block-end:var(--border-width) solid var(--color-border)">--layer-sticky</span><span class="text-color-normal" style="padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)">10</span>
+        <span class="text-code-label text-color-helper" style="padding-block:var(--spacing-3);padding-inline-end:var(--spacing-5);border-block-end:var(--border-width) solid var(--color-border)">--layer-dropdown</span><span class="text-color-normal" style="padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)">20</span>
+        <span class="text-code-label text-color-helper" style="padding-block:var(--spacing-3);padding-inline-end:var(--spacing-5);border-block-end:var(--border-width) solid var(--color-border)">--layer-overlay</span><span class="text-color-normal" style="padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)">30</span>
+        <span class="text-code-label text-color-helper" style="padding-block:var(--spacing-3);padding-inline-end:var(--spacing-5);border-block-end:var(--border-width) solid var(--color-border)">--layer-modal</span><span class="text-color-normal" style="padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)">40</span>
+        <span class="text-code-label text-color-helper" style="padding-block:var(--spacing-3);padding-inline-end:var(--spacing-5);border-block-end:var(--border-width) solid var(--color-border)">--layer-popover</span><span class="text-color-normal" style="padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)">50</span>
+        <span class="text-code-label text-color-helper" style="padding-block:var(--spacing-3);padding-inline-end:var(--spacing-5);border-block-end:var(--border-width) solid var(--color-border)">--layer-toast</span><span class="text-color-normal" style="padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)">60</span>
+      </div>
     </section>
 
-    <section style="margin-block-end:var(--spacing-10)">
-      <h3 class="text-minor-heading" style="margin-block:var(--spacing-6) var(--spacing-4)" data-en="Spacing seam (1:1 re-export)" data-ar="وصلة التباعد (تصدير 1:1)">Spacing seam (1:1 re-export)</h3>
+    <section class="page-section">
+      <h3 class="text-minor-heading" data-en="Spacing seam (1:1 re-export)" data-ar="وصلة التباعد (تصدير 1:1)">Spacing seam (1:1 re-export)</h3>
       <div id="spacing"></div>
     </section>
   </main>

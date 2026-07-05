@@ -23,34 +23,36 @@
   <link rel="stylesheet" href="../../index.css">
 </head>
 <body class="page text-body">
-  <main style="max-inline-size:var(--container-max);margin-inline:auto;padding:var(--spacing-8) var(--spacing-6) var(--spacing-12)">
-    <div style="display:flex;align-items:center;justify-content:space-between;gap:var(--spacing-5);margin-block-end:var(--spacing-8)">
+  <main class="page-body">
+    <div class="page-topbar">
       <span class="text-project-title">bravoixr</span>
-      <div style="display:flex;gap:var(--spacing-3)">
+      <div class="page-controls">
         <button class="btn btn-solid btn-square" type="button" data-toggle="theme" aria-label="Toggle theme"><span class="icon icon-md">contrast</span></button>
         <button class="btn btn-solid btn-square" type="button" data-toggle="lang" aria-label="Toggle language"><span class="icon icon-md">translate</span></button>
       </div>
     </div>
 
-    <h2 class="text-section-title" style="margin:0 0 var(--spacing-3)" data-en="Semantic motion" data-ar="الحركة الدلالية">Semantic motion</h2>
-    <p class="text-page-description text-color-description" style="max-inline-size:60ch" data-en="Duration and easing roles named for the surface they move — hover, panel, modal — mapped onto the raw scale. Hover a box to feel each easing role." data-ar="أدوار المدّة والتسارع مسمّاة بحسب السطح الذي تحرّكه — تمرير، لوحة، نافذة — مُسنَدة إلى المقياس الخام. مرّر فوق مربّع لتشعر بكل دور تسارع.">Duration and easing roles named for the surface they move — hover, panel, modal — mapped onto the raw scale. Hover a box to feel each easing role.</p>
+    <h2 class="text-section-title" data-en="Semantic motion" data-ar="الحركة الدلالية">Semantic motion</h2>
+    <p class="text-page-description text-color-description" data-en="Duration and easing roles named for the surface they move — hover, panel, modal — mapped onto the raw scale. Hover a box to feel each easing role." data-ar="أدوار المدّة والتسارع مسمّاة بحسب السطح الذي تحرّكه — تمرير، لوحة، نافذة — مُسنَدة إلى المقياس الخام. مرّر فوق مربّع لتشعر بكل دور تسارع.">Duration and easing roles named for the surface they move — hover, panel, modal — mapped onto the raw scale. Hover a box to feel each easing role.</p>
 
-    <section style="margin-block-end:var(--spacing-10)">
-      <h3 class="text-minor-heading" style="margin-block:var(--spacing-6) var(--spacing-4)" data-en="Duration roles" data-ar="أدوار المدّة">Duration roles</h3>
-      <div style="display:flex;gap:var(--spacing-5);align-items:baseline;max-inline-size:460px;padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)"><span class="text-code-label text-color-helper" style="flex:0 0 220px">--duration-none</span><span class="text-color-normal">0ms</span></div>
-      <div style="display:flex;gap:var(--spacing-5);align-items:baseline;max-inline-size:460px;padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)"><span class="text-code-label text-color-helper" style="flex:0 0 220px">--duration-hover</span><span class="text-color-normal">150ms</span></div>
-      <div style="display:flex;gap:var(--spacing-5);align-items:baseline;max-inline-size:460px;padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)"><span class="text-code-label text-color-helper" style="flex:0 0 220px">--duration-default</span><span class="text-color-normal">200ms</span></div>
-      <div style="display:flex;gap:var(--spacing-5);align-items:baseline;max-inline-size:460px;padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)"><span class="text-code-label text-color-helper" style="flex:0 0 220px">--duration-panel</span><span class="text-color-normal">300ms</span></div>
-      <div style="display:flex;gap:var(--spacing-5);align-items:baseline;max-inline-size:460px;padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)"><span class="text-code-label text-color-helper" style="flex:0 0 220px">--duration-modal</span><span class="text-color-normal">500ms</span></div>
+    <section class="page-section">
+      <h3 class="text-minor-heading" data-en="Duration roles" data-ar="أدوار المدّة">Duration roles</h3>
+      <div style="display:grid;grid-template-columns:max-content max-content;align-items:baseline">
+        <span class="text-code-label text-color-helper" style="padding-block:var(--spacing-3);padding-inline-end:var(--spacing-5);border-block-end:var(--border-width) solid var(--color-border)">--duration-none</span><span class="text-color-normal" style="padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)">0ms</span>
+        <span class="text-code-label text-color-helper" style="padding-block:var(--spacing-3);padding-inline-end:var(--spacing-5);border-block-end:var(--border-width) solid var(--color-border)">--duration-hover</span><span class="text-color-normal" style="padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)">150ms</span>
+        <span class="text-code-label text-color-helper" style="padding-block:var(--spacing-3);padding-inline-end:var(--spacing-5);border-block-end:var(--border-width) solid var(--color-border)">--duration-default</span><span class="text-color-normal" style="padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)">200ms</span>
+        <span class="text-code-label text-color-helper" style="padding-block:var(--spacing-3);padding-inline-end:var(--spacing-5);border-block-end:var(--border-width) solid var(--color-border)">--duration-panel</span><span class="text-color-normal" style="padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)">300ms</span>
+        <span class="text-code-label text-color-helper" style="padding-block:var(--spacing-3);padding-inline-end:var(--spacing-5);border-block-end:var(--border-width) solid var(--color-border)">--duration-modal</span><span class="text-color-normal" style="padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)">500ms</span>
+      </div>
     </section>
 
-    <section style="margin-block-end:var(--spacing-10)">
-      <h3 class="text-minor-heading" style="margin-block:var(--spacing-6) var(--spacing-4)" data-en="Easing roles (hover a box)" data-ar="أدوار التسارع (مرّر فوق مربّع)">Easing roles (hover a box)</h3>
+    <section class="page-section">
+      <h3 class="text-minor-heading" data-en="Easing roles (hover a box)" data-ar="أدوار التسارع (مرّر فوق مربّع)">Easing roles (hover a box)</h3>
       <div style="display:flex;flex-wrap:wrap;gap:var(--spacing-7)">
-        <div style="display:grid;gap:var(--spacing-2);justify-items:center"><div style="inline-size:80px;block-size:80px;background:var(--color-secondary);border-radius:var(--radius-card);transition:transform var(--duration-modal) var(--ease-default)" onmouseover="this.style.transform='translateX(48px)'" onmouseout="this.style.transform=''"></div><span class="text-code-label text-color-helper">--ease-default</span></div>
-        <div style="display:grid;gap:var(--spacing-2);justify-items:center"><div style="inline-size:80px;block-size:80px;background:var(--color-secondary);border-radius:var(--radius-card);transition:transform var(--duration-modal) var(--ease-enter)" onmouseover="this.style.transform='translateX(48px)'" onmouseout="this.style.transform=''"></div><span class="text-code-label text-color-helper">--ease-enter</span></div>
-        <div style="display:grid;gap:var(--spacing-2);justify-items:center"><div style="inline-size:80px;block-size:80px;background:var(--color-secondary);border-radius:var(--radius-card);transition:transform var(--duration-modal) var(--ease-exit)" onmouseover="this.style.transform='translateX(48px)'" onmouseout="this.style.transform=''"></div><span class="text-code-label text-color-helper">--ease-exit</span></div>
-        <div style="display:grid;gap:var(--spacing-2);justify-items:center"><div style="inline-size:80px;block-size:80px;background:var(--color-secondary);border-radius:var(--radius-card);transition:transform var(--duration-modal) var(--ease-loop)" onmouseover="this.style.transform='translateX(48px)'" onmouseout="this.style.transform=''"></div><span class="text-code-label text-color-helper">--ease-loop</span></div>
+        <div style="display:grid;gap:var(--spacing-2);justify-items:center"><div style="inline-size:80px;block-size:80px;background:var(--color-secondary);border-radius:var(--radius-card);transition:transform var(--duration-modal) var(--ease-default)" data-motion-demo></div><span class="text-code-label text-color-helper">--ease-default</span></div>
+        <div style="display:grid;gap:var(--spacing-2);justify-items:center"><div style="inline-size:80px;block-size:80px;background:var(--color-secondary);border-radius:var(--radius-card);transition:transform var(--duration-modal) var(--ease-enter)" data-motion-demo></div><span class="text-code-label text-color-helper">--ease-enter</span></div>
+        <div style="display:grid;gap:var(--spacing-2);justify-items:center"><div style="inline-size:80px;block-size:80px;background:var(--color-secondary);border-radius:var(--radius-card);transition:transform var(--duration-modal) var(--ease-exit)" data-motion-demo></div><span class="text-code-label text-color-helper">--ease-exit</span></div>
+        <div style="display:grid;gap:var(--spacing-2);justify-items:center"><div style="inline-size:80px;block-size:80px;background:var(--color-secondary);border-radius:var(--radius-card);transition:transform var(--duration-modal) var(--ease-loop)" data-motion-demo></div><span class="text-code-label text-color-helper">--ease-loop</span></div>
       </div>
     </section>
   </main>

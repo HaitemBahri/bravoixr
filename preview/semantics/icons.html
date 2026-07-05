@@ -23,39 +23,43 @@
   <link rel="stylesheet" href="../../index.css">
 </head>
 <body class="page text-body">
-  <main style="max-inline-size:var(--container-max);margin-inline:auto;padding:var(--spacing-8) var(--spacing-6) var(--spacing-12)">
-    <div style="display:flex;align-items:center;justify-content:space-between;gap:var(--spacing-5);margin-block-end:var(--spacing-8)">
+  <main class="page-body">
+    <div class="page-topbar">
       <span class="text-project-title">bravoixr</span>
-      <div style="display:flex;gap:var(--spacing-3)">
+      <div class="page-controls">
         <button class="btn btn-solid btn-square" type="button" data-toggle="theme" aria-label="Toggle theme"><span class="icon icon-md">contrast</span></button>
         <button class="btn btn-solid btn-square" type="button" data-toggle="lang" aria-label="Toggle language"><span class="icon icon-md">translate</span></button>
       </div>
     </div>
 
-    <h2 class="text-section-title" style="margin:0 0 var(--spacing-3)" data-en="Semantic icons" data-ar="الأيقونات الدلالية">Semantic icons</h2>
-    <p class="text-page-description text-color-description" style="max-inline-size:60ch" data-en="Family, axis, and size roles mapped onto the icon primitives. The specimens below render through the semantic axes; --icon-grade is themed — toggle ☾ Dark and the stroke grade shifts to counter halation." data-ar="أدوار العائلة والمحاور والأحجام مُسنَدة إلى أوّليّات الأيقونات. تُعرَض العيّنات أدناه عبر المحاور الدلالية؛ و--icon-grade خاضع للسمة — بدّل إلى ☾ داكن فتتغيّر درجة السماكة لمواجهة الوهج.">Family, axis, and size roles mapped onto the icon primitives. The specimens below render through the semantic axes; --icon-grade is themed — toggle ☾ Dark and the stroke grade shifts to counter halation.</p>
+    <h2 class="text-section-title" data-en="Semantic icons" data-ar="الأيقونات الدلالية">Semantic icons</h2>
+    <p class="text-page-description text-color-description" data-en="Family, axis, and size roles mapped onto the icon primitives. The specimens below render through the semantic axes; --icon-grade is themed — toggle ☾ Dark and the stroke grade shifts to counter halation." data-ar="أدوار العائلة والمحاور والأحجام مُسنَدة إلى أوّليّات الأيقونات. تُعرَض العيّنات أدناه عبر المحاور الدلالية؛ و--icon-grade خاضع للسمة — بدّل إلى ☾ داكن فتتغيّر درجة السماكة لمواجهة الوهج.">Family, axis, and size roles mapped onto the icon primitives. The specimens below render through the semantic axes; --icon-grade is themed — toggle ☾ Dark and the stroke grade shifts to counter halation.</p>
 
-    <section style="margin-block-end:var(--spacing-10)">
-      <h3 class="text-minor-heading" style="margin-block:var(--spacing-6) var(--spacing-4)" data-en="Size roles" data-ar="أدوار الحجم">Size roles</h3>
+    <section class="page-section">
+      <h3 class="text-minor-heading" data-en="Size roles" data-ar="أدوار الحجم">Size roles</h3>
       <div style="display:flex;align-items:center;gap:var(--spacing-6)">
         <span class="icon icon-sm">home</span>
         <span class="icon icon-md">favorite</span>
         <span class="icon icon-lg">settings</span>
         <span class="icon icon-xl">search</span>
       </div>
-      <div style="display:flex;gap:var(--spacing-5);align-items:baseline;max-inline-size:460px;padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border);margin-block-start:var(--spacing-5)"><span class="text-code-label text-color-helper" style="flex:0 0 220px">--icon-sm</span><span class="text-color-normal">16px</span></div>
-      <div style="display:flex;gap:var(--spacing-5);align-items:baseline;max-inline-size:460px;padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)"><span class="text-code-label text-color-helper" style="flex:0 0 220px">--icon-md</span><span class="text-color-normal" data-en="20px (default)" data-ar="20px (افتراضي)">20px (default)</span></div>
-      <div style="display:flex;gap:var(--spacing-5);align-items:baseline;max-inline-size:460px;padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)"><span class="text-code-label text-color-helper" style="flex:0 0 220px">--icon-lg</span><span class="text-color-normal">24px</span></div>
-      <div style="display:flex;gap:var(--spacing-5);align-items:baseline;max-inline-size:460px;padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)"><span class="text-code-label text-color-helper" style="flex:0 0 220px">--icon-xl</span><span class="text-color-normal">32px</span></div>
+      <div style="display:grid;grid-template-columns:max-content max-content;align-items:baseline;margin-block-start:var(--spacing-5)">
+        <span class="text-code-label text-color-helper" style="padding-block:var(--spacing-3);padding-inline-end:var(--spacing-5);border-block-end:var(--border-width) solid var(--color-border)">--icon-sm</span><span class="text-color-normal" style="padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)">16px</span>
+        <span class="text-code-label text-color-helper" style="padding-block:var(--spacing-3);padding-inline-end:var(--spacing-5);border-block-end:var(--border-width) solid var(--color-border)">--icon-md</span><span class="text-color-normal" style="padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)" data-en="20px (default)" data-ar="20px (افتراضي)">20px (default)</span>
+        <span class="text-code-label text-color-helper" style="padding-block:var(--spacing-3);padding-inline-end:var(--spacing-5);border-block-end:var(--border-width) solid var(--color-border)">--icon-lg</span><span class="text-color-normal" style="padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)">24px</span>
+        <span class="text-code-label text-color-helper" style="padding-block:var(--spacing-3);padding-inline-end:var(--spacing-5);border-block-end:var(--border-width) solid var(--color-border)">--icon-xl</span><span class="text-color-normal" style="padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)">32px</span>
+      </div>
     </section>
 
-    <section style="margin-block-end:var(--spacing-10)">
-      <h3 class="text-minor-heading" style="margin-block:var(--spacing-6) var(--spacing-4)" data-en="Family &amp; axis roles" data-ar="أدوار العائلة والمحاور">Family &amp; axis roles</h3>
-      <div style="display:flex;gap:var(--spacing-5);align-items:baseline;max-inline-size:460px;padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)"><span class="text-code-label text-color-helper" style="flex:0 0 220px">--icon-family</span><span class="text-color-normal">'Material Symbols Rounded'</span></div>
-      <div style="display:flex;gap:var(--spacing-5);align-items:baseline;max-inline-size:460px;padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)"><span class="text-code-label text-color-helper" style="flex:0 0 220px">--icon-weight</span><span class="text-color-normal">400</span></div>
-      <div style="display:flex;gap:var(--spacing-5);align-items:baseline;max-inline-size:460px;padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)"><span class="text-code-label text-color-helper" style="flex:0 0 220px">--icon-fill-axis</span><span class="text-color-normal">0</span></div>
-      <div style="display:flex;gap:var(--spacing-5);align-items:baseline;max-inline-size:460px;padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)"><span class="text-code-label text-color-helper" style="flex:0 0 220px">--icon-optical</span><span class="text-color-normal">20</span></div>
-      <div style="display:flex;gap:var(--spacing-5);align-items:baseline;max-inline-size:460px;padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)"><span class="text-code-label text-color-helper" style="flex:0 0 220px">--icon-grade</span><span class="text-color-normal" data-en="0 light · −25 dark (themed)" data-ar="0 فاتح · −25 داكن (خاضع للسمة)">0 light · −25 dark (themed)</span></div>
+    <section class="page-section">
+      <h3 class="text-minor-heading" data-en="Family &amp; axis roles" data-ar="أدوار العائلة والمحاور">Family &amp; axis roles</h3>
+      <div style="display:grid;grid-template-columns:max-content max-content;align-items:baseline">
+        <span class="text-code-label text-color-helper" style="padding-block:var(--spacing-3);padding-inline-end:var(--spacing-5);border-block-end:var(--border-width) solid var(--color-border)">--icon-family</span><span class="text-color-normal" style="padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)">'Material Symbols Rounded'</span>
+        <span class="text-code-label text-color-helper" style="padding-block:var(--spacing-3);padding-inline-end:var(--spacing-5);border-block-end:var(--border-width) solid var(--color-border)">--icon-weight</span><span class="text-color-normal" style="padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)">400</span>
+        <span class="text-code-label text-color-helper" style="padding-block:var(--spacing-3);padding-inline-end:var(--spacing-5);border-block-end:var(--border-width) solid var(--color-border)">--icon-fill-axis</span><span class="text-color-normal" style="padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)">0</span>
+        <span class="text-code-label text-color-helper" style="padding-block:var(--spacing-3);padding-inline-end:var(--spacing-5);border-block-end:var(--border-width) solid var(--color-border)">--icon-optical</span><span class="text-color-normal" style="padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)">20</span>
+        <span class="text-code-label text-color-helper" style="padding-block:var(--spacing-3);padding-inline-end:var(--spacing-5);border-block-end:var(--border-width) solid var(--color-border)">--icon-grade</span><span class="text-color-normal" style="padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)" data-en="0 light · −25 dark (themed)" data-ar="0 فاتح · −25 داكن (خاضع للسمة)">0 light · −25 dark (themed)</span>
+      </div>
     </section>
   </main>
 

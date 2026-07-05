@@ -11,6 +11,7 @@
   font-weight: var(--weight-page-title);
   line-height: var(--leading-display);
   letter-spacing: var(--tracking-display);
+  margin-block: 0 var(--spacing-5);
 }
 
 .text-section-title {
@@ -19,6 +20,7 @@
   font-weight: var(--weight-section-title);
   line-height: var(--leading-display);
   letter-spacing: var(--tracking-display);
+  margin-block: 0 var(--spacing-4);
 }
 
 .text-subsection-title {
@@ -35,6 +37,7 @@
   font-weight: var(--weight-minor-heading);
   line-height: var(--leading-display);
   letter-spacing: var(--tracking-display);
+  margin-block: var(--spacing-6) var(--spacing-4);
 }
 
 /* Project title — the top-bar wordmark: heading anatomy at body scale for a crisp brand mark */
@@ -86,6 +89,7 @@
   font-weight: var(--weight-page-description);
   line-height: var(--leading-prose);
   letter-spacing: var(--tracking-prose);
+  max-inline-size: var(--measure-page-description);
 }
 
 /* Code — mono family, code leading */

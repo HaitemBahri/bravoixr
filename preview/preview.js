@@ -54,6 +54,13 @@
     }
   });
 
+  /* Easing specimens (semantics/motion): hovering slides the box so each easing
+   * role can be felt. Behaviour lives here, not as inline on* handlers in markup. */
+  document.querySelectorAll('[data-motion-demo]').forEach(function (box) {
+    box.addEventListener('mouseover', function () { box.style.transform = 'translateX(48px)'; });
+    box.addEventListener('mouseout', function () { box.style.transform = ''; });
+  });
+
   /* On load the inline snippet has already set the root attributes;
    * sync the specimen text to match. */
   swapText(currentLang());

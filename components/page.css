@@ -94,11 +94,12 @@
   align-items: start;
 }
 
-/* A two-row label stack — a fixed-height title row then content filling the
- * remaining block space below it. */
+/* A two-row label stack — content filling the block space on top, then a
+ * fixed-height label row underneath it (children render top-to-bottom in DOM
+ * order, so place the content first and the label second). */
 .page-column-header {
   display: grid;
-  grid-template-rows: var(--page-column-header-size) 1fr;
+  grid-template-rows: 1fr var(--page-column-header-size);
   gap: var(--spacing-4);
 }
 

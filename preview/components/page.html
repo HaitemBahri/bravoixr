@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>bravoixr — page</title>
+
+  <script>
+    (function () {
+      var t = localStorage.getItem('bravoixr-theme') || 'light';
+      var l = localStorage.getItem('bravoixr-lang') || 'en';
+      var r = document.documentElement;
+      r.setAttribute('data-theme', t);
+      if (l === 'ar') { r.setAttribute('dir', 'rtl'); r.setAttribute('lang', 'ar'); }
+      else { r.setAttribute('dir', 'ltr'); r.setAttribute('lang', 'en'); }
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=IBM+Plex+Sans+Arabic:wght@200;300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap">
+
+  <link rel="stylesheet" href="../../index.css">
+</head>
+<body class="page text-body">
+  <main class="page-body">
+    <div class="page-topbar">
+      <span class="text-project-title">bravoixr</span>
+      <div class="page-controls">
+        <button class="btn btn-solid btn-square" type="button" data-toggle="theme" aria-label="Toggle theme"><span class="icon icon-md">contrast</span></button>
+        <button class="btn btn-solid btn-square" type="button" data-toggle="lang" aria-label="Toggle language"><span class="icon icon-md">translate</span></button>
+      </div>
+    </div>
+
+    <section class="page-section">
+      <h2 class="text-page-title" data-en="Page" data-ar="الصفحة">Page</h2>
+      <p class="text-page-description text-color-description" data-en="Structural page-layout regions — headers, footers, clusters, label rows, sidebars, scrollers, and sticky bars. Each region renders nothing on its own, so every specimen drops a card inside to make its box legible." data-ar="مناطق تخطيط بنيوية للصفحة — الترويسات والتذييلات والتجميعات وصفوف العناوين والأشرطة الجانبية والأشرطة المنزلقة والأشرطة اللاصقة. لا تعرض أي منطقة شيئًا بذاتها، لذا يضع كل نموذج بطاقة بداخلها لإبراز حدودها.">Structural page-layout regions — headers, footers, clusters, label rows, sidebars, scrollers, and sticky bars. Each region renders nothing on its own, so every specimen drops a card inside to make its box legible.</p>
+    </section>
+
+    <!-- page-header -->
+    <section class="page-section">
+      <div>
+        <h3 class="text-minor-heading" data-en="Page header" data-ar="ترويسة الصفحة">Page header</h3>
+        <ul>
+          <li class="text-code-label text-color-helper">.page-header</li>
+          <li class="text-code-label text-color-helper">.text-page-title</li>
+          <li class="text-code-label text-color-helper">.text-page-description</li>
+        </ul>
+      </div>
+      <div>
+        <div class="page-header">
+          <h2 class="text-page-title" data-en="Dashboard" data-ar="لوحة القيادة">Dashboard</h2>
+          <p class="text-page-description text-color-description" data-en="A page title and its description, sitting below the topbar." data-ar="عنوان الصفحة ووصفه، أسفل الشريط العلوي.">A page title and its description, sitting below the topbar.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- page-footer -->
+    <section class="page-section">
+      <div>
+        <h3 class="text-minor-heading" data-en="Page footer" data-ar="تذييل الصفحة">Page footer</h3>
+        <ul>
+          <li class="text-code-label text-color-helper">.page-footer</li>
+          <li class="text-code-label text-color-helper">.page-cluster</li>
+          <li class="text-code-label text-color-helper">.btn</li>
+        </ul>
+      </div>
+      <div>
+        <div class="page-footer">
+          <span class="text-project-title">bravoixr</span>
+          <div class="page-cluster">
+            <button class="btn btn-solid" type="button" data-en="Save" data-ar="حفظ">Save</button>
+            <button class="btn btn-solid" type="button" data-en="Cancel" data-ar="إلغاء">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- page-cluster -->
+    <section class="page-section">
+      <div>
+        <h3 class="text-minor-heading" data-en="Cluster" data-ar="التجميعة">Cluster</h3>
+        <ul>
+          <li class="text-code-label text-color-helper">.page-cluster</li>
+          <li class="text-code-label text-color-helper">.card</li>
+        </ul>
+      </div>
+      <div>
+        <div class="page-cluster">
+          <div class="card"><h3 class="card-title" data-en="Overview" data-ar="نظرة عامة">Overview</h3></div>
+          <div class="card"><h3 class="card-title" data-en="Activity" data-ar="النشاط">Activity</h3></div>
+          <div class="card"><h3 class="card-title" data-en="Members" data-ar="الأعضاء">Members</h3></div>
+          <div class="card"><h3 class="card-title" data-en="Files" data-ar="الملفات">Files</h3></div>
+          <div class="card"><h3 class="card-title" data-en="Settings" data-ar="الإعدادات">Settings</h3></div>
+          <div class="card"><h3 class="card-title" data-en="Billing" data-ar="الفوترة">Billing</h3></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- page-row-header -->
+    <section class="page-section">
+      <div>
+        <h3 class="text-minor-heading" data-en="Row header" data-ar="ترويسة صف">Row header</h3>
+        <ul>
+          <li class="text-code-label text-color-helper">.page-row-header</li>
+          <li class="text-code-label text-color-helper">.text-minor-heading</li>
+          <li class="text-code-label text-color-helper">.card</li>
+        </ul>
+      </div>
+      <div>
+        <div class="page-row-header">
+          <h4 class="text-minor-heading" data-en="Profile" data-ar="الملف الشخصي">Profile</h4>
+          <div class="card">
+            <p class="card-description" data-en="The content column fills the width left of the fixed label." data-ar="يملأ عمود المحتوى العرض المتبقي بجانب العنوان الثابت.">The content column fills the width left of the fixed label.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- page-column-header -->
+    <section class="page-section">
+      <div>
+        <h3 class="text-minor-heading" data-en="Column header" data-ar="ترويسة عمود">Column header</h3>
+        <ul>
+          <li class="text-code-label text-color-helper">.page-column-header</li>
+          <li class="text-code-label text-color-helper">.text-minor-heading</li>
+          <li class="text-code-label text-color-helper">.card</li>
+        </ul>
+      </div>
+      <div>
+        <div class="page-column-header">
+          <h4 class="text-minor-heading" data-en="Section" data-ar="قسم">Section</h4>
+          <div class="card">
+            <p class="card-description" data-en="The content row fills the height below the fixed title." data-ar="يملأ صف المحتوى الارتفاع أسفل العنوان الثابت.">The content row fills the height below the fixed title.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- page-scroller -->
+    <section class="page-section">
+      <div>
+        <h3 class="text-minor-heading" data-en="Scroller" data-ar="الشريط المنزلق">Scroller</h3>
+        <ul>
+          <li class="text-code-label text-color-helper">.page-scroller</li>
+          <li class="text-code-label text-color-helper">.card</li>
+        </ul>
+      </div>
+      <div>
+        <div class="page-scroller">
+          <div class="card"><h3 class="card-title" data-en="Card 1" data-ar="بطاقة ١">Card 1</h3><p class="card-description" data-en="A fixed-size item that keeps its width and scrolls along the inline axis." data-ar="عنصر ثابت الحجم يحافظ على عرضه وينزلق على المحور الأفقي.">A fixed-size item that keeps its width and scrolls along the inline axis.</p></div>
+          <div class="card"><h3 class="card-title" data-en="Card 2" data-ar="بطاقة ٢">Card 2</h3><p class="card-description" data-en="A fixed-size item that keeps its width and scrolls along the inline axis." data-ar="عنصر ثابت الحجم يحافظ على عرضه وينزلق على المحور الأفقي.">A fixed-size item that keeps its width and scrolls along the inline axis.</p></div>
+          <div class="card"><h3 class="card-title" data-en="Card 3" data-ar="بطاقة ٣">Card 3</h3><p class="card-description" data-en="A fixed-size item that keeps its width and scrolls along the inline axis." data-ar="عنصر ثابت الحجم يحافظ على عرضه وينزلق على المحور الأفقي.">A fixed-size item that keeps its width and scrolls along the inline axis.</p></div>
+          <div class="card"><h3 class="card-title" data-en="Card 4" data-ar="بطاقة ٤">Card 4</h3><p class="card-description" data-en="A fixed-size item that keeps its width and scrolls along the inline axis." data-ar="عنصر ثابت الحجم يحافظ على عرضه وينزلق على المحور الأفقي.">A fixed-size item that keeps its width and scrolls along the inline axis.</p></div>
+          <div class="card"><h3 class="card-title" data-en="Card 5" data-ar="بطاقة ٥">Card 5</h3><p class="card-description" data-en="A fixed-size item that keeps its width and scrolls along the inline axis." data-ar="عنصر ثابت الحجم يحافظ على عرضه وينزلق على المحور الأفقي.">A fixed-size item that keeps its width and scrolls along the inline axis.</p></div>
+          <div class="card"><h3 class="card-title" data-en="Card 6" data-ar="بطاقة ٦">Card 6</h3><p class="card-description" data-en="A fixed-size item that keeps its width and scrolls along the inline axis." data-ar="عنصر ثابت الحجم يحافظ على عرضه وينزلق على المحور الأفقي.">A fixed-size item that keeps its width and scrolls along the inline axis.</p></div>
+          <div class="card"><h3 class="card-title" data-en="Card 7" data-ar="بطاقة ٧">Card 7</h3><p class="card-description" data-en="A fixed-size item that keeps its width and scrolls along the inline axis." data-ar="عنصر ثابت الحجم يحافظ على عرضه وينزلق على المحور الأفقي.">A fixed-size item that keeps its width and scrolls along the inline axis.</p></div>
+          <div class="card"><h3 class="card-title" data-en="Card 8" data-ar="بطاقة ٨">Card 8</h3><p class="card-description" data-en="A fixed-size item that keeps its width and scrolls along the inline axis." data-ar="عنصر ثابت الحجم يحافظ على عرضه وينزلق على المحور الأفقي.">A fixed-size item that keeps its width and scrolls along the inline axis.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- page-shell + page-sidebar + page-main -->
+    <section class="page-section">
+      <div>
+        <h3 class="text-minor-heading" data-en="Shell, sidebar & main" data-ar="الهيكل والشريط الجانبي والمحتوى">Shell, sidebar &amp; main</h3>
+        <ul>
+          <li class="text-code-label text-color-helper">.page-shell</li>
+          <li class="text-code-label text-color-helper">.page-sidebar</li>
+          <li class="text-code-label text-color-helper">.page-main</li>
+          <li class="text-code-label text-color-helper">.card</li>
+        </ul>
+      </div>
+      <div>
+        <div class="page-shell">
+          <div class="page-sidebar">
+            <div class="card">
+              <h3 class="card-title" data-en="Sidebar" data-ar="الشريط الجانبي">Sidebar</h3>
+              <p class="card-description" data-en="A fixed-width rail beside the main column." data-ar="شريط ثابت العرض بجانب العمود الرئيسي.">A fixed-width rail beside the main column.</p>
+            </div>
+          </div>
+          <div class="page-main">
+            <div class="card">
+              <h3 class="card-title" data-en="Main" data-ar="المحتوى">Main</h3>
+              <p class="card-description" data-en="Fills the remaining inline space beside the sidebar." data-ar="يملأ المساحة الأفقية المتبقية بجانب الشريط الجانبي.">Fills the remaining inline space beside the sidebar.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- page-sticky -->
+    <section class="page-section">
+      <div>
+        <h3 class="text-minor-heading" data-en="Sticky" data-ar="اللاصق">Sticky</h3>
+        <ul>
+          <li class="text-code-label text-color-helper">.page-sticky</li>
+          <li class="text-code-label text-color-helper">.card</li>
+        </ul>
+      </div>
+      <div>
+        <div class="card page-sticky">
+          <h3 class="card-title" data-en="Sticky bar" data-ar="الشريط اللاصق">Sticky bar</h3>
+        </div>
+        <div class="page-cluster">
+          <div class="card"><p class="card-description" data-en="Scroll the page — the bar above stays pinned to the top while these rows scroll past." data-ar="مرّر الصفحة — يبقى الشريط أعلاه مثبتًا في الأعلى بينما تمرّ هذه الصفوف.">Scroll the page — the bar above stays pinned to the top while these rows scroll past.</p></div>
+          <div class="card"><p class="card-description" data-en="Scroll the page — the bar above stays pinned to the top while these rows scroll past." data-ar="مرّر الصفحة — يبقى الشريط أعلاه مثبتًا في الأعلى بينما تمرّ هذه الصفوف.">Scroll the page — the bar above stays pinned to the top while these rows scroll past.</p></div>
+          <div class="card"><p class="card-description" data-en="Scroll the page — the bar above stays pinned to the top while these rows scroll past." data-ar="مرّر الصفحة — يبقى الشريط أعلاه مثبتًا في الأعلى بينما تمرّ هذه الصفوف.">Scroll the page — the bar above stays pinned to the top while these rows scroll past.</p></div>
+          <div class="card"><p class="card-description" data-en="Scroll the page — the bar above stays pinned to the top while these rows scroll past." data-ar="مرّر الصفحة — يبقى الشريط أعلاه مثبتًا في الأعلى بينما تمرّ هذه الصفوف.">Scroll the page — the bar above stays pinned to the top while these rows scroll past.</p></div>
+          <div class="card"><p class="card-description" data-en="Scroll the page — the bar above stays pinned to the top while these rows scroll past." data-ar="مرّر الصفحة — يبقى الشريط أعلاه مثبتًا في الأعلى بينما تمرّ هذه الصفوف.">Scroll the page — the bar above stays pinned to the top while these rows scroll past.</p></div>
+          <div class="card"><p class="card-description" data-en="Scroll the page — the bar above stays pinned to the top while these rows scroll past." data-ar="مرّر الصفحة — يبقى الشريط أعلاه مثبتًا في الأعلى بينما تمرّ هذه الصفوف.">Scroll the page — the bar above stays pinned to the top while these rows scroll past.</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="../preview.js"></script>
+</body>
+</html>

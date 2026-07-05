@@ -103,6 +103,11 @@
   gap: var(--spacing-4);
 }
 
+/* The label row — the last child, sitting under the content — centres its caption. */
+.page-column-header > :last-child {
+  text-align: center;
+}
+
 /* A horizontal scroller — a non-wrapping row that fills its parent's block
  * height and scrolls along the inline axis when its items overflow. */
 .page-scroller {

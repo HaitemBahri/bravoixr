@@ -57,3 +57,90 @@
   gap: var(--spacing-5);
   margin-block-start: var(--spacing-7);
 }
+
+/* The page's title block — heading plus description, sitting below the topbar
+ * with the same block gap the topbar carries so the two chrome bands align. */
+.page-header {
+  margin-block-end: var(--spacing-8);
+}
+
+/* The page's footer bar — mirror of .page-topbar (wordmark at inline-start,
+ * actions at inline-end), pushed to the block-end with a divider line above it
+ * reusing the divider component's resting border role. */
+.page-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-5);
+  margin-block-start: var(--spacing-8);
+  padding-block-start: var(--spacing-6);
+  border-block-start: var(--border-width) solid var(--color-border);
+}
+
+/* A horizontal stack that wraps — items sit inline-start to inline-end and drop
+ * to the next row when the container runs out of inline space. */
+.page-cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-5);
+}
+
+/* A two-column label row — a fixed-width title column then content filling the
+ * rest, aligned to the block-start so a tall value doesn't drag the label down. */
+.page-row-header {
+  display: grid;
+  grid-template-columns: var(--page-row-header-size) 1fr;
+  gap: var(--spacing-5);
+  align-items: start;
+}
+
+/* A two-row label stack — a fixed-height title row then content filling the
+ * remaining block space below it. */
+.page-column-header {
+  display: grid;
+  grid-template-rows: var(--page-column-header-size) 1fr;
+  gap: var(--spacing-4);
+}
+
+/* A horizontal scroller — a non-wrapping row that fills its parent's block
+ * height and scrolls along the inline axis when its items overflow. */
+.page-scroller {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: var(--spacing-5);
+  overflow-inline: auto;
+  block-size: 100%;
+}
+
+/* Scroller children keep their own size and overflow rather than shrinking to
+ * fit, so the row actually scrolls instead of squeezing. */
+.page-scroller > * {
+  flex: 0 0 auto;
+}
+
+/* A fixed-width column beside the main content — the app rail. */
+.page-sidebar {
+  flex: 0 0 var(--page-sidebar-size);
+}
+
+/* The primary column — fills the inline space left by the sidebar, with a zero
+ * min-inline-size so its content can shrink instead of forcing overflow. */
+.page-main {
+  flex: 1 1 0;
+  min-inline-size: 0;
+}
+
+/* An element that sticks at the block-start edge of its scroll parent, sitting
+ * on the sticky stacking tier so it clears the content it scrolls over. */
+.page-sticky {
+  position: sticky;
+  inset-block-start: 0;
+  z-index: var(--layer-sticky);
+}
+
+/* A non-wrapping flex row that hosts a .page-sidebar and a .page-main side by
+ * side, keeping them on one row with the gap between them. */
+.page-shell {
+  display: flex;
+  gap: var(--spacing-6);
+}

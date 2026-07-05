@@ -21,6 +21,9 @@
   /* Sizing */
   --size-control: 40px;
   --size-card-min: 220px;
+  --size-sidebar: 280px;
+  --size-row-header: 200px;
+  --size-column-header: 48px;
 
   /* Radius — md default for controls, lg for cards */
   --radius-none: 0;

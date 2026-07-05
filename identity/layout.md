@@ -43,6 +43,12 @@ section and page rhythm — one ramp covers both._
   _Why: layout owns width; controls fill the space they're given so forms and toolbars stay flexible._
 - **Content container max-width: 1280px.**
   _Why: one cap keeps long-form and app layouts from sprawling on wide screens while leaving room to breathe._
+- **Sidebar width: 280px — the fixed app rail beside main content.**
+  _Why: a comfortable rail, wider than the 220px card minimum so a card sits inside it without cramping._
+- **Row-header label width: 200px — the fixed title column of a two-column label row.**
+  _Why: a fixed label gutter so stacked rows align their content down a shared edge._
+- **Column-header title height: 48px — the fixed title row of a two-row label stack.**
+  _Why: one rhythm step, matching the `space-10` 48px band so the label sits on the spacing grid._
 
 ## Radius
 

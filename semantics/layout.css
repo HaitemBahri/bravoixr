@@ -19,6 +19,9 @@
   /* Content column snaps to the breakpoint tiers; :root holds the widest, bands step down. */
   --container-max: var(--breakpoint-max);
   --card-min: var(--size-card-min);
+  --page-sidebar-size: var(--size-sidebar);
+  --page-row-header-size: var(--size-row-header);
+  --page-column-header-size: var(--size-column-header);
 
   /* Elevation — floating layers (resting surfaces use borders, no token) */
   --shadow-menu: var(--shadow-sm);

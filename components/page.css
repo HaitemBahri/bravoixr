@@ -115,7 +115,7 @@
   font-weight: var(--weight-minor-heading);
   line-height: var(--leading-display);
   letter-spacing: var(--tracking-display);
-  margin-block: 0 var(--spacing-2);
+  margin-block: 0 var(--spacing-3);
 }
 
 .page-row-header-description {

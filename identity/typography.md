@@ -44,9 +44,9 @@ second typeface. Font stacks are kept bare (family + generic only).
   different jobs.
   _Why: headings carry impact and scale dramatically; body stays in a tight, readable band._
 
-### Headings — `h1`–`h6`
+### Headings — `h1`–`h7`
 
-Geometric ramp from 24 → 84, ≈ **×1.285 per step** (between a major third and a perfect fourth).
+Geometric ramp from 19 → 84, ≈ **×1.285 per step** (between a major third and a perfect fourth).
 
 | Token | px | rem |
 | -- | -- | -- |
@@ -56,6 +56,7 @@ Geometric ramp from 24 → 84, ≈ **×1.285 per step** (between a major third a
 | `h4` | 40 | 2.5 |
 | `h5` | 31 | 1.9375 |
 | `h6` | 24 | 1.5 |
+| `h7` | 19 | 1.1875 |
 
 _Why: a wide, even geometric ramp gives confident display type with predictable, equal-feeling steps._
 
@@ -93,7 +94,7 @@ Bricolage Grotesque and IBM Plex Sans Arabic both cover.
 | -- | -- |
 | 700 | `h1`, `h2` |
 | 600 | `h3`, `h4` |
-| 500 | `h5`, `h6` |
+| 500 | `h5`, `h6`, `h7` |
 | 400 | `body1`, `body2` |
 | 300 | `body3`, `body4` |
 | 200 | `body5` |
@@ -109,7 +110,7 @@ Tight for headings, roomy for body — this is where "airy reading comfort" live
 
 | Tier | Line-height |
 | -- | -- |
-| Headings (`h1`–`h6`) | 1.1 |
+| Headings (`h1`–`h7`) | 1.1 |
 | Body (Latin) | 1.6 |
 | Body (Arabic) | 1.7 |
 | Code | 1.5 |
@@ -145,16 +146,16 @@ Type responds to viewport by **shifting which scale step a role uses**, reusing 
 — no fluid `calc()`, so the values stay portable to non-web targets.
 
 **Headings — the "elevator":** four heading roles are visible at once, and each shifts **one step
-down per breakpoint** across the six-step ladder.
+down per breakpoint** across the seven-step ladder.
 
 | Role | Desktop | Tablet | Mobile |
 | -- | -- | -- | -- |
-| Page title | `h1` | `h2` | `h3` |
-| Section title | `h2` | `h3` | `h4` |
-| Subsection title | `h3` | `h4` | `h5` |
-| Minor heading | `h4` | `h5` | `h6` |
+| Page title | `h2` | `h3` | `h4` |
+| Section title | `h3` | `h4` | `h5` |
+| Subsection title | `h4` | `h5` | `h6` |
+| Minor heading | `h5` | `h6` | `h7` |
 
-_Why: one ladder serves every breakpoint; desktop uses the top four steps, mobile the bottom four, so nothing overflows the scale._
+_Why: one ladder serves every breakpoint; desktop uses steps `h2`–`h5`, mobile the bottom four (`h4`–`h7`), so nothing overflows the scale. `h1` stays as the ramp's top step but no role consumes it._
 
 **Body:** the responsive body roles are the **context title**, the **project title**, and the
 **page description** — each is `body1` on desktop and **`body2` on tablet and mobile** (steps once
@@ -169,8 +170,8 @@ weight **300**, so it sits quiet and airy beneath the title. Both ride the body 
 (`body1` → `body2`, once) and switch script like every other role.
   _Why: the wordmark and lede are reused on every page, so each earns a named role rather than borrowing the context title._
 
-- **The six-step ladder assumes at most four heading levels in a layout.**
-  _Why: a fifth heading level on desktop (`h5`) would need a step below `h6` on mobile, which the ladder doesn't have._
+- **The seven-step ladder carries four heading levels, each shifted one step down from the ramp's top.**
+  _Why: the four roles run `h2`→`h5` on desktop and `h4`→`h7` on mobile; a fifth heading level would need a step below `h7` on mobile, which the ladder doesn't have._
 - **Size step ≠ HTML element.** A page title stays an `<h1>` on every breakpoint; only the size
   step it renders at changes.
   _Why: document structure (and its accessibility/SEO meaning) must not change with the viewport._

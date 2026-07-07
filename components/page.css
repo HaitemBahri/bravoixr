@@ -78,7 +78,7 @@
   justify-content: space-between;
   gap: var(--spacing-5);
   margin-block-start: var(--spacing-8);
-  padding-block: var(--spacing-4);
+  padding: var(--spacing-5);
   background: var(--color-surface-sunken);
 }
 

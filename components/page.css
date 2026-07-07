@@ -94,6 +94,39 @@
   align-items: start;
 }
 
+/* The title cell — a filled, full-height rail that reads as the row's header and
+ * sets it apart from the content column. align-self overrides the row's start-
+ * alignment so the fill spans the full row height; the sunken surface themes with
+ * the page via the semantic dark override. */
+.page-row-header > :first-child {
+  align-self: stretch;
+  padding-block: var(--spacing-4);
+  padding-inline: var(--spacing-5);
+  background: var(--color-surface-sunken);
+  border-radius: var(--radius-card);
+}
+
+/* The rail's title + description anatomy — a heading title over a quiet muted lede,
+ * mirroring the card's text roles. The title's zero top margin lets the rail
+ * padding govern the top edge. */
+.page-row-header-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-minor-heading);
+  font-weight: var(--weight-minor-heading);
+  line-height: var(--leading-display);
+  letter-spacing: var(--tracking-display);
+  margin-block: 0 var(--spacing-3);
+}
+
+.page-row-header-description {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  font-weight: var(--weight-body);
+  line-height: var(--leading-prose);
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
 /* A two-row label stack — content filling the block space on top, then a
  * fixed-height label row underneath it (children render top-to-bottom in DOM
  * order, so place the content first and the label second). */

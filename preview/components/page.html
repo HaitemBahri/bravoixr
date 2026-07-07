@@ -37,6 +37,23 @@
       <p class="text-page-description text-color-description" data-en="Structural page-layout regions — headers, footers, clusters, label rows, sidebars, scrollers, and sticky bars. Each region renders nothing on its own, so every specimen drops a card inside to make its box legible." data-ar="مناطق تخطيط بنيوية للصفحة — الترويسات والتذييلات والتجميعات وصفوف العناوين والأشرطة الجانبية والأشرطة المنزلقة والأشرطة اللاصقة. لا تعرض أي منطقة شيئًا بذاتها، لذا يضع كل نموذج بطاقة بداخلها لإبراز حدودها.">Structural page-layout regions — headers, footers, clusters, label rows, sidebars, scrollers, and sticky bars. Each region renders nothing on its own, so every specimen drops a card inside to make its box legible.</p>
     </section>
 
+    <!-- page-topbar -->
+    <section class="page-section page-row-header">
+      <div>
+        <h3 class="page-row-header-title" data-en="Topbar" data-ar="الشريط العلوي">Topbar</h3>
+        <p class="page-row-header-description" data-en="Opens the screen — wordmark at the start, controls at the end, on a raised band." data-ar="يفتتح الشاشة — العلامة في البداية والأدوات في النهاية، على شريط بارز.">Opens the screen — wordmark at the start, controls at the end, on a raised band.</p>
+      </div>
+      <div>
+        <div class="page-topbar">
+          <span class="text-project-title">bravoixr</span>
+          <div class="page-controls">
+            <button class="btn btn-solid btn-square" type="button" aria-label="Theme"><span class="icon icon-md">contrast</span></button>
+            <button class="btn btn-solid btn-square" type="button" aria-label="Language"><span class="icon icon-md">translate</span></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- page-header -->
     <section class="page-section page-row-header">
       <div>
@@ -55,14 +72,15 @@
     <section class="page-section page-row-header">
       <div>
         <h3 class="page-row-header-title" data-en="Page footer" data-ar="تذييل الصفحة">Page footer</h3>
-        <p class="page-row-header-description" data-en="Closes the page — wordmark at the start, actions at the end, over a divider." data-ar="يختم الصفحة — العلامة في البداية والإجراءات في النهاية، فوق فاصل.">Closes the page — wordmark at the start, actions at the end, over a divider.</p>
+        <p class="page-row-header-description" data-en="Closes the page — wordmark at the start, links at the end, on a sunken band." data-ar="يختم الصفحة — العلامة في البداية والروابط في النهاية، على شريط غائر.">Closes the page — wordmark at the start, links at the end, on a sunken band.</p>
       </div>
       <div>
         <div class="page-footer">
-          <span class="text-project-title">bravoixr</span>
+          <span class="text-body text-color-description" data-en="bravoixr · © 2026" data-ar="bravoixr · © ٢٠٢٦">bravoixr · © 2026</span>
           <div class="page-cluster">
-            <button class="btn btn-solid" type="button" data-en="Save" data-ar="حفظ">Save</button>
-            <button class="btn btn-solid" type="button" data-en="Cancel" data-ar="إلغاء">Cancel</button>
+            <a class="text-body text-color-description" data-en="Privacy" data-ar="الخصوصية">Privacy</a>
+            <a class="text-body text-color-description" data-en="Terms" data-ar="الشروط">Terms</a>
+            <a class="text-body text-color-description" data-en="Contact" data-ar="اتصل بنا">Contact</a>
           </div>
         </div>
       </div>
@@ -331,19 +349,26 @@
         <p class="page-row-header-description" data-en="Pins to the top of its scroll parent, clearing the content that scrolls past." data-ar="يثبت في أعلى حاويته المتمرّرة، فوق المحتوى الذي يمرّ.">Pins to the top of its scroll parent, clearing the content that scrolls past.</p>
       </div>
       <div>
-        <div class="card page-sticky">
-          <h3 class="card-title" data-en="Sticky bar" data-ar="الشريط اللاصق">Sticky bar</h3>
-        </div>
-        <div class="page-cluster">
-          <div class="card"><p class="card-description" data-en="Scroll the page — the bar above stays pinned to the top while these rows scroll past." data-ar="مرّر الصفحة — يبقى الشريط أعلاه مثبتًا في الأعلى بينما تمرّ هذه الصفوف.">Scroll the page — the bar above stays pinned to the top while these rows scroll past.</p></div>
-          <div class="card"><p class="card-description" data-en="Scroll the page — the bar above stays pinned to the top while these rows scroll past." data-ar="مرّر الصفحة — يبقى الشريط أعلاه مثبتًا في الأعلى بينما تمرّ هذه الصفوف.">Scroll the page — the bar above stays pinned to the top while these rows scroll past.</p></div>
-          <div class="card"><p class="card-description" data-en="Scroll the page — the bar above stays pinned to the top while these rows scroll past." data-ar="مرّر الصفحة — يبقى الشريط أعلاه مثبتًا في الأعلى بينما تمرّ هذه الصفوف.">Scroll the page — the bar above stays pinned to the top while these rows scroll past.</p></div>
-          <div class="card"><p class="card-description" data-en="Scroll the page — the bar above stays pinned to the top while these rows scroll past." data-ar="مرّر الصفحة — يبقى الشريط أعلاه مثبتًا في الأعلى بينما تمرّ هذه الصفوف.">Scroll the page — the bar above stays pinned to the top while these rows scroll past.</p></div>
-          <div class="card"><p class="card-description" data-en="Scroll the page — the bar above stays pinned to the top while these rows scroll past." data-ar="مرّر الصفحة — يبقى الشريط أعلاه مثبتًا في الأعلى بينما تمرّ هذه الصفوف.">Scroll the page — the bar above stays pinned to the top while these rows scroll past.</p></div>
-          <div class="card"><p class="card-description" data-en="Scroll the page — the bar above stays pinned to the top while these rows scroll past." data-ar="مرّر الصفحة — يبقى الشريط أعلاه مثبتًا في الأعلى بينما تمرّ هذه الصفوف.">Scroll the page — the bar above stays pinned to the top while these rows scroll past.</p></div>
+        <div style="block-size: 16rem; overflow-block: auto">
+          <div class="card page-sticky">
+            <h3 class="card-title" data-en="Sticky bar" data-ar="الشريط اللاصق">Sticky bar</h3>
+          </div>
+          <div class="page-cluster">
+            <div class="card"><p class="card-description" data-en="Scroll this box — the bar above stays pinned to the top while these rows scroll past." data-ar="مرّر هذا الصندوق — يبقى الشريط أعلاه مثبتًا في الأعلى بينما تمرّ هذه الصفوف.">Scroll this box — the bar above stays pinned to the top while these rows scroll past.</p></div>
+            <div class="card"><p class="card-description" data-en="Scroll this box — the bar above stays pinned to the top while these rows scroll past." data-ar="مرّر هذا الصندوق — يبقى الشريط أعلاه مثبتًا في الأعلى بينما تمرّ هذه الصفوف.">Scroll this box — the bar above stays pinned to the top while these rows scroll past.</p></div>
+            <div class="card"><p class="card-description" data-en="Scroll this box — the bar above stays pinned to the top while these rows scroll past." data-ar="مرّر هذا الصندوق — يبقى الشريط أعلاه مثبتًا في الأعلى بينما تمرّ هذه الصفوف.">Scroll this box — the bar above stays pinned to the top while these rows scroll past.</p></div>
+            <div class="card"><p class="card-description" data-en="Scroll this box — the bar above stays pinned to the top while these rows scroll past." data-ar="مرّر هذا الصندوق — يبقى الشريط أعلاه مثبتًا في الأعلى بينما تمرّ هذه الصفوف.">Scroll this box — the bar above stays pinned to the top while these rows scroll past.</p></div>
+            <div class="card"><p class="card-description" data-en="Scroll this box — the bar above stays pinned to the top while these rows scroll past." data-ar="مرّر هذا الصندوق — يبقى الشريط أعلاه مثبتًا في الأعلى بينما تمرّ هذه الصفوف.">Scroll this box — the bar above stays pinned to the top while these rows scroll past.</p></div>
+            <div class="card"><p class="card-description" data-en="Scroll this box — the bar above stays pinned to the top while these rows scroll past." data-ar="مرّر هذا الصندوق — يبقى الشريط أعلاه مثبتًا في الأعلى بينما تمرّ هذه الصفوف.">Scroll this box — the bar above stays pinned to the top while these rows scroll past.</p></div>
+          </div>
         </div>
       </div>
     </section>
+
+    <footer class="page-footer">
+      <span class="text-body text-color-description" data-en="bravoixr · © 2026" data-ar="bravoixr · © ٢٠٢٦">bravoixr · © 2026</span>
+      <span class="text-body text-color-description">v0.1.0</span>
+    </footer>
   </main>
 
   <script src="../preview.js"></script>

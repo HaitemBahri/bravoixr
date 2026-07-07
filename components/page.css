@@ -27,13 +27,18 @@
 }
 
 /* The page's top bar — wordmark at the inline-start, controls at the inline-end
- * (space-between across exactly two children), with the block gap below it. */
+ * (space-between across exactly two children), on a raised card-like surface
+ * (card padding + radius, borderless), and the block gap below it. The fill
+ * themes with the page via the semantic dark override. */
 .page-topbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: var(--spacing-5);
   margin-block-end: var(--spacing-8);
+  padding: var(--spacing-5);
+  border-radius: var(--radius-card);
+  background: var(--color-surface-raised);
 }
 
 /* The topbar's control cluster — a flex row grouping the toggle buttons with a
@@ -64,17 +69,17 @@
   margin-block-end: var(--spacing-8);
 }
 
-/* The page's footer bar — mirror of .page-topbar (wordmark at inline-start,
- * actions at inline-end), pushed to the block-end with a divider line above it
- * reusing the divider component's resting border role. */
+/* The page's footer bar — wordmark at inline-start, actions at inline-end,
+ * pushed to the block-end on a sunken band (borderless, no radius) so the fill
+ * recedes it from the canvas. Themes with the page via the semantic dark override. */
 .page-footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: var(--spacing-5);
   margin-block-start: var(--spacing-8);
-  padding-block-start: var(--spacing-6);
-  border-block-start: var(--border-width) solid var(--color-border);
+  padding: var(--spacing-5);
+  background: var(--color-surface-sunken);
 }
 
 /* A horizontal stack that wraps — items sit inline-start to inline-end and drop

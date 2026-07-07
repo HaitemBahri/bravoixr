@@ -27,13 +27,17 @@
 }
 
 /* The page's top bar — wordmark at the inline-start, controls at the inline-end
- * (space-between across exactly two children), with the block gap below it. */
+ * (space-between across exactly two children), on a raised full-bleed band with
+ * block padding, and the block gap below it. The fill themes with the page via
+ * the semantic dark override. */
 .page-topbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: var(--spacing-5);
   margin-block-end: var(--spacing-8);
+  padding-block: var(--spacing-4);
+  background: var(--color-surface-raised);
 }
 
 /* The topbar's control cluster — a flex row grouping the toggle buttons with a
@@ -65,16 +69,16 @@
 }
 
 /* The page's footer bar — mirror of .page-topbar (wordmark at inline-start,
- * actions at inline-end), pushed to the block-end with a divider line above it
- * reusing the divider component's resting border role. */
+ * actions at inline-end), pushed to the block-end on the same raised full-bleed
+ * band, so the fill separates it from the canvas without a divider line. */
 .page-footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: var(--spacing-5);
   margin-block-start: var(--spacing-8);
-  padding-block-start: var(--spacing-6);
-  border-block-start: var(--border-width) solid var(--color-border);
+  padding-block: var(--spacing-4);
+  background: var(--color-surface-raised);
 }
 
 /* A horizontal stack that wraps — items sit inline-start to inline-end and drop

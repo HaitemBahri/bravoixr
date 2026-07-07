@@ -16,8 +16,6 @@
 
   /* Sizing */
   --control-height: var(--size-control);
-  /* Content column snaps to the breakpoint tiers; :root holds the widest, bands step down. */
-  --container-max: var(--breakpoint-max);
   --card-min: var(--size-card-min);
   --page-sidebar-size: var(--size-sidebar);
   --page-row-header-size: var(--size-row-header);
@@ -50,22 +48,4 @@
   --spacing-10: var(--space-10);
   --spacing-11: var(--space-11);
   --spacing-12: var(--space-12);
-}
-
-/* Content column steps down the breakpoint ladder — :root above holds the widest tier
- * (--breakpoint-max); each band re-points --container-max one step down. Pure var()
- * indirection, no fluid math, so the ladder stays portable.
- * The breakpoint px are inlined here because @media conditions can't read var(); they mirror
- * --breakpoint-max (1280px) and --breakpoint-desktop (1024px) in primitives/layout.css, offset by
- * 0.02px to sit just below each min-width boundary. Tiers: 768 / 1024 / 1280. */
-@media (max-width: 1279.98px) {
-  :root {
-    --container-max: var(--breakpoint-desktop);
-  }
-}
-
-@media (max-width: 1023.98px) {
-  :root {
-    --container-max: var(--breakpoint-tablet);
-  }
 }

@@ -77,6 +77,7 @@ Borders carry resting surfaces in the hybrid elevation model, so they must be cl
 
 - **No fainter hairline step.**
   _Why: `feel.md` requires borders be clearly present, not hairline-faint — a faint step would undercut the borders-first surfaces._
+- **Card is the borderless exception** — it drops the resting border and leans on its raised fill alone to lift off the page, while inputs and panels keep the just-visible border.
 
 ## Elevation / shadow
 

@@ -10,10 +10,10 @@
   --font-code: var(--font-mono);
 
   /* Size roles (desktop steps) */
-  --text-page-title: var(--text-h1);
-  --text-section-title: var(--text-h2);
-  --text-subsection-title: var(--text-h3);
-  --text-minor-heading: var(--text-h4);
+  --text-page-title: var(--text-h2);
+  --text-section-title: var(--text-h3);
+  --text-subsection-title: var(--text-h4);
+  --text-minor-heading: var(--text-h5);
   --text-project-title: var(--text-body1);
   --text-context-title: var(--text-body1);
   --text-page-description: var(--text-body1);
@@ -83,10 +83,10 @@
  * context title, page description) step once to body2 and hold below. */
 @media (max-width: 1023.98px) {
   :root {
-    --text-page-title: var(--text-h2);
-    --text-section-title: var(--text-h3);
-    --text-subsection-title: var(--text-h4);
-    --text-minor-heading: var(--text-h5);
+    --text-page-title: var(--text-h3);
+    --text-section-title: var(--text-h4);
+    --text-subsection-title: var(--text-h5);
+    --text-minor-heading: var(--text-h6);
     --text-project-title: var(--text-body2);
     --text-context-title: var(--text-body2);
     --text-page-description: var(--text-body2);
@@ -96,9 +96,9 @@
 /* Mobile (<768): headings drop one more step; the context title holds body2 from the band above. */
 @media (max-width: 767.98px) {
   :root {
-    --text-page-title: var(--text-h3);
-    --text-section-title: var(--text-h4);
-    --text-subsection-title: var(--text-h5);
-    --text-minor-heading: var(--text-h6);
+    --text-page-title: var(--text-h4);
+    --text-section-title: var(--text-h5);
+    --text-subsection-title: var(--text-h6);
+    --text-minor-heading: var(--text-h7);
   }
 }

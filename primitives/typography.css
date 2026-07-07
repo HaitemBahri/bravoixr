@@ -9,13 +9,14 @@
   --font-arabic: 'IBM Plex Sans Arabic', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 
-  /* Heading scale — h1 (84px) down to h6 (24px) */
+  /* Heading scale — h1 (84px) down to h7 (19px) */
   --text-h1: 5.25rem;
   --text-h2: 4.0625rem;
   --text-h3: 3.1875rem;
   --text-h4: 2.5rem;
   --text-h5: 1.9375rem;
   --text-h6: 1.5rem;
+  --text-h7: 1.1875rem;
 
   /* Body scale — body1 (20px) down to body5 (12px); body3 is the default */
   --text-body1: 1.25rem;

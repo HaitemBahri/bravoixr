@@ -33,12 +33,14 @@
 
   <main class="page-body">
 
-    <h2 class="text-page-title" data-en="Color" data-ar="اللون">Color</h2>
-
     <section class="page-section">
+      <h2 class="text-page-title" data-en="Color" data-ar="اللون">Color</h2>
       <p class="text-page-description text-color-description" data-en="Eleven-step ramps (50–950) for brand, status, and accent hues; the cool-gray neutral runs 0–1000." data-ar="تدرّجات من 11 درجة (50–950) لألوان العلامة والحالات واللمسات؛ والمحايد الرمادي البارد يمتدّ من 0 إلى 1000.">Eleven-step ramps (50–950) for brand, status, and accent hues; the cool-gray neutral runs 0–1000.</p>
-      <div id="ramps"></div>
     </section>
+
+    <!-- Each hue is a page-row-header (name-only rail + its swatch cluster). The
+         rows are grid-gapped since page-row-headers carry no inter-row margin. -->
+    <div id="ramps" style="display: grid; gap: var(--spacing-5);"></div>
 
   </main>
 
@@ -61,30 +63,33 @@
       };
       var ramps = document.getElementById('ramps');
       Object.keys(hues).forEach(function (hue) {
-        // Ramp label: mono token role, quiet, with rhythm above and below.
-        var label = document.createElement('span');
-        label.className = 'text-code-label text-color-description';
-        label.style.cssText = 'display:block;margin-block:var(--spacing-4) var(--spacing-2)';
-        label.textContent = hue;
-        ramps.appendChild(label);
-        // One flex row of swatch cells (2px demo gap is tokenless geometry).
-        var row = document.createElement('div');
-        row.style.cssText = 'display:flex;gap:2px';
+        // One page-row-header per hue: a name-only rail beside the swatch cluster.
+        var section = document.createElement('div');
+        section.className = 'page-row-header';
+
+        var railCell = document.createElement('div');
+        var title = document.createElement('h3');
+        title.className = 'page-row-header-title';
+        title.textContent = hue;
+        railCell.appendChild(title);
+        section.appendChild(railCell);
+
+        // The swatches: .card divs grouped in a page-cluster; the only inline
+        // style is the swatch fill (plus the 100×100 demo size).
+        var contentCell = document.createElement('div');
+        var cluster = document.createElement('div');
+        cluster.className = 'page-cluster';
         hues[hue].forEach(function (step) {
-          var fig = document.createElement('figure');
-          fig.style.cssText = 'flex:1;margin:0';
-          var cell = document.createElement('div');
-          // 48px specimen height is tokenless demo geometry; fill is the primitive under test.
-          cell.style.cssText = 'block-size:48px;border-radius:var(--radius-chip);border:var(--border-width) solid var(--color-border)';
-          cell.style.background = 'var(--' + hue + '-' + step + ')';
-          var cap = document.createElement('figcaption');
-          cap.style.cssText = 'font-family:var(--font-code);font-size:10px;color:var(--color-text-subtle);text-align:center;margin-block-start:4px';
-          cap.textContent = step;
-          fig.appendChild(cell);
-          fig.appendChild(cap);
-          row.appendChild(fig);
+          var card = document.createElement('div');
+          card.className = 'card';
+          card.style.cssText = 'inline-size:100px;block-size:100px';
+          card.style.background = 'var(--' + hue + '-' + step + ')';
+          cluster.appendChild(card);
         });
-        ramps.appendChild(row);
+        contentCell.appendChild(cluster);
+        section.appendChild(contentCell);
+
+        ramps.appendChild(section);
       });
     })();
   </script>

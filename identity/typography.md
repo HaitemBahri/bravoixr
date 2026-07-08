@@ -87,8 +87,9 @@ _Why: code is mostly one well-tuned size; the smaller step covers label-scale co
 
 ## Weights
 
-Roles map identically across both scripts. Every weight used sits in the **200–700** range that
-Bricolage Grotesque and IBM Plex Sans Arabic both cover.
+Roles map identically across both scripts, with one exception — the default body role steps up
+a level in Arabic (below). Every weight used sits in the **200–700** range that Bricolage Grotesque
+and IBM Plex Sans Arabic both cover.
 
 | Weight | Tokens |
 | -- | -- |
@@ -103,6 +104,8 @@ Bricolage Grotesque and IBM Plex Sans Arabic both cover.
   _Why: the biggest type carries the most weight; smaller headings ease off so the hierarchy reads top-to-bottom._
 - **Body uses light weights** (400 for context titles, 300 for default/labels, 200 for helper).
   _Why: a light body voice is what makes the type feel airy and modern under the heavier headings._
+- **Arabic default body steps up one level (300 → 400).**
+  _Why: IBM Plex Sans Arabic reads lighter than Bricolage Grotesque at the same nominal weight, so the default Arabic reading text takes regular to match the Latin body's presence._
 
 ## Line-heights
 

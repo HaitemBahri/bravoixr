@@ -36,29 +36,23 @@
     <section class="page-section">
       <h2 class="text-page-title" data-en="Card" data-ar="بطاقة">Card</h2>
       <p class="text-page-description text-color-description" data-en="A resting raised surface. Its raised fill alone separates it from the page — no border, no shadow (shadows are reserved for floating layers)." data-ar="سطح مرتفع ثابت. تفصله تعبئته المرتفعة وحدها عن الصفحة — بلا حدّ ولا ظِل (فالظلال محجوزة للطبقات العائمة).">A resting raised surface. Its raised fill alone separates it from the page — no border, no shadow (shadows are reserved for floating layers).</p>
+    </section>
 
-      <!-- One row per specimen: name + the classes it applies on the left, three anatomy
-           variants on the right (title+description → +footer → +header). -->
+    <!-- Default — the three anatomy variants build up: title+description → +footer → +header. -->
+    <section class="page-section page-row-header">
       <div>
-        <div>
-          <h3 class="text-minor-heading" data-en="Default" data-ar="افتراضي">Default</h3>
-          <ul>
-            <li class="text-code-label text-color-helper">.card</li>
-            <li class="text-code-label text-color-helper">.card-header</li>
-            <li class="text-code-label text-color-helper">.card-title</li>
-            <li class="text-code-label text-color-helper">.card-description</li>
-            <li class="text-code-label text-color-helper">.card-footer</li>
-            <li class="text-code-label text-color-helper">.btn</li>
-            <li class="text-code-label text-color-helper">.btn-solid</li>
-          </ul>
-        </div>
-        <div>
-          <!-- Title + description -->
+        <h3 class="page-row-header-title" data-en="Default" data-ar="افتراضي">Default</h3>
+        <p class="page-row-header-description" data-en="The base card — a raised, borderless surface built up from title and description, to a footer, then a header." data-ar="البطاقة الأساسية — سطح مرتفع بلا حدود، يُبنى من العنوان والوصف، إلى تذييل، ثم ترويسة.">The base card — a raised, borderless surface built up from title and description, to a footer, then a header.</p>
+      </div>
+      <div>
+        <div class="page-column-header">
           <div class="card">
             <h3 class="card-title" data-en="Card title" data-ar="عنوان البطاقة">Card title</h3>
             <p class="card-description" data-en="Raised surface, borderless, and text that follows the theme." data-ar="سطح مرتفع، بلا حدود، ونص يتبع السمة.">Raised surface, borderless, and text that follows the theme.</p>
           </div>
-          <!-- Title + description + footer -->
+          <span class="text-label" data-en="Title + description" data-ar="عنوان + وصف">Title + description</span>
+        </div>
+        <div class="page-column-header">
           <div class="card">
             <h3 class="card-title" data-en="Card title" data-ar="عنوان البطاقة">Card title</h3>
             <p class="card-description" data-en="Raised surface, borderless, and text that follows the theme." data-ar="سطح مرتفع، بلا حدود، ونص يتبع السمة.">Raised surface, borderless, and text that follows the theme.</p>
@@ -66,7 +60,9 @@
               <button class="btn btn-solid" type="button" data-en="Open" data-ar="فتح">Open</button>
             </div>
           </div>
-          <!-- Header + title + description + footer -->
+          <span class="text-label" data-en="+ footer" data-ar="+ تذييل">+ footer</span>
+        </div>
+        <div class="page-column-header">
           <div class="card">
             <div class="card-header">
               <span class="text-code-label">&lt;insert header&gt;</span>
@@ -77,29 +73,27 @@
               <button class="btn btn-solid" type="button" data-en="Open" data-ar="فتح">Open</button>
             </div>
           </div>
+          <span class="text-label" data-en="+ header" data-ar="+ ترويسة">+ header</span>
         </div>
       </div>
+    </section>
 
+    <!-- With media — the same build-up, led by an edge-to-edge media region. -->
+    <section class="page-section page-row-header">
       <div>
-        <div>
-          <h3 class="text-minor-heading" data-en="With media" data-ar="مع وسائط">With media</h3>
-          <ul>
-            <li class="text-code-label text-color-helper">.card</li>
-            <li class="text-code-label text-color-helper">.card-media</li>
-            <li class="text-code-label text-color-helper">.card-header</li>
-            <li class="text-code-label text-color-helper">.card-title</li>
-            <li class="text-code-label text-color-helper">.card-description</li>
-            <li class="text-code-label text-color-helper">.card-footer</li>
-          </ul>
-        </div>
-        <div>
-          <!-- Media + title + description -->
+        <h3 class="page-row-header-title" data-en="With media" data-ar="مع وسائط">With media</h3>
+        <p class="page-row-header-description" data-en="A card led by an edge-to-edge media region clipped to the top corners, then the same anatomy built up beneath it." data-ar="بطاقة تتصدّرها منطقة وسائط ممتدّة من حافة إلى حافة ومقتطعة عند الزاويتين العلويتين، ثم تُبنى البنية ذاتها تحتها.">A card led by an edge-to-edge media region clipped to the top corners, then the same anatomy built up beneath it.</p>
+      </div>
+      <div>
+        <div class="page-column-header">
           <div class="card">
             <div class="card-media"></div>
             <h3 class="card-title" data-en="Card title" data-ar="عنوان البطاقة">Card title</h3>
             <p class="card-description" data-en="The media region runs edge to edge and clips to the card's top corners." data-ar="تمتد منطقة الوسائط من حافة إلى حافة وتُقتطع عند زاويتي البطاقة العلويتين.">The media region runs edge to edge and clips to the card's top corners.</p>
           </div>
-          <!-- Media + title + description + footer -->
+          <span class="text-label" data-en="Media + title + description" data-ar="وسائط + عنوان + وصف">Media + title + description</span>
+        </div>
+        <div class="page-column-header">
           <div class="card">
             <div class="card-media"></div>
             <h3 class="card-title" data-en="Card title" data-ar="عنوان البطاقة">Card title</h3>
@@ -108,7 +102,9 @@
               <button class="btn btn-solid" type="button" data-en="Open" data-ar="فتح">Open</button>
             </div>
           </div>
-          <!-- Media + header (underneath the image) + title + description + footer -->
+          <span class="text-label" data-en="+ footer" data-ar="+ تذييل">+ footer</span>
+        </div>
+        <div class="page-column-header">
           <div class="card">
             <div class="card-media"></div>
             <div class="card-header">
@@ -120,6 +116,7 @@
               <button class="btn btn-solid" type="button" data-en="Open" data-ar="فتح">Open</button>
             </div>
           </div>
+          <span class="text-label" data-en="+ header" data-ar="+ ترويسة">+ header</span>
         </div>
       </div>
     </section>

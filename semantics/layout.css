@@ -20,6 +20,7 @@
   --page-sidebar-size: var(--size-sidebar);
   --page-row-header-size: var(--size-row-header);
   --page-column-header-size: var(--size-column-header);
+  --page-max: var(--breakpoint-max);
 
   /* Elevation — floating layers (resting surfaces use borders, no token) */
   --shadow-menu: var(--shadow-sm);

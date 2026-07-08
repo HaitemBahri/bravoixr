@@ -1,11 +1,19 @@
 /* Component — Page
  * The page-canvas combination class: sets the base background and the document
  * text colour together, so a consumer drops one class on the root element and
- * gets a legible canvas that theme-flips via the semantic dark overrides. */
+ * gets a legible canvas that theme-flips via the semantic dark overrides.
+ * It is also the sticky-footer host: a full-viewport-height flex column so its
+ * topbar/body/footer children stack top-to-bottom and the footer is held at the
+ * viewport bottom even when the content is short (see .page-body). align-items
+ * stays at the default stretch, so the full-width topbar/footer bands still
+ * bleed edge to edge. */
 
 .page {
   box-sizing: border-box;
   margin: 0;
+  min-block-size: 100dvh;
+  display: flex;
+  flex-direction: column;
   background: var(--color-surface-page);
   color: var(--color-text);
 }
@@ -24,8 +32,12 @@
  * never drops below the space-10 gutter on narrow ones. Inset by space-10 at the
  * block-start and flush (zero) at the block-end so the footer meets the viewport
  * bottom. Shares its inline formula with .page-topbar/.page-footer so all three
- * content columns align. */
+ * content columns align. As the growing child of the .page flex column
+ * (flex: 1 1 auto), it absorbs the leftover block space so the footer is pushed
+ * to the viewport bottom on short pages; on tall pages it simply takes its
+ * content height as before. */
 .page-body {
+  flex: 1 1 auto;
   padding-block: var(--spacing-10) 0;
   padding-inline: max(var(--spacing-10), calc((100% - var(--page-max)) / 2));
 }

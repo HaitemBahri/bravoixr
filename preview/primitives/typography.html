@@ -39,10 +39,10 @@
     </section>
 
     <!-- Each category is a section titled by its name; every specimen is a
-         page-row-header — a name-only rail beside the specimen, which is itself a
-         page-column-header captioned with its token. Specimens are grid-gapped
-         since page-row-headers carry no inter-row margin, matching the text.html
-         pattern. -->
+         page-row-header — a name-only rail beside the specimen, which sits in a
+         page-cluster holding a page-column-header captioned with its plain name.
+         Specimens are grid-gapped since page-row-headers carry no inter-row
+         margin, matching the text.html pattern. -->
 
     <section class="page-section">
       <h3 class="text-section-title" data-en="Font stacks" data-ar="عائلات الخطوط">Font stacks</h3>
@@ -50,27 +50,33 @@
         <div class="page-row-header">
           <div><h4 class="page-row-header-title">latin</h4></div>
           <div>
-            <div class="page-column-header">
-              <div style="font-family:var(--font-latin);font-size:var(--text-h6)">Modern &amp; confident</div>
-              <span class="text-code-label text-color-helper">--font-latin</span>
+            <div class="page-cluster">
+              <div class="page-column-header">
+                <div style="font-family:var(--font-latin);font-size:var(--text-h6)">Modern &amp; confident</div>
+                <span class="text-label">latin</span>
+              </div>
             </div>
           </div>
         </div>
         <div class="page-row-header">
           <div><h4 class="page-row-header-title">arabic</h4></div>
           <div>
-            <div class="page-column-header">
-              <div style="font-family:var(--font-arabic);font-size:var(--text-h6)">حديث وواثق</div>
-              <span class="text-code-label text-color-helper">--font-arabic</span>
+            <div class="page-cluster">
+              <div class="page-column-header">
+                <div style="font-family:var(--font-arabic);font-size:var(--text-h6)">حديث وواثق</div>
+                <span class="text-label">arabic</span>
+              </div>
             </div>
           </div>
         </div>
         <div class="page-row-header">
           <div><h4 class="page-row-header-title">mono</h4></div>
           <div>
-            <div class="page-column-header">
-              <div style="font-family:var(--font-mono);font-size:var(--text-body3)">const token = var(--blue-600);</div>
-              <span class="text-code-label text-color-helper">--font-mono</span>
+            <div class="page-cluster">
+              <div class="page-column-header">
+                <div style="font-family:var(--font-mono);font-size:var(--text-body3)">const token = var(--blue-600);</div>
+                <span class="text-label">mono</span>
+              </div>
             </div>
           </div>
         </div>
@@ -83,63 +89,77 @@
         <div class="page-row-header">
           <div><h4 class="page-row-header-title">h1 — 84px</h4></div>
           <div>
-            <div class="page-column-header">
-              <div style="font-family:var(--font-heading);font-size:var(--text-h1);font-weight:var(--weight-bold);line-height:var(--leading-heading);letter-spacing:var(--tracking-heading)" data-en="Heading" data-ar="عنوان">Heading</div>
-              <span class="text-code-label text-color-helper">--text-h1</span>
+            <div class="page-cluster">
+              <div class="page-column-header">
+                <div style="font-family:var(--font-heading);font-size:var(--text-h1);font-weight:var(--weight-bold);line-height:var(--leading-heading);letter-spacing:var(--tracking-heading)" data-en="Heading" data-ar="عنوان">Heading</div>
+                <span class="text-label">h1</span>
+              </div>
             </div>
           </div>
         </div>
         <div class="page-row-header">
           <div><h4 class="page-row-header-title">h2 — 65px</h4></div>
           <div>
-            <div class="page-column-header">
-              <div style="font-family:var(--font-heading);font-size:var(--text-h2);font-weight:var(--weight-bold);line-height:var(--leading-heading);letter-spacing:var(--tracking-heading)" data-en="Heading" data-ar="عنوان">Heading</div>
-              <span class="text-code-label text-color-helper">--text-h2</span>
+            <div class="page-cluster">
+              <div class="page-column-header">
+                <div style="font-family:var(--font-heading);font-size:var(--text-h2);font-weight:var(--weight-bold);line-height:var(--leading-heading);letter-spacing:var(--tracking-heading)" data-en="Heading" data-ar="عنوان">Heading</div>
+                <span class="text-label">h2</span>
+              </div>
             </div>
           </div>
         </div>
         <div class="page-row-header">
           <div><h4 class="page-row-header-title">h3 — 51px</h4></div>
           <div>
-            <div class="page-column-header">
-              <div style="font-family:var(--font-heading);font-size:var(--text-h3);font-weight:var(--weight-semibold);line-height:var(--leading-heading)" data-en="Heading" data-ar="عنوان">Heading</div>
-              <span class="text-code-label text-color-helper">--text-h3</span>
+            <div class="page-cluster">
+              <div class="page-column-header">
+                <div style="font-family:var(--font-heading);font-size:var(--text-h3);font-weight:var(--weight-semibold);line-height:var(--leading-heading)" data-en="Heading" data-ar="عنوان">Heading</div>
+                <span class="text-label">h3</span>
+              </div>
             </div>
           </div>
         </div>
         <div class="page-row-header">
           <div><h4 class="page-row-header-title">h4 — 40px</h4></div>
           <div>
-            <div class="page-column-header">
-              <div style="font-family:var(--font-heading);font-size:var(--text-h4);font-weight:var(--weight-semibold);line-height:var(--leading-heading)" data-en="Heading" data-ar="عنوان">Heading</div>
-              <span class="text-code-label text-color-helper">--text-h4</span>
+            <div class="page-cluster">
+              <div class="page-column-header">
+                <div style="font-family:var(--font-heading);font-size:var(--text-h4);font-weight:var(--weight-semibold);line-height:var(--leading-heading)" data-en="Heading" data-ar="عنوان">Heading</div>
+                <span class="text-label">h4</span>
+              </div>
             </div>
           </div>
         </div>
         <div class="page-row-header">
           <div><h4 class="page-row-header-title">h5 — 31px</h4></div>
           <div>
-            <div class="page-column-header">
-              <div style="font-family:var(--font-heading);font-size:var(--text-h5);font-weight:var(--weight-medium);line-height:var(--leading-heading)" data-en="Heading" data-ar="عنوان">Heading</div>
-              <span class="text-code-label text-color-helper">--text-h5</span>
+            <div class="page-cluster">
+              <div class="page-column-header">
+                <div style="font-family:var(--font-heading);font-size:var(--text-h5);font-weight:var(--weight-medium);line-height:var(--leading-heading)" data-en="Heading" data-ar="عنوان">Heading</div>
+                <span class="text-label">h5</span>
+              </div>
             </div>
           </div>
         </div>
         <div class="page-row-header">
           <div><h4 class="page-row-header-title">h6 — 24px</h4></div>
           <div>
-            <div class="page-column-header">
-              <div style="font-family:var(--font-heading);font-size:var(--text-h6);font-weight:var(--weight-medium);line-height:var(--leading-heading)" data-en="Heading" data-ar="عنوان">Heading</div>
-              <span class="text-code-label text-color-helper">--text-h6</span>
+            <div class="page-cluster">
+              <div class="page-column-header">
+                <div style="font-family:var(--font-heading);font-size:var(--text-h6);font-weight:var(--weight-medium);line-height:var(--leading-heading)" data-en="Heading" data-ar="عنوان">Heading</div>
+                <span class="text-label">h6</span>
+              </div>
             </div>
           </div>
         </div>
         <div class="page-row-header">
           <div><h4 class="page-row-header-title">h7 — 19px</h4></div>
           <div>
-            <div class="page-column-header">
-              <div style="font-family:var(--font-heading);font-size:var(--text-h7);font-weight:var(--weight-medium);line-height:var(--leading-heading)" data-en="Heading" data-ar="عنوان">Heading</div>
-              <span class="text-code-label text-color-helper">--text-h7</span>
+            <div class="page-cluster">
+              <div class="page-column-header">
+                <div style="font-family:var(--font-heading);font-size:var(--text-h7);font-weight:var(--weight-medium);line-height:var(--leading-heading)" data-en="Heading" data-ar="عنوان">Heading</div>
+                <span class="text-label">h7</span>
+              </div>
             </div>
           </div>
         </div>
@@ -152,63 +172,77 @@
         <div class="page-row-header">
           <div><h4 class="page-row-header-title">body1 — 20px</h4></div>
           <div>
-            <div class="page-column-header">
-              <div style="font-family:var(--font-body);font-size:var(--text-body1);line-height:var(--leading-body)" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض حجم النص ومدى وضوحه.">The quick brown fox jumps over the lazy dog.</div>
-              <span class="text-code-label text-color-helper">--text-body1</span>
+            <div class="page-cluster">
+              <div class="page-column-header">
+                <div style="font-family:var(--font-body);font-size:var(--text-body1);line-height:var(--leading-body)" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض حجم النص ومدى وضوحه.">The quick brown fox jumps over the lazy dog.</div>
+                <span class="text-label">body1</span>
+              </div>
             </div>
           </div>
         </div>
         <div class="page-row-header">
           <div><h4 class="page-row-header-title">body2 — 18px</h4></div>
           <div>
-            <div class="page-column-header">
-              <div style="font-family:var(--font-body);font-size:var(--text-body2);line-height:var(--leading-body)" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض حجم النص ومدى وضوحه.">The quick brown fox jumps over the lazy dog.</div>
-              <span class="text-code-label text-color-helper">--text-body2</span>
+            <div class="page-cluster">
+              <div class="page-column-header">
+                <div style="font-family:var(--font-body);font-size:var(--text-body2);line-height:var(--leading-body)" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض حجم النص ومدى وضوحه.">The quick brown fox jumps over the lazy dog.</div>
+                <span class="text-label">body2</span>
+              </div>
             </div>
           </div>
         </div>
         <div class="page-row-header">
           <div><h4 class="page-row-header-title">body3 — 16px (default)</h4></div>
           <div>
-            <div class="page-column-header">
-              <div style="font-family:var(--font-body);font-size:var(--text-body3);line-height:var(--leading-body)" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض حجم النص ومدى وضوحه.">The quick brown fox jumps over the lazy dog.</div>
-              <span class="text-code-label text-color-helper">--text-body3</span>
+            <div class="page-cluster">
+              <div class="page-column-header">
+                <div style="font-family:var(--font-body);font-size:var(--text-body3);line-height:var(--leading-body)" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض حجم النص ومدى وضوحه.">The quick brown fox jumps over the lazy dog.</div>
+                <span class="text-label">body3</span>
+              </div>
             </div>
           </div>
         </div>
         <div class="page-row-header">
           <div><h4 class="page-row-header-title">body4 — 14px</h4></div>
           <div>
-            <div class="page-column-header">
-              <div style="font-family:var(--font-body);font-size:var(--text-body4);line-height:var(--leading-body)" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض حجم النص ومدى وضوحه.">The quick brown fox jumps over the lazy dog.</div>
-              <span class="text-code-label text-color-helper">--text-body4</span>
+            <div class="page-cluster">
+              <div class="page-column-header">
+                <div style="font-family:var(--font-body);font-size:var(--text-body4);line-height:var(--leading-body)" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض حجم النص ومدى وضوحه.">The quick brown fox jumps over the lazy dog.</div>
+                <span class="text-label">body4</span>
+              </div>
             </div>
           </div>
         </div>
         <div class="page-row-header">
           <div><h4 class="page-row-header-title">body5 — 12px</h4></div>
           <div>
-            <div class="page-column-header">
-              <div style="font-family:var(--font-body);font-size:var(--text-body5);line-height:var(--leading-body)" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض حجم النص ومدى وضوحه.">The quick brown fox jumps over the lazy dog.</div>
-              <span class="text-code-label text-color-helper">--text-body5</span>
+            <div class="page-cluster">
+              <div class="page-column-header">
+                <div style="font-family:var(--font-body);font-size:var(--text-body5);line-height:var(--leading-body)" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض حجم النص ومدى وضوحه.">The quick brown fox jumps over the lazy dog.</div>
+                <span class="text-label">body5</span>
+              </div>
             </div>
           </div>
         </div>
         <div class="page-row-header">
           <div><h4 class="page-row-header-title">code — 14px</h4></div>
           <div>
-            <div class="page-column-header">
-              <div style="font-family:var(--font-mono);font-size:var(--text-code);line-height:var(--leading-code)">--color-primary: var(--blue-600);</div>
-              <span class="text-code-label text-color-helper">--text-code</span>
+            <div class="page-cluster">
+              <div class="page-column-header">
+                <div style="font-family:var(--font-mono);font-size:var(--text-code);line-height:var(--leading-code)">--color-primary: var(--blue-600);</div>
+                <span class="text-label">code</span>
+              </div>
             </div>
           </div>
         </div>
         <div class="page-row-header">
           <div><h4 class="page-row-header-title">code2 — 12px</h4></div>
           <div>
-            <div class="page-column-header">
-              <div style="font-family:var(--font-mono);font-size:var(--text-code2);line-height:var(--leading-code)">--color-primary: var(--blue-600);</div>
-              <span class="text-code-label text-color-helper">--text-code2</span>
+            <div class="page-cluster">
+              <div class="page-column-header">
+                <div style="font-family:var(--font-mono);font-size:var(--text-code2);line-height:var(--leading-code)">--color-primary: var(--blue-600);</div>
+                <span class="text-label">code2</span>
+              </div>
             </div>
           </div>
         </div>
@@ -221,54 +255,66 @@
         <div class="page-row-header">
           <div><h4 class="page-row-header-title">extralight — 200</h4></div>
           <div>
-            <div class="page-column-header">
-              <div style="font-family:var(--font-heading);font-size:var(--text-h6);font-weight:var(--weight-extralight)">Bravoixr</div>
-              <span class="text-code-label text-color-helper">--weight-extralight</span>
+            <div class="page-cluster">
+              <div class="page-column-header">
+                <div style="font-family:var(--font-heading);font-size:var(--text-h6);font-weight:var(--weight-extralight)">Bravoixr</div>
+                <span class="text-label">extralight</span>
+              </div>
             </div>
           </div>
         </div>
         <div class="page-row-header">
           <div><h4 class="page-row-header-title">light — 300</h4></div>
           <div>
-            <div class="page-column-header">
-              <div style="font-family:var(--font-heading);font-size:var(--text-h6);font-weight:var(--weight-light)">Bravoixr</div>
-              <span class="text-code-label text-color-helper">--weight-light</span>
+            <div class="page-cluster">
+              <div class="page-column-header">
+                <div style="font-family:var(--font-heading);font-size:var(--text-h6);font-weight:var(--weight-light)">Bravoixr</div>
+                <span class="text-label">light</span>
+              </div>
             </div>
           </div>
         </div>
         <div class="page-row-header">
           <div><h4 class="page-row-header-title">regular — 400</h4></div>
           <div>
-            <div class="page-column-header">
-              <div style="font-family:var(--font-heading);font-size:var(--text-h6);font-weight:var(--weight-regular)">Bravoixr</div>
-              <span class="text-code-label text-color-helper">--weight-regular</span>
+            <div class="page-cluster">
+              <div class="page-column-header">
+                <div style="font-family:var(--font-heading);font-size:var(--text-h6);font-weight:var(--weight-regular)">Bravoixr</div>
+                <span class="text-label">regular</span>
+              </div>
             </div>
           </div>
         </div>
         <div class="page-row-header">
           <div><h4 class="page-row-header-title">medium — 500</h4></div>
           <div>
-            <div class="page-column-header">
-              <div style="font-family:var(--font-heading);font-size:var(--text-h6);font-weight:var(--weight-medium)">Bravoixr</div>
-              <span class="text-code-label text-color-helper">--weight-medium</span>
+            <div class="page-cluster">
+              <div class="page-column-header">
+                <div style="font-family:var(--font-heading);font-size:var(--text-h6);font-weight:var(--weight-medium)">Bravoixr</div>
+                <span class="text-label">medium</span>
+              </div>
             </div>
           </div>
         </div>
         <div class="page-row-header">
           <div><h4 class="page-row-header-title">semibold — 600</h4></div>
           <div>
-            <div class="page-column-header">
-              <div style="font-family:var(--font-heading);font-size:var(--text-h6);font-weight:var(--weight-semibold)">Bravoixr</div>
-              <span class="text-code-label text-color-helper">--weight-semibold</span>
+            <div class="page-cluster">
+              <div class="page-column-header">
+                <div style="font-family:var(--font-heading);font-size:var(--text-h6);font-weight:var(--weight-semibold)">Bravoixr</div>
+                <span class="text-label">semibold</span>
+              </div>
             </div>
           </div>
         </div>
         <div class="page-row-header">
           <div><h4 class="page-row-header-title">bold — 700</h4></div>
           <div>
-            <div class="page-column-header">
-              <div style="font-family:var(--font-heading);font-size:var(--text-h6);font-weight:var(--weight-bold)">Bravoixr</div>
-              <span class="text-code-label text-color-helper">--weight-bold</span>
+            <div class="page-cluster">
+              <div class="page-column-header">
+                <div style="font-family:var(--font-heading);font-size:var(--text-h6);font-weight:var(--weight-bold)">Bravoixr</div>
+                <span class="text-label">bold</span>
+              </div>
             </div>
           </div>
         </div>
@@ -281,36 +327,44 @@
         <div class="page-row-header">
           <div><h4 class="page-row-header-title">heading</h4></div>
           <div>
-            <div class="page-column-header">
-              <span class="text-color-normal">1.1</span>
-              <span class="text-code-label text-color-helper">--leading-heading</span>
+            <div class="page-cluster">
+              <div class="page-column-header">
+                <span class="text-color-normal">1.1</span>
+                <span class="text-label">heading</span>
+              </div>
             </div>
           </div>
         </div>
         <div class="page-row-header">
           <div><h4 class="page-row-header-title">body</h4></div>
           <div>
-            <div class="page-column-header">
-              <span class="text-color-normal">1.6</span>
-              <span class="text-code-label text-color-helper">--leading-body</span>
+            <div class="page-cluster">
+              <div class="page-column-header">
+                <span class="text-color-normal">1.6</span>
+                <span class="text-label">body</span>
+              </div>
             </div>
           </div>
         </div>
         <div class="page-row-header">
           <div><h4 class="page-row-header-title">body-arabic</h4></div>
           <div>
-            <div class="page-column-header">
-              <span class="text-color-normal">1.7</span>
-              <span class="text-code-label text-color-helper">--leading-body-arabic</span>
+            <div class="page-cluster">
+              <div class="page-column-header">
+                <span class="text-color-normal">1.7</span>
+                <span class="text-label">body-arabic</span>
+              </div>
             </div>
           </div>
         </div>
         <div class="page-row-header">
           <div><h4 class="page-row-header-title">code</h4></div>
           <div>
-            <div class="page-column-header">
-              <span class="text-color-normal">1.5</span>
-              <span class="text-code-label text-color-helper">--leading-code</span>
+            <div class="page-cluster">
+              <div class="page-column-header">
+                <span class="text-color-normal">1.5</span>
+                <span class="text-label">code</span>
+              </div>
             </div>
           </div>
         </div>
@@ -323,27 +377,33 @@
         <div class="page-row-header">
           <div><h4 class="page-row-header-title">heading</h4></div>
           <div>
-            <div class="page-column-header">
-              <span class="text-color-normal">-0.02em</span>
-              <span class="text-code-label text-color-helper">--tracking-heading</span>
+            <div class="page-cluster">
+              <div class="page-column-header">
+                <span class="text-color-normal">-0.02em</span>
+                <span class="text-label">heading</span>
+              </div>
             </div>
           </div>
         </div>
         <div class="page-row-header">
           <div><h4 class="page-row-header-title">caps</h4></div>
           <div>
-            <div class="page-column-header">
-              <span class="text-color-normal">0.06em</span>
-              <span class="text-code-label text-color-helper">--tracking-caps</span>
+            <div class="page-cluster">
+              <div class="page-column-header">
+                <span class="text-color-normal">0.06em</span>
+                <span class="text-label">caps</span>
+              </div>
             </div>
           </div>
         </div>
         <div class="page-row-header">
           <div><h4 class="page-row-header-title">normal</h4></div>
           <div>
-            <div class="page-column-header">
-              <span class="text-color-normal">0</span>
-              <span class="text-code-label text-color-helper">--tracking-normal</span>
+            <div class="page-cluster">
+              <div class="page-column-header">
+                <span class="text-color-normal">0</span>
+                <span class="text-label">normal</span>
+              </div>
             </div>
           </div>
         </div>

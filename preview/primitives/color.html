@@ -80,11 +80,20 @@
         var cluster = document.createElement('div');
         cluster.className = 'page-cluster';
         hues[hue].forEach(function (step) {
+          // Each swatch is a page-column-header: the carded fill on top, the
+          // level as a centred caption beneath it.
+          var column = document.createElement('div');
+          column.className = 'page-column-header';
           var card = document.createElement('div');
           card.className = 'card';
           card.style.cssText = 'inline-size:100px;block-size:100px';
           card.style.background = 'var(--' + hue + '-' + step + ')';
-          cluster.appendChild(card);
+          var caption = document.createElement('span');
+          caption.className = 'text-label';
+          caption.textContent = step;
+          column.appendChild(card);
+          column.appendChild(caption);
+          cluster.appendChild(column);
         });
         contentCell.appendChild(cluster);
         section.appendChild(contentCell);

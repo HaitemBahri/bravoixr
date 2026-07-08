@@ -28,17 +28,21 @@
 }
 
 /* The page's top bar — wordmark at the inline-start, controls at the inline-end
- * (space-between across exactly two children), on a raised card-like surface
- * (card padding + radius, borderless), and the block gap below it. The fill
- * themes with the page via the semantic dark override. */
+ * (space-between across exactly two children), on a raised surface. A full-width
+ * edge-to-edge band: it sits as a direct child of .page (outside .page-body's
+ * inline inset), so as a block element it spans the whole window width on its
+ * own — no margins, no bleed tricks. Flat/cornerless to read as chrome rather
+ * than a floating card. Block padding + align-items:center size it to its
+ * content, so it grows vertically as the content needs; inline padding matches
+ * .page-body's inset so the bar content lines up with the page column below.
+ * The fill themes with the page via the semantic dark override. */
 .page-topbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: var(--spacing-5);
-  margin-block-end: var(--spacing-8);
-  padding: var(--spacing-5);
-  border-radius: var(--radius-card);
+  padding-block: var(--spacing-5);
+  padding-inline: var(--spacing-10);
   background: var(--color-surface-raised);
 }
 
@@ -70,16 +74,21 @@
   margin-block-end: var(--spacing-8);
 }
 
-/* The page's footer bar — wordmark at inline-start, actions at inline-end,
- * pushed to the block-end on a sunken band (borderless, no radius) so the fill
- * recedes it from the canvas. Themes with the page via the semantic dark override. */
+/* The page's footer bar — wordmark at inline-start, actions at inline-end, on a
+ * sunken band (borderless, flat) so the fill recedes it from the canvas. A
+ * full-width edge-to-edge band like .page-topbar: it sits as a direct child of
+ * .page (outside .page-body's inline inset), spanning the whole window width on
+ * its own — no margins, no bleed tricks. Block padding + align-items:center size
+ * it to its content, so it grows vertically as the content needs; inline padding
+ * matches .page-body's inset so the bar content lines up with the page column
+ * above. Themes with the page via the semantic dark override. */
 .page-footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: var(--spacing-5);
-  margin-block-start: var(--spacing-8);
-  padding: var(--spacing-5);
+  padding-block: var(--spacing-5);
+  padding-inline: var(--spacing-10);
   background: var(--color-surface-sunken);
 }
 

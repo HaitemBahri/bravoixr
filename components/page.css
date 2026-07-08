@@ -98,11 +98,14 @@
 }
 
 /* A horizontal stack that wraps — items sit inline-start to inline-end and drop
- * to the next row when the container runs out of inline space. */
+ * to the next row when the container runs out of inline space. Items keep their
+ * own block size (align-items: start) rather than stretching to the row's tallest,
+ * so a row of unequal-height items stays ragged instead of padding the short ones. */
 .page-cluster {
   display: flex;
   flex-wrap: wrap;
   gap: var(--spacing-5);
+  align-items: start;
 }
 
 /* A two-column label row — a fixed-width title column then content filling the

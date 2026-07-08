@@ -26,14 +26,13 @@
   /* Measure roles — max line length */
   --measure-page-description: var(--measure-prose);
 
-  /* Weight roles (per typography.md role map; --weight-body is scripted, see the dir blocks) */
+  /* Weight roles (per typography.md role map; --weight-body and --weight-page-description are scripted, see the dir blocks) */
   --weight-page-title: var(--weight-bold);
   --weight-section-title: var(--weight-bold);
   --weight-subsection-title: var(--weight-semibold);
   --weight-minor-heading: var(--weight-semibold);
   --weight-project-title: var(--weight-semibold);
   --weight-context-title: var(--weight-regular);
-  --weight-page-description: var(--weight-light);
   --weight-label: var(--weight-light);
   --weight-helper: var(--weight-extralight);
 
@@ -50,8 +49,9 @@
   --font-heading: var(--font-latin);
   --font-body: var(--font-latin);
 
-  /* Weight — Latin body sits at light */
+  /* Weight — Latin body and page description sit at light */
   --weight-body: var(--weight-light);
+  --weight-page-description: var(--weight-light);
 
   /* Line-height — Latin body */
   --leading-prose: var(--leading-body);
@@ -66,8 +66,9 @@
   --font-heading: var(--font-arabic);
   --font-body: var(--font-arabic);
 
-  /* Weight — Arabic body steps up one level (IBM Plex Sans Arabic reads lighter than the Latin grotesque) */
+  /* Weight — Arabic body and page description step up one level (IBM Plex Sans Arabic reads lighter than the Latin grotesque) */
   --weight-body: var(--weight-regular);
+  --weight-page-description: var(--weight-regular);
 
   /* Line-height — Arabic body gets a little more vertical room */
   --leading-prose: var(--leading-body-arabic);

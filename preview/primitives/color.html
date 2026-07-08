@@ -38,14 +38,13 @@
       <p class="text-page-description text-color-description" data-en="Eleven-step ramps (50–950) for brand, status, and accent hues; the cool-gray neutral runs 0–1000." data-ar="تدرّجات من 11 درجة (50–950) لألوان العلامة والحالات واللمسات؛ والمحايد الرمادي البارد يمتدّ من 0 إلى 1000.">Eleven-step ramps (50–950) for brand, status, and accent hues; the cool-gray neutral runs 0–1000.</p>
     </section>
 
-    <!-- Each hue is a page-row-header (name-only rail + its swatch cluster). The
-         rows are grid-gapped since page-row-headers carry no inter-row margin. -->
-    <div id="ramps" class="page-section" style="display: grid; gap: var(--spacing-5);">
+    <!-- Each hue is a page-section page-row-header: a name-only rail beside its
+         swatch cluster; the section margin gives the inter-row rhythm. -->
 
-      <div class="page-row-header">
-        <div><h3 class="page-row-header-title" data-en="neutral" data-ar="محايد">neutral</h3></div>
-        <div>
-          <div class="page-cluster">
+    <section class="page-section page-row-header">
+      <div><h3 class="page-row-header-title" data-en="neutral" data-ar="محايد">neutral</h3></div>
+      <div>
+        <div class="page-cluster">
           <div class="page-column-header">
             <div class="card" style="inline-size: 100px; block-size: 100px; background: var(--neutral-0);"></div>
             <span class="text-label">0</span>
@@ -98,14 +97,14 @@
             <div class="card" style="inline-size: 100px; block-size: 100px; background: var(--neutral-1000);"></div>
             <span class="text-label">1000</span>
           </div>
-          </div>
         </div>
       </div>
+    </section>
 
-      <div class="page-row-header">
-        <div><h3 class="page-row-header-title" data-en="blue" data-ar="أزرق">blue</h3></div>
-        <div>
-          <div class="page-cluster">
+    <section class="page-section page-row-header">
+      <div><h3 class="page-row-header-title" data-en="blue" data-ar="أزرق">blue</h3></div>
+      <div>
+        <div class="page-cluster">
           <div class="page-column-header">
             <div class="card" style="inline-size: 100px; block-size: 100px; background: var(--blue-50);"></div>
             <span class="text-label">50</span>
@@ -150,14 +149,14 @@
             <div class="card" style="inline-size: 100px; block-size: 100px; background: var(--blue-950);"></div>
             <span class="text-label">950</span>
           </div>
-          </div>
         </div>
       </div>
+    </section>
 
-      <div class="page-row-header">
-        <div><h3 class="page-row-header-title" data-en="teal" data-ar="فيروزي">teal</h3></div>
-        <div>
-          <div class="page-cluster">
+    <section class="page-section page-row-header">
+      <div><h3 class="page-row-header-title" data-en="teal" data-ar="فيروزي">teal</h3></div>
+      <div>
+        <div class="page-cluster">
           <div class="page-column-header">
             <div class="card" style="inline-size: 100px; block-size: 100px; background: var(--teal-50);"></div>
             <span class="text-label">50</span>
@@ -202,14 +201,14 @@
             <div class="card" style="inline-size: 100px; block-size: 100px; background: var(--teal-950);"></div>
             <span class="text-label">950</span>
           </div>
-          </div>
         </div>
       </div>
+    </section>
 
-      <div class="page-row-header">
-        <div><h3 class="page-row-header-title" data-en="green" data-ar="أخضر">green</h3></div>
-        <div>
-          <div class="page-cluster">
+    <section class="page-section page-row-header">
+      <div><h3 class="page-row-header-title" data-en="green" data-ar="أخضر">green</h3></div>
+      <div>
+        <div class="page-cluster">
           <div class="page-column-header">
             <div class="card" style="inline-size: 100px; block-size: 100px; background: var(--green-50);"></div>
             <span class="text-label">50</span>
@@ -254,14 +253,14 @@
             <div class="card" style="inline-size: 100px; block-size: 100px; background: var(--green-950);"></div>
             <span class="text-label">950</span>
           </div>
-          </div>
         </div>
       </div>
+    </section>
 
-      <div class="page-row-header">
-        <div><h3 class="page-row-header-title" data-en="yellow" data-ar="أصفر">yellow</h3></div>
-        <div>
-          <div class="page-cluster">
+    <section class="page-section page-row-header">
+      <div><h3 class="page-row-header-title" data-en="yellow" data-ar="أصفر">yellow</h3></div>
+      <div>
+        <div class="page-cluster">
           <div class="page-column-header">
             <div class="card" style="inline-size: 100px; block-size: 100px; background: var(--yellow-50);"></div>
             <span class="text-label">50</span>
@@ -306,14 +305,14 @@
             <div class="card" style="inline-size: 100px; block-size: 100px; background: var(--yellow-950);"></div>
             <span class="text-label">950</span>
           </div>
-          </div>
         </div>
       </div>
+    </section>
 
-      <div class="page-row-header">
-        <div><h3 class="page-row-header-title" data-en="red" data-ar="أحمر">red</h3></div>
-        <div>
-          <div class="page-cluster">
+    <section class="page-section page-row-header">
+      <div><h3 class="page-row-header-title" data-en="red" data-ar="أحمر">red</h3></div>
+      <div>
+        <div class="page-cluster">
           <div class="page-column-header">
             <div class="card" style="inline-size: 100px; block-size: 100px; background: var(--red-50);"></div>
             <span class="text-label">50</span>
@@ -358,14 +357,14 @@
             <div class="card" style="inline-size: 100px; block-size: 100px; background: var(--red-950);"></div>
             <span class="text-label">950</span>
           </div>
-          </div>
         </div>
       </div>
+    </section>
 
-      <div class="page-row-header">
-        <div><h3 class="page-row-header-title" data-en="purple" data-ar="أرجواني">purple</h3></div>
-        <div>
-          <div class="page-cluster">
+    <section class="page-section page-row-header">
+      <div><h3 class="page-row-header-title" data-en="purple" data-ar="أرجواني">purple</h3></div>
+      <div>
+        <div class="page-cluster">
           <div class="page-column-header">
             <div class="card" style="inline-size: 100px; block-size: 100px; background: var(--purple-50);"></div>
             <span class="text-label">50</span>
@@ -410,14 +409,14 @@
             <div class="card" style="inline-size: 100px; block-size: 100px; background: var(--purple-950);"></div>
             <span class="text-label">950</span>
           </div>
-          </div>
         </div>
       </div>
+    </section>
 
-      <div class="page-row-header">
-        <div><h3 class="page-row-header-title" data-en="pink" data-ar="وردي">pink</h3></div>
-        <div>
-          <div class="page-cluster">
+    <section class="page-section page-row-header">
+      <div><h3 class="page-row-header-title" data-en="pink" data-ar="وردي">pink</h3></div>
+      <div>
+        <div class="page-cluster">
           <div class="page-column-header">
             <div class="card" style="inline-size: 100px; block-size: 100px; background: var(--pink-50);"></div>
             <span class="text-label">50</span>
@@ -462,11 +461,9 @@
             <div class="card" style="inline-size: 100px; block-size: 100px; background: var(--pink-950);"></div>
             <span class="text-label">950</span>
           </div>
-          </div>
         </div>
       </div>
-
-    </div>
+    </section>
 
   </main>
 

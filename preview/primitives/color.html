@@ -61,6 +61,18 @@
         purple: [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950],
         pink: [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950]
       };
+      // Arabic hue names for the row-header title; preview.js swaps to these
+      // when the page is in Arabic via the data-en / data-ar attributes.
+      var huesAr = {
+        neutral: 'محايد',
+        blue: 'أزرق',
+        teal: 'فيروزي',
+        green: 'أخضر',
+        yellow: 'أصفر',
+        red: 'أحمر',
+        purple: 'أرجواني',
+        pink: 'وردي'
+      };
       var ramps = document.getElementById('ramps');
       Object.keys(hues).forEach(function (hue) {
         // One page-row-header per hue: a name-only rail beside the swatch cluster.
@@ -70,6 +82,8 @@
         var railCell = document.createElement('div');
         var title = document.createElement('h3');
         title.className = 'page-row-header-title';
+        title.setAttribute('data-en', hue);
+        title.setAttribute('data-ar', huesAr[hue]);
         title.textContent = hue;
         railCell.appendChild(title);
         section.appendChild(railCell);

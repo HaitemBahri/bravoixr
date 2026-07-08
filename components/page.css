@@ -19,12 +19,15 @@
   box-sizing: inherit;
 }
 
-/* The content column — stretches to the full page width, inset by space-10 on the
- * block-start and both inline sides, and flush (zero) at the block-end so the
- * footer meets the viewport bottom. */
+/* The content column — capped at --page-max and centred: the inline padding grows
+ * to split the leftover width either side of the 1280 column on wide screens, and
+ * never drops below the space-10 gutter on narrow ones. Inset by space-10 at the
+ * block-start and flush (zero) at the block-end so the footer meets the viewport
+ * bottom. Shares its inline formula with .page-topbar/.page-footer so all three
+ * content columns align. */
 .page-body {
   padding-block: var(--spacing-10) 0;
-  padding-inline: var(--spacing-10);
+  padding-inline: max(var(--spacing-10), calc((100% - var(--page-max)) / 2));
 }
 
 /* The page's top bar — wordmark at the inline-start, controls at the inline-end
@@ -33,16 +36,17 @@
  * inline inset), so as a block element it spans the whole window width on its
  * own — no margins, no bleed tricks. Flat/cornerless to read as chrome rather
  * than a floating card. Block padding + align-items:center size it to its
- * content, so it grows vertically as the content needs; inline padding matches
- * .page-body's inset so the bar content lines up with the page column below.
- * The fill themes with the page via the semantic dark override. */
+ * content, so it grows vertically as the content needs; the inline padding uses
+ * the same centred-column formula as .page-body, so the bar content caps at
+ * --page-max and lines up with the page column below while the raised fill still
+ * bleeds edge to edge. The fill themes with the page via the semantic dark override. */
 .page-topbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: var(--spacing-5);
   padding-block: var(--spacing-5);
-  padding-inline: var(--spacing-10);
+  padding-inline: max(var(--spacing-10), calc((100% - var(--page-max)) / 2));
   background: var(--color-surface-raised);
 }
 
@@ -79,16 +83,17 @@
  * full-width edge-to-edge band like .page-topbar: it sits as a direct child of
  * .page (outside .page-body's inline inset), spanning the whole window width on
  * its own — no margins, no bleed tricks. Block padding + align-items:center size
- * it to its content, so it grows vertically as the content needs; inline padding
- * matches .page-body's inset so the bar content lines up with the page column
- * above. Themes with the page via the semantic dark override. */
+ * it to its content, so it grows vertically as the content needs; the inline
+ * padding uses the same centred-column formula as .page-body, so the bar content
+ * caps at --page-max and lines up with the page column above while the sunken fill
+ * still bleeds edge to edge. Themes with the page via the semantic dark override. */
 .page-footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: var(--spacing-5);
   padding-block: var(--spacing-5);
-  padding-inline: var(--spacing-10);
+  padding-inline: max(var(--spacing-10), calc((100% - var(--page-max)) / 2));
   background: var(--color-surface-sunken);
 }
 

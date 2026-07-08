@@ -19,6 +19,7 @@
   --card-min: var(--size-card-min);
   --page-sidebar-size: var(--size-sidebar);
   --page-row-header-size: var(--size-row-header);
+  --page-row-header-columns: var(--page-row-header-size) 1fr;
   --page-column-header-size: var(--size-column-header);
   --page-max: var(--breakpoint-max);
 
@@ -49,4 +50,15 @@
   --spacing-10: var(--space-10);
   --spacing-11: var(--space-11);
   --spacing-12: var(--space-12);
+}
+
+/* Mobile (<768): the page-row-header rail no longer sits beside its content — the
+ * grid collapses to one column so the title rail stacks above the content it labels.
+ * The breakpoint px is inlined because @media conditions can't read var(); it mirrors
+ * --breakpoint-tablet (768px) in primitives/layout.css, offset by 0.02px to sit just
+ * below the min-width boundary. */
+@media (max-width: 767.98px) {
+  :root {
+    --page-row-header-columns: 1fr;
+  }
 }

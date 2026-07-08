@@ -112,7 +112,7 @@
  * rest, aligned to the block-start so a tall value doesn't drag the label down. */
 .page-row-header {
   display: grid;
-  grid-template-columns: var(--page-row-header-size) 1fr;
+  grid-template-columns: var(--page-row-header-columns);
   gap: var(--spacing-5);
   align-items: start;
 }

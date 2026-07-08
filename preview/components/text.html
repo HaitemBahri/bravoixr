@@ -38,83 +38,97 @@
       <p class="text-page-description text-color-description" data-en="Each class bundles a full type role — family, size, weight, leading, and tracking — so you apply one class, not five tokens. Toggle ع and the family, leading, and tracking swap to Arabic; narrow the window and the heading sizes step down (tablet, then mobile)." data-ar="كل صنف يجمع دورًا طباعيًّا كاملًا — العائلة والحجم والوزن وتباعد الأسطر والأحرف — فتطبّق صنفًا واحدًا لا خمسة رموز. بدّل إلى ع فتتحوّل العائلة وتباعد الأسطر والأحرف إلى العربية؛ وصغّر النافذة فتنزل أحجام العناوين درجةً (لوحي، ثم جوّال).">Each class bundles a full type role — family, size, weight, leading, and tracking — so you apply one class, not five tokens. Toggle ع and the family, leading, and tracking swap to Arabic; narrow the window and the heading sizes step down (tablet, then mobile).</p>
     </section>
 
+    <!-- Each group is a section titled by its name; every sample inside is its own
+         page-row-header (name-only rail + the live specimen). The samples are
+         grid-gapped since page-row-headers carry no inter-row margin. -->
+
     <section class="page-section">
-      <h3 class="text-minor-heading" data-en="Headings" data-ar="العناوين">Headings</h3>
-      <div>
-        <div><strong>page-title</strong><span class="text-code-label text-color-helper">.text-page-title</span></div>
-        <div class="text-page-title" data-en="The bold headline" data-ar="العنوان العريض">The bold headline</div>
-      </div>
-      <div>
-        <div><strong>section-title</strong><span class="text-code-label text-color-helper">.text-section-title</span></div>
-        <div class="text-section-title" data-en="The bold headline" data-ar="العنوان العريض">The bold headline</div>
-      </div>
-      <div>
-        <div><strong>subsection-title</strong><span class="text-code-label text-color-helper">.text-subsection-title</span></div>
-        <div class="text-subsection-title" data-en="The bold headline" data-ar="العنوان العريض">The bold headline</div>
-      </div>
-      <div>
-        <div><strong>minor-heading</strong><span class="text-code-label text-color-helper">.text-minor-heading</span></div>
-        <div class="text-minor-heading" data-en="The bold headline" data-ar="العنوان العريض">The bold headline</div>
+      <h3 class="text-section-title" data-en="Headings" data-ar="العناوين">Headings</h3>
+      <div style="display: grid; gap: var(--spacing-5);">
+        <div class="page-row-header">
+          <div><h4 class="page-row-header-title">page-title</h4></div>
+          <div><div class="text-page-title" data-en="The bold headline" data-ar="العنوان العريض">The bold headline</div></div>
+        </div>
+        <div class="page-row-header">
+          <div><h4 class="page-row-header-title">section-title</h4></div>
+          <div><div class="text-section-title" data-en="The bold headline" data-ar="العنوان العريض">The bold headline</div></div>
+        </div>
+        <div class="page-row-header">
+          <div><h4 class="page-row-header-title">subsection-title</h4></div>
+          <div><div class="text-subsection-title" data-en="The bold headline" data-ar="العنوان العريض">The bold headline</div></div>
+        </div>
+        <div class="page-row-header">
+          <div><h4 class="page-row-header-title">minor-heading</h4></div>
+          <div><div class="text-minor-heading" data-en="The bold headline" data-ar="العنوان العريض">The bold headline</div></div>
+        </div>
       </div>
     </section>
 
     <section class="page-section">
-      <h3 class="text-minor-heading" data-en="Page structure" data-ar="بنية الصفحة">Page structure</h3>
-      <div>
-        <div><strong>project-title</strong><span class="text-code-label text-color-helper">.text-project-title</span></div>
-        <div class="text-project-title" data-en="bravoixr" data-ar="bravoixr">bravoixr</div>
-      </div>
-      <div>
-        <div><strong>page-description</strong><span class="text-code-label text-color-helper">.text-page-description</span></div>
-        <div class="text-page-description" data-en="A quiet, airy lede that sits under the page title." data-ar="سطر تمهيدي هادئ يقع تحت عنوان الصفحة.">A quiet, airy lede that sits under the page title.</div>
-      </div>
-    </section>
-
-    <section class="page-section">
-      <h3 class="text-minor-heading" data-en="Body" data-ar="النص">Body</h3>
-      <div>
-        <div><strong>context-title</strong><span class="text-code-label text-color-helper">.text-context-title</span></div>
-        <div class="text-context-title" data-en="Context title" data-ar="عنوان سياقي">Context title</div>
-      </div>
-      <div>
-        <div><strong>body</strong><span class="text-code-label text-color-helper">.text-body</span></div>
-        <div class="text-body" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض العائلة والحجم ومدى الوضوح.">The quick brown fox jumps over the lazy dog.</div>
-      </div>
-      <div>
-        <div><strong>label</strong><span class="text-code-label text-color-helper">.text-label</span></div>
-        <div class="text-label" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض العائلة والحجم ومدى الوضوح.">The quick brown fox jumps over the lazy dog.</div>
-      </div>
-      <div>
-        <div><strong>helper</strong><span class="text-code-label text-color-helper">.text-helper</span></div>
-        <div class="text-helper" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض العائلة والحجم ومدى الوضوح.">The quick brown fox jumps over the lazy dog.</div>
+      <h3 class="text-section-title" data-en="Page structure" data-ar="بنية الصفحة">Page structure</h3>
+      <div style="display: grid; gap: var(--spacing-5);">
+        <div class="page-row-header">
+          <div><h4 class="page-row-header-title">project-title</h4></div>
+          <div><div class="text-project-title" data-en="bravoixr" data-ar="bravoixr">bravoixr</div></div>
+        </div>
+        <div class="page-row-header">
+          <div><h4 class="page-row-header-title">page-description</h4></div>
+          <div><div class="text-page-description" data-en="A quiet, airy lede that sits under the page title." data-ar="سطر تمهيدي هادئ يقع تحت عنوان الصفحة.">A quiet, airy lede that sits under the page title.</div></div>
+        </div>
       </div>
     </section>
 
     <section class="page-section">
-      <h3 class="text-minor-heading" data-en="Code" data-ar="الشيفرة">Code</h3>
-      <div>
-        <div><strong>code</strong><span class="text-code-label text-color-helper">.text-code</span></div>
-        <div class="text-code">--color-primary: var(--blue-600);</div>
-      </div>
-      <div>
-        <div><strong>code-label</strong><span class="text-code-label text-color-helper">.text-code-label</span></div>
-        <div class="text-code-label">--color-primary: var(--blue-600);</div>
+      <h3 class="text-section-title" data-en="Body" data-ar="النص">Body</h3>
+      <div style="display: grid; gap: var(--spacing-5);">
+        <div class="page-row-header">
+          <div><h4 class="page-row-header-title">context-title</h4></div>
+          <div><div class="text-context-title" data-en="Context title" data-ar="عنوان سياقي">Context title</div></div>
+        </div>
+        <div class="page-row-header">
+          <div><h4 class="page-row-header-title">body</h4></div>
+          <div><div class="text-body" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض العائلة والحجم ومدى الوضوح.">The quick brown fox jumps over the lazy dog.</div></div>
+        </div>
+        <div class="page-row-header">
+          <div><h4 class="page-row-header-title">label</h4></div>
+          <div><div class="text-label" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض العائلة والحجم ومدى الوضوح.">The quick brown fox jumps over the lazy dog.</div></div>
+        </div>
+        <div class="page-row-header">
+          <div><h4 class="page-row-header-title">helper</h4></div>
+          <div><div class="text-helper" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض العائلة والحجم ومدى الوضوح.">The quick brown fox jumps over the lazy dog.</div></div>
+        </div>
       </div>
     </section>
 
     <section class="page-section">
-      <h3 class="text-minor-heading" data-en="Text color" data-ar="لون النص">Text color</h3>
-      <div>
-        <div><strong>normal</strong><span class="text-code-label text-color-helper">.text-color-normal</span></div>
-        <div class="text-body text-color-normal" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض لون النصّ الأساسي.">The quick brown fox jumps over the lazy dog.</div>
+      <h3 class="text-section-title" data-en="Code" data-ar="الشيفرة">Code</h3>
+      <div style="display: grid; gap: var(--spacing-5);">
+        <div class="page-row-header">
+          <div><h4 class="page-row-header-title">code</h4></div>
+          <div><div class="text-code">--color-primary: var(--blue-600);</div></div>
+        </div>
+        <div class="page-row-header">
+          <div><h4 class="page-row-header-title">code-label</h4></div>
+          <div><div class="text-code-label">--color-primary: var(--blue-600);</div></div>
+        </div>
       </div>
-      <div>
-        <div><strong>description</strong><span class="text-code-label text-color-helper">.text-color-description</span></div>
-        <div class="text-body text-color-description" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض لون الوصف المخفّف.">The quick brown fox jumps over the lazy dog.</div>
-      </div>
-      <div>
-        <div><strong>helper</strong><span class="text-code-label text-color-helper">.text-color-helper</span></div>
-        <div class="text-body text-color-helper" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض لون النصّ المساعد الخافت.">The quick brown fox jumps over the lazy dog.</div>
+    </section>
+
+    <section class="page-section">
+      <h3 class="text-section-title" data-en="Text color" data-ar="لون النص">Text color</h3>
+      <div style="display: grid; gap: var(--spacing-5);">
+        <div class="page-row-header">
+          <div><h4 class="page-row-header-title">normal</h4></div>
+          <div><div class="text-body text-color-normal" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض لون النصّ الأساسي.">The quick brown fox jumps over the lazy dog.</div></div>
+        </div>
+        <div class="page-row-header">
+          <div><h4 class="page-row-header-title">description</h4></div>
+          <div><div class="text-body text-color-description" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض لون الوصف المخفّف.">The quick brown fox jumps over the lazy dog.</div></div>
+        </div>
+        <div class="page-row-header">
+          <div><h4 class="page-row-header-title">helper</h4></div>
+          <div><div class="text-body text-color-helper" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض لون النصّ المساعد الخافت.">The quick brown fox jumps over the lazy dog.</div></div>
+        </div>
       </div>
     </section>
 

@@ -33,63 +33,171 @@
 
   <main class="page-body">
 
-    <h2 class="text-page-title" data-en="Layout" data-ar="التخطيط">Layout</h2>
-
     <section class="page-section">
-      <h3 class="text-section-title" data-en="Spacing scale (4px base)" data-ar="مقياس التباعد (أساس 4 بكسل)">Spacing scale (4px base)</h3>
-      <div id="spacing"></div>
+      <h2 class="text-page-title" data-en="Layout" data-ar="التخطيط">Layout</h2>
+      <p class="text-page-description text-color-description" data-en="The raw layout primitives — spacing scale, sizing, radius, border widths, shadows, z-index tiers, and breakpoints. Semantic layout tokens map onto these; nothing consumes them directly." data-ar="الأوّليّات التخطيطية الخام — مقياس التباعد، والأحجام، والزوايا، وسماكات الحدود، والظلال، وطبقات الترتيب، ونقاط التوقّف. تُسنَد رموز التخطيط الدلالية إلى هذه؛ ولا شيء يستهلكها مباشرة.">The raw layout primitives — spacing scale, sizing, radius, border widths, shadows, z-index tiers, and breakpoints. Semantic layout tokens map onto these; nothing consumes them directly.</p>
     </section>
 
-    <section class="page-section">
-      <h3 class="text-section-title" data-en="Sizing" data-ar="الأحجام">Sizing</h3>
-      <div><span class="text-code-label text-color-helper">--size-control</span><span class="text-color-normal">40px</span></div>
-      <div><span class="text-code-label text-color-helper">--size-container</span><span class="text-color-normal">1280px</span></div>
-    </section>
-
-    <section class="page-section">
-      <h3 class="text-section-title" data-en="Radius" data-ar="الزوايا">Radius</h3>
+    <section class="page-section page-row-header">
       <div>
-        <div><div class="card" style="inline-size:96px;block-size:96px;border-radius:var(--radius-none)"></div><span class="text-code-label text-color-helper">none</span></div>
-        <div><div class="card" style="inline-size:96px;block-size:96px;border-radius:var(--radius-sm)"></div><span class="text-code-label text-color-helper">sm · 4px</span></div>
-        <div><div class="card" style="inline-size:96px;block-size:96px;border-radius:var(--radius-md)"></div><span class="text-code-label text-color-helper">md · 8px</span></div>
-        <div><div class="card" style="inline-size:96px;block-size:96px;border-radius:var(--radius-lg)"></div><span class="text-code-label text-color-helper">lg · 12px</span></div>
-        <div><div class="card" style="inline-size:96px;block-size:96px;border-radius:var(--radius-xl)"></div><span class="text-code-label text-color-helper">xl · 16px</span></div>
-        <div><div class="card" style="inline-size:96px;block-size:96px;border-radius:var(--radius-full)"></div><span class="text-code-label text-color-helper">full</span></div>
+        <h3 class="page-row-header-title" data-en="Spacing scale" data-ar="مقياس التباعد">Spacing scale</h3>
+        <p class="page-row-header-description" data-en="A twelve-step scale on a 4px base, used for gaps, padding, and margins." data-ar="سلّم من اثنتي عشرة درجة على أساس 4 بكسل، يُستخدم للفجوات والحشو والهوامش.">A twelve-step scale on a 4px base, used for gaps, padding, and margins.</p>
+      </div>
+      <div><div class="page-cluster" id="spacing"></div></div>
+    </section>
+
+    <section class="page-section page-row-header">
+      <div>
+        <h3 class="page-row-header-title" data-en="Sizing" data-ar="الأحجام">Sizing</h3>
+        <p class="page-row-header-description" data-en="Fixed dimensions for recurring UI elements — control height and the page's max content width." data-ar="أبعاد ثابتة لعناصر الواجهة المتكرّرة — ارتفاع عنصر التحكّم وأقصى عرض لمحتوى الصفحة.">Fixed dimensions for recurring UI elements — control height and the page's max content width.</p>
+      </div>
+      <div>
+        <div class="page-cluster">
+          <div class="page-column-header">
+            <span class="text-color-normal">40px</span>
+            <span class="text-code-label text-color-helper">--size-control</span>
+          </div>
+          <div class="page-column-header">
+            <span class="text-color-normal">1280px</span>
+            <span class="text-code-label text-color-helper">--size-container</span>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="page-section">
-      <h3 class="text-section-title" data-en="Border widths" data-ar="سماكات الحدود">Border widths</h3>
+    <section class="page-section page-row-header">
       <div>
-        <div><div class="card" style="inline-size:96px;block-size:96px;border:var(--border-default) solid var(--color-border-strong)"></div><span class="text-code-label text-color-helper">default · 1px</span></div>
-        <div><div class="card" style="inline-size:96px;block-size:96px;border:var(--border-strong) solid var(--color-border-strong)"></div><span class="text-code-label text-color-helper">strong · 2px</span></div>
+        <h3 class="page-row-header-title" data-en="Radius" data-ar="الزوايا">Radius</h3>
+        <p class="page-row-header-description" data-en="Corner-rounding steps, from square to fully round." data-ar="درجات تدوير الزوايا، من الحادّة إلى الدائرية الكاملة.">Corner-rounding steps, from square to fully round.</p>
+      </div>
+      <div>
+        <div class="page-cluster">
+          <div class="page-column-header">
+            <div class="card" style="inline-size:96px;block-size:96px;border-radius:var(--radius-none)"></div>
+            <span class="text-code-label text-color-helper">none</span>
+          </div>
+          <div class="page-column-header">
+            <div class="card" style="inline-size:96px;block-size:96px;border-radius:var(--radius-sm)"></div>
+            <span class="text-code-label text-color-helper">sm · 4px</span>
+          </div>
+          <div class="page-column-header">
+            <div class="card" style="inline-size:96px;block-size:96px;border-radius:var(--radius-md)"></div>
+            <span class="text-code-label text-color-helper">md · 8px</span>
+          </div>
+          <div class="page-column-header">
+            <div class="card" style="inline-size:96px;block-size:96px;border-radius:var(--radius-lg)"></div>
+            <span class="text-code-label text-color-helper">lg · 12px</span>
+          </div>
+          <div class="page-column-header">
+            <div class="card" style="inline-size:96px;block-size:96px;border-radius:var(--radius-xl)"></div>
+            <span class="text-code-label text-color-helper">xl · 16px</span>
+          </div>
+          <div class="page-column-header">
+            <div class="card" style="inline-size:96px;block-size:96px;border-radius:var(--radius-full)"></div>
+            <span class="text-code-label text-color-helper">full</span>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="page-section">
-      <h3 class="text-section-title" data-en="Shadows (floating layers)" data-ar="الظلال (الطبقات العائمة)">Shadows (floating layers)</h3>
+    <section class="page-section page-row-header">
       <div>
-        <div><div class="card" style="inline-size:160px;block-size:96px;box-shadow:var(--shadow-sm)"></div><span class="text-code-label text-color-helper">sm</span></div>
-        <div><div class="card" style="inline-size:160px;block-size:96px;box-shadow:var(--shadow-md)"></div><span class="text-code-label text-color-helper">md</span></div>
-        <div><div class="card" style="inline-size:160px;block-size:96px;box-shadow:var(--shadow-lg)"></div><span class="text-code-label text-color-helper">lg</span></div>
+        <h3 class="page-row-header-title" data-en="Border widths" data-ar="سماكات الحدود">Border widths</h3>
+        <p class="page-row-header-description" data-en="Stroke weights for borders and dividers." data-ar="سماكات الخطوط للحدود والفواصل.">Stroke weights for borders and dividers.</p>
+      </div>
+      <div>
+        <div class="page-cluster">
+          <div class="page-column-header">
+            <div class="card" style="inline-size:96px;block-size:96px;border:var(--border-default) solid var(--color-border-strong)"></div>
+            <span class="text-code-label text-color-helper">default · 1px</span>
+          </div>
+          <div class="page-column-header">
+            <div class="card" style="inline-size:96px;block-size:96px;border:var(--border-strong) solid var(--color-border-strong)"></div>
+            <span class="text-code-label text-color-helper">strong · 2px</span>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="page-section">
-      <h3 class="text-section-title" data-en="Z-index tiers" data-ar="طبقات الترتيب">Z-index tiers</h3>
-      <div><span class="text-code-label text-color-helper">--z-base</span><span class="text-color-normal">0</span></div>
-      <div><span class="text-code-label text-color-helper">--z-sticky</span><span class="text-color-normal">10</span></div>
-      <div><span class="text-code-label text-color-helper">--z-dropdown</span><span class="text-color-normal">20</span></div>
-      <div><span class="text-code-label text-color-helper">--z-overlay</span><span class="text-color-normal">30</span></div>
-      <div><span class="text-code-label text-color-helper">--z-modal</span><span class="text-color-normal">40</span></div>
-      <div><span class="text-code-label text-color-helper">--z-popover</span><span class="text-color-normal">50</span></div>
-      <div><span class="text-code-label text-color-helper">--z-toast</span><span class="text-color-normal">60</span></div>
+    <section class="page-section page-row-header">
+      <div>
+        <h3 class="page-row-header-title" data-en="Shadows (floating layers)" data-ar="الظلال (الطبقات العائمة)">Shadows (floating layers)</h3>
+        <p class="page-row-header-description" data-en="Elevation shadows for surfaces that float above the page, like popovers and modals." data-ar="ظلال ارتفاع للأسطح العائمة فوق الصفحة، كالقوائم المنبثقة والنوافذ الحوارية.">Elevation shadows for surfaces that float above the page, like popovers and modals.</p>
+      </div>
+      <div>
+        <div class="page-cluster">
+          <div class="page-column-header">
+            <div class="card" style="inline-size:160px;block-size:96px;box-shadow:var(--shadow-sm)"></div>
+            <span class="text-code-label text-color-helper">sm</span>
+          </div>
+          <div class="page-column-header">
+            <div class="card" style="inline-size:160px;block-size:96px;box-shadow:var(--shadow-md)"></div>
+            <span class="text-code-label text-color-helper">md</span>
+          </div>
+          <div class="page-column-header">
+            <div class="card" style="inline-size:160px;block-size:96px;box-shadow:var(--shadow-lg)"></div>
+            <span class="text-code-label text-color-helper">lg</span>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section class="page-section">
-      <h3 class="text-section-title" data-en="Breakpoints" data-ar="نقاط التوقّف">Breakpoints</h3>
-      <div><span class="text-code-label text-color-helper">--breakpoint-tablet</span><span class="text-color-normal">768px</span></div>
-      <div><span class="text-code-label text-color-helper">--breakpoint-desktop</span><span class="text-color-normal">1024px</span></div>
+    <section class="page-section page-row-header">
+      <div>
+        <h3 class="page-row-header-title" data-en="Z-index tiers" data-ar="طبقات الترتيب">Z-index tiers</h3>
+        <p class="page-row-header-description" data-en="Stacking-order tiers that keep floating layers in the right order." data-ar="طبقات ترتيب الرصّ التي تحافظ على تتابع الطبقات العائمة الصحيح.">Stacking-order tiers that keep floating layers in the right order.</p>
+      </div>
+      <div>
+        <div class="page-cluster">
+          <div class="page-column-header">
+            <span class="text-color-normal">0</span>
+            <span class="text-code-label text-color-helper">--z-base</span>
+          </div>
+          <div class="page-column-header">
+            <span class="text-color-normal">10</span>
+            <span class="text-code-label text-color-helper">--z-sticky</span>
+          </div>
+          <div class="page-column-header">
+            <span class="text-color-normal">20</span>
+            <span class="text-code-label text-color-helper">--z-dropdown</span>
+          </div>
+          <div class="page-column-header">
+            <span class="text-color-normal">30</span>
+            <span class="text-code-label text-color-helper">--z-overlay</span>
+          </div>
+          <div class="page-column-header">
+            <span class="text-color-normal">40</span>
+            <span class="text-code-label text-color-helper">--z-modal</span>
+          </div>
+          <div class="page-column-header">
+            <span class="text-color-normal">50</span>
+            <span class="text-code-label text-color-helper">--z-popover</span>
+          </div>
+          <div class="page-column-header">
+            <span class="text-color-normal">60</span>
+            <span class="text-code-label text-color-helper">--z-toast</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section page-row-header">
+      <div>
+        <h3 class="page-row-header-title" data-en="Breakpoints" data-ar="نقاط التوقّف">Breakpoints</h3>
+        <p class="page-row-header-description" data-en="Viewport widths where the responsive layout steps change." data-ar="عروض نافذة العرض التي يتغيّر عندها تخطيط الاستجابة.">Viewport widths where the responsive layout steps change.</p>
+      </div>
+      <div>
+        <div class="page-cluster">
+          <div class="page-column-header">
+            <span class="text-color-normal">768px</span>
+            <span class="text-code-label text-color-helper">--breakpoint-tablet</span>
+          </div>
+          <div class="page-column-header">
+            <span class="text-color-normal">1024px</span>
+            <span class="text-code-label text-color-helper">--breakpoint-desktop</span>
+          </div>
+        </div>
+      </div>
     </section>
 
   </main>
@@ -104,7 +212,7 @@
       var spacing = document.getElementById('spacing');
       for (var i = 1; i <= 12; i++) {
         var r = document.createElement('div');
-        r.style.cssText = 'display:flex;align-items:center;gap:var(--spacing-4);margin-block-end:var(--spacing-2)';
+        r.className = 'page-column-header';
         var bar = document.createElement('div');
         // 16px bar height is tokenless demo geometry; length is the primitive under test.
         bar.style.cssText = 'block-size:16px;background:var(--color-primary);border-radius:var(--radius-chip);inline-size:var(--space-' + i + ')';

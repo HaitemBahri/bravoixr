@@ -164,15 +164,12 @@
 
 /* A two-row label stack — content filling the block space on top, then a
  * fixed-height label row underneath it (children render top-to-bottom in DOM
- * order, so place the content first and the label second). */
+ * order, so place the content first and the label second). Both rows centre,
+ * so the caption lines up under content narrower than the column. */
 .page-column-header {
   display: grid;
   grid-template-rows: 1fr var(--page-column-header-size);
   gap: var(--spacing-4);
-}
-
-/* The label row — the last child, sitting under the content — centres its caption. */
-.page-column-header > :last-child {
   text-align: center;
 }
 

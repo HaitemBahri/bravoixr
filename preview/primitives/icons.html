@@ -33,35 +33,83 @@
 
   <main class="page-body">
 
-    <h2 class="text-page-title" data-en="Icons" data-ar="الأيقونات">Icons</h2>
-
     <section class="page-section">
-      <h3 class="text-section-title" data-en="Font" data-ar="الخط">Font</h3>
-      <div><span class="text-code-label text-color-helper">--icon-font</span><span class="text-color-normal">'Material Symbols Rounded'</span></div>
+      <h2 class="text-page-title" data-en="Icons" data-ar="الأيقونات">Icons</h2>
+      <p class="text-page-description text-color-description" data-en="The raw icon primitives — the icon font family, its variable-font axes, and a four-step size scale. Semantic icon tokens map onto these; nothing consumes them directly." data-ar="الأوّليّات الرمزية الخام — عائلة خط الأيقونات، ومحاور الخط المتغيّر، ومقياس من أربع خطوات للأحجام. تُسنَد رموز الأيقونات الدلالية إلى هذه؛ ولا شيء يستهلكها مباشرة.">The raw icon primitives — the icon font family, its variable-font axes, and a four-step size scale. Semantic icon tokens map onto these; nothing consumes them directly.</p>
     </section>
 
-    <section class="page-section">
-      <h3 class="text-section-title" data-en="Size scale" data-ar="مقياس الأحجام">Size scale</h3>
-      <!-- Specimens render through the PRIMITIVE icon axes (this is the primitives page). -->
+    <section class="page-section page-row-header">
       <div>
-        <span style="font-family:var(--icon-font);font-weight:normal;font-style:normal;line-height:1;color:var(--color-text);font-variation-settings:'wght' var(--icon-wght),'FILL' var(--icon-fill),'opsz' var(--icon-opsz-floor),'GRAD' var(--icon-grade-light);font-size:var(--icon-size-sm)">home</span>
-        <span style="font-family:var(--icon-font);font-weight:normal;font-style:normal;line-height:1;color:var(--color-text);font-variation-settings:'wght' var(--icon-wght),'FILL' var(--icon-fill),'opsz' var(--icon-opsz-floor),'GRAD' var(--icon-grade-light);font-size:var(--icon-size-md)">favorite</span>
-        <span style="font-family:var(--icon-font);font-weight:normal;font-style:normal;line-height:1;color:var(--color-text);font-variation-settings:'wght' var(--icon-wght),'FILL' var(--icon-fill),'opsz' var(--icon-opsz-floor),'GRAD' var(--icon-grade-light);font-size:var(--icon-size-lg)">settings</span>
-        <span style="font-family:var(--icon-font);font-weight:normal;font-style:normal;line-height:1;color:var(--color-text);font-variation-settings:'wght' var(--icon-wght),'FILL' var(--icon-fill),'opsz' var(--icon-opsz-floor),'GRAD' var(--icon-grade-light);font-size:var(--icon-size-xl)">search</span>
+        <h3 class="page-row-header-title" data-en="Font" data-ar="الخط">Font</h3>
+        <p class="page-row-header-description" data-en="The single icon typeface primitive every glyph renders through." data-ar="أوّليّة خط الأيقونات الوحيدة التي يُعرَض من خلالها كل رمز.">The single icon typeface primitive every glyph renders through.</p>
       </div>
-      <div><span class="text-code-label text-color-helper">--icon-size-sm</span><span class="text-color-normal">16px</span></div>
-      <div><span class="text-code-label text-color-helper">--icon-size-md</span><span class="text-color-normal">20px</span></div>
-      <div><span class="text-code-label text-color-helper">--icon-size-lg</span><span class="text-color-normal">24px</span></div>
-      <div><span class="text-code-label text-color-helper">--icon-size-xl</span><span class="text-color-normal">32px</span></div>
+      <div>
+        <div class="page-cluster">
+          <div class="page-column-header">
+            <span class="text-color-normal">'Material Symbols Rounded'</span>
+            <span class="text-code-label text-color-helper">--icon-font</span>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section class="page-section">
-      <h3 class="text-section-title" data-en="Variable-font axes" data-ar="محاور الخط المتغيّر">Variable-font axes</h3>
-      <div><span class="text-code-label text-color-helper">--icon-wght</span><span class="text-color-normal">400</span></div>
-      <div><span class="text-code-label text-color-helper">--icon-fill</span><span class="text-color-normal">0</span></div>
-      <div><span class="text-code-label text-color-helper">--icon-opsz-floor</span><span class="text-color-normal">20</span></div>
-      <div><span class="text-code-label text-color-helper">--icon-grade-light</span><span class="text-color-normal">0</span></div>
-      <div><span class="text-code-label text-color-helper">--icon-grade-dark</span><span class="text-color-normal">-25</span></div>
+    <section class="page-section page-row-header">
+      <div>
+        <h3 class="page-row-header-title" data-en="Size scale" data-ar="مقياس الأحجام">Size scale</h3>
+        <p class="page-row-header-description" data-en="Four fixed glyph sizes, from small to extra-large." data-ar="أربعة أحجام ثابتة للرموز، من الصغير إلى الكبير جدًّا.">Four fixed glyph sizes, from small to extra-large.</p>
+      </div>
+      <div>
+        <!-- Specimens render through the PRIMITIVE icon axes (this is the primitives page). -->
+        <div class="page-cluster">
+          <div class="page-column-header">
+            <span style="font-family:var(--icon-font);font-weight:normal;font-style:normal;line-height:1;color:var(--color-text);font-variation-settings:'wght' var(--icon-wght),'FILL' var(--icon-fill),'opsz' var(--icon-opsz-floor),'GRAD' var(--icon-grade-light);font-size:var(--icon-size-sm)">home</span>
+            <span class="text-code-label text-color-helper">--icon-size-sm · 16px</span>
+          </div>
+          <div class="page-column-header">
+            <span style="font-family:var(--icon-font);font-weight:normal;font-style:normal;line-height:1;color:var(--color-text);font-variation-settings:'wght' var(--icon-wght),'FILL' var(--icon-fill),'opsz' var(--icon-opsz-floor),'GRAD' var(--icon-grade-light);font-size:var(--icon-size-md)">favorite</span>
+            <span class="text-code-label text-color-helper">--icon-size-md · 20px</span>
+          </div>
+          <div class="page-column-header">
+            <span style="font-family:var(--icon-font);font-weight:normal;font-style:normal;line-height:1;color:var(--color-text);font-variation-settings:'wght' var(--icon-wght),'FILL' var(--icon-fill),'opsz' var(--icon-opsz-floor),'GRAD' var(--icon-grade-light);font-size:var(--icon-size-lg)">settings</span>
+            <span class="text-code-label text-color-helper">--icon-size-lg · 24px</span>
+          </div>
+          <div class="page-column-header">
+            <span style="font-family:var(--icon-font);font-weight:normal;font-style:normal;line-height:1;color:var(--color-text);font-variation-settings:'wght' var(--icon-wght),'FILL' var(--icon-fill),'opsz' var(--icon-opsz-floor),'GRAD' var(--icon-grade-light);font-size:var(--icon-size-xl)">search</span>
+            <span class="text-code-label text-color-helper">--icon-size-xl · 32px</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section page-row-header">
+      <div>
+        <h3 class="page-row-header-title" data-en="Variable-font axes" data-ar="محاور الخط المتغيّر">Variable-font axes</h3>
+        <p class="page-row-header-description" data-en="Raw variable-font axis values — weight, fill, optical size floor, and the light/dark grade pair — that semantic icon roles map onto." data-ar="قيم محاور الخط المتغيّر الخام — الوزن، والامتلاء، وأرضية الحجم البصري، وزوج الدرجة للوضعين الفاتح والداكن — تُسنَد إليها أدوار الأيقونات الدلالية.">Raw variable-font axis values — weight, fill, optical size floor, and the light/dark grade pair — that semantic icon roles map onto.</p>
+      </div>
+      <div>
+        <div class="page-cluster">
+          <div class="page-column-header">
+            <span class="text-color-normal">400</span>
+            <span class="text-code-label text-color-helper">--icon-wght</span>
+          </div>
+          <div class="page-column-header">
+            <span class="text-color-normal">0</span>
+            <span class="text-code-label text-color-helper">--icon-fill</span>
+          </div>
+          <div class="page-column-header">
+            <span class="text-color-normal">20</span>
+            <span class="text-code-label text-color-helper">--icon-opsz-floor</span>
+          </div>
+          <div class="page-column-header">
+            <span class="text-color-normal">0</span>
+            <span class="text-code-label text-color-helper">--icon-grade-light</span>
+          </div>
+          <div class="page-column-header">
+            <span class="text-color-normal">-25</span>
+            <span class="text-code-label text-color-helper">--icon-grade-dark</span>
+          </div>
+        </div>
+      </div>
     </section>
 
   </main>

@@ -74,6 +74,16 @@
   letter-spacing: var(--tracking-prose);
 }
 
+/* Toggle label — a dedicated caption/label class for toggle controls (switch,
+ * checkbox, radio, chip specimens), typographically identical to .text-label. */
+.text-toggle-label {
+  font-family: var(--font-body);
+  font-size: var(--text-label);
+  font-weight: var(--weight-label);
+  line-height: var(--leading-prose);
+  letter-spacing: var(--tracking-prose);
+}
+
 .text-helper {
   font-family: var(--font-body);
   font-size: var(--text-helper);

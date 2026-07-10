@@ -1,0 +1,215 @@
+/* Component — Toggle
+ * Thin classes for the four selection controls: switch, checkbox, radio, chip.
+ * Consumes semantic tokens only. Native <input type="checkbox">/<input type="radio">
+ * already carry full toggle behavior, keyboard support, and accessibility for free —
+ * nothing here is rented from a library. .toggle is the shared base, paired with a
+ * type class, for the three controls styled directly onto the input itself. Chips
+ * are the one exception: a chip must render visible text, which a bare <input>
+ * can't hold, so it's a <label> wrapping a visually-hidden input. */
+
+.toggle {
+  appearance: none;
+  margin: 0;
+  cursor: pointer;
+  transition:
+    background var(--duration-hover) var(--ease-default),
+    border-color var(--duration-hover) var(--ease-default);
+}
+
+.toggle:focus-visible {
+  outline: var(--border-width-strong) solid var(--color-border-focus);
+  outline-offset: var(--spacing-1);
+}
+
+.toggle:disabled {
+  cursor: not-allowed;
+}
+
+/* Switch — the input itself is the pill track; sized off --control-height so it
+ * stays on the same 40px control rhythm as .btn/.input without a dedicated size
+ * token. The thumb is a ::before that slides between the track's logical edges —
+ * inset-inline-start (not transform) so it mirrors correctly under RTL for free. */
+.toggle-switch {
+  position: relative;
+  inline-size: var(--control-height);
+  block-size: calc(var(--control-height) / 2);
+  border: none;
+  border-radius: var(--radius-pill);
+  background: var(--color-border);
+}
+
+.toggle-switch::before {
+  content: "";
+  position: absolute;
+  inset-block: var(--spacing-1);
+  inset-inline-start: var(--spacing-1);
+  inline-size: calc(var(--control-height) / 2 - var(--spacing-1) * 2);
+  border-radius: var(--radius-full);
+  background: var(--color-surface-raised);
+  transition: inset-inline-start var(--duration-hover) var(--ease-default);
+}
+
+.toggle-switch:checked {
+  background: var(--color-primary);
+}
+
+.toggle-switch:checked::before {
+  inset-inline-start: calc(100% - (var(--control-height) / 2 - var(--spacing-1) * 2) - var(--spacing-1));
+}
+
+.toggle-switch:disabled,
+.toggle-switch:checked:disabled {
+  background: var(--color-border);
+}
+
+.toggle-switch:disabled::before {
+  background: var(--color-surface-sunken);
+}
+
+/* Checkbox — a square box; flex-centers its ::after checkmark rather than
+ * absolutely positioning it, since the mark only ever needs to show/hide, not
+ * animate a position. --radius-chip is the existing small-control radius; there's
+ * no separate semantic token for it and adding one for this single consumer
+ * isn't warranted. */
+.toggle-checkbox {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: calc(var(--control-height) / 2);
+  block-size: calc(var(--control-height) / 2);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-chip);
+  background: var(--color-surface-raised);
+}
+
+.toggle-checkbox::after {
+  content: "";
+  display: none;
+  inline-size: calc(var(--control-height) / 4 - var(--spacing-1));
+  block-size: calc(var(--control-height) / 3);
+  border-block-end: var(--border-width-strong) solid var(--color-text-on-primary);
+  border-inline-end: var(--border-width-strong) solid var(--color-text-on-primary);
+  transform: rotate(45deg) translateY(-12%);
+}
+
+.toggle-checkbox:checked {
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+}
+
+.toggle-checkbox:checked::after {
+  display: block;
+}
+
+.toggle-checkbox:disabled {
+  border-color: var(--color-border);
+  background: var(--color-surface-sunken);
+}
+
+.toggle-checkbox:checked:disabled {
+  border-color: var(--color-border);
+  background: var(--color-border);
+}
+
+.toggle-checkbox:checked:disabled::after {
+  border-color: var(--color-text-subtle);
+}
+
+/* Radio — same box sizing as the checkbox, full-round instead of chip-round,
+ * and a filled dot instead of a checkmark. */
+.toggle-radio {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: calc(var(--control-height) / 2);
+  block-size: calc(var(--control-height) / 2);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-full);
+  background: var(--color-surface-raised);
+}
+
+.toggle-radio::after {
+  content: "";
+  display: none;
+  inline-size: calc(var(--control-height) / 4);
+  block-size: calc(var(--control-height) / 4);
+  border-radius: var(--radius-full);
+  background: var(--color-primary);
+}
+
+.toggle-radio:checked {
+  border-color: var(--color-primary);
+}
+
+.toggle-radio:checked::after {
+  display: block;
+}
+
+.toggle-radio:disabled {
+  border-color: var(--color-border);
+  background: var(--color-surface-sunken);
+}
+
+.toggle-radio:checked:disabled {
+  border-color: var(--color-border);
+}
+
+.toggle-radio:checked:disabled::after {
+  background: var(--color-text-subtle);
+}
+
+/* Chip — a <label> is the visible surface; the input inside it is visually
+ * hidden (not display:none, which would drop it from the accessibility tree
+ * and break native label-click/keyboard toggling). Selected/focus state is
+ * read off the hidden input with :has(), so markup order between the input
+ * and its text doesn't matter. */
+.toggle-chip {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  padding-block: var(--spacing-2);
+  padding-inline: var(--spacing-4);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-chip);
+  background: var(--color-surface-raised);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: var(--text-label);
+  font-weight: var(--weight-label);
+  cursor: pointer;
+  transition:
+    background var(--duration-hover) var(--ease-default),
+    color var(--duration-hover) var(--ease-default),
+    border-color var(--duration-hover) var(--ease-default);
+}
+
+.toggle-chip-input {
+  appearance: none;
+  position: absolute;
+  margin: 0;
+  /* Visually hidden, not display:none — stays focusable and in the a11y tree
+   * so native label-click/keyboard toggling keeps working. Size is a technical
+   * near-zero, not a design value, so it isn't a token. */
+  inline-size: 1px;
+  block-size: 1px;
+  opacity: 0;
+}
+
+.toggle-chip:has(:checked) {
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+  color: var(--color-text-on-primary);
+}
+
+.toggle-chip:has(:focus-visible) {
+  outline: var(--border-width-strong) solid var(--color-border-focus);
+  outline-offset: var(--spacing-1);
+}
+
+.toggle-chip:has(:disabled) {
+  cursor: not-allowed;
+  border-color: var(--color-border);
+  background: var(--color-border);
+  color: var(--color-text-subtle);
+}

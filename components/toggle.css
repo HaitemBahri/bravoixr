@@ -90,6 +90,11 @@
   border-block-end: var(--border-width-strong) solid var(--color-text-on-primary);
   border-inline-end: var(--border-width-strong) solid var(--color-text-on-primary);
   transform: rotate(45deg) translateY(-12%);
+  /* The checkmark is a universal glyph, not a directional one — pin it to ltr
+   * so border-inline-end always resolves to the physical right edge and the
+   * fixed rotation doesn't mirror the shape under dir="rtl" (same static-value
+   * precedent as .text-code). */
+  direction: ltr;
 }
 
 .toggle-checkbox:checked {

@@ -41,24 +41,25 @@
     <section class="page-section">
       <h3 class="text-section-title" data-en="Brand" data-ar="العلامة">Brand</h3>
       <div style="display: grid; gap: var(--spacing-5);">
-        <div class="page-row-header" data-base="--color-primary" data-label="primary"></div>
-        <div class="page-row-header" data-base="--color-secondary" data-label="secondary"></div>
+        <div class="page-row-header" data-base="--color-primary" data-label="primary" data-desc-en="The main brand color and its interactive states." data-desc-ar="لون العلامة التجارية الأساسي وحالاته التفاعلية."></div>
+        <div class="page-row-header" data-base="--color-secondary" data-label="secondary" data-desc-en="The supporting brand color and its interactive states." data-desc-ar="لون العلامة التجارية الثانوي وحالاته التفاعلية."></div>
       </div>
     </section>
 
     <section class="page-section">
       <h3 class="text-section-title" data-en="Status" data-ar="الحالة">Status</h3>
       <div style="display: grid; gap: var(--spacing-5);">
-        <div class="page-row-header" data-base="--color-success" data-label="success"></div>
-        <div class="page-row-header" data-base="--color-warning" data-label="warning"></div>
-        <div class="page-row-header" data-base="--color-error" data-label="error"></div>
-        <div class="page-row-header" data-base="--color-info" data-label="info"></div>
+        <div class="page-row-header" data-base="--color-success" data-label="success" data-desc-en="Confirms a positive or completed outcome." data-desc-ar="يؤكّد نتيجة إيجابية أو مكتملة."></div>
+        <div class="page-row-header" data-base="--color-warning" data-label="warning" data-desc-en="Flags a state that needs attention before it becomes an error." data-desc-ar="يُنبّه إلى حالة تستدعي الانتباه قبل أن تتحوّل إلى خطأ."></div>
+        <div class="page-row-header" data-base="--color-error" data-label="error" data-desc-en="Signals a failure or invalid state." data-desc-ar="يشير إلى فشل أو حالة غير صالحة."></div>
+        <div class="page-row-header" data-base="--color-info" data-label="info" data-desc-en="Highlights neutral, non-urgent information." data-desc-ar="يبرز معلومة محايدة غير عاجلة."></div>
       </div>
     </section>
 
     <section class="page-section page-row-header" data-roles="--color-surface-page:page,--color-surface-raised:raised,--color-surface-sunken:sunken">
       <div>
         <h3 class="page-row-header-title" data-en="Surfaces" data-ar="الأسطح">Surfaces</h3>
+        <p class="page-row-header-description" data-en="Background layers that stack the page from its base up to raised and sunken panels." data-ar="طبقات الخلفية التي ترتّب الصفحة من قاعدتها إلى الألواح المرتفعة والغائرة.">Background layers that stack the page from its base up to raised and sunken panels.</p>
       </div>
       <div></div>
     </section>
@@ -66,6 +67,7 @@
     <section class="page-section page-row-header" data-roles="--color-text:text,--color-text-muted:muted,--color-text-subtle:subtle,--color-text-inverse:inverse,--color-text-on-primary:on-primary">
       <div>
         <h3 class="page-row-header-title" data-en="Text" data-ar="النص">Text</h3>
+        <p class="page-row-header-description" data-en="Foreground text colors for default, muted, subtle, and inverse contexts." data-ar="ألوان النص الأمامية للسياقات الافتراضية والمكتومة والخفيفة والمعكوسة.">Foreground text colors for default, muted, subtle, and inverse contexts.</p>
       </div>
       <div></div>
     </section>
@@ -73,6 +75,7 @@
     <section class="page-section page-row-header" data-roles="--color-border:border,--color-border-strong:strong,--color-border-focus:focus">
       <div>
         <h3 class="page-row-header-title" data-en="Border" data-ar="الحدود">Border</h3>
+        <p class="page-row-header-description" data-en="Stroke colors for dividers, strong outlines, and focus rings." data-ar="ألوان الحدود للفواصل والخطوط البارزة وحلقات التركيز.">Stroke colors for dividers, strong outlines, and focus rings.</p>
       </div>
       <div></div>
     </section>
@@ -121,13 +124,21 @@
       }
 
       // Nested rows (Brand, Status): each `.page-row-header` gets a rail
-      // (its family name) plus a content cell clustering its state swatches.
+      // (its family name + a description) plus a content cell clustering
+      // its state swatches.
       function buildRow(row, title, pairs) {
         var rail = document.createElement('div');
         var heading = document.createElement('h4');
         heading.className = 'page-row-header-title';
         heading.textContent = title;
         rail.appendChild(heading);
+
+        var description = document.createElement('p');
+        description.className = 'page-row-header-description';
+        description.setAttribute('data-en', row.getAttribute('data-desc-en'));
+        description.setAttribute('data-ar', row.getAttribute('data-desc-ar'));
+        description.textContent = row.getAttribute('data-desc-en');
+        rail.appendChild(description);
 
         var content = document.createElement('div');
         buildCluster(content, pairs);

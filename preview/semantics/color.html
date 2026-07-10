@@ -86,8 +86,9 @@
 
   <script>
     (function () {
-      // A swatch is a page-column-header: the color box, then a caption
-      // combining the state/role name and its token var.
+      // A swatch is a page-column-header: the color box, then a caption cell
+      // stacking the state/role name (text-label) over its token var
+      // (text-code-label) as two separate lines.
       function swatch(role, caption) {
         var col = document.createElement('div');
         col.className = 'page-column-header';
@@ -95,11 +96,18 @@
         // 64px specimen size is tokenless demo geometry; fill is the role under test.
         cell.style.cssText = 'inline-size:64px;block-size:64px;border-radius:var(--radius-control);border:var(--border-width) solid var(--color-border)';
         cell.style.background = 'var(' + role + ')';
+        var caption_lines = document.createElement('div');
+        caption_lines.style.cssText = 'display:grid;gap:var(--spacing-1)';
         var label = document.createElement('span');
-        label.className = 'text-code-label text-color-helper';
-        label.textContent = caption + ' · ' + role;
+        label.className = 'text-label';
+        label.textContent = caption;
+        var token = document.createElement('span');
+        token.className = 'text-code-label text-color-helper';
+        token.textContent = role;
+        caption_lines.appendChild(label);
+        caption_lines.appendChild(token);
         col.appendChild(cell);
-        col.appendChild(label);
+        col.appendChild(caption_lines);
         return col;
       }
 

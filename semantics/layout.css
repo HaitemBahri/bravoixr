@@ -16,6 +16,7 @@
 
   /* Sizing */
   --control-height: var(--size-control);
+  --control-height-sm: var(--size-control-sm);
   --card-min: var(--size-card-min);
   --page-sidebar-size: var(--size-sidebar);
   --page-row-header-size: var(--size-row-header);

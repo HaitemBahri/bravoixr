@@ -25,14 +25,14 @@
   cursor: not-allowed;
 }
 
-/* Switch — the input itself is the pill track; sized off --control-height so it
- * stays on the same 40px control rhythm as .btn/.input without a dedicated size
- * token. The thumb is a ::before that slides between the track's logical edges —
+/* Switch — track width stays keyed to the full --control-height (the same 40px
+ * control rhythm as .btn/.input); track height/box-size is --control-height-sm.
+ * The thumb is a ::before that slides between the track's logical edges —
  * inset-inline-start (not transform) so it mirrors correctly under RTL for free. */
 .toggle-switch {
   position: relative;
   inline-size: var(--control-height);
-  block-size: calc(var(--control-height) / 2);
+  block-size: var(--control-height-sm);
   border: none;
   border-radius: var(--radius-pill);
   background: var(--color-border);
@@ -43,7 +43,7 @@
   position: absolute;
   inset-block: var(--spacing-1);
   inset-inline-start: var(--spacing-1);
-  inline-size: calc(var(--control-height) / 2 - var(--spacing-1) * 2);
+  inline-size: calc(var(--control-height-sm) - var(--spacing-1) * 2);
   border-radius: var(--radius-full);
   background: var(--color-surface-raised);
   transition: inset-inline-start var(--duration-hover) var(--ease-default);
@@ -54,7 +54,7 @@
 }
 
 .toggle-switch:checked::before {
-  inset-inline-start: calc(100% - (var(--control-height) / 2 - var(--spacing-1) * 2) - var(--spacing-1));
+  inset-inline-start: calc(100% - (var(--control-height-sm) - var(--spacing-1) * 2) - var(--spacing-1));
 }
 
 .toggle-switch:disabled,
@@ -66,17 +66,17 @@
   background: var(--color-surface-sunken);
 }
 
-/* Checkbox — a square box; flex-centers its ::after checkmark rather than
- * absolutely positioning it, since the mark only ever needs to show/hide, not
- * animate a position. --radius-chip is the existing small-control radius; there's
- * no separate semantic token for it and adding one for this single consumer
- * isn't warranted. */
+/* Checkbox — a square box sized off --control-height-sm; flex-centers its
+ * ::after checkmark rather than absolutely positioning it, since the mark only
+ * ever needs to show/hide, not animate a position. --radius-chip is the
+ * existing small-control radius; there's no separate semantic token for it and
+ * adding one for this single consumer isn't warranted. */
 .toggle-checkbox {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  inline-size: calc(var(--control-height) / 2);
-  block-size: calc(var(--control-height) / 2);
+  inline-size: var(--control-height-sm);
+  block-size: var(--control-height-sm);
   border: var(--border-width) solid var(--color-border);
   border-radius: var(--radius-chip);
   background: var(--color-surface-raised);
@@ -85,8 +85,8 @@
 .toggle-checkbox::after {
   content: "";
   display: none;
-  inline-size: calc(var(--control-height) / 4 - var(--spacing-1));
-  block-size: calc(var(--control-height) / 3);
+  inline-size: calc(var(--control-height-sm) / 2 - var(--spacing-1));
+  block-size: calc(var(--control-height-sm) * 2 / 3);
   border-block-end: var(--border-width-strong) solid var(--color-text-on-primary);
   border-inline-end: var(--border-width-strong) solid var(--color-text-on-primary);
   transform: rotate(45deg) translateY(-12%);
@@ -121,8 +121,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  inline-size: calc(var(--control-height) / 2);
-  block-size: calc(var(--control-height) / 2);
+  inline-size: var(--control-height-sm);
+  block-size: var(--control-height-sm);
   border: var(--border-width) solid var(--color-border);
   border-radius: var(--radius-full);
   background: var(--color-surface-raised);
@@ -131,8 +131,8 @@
 .toggle-radio::after {
   content: "";
   display: none;
-  inline-size: calc(var(--control-height) / 4);
-  block-size: calc(var(--control-height) / 4);
+  inline-size: calc(var(--control-height-sm) / 2);
+  block-size: calc(var(--control-height-sm) / 2);
   border-radius: var(--radius-full);
   background: var(--color-primary);
 }

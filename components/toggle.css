@@ -162,16 +162,19 @@
  * hidden (not display:none, which would drop it from the accessibility tree
  * and break native label-click/keyboard toggling). Selected/focus state is
  * read off the hidden input with :has(), so markup order between the input
- * and its text doesn't matter. */
+ * and its text doesn't matter. A chip group is one-of-many (radio-backed),
+ * so it's sized on the full --control-height like .btn, not the small token
+ * checkbox/radio/switch use, and it's fully rounded rather than chip-radius. */
 .toggle-chip {
   position: relative;
   display: inline-flex;
   align-items: center;
   gap: var(--spacing-2);
-  padding-block: var(--spacing-2);
+  block-size: var(--control-height);
+  padding-block: 0;
   padding-inline: var(--spacing-4);
   border: var(--border-width) solid var(--color-border);
-  border-radius: var(--radius-chip);
+  border-radius: var(--radius-full);
   background: var(--color-surface-raised);
   color: var(--color-text);
   font-family: var(--font-body);

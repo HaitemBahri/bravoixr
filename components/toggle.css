@@ -66,6 +66,15 @@
   background: var(--color-surface-sunken);
 }
 
+/* Color — secondary/success/warning/error modifiers. Primary ships as the
+ * implicit default (bare .toggle-switch), matching .btn-solid's unmodified
+ * primary. Each modifier overrides only the property the base :checked rule
+ * sets. */
+.toggle-switch-secondary:checked { background: var(--color-secondary); }
+.toggle-switch-success:checked   { background: var(--color-success); }
+.toggle-switch-warning:checked   { background: var(--color-warning); }
+.toggle-switch-error:checked     { background: var(--color-error); }
+
 /* Checkbox — a square box sized off --control-height-sm; flex-centers its
  * ::after checkmark rather than absolutely positioning it, since the mark only
  * ever needs to show/hide, not animate a position. --radius-chip is the
@@ -120,6 +129,15 @@
   border-color: var(--color-text-subtle);
 }
 
+/* Color — secondary/success/warning/error modifiers. Only :checked's
+ * border-color + background move; the checkmark stroke stays
+ * --color-text-on-primary across every variant, same as .btn-solid uses one
+ * on-primary label color across its one fill. */
+.toggle-checkbox-secondary:checked { border-color: var(--color-secondary); background: var(--color-secondary); }
+.toggle-checkbox-success:checked   { border-color: var(--color-success);   background: var(--color-success); }
+.toggle-checkbox-warning:checked   { border-color: var(--color-warning);   background: var(--color-warning); }
+.toggle-checkbox-error:checked     { border-color: var(--color-error);     background: var(--color-error); }
+
 /* Radio — same box sizing as the checkbox, full-round instead of chip-round,
  * and a filled dot instead of a checkmark. */
 .toggle-radio {
@@ -162,6 +180,19 @@
 .toggle-radio:checked:disabled::after {
   background: var(--color-text-subtle);
 }
+
+/* Color — secondary/success/warning/error modifiers. Two properties need
+ * overriding: the box's :checked border-color, and the dot's ::after
+ * background — left unconditioned on purpose, mirroring the base
+ * .toggle-radio::after, which also sets its background unconditionally. */
+.toggle-radio-secondary:checked  { border-color: var(--color-secondary); }
+.toggle-radio-secondary::after   { background: var(--color-secondary); }
+.toggle-radio-success:checked    { border-color: var(--color-success); }
+.toggle-radio-success::after     { background: var(--color-success); }
+.toggle-radio-warning:checked    { border-color: var(--color-warning); }
+.toggle-radio-warning::after     { background: var(--color-warning); }
+.toggle-radio-error:checked      { border-color: var(--color-error); }
+.toggle-radio-error::after       { background: var(--color-error); }
 
 /* Chip — a <label> is the visible surface; the input inside it is visually
  * hidden (not display:none, which would drop it from the accessibility tree
@@ -221,3 +252,12 @@
   background: var(--color-border);
   color: var(--color-text-subtle);
 }
+
+/* Color — secondary/success/warning/error modifiers, applied on the same
+ * <label class="toggle-chip toggle-chip-*"> host the base class sits on.
+ * Only :has(:checked)'s border-color + background move; on-primary text
+ * color stays constant, same reasoning as the checkbox mark. */
+.toggle-chip-secondary:has(:checked) { border-color: var(--color-secondary); background: var(--color-secondary); }
+.toggle-chip-success:has(:checked)   { border-color: var(--color-success);   background: var(--color-success); }
+.toggle-chip-warning:has(:checked)   { border-color: var(--color-warning);   background: var(--color-warning); }
+.toggle-chip-error:has(:checked)     { border-color: var(--color-error);     background: var(--color-error); }

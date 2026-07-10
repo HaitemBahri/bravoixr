@@ -33,36 +33,48 @@
 
   <main class="page-body">
 
-    <h2 class="text-page-title" data-en="Semantic color" data-ar="اللون الدلالي">Semantic color</h2>
-    <p class="text-page-description text-color-description" data-en="Role tokens, not raw colors — each maps onto a primitive and re-points by theme. Toggle ☾ Dark from the top and every swatch below recolors; components never touch the primitive ramps." data-ar="رموز أدوار، لا ألوان خام — كلٌّ يُسنَد إلى أوّليّة ويتغيّر مرجعه حسب السمة. بدّل إلى ☾ داكن من الأعلى فتتبدّل ألوان كل العيّنات أدناه؛ والمكوّنات لا تمسّ التدرّجات الأوّليّة إطلاقًا.">Role tokens, not raw colors — each maps onto a primitive and re-points by theme. Toggle ☾ Dark from the top and every swatch below recolors; components never touch the primitive ramps.</p>
+    <section class="page-section">
+      <h2 class="text-page-title" data-en="Semantic color" data-ar="اللون الدلالي">Semantic color</h2>
+      <p class="text-page-description text-color-description" data-en="Role tokens, not raw colors — each maps onto a primitive and re-points by theme. Toggle ☾ Dark from the top and every swatch below recolors; components never touch the primitive ramps." data-ar="رموز أدوار، لا ألوان خام — كلٌّ يُسنَد إلى أوّليّة ويتغيّر مرجعه حسب السمة. بدّل إلى ☾ داكن من الأعلى فتتبدّل ألوان كل العيّنات أدناه؛ والمكوّنات لا تمسّ التدرّجات الأوّليّة إطلاقًا.">Role tokens, not raw colors — each maps onto a primitive and re-points by theme. Toggle ☾ Dark from the top and every swatch below recolors; components never touch the primitive ramps.</p>
+    </section>
 
     <section class="page-section">
       <h3 class="text-section-title" data-en="Brand" data-ar="العلامة">Brand</h3>
-      <div style="display:flex;align-items:center;gap:var(--spacing-6);padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)" data-base="--color-primary" data-label="primary"></div>
-      <div style="display:flex;align-items:center;gap:var(--spacing-6);padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)" data-base="--color-secondary" data-label="secondary"></div>
+      <div style="display: grid; gap: var(--spacing-5);">
+        <div class="page-row-header" data-base="--color-primary" data-label="primary"></div>
+        <div class="page-row-header" data-base="--color-secondary" data-label="secondary"></div>
+      </div>
     </section>
 
     <section class="page-section">
       <h3 class="text-section-title" data-en="Status" data-ar="الحالة">Status</h3>
-      <div style="display:flex;align-items:center;gap:var(--spacing-6);padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)" data-base="--color-success" data-label="success"></div>
-      <div style="display:flex;align-items:center;gap:var(--spacing-6);padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)" data-base="--color-warning" data-label="warning"></div>
-      <div style="display:flex;align-items:center;gap:var(--spacing-6);padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)" data-base="--color-error" data-label="error"></div>
-      <div style="display:flex;align-items:center;gap:var(--spacing-6);padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)" data-base="--color-info" data-label="info"></div>
+      <div style="display: grid; gap: var(--spacing-5);">
+        <div class="page-row-header" data-base="--color-success" data-label="success"></div>
+        <div class="page-row-header" data-base="--color-warning" data-label="warning"></div>
+        <div class="page-row-header" data-base="--color-error" data-label="error"></div>
+        <div class="page-row-header" data-base="--color-info" data-label="info"></div>
+      </div>
     </section>
 
-    <section class="page-section">
-      <h3 class="text-section-title" data-en="Surfaces" data-ar="الأسطح">Surfaces</h3>
-      <div style="display:flex;align-items:center;gap:var(--spacing-6);padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)" data-label="surfaces" data-roles="--color-surface-page:page,--color-surface-raised:raised,--color-surface-sunken:sunken"></div>
+    <section class="page-section page-row-header" data-roles="--color-surface-page:page,--color-surface-raised:raised,--color-surface-sunken:sunken">
+      <div>
+        <h3 class="page-row-header-title" data-en="Surfaces" data-ar="الأسطح">Surfaces</h3>
+      </div>
+      <div></div>
     </section>
 
-    <section class="page-section">
-      <h3 class="text-section-title" data-en="Text" data-ar="النص">Text</h3>
-      <div style="display:flex;align-items:center;gap:var(--spacing-6);padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)" data-label="text" data-roles="--color-text:text,--color-text-muted:muted,--color-text-subtle:subtle,--color-text-inverse:inverse,--color-text-on-primary:on-primary"></div>
+    <section class="page-section page-row-header" data-roles="--color-text:text,--color-text-muted:muted,--color-text-subtle:subtle,--color-text-inverse:inverse,--color-text-on-primary:on-primary">
+      <div>
+        <h3 class="page-row-header-title" data-en="Text" data-ar="النص">Text</h3>
+      </div>
+      <div></div>
     </section>
 
-    <section class="page-section">
-      <h3 class="text-section-title" data-en="Border" data-ar="الحدود">Border</h3>
-      <div style="display:flex;align-items:center;gap:var(--spacing-6);padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)" data-label="border" data-roles="--color-border:border,--color-border-strong:strong,--color-border-focus:focus"></div>
+    <section class="page-section page-row-header" data-roles="--color-border:border,--color-border-strong:strong,--color-border-focus:focus">
+      <div>
+        <h3 class="page-row-header-title" data-en="Border" data-ar="الحدود">Border</h3>
+      </div>
+      <div></div>
     </section>
 
   </main>
@@ -74,58 +86,63 @@
 
   <script>
     (function () {
-      // Each swatch is captioned with its role label and, under it, its var name.
+      // A swatch is a page-column-header: the color box, then a caption
+      // combining the state/role name and its token var.
       function swatch(role, caption) {
-        var sw = document.createElement('div');
-        sw.style.cssText = 'flex:0 0 140px';
+        var col = document.createElement('div');
+        col.className = 'page-column-header';
         var cell = document.createElement('div');
-        // 64px specimen height is tokenless demo geometry; fill is the role under test.
-        cell.style.cssText = 'block-size:64px;border-radius:var(--radius-control);border:var(--border-width) solid var(--color-border)';
+        // 64px specimen size is tokenless demo geometry; fill is the role under test.
+        cell.style.cssText = 'inline-size:64px;block-size:64px;border-radius:var(--radius-control);border:var(--border-width) solid var(--color-border)';
         cell.style.background = 'var(' + role + ')';
-        var name = document.createElement('span');
-        name.style.cssText = 'display:block;margin-block-start:var(--spacing-2);font-size:var(--text-label)';
-        name.textContent = caption;
-        var token = document.createElement('span');
-        token.className = 'text-code-label text-color-helper';
-        token.style.cssText = 'display:block;margin-block-start:var(--spacing-1)';
-        token.textContent = role;
-        sw.appendChild(cell);
-        sw.appendChild(name);
-        sw.appendChild(token);
-        return sw;
+        var label = document.createElement('span');
+        label.className = 'text-code-label text-color-helper';
+        label.textContent = caption + ' · ' + role;
+        col.appendChild(cell);
+        col.appendChild(label);
+        return col;
       }
 
-      // One row per family: a name meta column, then its swatches laid out
-      // horizontally. `pairs` is [role, caption] entries.
-      function buildRow(row, pairs) {
-        var meta = document.createElement('div');
-        meta.style.cssText = 'flex:0 0 180px';
-        var label = document.createElement('strong');
-        label.className = 'text-context-title';
-        label.textContent = row.getAttribute('data-label');
-        meta.appendChild(label);
+      // Builds a page-cluster of swatches from `pairs` ([role, caption]
+      // entries) into `container`.
+      function buildCluster(container, pairs) {
+        var cluster = document.createElement('div');
+        cluster.className = 'page-cluster';
+        pairs.forEach(function (p) { cluster.appendChild(swatch(p[0], p[1])); });
+        container.appendChild(cluster);
+      }
 
-        var group = document.createElement('div');
-        group.style.cssText = 'display:flex;flex-wrap:wrap;gap:var(--spacing-4)';
-        pairs.forEach(function (p) { group.appendChild(swatch(p[0], p[1])); });
+      // Nested rows (Brand, Status): each `.page-row-header` gets a rail
+      // (its family name) plus a content cell clustering its state swatches.
+      function buildRow(row, title, pairs) {
+        var rail = document.createElement('div');
+        var heading = document.createElement('h4');
+        heading.className = 'page-row-header-title';
+        heading.textContent = title;
+        rail.appendChild(heading);
 
-        row.appendChild(meta);
-        row.appendChild(group);
+        var content = document.createElement('div');
+        buildCluster(content, pairs);
+
+        row.appendChild(rail);
+        row.appendChild(content);
       }
 
       // State families (Brand, Status): base token + normal/hover/active steps.
       var states = [['', 'normal'], ['-hover', 'hover'], ['-active', 'active']];
-      document.querySelectorAll('[data-base]').forEach(function (row) {
+      document.querySelectorAll('.page-row-header[data-base]').forEach(function (row) {
         var base = row.getAttribute('data-base');
-        buildRow(row, states.map(function (s) { return [base + s[0], s[1]]; }));
+        buildRow(row, row.getAttribute('data-label'), states.map(function (s) { return [base + s[0], s[1]]; }));
       });
 
-      // Variant families (Surfaces, Text, Border): explicit `token:caption` list.
-      document.querySelectorAll('[data-roles]').forEach(function (row) {
+      // Flat rows (Surfaces, Text, Border): the section itself is the
+      // page-row-header, so only its content cell (last child) needs a
+      // cluster built from its explicit `token:caption` list.
+      document.querySelectorAll('.page-row-header[data-roles]').forEach(function (row) {
         var pairs = row.getAttribute('data-roles').split(',').map(function (r) {
           return r.split(':');
         });
-        buildRow(row, pairs);
+        buildCluster(row.lastElementChild, pairs);
       });
     })();
   </script>

@@ -33,61 +33,148 @@
 
   <main class="page-body">
 
-    <h2 class="text-page-title" data-en="Semantic layout" data-ar="التخطيط الدلالي">Semantic layout</h2>
-    <p class="text-page-description text-color-description" data-en="Structural roles named for their use — control, card, modal — mapped onto the raw scale. Not themed: these hold across light and dark." data-ar="أدوار بنيوية مسمّاة بحسب استخدامها — عنصر تحكّم، بطاقة، نافذة — مُسنَدة إلى المقياس الخام. غير خاضعة للسمة: تثبت في الوضعين الفاتح والداكن.">Structural roles named for their use — control, card, modal — mapped onto the raw scale. Not themed: these hold across light and dark.</p>
-
     <section class="page-section">
-      <h3 class="text-section-title" data-en="Radius roles" data-ar="أدوار الزوايا">Radius roles</h3>
-      <div style="display:flex;flex-wrap:wrap;gap:var(--spacing-7)">
-        <div style="display:grid;gap:var(--spacing-2);justify-items:center"><div style="inline-size:96px;block-size:96px;background:var(--color-surface-raised);border:var(--border-width) solid var(--color-border-strong);border-radius:var(--radius-control)"></div><span class="text-code-label text-color-helper">--radius-control</span></div>
-        <div style="display:grid;gap:var(--spacing-2);justify-items:center"><div style="inline-size:96px;block-size:96px;background:var(--color-surface-raised);border:var(--border-width) solid var(--color-border-strong);border-radius:var(--radius-card)"></div><span class="text-code-label text-color-helper">--radius-card</span></div>
-        <div style="display:grid;gap:var(--spacing-2);justify-items:center"><div style="inline-size:96px;block-size:96px;background:var(--color-surface-raised);border:var(--border-width) solid var(--color-border-strong);border-radius:var(--radius-modal)"></div><span class="text-code-label text-color-helper">--radius-modal</span></div>
-        <div style="display:grid;gap:var(--spacing-2);justify-items:center"><div style="inline-size:96px;block-size:96px;background:var(--color-surface-raised);border:var(--border-width) solid var(--color-border-strong);border-radius:var(--radius-chip)"></div><span class="text-code-label text-color-helper">--radius-chip</span></div>
-        <div style="display:grid;gap:var(--spacing-2);justify-items:center"><div style="inline-size:96px;block-size:96px;background:var(--color-surface-raised);border:var(--border-width) solid var(--color-border-strong);border-radius:var(--radius-pill)"></div><span class="text-code-label text-color-helper">--radius-pill</span></div>
+      <h2 class="text-page-title" data-en="Semantic layout" data-ar="التخطيط الدلالي">Semantic layout</h2>
+      <p class="text-page-description text-color-description" data-en="Structural roles named for their use — control, card, modal — mapped onto the raw scale. Not themed: these hold across light and dark." data-ar="أدوار بنيوية مسمّاة بحسب استخدامها — عنصر تحكّم، بطاقة، نافذة — مُسنَدة إلى المقياس الخام. غير خاضعة للسمة: تثبت في الوضعين الفاتح والداكن.">Structural roles named for their use — control, card, modal — mapped onto the raw scale. Not themed: these hold across light and dark.</p>
+    </section>
+
+    <section class="page-section page-row-header">
+      <div>
+        <h3 class="page-row-header-title" data-en="Radius roles" data-ar="أدوار الزوايا">Radius roles</h3>
+        <p class="page-row-header-description" data-en="Corner-rounding steps mapped onto the elements they shape, from controls to pills." data-ar="درجات تدوير الزوايا مُسنَدة إلى العناصر التي تُشكّلها، من عناصر التحكّم إلى الأقراص.">Corner-rounding steps mapped onto the elements they shape, from controls to pills.</p>
+      </div>
+      <div>
+        <div class="page-cluster">
+          <div class="page-column-header">
+            <div class="card" style="inline-size:96px;block-size:96px;border:var(--border-width) solid var(--color-border-strong);border-radius:var(--radius-control)"></div>
+            <span class="text-code-label text-color-helper">--radius-control</span>
+          </div>
+          <div class="page-column-header">
+            <div class="card" style="inline-size:96px;block-size:96px;border:var(--border-width) solid var(--color-border-strong);border-radius:var(--radius-card)"></div>
+            <span class="text-code-label text-color-helper">--radius-card</span>
+          </div>
+          <div class="page-column-header">
+            <div class="card" style="inline-size:96px;block-size:96px;border:var(--border-width) solid var(--color-border-strong);border-radius:var(--radius-modal)"></div>
+            <span class="text-code-label text-color-helper">--radius-modal</span>
+          </div>
+          <div class="page-column-header">
+            <div class="card" style="inline-size:96px;block-size:96px;border:var(--border-width) solid var(--color-border-strong);border-radius:var(--radius-chip)"></div>
+            <span class="text-code-label text-color-helper">--radius-chip</span>
+          </div>
+          <div class="page-column-header">
+            <div class="card" style="inline-size:96px;block-size:96px;border:var(--border-width) solid var(--color-border-strong);border-radius:var(--radius-pill)"></div>
+            <span class="text-code-label text-color-helper">--radius-pill</span>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="page-section">
-      <h3 class="text-section-title" data-en="Border-width roles" data-ar="أدوار سماكة الحدود">Border-width roles</h3>
-      <div style="display:flex;flex-wrap:wrap;gap:var(--spacing-7)">
-        <div style="display:grid;gap:var(--spacing-2);justify-items:center"><div style="inline-size:96px;block-size:96px;background:var(--color-surface-raised);border:var(--border-width) solid var(--color-border-strong)"></div><span class="text-code-label text-color-helper">--border-width</span></div>
-        <div style="display:grid;gap:var(--spacing-2);justify-items:center"><div style="inline-size:96px;block-size:96px;background:var(--color-surface-raised);border:var(--border-width-strong) solid var(--color-border-strong)"></div><span class="text-code-label text-color-helper">--border-width-strong</span></div>
+    <section class="page-section page-row-header">
+      <div>
+        <h3 class="page-row-header-title" data-en="Border-width roles" data-ar="أدوار سماكة الحدود">Border-width roles</h3>
+        <p class="page-row-header-description" data-en="Stroke weights for default and emphasized borders." data-ar="سماكات الخطوط للحدود الافتراضية والمُبرَزة.">Stroke weights for default and emphasized borders.</p>
+      </div>
+      <div>
+        <div class="page-cluster">
+          <div class="page-column-header">
+            <div class="card" style="inline-size:96px;block-size:96px;border:var(--border-width) solid var(--color-border-strong)"></div>
+            <span class="text-code-label text-color-helper">--border-width</span>
+          </div>
+          <div class="page-column-header">
+            <div class="card" style="inline-size:96px;block-size:96px;border:var(--border-width-strong) solid var(--color-border-strong)"></div>
+            <span class="text-code-label text-color-helper">--border-width-strong</span>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="page-section">
-      <h3 class="text-section-title" data-en="Sizing roles" data-ar="أدوار الأحجام">Sizing roles</h3>
-      <div style="display:grid;grid-template-columns:max-content max-content;align-items:baseline">
-        <span class="text-code-label text-color-helper" style="padding-block:var(--spacing-3);padding-inline-end:var(--spacing-5);border-block-end:var(--border-width) solid var(--color-border)">--control-height</span><span class="text-color-normal" style="padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)">40px</span>
-        <span class="text-code-label text-color-helper" style="padding-block:var(--spacing-3);padding-inline-end:var(--spacing-5);border-block-end:var(--border-width) solid var(--color-border)">--container-max</span><span class="text-color-normal" style="padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)">1280px</span>
+    <section class="page-section page-row-header">
+      <div>
+        <h3 class="page-row-header-title" data-en="Sizing roles" data-ar="أدوار الأحجام">Sizing roles</h3>
+        <p class="page-row-header-description" data-en="Fixed dimensions for recurring UI elements, like control height and the page's max width." data-ar="أبعاد ثابتة لعناصر الواجهة المتكرّرة، كارتفاع عنصر التحكّم وأقصى عرض للصفحة.">Fixed dimensions for recurring UI elements, like control height and the page's max width.</p>
+      </div>
+      <div>
+        <div class="page-cluster">
+          <div class="page-column-header">
+            <span class="text-color-normal">40px</span>
+            <span class="text-code-label text-color-helper">--control-height</span>
+          </div>
+          <div class="page-column-header">
+            <span class="text-color-normal">1280px</span>
+            <span class="text-code-label text-color-helper">--container-max</span>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="page-section">
-      <h3 class="text-section-title" data-en="Shadow roles (floating layers)" data-ar="أدوار الظلال (الطبقات العائمة)">Shadow roles (floating layers)</h3>
-      <div style="display:flex;flex-wrap:wrap;gap:var(--spacing-7)">
-        <div style="display:grid;gap:var(--spacing-2);justify-items:center"><div style="inline-size:160px;block-size:96px;background:var(--color-surface-raised);border-radius:var(--radius-card);box-shadow:var(--shadow-menu)"></div><span class="text-code-label text-color-helper">--shadow-menu</span></div>
-        <div style="display:grid;gap:var(--spacing-2);justify-items:center"><div style="inline-size:160px;block-size:96px;background:var(--color-surface-raised);border-radius:var(--radius-card);box-shadow:var(--shadow-toast)"></div><span class="text-code-label text-color-helper">--shadow-toast</span></div>
-        <div style="display:grid;gap:var(--spacing-2);justify-items:center"><div style="inline-size:160px;block-size:96px;background:var(--color-surface-raised);border-radius:var(--radius-card);box-shadow:var(--shadow-modal)"></div><span class="text-code-label text-color-helper">--shadow-modal</span></div>
+    <section class="page-section page-row-header">
+      <div>
+        <h3 class="page-row-header-title" data-en="Shadow roles (floating layers)" data-ar="أدوار الظلال (الطبقات العائمة)">Shadow roles (floating layers)</h3>
+        <p class="page-row-header-description" data-en="Elevation shadows for surfaces that float above the page, like menus and toasts." data-ar="ظلال ارتفاع للأسطح العائمة فوق الصفحة، كالقوائم والتنبيهات.">Elevation shadows for surfaces that float above the page, like menus and toasts.</p>
+      </div>
+      <div>
+        <div class="page-cluster">
+          <div class="page-column-header">
+            <div class="card" style="inline-size:160px;block-size:96px;box-shadow:var(--shadow-menu)"></div>
+            <span class="text-code-label text-color-helper">--shadow-menu</span>
+          </div>
+          <div class="page-column-header">
+            <div class="card" style="inline-size:160px;block-size:96px;box-shadow:var(--shadow-toast)"></div>
+            <span class="text-code-label text-color-helper">--shadow-toast</span>
+          </div>
+          <div class="page-column-header">
+            <div class="card" style="inline-size:160px;block-size:96px;box-shadow:var(--shadow-modal)"></div>
+            <span class="text-code-label text-color-helper">--shadow-modal</span>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="page-section">
-      <h3 class="text-section-title" data-en="Layer roles" data-ar="أدوار الطبقات">Layer roles</h3>
-      <div style="display:grid;grid-template-columns:max-content max-content;align-items:baseline">
-        <span class="text-code-label text-color-helper" style="padding-block:var(--spacing-3);padding-inline-end:var(--spacing-5);border-block-end:var(--border-width) solid var(--color-border)">--layer-base</span><span class="text-color-normal" style="padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)">0</span>
-        <span class="text-code-label text-color-helper" style="padding-block:var(--spacing-3);padding-inline-end:var(--spacing-5);border-block-end:var(--border-width) solid var(--color-border)">--layer-sticky</span><span class="text-color-normal" style="padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)">10</span>
-        <span class="text-code-label text-color-helper" style="padding-block:var(--spacing-3);padding-inline-end:var(--spacing-5);border-block-end:var(--border-width) solid var(--color-border)">--layer-dropdown</span><span class="text-color-normal" style="padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)">20</span>
-        <span class="text-code-label text-color-helper" style="padding-block:var(--spacing-3);padding-inline-end:var(--spacing-5);border-block-end:var(--border-width) solid var(--color-border)">--layer-overlay</span><span class="text-color-normal" style="padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)">30</span>
-        <span class="text-code-label text-color-helper" style="padding-block:var(--spacing-3);padding-inline-end:var(--spacing-5);border-block-end:var(--border-width) solid var(--color-border)">--layer-modal</span><span class="text-color-normal" style="padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)">40</span>
-        <span class="text-code-label text-color-helper" style="padding-block:var(--spacing-3);padding-inline-end:var(--spacing-5);border-block-end:var(--border-width) solid var(--color-border)">--layer-popover</span><span class="text-color-normal" style="padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)">50</span>
-        <span class="text-code-label text-color-helper" style="padding-block:var(--spacing-3);padding-inline-end:var(--spacing-5);border-block-end:var(--border-width) solid var(--color-border)">--layer-toast</span><span class="text-color-normal" style="padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)">60</span>
+    <section class="page-section page-row-header">
+      <div>
+        <h3 class="page-row-header-title" data-en="Layer roles" data-ar="أدوار الطبقات">Layer roles</h3>
+        <p class="page-row-header-description" data-en="Stacking-order tiers that keep floating layers in the right order." data-ar="طبقات ترتيب الرصّ التي تحافظ على تتابع الطبقات العائمة الصحيح.">Stacking-order tiers that keep floating layers in the right order.</p>
+      </div>
+      <div>
+        <div class="page-cluster">
+          <div class="page-column-header">
+            <span class="text-color-normal">0</span>
+            <span class="text-code-label text-color-helper">--layer-base</span>
+          </div>
+          <div class="page-column-header">
+            <span class="text-color-normal">10</span>
+            <span class="text-code-label text-color-helper">--layer-sticky</span>
+          </div>
+          <div class="page-column-header">
+            <span class="text-color-normal">20</span>
+            <span class="text-code-label text-color-helper">--layer-dropdown</span>
+          </div>
+          <div class="page-column-header">
+            <span class="text-color-normal">30</span>
+            <span class="text-code-label text-color-helper">--layer-overlay</span>
+          </div>
+          <div class="page-column-header">
+            <span class="text-color-normal">40</span>
+            <span class="text-code-label text-color-helper">--layer-modal</span>
+          </div>
+          <div class="page-column-header">
+            <span class="text-color-normal">50</span>
+            <span class="text-code-label text-color-helper">--layer-popover</span>
+          </div>
+          <div class="page-column-header">
+            <span class="text-color-normal">60</span>
+            <span class="text-code-label text-color-helper">--layer-toast</span>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="page-section">
-      <h3 class="text-section-title" data-en="Spacing seam (1:1 re-export)" data-ar="وصلة التباعد (تصدير 1:1)">Spacing seam (1:1 re-export)</h3>
-      <div id="spacing"></div>
+    <section class="page-section page-row-header">
+      <div>
+        <h3 class="page-row-header-title" data-en="Spacing seam (1:1 re-export)" data-ar="وصلة التباعد (تصدير 1:1)">Spacing seam (1:1 re-export)</h3>
+        <p class="page-row-header-description" data-en="The spacing scale re-exported 1:1 as a semantic role, unchanged from its primitive." data-ar="مقياس التباعد مُعاد تصديره بمطابقة 1:1 كدور دلالي، دون تغيير عن أوّليّته.">The spacing scale re-exported 1:1 as a semantic role, unchanged from its primitive.</p>
+      </div>
+      <div><div class="page-cluster" id="spacing"></div></div>
     </section>
 
   </main>
@@ -102,7 +189,7 @@
       var spacing = document.getElementById('spacing');
       for (var i = 1; i <= 12; i++) {
         var r = document.createElement('div');
-        r.style.cssText = 'display:flex;align-items:center;gap:var(--spacing-4);margin-block-end:var(--spacing-2)';
+        r.className = 'page-column-header';
         var bar = document.createElement('div');
         // 16px bar height is tokenless demo geometry; length is the spacing role under test.
         bar.style.cssText = 'block-size:16px;background:var(--color-primary);border-radius:var(--radius-chip);inline-size:var(--spacing-' + i + ')';

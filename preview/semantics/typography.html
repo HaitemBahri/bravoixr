@@ -33,84 +33,366 @@
 
   <main class="page-body">
 
-    <h2 class="text-page-title" data-en="Semantic typography" data-ar="الطباعة الدلالية">Semantic typography</h2>
-    <p class="text-page-description text-color-description" data-en="Roles the components speak in — heading, body, section-title — mapped onto the raw scale. Toggle ع and the family roles swap to Arabic; narrow the window and the size roles step down one rung (tablet, then mobile)." data-ar="الأدوار التي تتحدّث بها المكوّنات — عنوان، نص، عنوان قسم — مُسنَدة إلى المقياس الخام. بدّل إلى ع فتتحوّل أدوار العائلة إلى العربية؛ وصغّر النافذة فتنزل أدوار الحجم درجةً (لوحي، ثم جوّال).">Roles the components speak in — heading, body, section-title — mapped onto the raw scale. Toggle ع and the family roles swap to Arabic; narrow the window and the size roles step down one rung (tablet, then mobile).</p>
+    <section class="page-section">
+      <h2 class="text-page-title" data-en="Semantic typography" data-ar="الطباعة الدلالية">Semantic typography</h2>
+      <p class="text-page-description text-color-description" data-en="Roles the components speak in — heading, body, section-title — mapped onto the raw scale. Toggle ع and the family roles swap to Arabic; narrow the window and the size roles step down one rung (tablet, then mobile)." data-ar="الأدوار التي تتحدّث بها المكوّنات — عنوان، نص، عنوان قسم — مُسنَدة إلى المقياس الخام. بدّل إلى ع فتتحوّل أدوار العائلة إلى العربية؛ وصغّر النافذة فتنزل أدوار الحجم درجةً (لوحي، ثم جوّال).">Roles the components speak in — heading, body, section-title — mapped onto the raw scale. Toggle ع and the family roles swap to Arabic; narrow the window and the size roles step down one rung (tablet, then mobile).</p>
+    </section>
 
     <section class="page-section">
       <h3 class="text-section-title" data-en="Family roles" data-ar="أدوار العائلة">Family roles</h3>
-      <div style="display:grid;grid-template-columns:max-content minmax(0,1fr);align-items:baseline">
-        <div style="display:grid;padding-block:var(--spacing-4);padding-inline-end:var(--spacing-6);border-block-end:var(--border-width) solid var(--color-border)"><strong class="text-context-title" data-en="heading" data-ar="عنوان">heading</strong><span class="text-code-label text-color-helper">--font-heading</span></div>
-        <div style="padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border);font-family:var(--font-heading);font-size:var(--text-subsection-title)" data-en="Modern &amp; confident" data-ar="حديث وواثق">Modern &amp; confident</div>
-        <div style="display:grid;padding-block:var(--spacing-4);padding-inline-end:var(--spacing-6);border-block-end:var(--border-width) solid var(--color-border)"><strong class="text-context-title" data-en="body" data-ar="نص">body</strong><span class="text-code-label text-color-helper">--font-body</span></div>
-        <div style="padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border);font-family:var(--font-body);font-size:var(--text-context-title)" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض عائلة الخط ووضوحها.">The quick brown fox jumps over the lazy dog.</div>
-        <div style="display:grid;padding-block:var(--spacing-4);padding-inline-end:var(--spacing-6);border-block-end:var(--border-width) solid var(--color-border)"><strong class="text-context-title" data-en="code" data-ar="شيفرة">code</strong><span class="text-code-label text-color-helper">--font-code</span></div>
-        <div style="padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border);font-family:var(--font-code);font-size:var(--text-body)">--color-primary: var(--blue-600);</div>
+      <div style="display: grid; gap: var(--spacing-5);">
+        <div class="page-row-header">
+          <div>
+            <h4 class="page-row-header-title" data-en="heading" data-ar="عنوان">heading</h4>
+            <p class="page-row-header-description" data-en="The typeface components set for titles and headings." data-ar="عائلة الخط التي تعتمدها المكوّنات للعناوين ورؤوس الأقسام.">The typeface components set for titles and headings.</p>
+          </div>
+          <div>
+            <div class="page-cluster">
+              <div class="page-column-header">
+                <div style="font-family:var(--font-heading);font-size:var(--text-subsection-title)" data-en="Modern &amp; confident" data-ar="حديث وواثق">Modern &amp; confident</div>
+                <span class="text-code-label text-color-helper">--font-heading</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="page-row-header">
+          <div>
+            <h4 class="page-row-header-title" data-en="body" data-ar="نص">body</h4>
+            <p class="page-row-header-description" data-en="The typeface components set for running text." data-ar="عائلة الخط التي تعتمدها المكوّنات للنص الجاري.">The typeface components set for running text.</p>
+          </div>
+          <div>
+            <div class="page-cluster">
+              <div class="page-column-header">
+                <div style="font-family:var(--font-body);font-size:var(--text-context-title)" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض عائلة الخط ووضوحها.">The quick brown fox jumps over the lazy dog.</div>
+                <span class="text-code-label text-color-helper">--font-body</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="page-row-header">
+          <div>
+            <h4 class="page-row-header-title" data-en="code" data-ar="شيفرة">code</h4>
+            <p class="page-row-header-description" data-en="The typeface components set for code and tokens." data-ar="عائلة الخط التي تعتمدها المكوّنات للشيفرة والرموز.">The typeface components set for code and tokens.</p>
+          </div>
+          <div>
+            <div class="page-cluster">
+              <div class="page-column-header">
+                <div style="font-family:var(--font-code);font-size:var(--text-body)">--color-primary: var(--blue-600);</div>
+                <span class="text-code-label text-color-helper">--font-code</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
     <section class="page-section">
       <h3 class="text-section-title" data-en="Size roles" data-ar="أدوار الحجم">Size roles</h3>
-      <div style="display:grid;grid-template-columns:max-content minmax(0,1fr);align-items:baseline">
-        <div style="display:grid;padding-block:var(--spacing-4);padding-inline-end:var(--spacing-6);border-block-end:var(--border-width) solid var(--color-border)"><strong class="text-context-title">page-title</strong><span class="text-code-label text-color-helper">--text-page-title</span></div>
-        <div style="padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)"><span class="text-page-title" data-en="Heading" data-ar="عنوان">Heading</span></div>
-        <div style="display:grid;padding-block:var(--spacing-4);padding-inline-end:var(--spacing-6);border-block-end:var(--border-width) solid var(--color-border)"><strong class="text-context-title">section-title</strong><span class="text-code-label text-color-helper">--text-section-title</span></div>
-        <div style="padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)"><span class="text-section-title" data-en="Heading" data-ar="عنوان">Heading</span></div>
-        <div style="display:grid;padding-block:var(--spacing-4);padding-inline-end:var(--spacing-6);border-block-end:var(--border-width) solid var(--color-border)"><strong class="text-context-title">subsection-title</strong><span class="text-code-label text-color-helper">--text-subsection-title</span></div>
-        <div style="padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)"><span class="text-subsection-title" data-en="Heading" data-ar="عنوان">Heading</span></div>
-        <div style="display:grid;padding-block:var(--spacing-4);padding-inline-end:var(--spacing-6);border-block-end:var(--border-width) solid var(--color-border)"><strong class="text-context-title">minor-heading</strong><span class="text-code-label text-color-helper">--text-minor-heading</span></div>
-        <div style="padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)"><span class="text-section-title" data-en="Heading" data-ar="عنوان">Heading</span></div>
-        <div style="display:grid;padding-block:var(--spacing-4);padding-inline-end:var(--spacing-6);border-block-end:var(--border-width) solid var(--color-border)"><strong class="text-context-title">context-title</strong><span class="text-code-label text-color-helper">--text-context-title</span></div>
-        <div style="padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)"><span class="text-context-title" data-en="Context title" data-ar="عنوان سياقي">Context title</span></div>
-        <div style="display:grid;padding-block:var(--spacing-4);padding-inline-end:var(--spacing-6);border-block-end:var(--border-width) solid var(--color-border)"><strong class="text-context-title">body</strong><span class="text-code-label text-color-helper">--text-body</span></div>
-        <div style="padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)"><span class="text-body" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض حجم النص ومدى وضوحه.">The quick brown fox jumps over the lazy dog.</span></div>
-        <div style="display:grid;padding-block:var(--spacing-4);padding-inline-end:var(--spacing-6);border-block-end:var(--border-width) solid var(--color-border)"><strong class="text-context-title">label</strong><span class="text-code-label text-color-helper">--text-label</span></div>
-        <div style="padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)"><span class="text-label" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض حجم النص ومدى وضوحه.">The quick brown fox jumps over the lazy dog.</span></div>
-        <div style="display:grid;padding-block:var(--spacing-4);padding-inline-end:var(--spacing-6);border-block-end:var(--border-width) solid var(--color-border)"><strong class="text-context-title">helper</strong><span class="text-code-label text-color-helper">--text-helper</span></div>
-        <div style="padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)"><span class="text-helper" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض حجم النص ومدى وضوحه.">The quick brown fox jumps over the lazy dog.</span></div>
-        <div style="display:grid;padding-block:var(--spacing-4);padding-inline-end:var(--spacing-6);border-block-end:var(--border-width) solid var(--color-border)"><strong class="text-context-title">code-block</strong><span class="text-code-label text-color-helper">--text-code-block</span></div>
-        <div style="padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)"><span class="text-code">--text-body: var(--text-body3);</span></div>
-        <div style="display:grid;padding-block:var(--spacing-4);padding-inline-end:var(--spacing-6);border-block-end:var(--border-width) solid var(--color-border)"><strong class="text-context-title">code-label</strong><span class="text-code-label text-color-helper">--text-code-label</span></div>
-        <div style="padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border)"><span class="text-code-label">--text-body: var(--text-body3);</span></div>
+      <div style="display: grid; gap: var(--spacing-5);">
+        <div class="page-row-header">
+          <div>
+            <h4 class="page-row-header-title">page-title</h4>
+            <p class="page-row-header-description" data-en="The largest heading size, for a page's own title." data-ar="أكبر حجم عنوان، لعنوان الصفحة نفسها.">The largest heading size, for a page's own title.</p>
+          </div>
+          <div>
+            <div class="page-cluster">
+              <div class="page-column-header">
+                <span class="text-page-title" data-en="Heading" data-ar="عنوان">Heading</span>
+                <span class="text-code-label text-color-helper">--text-page-title</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="page-row-header">
+          <div>
+            <h4 class="page-row-header-title">section-title</h4>
+            <p class="page-row-header-description" data-en="The heading size for a page's major sections." data-ar="حجم العنوان لأقسام الصفحة الرئيسية.">The heading size for a page's major sections.</p>
+          </div>
+          <div>
+            <div class="page-cluster">
+              <div class="page-column-header">
+                <span class="text-section-title" data-en="Heading" data-ar="عنوان">Heading</span>
+                <span class="text-code-label text-color-helper">--text-section-title</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="page-row-header">
+          <div>
+            <h4 class="page-row-header-title">subsection-title</h4>
+            <p class="page-row-header-description" data-en="The heading size for a section's subdivisions." data-ar="حجم العنوان لتقسيمات القسم الفرعية.">The heading size for a section's subdivisions.</p>
+          </div>
+          <div>
+            <div class="page-cluster">
+              <div class="page-column-header">
+                <span class="text-subsection-title" data-en="Heading" data-ar="عنوان">Heading</span>
+                <span class="text-code-label text-color-helper">--text-subsection-title</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="page-row-header">
+          <div>
+            <h4 class="page-row-header-title">minor-heading</h4>
+            <p class="page-row-header-description" data-en="A smaller heading size, for compact groupings." data-ar="حجم عنوان أصغر، للتجميعات المضغوطة.">A smaller heading size, for compact groupings.</p>
+          </div>
+          <div>
+            <div class="page-cluster">
+              <div class="page-column-header">
+                <span class="text-minor-heading" data-en="Heading" data-ar="عنوان">Heading</span>
+                <span class="text-code-label text-color-helper">--text-minor-heading</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="page-row-header">
+          <div>
+            <h4 class="page-row-header-title">context-title</h4>
+            <p class="page-row-header-description" data-en="A label-like heading for naming a contained region, like a card." data-ar="عنوان شبيه بالوسم لتسمية منطقة محتواة، كالبطاقة.">A label-like heading for naming a contained region, like a card.</p>
+          </div>
+          <div>
+            <div class="page-cluster">
+              <div class="page-column-header">
+                <span class="text-context-title" data-en="Context title" data-ar="عنوان سياقي">Context title</span>
+                <span class="text-code-label text-color-helper">--text-context-title</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="page-row-header">
+          <div>
+            <h4 class="page-row-header-title">body</h4>
+            <p class="page-row-header-description" data-en="The default running-text size." data-ar="حجم النص الجاري الافتراضي.">The default running-text size.</p>
+          </div>
+          <div>
+            <div class="page-cluster">
+              <div class="page-column-header">
+                <span class="text-body" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض حجم النص ومدى وضوحه.">The quick brown fox jumps over the lazy dog.</span>
+                <span class="text-code-label text-color-helper">--text-body</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="page-row-header">
+          <div>
+            <h4 class="page-row-header-title">label</h4>
+            <p class="page-row-header-description" data-en="A small size for form and UI labels." data-ar="حجم صغير لوسوم النماذج والواجهة.">A small size for form and UI labels.</p>
+          </div>
+          <div>
+            <div class="page-cluster">
+              <div class="page-column-header">
+                <span class="text-label" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض حجم النص ومدى وضوحه.">The quick brown fox jumps over the lazy dog.</span>
+                <span class="text-code-label text-color-helper">--text-label</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="page-row-header">
+          <div>
+            <h4 class="page-row-header-title">helper</h4>
+            <p class="page-row-header-description" data-en="The smallest size, for hint and helper text." data-ar="أصغر حجم، لنصوص التلميح والمساعدة.">The smallest size, for hint and helper text.</p>
+          </div>
+          <div>
+            <div class="page-cluster">
+              <div class="page-column-header">
+                <span class="text-helper" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض حجم النص ومدى وضوحه.">The quick brown fox jumps over the lazy dog.</span>
+                <span class="text-code-label text-color-helper">--text-helper</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="page-row-header">
+          <div>
+            <h4 class="page-row-header-title">code-block</h4>
+            <p class="page-row-header-description" data-en="The size for multi-line code blocks." data-ar="الحجم لكتل الشيفرة متعددة الأسطر.">The size for multi-line code blocks.</p>
+          </div>
+          <div>
+            <div class="page-cluster">
+              <div class="page-column-header">
+                <span class="text-code">--text-body: var(--text-body3);</span>
+                <span class="text-code-label text-color-helper">--text-code-block</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="page-row-header">
+          <div>
+            <h4 class="page-row-header-title">code-label</h4>
+            <p class="page-row-header-description" data-en="The size for inline code and token labels." data-ar="الحجم للشيفرة السطرية ووسوم الرموز.">The size for inline code and token labels.</p>
+          </div>
+          <div>
+            <div class="page-cluster">
+              <div class="page-column-header">
+                <span class="text-code-label">--text-body: var(--text-body3);</span>
+                <span class="text-code-label text-color-helper">--text-code-label</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
     <section class="page-section">
       <h3 class="text-section-title" data-en="Weight roles" data-ar="أدوار الوزن">Weight roles</h3>
-      <div style="display:grid;grid-template-columns:max-content minmax(0,1fr);align-items:baseline">
-        <div style="display:grid;padding-block:var(--spacing-4);padding-inline-end:var(--spacing-6);border-block-end:var(--border-width) solid var(--color-border)"><strong class="text-context-title">page-title</strong><span class="text-code-label text-color-helper">--weight-page-title</span></div>
-        <div style="padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border);font-family:var(--font-heading);font-size:var(--text-subsection-title);font-weight:var(--weight-page-title)">Bravoixr</div>
-        <div style="display:grid;padding-block:var(--spacing-4);padding-inline-end:var(--spacing-6);border-block-end:var(--border-width) solid var(--color-border)"><strong class="text-context-title">section-title</strong><span class="text-code-label text-color-helper">--weight-section-title</span></div>
-        <div style="padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border);font-family:var(--font-heading);font-size:var(--text-subsection-title);font-weight:var(--weight-section-title)">Bravoixr</div>
-        <div style="display:grid;padding-block:var(--spacing-4);padding-inline-end:var(--spacing-6);border-block-end:var(--border-width) solid var(--color-border)"><strong class="text-context-title">subsection-title</strong><span class="text-code-label text-color-helper">--weight-subsection-title</span></div>
-        <div style="padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border);font-family:var(--font-heading);font-size:var(--text-subsection-title);font-weight:var(--weight-subsection-title)">Bravoixr</div>
-        <div style="display:grid;padding-block:var(--spacing-4);padding-inline-end:var(--spacing-6);border-block-end:var(--border-width) solid var(--color-border)"><strong class="text-context-title">minor-heading</strong><span class="text-code-label text-color-helper">--weight-minor-heading</span></div>
-        <div style="padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border);font-family:var(--font-heading);font-size:var(--text-subsection-title);font-weight:var(--weight-minor-heading)">Bravoixr</div>
-        <div style="display:grid;padding-block:var(--spacing-4);padding-inline-end:var(--spacing-6);border-block-end:var(--border-width) solid var(--color-border)"><strong class="text-context-title">context-title</strong><span class="text-code-label text-color-helper">--weight-context-title</span></div>
-        <div style="padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border);font-family:var(--font-heading);font-size:var(--text-subsection-title);font-weight:var(--weight-context-title)">Bravoixr</div>
-        <div style="display:grid;padding-block:var(--spacing-4);padding-inline-end:var(--spacing-6);border-block-end:var(--border-width) solid var(--color-border)"><strong class="text-context-title">body</strong><span class="text-code-label text-color-helper">--weight-body</span></div>
-        <div style="padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border);font-family:var(--font-heading);font-size:var(--text-subsection-title);font-weight:var(--weight-body)">Bravoixr</div>
-        <div style="display:grid;padding-block:var(--spacing-4);padding-inline-end:var(--spacing-6);border-block-end:var(--border-width) solid var(--color-border)"><strong class="text-context-title">label</strong><span class="text-code-label text-color-helper">--weight-label</span></div>
-        <div style="padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border);font-family:var(--font-heading);font-size:var(--text-subsection-title);font-weight:var(--weight-label)">Bravoixr</div>
-        <div style="display:grid;padding-block:var(--spacing-4);padding-inline-end:var(--spacing-6);border-block-end:var(--border-width) solid var(--color-border)"><strong class="text-context-title">helper</strong><span class="text-code-label text-color-helper">--weight-helper</span></div>
-        <div style="padding-block:var(--spacing-4);border-block-end:var(--border-width) solid var(--color-border);font-family:var(--font-heading);font-size:var(--text-subsection-title);font-weight:var(--weight-helper)">Bravoixr</div>
+      <div style="display: grid; gap: var(--spacing-5);">
+        <div class="page-row-header">
+          <div>
+            <h4 class="page-row-header-title">page-title</h4>
+            <p class="page-row-header-description" data-en="The font weight for a page's own title." data-ar="وزن الخط لعنوان الصفحة نفسها.">The font weight for a page's own title.</p>
+          </div>
+          <div>
+            <div class="page-cluster">
+              <div class="page-column-header">
+                <div style="font-family:var(--font-heading);font-size:var(--text-subsection-title);font-weight:var(--weight-page-title)">Bravoixr</div>
+                <span class="text-code-label text-color-helper">--weight-page-title</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="page-row-header">
+          <div>
+            <h4 class="page-row-header-title">section-title</h4>
+            <p class="page-row-header-description" data-en="The font weight for a page's major sections." data-ar="وزن الخط لأقسام الصفحة الرئيسية.">The font weight for a page's major sections.</p>
+          </div>
+          <div>
+            <div class="page-cluster">
+              <div class="page-column-header">
+                <div style="font-family:var(--font-heading);font-size:var(--text-subsection-title);font-weight:var(--weight-section-title)">Bravoixr</div>
+                <span class="text-code-label text-color-helper">--weight-section-title</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="page-row-header">
+          <div>
+            <h4 class="page-row-header-title">subsection-title</h4>
+            <p class="page-row-header-description" data-en="The font weight for a section's subdivisions." data-ar="وزن الخط لتقسيمات القسم الفرعية.">The font weight for a section's subdivisions.</p>
+          </div>
+          <div>
+            <div class="page-cluster">
+              <div class="page-column-header">
+                <div style="font-family:var(--font-heading);font-size:var(--text-subsection-title);font-weight:var(--weight-subsection-title)">Bravoixr</div>
+                <span class="text-code-label text-color-helper">--weight-subsection-title</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="page-row-header">
+          <div>
+            <h4 class="page-row-header-title">minor-heading</h4>
+            <p class="page-row-header-description" data-en="The font weight for smaller, compact headings." data-ar="وزن الخط للعناوين الأصغر والمضغوطة.">The font weight for smaller, compact headings.</p>
+          </div>
+          <div>
+            <div class="page-cluster">
+              <div class="page-column-header">
+                <div style="font-family:var(--font-heading);font-size:var(--text-subsection-title);font-weight:var(--weight-minor-heading)">Bravoixr</div>
+                <span class="text-code-label text-color-helper">--weight-minor-heading</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="page-row-header">
+          <div>
+            <h4 class="page-row-header-title">context-title</h4>
+            <p class="page-row-header-description" data-en="The font weight for contained-region labels, like a card title." data-ar="وزن الخط لوسوم المناطق المحتواة، كعنوان البطاقة.">The font weight for contained-region labels, like a card title.</p>
+          </div>
+          <div>
+            <div class="page-cluster">
+              <div class="page-column-header">
+                <div style="font-family:var(--font-heading);font-size:var(--text-subsection-title);font-weight:var(--weight-context-title)">Bravoixr</div>
+                <span class="text-code-label text-color-helper">--weight-context-title</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="page-row-header">
+          <div>
+            <h4 class="page-row-header-title">body</h4>
+            <p class="page-row-header-description" data-en="The font weight for running text." data-ar="وزن الخط للنص الجاري.">The font weight for running text.</p>
+          </div>
+          <div>
+            <div class="page-cluster">
+              <div class="page-column-header">
+                <div style="font-family:var(--font-heading);font-size:var(--text-subsection-title);font-weight:var(--weight-body)">Bravoixr</div>
+                <span class="text-code-label text-color-helper">--weight-body</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="page-row-header">
+          <div>
+            <h4 class="page-row-header-title">label</h4>
+            <p class="page-row-header-description" data-en="The font weight for form and UI labels." data-ar="وزن الخط لوسوم النماذج والواجهة.">The font weight for form and UI labels.</p>
+          </div>
+          <div>
+            <div class="page-cluster">
+              <div class="page-column-header">
+                <div style="font-family:var(--font-heading);font-size:var(--text-subsection-title);font-weight:var(--weight-label)">Bravoixr</div>
+                <span class="text-code-label text-color-helper">--weight-label</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="page-row-header">
+          <div>
+            <h4 class="page-row-header-title">helper</h4>
+            <p class="page-row-header-description" data-en="The font weight for hint and helper text." data-ar="وزن الخط لنصوص التلميح والمساعدة.">The font weight for hint and helper text.</p>
+          </div>
+          <div>
+            <div class="page-cluster">
+              <div class="page-column-header">
+                <div style="font-family:var(--font-heading);font-size:var(--text-subsection-title);font-weight:var(--weight-helper)">Bravoixr</div>
+                <span class="text-code-label text-color-helper">--weight-helper</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="page-section">
-      <h3 class="text-section-title" data-en="Line-height roles" data-ar="أدوار تباعد الأسطر">Line-height roles</h3>
-      <div style="display:grid;grid-template-columns:max-content max-content;align-items:baseline">
-        <span class="text-code-label text-color-helper" style="padding-block:var(--spacing-3);padding-inline-end:var(--spacing-5);border-block-end:var(--border-width) solid var(--color-border)">--leading-display</span><span class="text-color-normal" style="padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)" data-en="1.1 — headings" data-ar="1.1 — العناوين">1.1 — headings</span>
-        <span class="text-code-label text-color-helper" style="padding-block:var(--spacing-3);padding-inline-end:var(--spacing-5);border-block-end:var(--border-width) solid var(--color-border)">--leading-prose</span><span class="text-color-normal" style="padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)" data-en="1.6 Latin · 1.7 Arabic (scripted)" data-ar="1.6 لاتيني · 1.7 عربي (حسب النصّ)">1.6 Latin · 1.7 Arabic (scripted)</span>
-        <span class="text-code-label text-color-helper" style="padding-block:var(--spacing-3);padding-inline-end:var(--spacing-5);border-block-end:var(--border-width) solid var(--color-border)">--leading-code-block</span><span class="text-color-normal" style="padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)" data-en="1.5 — code" data-ar="1.5 — الشيفرة">1.5 — code</span>
+    <section class="page-section page-row-header">
+      <div>
+        <h3 class="page-row-header-title" data-en="Line-height roles" data-ar="أدوار تباعد الأسطر">Line-height roles</h3>
+        <p class="page-row-header-description" data-en="Leading steps for headings, prose, and code, tuned per script." data-ar="درجات تباعد الأسطر للعناوين والنص والشيفرة، مضبوطة بحسب النص.">Leading steps for headings, prose, and code, tuned per script.</p>
+      </div>
+      <div>
+        <div class="page-cluster">
+          <div class="page-column-header">
+            <span class="text-color-normal" data-en="1.1 — headings" data-ar="1.1 — العناوين">1.1 — headings</span>
+            <span class="text-code-label text-color-helper">--leading-display</span>
+          </div>
+          <div class="page-column-header">
+            <span class="text-color-normal" data-en="1.6 Latin · 1.7 Arabic (scripted)" data-ar="1.6 لاتيني · 1.7 عربي (حسب النصّ)">1.6 Latin · 1.7 Arabic (scripted)</span>
+            <span class="text-code-label text-color-helper">--leading-prose</span>
+          </div>
+          <div class="page-column-header">
+            <span class="text-color-normal" data-en="1.5 — code" data-ar="1.5 — الشيفرة">1.5 — code</span>
+            <span class="text-code-label text-color-helper">--leading-code-block</span>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="page-section">
-      <h3 class="text-section-title" data-en="Letter-spacing roles" data-ar="أدوار تباعد الأحرف">Letter-spacing roles</h3>
-      <div style="display:grid;grid-template-columns:max-content max-content;align-items:baseline">
-        <span class="text-code-label text-color-helper" style="padding-block:var(--spacing-3);padding-inline-end:var(--spacing-5);border-block-end:var(--border-width) solid var(--color-border)">--tracking-display</span><span class="text-color-normal" style="padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)" data-en="-0.02em Latin · 0 Arabic (scripted)" data-ar="-0.02em لاتيني · 0 عربي (حسب النصّ)">-0.02em Latin · 0 Arabic (scripted)</span>
-        <span class="text-code-label text-color-helper" style="padding-block:var(--spacing-3);padding-inline-end:var(--spacing-5);border-block-end:var(--border-width) solid var(--color-border)">--tracking-prose</span><span class="text-color-normal" style="padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)">0</span>
-        <span class="text-code-label text-color-helper" style="padding-block:var(--spacing-3);padding-inline-end:var(--spacing-5);border-block-end:var(--border-width) solid var(--color-border)">--tracking-uppercase</span><span class="text-color-normal" style="padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)" data-en="0.06em Latin · 0 Arabic (scripted)" data-ar="0.06em لاتيني · 0 عربي (حسب النصّ)">0.06em Latin · 0 Arabic (scripted)</span>
+    <section class="page-section page-row-header">
+      <div>
+        <h3 class="page-row-header-title" data-en="Letter-spacing roles" data-ar="أدوار تباعد الأحرف">Letter-spacing roles</h3>
+        <p class="page-row-header-description" data-en="Tracking steps for headings, prose, and all-caps text, tuned per script." data-ar="درجات تباعد الأحرف للعناوين والنص والأحرف الكبيرة، مضبوطة بحسب النص.">Tracking steps for headings, prose, and all-caps text, tuned per script.</p>
+      </div>
+      <div>
+        <div class="page-cluster">
+          <div class="page-column-header">
+            <span class="text-color-normal" data-en="-0.02em Latin · 0 Arabic (scripted)" data-ar="-0.02em لاتيني · 0 عربي (حسب النصّ)">-0.02em Latin · 0 Arabic (scripted)</span>
+            <span class="text-code-label text-color-helper">--tracking-display</span>
+          </div>
+          <div class="page-column-header">
+            <span class="text-color-normal">0</span>
+            <span class="text-code-label text-color-helper">--tracking-prose</span>
+          </div>
+          <div class="page-column-header">
+            <span class="text-color-normal" data-en="0.06em Latin · 0 Arabic (scripted)" data-ar="0.06em لاتيني · 0 عربي (حسب النصّ)">0.06em Latin · 0 Arabic (scripted)</span>
+            <span class="text-code-label text-color-helper">--tracking-uppercase</span>
+          </div>
+        </div>
       </div>
     </section>
 

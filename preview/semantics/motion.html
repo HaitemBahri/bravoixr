@@ -33,27 +33,66 @@
 
   <main class="page-body">
 
-    <h2 class="text-page-title" data-en="Semantic motion" data-ar="الحركة الدلالية">Semantic motion</h2>
-    <p class="text-page-description text-color-description" data-en="Duration and easing roles named for the surface they move — hover, panel, modal — mapped onto the raw scale. Hover a box to feel each easing role." data-ar="أدوار المدّة والتسارع مسمّاة بحسب السطح الذي تحرّكه — تمرير، لوحة، نافذة — مُسنَدة إلى المقياس الخام. مرّر فوق مربّع لتشعر بكل دور تسارع.">Duration and easing roles named for the surface they move — hover, panel, modal — mapped onto the raw scale. Hover a box to feel each easing role.</p>
-
     <section class="page-section">
-      <h3 class="text-section-title" data-en="Duration roles" data-ar="أدوار المدّة">Duration roles</h3>
-      <div style="display:grid;grid-template-columns:max-content max-content;align-items:baseline">
-        <span class="text-code-label text-color-helper" style="padding-block:var(--spacing-3);padding-inline-end:var(--spacing-5);border-block-end:var(--border-width) solid var(--color-border)">--duration-none</span><span class="text-color-normal" style="padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)">0ms</span>
-        <span class="text-code-label text-color-helper" style="padding-block:var(--spacing-3);padding-inline-end:var(--spacing-5);border-block-end:var(--border-width) solid var(--color-border)">--duration-hover</span><span class="text-color-normal" style="padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)">150ms</span>
-        <span class="text-code-label text-color-helper" style="padding-block:var(--spacing-3);padding-inline-end:var(--spacing-5);border-block-end:var(--border-width) solid var(--color-border)">--duration-default</span><span class="text-color-normal" style="padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)">200ms</span>
-        <span class="text-code-label text-color-helper" style="padding-block:var(--spacing-3);padding-inline-end:var(--spacing-5);border-block-end:var(--border-width) solid var(--color-border)">--duration-panel</span><span class="text-color-normal" style="padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)">300ms</span>
-        <span class="text-code-label text-color-helper" style="padding-block:var(--spacing-3);padding-inline-end:var(--spacing-5);border-block-end:var(--border-width) solid var(--color-border)">--duration-modal</span><span class="text-color-normal" style="padding-block:var(--spacing-3);border-block-end:var(--border-width) solid var(--color-border)">500ms</span>
+      <h2 class="text-page-title" data-en="Semantic motion" data-ar="الحركة الدلالية">Semantic motion</h2>
+      <p class="text-page-description text-color-description" data-en="Duration and easing roles named for the surface they move — hover, panel, modal — mapped onto the raw scale. Hover a box to feel each easing role." data-ar="أدوار المدّة والتسارع مسمّاة بحسب السطح الذي تحرّكه — تمرير، لوحة، نافذة — مُسنَدة إلى المقياس الخام. مرّر فوق مربّع لتشعر بكل دور تسارع.">Duration and easing roles named for the surface they move — hover, panel, modal — mapped onto the raw scale. Hover a box to feel each easing role.</p>
+    </section>
+
+    <section class="page-section page-row-header">
+      <div>
+        <h3 class="page-row-header-title" data-en="Duration roles" data-ar="أدوار المدّة">Duration roles</h3>
+        <p class="page-row-header-description" data-en="Timing values mapped onto the interaction that plays them, from hover to modal." data-ar="قيم التوقيت مُسنَدة إلى التفاعل الذي يُشغّلها، من التمرير إلى النافذة الحوارية.">Timing values mapped onto the interaction that plays them, from hover to modal.</p>
+      </div>
+      <div>
+        <div class="page-cluster">
+          <div class="page-column-header">
+            <span class="text-color-normal">0ms</span>
+            <span class="text-code-label text-color-helper">--duration-none</span>
+          </div>
+          <div class="page-column-header">
+            <span class="text-color-normal">150ms</span>
+            <span class="text-code-label text-color-helper">--duration-hover</span>
+          </div>
+          <div class="page-column-header">
+            <span class="text-color-normal">200ms</span>
+            <span class="text-code-label text-color-helper">--duration-default</span>
+          </div>
+          <div class="page-column-header">
+            <span class="text-color-normal">300ms</span>
+            <span class="text-code-label text-color-helper">--duration-panel</span>
+          </div>
+          <div class="page-column-header">
+            <span class="text-color-normal">500ms</span>
+            <span class="text-code-label text-color-helper">--duration-modal</span>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="page-section">
-      <h3 class="text-section-title" data-en="Easing roles (hover a box)" data-ar="أدوار التسارع (مرّر فوق مربّع)">Easing roles (hover a box)</h3>
-      <div style="display:flex;flex-wrap:wrap;gap:var(--spacing-7)">
-        <div style="display:grid;gap:var(--spacing-2);justify-items:center"><div style="inline-size:80px;block-size:80px;background:var(--color-secondary);border-radius:var(--radius-card);transition:transform var(--duration-modal) var(--ease-default)" data-motion-demo></div><span class="text-code-label text-color-helper">--ease-default</span></div>
-        <div style="display:grid;gap:var(--spacing-2);justify-items:center"><div style="inline-size:80px;block-size:80px;background:var(--color-secondary);border-radius:var(--radius-card);transition:transform var(--duration-modal) var(--ease-enter)" data-motion-demo></div><span class="text-code-label text-color-helper">--ease-enter</span></div>
-        <div style="display:grid;gap:var(--spacing-2);justify-items:center"><div style="inline-size:80px;block-size:80px;background:var(--color-secondary);border-radius:var(--radius-card);transition:transform var(--duration-modal) var(--ease-exit)" data-motion-demo></div><span class="text-code-label text-color-helper">--ease-exit</span></div>
-        <div style="display:grid;gap:var(--spacing-2);justify-items:center"><div style="inline-size:80px;block-size:80px;background:var(--color-secondary);border-radius:var(--radius-card);transition:transform var(--duration-modal) var(--ease-loop)" data-motion-demo></div><span class="text-code-label text-color-helper">--ease-loop</span></div>
+    <section class="page-section page-row-header">
+      <div>
+        <h3 class="page-row-header-title" data-en="Easing roles (hover a box)" data-ar="أدوار التسارع (مرّر فوق مربّع)">Easing roles (hover a box)</h3>
+        <p class="page-row-header-description" data-en="Named curves mapped onto motion intent — default, enter, exit, and loop." data-ar="منحنيات مسمّاة مُسنَدة إلى نيّة الحركة — افتراضي، دخول، خروج، وتكرار.">Named curves mapped onto motion intent — default, enter, exit, and loop.</p>
+      </div>
+      <div>
+        <div class="page-cluster">
+          <div class="page-column-header">
+            <div style="inline-size:80px;block-size:80px;background:var(--color-secondary);border-radius:var(--radius-card);transition:transform var(--duration-modal) var(--ease-default)" data-motion-demo></div>
+            <span class="text-code-label text-color-helper">--ease-default</span>
+          </div>
+          <div class="page-column-header">
+            <div style="inline-size:80px;block-size:80px;background:var(--color-secondary);border-radius:var(--radius-card);transition:transform var(--duration-modal) var(--ease-enter)" data-motion-demo></div>
+            <span class="text-code-label text-color-helper">--ease-enter</span>
+          </div>
+          <div class="page-column-header">
+            <div style="inline-size:80px;block-size:80px;background:var(--color-secondary);border-radius:var(--radius-card);transition:transform var(--duration-modal) var(--ease-exit)" data-motion-demo></div>
+            <span class="text-code-label text-color-helper">--ease-exit</span>
+          </div>
+          <div class="page-column-header">
+            <div style="inline-size:80px;block-size:80px;background:var(--color-secondary);border-radius:var(--radius-card);transition:transform var(--duration-modal) var(--ease-loop)" data-motion-demo></div>
+            <span class="text-code-label text-color-helper">--ease-loop</span>
+          </div>
+        </div>
       </div>
     </section>
 

@@ -20,6 +20,7 @@
 
   /* Sizing */
   --size-control: 40px;
+  --size-control-sm: 20px;
   --size-card-min: 220px;
   --size-sidebar: 280px;
   --size-row-header: 200px;

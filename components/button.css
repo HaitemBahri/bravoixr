@@ -71,7 +71,10 @@
 .btn-solid-error:hover        { background: var(--color-error-hover); }
 .btn-solid-error:active       { background: var(--color-error-active); }
 
-/* Fill — text: transparent, primary-blue label; faint surface on hover. */
+/* Fill — text: transparent, primary-blue label; faint surface on hover,
+ * a step darker on press. The surface step (not just the label color) is what
+ * makes pressed legible — a bare label-color shift is too subtle to read
+ * during a real click, which is often faster than the hover transition. */
 .btn-text {
   background: transparent;
   color: var(--color-primary);
@@ -83,6 +86,7 @@
 }
 
 .btn-text:active {
+  background: var(--color-border);
   color: var(--color-primary-active);
 }
 

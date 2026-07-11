@@ -135,3 +135,20 @@
 .text-color-helper {
   color: var(--color-text-subtle);
 }
+
+/* Status colors — for helper/caption text that must carry validation meaning
+ * (e.g. an input's error/warning/success helper), composed the same way as
+ * the trio above. Not a full five-role set on purpose: primary/secondary are
+ * brand colors with no inherent validation meaning, so their helper text
+ * stays neutral (.text-color-helper). */
+.text-color-error {
+  color: var(--color-error);
+}
+
+.text-color-warning {
+  color: var(--color-warning);
+}
+
+.text-color-success {
+  color: var(--color-success);
+}

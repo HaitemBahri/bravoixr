@@ -10,6 +10,7 @@
 .toggle {
   appearance: none;
   margin: 0;
+  vertical-align: middle;
   cursor: pointer;
   transition:
     background var(--duration-hover) var(--ease-default),
@@ -193,6 +194,16 @@
 .toggle-radio-warning::after     { background: var(--color-warning); }
 .toggle-radio-error:checked      { border-color: var(--color-error); }
 .toggle-radio-error::after       { background: var(--color-error); }
+
+/* Radio group — stacks a set of same-name radios in a labelled vertical list.
+ * align-items: start keeps each row flush to the group's inline-start edge
+ * (flipping to the right under RTL) instead of centering ragged label widths. */
+.toggle-radio-group {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: var(--spacing-3);
+}
 
 /* Chip — a <label> is the visible surface; the input inside it is visually
  * hidden (not display:none, which would drop it from the accessibility tree

@@ -26,6 +26,14 @@
   cursor: not-allowed;
 }
 
+/* Row — wraps a switch/checkbox/radio input together with its label, laid out
+ * horizontally with a consistent gap between them. */
+.toggle-row {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4);
+}
+
 /* Switch — track width stays keyed to the full --control-height (the same 40px
  * control rhythm as .btn/.input); track height/box-size is --control-height-sm.
  * The thumb is a ::before that slides between the track's logical edges —

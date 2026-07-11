@@ -120,6 +120,17 @@
   align-items: start;
 }
 
+/* A vertical stack — items sit block-start to block-end with a consistent gap
+ * between them. Items keep their own inline size (align-items: start) rather
+ * than stretching to the container's width, mirroring .page-cluster's ragged-fit
+ * behavior for its cross axis. */
+.page-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-5);
+  align-items: start;
+}
+
 /* A two-column label row — a fixed-width title column then content filling the
  * rest, aligned to the block-start so a tall value doesn't drag the label down. */
 .page-row-header {

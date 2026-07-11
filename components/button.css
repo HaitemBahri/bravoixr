@@ -91,6 +91,7 @@
 }
 
 .btn-text:disabled {
+  background: transparent; /* reclaim hover/active's background so disabled never shows either */
   color: var(--color-text-subtle);
 }
 

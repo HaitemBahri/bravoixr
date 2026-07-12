@@ -148,17 +148,18 @@ Tight for headings, roomy for body — this is where "airy reading comfort" live
 Type responds to viewport by **shifting which scale step a role uses**, reusing the one fixed ladder
 — no fluid `calc()`, so the values stay portable to non-web targets.
 
-**Headings — the "elevator":** four heading roles are visible at once, and each shifts **one step
+**Headings — the "elevator":** five heading roles are visible at once, and each shifts **one step
 down per breakpoint** across the seven-step ladder.
 
 | Role | Desktop | Tablet | Mobile |
 | -- | -- | -- | -- |
+| Hero | `h1` | `h2` | `h3` |
 | Page title | `h2` | `h3` | `h4` |
 | Section title | `h3` | `h4` | `h5` |
 | Subsection title | `h4` | `h5` | `h6` |
 | Minor heading | `h5` | `h6` | `h7` |
 
-_Why: one ladder serves every breakpoint; desktop uses steps `h2`–`h5`, mobile the bottom four (`h4`–`h7`), so nothing overflows the scale. `h1` stays as the ramp's top step but no role consumes it._
+_Why: one ladder serves every breakpoint; desktop uses steps `h1`–`h5`, mobile the bottom five (`h3`–`h7`), so nothing overflows the scale. The hero role sits at the ramp's top step (`h1`)._
 
 **Body:** the responsive body roles are the **context title**, the **project title**, and the
 **page description** — each is `body1` on desktop and **`body2` on tablet and mobile** (steps once
@@ -173,8 +174,8 @@ weight **300**, so it sits quiet and airy beneath the title. Both ride the body 
 (`body1` → `body2`, once) and switch script like every other role.
   _Why: the wordmark and lede are reused on every page, so each earns a named role rather than borrowing the context title._
 
-- **The seven-step ladder carries four heading levels, each shifted one step down from the ramp's top.**
-  _Why: the four roles run `h2`→`h5` on desktop and `h4`→`h7` on mobile; a fifth heading level would need a step below `h7` on mobile, which the ladder doesn't have._
+- **The seven-step ladder carries five heading levels, each shifted one step down per breakpoint.**
+  _Why: the five roles run `h1`→`h5` on desktop and `h3`→`h7` on mobile; a sixth heading level would need a step below `h7` on mobile, which the ladder doesn't have._
 - **Size step ≠ HTML element.** A page title stays an `<h1>` on every breakpoint; only the size
   step it renders at changes.
   _Why: document structure (and its accessibility/SEO meaning) must not change with the viewport._

@@ -10,6 +10,7 @@
   --font-code: var(--font-mono);
 
   /* Size roles (desktop steps) */
+  --text-hero: var(--text-h1);
   --text-page-title: var(--text-h2);
   --text-section-title: var(--text-h3);
   --text-subsection-title: var(--text-h4);
@@ -27,6 +28,7 @@
   --measure-page-description: var(--measure-prose);
 
   /* Weight roles (per typography.md role map; --weight-body and --weight-page-description are scripted, see the dir blocks) */
+  --weight-hero: var(--weight-bold);
   --weight-page-title: var(--weight-bold);
   --weight-section-title: var(--weight-bold);
   --weight-subsection-title: var(--weight-semibold);
@@ -89,6 +91,7 @@
  * context title, page description) step once to body2 and hold below. */
 @media (max-width: 1023.98px) {
   :root {
+    --text-hero: var(--text-h2);
     --text-page-title: var(--text-h3);
     --text-section-title: var(--text-h4);
     --text-subsection-title: var(--text-h5);
@@ -102,6 +105,7 @@
 /* Mobile (<768): headings drop one more step; the context title holds body2 from the band above. */
 @media (max-width: 767.98px) {
   :root {
+    --text-hero: var(--text-h3);
     --text-page-title: var(--text-h4);
     --text-section-title: var(--text-h5);
     --text-subsection-title: var(--text-h6);

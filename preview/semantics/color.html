@@ -41,18 +41,18 @@
     <section class="page-section">
       <h3 class="text-section-title" data-en="Brand" data-ar="العلامة">Brand</h3>
       <div style="display: grid; gap: var(--spacing-5);">
-        <div class="page-row-header" data-base="--color-primary" data-label="primary" data-desc-en="The main brand color and its interactive states." data-desc-ar="لون العلامة التجارية الأساسي وحالاته التفاعلية."></div>
-        <div class="page-row-header" data-base="--color-secondary" data-label="secondary" data-desc-en="The supporting brand color and its interactive states." data-desc-ar="لون العلامة التجارية الثانوي وحالاته التفاعلية."></div>
+        <div class="page-row-header" data-base="--color-primary" data-label="primary" data-label-ar="أساسي" data-desc-en="The main brand color and its interactive states." data-desc-ar="لون العلامة التجارية الأساسي وحالاته التفاعلية."></div>
+        <div class="page-row-header" data-base="--color-secondary" data-label="secondary" data-label-ar="ثانوي" data-desc-en="The supporting brand color and its interactive states." data-desc-ar="لون العلامة التجارية الثانوي وحالاته التفاعلية."></div>
       </div>
     </section>
 
     <section class="page-section">
       <h3 class="text-section-title" data-en="Status" data-ar="الحالة">Status</h3>
       <div style="display: grid; gap: var(--spacing-5);">
-        <div class="page-row-header" data-base="--color-success" data-label="success" data-desc-en="Confirms a positive or completed outcome." data-desc-ar="يؤكّد نتيجة إيجابية أو مكتملة."></div>
-        <div class="page-row-header" data-base="--color-warning" data-label="warning" data-desc-en="Flags a state that needs attention before it becomes an error." data-desc-ar="يُنبّه إلى حالة تستدعي الانتباه قبل أن تتحوّل إلى خطأ."></div>
-        <div class="page-row-header" data-base="--color-error" data-label="error" data-desc-en="Signals a failure or invalid state." data-desc-ar="يشير إلى فشل أو حالة غير صالحة."></div>
-        <div class="page-row-header" data-base="--color-info" data-label="info" data-desc-en="Highlights neutral, non-urgent information." data-desc-ar="يبرز معلومة محايدة غير عاجلة."></div>
+        <div class="page-row-header" data-base="--color-success" data-label="success" data-label-ar="نجاح" data-desc-en="Confirms a positive or completed outcome." data-desc-ar="يؤكّد نتيجة إيجابية أو مكتملة."></div>
+        <div class="page-row-header" data-base="--color-warning" data-label="warning" data-label-ar="تحذير" data-desc-en="Flags a state that needs attention before it becomes an error." data-desc-ar="يُنبّه إلى حالة تستدعي الانتباه قبل أن تتحوّل إلى خطأ."></div>
+        <div class="page-row-header" data-base="--color-error" data-label="error" data-label-ar="خطأ" data-desc-en="Signals a failure or invalid state." data-desc-ar="يشير إلى فشل أو حالة غير صالحة."></div>
+        <div class="page-row-header" data-base="--color-info" data-label="info" data-label-ar="معلومات" data-desc-en="Highlights neutral, non-urgent information." data-desc-ar="يبرز معلومة محايدة غير عاجلة."></div>
       </div>
     </section>
 
@@ -130,6 +130,9 @@
         var rail = document.createElement('div');
         var heading = document.createElement('h4');
         heading.className = 'page-row-header-title';
+        heading.setAttribute('data-en', title);
+        var titleAr = row.getAttribute('data-label-ar');
+        if (titleAr) heading.setAttribute('data-ar', titleAr);
         heading.textContent = title;
         rail.appendChild(heading);
 

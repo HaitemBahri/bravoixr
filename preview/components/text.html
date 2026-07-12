@@ -39,26 +39,38 @@
     </section>
 
     <!-- Each group is a section titled by its name; every sample inside is its own
-         page-row-header (name-only rail + the live specimen). The samples are
-         grid-gapped since page-row-headers carry no inter-row margin. -->
+         page-row-header (title + description rail beside the live specimen). The
+         samples are grid-gapped since page-row-headers carry no inter-row margin. -->
 
     <section class="page-section">
       <h3 class="text-section-title" data-en="Headings" data-ar="العناوين">Headings</h3>
       <div style="display: grid; gap: var(--spacing-5);">
         <div class="page-row-header">
-          <div><h4 class="page-row-header-title">page-title</h4></div>
+          <div>
+            <h4 class="page-row-header-title" data-en="Page Title" data-ar="عنوان الصفحة">Page Title</h4>
+            <p class="page-row-header-description" data-en="The page's own title — the largest, boldest heading." data-ar="عنوان الصفحة نفسها — أكبر العناوين وأعرضها.">The page's own title — the largest, boldest heading.</p>
+          </div>
           <div><div class="text-page-title" data-en="The bold headline" data-ar="العنوان العريض">The bold headline</div></div>
         </div>
         <div class="page-row-header">
-          <div><h4 class="page-row-header-title">section-title</h4></div>
+          <div>
+            <h4 class="page-row-header-title" data-en="Section Title" data-ar="عنوان القسم">Section Title</h4>
+            <p class="page-row-header-description" data-en="The heading for a page's major sections." data-ar="عنوان أقسام الصفحة الرئيسية.">The heading for a page's major sections.</p>
+          </div>
           <div><div class="text-section-title" data-en="The bold headline" data-ar="العنوان العريض">The bold headline</div></div>
         </div>
         <div class="page-row-header">
-          <div><h4 class="page-row-header-title">subsection-title</h4></div>
+          <div>
+            <h4 class="page-row-header-title" data-en="Subsection Title" data-ar="عنوان القسم الفرعي">Subsection Title</h4>
+            <p class="page-row-header-description" data-en="The heading for subdivisions within a section." data-ar="عنوان التقسيمات الفرعية داخل القسم.">The heading for subdivisions within a section.</p>
+          </div>
           <div><div class="text-subsection-title" data-en="The bold headline" data-ar="العنوان العريض">The bold headline</div></div>
         </div>
         <div class="page-row-header">
-          <div><h4 class="page-row-header-title">minor-heading</h4></div>
+          <div>
+            <h4 class="page-row-header-title" data-en="Minor Heading" data-ar="عنوان ثانوي">Minor Heading</h4>
+            <p class="page-row-header-description" data-en="A smaller heading for compact groupings." data-ar="عنوان أصغر للتجميعات المضغوطة.">A smaller heading for compact groupings.</p>
+          </div>
           <div><div class="text-minor-heading" data-en="The bold headline" data-ar="العنوان العريض">The bold headline</div></div>
         </div>
       </div>
@@ -68,11 +80,17 @@
       <h3 class="text-section-title" data-en="Page structure" data-ar="بنية الصفحة">Page structure</h3>
       <div style="display: grid; gap: var(--spacing-5);">
         <div class="page-row-header">
-          <div><h4 class="page-row-header-title">project-title</h4></div>
+          <div>
+            <h4 class="page-row-header-title" data-en="Project Title" data-ar="عنوان المشروع">Project Title</h4>
+            <p class="page-row-header-description" data-en="The wordmark-style title in the topbar." data-ar="العنوان بأسلوب العلامة اللفظية في الشريط العلوي.">The wordmark-style title in the topbar.</p>
+          </div>
           <div><div class="text-project-title" data-en="bravoixr" data-ar="bravoixr">bravoixr</div></div>
         </div>
         <div class="page-row-header">
-          <div><h4 class="page-row-header-title">page-description</h4></div>
+          <div>
+            <h4 class="page-row-header-title" data-en="Page Description" data-ar="وصف الصفحة">Page Description</h4>
+            <p class="page-row-header-description" data-en="A quiet lede beneath the page title." data-ar="سطر تمهيدي هادئ تحت عنوان الصفحة.">A quiet lede beneath the page title.</p>
+          </div>
           <div><div class="text-page-description" data-en="A quiet, airy lede that sits under the page title." data-ar="سطر تمهيدي هادئ يقع تحت عنوان الصفحة.">A quiet, airy lede that sits under the page title.</div></div>
         </div>
       </div>
@@ -82,19 +100,31 @@
       <h3 class="text-section-title" data-en="Body" data-ar="النص">Body</h3>
       <div style="display: grid; gap: var(--spacing-5);">
         <div class="page-row-header">
-          <div><h4 class="page-row-header-title">context-title</h4></div>
+          <div>
+            <h4 class="page-row-header-title" data-en="Context Title" data-ar="عنوان سياقي">Context Title</h4>
+            <p class="page-row-header-description" data-en="A label-like heading naming a contained region." data-ar="عنوان شبيه بالوسم يسمّي منطقة محتواة.">A label-like heading naming a contained region.</p>
+          </div>
           <div><div class="text-context-title" data-en="Context title" data-ar="عنوان سياقي">Context title</div></div>
         </div>
         <div class="page-row-header">
-          <div><h4 class="page-row-header-title">body</h4></div>
+          <div>
+            <h4 class="page-row-header-title" data-en="Body" data-ar="نص">Body</h4>
+            <p class="page-row-header-description" data-en="The default running-text style." data-ar="نمط النص الجاري الافتراضي.">The default running-text style.</p>
+          </div>
           <div><div class="text-body" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض العائلة والحجم ومدى الوضوح.">The quick brown fox jumps over the lazy dog.</div></div>
         </div>
         <div class="page-row-header">
-          <div><h4 class="page-row-header-title">label</h4></div>
+          <div>
+            <h4 class="page-row-header-title" data-en="Label" data-ar="تسمية">Label</h4>
+            <p class="page-row-header-description" data-en="Small text for form and UI labels." data-ar="نص صغير لوسوم النماذج والواجهة.">Small text for form and UI labels.</p>
+          </div>
           <div><div class="text-label" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض العائلة والحجم ومدى الوضوح.">The quick brown fox jumps over the lazy dog.</div></div>
         </div>
         <div class="page-row-header">
-          <div><h4 class="page-row-header-title">helper</h4></div>
+          <div>
+            <h4 class="page-row-header-title" data-en="Helper" data-ar="مساعد">Helper</h4>
+            <p class="page-row-header-description" data-en="The smallest text, for hints and helper copy." data-ar="أصغر نص، للتلميحات ونصوص المساعدة.">The smallest text, for hints and helper copy.</p>
+          </div>
           <div><div class="text-helper" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض العائلة والحجم ومدى الوضوح.">The quick brown fox jumps over the lazy dog.</div></div>
         </div>
       </div>
@@ -104,11 +134,17 @@
       <h3 class="text-section-title" data-en="Code" data-ar="الشيفرة">Code</h3>
       <div style="display: grid; gap: var(--spacing-5);">
         <div class="page-row-header">
-          <div><h4 class="page-row-header-title">code</h4></div>
+          <div>
+            <h4 class="page-row-header-title" data-en="Code" data-ar="شيفرة">Code</h4>
+            <p class="page-row-header-description" data-en="Monospace style for multi-line code blocks." data-ar="نمط أحادي التباعد لكتل الشيفرة متعددة الأسطر.">Monospace style for multi-line code blocks.</p>
+          </div>
           <div><div class="text-code">--color-primary: var(--blue-600);</div></div>
         </div>
         <div class="page-row-header">
-          <div><h4 class="page-row-header-title">code-label</h4></div>
+          <div>
+            <h4 class="page-row-header-title" data-en="Code Label" data-ar="وسم الشيفرة">Code Label</h4>
+            <p class="page-row-header-description" data-en="Monospace style for inline code and token labels." data-ar="نمط أحادي التباعد للشيفرة السطرية ووسوم الرموز.">Monospace style for inline code and token labels.</p>
+          </div>
           <div><div class="text-code-label">--color-primary: var(--blue-600);</div></div>
         </div>
       </div>
@@ -118,15 +154,24 @@
       <h3 class="text-section-title" data-en="Text color" data-ar="لون النص">Text color</h3>
       <div style="display: grid; gap: var(--spacing-5);">
         <div class="page-row-header">
-          <div><h4 class="page-row-header-title">normal</h4></div>
+          <div>
+            <h4 class="page-row-header-title" data-en="Normal" data-ar="عادي">Normal</h4>
+            <p class="page-row-header-description" data-en="Default text color at full contrast." data-ar="لون النص الافتراضي بتباين كامل.">Default text color at full contrast.</p>
+          </div>
           <div><div class="text-body text-color-normal" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض لون النصّ الأساسي.">The quick brown fox jumps over the lazy dog.</div></div>
         </div>
         <div class="page-row-header">
-          <div><h4 class="page-row-header-title">description</h4></div>
+          <div>
+            <h4 class="page-row-header-title" data-en="Description" data-ar="وصف">Description</h4>
+            <p class="page-row-header-description" data-en="A muted color for secondary, descriptive text." data-ar="لون مخفّف للنص الثانوي الوصفي.">A muted color for secondary, descriptive text.</p>
+          </div>
           <div><div class="text-body text-color-description" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض لون الوصف المخفّف.">The quick brown fox jumps over the lazy dog.</div></div>
         </div>
         <div class="page-row-header">
-          <div><h4 class="page-row-header-title">helper</h4></div>
+          <div>
+            <h4 class="page-row-header-title" data-en="Helper" data-ar="مساعد">Helper</h4>
+            <p class="page-row-header-description" data-en="The faintest color, for hint and helper text." data-ar="أخفت لون، لنصوص التلميح والمساعدة.">The faintest color, for hint and helper text.</p>
+          </div>
           <div><div class="text-body text-color-helper" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض لون النصّ المساعد الخافت.">The quick brown fox jumps over the lazy dog.</div></div>
         </div>
       </div>

@@ -1,28 +1,28 @@
 /* Semantic — Icons
- * Role tokens mapped onto icon primitives via var(). Only --icon-grade is themed, so it lives
+ * Role tokens mapped onto icon primitives via var(). Only --bravoixr-icon-grade is themed, so it lives
  * solely in the explicit state blocks ([data-theme="light"] / [data-theme="dark"]) with no :root
  * fallback — keeping the toggle re-entrant at any nesting depth. The context-invariant tokens
  * (family, axes, sizes) stay in :root and resolve regardless of theme. */
 
 :root {
   /* Family + variable-font axes */
-  --icon-family: var(--icon-font);
-  --icon-weight: var(--icon-wght);
-  --icon-fill-axis: var(--icon-fill);
-  --icon-optical: var(--icon-opsz-floor);
+  --bravoixr-icon-family: var(--bravoixr-icon-font);
+  --bravoixr-icon-weight: var(--bravoixr-icon-wght);
+  --bravoixr-icon-fill-axis: var(--bravoixr-icon-fill);
+  --bravoixr-icon-optical: var(--bravoixr-icon-opsz-floor);
 
   /* Size roles — md is the default */
-  --icon-sm: var(--icon-size-sm);
-  --icon-md: var(--icon-size-md);
-  --icon-lg: var(--icon-size-lg);
-  --icon-xl: var(--icon-size-xl);
+  --bravoixr-icon-sm: var(--bravoixr-icon-size-sm);
+  --bravoixr-icon-md: var(--bravoixr-icon-size-md);
+  --bravoixr-icon-lg: var(--bravoixr-icon-size-lg);
+  --bravoixr-icon-xl: var(--bravoixr-icon-size-xl);
 }
 
 [data-theme="light"] {
-  --icon-grade: var(--icon-grade-light);
+  --bravoixr-icon-grade: var(--bravoixr-icon-grade-light);
 }
 
 [data-theme="dark"] {
   /* Lower grade counters stroke halation on dark surfaces */
-  --icon-grade: var(--icon-grade-dark);
+  --bravoixr-icon-grade: var(--bravoixr-icon-grade-dark);
 }

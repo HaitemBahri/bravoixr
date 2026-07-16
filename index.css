@@ -1,6 +1,14 @@
-/* bravoixr — single entry point.
- * Fixed import order: primitives → semantics → components. */
+/* bravoixr — single entry point (the daisyUI + Tailwind theme).
+ * A consuming app imports this after the daisyUI plugin, inside its Tailwind v4 build:
+ *
+ *   @import "tailwindcss";
+ *   @plugin "daisyui";
+ *   @import "bravoixr/index.css";
+ *
+ * Load order: primitives (literal source) -> semantics (--bravoixr-* roles) ->
+ * theme (maps those onto daisyUI's theme variables + Tailwind's type scale).
+ * Not standalone CSS: theme.css uses Tailwind @plugin/@theme/@utility directives. */
 
 @import "./primitives/index.css";
 @import "./semantics/index.css";
-@import "./components/index.css";
+@import "./theme.css";

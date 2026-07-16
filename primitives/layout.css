@@ -5,55 +5,55 @@
 
 :root {
   /* Spacing — 12-step ramp on a 4px base (rem in identity is documentation only) */
-  --space-1: 2px;
-  --space-2: 4px;
-  --space-3: 8px;
-  --space-4: 12px;
-  --space-5: 16px;
-  --space-6: 20px;
-  --space-7: 24px;
-  --space-8: 32px;
-  --space-9: 40px;
-  --space-10: 48px;
-  --space-11: 64px;
-  --space-12: 80px;
+  --bravoixr-space-1: 2px;
+  --bravoixr-space-2: 4px;
+  --bravoixr-space-3: 8px;
+  --bravoixr-space-4: 12px;
+  --bravoixr-space-5: 16px;
+  --bravoixr-space-6: 20px;
+  --bravoixr-space-7: 24px;
+  --bravoixr-space-8: 32px;
+  --bravoixr-space-9: 40px;
+  --bravoixr-space-10: 48px;
+  --bravoixr-space-11: 64px;
+  --bravoixr-space-12: 80px;
 
   /* Sizing */
-  --size-control: 40px;
-  --size-control-sm: 20px;
-  --size-card-min: 220px;
-  --size-sidebar: 280px;
-  --size-row-header: 200px;
-  --size-column-header: 48px;
+  --bravoixr-size-control: 40px;
+  --bravoixr-size-control-sm: 20px;
+  --bravoixr-size-card-min: 220px;
+  --bravoixr-size-sidebar: 280px;
+  --bravoixr-size-row-header: 200px;
+  --bravoixr-size-column-header: 48px;
 
   /* Radius — md default for controls, lg for cards */
-  --radius-none: 0;
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 12px;
-  --radius-xl: 16px;
-  --radius-full: 9999px;
+  --bravoixr-radius-none: 0;
+  --bravoixr-radius-sm: 4px;
+  --bravoixr-radius-md: 8px;
+  --bravoixr-radius-lg: 12px;
+  --bravoixr-radius-xl: 16px;
+  --bravoixr-radius-full: 9999px;
 
   /* Border widths */
-  --border-default: 1px;
-  --border-strong: 2px;
+  --bravoixr-border-default: 1px;
+  --bravoixr-border-strong: 2px;
 
   /* Elevation — cool-tinted shadows for floating layers (resting surfaces use borders) */
-  --shadow-sm: 0 1px 2px rgba(11, 12, 15, 0.06), 0 2px 8px rgba(11, 12, 15, 0.08);
-  --shadow-md: 0 4px 12px rgba(11, 12, 15, 0.10), 0 2px 4px rgba(11, 12, 15, 0.06);
-  --shadow-lg: 0 12px 32px rgba(11, 12, 15, 0.16), 0 4px 8px rgba(11, 12, 15, 0.08);
+  --bravoixr-shadow-sm: 0 1px 2px rgba(11, 12, 15, 0.06), 0 2px 8px rgba(11, 12, 15, 0.08);
+  --bravoixr-shadow-md: 0 4px 12px rgba(11, 12, 15, 0.10), 0 2px 4px rgba(11, 12, 15, 0.06);
+  --bravoixr-shadow-lg: 0 12px 32px rgba(11, 12, 15, 0.16), 0 4px 8px rgba(11, 12, 15, 0.08);
 
   /* Z-index — named stacking tiers */
-  --z-base: 0;
-  --z-sticky: 10;
-  --z-dropdown: 20;
-  --z-overlay: 30;
-  --z-modal: 40;
-  --z-popover: 50;
-  --z-toast: 60;
+  --bravoixr-z-base: 0;
+  --bravoixr-z-sticky: 10;
+  --bravoixr-z-dropdown: 20;
+  --bravoixr-z-overlay: 30;
+  --bravoixr-z-modal: 40;
+  --bravoixr-z-popover: 50;
+  --bravoixr-z-toast: 60;
 
   /* Breakpoints — thresholds splitting mobile / tablet / desktop, plus the max container tier */
-  --breakpoint-tablet: 768px;
-  --breakpoint-desktop: 1024px;
-  --breakpoint-max: 1280px;
+  --bravoixr-breakpoint-tablet: 768px;
+  --bravoixr-breakpoint-desktop: 1024px;
+  --bravoixr-breakpoint-max: 1280px;
 }

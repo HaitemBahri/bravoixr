@@ -1,0 +1,198 @@
+/* bravoixr — daisyUI + Tailwind theme layer.
+ * Maps the --bravoixr-* semantic tokens onto daisyUI's theme variables and
+ * Tailwind's type scale. A consuming app imports this AFTER the daisyUI plugin,
+ * inside its Tailwind build; the bravoixr token layers (primitives/, semantics/)
+ * are plain CSS and load before it via index.css.
+ *
+ * Requires Tailwind v4 + daisyUI 5. This file is not standalone CSS — the
+ * @plugin / @theme / @utility directives resolve only in a Tailwind build. */
+
+/* daisyUI themes — one var-set per named theme. Both bodies are identical: each
+ * resolves per context because the bravoixr color tokens re-point under [data-theme].
+ * The one switch (data-theme) drives bravoixr's tokens and daisyUI together. */
+@plugin "daisyui/theme" {
+  name: "light";
+  default: true;
+  color-scheme: light;
+
+  /* Brand + status roles */
+  --color-primary: var(--bravoixr-color-primary);
+  --color-secondary: var(--bravoixr-color-secondary);
+  --color-info: var(--bravoixr-color-info);
+  --color-success: var(--bravoixr-color-success);
+  --color-warning: var(--bravoixr-color-warning);
+  --color-error: var(--bravoixr-color-error);
+
+  /* On-fill text — bravoixr uses one on-primary color across all solid fills */
+  --color-primary-content: var(--bravoixr-color-text-on-primary);
+  --color-secondary-content: var(--bravoixr-color-text-on-primary);
+  --color-info-content: var(--bravoixr-color-text-on-primary);
+  --color-success-content: var(--bravoixr-color-text-on-primary);
+  --color-warning-content: var(--bravoixr-color-text-on-primary);
+  --color-error-content: var(--bravoixr-color-text-on-primary);
+
+  /* Surfaces + body text */
+  --color-base-100: var(--bravoixr-color-surface-raised);
+  --color-base-200: var(--bravoixr-color-surface-page);
+  --color-base-300: var(--bravoixr-color-surface-sunken);
+  --color-base-content: var(--bravoixr-color-text);
+
+  /* Shape + size (daisyUI --size-* is a 0.25rem scale unit: md control = ×10) */
+  --radius-box: var(--bravoixr-radius-card);
+  --radius-field: var(--bravoixr-radius-control);
+  --radius-selector: var(--bravoixr-radius-chip);
+  --size-field: calc(var(--bravoixr-control-height) / 10);
+  --size-selector: calc(var(--bravoixr-control-height-sm) / 10);
+  --border: var(--bravoixr-border-width);
+}
+
+@plugin "daisyui/theme" {
+  name: "dark";
+  color-scheme: dark;
+
+  --color-primary: var(--bravoixr-color-primary);
+  --color-secondary: var(--bravoixr-color-secondary);
+  --color-info: var(--bravoixr-color-info);
+  --color-success: var(--bravoixr-color-success);
+  --color-warning: var(--bravoixr-color-warning);
+  --color-error: var(--bravoixr-color-error);
+
+  --color-primary-content: var(--bravoixr-color-text-on-primary);
+  --color-secondary-content: var(--bravoixr-color-text-on-primary);
+  --color-info-content: var(--bravoixr-color-text-on-primary);
+  --color-success-content: var(--bravoixr-color-text-on-primary);
+  --color-warning-content: var(--bravoixr-color-text-on-primary);
+  --color-error-content: var(--bravoixr-color-text-on-primary);
+
+  --color-base-100: var(--bravoixr-color-surface-raised);
+  --color-base-200: var(--bravoixr-color-surface-page);
+  --color-base-300: var(--bravoixr-color-surface-sunken);
+  --color-base-content: var(--bravoixr-color-text);
+
+  --radius-box: var(--bravoixr-radius-card);
+  --radius-field: var(--bravoixr-radius-control);
+  --radius-selector: var(--bravoixr-radius-chip);
+  --size-field: calc(var(--bravoixr-control-height) / 10);
+  --size-selector: calc(var(--bravoixr-control-height-sm) / 10);
+  --border: var(--bravoixr-border-width);
+}
+
+/* Tailwind theme — font families so daisyUI components (and font-sans/font-mono
+ * utilities) inherit bravoixr's fonts. Heading and body share one family per
+ * script, so --font-sans covers both; it re-points by script via the [dir] blocks. */
+@theme {
+  --font-sans: var(--bravoixr-font-body);
+  --font-mono: var(--bravoixr-font-code);
+}
+
+/* Type-role utilities — the bravoixr type system as Tailwind utilities, each
+ * bundling family + size + weight + leading + tracking. Sizes ride the responsive
+ * elevator and families/leading/tracking ride the script switch automatically via
+ * the semantic layer. Layout (margins, measure) is intentionally left to the app. */
+
+/* Headings — heading family, display leading + tracking */
+@utility text-hero {
+  font-family: var(--bravoixr-font-heading);
+  font-size: var(--bravoixr-text-hero);
+  font-weight: var(--bravoixr-weight-hero);
+  line-height: var(--bravoixr-leading-display);
+  letter-spacing: var(--bravoixr-tracking-display);
+}
+@utility text-page-title {
+  font-family: var(--bravoixr-font-heading);
+  font-size: var(--bravoixr-text-page-title);
+  font-weight: var(--bravoixr-weight-page-title);
+  line-height: var(--bravoixr-leading-display);
+  letter-spacing: var(--bravoixr-tracking-display);
+}
+@utility text-section-title {
+  font-family: var(--bravoixr-font-heading);
+  font-size: var(--bravoixr-text-section-title);
+  font-weight: var(--bravoixr-weight-section-title);
+  line-height: var(--bravoixr-leading-display);
+  letter-spacing: var(--bravoixr-tracking-display);
+}
+@utility text-subsection-title {
+  font-family: var(--bravoixr-font-heading);
+  font-size: var(--bravoixr-text-subsection-title);
+  font-weight: var(--bravoixr-weight-subsection-title);
+  line-height: var(--bravoixr-leading-display);
+  letter-spacing: var(--bravoixr-tracking-display);
+}
+@utility text-minor-heading {
+  font-family: var(--bravoixr-font-heading);
+  font-size: var(--bravoixr-text-minor-heading);
+  font-weight: var(--bravoixr-weight-minor-heading);
+  line-height: var(--bravoixr-leading-display);
+  letter-spacing: var(--bravoixr-tracking-display);
+}
+@utility text-project-title {
+  font-family: var(--bravoixr-font-heading);
+  font-size: var(--bravoixr-text-project-title);
+  font-weight: var(--bravoixr-weight-project-title);
+  line-height: var(--bravoixr-leading-display);
+  letter-spacing: var(--bravoixr-tracking-display);
+}
+
+/* Body — body family, prose leading + tracking */
+@utility text-context-title {
+  font-family: var(--bravoixr-font-body);
+  font-size: var(--bravoixr-text-context-title);
+  font-weight: var(--bravoixr-weight-context-title);
+  line-height: var(--bravoixr-leading-prose);
+  letter-spacing: var(--bravoixr-tracking-prose);
+}
+@utility text-body {
+  font-family: var(--bravoixr-font-body);
+  font-size: var(--bravoixr-text-body);
+  font-weight: var(--bravoixr-weight-body);
+  line-height: var(--bravoixr-leading-prose);
+  letter-spacing: var(--bravoixr-tracking-prose);
+}
+@utility text-label {
+  font-family: var(--bravoixr-font-body);
+  font-size: var(--bravoixr-text-label);
+  font-weight: var(--bravoixr-weight-label);
+  line-height: var(--bravoixr-leading-prose);
+  letter-spacing: var(--bravoixr-tracking-prose);
+}
+@utility text-helper {
+  font-family: var(--bravoixr-font-body);
+  font-size: var(--bravoixr-text-helper);
+  font-weight: var(--bravoixr-weight-helper);
+  line-height: var(--bravoixr-leading-prose);
+  letter-spacing: var(--bravoixr-tracking-prose);
+}
+@utility text-page-description {
+  font-family: var(--bravoixr-font-body);
+  font-size: var(--bravoixr-text-page-description);
+  font-weight: var(--bravoixr-weight-page-description);
+  line-height: var(--bravoixr-leading-prose);
+  letter-spacing: var(--bravoixr-tracking-prose);
+}
+
+/* Code — mono family, code leading, pinned LTR + bidi-isolated (code reads
+ * left-to-right in every script) */
+@utility text-code {
+  font-family: var(--bravoixr-font-code);
+  font-size: var(--bravoixr-text-code-block);
+  line-height: var(--bravoixr-leading-code-block);
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+@utility text-code-label {
+  font-family: var(--bravoixr-font-code);
+  font-size: var(--bravoixr-text-code-label);
+  line-height: var(--bravoixr-leading-code-block);
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+/* Text-color utilities — the safe foreground trio + validation colors, composed
+ * with the type-role utilities. All theme automatically via the semantic layer. */
+@utility text-color-normal { color: var(--bravoixr-color-text); }
+@utility text-color-description { color: var(--bravoixr-color-text-muted); }
+@utility text-color-helper { color: var(--bravoixr-color-text-subtle); }
+@utility text-color-error { color: var(--bravoixr-color-error); }
+@utility text-color-warning { color: var(--bravoixr-color-warning); }
+@utility text-color-success { color: var(--bravoixr-color-success); }

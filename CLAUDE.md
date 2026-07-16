@@ -2,6 +2,8 @@
 
 Project-specific rules for this repo. Global workspace rules still apply.
 
+Project page → https://app.notion.com/p/3877e19de5c280eb803bd89e214880da
+
 ## What this project is
 
 The shared design identity system. See `README.md` for the full overview. In short: define design **tokens** and **taste**, and write thin **component classes** for reused elements — rent all component mechanics from libraries. The system is framework-agnostic: it names no component library; each consuming app maps the tokens onto whatever library it uses.
@@ -18,6 +20,8 @@ The shared design identity system. See `README.md` for the full overview. In sho
 - **Framework-agnostic.** bravoixr names no component library or base theme. Mapping the semantic tokens onto a library's own theme variables is each consuming app's responsibility, done on its side — not in this repo.
 
 ## Structure
+
+The design identity system lives at `apps/bravoixr/` (deployable, per the global monorepo `apps/<app>/` convention); its preview site is the sibling app `apps/preview/`, with no versioning of its own. Paths below are relative to `apps/bravoixr/`.
 
 - `identity/` — human-readable design decisions, one Markdown file per category. The creative source the token layers transcribe from.
 - `primitives/` — raw literal CSS custom properties (no meaning, no `var()`). The portable source of truth.
@@ -60,6 +64,8 @@ Five measurable categories carry through `identity/`, `primitives/`, and `semant
 ## Releases
 
 `release.json.currentRelease` is the source of truth for the active release (`vMAJOR.MINOR.PATCH`). Update it only during an explicit release cut.
+
+Future releases use the app-scoped naming: tag `bravoixr/vX.Y.Z`, release branch `release/bravoixr/vX.Y.Z`, Linear milestone `bravoixr vX.Y.Z`. Existing `v0.1.0`/`v0.2.0` tags, branches, and milestones are left as-is — naming rules apply going forward only. `preview` has no independent version or release of its own.
 
 ## Working agreements
 

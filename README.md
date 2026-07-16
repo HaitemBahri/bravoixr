@@ -32,11 +32,13 @@ The system is **framework-agnostic** — it names no component library. Each con
 ## Structure
 
 ```
-identity/      design decisions, one Markdown file per category
-primitives/    raw literal CSS values (color, typography, layout, motion, icons)
-semantics/     meaning mapped onto primitives (+ inline dark theme)
-components/    component classes for reused elements
-index.css      single entry — import order: primitives → semantics → components
+apps/bravoixr/         the design identity system
+  identity/      design decisions, one Markdown file per category
+  primitives/    raw literal CSS values (color, typography, layout, motion, icons)
+  semantics/     meaning mapped onto primitives (+ inline dark theme)
+  components/    component classes for reused elements
+  index.css      single entry — import order: primitives → semantics → components
+apps/preview/           preview site for the token layers and component classes
 ```
 
 Five measurable categories (color, typography, layout, motion, icons) run through `identity/`, `primitives/`, and `semantics/`. **Feel** (density, taste) and **media** (decorative-artwork direction) are `identity/`-only. `layout` combines spacing, sizing, radius, borders, elevation, and z-index.

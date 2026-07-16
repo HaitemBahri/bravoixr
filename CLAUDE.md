@@ -19,6 +19,8 @@ The shared design identity system. See `README.md` for the full overview. In sho
 
 ## Structure
 
+The design identity system lives at `apps/bravoixr/` (deployable, per the global monorepo `apps/<app>/` convention); its preview site is the sibling app `apps/preview/`, with no versioning of its own. Paths below are relative to `apps/bravoixr/`.
+
 - `identity/` — human-readable design decisions, one Markdown file per category. The creative source the token layers transcribe from.
 - `primitives/` — raw literal CSS custom properties (no meaning, no `var()`). The portable source of truth.
 - `semantics/` — meaning mapped onto primitives (`--color-primary`, `--btn-height`). The single seam components reference. Dark theme is handled **inline** here (`[data-theme="dark"]`), no separate `themes/` folder.

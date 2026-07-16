@@ -4,50 +4,36 @@ Project-specific rules for this repo. Global workspace rules still apply.
 
 ## What this project is
 
-The shared design identity system. See `README.md` for the full overview. In short: define design **tokens** and **taste**, and write thin **component classes** for reused elements — rent all component mechanics from libraries. The system is framework-agnostic: it names no component library; each consuming app maps the tokens onto whatever library it uses.
+The shared design identity system. See `README.md` for the full overview. In short: define design **tokens** and **taste** — colors, sizing, and typography — and deliver them as a **daisyUI + Tailwind theme** that skins rented component mechanics. The web target is daisyUI (a Tailwind v4 plugin): a consuming app installs Tailwind + daisyUI, then bravoixr's theme, which injects bravoixr's colors, sizes, and typography into daisyUI's theme variables and Tailwind's type scale. The token source is kept portable so a future non-web (MAUI/native) target can be generated from it.
 
 ## Hard rules
 
 - **Tokens are the only source of values.** Never inline a raw value (color, size, radius) in component CSS or anywhere else — always reference a token. Sole exception: `@media` **conditions** can't read `var()`, so breakpoint px are mirrored literally in the media-query text (with a comment pointing to the `--breakpoint-*` primitives); values *inside* the block still use tokens.
-- **Two tiers, kept separate.** Primitives (raw literal values) → semantic tokens (meaning). Component classes consume **semantic** tokens only, never primitives.
-- **Classes are the public API.** Consuming projects apply bravoixr's **classes**, not its raw tokens. Classes are built exclusively from semantic tokens and bundle the correct combinations, so consumers can't assemble invalid pairings. Semantic tokens are the internal seam and a *supported escape hatch* for layout/spacing/one-offs no class covers; primitives are never consumed directly. (Detail in **Consumption** below.)
-- **Token values stay portable.** No `calc()`, `color-mix()`, relative color syntax, or nested `var()` math _inside a token's definition_ — store literal values so the token file can be exported to JSON/XAML later. Such functions are fine in component CSS.
-- **Rent the mechanics.** Do not implement modals, dropdowns, popovers, focus management, positioning, or accessibility. Use a component library (or a headless lib) and skin it.
-- **Component class only when reused 2+ times.** No speculative components. One-off styling stays as plain scoped CSS.
-- **Classes carry no conditionals.** A component class in `components/` never contains `[data-theme]`, `[dir]`, `:lang`, or `@media`. All context value-switching (theme, script, viewport) lives in `semantics/` by re-pointing role tokens; classes stay flow-relative and context-agnostic. (Detail in **Authoring a class** below.)
-- **Framework-agnostic.** bravoixr names no component library or base theme. Mapping the semantic tokens onto a library's own theme variables is each consuming app's responsibility, done on its side — not in this repo.
+- **Two tiers, kept separate.** Primitives (raw literal values) → semantic tokens (meaning). The theme consumes **semantic** tokens only, never primitives.
+- **The theme is the public API.** Consuming projects install Tailwind + daisyUI and import bravoixr's **theme** (`index.css`), which maps bravoixr's semantic tokens onto daisyUI's theme variables and Tailwind's type scale. Consumers apply **daisyUI's** component classes, themed by bravoixr — they never assemble bravoixr's raw tokens into components. Semantic tokens remain the internal seam and a *supported escape hatch* for layout/spacing one-offs; primitives are never consumed directly. (Detail in **Consumption** below.)
+- **Token values stay portable.** No `calc()`, `color-mix()`, relative color syntax, or nested `var()` math _inside a token's definition_ — store literal values so the token file can be exported to JSON/XAML later. Such functions are fine in theme CSS.
+- **Rent the mechanics.** Do not implement modals, dropdowns, popovers, focus management, positioning, or accessibility. Use **daisyUI** (on Tailwind) and skin it through the theme.
+- **daisyUI + Tailwind is the web target.** bravoixr names daisyUI (on Tailwind v4) as its component library and authors a daisyUI theme for it. daisyUI shares bravoixr's `data-theme` switch and its `--color-*` role names, so the mapping is direct. Non-web targets are not built; only the token *source* is kept portable for them.
 
 ## Structure
 
 - `identity/` — human-readable design decisions, one Markdown file per category. The creative source the token layers transcribe from.
 - `primitives/` — raw literal CSS custom properties (no meaning, no `var()`). The portable source of truth.
-- `semantics/` — meaning mapped onto primitives (`--color-primary`, `--btn-height`). The single seam components reference. Dark theme is handled **inline** here (`[data-theme="dark"]`), no separate `themes/` folder.
-- `components/` — thin component classes for reused elements, consuming semantic tokens.
-- `index.css` — single entry point. Import order is fixed: **`primitives/` → `semantics/` → `components/`**.
+- `semantics/` — meaning mapped onto primitives (`--color-primary`, `--control-height`). The single seam the theme references. Dark theme is handled **inline** here (`[data-theme="dark"]`), no separate `themes/` folder.
+- `components/` — legacy component classes (retired as public API; daisyUI owns components now). Kept pending removal with the preview rework.
+- `index.css` — single entry point: bravoixr's theme, imported by a consuming app after the daisyUI plugin. (Precise theme-file layout is authored in BAH-1197.)
 
 ## Consumption
 
 bravoixr is layered as a **public/internal contract**:
 
 - **Primitives** (`--blue-600`) — raw values, no meaning. Internal; never consumed directly.
-- **Semantic tokens** (`--color-primary`, `--control-height`) — meaning mapped onto primitives; single vars. The internal seam — and a *supported escape hatch* consumers may use for layout, spacing, and one-offs no class covers (atomic tokens carry no combination risk).
-- **Classes** — built exclusively from semantic tokens; the **public API**. Consuming projects apply these. Because a class bundles the correct combination, consumers can't produce invalid pairings (low-contrast text on a fill, mismatched control anatomy).
+- **Semantic tokens** (`--color-primary`, `--control-height`) — meaning mapped onto primitives; single vars. The internal seam — and a *supported escape hatch* consumers may use for layout, spacing, and one-offs the theme doesn't cover (atomic tokens carry no combination risk).
+- **The theme** (`index.css`) — bravoixr's semantic tokens mapped onto daisyUI's theme variables and Tailwind's type scale; the **public API**. Consuming projects install Tailwind + daisyUI, import this after the daisyUI plugin, and apply **daisyUI's** component classes — which then render in bravoixr's colors, sizing, and typography.
 
-Class types:
+Consumers set `data-theme` (`light`/`dark`) and `dir` (`ltr`/`rtl`) — the same switch drives both bravoixr's tokens and daisyUI's theme — and load the named fonts themselves (the system declares family stacks only). Because the theme is the contract, the semantic-token wiring behind it can be refactored without breaking consumers.
 
-- **Component classes** (`.btn`, `.input`, `.card`) — reused elements.
-- **Combination classes** (e.g. `.surface-raised` setting background + text + border together) — how safe colour pairings are delivered, so consumers never hand-assemble colour roles.
-
-The **component class only when reused 2+ times / no speculative** rule still governs; the class catalogue grows with real reuse. Because classes are the contract, semantic-token wiring can be refactored without breaking consumers. Consumers still set `data-theme` / `dir` for theming and load the named fonts themselves (the system declares family stacks only).
-
-### Authoring a class (layer-3 rules)
-
-Every class in `components/` follows these four rules:
-
-- **Semantic tokens only.** Reference semantic tokens — never primitives, never raw literal values.
-- **No conditionals in the class.** No `[data-theme]`, `[dir]`, `:lang`, or `@media` inside `components/`. All context value-switching (theme light/dark, script en/ar, viewport desktop/tablet/mobile) lives in `semantics/` by re-pointing role tokens.
-- **Flow-relative.** Use logical properties (`padding-inline`, `margin-inline`, `border-inline`, `inset-inline`, `*-block`) so RTL mirrors automatically from `dir`; never physical `left` / `right` / `top` / `bottom` sides.
-- **Corollary.** If a class needs a value that varies by context, add or elevate a semantic role token rather than adding a conditional to the class.
+Component classes (`components/`) are **retired** as public API — daisyUI owns components now. The files remain in the tree pending removal with the preview rework; do not author new ones.
 
 ## Categories
 

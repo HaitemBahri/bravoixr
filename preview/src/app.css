@@ -1,9 +1,0 @@
-/* preview — Tailwind entry (not part of the bravoixr distributable).
- * Consumes bravoixr exactly as a real app would: Tailwind + daisyUI, then the
- * bravoixr theme after the daisyUI plugin. Build: `npm run preview:build`. */
-
-@import "tailwindcss";
-@plugin "daisyui" { themes: false; }
-@import "../../index.css";
-
-@source "../index.html";

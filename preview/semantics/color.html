@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>bravoixr — semantic color</title>
+
+  <script>
+    (function () {
+      var t = localStorage.getItem('bravoixr-theme') || 'light';
+      var l = localStorage.getItem('bravoixr-lang') || 'en';
+      var r = document.documentElement;
+      r.setAttribute('data-theme', t);
+      if (l === 'ar') { r.setAttribute('dir', 'rtl'); r.setAttribute('lang', 'ar'); }
+      else { r.setAttribute('dir', 'ltr'); r.setAttribute('lang', 'en'); }
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=IBM+Plex+Sans+Arabic:wght@200;300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap">
+
+  <link rel="stylesheet" href="../../index.css">
+</head>
+<body class="page text-body">
+  <div class="page-topbar">
+    <span class="text-project-title">bravoixr</span>
+    <div class="page-controls">
+      <button class="btn btn-solid btn-square" type="button" data-toggle="theme" aria-label="Toggle theme"><span class="icon icon-md">contrast</span></button>
+      <button class="btn btn-solid btn-square" type="button" data-toggle="lang" aria-label="Toggle language"><span class="icon icon-md">translate</span></button>
+    </div>
+  </div>
+
+  <main class="page-body">
+
+    <section class="page-section">
+      <h2 class="text-page-title" data-en="Semantic color" data-ar="اللون الدلالي">Semantic color</h2>
+      <p class="text-page-description text-color-description" data-en="Role tokens, not raw colors — each maps onto a primitive and re-points by theme. Toggle ☾ Dark from the top and every swatch below recolors; components never touch the primitive ramps." data-ar="رموز أدوار، لا ألوان خام — كلٌّ يُسنَد إلى أوّليّة ويتغيّر مرجعه حسب السمة. بدّل إلى ☾ داكن من الأعلى فتتبدّل ألوان كل العيّنات أدناه؛ والمكوّنات لا تمسّ التدرّجات الأوّليّة إطلاقًا.">Role tokens, not raw colors — each maps onto a primitive and re-points by theme. Toggle ☾ Dark from the top and every swatch below recolors; components never touch the primitive ramps.</p>
+    </section>
+
+    <section class="page-section">
+      <h3 class="text-section-title" data-en="Brand" data-ar="العلامة">Brand</h3>
+      <div style="display: grid; gap: var(--spacing-5);">
+        <div class="page-row-header" data-base="--color-primary" data-label="primary" data-label-ar="أساسي" data-desc-en="The main brand color and its interactive states." data-desc-ar="لون العلامة التجارية الأساسي وحالاته التفاعلية."></div>
+        <div class="page-row-header" data-base="--color-secondary" data-label="secondary" data-label-ar="ثانوي" data-desc-en="The supporting brand color and its interactive states." data-desc-ar="لون العلامة التجارية الثانوي وحالاته التفاعلية."></div>
+      </div>
+    </section>
+
+    <section class="page-section">
+      <h3 class="text-section-title" data-en="Status" data-ar="الحالة">Status</h3>
+      <div style="display: grid; gap: var(--spacing-5);">
+        <div class="page-row-header" data-base="--color-success" data-label="success" data-label-ar="نجاح" data-desc-en="Confirms a positive or completed outcome." data-desc-ar="يؤكّد نتيجة إيجابية أو مكتملة."></div>
+        <div class="page-row-header" data-base="--color-warning" data-label="warning" data-label-ar="تحذير" data-desc-en="Flags a state that needs attention before it becomes an error." data-desc-ar="يُنبّه إلى حالة تستدعي الانتباه قبل أن تتحوّل إلى خطأ."></div>
+        <div class="page-row-header" data-base="--color-error" data-label="error" data-label-ar="خطأ" data-desc-en="Signals a failure or invalid state." data-desc-ar="يشير إلى فشل أو حالة غير صالحة."></div>
+        <div class="page-row-header" data-base="--color-info" data-label="info" data-label-ar="معلومات" data-desc-en="Highlights neutral, non-urgent information." data-desc-ar="يبرز معلومة محايدة غير عاجلة."></div>
+      </div>
+    </section>
+
+    <section class="page-section page-row-header" data-roles="--color-surface-page:page,--color-surface-raised:raised,--color-surface-sunken:sunken">
+      <div>
+        <h3 class="page-row-header-title" data-en="Surfaces" data-ar="الأسطح">Surfaces</h3>
+        <p class="page-row-header-description" data-en="Background layers that stack the page from its base up to raised and sunken panels." data-ar="طبقات الخلفية التي ترتّب الصفحة من قاعدتها إلى الألواح المرتفعة والغائرة.">Background layers that stack the page from its base up to raised and sunken panels.</p>
+      </div>
+      <div></div>
+    </section>
+
+    <section class="page-section page-row-header" data-roles="--color-text:text,--color-text-muted:muted,--color-text-subtle:subtle,--color-text-inverse:inverse,--color-text-on-primary:on-primary">
+      <div>
+        <h3 class="page-row-header-title" data-en="Text" data-ar="النص">Text</h3>
+        <p class="page-row-header-description" data-en="Foreground text colors for default, muted, subtle, and inverse contexts." data-ar="ألوان النص الأمامية للسياقات الافتراضية والمكتومة والخفيفة والمعكوسة.">Foreground text colors for default, muted, subtle, and inverse contexts.</p>
+      </div>
+      <div></div>
+    </section>
+
+    <section class="page-section page-row-header" data-roles="--color-border:border,--color-border-strong:strong,--color-border-focus:focus">
+      <div>
+        <h3 class="page-row-header-title" data-en="Border" data-ar="الحدود">Border</h3>
+        <p class="page-row-header-description" data-en="Stroke colors for dividers, strong outlines, and focus rings." data-ar="ألوان الحدود للفواصل والخطوط البارزة وحلقات التركيز.">Stroke colors for dividers, strong outlines, and focus rings.</p>
+      </div>
+      <div></div>
+    </section>
+
+  </main>
+
+  <footer class="page-footer">
+    <span class="text-body text-color-description" data-en="bravoixr · © 2026" data-ar="bravoixr · © ٢٠٢٦">bravoixr · © 2026</span>
+    <span class="text-body text-color-description">v0.1.0</span>
+  </footer>
+
+  <script>
+    (function () {
+      // A swatch is a page-column-header: the color box, then a caption cell
+      // stacking the state/role name (text-label) over its token var
+      // (text-code-label) as two separate lines.
+      function swatch(role, caption) {
+        var col = document.createElement('div');
+        col.className = 'page-column-header';
+        var cell = document.createElement('div');
+        // 64px specimen size is tokenless demo geometry; fill is the role under test.
+        cell.style.cssText = 'inline-size:64px;block-size:64px;border-radius:var(--radius-control);border:var(--border-width) solid var(--color-border)';
+        cell.style.background = 'var(' + role + ')';
+        var caption_lines = document.createElement('div');
+        caption_lines.style.cssText = 'display:grid;gap:var(--spacing-1)';
+        var label = document.createElement('span');
+        label.className = 'text-label';
+        label.textContent = caption;
+        var token = document.createElement('span');
+        token.className = 'text-code-label text-color-helper';
+        token.textContent = role;
+        caption_lines.appendChild(label);
+        caption_lines.appendChild(token);
+        col.appendChild(cell);
+        col.appendChild(caption_lines);
+        return col;
+      }
+
+      // Builds a page-cluster of swatches from `pairs` ([role, caption]
+      // entries) into `container`.
+      function buildCluster(container, pairs) {
+        var cluster = document.createElement('div');
+        cluster.className = 'page-cluster';
+        pairs.forEach(function (p) { cluster.appendChild(swatch(p[0], p[1])); });
+        container.appendChild(cluster);
+      }
+
+      // Nested rows (Brand, Status): each `.page-row-header` gets a rail
+      // (its family name + a description) plus a content cell clustering
+      // its state swatches.
+      function buildRow(row, title, pairs) {
+        var rail = document.createElement('div');
+        var heading = document.createElement('h4');
+        heading.className = 'page-row-header-title';
+        heading.setAttribute('data-en', title);
+        var titleAr = row.getAttribute('data-label-ar');
+        if (titleAr) heading.setAttribute('data-ar', titleAr);
+        heading.textContent = title;
+        rail.appendChild(heading);
+
+        var description = document.createElement('p');
+        description.className = 'page-row-header-description';
+        description.setAttribute('data-en', row.getAttribute('data-desc-en'));
+        description.setAttribute('data-ar', row.getAttribute('data-desc-ar'));
+        description.textContent = row.getAttribute('data-desc-en');
+        rail.appendChild(description);
+
+        var content = document.createElement('div');
+        buildCluster(content, pairs);
+
+        row.appendChild(rail);
+        row.appendChild(content);
+      }
+
+      // State families (Brand, Status): base token + normal/hover/active steps.
+      var states = [['', 'normal'], ['-hover', 'hover'], ['-active', 'active']];
+      document.querySelectorAll('.page-row-header[data-base]').forEach(function (row) {
+        var base = row.getAttribute('data-base');
+        buildRow(row, row.getAttribute('data-label'), states.map(function (s) { return [base + s[0], s[1]]; }));
+      });
+
+      // Flat rows (Surfaces, Text, Border): the section itself is the
+      // page-row-header, so only its content cell (last child) needs a
+      // cluster built from its explicit `token:caption` list.
+      document.querySelectorAll('.page-row-header[data-roles]').forEach(function (row) {
+        var pairs = row.getAttribute('data-roles').split(',').map(function (r) {
+          return r.split(':');
+        });
+        buildCluster(row.lastElementChild, pairs);
+      });
+    })();
+  </script>
+  <script src="../preview.js"></script>
+</body>
+</html>

@@ -4,15 +4,15 @@
 
 :root {
   /* Duration roles */
-  --bravoixr-duration-default: var(--bravoixr-duration-base);
-  --bravoixr-duration-hover: var(--bravoixr-duration-fast);
-  --bravoixr-duration-panel: var(--bravoixr-duration-slow);
-  --bravoixr-duration-modal: var(--bravoixr-duration-slower);
-  --bravoixr-duration-none: var(--bravoixr-duration-instant);
+  --duration-default: var(--duration-base);
+  --duration-hover: var(--duration-fast);
+  --duration-panel: var(--duration-slow);
+  --duration-modal: var(--duration-slower);
+  --duration-none: var(--duration-instant);
 
   /* Easing roles */
-  --bravoixr-ease-default: var(--bravoixr-ease-standard);
-  --bravoixr-ease-enter: var(--bravoixr-ease-decelerate);
-  --bravoixr-ease-exit: var(--bravoixr-ease-accelerate);
-  --bravoixr-ease-loop: var(--bravoixr-ease-linear);
+  --ease-default: var(--ease-standard);
+  --ease-enter: var(--ease-decelerate);
+  --ease-exit: var(--ease-accelerate);
+  --ease-loop: var(--ease-linear);
 }

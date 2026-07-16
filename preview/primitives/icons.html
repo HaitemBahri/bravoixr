@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>bravoixr — icons</title>
+
+  <script>
+    (function () {
+      var t = localStorage.getItem('bravoixr-theme') || 'light';
+      var l = localStorage.getItem('bravoixr-lang') || 'en';
+      var r = document.documentElement;
+      r.setAttribute('data-theme', t);
+      if (l === 'ar') { r.setAttribute('dir', 'rtl'); r.setAttribute('lang', 'ar'); }
+      else { r.setAttribute('dir', 'ltr'); r.setAttribute('lang', 'en'); }
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=IBM+Plex+Sans+Arabic:wght@200;300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap">
+
+  <link rel="stylesheet" href="../../index.css">
+</head>
+<body class="page text-body">
+  <div class="page-topbar">
+    <span class="text-project-title">bravoixr</span>
+    <div class="page-controls">
+      <button class="btn btn-solid btn-square" type="button" data-toggle="theme" aria-label="Toggle theme"><span class="icon icon-md">contrast</span></button>
+      <button class="btn btn-solid btn-square" type="button" data-toggle="lang" aria-label="Toggle language"><span class="icon icon-md">translate</span></button>
+    </div>
+  </div>
+
+  <main class="page-body">
+
+    <section class="page-section">
+      <h2 class="text-page-title" data-en="Icons" data-ar="الأيقونات">Icons</h2>
+      <p class="text-page-description text-color-description" data-en="The raw icon primitives — the icon font family, its variable-font axes, and a four-step size scale. Semantic icon tokens map onto these; nothing consumes them directly." data-ar="الأوّليّات الرمزية الخام — عائلة خط الأيقونات، ومحاور الخط المتغيّر، ومقياس من أربع خطوات للأحجام. تُسنَد رموز الأيقونات الدلالية إلى هذه؛ ولا شيء يستهلكها مباشرة.">The raw icon primitives — the icon font family, its variable-font axes, and a four-step size scale. Semantic icon tokens map onto these; nothing consumes them directly.</p>
+    </section>
+
+    <section class="page-section page-row-header">
+      <div>
+        <h3 class="page-row-header-title" data-en="Font" data-ar="الخط">Font</h3>
+        <p class="page-row-header-description" data-en="The single icon typeface primitive every glyph renders through." data-ar="أوّليّة خط الأيقونات الوحيدة التي يُعرَض من خلالها كل رمز.">The single icon typeface primitive every glyph renders through.</p>
+      </div>
+      <div>
+        <div class="page-cluster">
+          <div class="page-column-header">
+            <span class="text-color-normal">'Material Symbols Rounded'</span>
+            <span class="text-code-label text-color-helper">--icon-font</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section page-row-header">
+      <div>
+        <h3 class="page-row-header-title" data-en="Size scale" data-ar="مقياس الأحجام">Size scale</h3>
+        <p class="page-row-header-description" data-en="Four fixed glyph sizes, from small to extra-large." data-ar="أربعة أحجام ثابتة للرموز، من الصغير إلى الكبير جدًّا.">Four fixed glyph sizes, from small to extra-large.</p>
+      </div>
+      <div>
+        <!-- Specimens render through the PRIMITIVE icon axes (this is the primitives page). -->
+        <div class="page-cluster">
+          <div class="page-column-header">
+            <span style="font-family:var(--icon-font);font-weight:normal;font-style:normal;line-height:1;color:var(--color-text);font-variation-settings:'wght' var(--icon-wght),'FILL' var(--icon-fill),'opsz' var(--icon-opsz-floor),'GRAD' var(--icon-grade-light);font-size:var(--icon-size-sm)">home</span>
+            <span class="text-code-label text-color-helper">--icon-size-sm · 16px</span>
+          </div>
+          <div class="page-column-header">
+            <span style="font-family:var(--icon-font);font-weight:normal;font-style:normal;line-height:1;color:var(--color-text);font-variation-settings:'wght' var(--icon-wght),'FILL' var(--icon-fill),'opsz' var(--icon-opsz-floor),'GRAD' var(--icon-grade-light);font-size:var(--icon-size-md)">favorite</span>
+            <span class="text-code-label text-color-helper">--icon-size-md · 20px</span>
+          </div>
+          <div class="page-column-header">
+            <span style="font-family:var(--icon-font);font-weight:normal;font-style:normal;line-height:1;color:var(--color-text);font-variation-settings:'wght' var(--icon-wght),'FILL' var(--icon-fill),'opsz' var(--icon-opsz-floor),'GRAD' var(--icon-grade-light);font-size:var(--icon-size-lg)">settings</span>
+            <span class="text-code-label text-color-helper">--icon-size-lg · 24px</span>
+          </div>
+          <div class="page-column-header">
+            <span style="font-family:var(--icon-font);font-weight:normal;font-style:normal;line-height:1;color:var(--color-text);font-variation-settings:'wght' var(--icon-wght),'FILL' var(--icon-fill),'opsz' var(--icon-opsz-floor),'GRAD' var(--icon-grade-light);font-size:var(--icon-size-xl)">search</span>
+            <span class="text-code-label text-color-helper">--icon-size-xl · 32px</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section page-row-header">
+      <div>
+        <h3 class="page-row-header-title" data-en="Variable-font axes" data-ar="محاور الخط المتغيّر">Variable-font axes</h3>
+        <p class="page-row-header-description" data-en="Raw variable-font axis values — weight, fill, optical size floor, and the light/dark grade pair — that semantic icon roles map onto." data-ar="قيم محاور الخط المتغيّر الخام — الوزن، والامتلاء، وأرضية الحجم البصري، وزوج الدرجة للوضعين الفاتح والداكن — تُسنَد إليها أدوار الأيقونات الدلالية.">Raw variable-font axis values — weight, fill, optical size floor, and the light/dark grade pair — that semantic icon roles map onto.</p>
+      </div>
+      <div>
+        <div class="page-cluster">
+          <div class="page-column-header">
+            <span class="text-color-normal">400</span>
+            <span class="text-code-label text-color-helper">--icon-wght</span>
+          </div>
+          <div class="page-column-header">
+            <span class="text-color-normal">0</span>
+            <span class="text-code-label text-color-helper">--icon-fill</span>
+          </div>
+          <div class="page-column-header">
+            <span class="text-color-normal">20</span>
+            <span class="text-code-label text-color-helper">--icon-opsz-floor</span>
+          </div>
+          <div class="page-column-header">
+            <span class="text-color-normal">0</span>
+            <span class="text-code-label text-color-helper">--icon-grade-light</span>
+          </div>
+          <div class="page-column-header">
+            <span class="text-color-normal">-25</span>
+            <span class="text-code-label text-color-helper">--icon-grade-dark</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="page-footer">
+    <span class="text-body text-color-description" data-en="bravoixr · © 2026" data-ar="bravoixr · © ٢٠٢٦">bravoixr · © 2026</span>
+    <span class="text-body text-color-description">v0.1.0</span>
+  </footer>
+
+  <script src="../preview.js"></script>
+</body>
+</html>

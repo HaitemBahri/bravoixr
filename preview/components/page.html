@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>bravoixr — page</title>
+
+  <script>
+    (function () {
+      var t = localStorage.getItem('bravoixr-theme') || 'light';
+      var l = localStorage.getItem('bravoixr-lang') || 'en';
+      var r = document.documentElement;
+      r.setAttribute('data-theme', t);
+      if (l === 'ar') { r.setAttribute('dir', 'rtl'); r.setAttribute('lang', 'ar'); }
+      else { r.setAttribute('dir', 'ltr'); r.setAttribute('lang', 'en'); }
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=IBM+Plex+Sans+Arabic:wght@200;300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap">
+
+  <link rel="stylesheet" href="../../index.css">
+</head>
+<body class="page text-body">
+  <div class="page-topbar">
+    <span class="text-project-title">bravoixr</span>
+    <div class="page-controls">
+      <button class="btn btn-solid btn-square" type="button" data-toggle="theme" aria-label="Toggle theme"><span class="icon icon-md">contrast</span></button>
+      <button class="btn btn-solid btn-square" type="button" data-toggle="lang" aria-label="Toggle language"><span class="icon icon-md">translate</span></button>
+    </div>
+  </div>
+
+  <main class="page-body">
+    <section class="page-section">
+      <h2 class="text-page-title" data-en="Page" data-ar="الصفحة">Page</h2>
+      <p class="text-page-description text-color-description" data-en="Structural page-layout regions — headers, footers, clusters, label rows, sidebars, scrollers, and sticky bars. Each region renders nothing on its own, so every specimen drops a card inside to make its box legible." data-ar="مناطق تخطيط بنيوية للصفحة — الترويسات والتذييلات والتجميعات وصفوف العناوين والأشرطة الجانبية والأشرطة المنزلقة والأشرطة اللاصقة. لا تعرض أي منطقة شيئًا بذاتها، لذا يضع كل نموذج بطاقة بداخلها لإبراز حدودها.">Structural page-layout regions — headers, footers, clusters, label rows, sidebars, scrollers, and sticky bars. Each region renders nothing on its own, so every specimen drops a card inside to make its box legible.</p>
+    </section>
+
+    <!-- page-topbar -->
+    <section class="page-section page-row-header">
+      <div>
+        <h3 class="page-row-header-title" data-en="Topbar" data-ar="الشريط العلوي">Topbar</h3>
+        <p class="page-row-header-description" data-en="Opens the screen — wordmark at the start, controls at the end, on a raised band." data-ar="يفتتح الشاشة — العلامة في البداية والأدوات في النهاية، على شريط بارز.">Opens the screen — wordmark at the start, controls at the end, on a raised band.</p>
+      </div>
+      <div>
+        <div class="page-topbar">
+          <span class="text-project-title">bravoixr</span>
+          <div class="page-controls">
+            <button class="btn btn-solid btn-square" type="button" aria-label="Theme"><span class="icon icon-md">contrast</span></button>
+            <button class="btn btn-solid btn-square" type="button" aria-label="Language"><span class="icon icon-md">translate</span></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- page-header -->
+    <section class="page-section page-row-header">
+      <div>
+        <h3 class="page-row-header-title" data-en="Page header" data-ar="ترويسة الصفحة">Page header</h3>
+        <p class="page-row-header-description" data-en="Opens the screen with a title and its lede, just below the topbar." data-ar="يفتتح الشاشة بعنوان ومقدّمته، أسفل الشريط العلوي مباشرةً.">Opens the screen with a title and its lede, just below the topbar.</p>
+      </div>
+      <div>
+        <div class="page-header">
+          <h2 class="text-page-title" data-en="Dashboard" data-ar="لوحة القيادة">Dashboard</h2>
+          <p class="text-page-description text-color-description" data-en="A page title and its description, sitting just below the topbar to open the screen. The description gives readers the one- or two-sentence orientation a bare title can't — what this page is for, what they can do here, and anything worth knowing before they start. It rides the quiet page-description type role and is capped to a comfortable reading measure, so it never sprawls across the full width; instead it wraps onto several lines and re-flows and mirrors with the rest of the page when the language switches." data-ar="عنوان الصفحة ووصفه، يقع أسفل الشريط العلوي مباشرةً ليفتتح الشاشة. يمنح الوصفُ القارئَ التوجيهَ المكوَّن من جملة أو جملتين الذي يعجز عنه العنوان وحده — ما الغرض من هذه الصفحة، وما الذي يمكن فعله فيها، وأي شيء يجدر معرفته قبل البدء. يعتمد على دور النوع الهادئ لوصف الصفحة ومحدَّد بقياس قراءة مريح، فلا يمتد أبدًا عبر العرض الكامل؛ بل يلتفّ على عدة أسطر ويعيد التدفّق وينعكس مع بقية الصفحة عند تبديل اللغة.">A page title and its description, sitting just below the topbar to open the screen. The description gives readers the one- or two-sentence orientation a bare title can't — what this page is for, what they can do here, and anything worth knowing before they start. It rides the quiet page-description type role and is capped to a comfortable reading measure, so it never sprawls across the full width; instead it wraps onto several lines and re-flows and mirrors with the rest of the page when the language switches.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- page-footer -->
+    <section class="page-section page-row-header">
+      <div>
+        <h3 class="page-row-header-title" data-en="Page footer" data-ar="تذييل الصفحة">Page footer</h3>
+        <p class="page-row-header-description" data-en="Closes the page — wordmark at the start, links at the end, on a sunken band." data-ar="يختم الصفحة — العلامة في البداية والروابط في النهاية، على شريط غائر.">Closes the page — wordmark at the start, links at the end, on a sunken band.</p>
+      </div>
+      <div>
+        <div class="page-footer">
+          <span class="text-body text-color-description" data-en="bravoixr · © 2026" data-ar="bravoixr · © ٢٠٢٦">bravoixr · © 2026</span>
+          <div class="page-cluster">
+            <a class="text-body text-color-description" data-en="Privacy" data-ar="الخصوصية">Privacy</a>
+            <a class="text-body text-color-description" data-en="Terms" data-ar="الشروط">Terms</a>
+            <a class="text-body text-color-description" data-en="Contact" data-ar="اتصل بنا">Contact</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- page-cluster -->
+    <section class="page-section page-row-header">
+      <div>
+        <h3 class="page-row-header-title" data-en="Cluster" data-ar="التجميعة">Cluster</h3>
+        <p class="page-row-header-description" data-en="A wrapping horizontal stack that flows items to the next row when space runs out." data-ar="رصّة أفقية تلتفّ، تنقل العناصر إلى السطر التالي عند نفاد المساحة.">A wrapping horizontal stack that flows items to the next row when space runs out.</p>
+      </div>
+      <div>
+        <div class="page-cluster">
+          <div class="card">
+            <h3 class="card-title" data-en="Overview" data-ar="نظرة عامة">Overview</h3>
+            <p class="card-description" data-en="This is a placeholder text. Wow!" data-ar="هذا نص عنصر نائب. رائع!">This is a placeholder text. Wow!</p>
+            <p class="card-description" data-en="This is a placeholder text. Wow!" data-ar="هذا نص عنصر نائب. رائع!">This is a placeholder text. Wow!</p>
+            <p class="card-description" data-en="This is a placeholder text. Wow!" data-ar="هذا نص عنصر نائب. رائع!">This is a placeholder text. Wow!</p>
+            <p class="card-description" data-en="This is a placeholder text. Wow!" data-ar="هذا نص عنصر نائب. رائع!">This is a placeholder text. Wow!</p>
+          </div>
+          <div class="card">
+            <h3 class="card-title" data-en="Activity" data-ar="النشاط">Activity</h3>
+            <p class="card-description" data-en="This is a placeholder text. Wow!" data-ar="هذا نص عنصر نائب. رائع!">This is a placeholder text. Wow!</p>
+            <p class="card-description" data-en="This is a placeholder text. Wow!" data-ar="هذا نص عنصر نائب. رائع!">This is a placeholder text. Wow!</p>
+            <p class="card-description" data-en="This is a placeholder text. Wow!" data-ar="هذا نص عنصر نائب. رائع!">This is a placeholder text. Wow!</p>
+            <p class="card-description" data-en="This is a placeholder text. Wow!" data-ar="هذا نص عنصر نائب. رائع!">This is a placeholder text. Wow!</p>
+          </div>
+          <div class="card">
+            <h3 class="card-title" data-en="Members" data-ar="الأعضاء">Members</h3>
+            <p class="card-description" data-en="This is a placeholder text. Wow!" data-ar="هذا نص عنصر نائب. رائع!">This is a placeholder text. Wow!</p>
+            <p class="card-description" data-en="This is a placeholder text. Wow!" data-ar="هذا نص عنصر نائب. رائع!">This is a placeholder text. Wow!</p>
+            <p class="card-description" data-en="This is a placeholder text. Wow!" data-ar="هذا نص عنصر نائب. رائع!">This is a placeholder text. Wow!</p>
+            <p class="card-description" data-en="This is a placeholder text. Wow!" data-ar="هذا نص عنصر نائب. رائع!">This is a placeholder text. Wow!</p>
+          </div>
+          <div class="card">
+            <h3 class="card-title" data-en="Files" data-ar="الملفات">Files</h3>
+            <p class="card-description" data-en="This is a placeholder text. Wow!" data-ar="هذا نص عنصر نائب. رائع!">This is a placeholder text. Wow!</p>
+            <p class="card-description" data-en="This is a placeholder text. Wow!" data-ar="هذا نص عنصر نائب. رائع!">This is a placeholder text. Wow!</p>
+            <p class="card-description" data-en="This is a placeholder text. Wow!" data-ar="هذا نص عنصر نائب. رائع!">This is a placeholder text. Wow!</p>
+            <p class="card-description" data-en="This is a placeholder text. Wow!" data-ar="هذا نص عنصر نائب. رائع!">This is a placeholder text. Wow!</p>
+          </div>
+          <div class="card">
+            <h3 class="card-title" data-en="Settings" data-ar="الإعدادات">Settings</h3>
+            <p class="card-description" data-en="This is a placeholder text. Wow!" data-ar="هذا نص عنصر نائب. رائع!">This is a placeholder text. Wow!</p>
+            <p class="card-description" data-en="This is a placeholder text. Wow!" data-ar="هذا نص عنصر نائب. رائع!">This is a placeholder text. Wow!</p>
+            <p class="card-description" data-en="This is a placeholder text. Wow!" data-ar="هذا نص عنصر نائب. رائع!">This is a placeholder text. Wow!</p>
+            <p class="card-description" data-en="This is a placeholder text. Wow!" data-ar="هذا نص عنصر نائب. رائع!">This is a placeholder text. Wow!</p>
+          </div>
+          <div class="card">
+            <h3 class="card-title" data-en="Billing" data-ar="الفوترة">Billing</h3>
+            <p class="card-description" data-en="This is a placeholder text. Wow!" data-ar="هذا نص عنصر نائب. رائع!">This is a placeholder text. Wow!</p>
+            <p class="card-description" data-en="This is a placeholder text. Wow!" data-ar="هذا نص عنصر نائب. رائع!">This is a placeholder text. Wow!</p>
+            <p class="card-description" data-en="This is a placeholder text. Wow!" data-ar="هذا نص عنصر نائب. رائع!">This is a placeholder text. Wow!</p>
+            <p class="card-description" data-en="This is a placeholder text. Wow!" data-ar="هذا نص عنصر نائب. رائع!">This is a placeholder text. Wow!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- page-row-header -->
+    <section class="page-section page-row-header">
+      <div>
+        <h3 class="page-row-header-title" data-en="Row header" data-ar="ترويسة صف">Row header</h3>
+        <p class="page-row-header-description" data-en="A two-column label row — a fixed title column beside content that fills the rest." data-ar="صف عنوان من عمودين — عمود عنوان ثابت بجانب محتوى يملأ الباقي.">A two-column label row — a fixed title column beside content that fills the rest.</p>
+      </div>
+      <div>
+        <div class="card">
+          <h3 class="card-title" data-en="Row header" data-ar="ترويسة صف">Row header</h3>
+          <p class="card-description" data-en="This card sits in the showcase column of a page-row-header — the very two-column label row that lays out every specimen on this page, which is why it needs no standalone demo of its own. The row-header pairs a fixed-width title column with a content column that fills whatever inline space is left, and it stays flow-relative: switch to Arabic and the fixed column moves to the inline-start on the right without a single physical property changing. Drop as much content as you like into the filling column — a form, a table, a stack of cards, or a long passage of prose like this one — and it wraps and reflows within the remaining width while the label column holds its measure." data-ar="تقع هذه البطاقة في عمود العرض ضمن ترويسة صف — وهي ذاتها صف العنوان ثنائي الأعمدة الذي يُنسّق كل نموذج في هذه الصفحة، ولهذا لا تحتاج إلى عرض توضيحي مستقل. تجمع ترويسة الصف بين عمود عنوان ثابت العرض وعمود محتوى يملأ ما تبقّى من المساحة الأفقية، وتبقى نسبيّة التدفّق: بدّل إلى العربية فينتقل العمود الثابت إلى بداية السطر على اليمين دون تغيير أي خاصية فيزيائية. ضع ما تشاء من المحتوى في العمود المالئ — نموذجًا أو جدولًا أو مجموعة بطاقات أو فقرة طويلة من النثر كهذه — فيلتفّ ويعيد التدفّق ضمن العرض المتبقّي بينما يحافظ عمود العنوان على قياسه.">This card sits in the showcase column of a page-row-header — the very two-column label row that lays out every specimen on this page, which is why it needs no standalone demo of its own. The row-header pairs a fixed-width title column with a content column that fills whatever inline space is left, and it stays flow-relative: switch to Arabic and the fixed column moves to the inline-start on the right without a single physical property changing. Drop as much content as you like into the filling column — a form, a table, a stack of cards, or a long passage of prose like this one — and it wraps and reflows within the remaining width while the label column holds its measure.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- page-column-header -->
+    <section class="page-section page-row-header">
+      <div>
+        <h3 class="page-row-header-title" data-en="Column header" data-ar="ترويسة عمود">Column header</h3>
+        <p class="page-row-header-description" data-en="A two-row stack — content on top, a fixed caption row centred beneath it." data-ar="رصّة من صفّين — المحتوى في الأعلى، وصف ثابت متوسّط تحته.">A two-row stack — content on top, a fixed caption row centred beneath it.</p>
+      </div>
+      <div>
+        <div class="page-cluster">
+          <div class="page-column-header">
+            <div class="card">
+              <h3 class="card-title" data-en="128" data-ar="١٢٨">128</h3>
+              <p class="card-description" data-en="Placeholder text" data-ar="نص نائب">Placeholder text</p>
+              <p class="card-description" data-en="Placeholder text" data-ar="نص نائب">Placeholder text</p>
+              <p class="card-description" data-en="Placeholder text" data-ar="نص نائب">Placeholder text</p>
+              <p class="card-description" data-en="Placeholder text" data-ar="نص نائب">Placeholder text</p>
+              <p class="card-description" data-en="Placeholder text" data-ar="نص نائب">Placeholder text</p>
+            </div>
+            <span class="text-label" data-en="Revenue" data-ar="الإيرادات">Revenue</span>
+          </div>
+          <div class="page-column-header">
+            <div class="card">
+              <h3 class="card-title" data-en="64" data-ar="٦٤">64</h3>
+              <p class="card-description" data-en="Placeholder text" data-ar="نص نائب">Placeholder text</p>
+              <p class="card-description" data-en="Placeholder text" data-ar="نص نائب">Placeholder text</p>
+              <p class="card-description" data-en="Placeholder text" data-ar="نص نائب">Placeholder text</p>
+              <p class="card-description" data-en="Placeholder text" data-ar="نص نائب">Placeholder text</p>
+              <p class="card-description" data-en="Placeholder text" data-ar="نص نائب">Placeholder text</p>
+            </div>
+            <span class="text-label" data-en="Users" data-ar="المستخدمون">Users</span>
+          </div>
+          <div class="page-column-header">
+            <div class="card">
+              <h3 class="card-title" data-en="512" data-ar="٥١٢">512</h3>
+              <p class="card-description" data-en="Placeholder text" data-ar="نص نائب">Placeholder text</p>
+              <p class="card-description" data-en="Placeholder text" data-ar="نص نائب">Placeholder text</p>
+              <p class="card-description" data-en="Placeholder text" data-ar="نص نائب">Placeholder text</p>
+              <p class="card-description" data-en="Placeholder text" data-ar="نص نائب">Placeholder text</p>
+              <p class="card-description" data-en="Placeholder text" data-ar="نص نائب">Placeholder text</p>
+            </div>
+            <span class="text-label" data-en="Sessions" data-ar="الجلسات">Sessions</span>
+          </div>
+          <div class="page-column-header">
+            <div class="card">
+              <h3 class="card-title" data-en="32" data-ar="٣٢">32</h3>
+              <p class="card-description" data-en="Placeholder text" data-ar="نص نائب">Placeholder text</p>
+              <p class="card-description" data-en="Placeholder text" data-ar="نص نائب">Placeholder text</p>
+              <p class="card-description" data-en="Placeholder text" data-ar="نص نائب">Placeholder text</p>
+              <p class="card-description" data-en="Placeholder text" data-ar="نص نائب">Placeholder text</p>
+              <p class="card-description" data-en="Placeholder text" data-ar="نص نائب">Placeholder text</p>
+            </div>
+            <span class="text-label" data-en="Orders" data-ar="الطلبات">Orders</span>
+          </div>
+          <div class="page-column-header">
+            <div class="card">
+              <h3 class="card-title" data-en="8" data-ar="٨">8</h3>
+              <p class="card-description" data-en="Placeholder text" data-ar="نص نائب">Placeholder text</p>
+              <p class="card-description" data-en="Placeholder text" data-ar="نص نائب">Placeholder text</p>
+              <p class="card-description" data-en="Placeholder text" data-ar="نص نائب">Placeholder text</p>
+              <p class="card-description" data-en="Placeholder text" data-ar="نص نائب">Placeholder text</p>
+              <p class="card-description" data-en="Placeholder text" data-ar="نص نائب">Placeholder text</p>
+            </div>
+            <span class="text-label" data-en="Refunds" data-ar="المستردات">Refunds</span>
+          </div>
+          <div class="page-column-header">
+            <div class="card">
+              <h3 class="card-title" data-en="256" data-ar="٢٥٦">256</h3>
+              <p class="card-description" data-en="Placeholder text" data-ar="نص نائب">Placeholder text</p>
+              <p class="card-description" data-en="Placeholder text" data-ar="نص نائب">Placeholder text</p>
+              <p class="card-description" data-en="Placeholder text" data-ar="نص نائب">Placeholder text</p>
+              <p class="card-description" data-en="Placeholder text" data-ar="نص نائب">Placeholder text</p>
+              <p class="card-description" data-en="Placeholder text" data-ar="نص نائب">Placeholder text</p>
+            </div>
+            <span class="text-label" data-en="Signups" data-ar="التسجيلات">Signups</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- page-scroller -->
+    <section class="page-section page-row-header">
+      <div>
+        <h3 class="page-row-header-title" data-en="Scroller" data-ar="الشريط المنزلق">Scroller</h3>
+        <p class="page-row-header-description" data-en="A non-wrapping row that scrolls along the inline axis when its items overflow." data-ar="صف لا يلتفّ، يتمرّر على المحور الأفقي عند تجاوز عناصره.">A non-wrapping row that scrolls along the inline axis when its items overflow.</p>
+      </div>
+      <div>
+        <div class="page-scroller">
+          <div class="card">
+            <h3 class="card-title" data-en="Card 1" data-ar="بطاقة ١">Card 1</h3>
+            <p class="card-description" data-en="Scrollable cards. Yes!" data-ar="بطاقات قابلة للتمرير. نعم!">Scrollable cards. Yes!</p>
+            <p class="card-description" data-en="Scrollable cards. Yes!" data-ar="بطاقات قابلة للتمرير. نعم!">Scrollable cards. Yes!</p>
+            <p class="card-description" data-en="Scrollable cards. Yes!" data-ar="بطاقات قابلة للتمرير. نعم!">Scrollable cards. Yes!</p>
+            <p class="card-description" data-en="Scrollable cards. Yes!" data-ar="بطاقات قابلة للتمرير. نعم!">Scrollable cards. Yes!</p>
+            <p class="card-description" data-en="Scrollable cards. Yes!" data-ar="بطاقات قابلة للتمرير. نعم!">Scrollable cards. Yes!</p>
+          </div>
+          <div class="card">
+            <h3 class="card-title" data-en="Card 2" data-ar="بطاقة ٢">Card 2</h3>
+            <p class="card-description" data-en="Scrollable cards. Yes!" data-ar="بطاقات قابلة للتمرير. نعم!">Scrollable cards. Yes!</p>
+            <p class="card-description" data-en="Scrollable cards. Yes!" data-ar="بطاقات قابلة للتمرير. نعم!">Scrollable cards. Yes!</p>
+            <p class="card-description" data-en="Scrollable cards. Yes!" data-ar="بطاقات قابلة للتمرير. نعم!">Scrollable cards. Yes!</p>
+            <p class="card-description" data-en="Scrollable cards. Yes!" data-ar="بطاقات قابلة للتمرير. نعم!">Scrollable cards. Yes!</p>
+            <p class="card-description" data-en="Scrollable cards. Yes!" data-ar="بطاقات قابلة للتمرير. نعم!">Scrollable cards. Yes!</p>
+          </div>
+          <div class="card">
+            <h3 class="card-title" data-en="Card 3" data-ar="بطاقة ٣">Card 3</h3>
+            <p class="card-description" data-en="Scrollable cards. Yes!" data-ar="بطاقات قابلة للتمرير. نعم!">Scrollable cards. Yes!</p>
+            <p class="card-description" data-en="Scrollable cards. Yes!" data-ar="بطاقات قابلة للتمرير. نعم!">Scrollable cards. Yes!</p>
+            <p class="card-description" data-en="Scrollable cards. Yes!" data-ar="بطاقات قابلة للتمرير. نعم!">Scrollable cards. Yes!</p>
+            <p class="card-description" data-en="Scrollable cards. Yes!" data-ar="بطاقات قابلة للتمرير. نعم!">Scrollable cards. Yes!</p>
+            <p class="card-description" data-en="Scrollable cards. Yes!" data-ar="بطاقات قابلة للتمرير. نعم!">Scrollable cards. Yes!</p>
+          </div>
+          <div class="card">
+            <h3 class="card-title" data-en="Card 4" data-ar="بطاقة ٤">Card 4</h3>
+            <p class="card-description" data-en="Scrollable cards. Yes!" data-ar="بطاقات قابلة للتمرير. نعم!">Scrollable cards. Yes!</p>
+            <p class="card-description" data-en="Scrollable cards. Yes!" data-ar="بطاقات قابلة للتمرير. نعم!">Scrollable cards. Yes!</p>
+            <p class="card-description" data-en="Scrollable cards. Yes!" data-ar="بطاقات قابلة للتمرير. نعم!">Scrollable cards. Yes!</p>
+            <p class="card-description" data-en="Scrollable cards. Yes!" data-ar="بطاقات قابلة للتمرير. نعم!">Scrollable cards. Yes!</p>
+            <p class="card-description" data-en="Scrollable cards. Yes!" data-ar="بطاقات قابلة للتمرير. نعم!">Scrollable cards. Yes!</p>
+          </div>
+          <div class="card">
+            <h3 class="card-title" data-en="Card 5" data-ar="بطاقة ٥">Card 5</h3>
+            <p class="card-description" data-en="Scrollable cards. Yes!" data-ar="بطاقات قابلة للتمرير. نعم!">Scrollable cards. Yes!</p>
+            <p class="card-description" data-en="Scrollable cards. Yes!" data-ar="بطاقات قابلة للتمرير. نعم!">Scrollable cards. Yes!</p>
+            <p class="card-description" data-en="Scrollable cards. Yes!" data-ar="بطاقات قابلة للتمرير. نعم!">Scrollable cards. Yes!</p>
+            <p class="card-description" data-en="Scrollable cards. Yes!" data-ar="بطاقات قابلة للتمرير. نعم!">Scrollable cards. Yes!</p>
+            <p class="card-description" data-en="Scrollable cards. Yes!" data-ar="بطاقات قابلة للتمرير. نعم!">Scrollable cards. Yes!</p>
+          </div>
+          <div class="card">
+            <h3 class="card-title" data-en="Card 6" data-ar="بطاقة ٦">Card 6</h3>
+            <p class="card-description" data-en="Scrollable cards. Yes!" data-ar="بطاقات قابلة للتمرير. نعم!">Scrollable cards. Yes!</p>
+            <p class="card-description" data-en="Scrollable cards. Yes!" data-ar="بطاقات قابلة للتمرير. نعم!">Scrollable cards. Yes!</p>
+            <p class="card-description" data-en="Scrollable cards. Yes!" data-ar="بطاقات قابلة للتمرير. نعم!">Scrollable cards. Yes!</p>
+            <p class="card-description" data-en="Scrollable cards. Yes!" data-ar="بطاقات قابلة للتمرير. نعم!">Scrollable cards. Yes!</p>
+            <p class="card-description" data-en="Scrollable cards. Yes!" data-ar="بطاقات قابلة للتمرير. نعم!">Scrollable cards. Yes!</p>
+          </div>
+          <div class="card">
+            <h3 class="card-title" data-en="Card 7" data-ar="بطاقة ٧">Card 7</h3>
+            <p class="card-description" data-en="Scrollable cards. Yes!" data-ar="بطاقات قابلة للتمرير. نعم!">Scrollable cards. Yes!</p>
+            <p class="card-description" data-en="Scrollable cards. Yes!" data-ar="بطاقات قابلة للتمرير. نعم!">Scrollable cards. Yes!</p>
+            <p class="card-description" data-en="Scrollable cards. Yes!" data-ar="بطاقات قابلة للتمرير. نعم!">Scrollable cards. Yes!</p>
+            <p class="card-description" data-en="Scrollable cards. Yes!" data-ar="بطاقات قابلة للتمرير. نعم!">Scrollable cards. Yes!</p>
+            <p class="card-description" data-en="Scrollable cards. Yes!" data-ar="بطاقات قابلة للتمرير. نعم!">Scrollable cards. Yes!</p>
+          </div>
+          <div class="card">
+            <h3 class="card-title" data-en="Card 8" data-ar="بطاقة ٨">Card 8</h3>
+            <p class="card-description" data-en="Scrollable cards. Yes!" data-ar="بطاقات قابلة للتمرير. نعم!">Scrollable cards. Yes!</p>
+            <p class="card-description" data-en="Scrollable cards. Yes!" data-ar="بطاقات قابلة للتمرير. نعم!">Scrollable cards. Yes!</p>
+            <p class="card-description" data-en="Scrollable cards. Yes!" data-ar="بطاقات قابلة للتمرير. نعم!">Scrollable cards. Yes!</p>
+            <p class="card-description" data-en="Scrollable cards. Yes!" data-ar="بطاقات قابلة للتمرير. نعم!">Scrollable cards. Yes!</p>
+            <p class="card-description" data-en="Scrollable cards. Yes!" data-ar="بطاقات قابلة للتمرير. نعم!">Scrollable cards. Yes!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- page-shell + page-sidebar + page-main -->
+    <section class="page-section page-row-header">
+      <div>
+        <h3 class="page-row-header-title" data-en="Shell, sidebar & main" data-ar="الهيكل والشريط الجانبي والمحتوى">Shell, sidebar &amp; main</h3>
+        <p class="page-row-header-description" data-en="A fixed sidebar beside a main column that fills the remaining inline space." data-ar="شريط جانبي ثابت بجانب عمود رئيسي يملأ المساحة الأفقية المتبقّية.">A fixed sidebar beside a main column that fills the remaining inline space.</p>
+      </div>
+      <div>
+        <div class="page-shell">
+          <div class="page-sidebar">
+            <div class="card">
+              <h3 class="card-title" data-en="Sidebar" data-ar="الشريط الجانبي">Sidebar</h3>
+              <p class="card-description" data-en="sidebar" data-ar="شريط جانبي">sidebar</p>
+              <p class="card-description" data-en="sidebar" data-ar="شريط جانبي">sidebar</p>
+              <p class="card-description" data-en="sidebar" data-ar="شريط جانبي">sidebar</p>
+              <p class="card-description" data-en="sidebar" data-ar="شريط جانبي">sidebar</p>
+              <p class="card-description" data-en="sidebar" data-ar="شريط جانبي">sidebar</p>
+              <p class="card-description" data-en="sidebar" data-ar="شريط جانبي">sidebar</p>
+              <p class="card-description" data-en="sidebar" data-ar="شريط جانبي">sidebar</p>
+              <p class="card-description" data-en="sidebar" data-ar="شريط جانبي">sidebar</p>
+              <p class="card-description" data-en="sidebar" data-ar="شريط جانبي">sidebar</p>
+              <p class="card-description" data-en="sidebar" data-ar="شريط جانبي">sidebar</p>
+            </div>
+          </div>
+          <div class="page-main">
+            <div class="card">
+              <h3 class="card-title" data-en="Main" data-ar="المحتوى">Main</h3>
+              <p class="card-description" data-en="The main column takes flex: 1 1 0 with a zero min-inline-size, so it fills whatever space the fixed sidebar leaves and can still shrink below its content's intrinsic width instead of forcing the shell to overflow." data-ar="يأخذ العمود الرئيسي القيمة flex: 1 1 0 مع حدٍّ أدنى للعرض المنطقي يساوي صفرًا، فيملأ المساحة التي يتركها الشريط الجانبي الثابت ويظلّ قادرًا على الانكماش دون أن يدفع الهيكل إلى التجاوز.">The main column takes flex: 1 1 0 with a zero min-inline-size, so it fills whatever space the fixed sidebar leaves and can still shrink below its content's intrinsic width instead of forcing the shell to overflow.</p>
+              <p class="card-description" data-en="Put the screen's primary content here — the sidebar carries navigation or filters at a steady width while this column carries the work. Under right-to-left the whole shell mirrors automatically, moving the sidebar to the inline-start on the right, because the layout leans on logical properties rather than left and right." data-ar="ضع المحتوى الأساسي للشاشة هنا — يحمل الشريط الجانبي التنقّل أو عوامل التصفية بعرض ثابت بينما يحمل هذا العمود العمل. في الاتجاه من اليمين إلى اليسار ينعكس الهيكل بأكمله تلقائيًا فينتقل الشريط الجانبي إلى بداية السطر على اليمين، لأن التخطيط يعتمد على الخصائص المنطقية لا على اليمين واليسار.">Put the screen's primary content here — the sidebar carries navigation or filters at a steady width while this column carries the work. Under right-to-left the whole shell mirrors automatically, moving the sidebar to the inline-start on the right, because the layout leans on logical properties rather than left and right.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- page-sticky -->
+    <section class="page-section page-row-header">
+      <div>
+        <h3 class="page-row-header-title" data-en="Sticky" data-ar="اللاصق">Sticky</h3>
+        <p class="page-row-header-description" data-en="Pins to the top of its scroll parent, clearing the content that scrolls past." data-ar="يثبت في أعلى حاويته المتمرّرة، فوق المحتوى الذي يمرّ.">Pins to the top of its scroll parent, clearing the content that scrolls past.</p>
+      </div>
+      <div>
+        <div style="block-size: 16rem; overflow-block: auto">
+          <div class="card page-sticky">
+            <h3 class="card-title" data-en="Sticky bar" data-ar="الشريط اللاصق">Sticky bar</h3>
+          </div>
+          <div class="page-cluster">
+            <div class="card"><p class="card-description" data-en="Scroll this box — the bar above stays pinned to the top while these rows scroll past." data-ar="مرّر هذا الصندوق — يبقى الشريط أعلاه مثبتًا في الأعلى بينما تمرّ هذه الصفوف.">Scroll this box — the bar above stays pinned to the top while these rows scroll past.</p></div>
+            <div class="card"><p class="card-description" data-en="Scroll this box — the bar above stays pinned to the top while these rows scroll past." data-ar="مرّر هذا الصندوق — يبقى الشريط أعلاه مثبتًا في الأعلى بينما تمرّ هذه الصفوف.">Scroll this box — the bar above stays pinned to the top while these rows scroll past.</p></div>
+            <div class="card"><p class="card-description" data-en="Scroll this box — the bar above stays pinned to the top while these rows scroll past." data-ar="مرّر هذا الصندوق — يبقى الشريط أعلاه مثبتًا في الأعلى بينما تمرّ هذه الصفوف.">Scroll this box — the bar above stays pinned to the top while these rows scroll past.</p></div>
+            <div class="card"><p class="card-description" data-en="Scroll this box — the bar above stays pinned to the top while these rows scroll past." data-ar="مرّر هذا الصندوق — يبقى الشريط أعلاه مثبتًا في الأعلى بينما تمرّ هذه الصفوف.">Scroll this box — the bar above stays pinned to the top while these rows scroll past.</p></div>
+            <div class="card"><p class="card-description" data-en="Scroll this box — the bar above stays pinned to the top while these rows scroll past." data-ar="مرّر هذا الصندوق — يبقى الشريط أعلاه مثبتًا في الأعلى بينما تمرّ هذه الصفوف.">Scroll this box — the bar above stays pinned to the top while these rows scroll past.</p></div>
+            <div class="card"><p class="card-description" data-en="Scroll this box — the bar above stays pinned to the top while these rows scroll past." data-ar="مرّر هذا الصندوق — يبقى الشريط أعلاه مثبتًا في الأعلى بينما تمرّ هذه الصفوف.">Scroll this box — the bar above stays pinned to the top while these rows scroll past.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="page-footer">
+    <span class="text-body text-color-description" data-en="bravoixr · © 2026" data-ar="bravoixr · © ٢٠٢٦">bravoixr · © 2026</span>
+    <span class="text-body text-color-description">v0.1.0</span>
+  </footer>
+
+  <script src="../preview.js"></script>
+</body>
+</html>

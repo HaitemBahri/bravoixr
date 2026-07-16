@@ -7,108 +7,108 @@
 
 :root {
   /* Font family — code is monospace in every script */
-  --bravoixr-font-code: var(--bravoixr-font-mono);
+  --font-code: var(--font-mono);
 
   /* Size roles (desktop steps) */
-  --bravoixr-text-hero: var(--bravoixr-text-h1);
-  --bravoixr-text-page-title: var(--bravoixr-text-h2);
-  --bravoixr-text-section-title: var(--bravoixr-text-h3);
-  --bravoixr-text-subsection-title: var(--bravoixr-text-h4);
-  --bravoixr-text-minor-heading: var(--bravoixr-text-h5);
-  --bravoixr-text-project-title: var(--bravoixr-text-body1);
-  --bravoixr-text-context-title: var(--bravoixr-text-body1);
-  --bravoixr-text-page-description: var(--bravoixr-text-body1);
-  --bravoixr-text-body: var(--bravoixr-text-body3);
-  --bravoixr-text-label: var(--bravoixr-text-body4);
-  --bravoixr-text-helper: var(--bravoixr-text-body5);
-  --bravoixr-text-code-block: var(--bravoixr-text-code);
-  --bravoixr-text-code-label: var(--bravoixr-text-code2);
+  --text-hero: var(--text-h1);
+  --text-page-title: var(--text-h2);
+  --text-section-title: var(--text-h3);
+  --text-subsection-title: var(--text-h4);
+  --text-minor-heading: var(--text-h5);
+  --text-project-title: var(--text-body1);
+  --text-context-title: var(--text-body1);
+  --text-page-description: var(--text-body1);
+  --text-body: var(--text-body3);
+  --text-label: var(--text-body4);
+  --text-helper: var(--text-body5);
+  --text-code-block: var(--text-code);
+  --text-code-label: var(--text-code2);
 
   /* Measure roles — max line length */
-  --bravoixr-measure-page-description: var(--bravoixr-measure-prose);
+  --measure-page-description: var(--measure-prose);
 
-  /* Weight roles (per typography.md role map; --bravoixr-weight-body and --bravoixr-weight-page-description are scripted, see the dir blocks) */
-  --bravoixr-weight-hero: var(--bravoixr-weight-bold);
-  --bravoixr-weight-page-title: var(--bravoixr-weight-bold);
-  --bravoixr-weight-section-title: var(--bravoixr-weight-bold);
-  --bravoixr-weight-subsection-title: var(--bravoixr-weight-semibold);
-  --bravoixr-weight-minor-heading: var(--bravoixr-weight-semibold);
-  --bravoixr-weight-project-title: var(--bravoixr-weight-semibold);
-  --bravoixr-weight-context-title: var(--bravoixr-weight-regular);
-  --bravoixr-weight-label: var(--bravoixr-weight-light);
-  --bravoixr-weight-helper: var(--bravoixr-weight-extralight);
+  /* Weight roles (per typography.md role map; --weight-body and --weight-page-description are scripted, see the dir blocks) */
+  --weight-hero: var(--weight-bold);
+  --weight-page-title: var(--weight-bold);
+  --weight-section-title: var(--weight-bold);
+  --weight-subsection-title: var(--weight-semibold);
+  --weight-minor-heading: var(--weight-semibold);
+  --weight-project-title: var(--weight-semibold);
+  --weight-context-title: var(--weight-regular);
+  --weight-label: var(--weight-light);
+  --weight-helper: var(--weight-extralight);
 
-  /* Line-height roles (script-invariant; --bravoixr-leading-prose is scripted, see the dir blocks) */
-  --bravoixr-leading-display: var(--bravoixr-leading-heading);
-  --bravoixr-leading-code-block: var(--bravoixr-leading-code);
+  /* Line-height roles (script-invariant; --leading-prose is scripted, see the dir blocks) */
+  --leading-display: var(--leading-heading);
+  --leading-code-block: var(--leading-code);
 
-  /* Letter-spacing roles (script-invariant; --bravoixr-tracking-display/-uppercase are scripted, see below) */
-  --bravoixr-tracking-prose: var(--bravoixr-tracking-normal);
+  /* Letter-spacing roles (script-invariant; --tracking-display/-uppercase are scripted, see below) */
+  --tracking-prose: var(--tracking-normal);
 }
 
 [dir="ltr"] {
   /* Font families — Latin script (the sole home of the Latin roles; no :root fallback) */
-  --bravoixr-font-heading: var(--bravoixr-font-latin);
-  --bravoixr-font-body: var(--bravoixr-font-latin);
+  --font-heading: var(--font-latin);
+  --font-body: var(--font-latin);
 
   /* Weight — Latin body and page description sit at light */
-  --bravoixr-weight-body: var(--bravoixr-weight-light);
-  --bravoixr-weight-page-description: var(--bravoixr-weight-light);
+  --weight-body: var(--weight-light);
+  --weight-page-description: var(--weight-light);
 
   /* Line-height — Latin body */
-  --bravoixr-leading-prose: var(--bravoixr-leading-body);
+  --leading-prose: var(--leading-body);
 
   /* Letter-spacing — Latin tracks headings and caps */
-  --bravoixr-tracking-display: var(--bravoixr-tracking-heading);
-  --bravoixr-tracking-uppercase: var(--bravoixr-tracking-caps);
+  --tracking-display: var(--tracking-heading);
+  --tracking-uppercase: var(--tracking-caps);
 }
 
 [dir="rtl"] {
   /* Font families — Arabic script */
-  --bravoixr-font-heading: var(--bravoixr-font-arabic);
-  --bravoixr-font-body: var(--bravoixr-font-arabic);
+  --font-heading: var(--font-arabic);
+  --font-body: var(--font-arabic);
 
   /* Weight — Arabic body and page description step up one level (IBM Plex Sans Arabic reads lighter than the Latin grotesque) */
-  --bravoixr-weight-body: var(--bravoixr-weight-regular);
-  --bravoixr-weight-page-description: var(--bravoixr-weight-regular);
+  --weight-body: var(--weight-regular);
+  --weight-page-description: var(--weight-regular);
 
   /* Line-height — Arabic body gets a little more vertical room */
-  --bravoixr-leading-prose: var(--bravoixr-leading-body-arabic);
+  --leading-prose: var(--leading-body-arabic);
 
   /* Letter-spacing — Arabic is cursive and joined, so it is never tracked */
-  --bravoixr-tracking-display: var(--bravoixr-tracking-normal);
-  --bravoixr-tracking-uppercase: var(--bravoixr-tracking-normal);
+  --tracking-display: var(--tracking-normal);
+  --tracking-uppercase: var(--tracking-normal);
 }
 
 /* Viewport axis — the responsive heading "elevator" (identity/typography.md § Responsive behavior).
  * :root above holds the desktop steps; each band re-points the size roles one step down the fixed
  * ladder — pure var() indirection, no fluid math, so the ladder stays portable.
  * The breakpoint px are inlined here because @media conditions can't read var(); they mirror
- * --bravoixr-breakpoint-tablet (768px) and --bravoixr-breakpoint-desktop (1024px) in primitives/layout.css, offset by
+ * --breakpoint-tablet (768px) and --breakpoint-desktop (1024px) in primitives/layout.css, offset by
  * 0.02px to sit just below each min-width boundary. Bands: mobile <768, tablet 768–1023, desktop ≥1024. */
 
 /* Tablet (<1024): headings drop one step; the body-scale page-structure roles (project title,
  * context title, page description) step once to body2 and hold below. */
 @media (max-width: 1023.98px) {
   :root {
-    --bravoixr-text-hero: var(--bravoixr-text-h2);
-    --bravoixr-text-page-title: var(--bravoixr-text-h3);
-    --bravoixr-text-section-title: var(--bravoixr-text-h4);
-    --bravoixr-text-subsection-title: var(--bravoixr-text-h5);
-    --bravoixr-text-minor-heading: var(--bravoixr-text-h6);
-    --bravoixr-text-project-title: var(--bravoixr-text-body2);
-    --bravoixr-text-context-title: var(--bravoixr-text-body2);
-    --bravoixr-text-page-description: var(--bravoixr-text-body2);
+    --text-hero: var(--text-h2);
+    --text-page-title: var(--text-h3);
+    --text-section-title: var(--text-h4);
+    --text-subsection-title: var(--text-h5);
+    --text-minor-heading: var(--text-h6);
+    --text-project-title: var(--text-body2);
+    --text-context-title: var(--text-body2);
+    --text-page-description: var(--text-body2);
   }
 }
 
 /* Mobile (<768): headings drop one more step; the context title holds body2 from the band above. */
 @media (max-width: 767.98px) {
   :root {
-    --bravoixr-text-hero: var(--bravoixr-text-h3);
-    --bravoixr-text-page-title: var(--bravoixr-text-h4);
-    --bravoixr-text-section-title: var(--bravoixr-text-h5);
-    --bravoixr-text-subsection-title: var(--bravoixr-text-h6);
-    --bravoixr-text-minor-heading: var(--bravoixr-text-h7);
+    --text-hero: var(--text-h3);
+    --text-page-title: var(--text-h4);
+    --text-section-title: var(--text-h5);
+    --text-subsection-title: var(--text-h6);
+    --text-minor-heading: var(--text-h7);
   }
 }

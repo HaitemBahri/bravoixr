@@ -1,0 +1,71 @@
+/* Component — Card
+ * Thin class for the reused card surface. Consumes semantic tokens only.
+ * Resting raised surface: borderless, with the raised fill alone separating it
+ * from the page — no border, no shadow. */
+
+.card {
+  display: flex;
+  flex-direction: column; /* lets the footer push to the bottom edge when the card is taller than its content */
+  padding: var(--spacing-5);
+  border-radius: var(--radius-card);
+  background: var(--color-surface-raised);
+  color: var(--color-text);
+}
+
+/* Title + description — the card's text anatomy. Title takes heading family at
+ * context-title size / subsection weight; description is quiet muted body text. */
+
+.card-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-context-title);
+  font-weight: var(--weight-subsection-title);
+  line-height: var(--leading-display);
+  letter-spacing: var(--tracking-display);
+  margin-block: 0 var(--spacing-3);
+}
+
+.card-description {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  font-weight: var(--weight-body);
+  line-height: var(--leading-prose);
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* Anatomy — optional sections stacked inside a card. No dividers: sections carry
+ * no visible chrome, only block rhythm separating them from the content region.
+ * (No .card-body — the card's own padding already serves the content region.) */
+
+.card-header {
+  margin-block-end: var(--spacing-4);
+}
+
+.card-footer {
+  display: flex;
+  gap: var(--spacing-3);
+  justify-content: flex-end; /* flow-relative in flex; mirrors under RTL */
+  margin-block-start: auto; /* pin to the card's bottom edge when it's taller than its content */
+  padding-block-start: var(--spacing-4); /* minimum gap above the actions (kept even when margin-auto collapses to 0) */
+}
+
+.card-footer .btn:not(.btn-square) {
+  inline-size: auto; /* footer is the layout: non-square actions size to content, not full-width (square buttons keep their box) */
+}
+
+/* Media — a full-bleed region that cancels the card's default padding so
+ * artwork runs edge to edge, clipped to the card's top corners. */
+.card-media {
+  margin-block-start: calc(-1 * var(--spacing-5)); /* cancel card block-start pad */
+  margin-inline: calc(-1 * var(--spacing-5)); /* cancel card inline pad */
+  margin-block-end: var(--spacing-5);
+  overflow: hidden; /* clip media to the rounded corners */
+  border-start-start-radius: var(--radius-card);
+  border-start-end-radius: var(--radius-card);
+}
+
+.card-media > img {
+  display: block;
+  inline-size: 100%;
+  block-size: auto;
+}

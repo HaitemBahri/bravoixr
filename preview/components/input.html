@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>bravoixr — input</title>
+
+  <script>
+    (function () {
+      var t = localStorage.getItem('bravoixr-theme') || 'light';
+      var l = localStorage.getItem('bravoixr-lang') || 'en';
+      var r = document.documentElement;
+      r.setAttribute('data-theme', t);
+      if (l === 'ar') { r.setAttribute('dir', 'rtl'); r.setAttribute('lang', 'ar'); }
+      else { r.setAttribute('dir', 'ltr'); r.setAttribute('lang', 'en'); }
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=IBM+Plex+Sans+Arabic:wght@200;300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap">
+
+  <link rel="stylesheet" href="../../index.css">
+</head>
+<body class="page text-body">
+  <div class="page-topbar">
+    <span class="text-project-title">bravoixr</span>
+    <div class="page-controls">
+      <button class="btn btn-solid btn-square" type="button" data-toggle="theme" aria-label="Toggle theme"><span class="icon icon-md">contrast</span></button>
+      <button class="btn btn-solid btn-square" type="button" data-toggle="lang" aria-label="Toggle language"><span class="icon icon-md">translate</span></button>
+    </div>
+  </div>
+
+  <main class="page-body">
+
+    <section class="page-section">
+      <h2 class="text-page-title" data-en="Input" data-ar="حقل إدخال">Input</h2>
+      <p class="text-page-description text-color-description" data-en="A full-width text field with a just-visible border that becomes the 2px brand focus ring on click — no layout shift. Paired with its label, and optionally helper text. Available in all five semantic color roles." data-ar="حقل نصي بعرض كامل بحدّ واضح بالكاد يتحوّل إلى حلقة تركيز باللون الأساسي بسماكة 2 بكسل عند النقر — دون أي إزاحة في التخطيط. يُقرن بتسميته، واختياريًا بنص مساعد. متوفر بجميع أدوار اللون الدلالية الخمسة.">A full-width text field with a just-visible border that becomes the 2px brand focus ring on click — no layout shift. Paired with its label, and optionally helper text. Available in all five semantic color roles.</p>
+    </section>
+
+    <section class="page-section page-row-header">
+      <div>
+        <h3 class="page-row-header-title" data-en="Input + label" data-ar="حقل إدخال + تسمية">Input + label</h3>
+        <p class="page-row-header-description" data-en="A field with its label above it. Available in all five semantic color roles." data-ar="حقل مع تسميته فوقه. متوفر بجميع أدوار اللون الدلالية الخمسة.">A field with its label above it. Available in all five semantic color roles.</p>
+      </div>
+      <div>
+        <div class="page-stack">
+          <div class="input-field">
+            <label class="text-label" for="input-label-primary" data-en="Primary" data-ar="أساسي">Primary</label>
+            <input class="input" type="text" id="input-label-primary" placeholder="Type something…" data-en="Type something…" data-ar="اكتب شيئًا…">
+          </div>
+          <div class="input-field">
+            <label class="text-label" for="input-label-secondary" data-en="Secondary" data-ar="ثانوي">Secondary</label>
+            <input class="input input-secondary" type="text" id="input-label-secondary" placeholder="Type something…" data-en="Type something…" data-ar="اكتب شيئًا…">
+          </div>
+          <div class="input-field">
+            <label class="text-label" for="input-label-error" data-en="Error" data-ar="خطأ">Error</label>
+            <input class="input input-error" type="text" id="input-label-error" placeholder="Type something…" data-en="Type something…" data-ar="اكتب شيئًا…">
+          </div>
+          <div class="input-field">
+            <label class="text-label" for="input-label-warning" data-en="Warning" data-ar="تحذير">Warning</label>
+            <input class="input input-warning" type="text" id="input-label-warning" placeholder="Type something…" data-en="Type something…" data-ar="اكتب شيئًا…">
+          </div>
+          <div class="input-field">
+            <label class="text-label" for="input-label-success" data-en="Success" data-ar="نجاح">Success</label>
+            <input class="input input-success" type="text" id="input-label-success" placeholder="Type something…" data-en="Type something…" data-ar="اكتب شيئًا…">
+          </div>
+          <div class="input-field">
+            <label class="text-label" for="input-label-disabled" data-en="Disabled" data-ar="معطّل">Disabled</label>
+            <input class="input" type="text" id="input-label-disabled" placeholder="Type something…" disabled data-en="Type something…" data-ar="اكتب شيئًا…">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section page-row-header">
+      <div>
+        <h3 class="page-row-header-title" data-en="Input + label + helper" data-ar="حقل إدخال + تسمية + نص مساعد">Input + label + helper</h3>
+        <p class="page-row-header-description" data-en="A field with its label above it and helper text below. Available in all five semantic color roles." data-ar="حقل مع تسميته فوقه ونص مساعد تحته. متوفر بجميع أدوار اللون الدلالية الخمسة.">A field with its label above it and helper text below. Available in all five semantic color roles.</p>
+      </div>
+      <div>
+        <div class="page-stack">
+          <div class="input-field">
+            <label class="text-label" for="input-helper-primary" data-en="Primary" data-ar="أساسي">Primary</label>
+            <input class="input" type="text" id="input-helper-primary" placeholder="Type something…" data-en="Type something…" data-ar="اكتب شيئًا…">
+            <span class="text-helper text-color-helper" data-en="Helper text" data-ar="نص مساعد">Helper text</span>
+          </div>
+          <div class="input-field">
+            <label class="text-label" for="input-helper-secondary" data-en="Secondary" data-ar="ثانوي">Secondary</label>
+            <input class="input input-secondary" type="text" id="input-helper-secondary" placeholder="Type something…" data-en="Type something…" data-ar="اكتب شيئًا…">
+            <span class="text-helper text-color-helper" data-en="Helper text" data-ar="نص مساعد">Helper text</span>
+          </div>
+          <div class="input-field">
+            <label class="text-label" for="input-helper-error" data-en="Error" data-ar="خطأ">Error</label>
+            <input class="input input-error" type="text" id="input-helper-error" placeholder="Type something…" data-en="Type something…" data-ar="اكتب شيئًا…">
+            <span class="text-helper text-color-error" data-en="Helper text" data-ar="نص مساعد">Helper text</span>
+          </div>
+          <div class="input-field">
+            <label class="text-label" for="input-helper-warning" data-en="Warning" data-ar="تحذير">Warning</label>
+            <input class="input input-warning" type="text" id="input-helper-warning" placeholder="Type something…" data-en="Type something…" data-ar="اكتب شيئًا…">
+            <span class="text-helper text-color-warning" data-en="Helper text" data-ar="نص مساعد">Helper text</span>
+          </div>
+          <div class="input-field">
+            <label class="text-label" for="input-helper-success" data-en="Success" data-ar="نجاح">Success</label>
+            <input class="input input-success" type="text" id="input-helper-success" placeholder="Type something…" data-en="Type something…" data-ar="اكتب شيئًا…">
+            <span class="text-helper text-color-success" data-en="Helper text" data-ar="نص مساعد">Helper text</span>
+          </div>
+          <div class="input-field">
+            <label class="text-label" for="input-helper-disabled" data-en="Disabled" data-ar="معطّل">Disabled</label>
+            <input class="input" type="text" id="input-helper-disabled" placeholder="Type something…" disabled data-en="Type something…" data-ar="اكتب شيئًا…">
+            <span class="text-helper text-color-helper" data-en="Helper text" data-ar="نص مساعد">Helper text</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="page-footer">
+    <span class="text-body text-color-description" data-en="bravoixr · © 2026" data-ar="bravoixr · © ٢٠٢٦">bravoixr · © 2026</span>
+    <span class="text-body text-color-description">v0.1.0</span>
+  </footer>
+
+  <script src="../preview.js"></script>
+</body>
+</html>

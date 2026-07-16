@@ -5,18 +5,18 @@
 
 :root {
   /* Font family */
-  --bravoixr-icon-font: 'Material Symbols Rounded';
+  --icon-font: 'Material Symbols Rounded';
 
   /* Variable-font axes */
-  --bravoixr-icon-wght: 400;
-  --bravoixr-icon-fill: 0;
-  --bravoixr-icon-opsz-floor: 20;
-  --bravoixr-icon-grade-light: 0;
-  --bravoixr-icon-grade-dark: -25;
+  --icon-wght: 400;
+  --icon-fill: 0;
+  --icon-opsz-floor: 20;
+  --icon-grade-light: 0;
+  --icon-grade-dark: -25;
 
   /* Size scale — md (20px) is the default */
-  --bravoixr-icon-size-sm: 16px;
-  --bravoixr-icon-size-md: 20px;
-  --bravoixr-icon-size-lg: 24px;
-  --bravoixr-icon-size-xl: 32px;
+  --icon-size-sm: 16px;
+  --icon-size-md: 20px;
+  --icon-size-lg: 24px;
+  --icon-size-xl: 32px;
 }

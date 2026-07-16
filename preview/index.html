@@ -1,172 +1,181 @@
 <!doctype html>
-<html data-theme="light" dir="ltr" lang="en">
+<html lang="en" dir="ltr" data-theme="light">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>bravoixr — daisyUI theme preview</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>bravoixr — preview</title>
 
-  <!-- Pre-paint: restore stored theme/lang before first paint (no flash) -->
+  <!-- Pre-paint: apply stored theme/lang before first paint (no flash). -->
   <script>
     (function () {
-      var r = document.documentElement;
       var t = localStorage.getItem('bravoixr-theme') || 'light';
       var l = localStorage.getItem('bravoixr-lang') || 'en';
+      var r = document.documentElement;
       r.setAttribute('data-theme', t);
       if (l === 'ar') { r.setAttribute('dir', 'rtl'); r.setAttribute('lang', 'ar'); }
       else { r.setAttribute('dir', 'ltr'); r.setAttribute('lang', 'en'); }
     })();
   </script>
 
-  <!-- Fonts (the consuming app loads these; the system declares only the stacks) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=IBM+Plex+Sans+Arabic:wght@200;300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet" />
+  <!-- Fonts: loaded by the preview (the consumer), never by the system CSS. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=IBM+Plex+Sans+Arabic:wght@200;300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap">
 
-  <link rel="stylesheet" href="dist/app.css" />
-  <style>
-    .material-symbols-rounded {
-      font-family: 'Material Symbols Rounded';
-      font-weight: normal; font-style: normal; line-height: 1;
-      -webkit-font-feature-settings: 'liga'; -webkit-font-smoothing: antialiased;
-    }
-  </style>
+  <!-- The system under test, then the preview chrome. -->
+  <link rel="stylesheet" href="../index.css">
 </head>
-
-<body class="bg-base-200 text-base-content min-h-screen">
-  <!-- Top bar -->
-  <header class="bg-base-100 border-b border-base-300">
-    <div class="mx-auto flex max-w-5xl items-center justify-between gap-4 px-6 py-4">
-      <span class="text-project-title" data-en="bravoixr" data-ar="بْرَافْوَا">bravoixr</span>
-      <div class="flex gap-2">
-        <button class="btn btn-square btn-primary" type="button" data-toggle="theme" aria-label="Toggle theme">
-          <span class="material-symbols-rounded">contrast</span>
-        </button>
-        <button class="btn btn-square btn-primary" type="button" data-toggle="lang" aria-label="Toggle language">
-          <span class="material-symbols-rounded">translate</span>
-        </button>
-      </div>
+<body class="page text-body">
+  <div class="page-topbar">
+    <span class="text-project-title">bravoixr</span>
+    <div class="page-controls">
+      <button class="btn btn-solid btn-square" type="button" data-toggle="theme" aria-label="Toggle theme"><span class="icon icon-md">contrast</span></button>
+      <button class="btn btn-solid btn-square" type="button" data-toggle="lang" aria-label="Toggle language"><span class="icon icon-md">translate</span></button>
     </div>
-  </header>
+  </div>
 
-  <main class="mx-auto flex max-w-5xl flex-col gap-12 px-6 py-10">
-
-    <p class="text-page-description text-color-description max-w-prose"
-       data-en="Real daisyUI components rendered in the bravoixr identity — colors, sizing, and typography. Toggle theme and language above."
-       data-ar="مكوّنات daisyUI حقيقية بهوية bravoixr — الألوان والأحجام والطباعة. بدّل السمة واللغة بالأعلى.">
-      Real daisyUI components rendered in the bravoixr identity — colors, sizing, and typography. Toggle theme and language above.
-    </p>
-
-    <!-- Typography -->
-    <section class="flex flex-col gap-4">
-      <h2 class="text-section-title" data-en="Typography" data-ar="الطباعة">Typography</h2>
-      <div class="card bg-base-100"><div class="card-body gap-3">
-        <span class="text-hero" data-en="Hero" data-ar="عنوان بارز">Hero</span>
-        <span class="text-page-title" data-en="Page title" data-ar="عنوان الصفحة">Page title</span>
-        <span class="text-section-title" data-en="Section title" data-ar="عنوان القسم">Section title</span>
-        <span class="text-subsection-title" data-en="Subsection title" data-ar="عنوان فرعي">Subsection title</span>
-        <span class="text-minor-heading" data-en="Minor heading" data-ar="عنوان صغير">Minor heading</span>
-        <span class="text-body" data-en="Body text — the default reading size." data-ar="نص الفقرة — حجم القراءة الافتراضي.">Body text — the default reading size.</span>
-        <span class="text-code">const bravoixr = "daisyUI";</span>
-      </div></div>
+  <main class="page-body">
+    <section class="page-section">
+      <h1 class="text-page-title" data-en="Design identity preview" data-ar="معاينة الهوية البصرية">Design identity preview</h1>
+      <p class="text-page-description text-color-description" data-en="Evaluate v0.1.0 hands-on — real fonts, light/dark, and English/Arabic. Toggle from the top of any page; the setting follows you across every page."
+         data-ar="قيّم الإصدار 0.1.0 مباشرةً — بالخطوط الحقيقية، الوضع الفاتح/الداكن، والعربية/الإنجليزية. بدّل من الأعلى، ويبقى الإعداد معك عبر كل الصفحات.">Evaluate v0.1.0 hands-on — real fonts, light/dark, and English/Arabic. Toggle from the top of any page; the setting follows you across every page.</p>
     </section>
 
-    <!-- Buttons -->
-    <section class="flex flex-col gap-4">
-      <h2 class="text-section-title" data-en="Buttons" data-ar="الأزرار">Buttons</h2>
-      <div class="card bg-base-100"><div class="card-body gap-4">
-        <div class="flex flex-wrap gap-2">
-          <button class="btn btn-primary" data-en="Primary" data-ar="أساسي">Primary</button>
-          <button class="btn btn-secondary" data-en="Secondary" data-ar="ثانوي">Secondary</button>
-          <button class="btn btn-info" data-en="Info" data-ar="معلومة">Info</button>
-          <button class="btn btn-success" data-en="Success" data-ar="نجاح">Success</button>
-          <button class="btn btn-warning" data-en="Warning" data-ar="تحذير">Warning</button>
-          <button class="btn btn-error" data-en="Error" data-ar="خطأ">Error</button>
+    <section class="page-section">
+      <h2 class="text-section-title"data-en="Primitives" data-ar="الأوّليات">Primitives</h2>
+      <div class="page-grid">
+        <div class="card">
+          <h3 class="card-title" data-en="Color" data-ar="اللون">Color</h3>
+          <p class="card-description" data-en="Brand, status, and accent ramps plus neutrals." data-ar="تدرّجات العلامة والحالات واللمسات، بالإضافة إلى المحايدات.">Brand, status, and accent ramps plus neutrals.</p>
+          <div class="card-footer">
+            <button class="btn btn-solid btn-square" type="button" data-href="primitives/color.html" aria-label="Open Color"><span class="icon icon-md" data-en="arrow_forward" data-ar="arrow_back">arrow_forward</span></button>
+          </div>
         </div>
-        <div class="flex flex-wrap gap-2">
-          <button class="btn btn-outline btn-primary" data-en="Outline" data-ar="محدّد">Outline</button>
-          <button class="btn btn-soft btn-primary" data-en="Soft" data-ar="ناعم">Soft</button>
-          <button class="btn btn-ghost btn-primary" data-en="Ghost" data-ar="شفاف">Ghost</button>
-          <button class="btn btn-primary" disabled data-en="Disabled" data-ar="معطّل">Disabled</button>
+        <div class="card">
+          <h3 class="card-title" data-en="Typography" data-ar="الطباعة">Typography</h3>
+          <p class="card-description" data-en="Font stacks, size scales, weights, leading, tracking." data-ar="عائلات الخطوط، المقاييس، الأوزان، تباعد الأسطر والأحرف.">Font stacks, size scales, weights, leading, tracking.</p>
+          <div class="card-footer">
+            <button class="btn btn-solid btn-square" type="button" data-href="primitives/typography.html" aria-label="Open Typography"><span class="icon icon-md" data-en="arrow_forward" data-ar="arrow_back">arrow_forward</span></button>
+          </div>
         </div>
-        <div class="flex flex-wrap items-center gap-2">
-          <button class="btn btn-primary btn-sm" data-en="Small" data-ar="صغير">Small</button>
-          <button class="btn btn-primary" data-en="Medium" data-ar="متوسط">Medium</button>
-          <button class="btn btn-primary btn-lg" data-en="Large" data-ar="كبير">Large</button>
+        <div class="card">
+          <h3 class="card-title" data-en="Layout" data-ar="التخطيط">Layout</h3>
+          <p class="card-description" data-en="Spacing, sizing, radius, borders, shadows, z-index." data-ar="التباعد، الأحجام، الزوايا، الحدود، الظلال، ترتيب الطبقات.">Spacing, sizing, radius, borders, shadows, z-index.</p>
+          <div class="card-footer">
+            <button class="btn btn-solid btn-square" type="button" data-href="primitives/layout.html" aria-label="Open Layout"><span class="icon icon-md" data-en="arrow_forward" data-ar="arrow_back">arrow_forward</span></button>
+          </div>
         </div>
-      </div></div>
+        <div class="card">
+          <h3 class="card-title" data-en="Motion" data-ar="الحركة">Motion</h3>
+          <p class="card-description" data-en="Duration scale and easing curves." data-ar="مقياس المدّة ومنحنيات التسارع.">Duration scale and easing curves.</p>
+          <div class="card-footer">
+            <button class="btn btn-solid btn-square" type="button" data-href="primitives/motion.html" aria-label="Open Motion"><span class="icon icon-md" data-en="arrow_forward" data-ar="arrow_back">arrow_forward</span></button>
+          </div>
+        </div>
+        <div class="card">
+          <h3 class="card-title" data-en="Icons" data-ar="الأيقونات">Icons</h3>
+          <p class="card-description" data-en="Icon font, variable axes, and size scale." data-ar="خط الأيقونات، المحاور المتغيّرة، ومقياس الأحجام.">Icon font, variable axes, and size scale.</p>
+          <div class="card-footer">
+            <button class="btn btn-solid btn-square" type="button" data-href="primitives/icons.html" aria-label="Open Icons"><span class="icon icon-md" data-en="arrow_forward" data-ar="arrow_back">arrow_forward</span></button>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Inputs -->
-    <section class="flex flex-col gap-4">
-      <h2 class="text-section-title" data-en="Inputs" data-ar="الحقول">Inputs</h2>
-      <div class="card bg-base-100"><div class="card-body grid gap-4 sm:grid-cols-2">
-        <label class="flex flex-col gap-1">
-          <span class="text-label" data-en="Name" data-ar="الاسم">Name</span>
-          <input class="input w-full" data-en="Jane Doe" data-ar="جين دو" placeholder="Jane Doe" />
-        </label>
-        <label class="flex flex-col gap-1">
-          <span class="text-label" data-en="Email" data-ar="البريد">Email</span>
-          <input class="input input-error w-full" placeholder="you@example.com" />
-          <span class="text-helper text-color-error" data-en="Enter a valid email." data-ar="أدخل بريدًا صحيحًا.">Enter a valid email.</span>
-        </label>
-        <label class="flex flex-col gap-1">
-          <span class="text-label" data-en="Plan" data-ar="الخطة">Plan</span>
-          <select class="select w-full">
-            <option data-en="Free" data-ar="مجاني">Free</option>
-            <option data-en="Pro" data-ar="محترف">Pro</option>
-          </select>
-        </label>
-        <label class="flex flex-col gap-1">
-          <span class="text-label" data-en="Disabled" data-ar="معطّل">Disabled</span>
-          <input class="input w-full" disabled placeholder="—" />
-        </label>
-      </div></div>
+    <section class="page-section">
+      <h2 class="text-section-title"data-en="Semantic tokens" data-ar="الرموز الدلالية">Semantic tokens</h2>
+      <div class="page-grid">
+        <div class="card">
+          <h3 class="card-title" data-en="Color" data-ar="اللون">Color</h3>
+          <p class="card-description" data-en="Role tokens for brand, status, surfaces, text, and borders — themed light/dark." data-ar="رموز الأدوار للعلامة والحالات والأسطح والنصوص والحدود — بسمة فاتحة/داكنة.">Role tokens for brand, status, surfaces, text, and borders — themed light/dark.</p>
+          <div class="card-footer">
+            <button class="btn btn-solid btn-square" type="button" data-href="semantics/color.html" aria-label="Open Color"><span class="icon icon-md" data-en="arrow_forward" data-ar="arrow_back">arrow_forward</span></button>
+          </div>
+        </div>
+        <div class="card">
+          <h3 class="card-title" data-en="Typography" data-ar="الطباعة">Typography</h3>
+          <p class="card-description" data-en="Family, size, weight, leading, and tracking roles — scripted and responsive." data-ar="أدوار العائلة والحجم والوزن وتباعد الأسطر والأحرف — حسب النصّ والمقاس.">Family, size, weight, leading, and tracking roles — scripted and responsive.</p>
+          <div class="card-footer">
+            <button class="btn btn-solid btn-square" type="button" data-href="semantics/typography.html" aria-label="Open Typography"><span class="icon icon-md" data-en="arrow_forward" data-ar="arrow_back">arrow_forward</span></button>
+          </div>
+        </div>
+        <div class="card">
+          <h3 class="card-title" data-en="Layout" data-ar="التخطيط">Layout</h3>
+          <p class="card-description" data-en="Radius, border, sizing, shadow, layer, and spacing roles." data-ar="أدوار الزوايا والحدود والأحجام والظلال والطبقات والتباعد.">Radius, border, sizing, shadow, layer, and spacing roles.</p>
+          <div class="card-footer">
+            <button class="btn btn-solid btn-square" type="button" data-href="semantics/layout.html" aria-label="Open Layout"><span class="icon icon-md" data-en="arrow_forward" data-ar="arrow_back">arrow_forward</span></button>
+          </div>
+        </div>
+        <div class="card">
+          <h3 class="card-title" data-en="Motion" data-ar="الحركة">Motion</h3>
+          <p class="card-description" data-en="Duration and easing roles for hovers, panels, and modals." data-ar="أدوار المدّة والتسارع للتمرير واللوحات والنوافذ.">Duration and easing roles for hovers, panels, and modals.</p>
+          <div class="card-footer">
+            <button class="btn btn-solid btn-square" type="button" data-href="semantics/motion.html" aria-label="Open Motion"><span class="icon icon-md" data-en="arrow_forward" data-ar="arrow_back">arrow_forward</span></button>
+          </div>
+        </div>
+        <div class="card">
+          <h3 class="card-title" data-en="Icons" data-ar="الأيقونات">Icons</h3>
+          <p class="card-description" data-en="Family, axis, and size roles — with a theme-aware grade." data-ar="أدوار العائلة والمحاور والأحجام — مع درجة تتبع السمة.">Family, axis, and size roles — with a theme-aware grade.</p>
+          <div class="card-footer">
+            <button class="btn btn-solid btn-square" type="button" data-href="semantics/icons.html" aria-label="Open Icons"><span class="icon icon-md" data-en="arrow_forward" data-ar="arrow_back">arrow_forward</span></button>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Selection controls -->
-    <section class="flex flex-col gap-4">
-      <h2 class="text-section-title" data-en="Toggles" data-ar="عناصر الاختيار">Toggles</h2>
-      <div class="card bg-base-100"><div class="card-body flex flex-row flex-wrap gap-8">
-        <div class="flex flex-col gap-2">
-          <label class="flex items-center gap-2"><input type="checkbox" class="checkbox checkbox-primary" checked /><span class="text-label" data-en="Primary" data-ar="أساسي">Primary</span></label>
-          <label class="flex items-center gap-2"><input type="checkbox" class="checkbox checkbox-success" checked /><span class="text-label" data-en="Success" data-ar="نجاح">Success</span></label>
-          <label class="flex items-center gap-2"><input type="checkbox" class="checkbox checkbox-error" checked /><span class="text-label" data-en="Error" data-ar="خطأ">Error</span></label>
+    <section class="page-section">
+      <h2 class="text-section-title"data-en="Components" data-ar="المكوّنات">Components</h2>
+      <div class="page-grid">
+        <div class="card">
+          <h3 class="card-title" data-en="Button" data-ar="زر">Button</h3>
+          <p class="card-description" data-en="Primary and secondary, with hover, active, and focus." data-ar="أساسي وثانوي، مع حالات التمرير والضغط والتركيز.">Primary and secondary, with hover, active, and focus.</p>
+          <div class="card-footer">
+            <button class="btn btn-solid btn-square" type="button" data-href="components/button.html" aria-label="Open Button"><span class="icon icon-md" data-en="arrow_forward" data-ar="arrow_back">arrow_forward</span></button>
+          </div>
         </div>
-        <div class="flex flex-col gap-2">
-          <label class="flex items-center gap-2"><input type="checkbox" class="toggle toggle-primary" checked /><span class="text-label" data-en="On" data-ar="مفعّل">On</span></label>
-          <label class="flex items-center gap-2"><input type="checkbox" class="toggle toggle-secondary" checked /><span class="text-label" data-en="Secondary" data-ar="ثانوي">Secondary</span></label>
-          <label class="flex items-center gap-2"><input type="checkbox" class="toggle" /><span class="text-label" data-en="Off" data-ar="متوقّف">Off</span></label>
+        <div class="card">
+          <h3 class="card-title" data-en="Input" data-ar="حقل إدخال">Input</h3>
+          <p class="card-description" data-en="Text field with placeholder and the 2px focus ring." data-ar="حقل نصي مع نص إرشادي وحلقة تركيز بسماكة 2 بكسل.">Text field with placeholder and the 2px focus ring.</p>
+          <div class="card-footer">
+            <button class="btn btn-solid btn-square" type="button" data-href="components/input.html" aria-label="Open Input"><span class="icon icon-md" data-en="arrow_forward" data-ar="arrow_back">arrow_forward</span></button>
+          </div>
         </div>
-        <div class="flex flex-col gap-2">
-          <label class="flex items-center gap-2"><input type="radio" name="r" class="radio radio-primary" checked /><span class="text-label" data-en="One" data-ar="واحد">One</span></label>
-          <label class="flex items-center gap-2"><input type="radio" name="r" class="radio radio-primary" /><span class="text-label" data-en="Two" data-ar="اثنان">Two</span></label>
+        <div class="card">
+          <h3 class="card-title" data-en="Toggle" data-ar="المفتاح">Toggle</h3>
+          <p class="card-description" data-en="Switch, checkbox, radio, and chip — skinned onto native form elements." data-ar="مفتاح، مربّع اختيار، زر اختيار، وشريحة — مطبَّقة على عناصر النماذج الأصلية.">Switch, checkbox, radio, and chip — skinned onto native form elements.</p>
+          <div class="card-footer">
+            <button class="btn btn-solid btn-square" type="button" data-href="components/toggle.html" aria-label="Open Toggle"><span class="icon icon-md" data-en="arrow_forward" data-ar="arrow_back">arrow_forward</span></button>
+          </div>
         </div>
-      </div></div>
-    </section>
-
-    <!-- Feedback -->
-    <section class="flex flex-col gap-4">
-      <h2 class="text-section-title" data-en="Feedback" data-ar="التنبيهات">Feedback</h2>
-      <div class="card bg-base-100"><div class="card-body gap-4">
-        <div class="flex flex-wrap gap-2">
-          <span class="badge badge-primary" data-en="Primary" data-ar="أساسي">Primary</span>
-          <span class="badge badge-success" data-en="Success" data-ar="نجاح">Success</span>
-          <span class="badge badge-warning" data-en="Warning" data-ar="تحذير">Warning</span>
-          <span class="badge badge-error" data-en="Error" data-ar="خطأ">Error</span>
+        <div class="card">
+          <h3 class="card-title" data-en="Card" data-ar="بطاقة">Card</h3>
+          <p class="card-description" data-en="Borderless raised surface, distinguished by its fill." data-ar="سطح مرتفع بلا حدود، يتميّز بتعبئته.">Borderless raised surface, distinguished by its fill.</p>
+          <div class="card-footer">
+            <button class="btn btn-solid btn-square" type="button" data-href="components/card.html" aria-label="Open Card"><span class="icon icon-md" data-en="arrow_forward" data-ar="arrow_back">arrow_forward</span></button>
+          </div>
         </div>
-        <div class="alert alert-info">
-          <span class="material-symbols-rounded">info</span>
-          <span data-en="Themed by bravoixr, mechanics by daisyUI." data-ar="التنسيق من bravoixr والآليات من daisyUI.">Themed by bravoixr, mechanics by daisyUI.</span>
+        <div class="card">
+          <h3 class="card-title" data-en="Page" data-ar="الصفحة">Page</h3>
+          <p class="card-description" data-en="Structural page-layout regions: header, footer, sidebar, scroller, sticky, and label rows." data-ar="مناطق تخطيط بنيوية للصفحة: الترويسة، التذييل، الشريط الجانبي، الشريط المنزلق، اللاصق، وصفوف العناوين.">Structural page-layout regions: header, footer, sidebar, scroller, sticky, and label rows.</p>
+          <div class="card-footer">
+            <button class="btn btn-solid btn-square" type="button" data-href="components/page.html" aria-label="Open Page"><span class="icon icon-md" data-en="arrow_forward" data-ar="arrow_back">arrow_forward</span></button>
+          </div>
         </div>
-      </div></div>
+        <div class="card">
+          <h3 class="card-title" data-en="Text" data-ar="النص">Text</h3>
+          <p class="card-description" data-en="Type-role classes bundling family, size, weight, leading, and tracking." data-ar="أصناف الأدوار الطباعية تجمع العائلة والحجم والوزن وتباعد الأسطر والأحرف.">Type-role classes bundling family, size, weight, leading, and tracking.</p>
+          <div class="card-footer">
+            <button class="btn btn-solid btn-square" type="button" data-href="components/text.html" aria-label="Open Text"><span class="icon icon-md" data-en="arrow_forward" data-ar="arrow_back">arrow_forward</span></button>
+          </div>
+        </div>
+      </div>
     </section>
 
   </main>
 
-  <footer class="bg-base-100 border-t border-base-300">
-    <div class="mx-auto max-w-5xl px-6 py-6">
-      <span class="text-code-label text-color-helper">bravoixr · daisyUI + Tailwind</span>
-    </div>
+  <footer class="page-footer">
+    <span class="text-body text-color-description" data-en="bravoixr · © 2026" data-ar="bravoixr · © ٢٠٢٦">bravoixr · © 2026</span>
+    <span class="text-body text-color-description">v0.1.0</span>
   </footer>
 
   <script src="preview.js"></script>

@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>bravoixr — semantic icons</title>
+
+  <script>
+    (function () {
+      var t = localStorage.getItem('bravoixr-theme') || 'light';
+      var l = localStorage.getItem('bravoixr-lang') || 'en';
+      var r = document.documentElement;
+      r.setAttribute('data-theme', t);
+      if (l === 'ar') { r.setAttribute('dir', 'rtl'); r.setAttribute('lang', 'ar'); }
+      else { r.setAttribute('dir', 'ltr'); r.setAttribute('lang', 'en'); }
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=IBM+Plex+Sans+Arabic:wght@200;300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap">
+
+  <link rel="stylesheet" href="../../index.css">
+</head>
+<body class="page text-body">
+  <div class="page-topbar">
+    <span class="text-project-title">bravoixr</span>
+    <div class="page-controls">
+      <button class="btn btn-solid btn-square" type="button" data-toggle="theme" aria-label="Toggle theme"><span class="icon icon-md">contrast</span></button>
+      <button class="btn btn-solid btn-square" type="button" data-toggle="lang" aria-label="Toggle language"><span class="icon icon-md">translate</span></button>
+    </div>
+  </div>
+
+  <main class="page-body">
+
+    <section class="page-section">
+      <h2 class="text-page-title" data-en="Semantic icons" data-ar="الأيقونات الدلالية">Semantic icons</h2>
+      <p class="text-page-description text-color-description" data-en="Family, axis, and size roles mapped onto the icon primitives. The specimens below render through the semantic axes; --icon-grade is themed — toggle ☾ Dark and the stroke grade shifts to counter halation." data-ar="أدوار العائلة والمحاور والأحجام مُسنَدة إلى أوّليّات الأيقونات. تُعرَض العيّنات أدناه عبر المحاور الدلالية؛ و--icon-grade خاضع للسمة — بدّل إلى ☾ داكن فتتغيّر درجة السماكة لمواجهة الوهج.">Family, axis, and size roles mapped onto the icon primitives. The specimens below render through the semantic axes; --icon-grade is themed — toggle ☾ Dark and the stroke grade shifts to counter halation.</p>
+    </section>
+
+    <section class="page-section page-row-header">
+      <div>
+        <h3 class="page-row-header-title" data-en="Size roles" data-ar="أدوار الحجم">Size roles</h3>
+        <p class="page-row-header-description" data-en="Icon sizes mapped onto their default use, from small to extra-large." data-ar="أحجام الأيقونات مُسنَدة إلى استخدامها الافتراضي، من الصغير إلى الكبير جدًّا.">Icon sizes mapped onto their default use, from small to extra-large.</p>
+      </div>
+      <div>
+        <div class="page-cluster">
+          <div class="page-column-header">
+            <span class="icon icon-sm">home</span>
+            <div style="display: grid; gap: var(--spacing-1);">
+              <span class="text-label">16px</span>
+              <span class="text-code-label text-color-helper">--icon-sm</span>
+            </div>
+          </div>
+          <div class="page-column-header">
+            <span class="icon icon-md">favorite</span>
+            <div style="display: grid; gap: var(--spacing-1);">
+              <span class="text-label" data-en="20px (default)" data-ar="20px (افتراضي)">20px (default)</span>
+              <span class="text-code-label text-color-helper">--icon-md</span>
+            </div>
+          </div>
+          <div class="page-column-header">
+            <span class="icon icon-lg">settings</span>
+            <div style="display: grid; gap: var(--spacing-1);">
+              <span class="text-label">24px</span>
+              <span class="text-code-label text-color-helper">--icon-lg</span>
+            </div>
+          </div>
+          <div class="page-column-header">
+            <span class="icon icon-xl">search</span>
+            <div style="display: grid; gap: var(--spacing-1);">
+              <span class="text-label">32px</span>
+              <span class="text-code-label text-color-helper">--icon-xl</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section page-row-header">
+      <div>
+        <h3 class="page-row-header-title" data-en="Family &amp; axis roles" data-ar="أدوار العائلة والمحاور">Family &amp; axis roles</h3>
+        <p class="page-row-header-description" data-en="The icon family and its variable-font axes — weight, fill, optical size, and grade." data-ar="عائلة الأيقونات ومحاور خطها المتغيّر — الوزن، والامتلاء، والحجم البصري، والدرجة.">The icon family and its variable-font axes — weight, fill, optical size, and grade.</p>
+      </div>
+      <div>
+        <div class="page-cluster">
+          <div class="page-column-header">
+            <span class="text-color-normal">'Material Symbols Rounded'</span>
+            <span class="text-code-label text-color-helper">--icon-family</span>
+          </div>
+          <div class="page-column-header">
+            <span class="text-color-normal">400</span>
+            <span class="text-code-label text-color-helper">--icon-weight</span>
+          </div>
+          <div class="page-column-header">
+            <span class="text-color-normal">0</span>
+            <span class="text-code-label text-color-helper">--icon-fill-axis</span>
+          </div>
+          <div class="page-column-header">
+            <span class="text-color-normal">20</span>
+            <span class="text-code-label text-color-helper">--icon-optical</span>
+          </div>
+          <div class="page-column-header">
+            <span class="text-color-normal" data-en="0 light · −25 dark (themed)" data-ar="0 فاتح · −25 داكن (خاضع للسمة)">0 light · −25 dark (themed)</span>
+            <span class="text-code-label text-color-helper">--icon-grade</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="page-footer">
+    <span class="text-body text-color-description" data-en="bravoixr · © 2026" data-ar="bravoixr · © ٢٠٢٦">bravoixr · © 2026</span>
+    <span class="text-body text-color-description">v0.1.0</span>
+  </footer>
+
+  <script src="../preview.js"></script>
+</body>
+</html>

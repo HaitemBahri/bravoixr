@@ -48,8 +48,7 @@ Each decision lists the **decided value** and a one-line **why**.
 
 ## Component library
 
-- **daisyUI on Tailwind.** The web target is daisyUI (a Tailwind v4 plugin). bravoixr authors a
-  daisyUI theme mapping its colors, sizing, and typography onto daisyUI's theme variables and
-  Tailwind's type scale; UI mechanics are rented from daisyUI and skinned by the theme.
-  _Why: daisyUI shares bravoixr's `data-theme` switch and `--color-*` role names, so the identity maps
-  directly while the token source stays portable for future non-web targets._
+- **Framework-agnostic.** The system names **no component library or base theme**. UI mechanics are
+  rented from whatever library a consuming app chooses, and that app maps the tokens onto its
+  library's theme on its own side.
+  _Why: the identity and tokens stand on their own terms and stay portable, never bound to one library._

@@ -1,0 +1,231 @@
+/* Component — Page
+ * The page-canvas combination class: sets the base background and the document
+ * text colour together, so a consumer drops one class on the root element and
+ * gets a legible canvas that theme-flips via the semantic dark overrides.
+ * It is also the sticky-footer host: a full-viewport-height flex column so its
+ * topbar/body/footer children stack top-to-bottom and the footer is held at the
+ * viewport bottom even when the content is short (see .page-body). align-items
+ * stays at the default stretch, so the full-width topbar/footer bands still
+ * bleed edge to edge. */
+
+.page {
+  box-sizing: border-box;
+  margin: 0;
+  min-block-size: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-surface-page);
+  color: var(--color-text);
+}
+
+/* Propagate border-box to everything on the canvas — box-sizing doesn't inherit
+ * on its own, so descendants inherit it explicitly. This gives the page a global
+ * box model without the system shipping a separate universal reset. */
+.page *,
+.page *::before,
+.page *::after {
+  box-sizing: inherit;
+}
+
+/* The content column — capped at --page-max and centred: the inline padding grows
+ * to split the leftover width either side of the 1280 column on wide screens, and
+ * never drops below the space-10 gutter on narrow ones. Inset by space-10 at the
+ * block-start and flush (zero) at the block-end so the footer meets the viewport
+ * bottom. Shares its inline formula with .page-topbar/.page-footer so all three
+ * content columns align. As the growing child of the .page flex column
+ * (flex: 1 1 auto), it absorbs the leftover block space so the footer is pushed
+ * to the viewport bottom on short pages; on tall pages it simply takes its
+ * content height as before. */
+.page-body {
+  flex: 1 1 auto;
+  padding-block: var(--spacing-10) 0;
+  padding-inline: max(var(--spacing-10), calc((100% - var(--page-max)) / 2));
+}
+
+/* The page's top bar — wordmark at the inline-start, controls at the inline-end
+ * (space-between across exactly two children), on a raised surface. A full-width
+ * edge-to-edge band: it sits as a direct child of .page (outside .page-body's
+ * inline inset), so as a block element it spans the whole window width on its
+ * own — no margins, no bleed tricks. Flat/cornerless to read as chrome rather
+ * than a floating card. Block padding + align-items:center size it to its
+ * content, so it grows vertically as the content needs; the inline padding uses
+ * the same centred-column formula as .page-body, so the bar content caps at
+ * --page-max and lines up with the page column below while the raised fill still
+ * bleeds edge to edge. The fill themes with the page via the semantic dark override. */
+.page-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-5);
+  padding-block: var(--spacing-5);
+  padding-inline: max(var(--spacing-10), calc((100% - var(--page-max)) / 2));
+  background: var(--color-surface-raised);
+}
+
+/* The topbar's control cluster — a flex row grouping the toggle buttons with a
+ * small gap. Sits as the inline-end child of .page-topbar. */
+.page-controls {
+  display: flex;
+  gap: var(--spacing-3);
+}
+
+/* A top-level section of the page canvas — carries the block rhythm that
+ * separates one section from the next. */
+.page-section {
+  margin-block-end: var(--spacing-10);
+}
+
+/* A responsive card grid — columns auto-fill from the card minimum, with the
+ * block gap above it separating the grid from its section heading. */
+.page-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--card-min), 1fr));
+  gap: var(--spacing-5);
+  margin-block-start: var(--spacing-7);
+}
+
+/* The page's title block — heading plus description, sitting below the topbar
+ * with the same block gap the topbar carries so the two chrome bands align. */
+.page-header {
+  margin-block-end: var(--spacing-8);
+}
+
+/* The page's footer bar — wordmark at inline-start, actions at inline-end, on a
+ * sunken band (borderless, flat) so the fill recedes it from the canvas. A
+ * full-width edge-to-edge band like .page-topbar: it sits as a direct child of
+ * .page (outside .page-body's inline inset), spanning the whole window width on
+ * its own — no margins, no bleed tricks. Block padding + align-items:center size
+ * it to its content, so it grows vertically as the content needs; the inline
+ * padding uses the same centred-column formula as .page-body, so the bar content
+ * caps at --page-max and lines up with the page column above while the sunken fill
+ * still bleeds edge to edge. Themes with the page via the semantic dark override. */
+.page-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-5);
+  padding-block: var(--spacing-5);
+  padding-inline: max(var(--spacing-10), calc((100% - var(--page-max)) / 2));
+  background: var(--color-surface-sunken);
+}
+
+/* A horizontal stack that wraps — items sit inline-start to inline-end and drop
+ * to the next row when the container runs out of inline space. Items keep their
+ * own block size (align-items: start) rather than stretching to the row's tallest,
+ * so a row of unequal-height items stays ragged instead of padding the short ones. */
+.page-cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-5);
+  align-items: start;
+}
+
+/* A vertical stack — items sit block-start to block-end with a consistent gap
+ * between them. Items keep their own inline size (align-items: start) rather
+ * than stretching to the container's width, mirroring .page-cluster's ragged-fit
+ * behavior for its cross axis. */
+.page-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-5);
+  align-items: start;
+}
+
+/* A two-column label row — a fixed-width title column then content filling the
+ * rest, aligned to the block-start so a tall value doesn't drag the label down. */
+.page-row-header {
+  display: grid;
+  grid-template-columns: var(--page-row-header-columns);
+  gap: var(--spacing-5);
+  align-items: start;
+}
+
+/* The title cell — a filled, full-height rail that reads as the row's header and
+ * sets it apart from the content column. align-self overrides the row's start-
+ * alignment so the fill spans the full row height; the sunken surface themes with
+ * the page via the semantic dark override. */
+.page-row-header > :first-child {
+  align-self: stretch;
+  padding-block: var(--spacing-4);
+  padding-inline: var(--spacing-5);
+  background: var(--color-surface-sunken);
+  border-radius: var(--radius-card);
+}
+
+/* The rail's title + description anatomy — a heading title over a quiet muted lede,
+ * mirroring the card's text roles. The title's zero top margin lets the rail
+ * padding govern the top edge. */
+.page-row-header-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-minor-heading);
+  font-weight: var(--weight-minor-heading);
+  line-height: var(--leading-display);
+  letter-spacing: var(--tracking-display);
+  margin-block: 0 var(--spacing-3);
+}
+
+.page-row-header-description {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  font-weight: var(--weight-body);
+  line-height: var(--leading-prose);
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* A two-row label stack — content filling the block space on top, then a
+ * fixed-height label row underneath it (children render top-to-bottom in DOM
+ * order, so place the content first and the label second). justify-items
+ * centres both rows as boxes (needed for fixed-size block content like a
+ * spacing-scale bar, which text-align alone can't move); text-align covers
+ * multi-line caption text wrapping within its now shrink-wrapped box. */
+.page-column-header {
+  display: grid;
+  grid-template-rows: 1fr var(--page-column-header-size);
+  gap: var(--spacing-4);
+  justify-items: center;
+  text-align: center;
+}
+
+/* A horizontal scroller — a non-wrapping row that fills its parent's block
+ * height and scrolls along the inline axis when its items overflow. */
+.page-scroller {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: var(--spacing-5);
+  overflow-inline: auto;
+  block-size: 100%;
+}
+
+/* Scroller children keep their own size and overflow rather than shrinking to
+ * fit, so the row actually scrolls instead of squeezing. */
+.page-scroller > * {
+  flex: 0 0 auto;
+}
+
+/* A fixed-width column beside the main content — the app rail. */
+.page-sidebar {
+  flex: 0 0 var(--page-sidebar-size);
+}
+
+/* The primary column — fills the inline space left by the sidebar, with a zero
+ * min-inline-size so its content can shrink instead of forcing overflow. */
+.page-main {
+  flex: 1 1 0;
+  min-inline-size: 0;
+}
+
+/* An element that sticks at the block-start edge of its scroll parent, sitting
+ * on the sticky stacking tier so it clears the content it scrolls over. */
+.page-sticky {
+  position: sticky;
+  inset-block-start: 0;
+  z-index: var(--layer-sticky);
+}
+
+/* A non-wrapping flex row that hosts a .page-sidebar and a .page-main side by
+ * side, keeping them on one row with the gap between them. */
+.page-shell {
+  display: flex;
+  gap: var(--spacing-6);
+}

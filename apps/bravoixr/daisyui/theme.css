@@ -1,0 +1,28 @@
+/* daisyUI — theme bridge
+ * Feeds bravoixr's semantic tokens into daisyUI's own theme CSS-variable
+ * contract, so daisyUI's stock component classes render in bravoixr's
+ * identity with no CSS duplication. Isolates all daisyUI coupling to this
+ * one file. Scoped to only what .btn needs today; the rest of daisyUI's
+ * variable contract (--color-base-*, --color-accent, --color-neutral,
+ * --radius-box, --radius-selector, --size-*) is added as more components
+ * migrate. References --bravoixr-* tokens only, never primitives. */
+
+/* Both themes forward to the same --bravoixr-* names — the light/dark
+ * values themselves already live one layer down in semantics/color.css. */
+[data-theme="light"],
+[data-theme="dark"] {
+  --color-primary: var(--bravoixr-color-primary);
+  --color-primary-content: var(--bravoixr-color-text-on-primary);
+  --color-secondary: var(--bravoixr-color-secondary);
+  --color-secondary-content: var(--bravoixr-color-text-on-primary);
+  --color-success: var(--bravoixr-color-success);
+  --color-success-content: var(--bravoixr-color-text-on-primary);
+  --color-warning: var(--bravoixr-color-warning);
+  --color-warning-content: var(--bravoixr-color-text-on-primary);
+  --color-error: var(--bravoixr-color-error);
+  --color-error-content: var(--bravoixr-color-text-on-primary);
+  --radius-field: var(--bravoixr-radius-control);
+  --border: var(--bravoixr-border-width);
+  --depth: 0; /* daisyUI feature flag, not a design value — keeps bravoixr's flat, borderless taste */
+  --noise: 0;
+}

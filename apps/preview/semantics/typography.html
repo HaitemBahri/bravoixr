@@ -20,14 +20,16 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=IBM+Plex+Sans+Arabic:wght@200;300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap">
 
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <link rel="stylesheet" href="../../bravoixr/index.css">
 </head>
 <body class="page text-body">
   <div class="page-topbar">
     <span class="text-project-title">bravoixr</span>
     <div class="page-controls">
-      <button class="btn btn-solid btn-square" type="button" data-toggle="theme" aria-label="Toggle theme"><span class="icon icon-md">contrast</span></button>
-      <button class="btn btn-solid btn-square" type="button" data-toggle="lang" aria-label="Toggle language"><span class="icon icon-md">translate</span></button>
+      <button class="btn btn-primary btn-square" type="button" data-toggle="theme" aria-label="Toggle theme"><span class="icon icon-md">contrast</span></button>
+      <button class="btn btn-primary btn-square" type="button" data-toggle="lang" aria-label="Toggle language"><span class="icon icon-md">translate</span></button>
     </div>
   </div>
 
@@ -40,7 +42,7 @@
 
     <section class="page-section">
       <h3 class="text-section-title" data-en="Family roles" data-ar="أدوار العائلة">Family roles</h3>
-      <div style="display: grid; gap: var(--spacing-5);">
+      <div style="display: grid; gap: var(--bravoixr-spacing-5);">
         <div class="page-row-header">
           <div>
             <h4 class="page-row-header-title" data-en="Heading" data-ar="عنوان">Heading</h4>
@@ -49,8 +51,8 @@
           <div>
             <div class="page-cluster">
               <div class="page-column-header">
-                <div style="font-family:var(--font-heading);font-size:var(--text-subsection-title)" data-en="Modern &amp; confident" data-ar="حديث وواثق">Modern &amp; confident</div>
-                <span class="text-code-label text-color-helper">--font-heading</span>
+                <div style="font-family:var(--bravoixr-font-heading);font-size:var(--bravoixr-text-subsection-title)" data-en="Modern &amp; confident" data-ar="حديث وواثق">Modern &amp; confident</div>
+                <span class="text-code-label text-color-helper">--bravoixr-font-heading</span>
               </div>
             </div>
           </div>
@@ -63,8 +65,8 @@
           <div>
             <div class="page-cluster">
               <div class="page-column-header">
-                <div style="font-family:var(--font-body);font-size:var(--text-context-title)" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض عائلة الخط ووضوحها.">The quick brown fox jumps over the lazy dog.</div>
-                <span class="text-code-label text-color-helper">--font-body</span>
+                <div style="font-family:var(--bravoixr-font-body);font-size:var(--bravoixr-text-context-title)" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض عائلة الخط ووضوحها.">The quick brown fox jumps over the lazy dog.</div>
+                <span class="text-code-label text-color-helper">--bravoixr-font-body</span>
               </div>
             </div>
           </div>
@@ -77,8 +79,8 @@
           <div>
             <div class="page-cluster">
               <div class="page-column-header">
-                <div style="font-family:var(--font-code);font-size:var(--text-body)">--color-primary: var(--blue-600);</div>
-                <span class="text-code-label text-color-helper">--font-code</span>
+                <div style="font-family:var(--bravoixr-font-code);font-size:var(--bravoixr-text-body)">--bravoixr-color-primary: var(--bravoixr-blue-600);</div>
+                <span class="text-code-label text-color-helper">--bravoixr-font-code</span>
               </div>
             </div>
           </div>
@@ -88,7 +90,7 @@
 
     <section class="page-section">
       <h3 class="text-section-title" data-en="Size roles" data-ar="أدوار الحجم">Size roles</h3>
-      <div style="display: grid; gap: var(--spacing-5);">
+      <div style="display: grid; gap: var(--bravoixr-spacing-5);">
         <div class="page-row-header">
           <div>
             <h4 class="page-row-header-title" data-en="Hero" data-ar="بارز">Hero</h4>
@@ -98,7 +100,7 @@
             <div class="page-cluster">
               <div class="page-column-header">
                 <span class="text-hero" data-en="Heading" data-ar="عنوان">Heading</span>
-                <span class="text-code-label text-color-helper">--text-hero</span>
+                <span class="text-code-label text-color-helper">--bravoixr-text-hero</span>
               </div>
             </div>
           </div>
@@ -112,7 +114,7 @@
             <div class="page-cluster">
               <div class="page-column-header">
                 <span class="text-page-title" data-en="Heading" data-ar="عنوان">Heading</span>
-                <span class="text-code-label text-color-helper">--text-page-title</span>
+                <span class="text-code-label text-color-helper">--bravoixr-text-page-title</span>
               </div>
             </div>
           </div>
@@ -126,7 +128,7 @@
             <div class="page-cluster">
               <div class="page-column-header">
                 <span class="text-section-title" data-en="Heading" data-ar="عنوان">Heading</span>
-                <span class="text-code-label text-color-helper">--text-section-title</span>
+                <span class="text-code-label text-color-helper">--bravoixr-text-section-title</span>
               </div>
             </div>
           </div>
@@ -140,7 +142,7 @@
             <div class="page-cluster">
               <div class="page-column-header">
                 <span class="text-subsection-title" data-en="Heading" data-ar="عنوان">Heading</span>
-                <span class="text-code-label text-color-helper">--text-subsection-title</span>
+                <span class="text-code-label text-color-helper">--bravoixr-text-subsection-title</span>
               </div>
             </div>
           </div>
@@ -154,7 +156,7 @@
             <div class="page-cluster">
               <div class="page-column-header">
                 <span class="text-minor-heading" data-en="Heading" data-ar="عنوان">Heading</span>
-                <span class="text-code-label text-color-helper">--text-minor-heading</span>
+                <span class="text-code-label text-color-helper">--bravoixr-text-minor-heading</span>
               </div>
             </div>
           </div>
@@ -168,7 +170,7 @@
             <div class="page-cluster">
               <div class="page-column-header">
                 <span class="text-context-title" data-en="Context title" data-ar="عنوان سياقي">Context title</span>
-                <span class="text-code-label text-color-helper">--text-context-title</span>
+                <span class="text-code-label text-color-helper">--bravoixr-text-context-title</span>
               </div>
             </div>
           </div>
@@ -182,7 +184,7 @@
             <div class="page-cluster">
               <div class="page-column-header">
                 <span class="text-body" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض حجم النص ومدى وضوحه.">The quick brown fox jumps over the lazy dog.</span>
-                <span class="text-code-label text-color-helper">--text-body</span>
+                <span class="text-code-label text-color-helper">--bravoixr-text-body</span>
               </div>
             </div>
           </div>
@@ -196,7 +198,7 @@
             <div class="page-cluster">
               <div class="page-column-header">
                 <span class="text-label" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض حجم النص ومدى وضوحه.">The quick brown fox jumps over the lazy dog.</span>
-                <span class="text-code-label text-color-helper">--text-label</span>
+                <span class="text-code-label text-color-helper">--bravoixr-text-label</span>
               </div>
             </div>
           </div>
@@ -210,7 +212,7 @@
             <div class="page-cluster">
               <div class="page-column-header">
                 <span class="text-helper" data-en="The quick brown fox jumps over the lazy dog." data-ar="نصّ تجريبي لعرض حجم النص ومدى وضوحه.">The quick brown fox jumps over the lazy dog.</span>
-                <span class="text-code-label text-color-helper">--text-helper</span>
+                <span class="text-code-label text-color-helper">--bravoixr-text-helper</span>
               </div>
             </div>
           </div>
@@ -223,8 +225,8 @@
           <div>
             <div class="page-cluster">
               <div class="page-column-header">
-                <span class="text-code">--text-body: var(--text-body3);</span>
-                <span class="text-code-label text-color-helper">--text-code-block</span>
+                <span class="text-code">--bravoixr-text-body: var(--bravoixr-text-body3);</span>
+                <span class="text-code-label text-color-helper">--bravoixr-text-code-block</span>
               </div>
             </div>
           </div>
@@ -237,8 +239,8 @@
           <div>
             <div class="page-cluster">
               <div class="page-column-header">
-                <span class="text-code-label">--text-body: var(--text-body3);</span>
-                <span class="text-code-label text-color-helper">--text-code-label</span>
+                <span class="text-code-label">--bravoixr-text-body: var(--bravoixr-text-body3);</span>
+                <span class="text-code-label text-color-helper">--bravoixr-text-code-label</span>
               </div>
             </div>
           </div>
@@ -248,7 +250,7 @@
 
     <section class="page-section">
       <h3 class="text-section-title" data-en="Weight roles" data-ar="أدوار الوزن">Weight roles</h3>
-      <div style="display: grid; gap: var(--spacing-5);">
+      <div style="display: grid; gap: var(--bravoixr-spacing-5);">
         <div class="page-row-header">
           <div>
             <h4 class="page-row-header-title" data-en="Hero" data-ar="بارز">Hero</h4>
@@ -257,8 +259,8 @@
           <div>
             <div class="page-cluster">
               <div class="page-column-header">
-                <div style="font-family:var(--font-heading);font-size:var(--text-subsection-title);font-weight:var(--weight-hero)">Bravoixr</div>
-                <span class="text-code-label text-color-helper">--weight-hero</span>
+                <div style="font-family:var(--bravoixr-font-heading);font-size:var(--bravoixr-text-subsection-title);font-weight:var(--bravoixr-weight-hero)">Bravoixr</div>
+                <span class="text-code-label text-color-helper">--bravoixr-weight-hero</span>
               </div>
             </div>
           </div>
@@ -271,8 +273,8 @@
           <div>
             <div class="page-cluster">
               <div class="page-column-header">
-                <div style="font-family:var(--font-heading);font-size:var(--text-subsection-title);font-weight:var(--weight-page-title)">Bravoixr</div>
-                <span class="text-code-label text-color-helper">--weight-page-title</span>
+                <div style="font-family:var(--bravoixr-font-heading);font-size:var(--bravoixr-text-subsection-title);font-weight:var(--bravoixr-weight-page-title)">Bravoixr</div>
+                <span class="text-code-label text-color-helper">--bravoixr-weight-page-title</span>
               </div>
             </div>
           </div>
@@ -285,8 +287,8 @@
           <div>
             <div class="page-cluster">
               <div class="page-column-header">
-                <div style="font-family:var(--font-heading);font-size:var(--text-subsection-title);font-weight:var(--weight-section-title)">Bravoixr</div>
-                <span class="text-code-label text-color-helper">--weight-section-title</span>
+                <div style="font-family:var(--bravoixr-font-heading);font-size:var(--bravoixr-text-subsection-title);font-weight:var(--bravoixr-weight-section-title)">Bravoixr</div>
+                <span class="text-code-label text-color-helper">--bravoixr-weight-section-title</span>
               </div>
             </div>
           </div>
@@ -299,8 +301,8 @@
           <div>
             <div class="page-cluster">
               <div class="page-column-header">
-                <div style="font-family:var(--font-heading);font-size:var(--text-subsection-title);font-weight:var(--weight-subsection-title)">Bravoixr</div>
-                <span class="text-code-label text-color-helper">--weight-subsection-title</span>
+                <div style="font-family:var(--bravoixr-font-heading);font-size:var(--bravoixr-text-subsection-title);font-weight:var(--bravoixr-weight-subsection-title)">Bravoixr</div>
+                <span class="text-code-label text-color-helper">--bravoixr-weight-subsection-title</span>
               </div>
             </div>
           </div>
@@ -313,8 +315,8 @@
           <div>
             <div class="page-cluster">
               <div class="page-column-header">
-                <div style="font-family:var(--font-heading);font-size:var(--text-subsection-title);font-weight:var(--weight-minor-heading)">Bravoixr</div>
-                <span class="text-code-label text-color-helper">--weight-minor-heading</span>
+                <div style="font-family:var(--bravoixr-font-heading);font-size:var(--bravoixr-text-subsection-title);font-weight:var(--bravoixr-weight-minor-heading)">Bravoixr</div>
+                <span class="text-code-label text-color-helper">--bravoixr-weight-minor-heading</span>
               </div>
             </div>
           </div>
@@ -327,8 +329,8 @@
           <div>
             <div class="page-cluster">
               <div class="page-column-header">
-                <div style="font-family:var(--font-heading);font-size:var(--text-subsection-title);font-weight:var(--weight-context-title)">Bravoixr</div>
-                <span class="text-code-label text-color-helper">--weight-context-title</span>
+                <div style="font-family:var(--bravoixr-font-heading);font-size:var(--bravoixr-text-subsection-title);font-weight:var(--bravoixr-weight-context-title)">Bravoixr</div>
+                <span class="text-code-label text-color-helper">--bravoixr-weight-context-title</span>
               </div>
             </div>
           </div>
@@ -341,8 +343,8 @@
           <div>
             <div class="page-cluster">
               <div class="page-column-header">
-                <div style="font-family:var(--font-heading);font-size:var(--text-subsection-title);font-weight:var(--weight-body)">Bravoixr</div>
-                <span class="text-code-label text-color-helper">--weight-body</span>
+                <div style="font-family:var(--bravoixr-font-heading);font-size:var(--bravoixr-text-subsection-title);font-weight:var(--bravoixr-weight-body)">Bravoixr</div>
+                <span class="text-code-label text-color-helper">--bravoixr-weight-body</span>
               </div>
             </div>
           </div>
@@ -355,8 +357,8 @@
           <div>
             <div class="page-cluster">
               <div class="page-column-header">
-                <div style="font-family:var(--font-heading);font-size:var(--text-subsection-title);font-weight:var(--weight-label)">Bravoixr</div>
-                <span class="text-code-label text-color-helper">--weight-label</span>
+                <div style="font-family:var(--bravoixr-font-heading);font-size:var(--bravoixr-text-subsection-title);font-weight:var(--bravoixr-weight-label)">Bravoixr</div>
+                <span class="text-code-label text-color-helper">--bravoixr-weight-label</span>
               </div>
             </div>
           </div>
@@ -369,8 +371,8 @@
           <div>
             <div class="page-cluster">
               <div class="page-column-header">
-                <div style="font-family:var(--font-heading);font-size:var(--text-subsection-title);font-weight:var(--weight-helper)">Bravoixr</div>
-                <span class="text-code-label text-color-helper">--weight-helper</span>
+                <div style="font-family:var(--bravoixr-font-heading);font-size:var(--bravoixr-text-subsection-title);font-weight:var(--bravoixr-weight-helper)">Bravoixr</div>
+                <span class="text-code-label text-color-helper">--bravoixr-weight-helper</span>
               </div>
             </div>
           </div>
@@ -387,15 +389,15 @@
         <div class="page-cluster">
           <div class="page-column-header">
             <span class="text-color-normal" data-en="1.1 — headings" data-ar="1.1 — العناوين">1.1 — headings</span>
-            <span class="text-code-label text-color-helper">--leading-display</span>
+            <span class="text-code-label text-color-helper">--bravoixr-leading-display</span>
           </div>
           <div class="page-column-header">
             <span class="text-color-normal" data-en="1.6 Latin · 1.7 Arabic (scripted)" data-ar="1.6 لاتيني · 1.7 عربي (حسب النصّ)">1.6 Latin · 1.7 Arabic (scripted)</span>
-            <span class="text-code-label text-color-helper">--leading-prose</span>
+            <span class="text-code-label text-color-helper">--bravoixr-leading-prose</span>
           </div>
           <div class="page-column-header">
             <span class="text-color-normal" data-en="1.5 — code" data-ar="1.5 — الشيفرة">1.5 — code</span>
-            <span class="text-code-label text-color-helper">--leading-code-block</span>
+            <span class="text-code-label text-color-helper">--bravoixr-leading-code-block</span>
           </div>
         </div>
       </div>
@@ -410,15 +412,15 @@
         <div class="page-cluster">
           <div class="page-column-header">
             <span class="text-color-normal" data-en="-0.02em Latin · 0 Arabic (scripted)" data-ar="-0.02em لاتيني · 0 عربي (حسب النصّ)">-0.02em Latin · 0 Arabic (scripted)</span>
-            <span class="text-code-label text-color-helper">--tracking-display</span>
+            <span class="text-code-label text-color-helper">--bravoixr-tracking-display</span>
           </div>
           <div class="page-column-header">
             <span class="text-color-normal">0</span>
-            <span class="text-code-label text-color-helper">--tracking-prose</span>
+            <span class="text-code-label text-color-helper">--bravoixr-tracking-prose</span>
           </div>
           <div class="page-column-header">
             <span class="text-color-normal" data-en="0.06em Latin · 0 Arabic (scripted)" data-ar="0.06em لاتيني · 0 عربي (حسب النصّ)">0.06em Latin · 0 Arabic (scripted)</span>
-            <span class="text-code-label text-color-helper">--tracking-uppercase</span>
+            <span class="text-code-label text-color-helper">--bravoixr-tracking-uppercase</span>
           </div>
         </div>
       </div>

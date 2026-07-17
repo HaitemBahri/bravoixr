@@ -4,15 +4,15 @@
 
 :root {
   /* Durations — base (200ms) is the default; instant is the reduced-motion target */
-  --duration-instant: 0ms;
-  --duration-fast: 150ms;
-  --duration-base: 200ms;
-  --duration-slow: 300ms;
-  --duration-slower: 500ms;
+  --bravoixr-duration-instant: 0ms;
+  --bravoixr-duration-fast: 150ms;
+  --bravoixr-duration-base: 200ms;
+  --bravoixr-duration-slow: 300ms;
+  --bravoixr-duration-slower: 500ms;
 
   /* Easing curves */
-  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
-  --ease-decelerate: cubic-bezier(0, 0, 0, 1);
-  --ease-accelerate: cubic-bezier(0.3, 0, 1, 1);
-  --ease-linear: linear;
+  --bravoixr-ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --bravoixr-ease-decelerate: cubic-bezier(0, 0, 0, 1);
+  --bravoixr-ease-accelerate: cubic-bezier(0.3, 0, 1, 1);
+  --bravoixr-ease-linear: linear;
 }

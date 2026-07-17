@@ -20,14 +20,16 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=IBM+Plex+Sans+Arabic:wght@200;300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap">
 
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <link rel="stylesheet" href="../../bravoixr/index.css">
 </head>
 <body class="page text-body">
   <div class="page-topbar">
     <span class="text-project-title">bravoixr</span>
     <div class="page-controls">
-      <button class="btn btn-solid btn-square" type="button" data-toggle="theme" aria-label="Toggle theme"><span class="icon icon-md">contrast</span></button>
-      <button class="btn btn-solid btn-square" type="button" data-toggle="lang" aria-label="Toggle language"><span class="icon icon-md">translate</span></button>
+      <button class="btn btn-primary btn-square" type="button" data-toggle="theme" aria-label="Toggle theme"><span class="icon icon-md">contrast</span></button>
+      <button class="btn btn-primary btn-square" type="button" data-toggle="lang" aria-label="Toggle language"><span class="icon icon-md">translate</span></button>
     </div>
   </div>
 
@@ -47,23 +49,23 @@
         <div class="page-cluster">
           <div class="page-column-header">
             <span class="text-color-normal">0ms</span>
-            <span class="text-code-label text-color-helper">--duration-none</span>
+            <span class="text-code-label text-color-helper">--bravoixr-duration-none</span>
           </div>
           <div class="page-column-header">
             <span class="text-color-normal">150ms</span>
-            <span class="text-code-label text-color-helper">--duration-hover</span>
+            <span class="text-code-label text-color-helper">--bravoixr-duration-hover</span>
           </div>
           <div class="page-column-header">
             <span class="text-color-normal">200ms</span>
-            <span class="text-code-label text-color-helper">--duration-default</span>
+            <span class="text-code-label text-color-helper">--bravoixr-duration-default</span>
           </div>
           <div class="page-column-header">
             <span class="text-color-normal">300ms</span>
-            <span class="text-code-label text-color-helper">--duration-panel</span>
+            <span class="text-code-label text-color-helper">--bravoixr-duration-panel</span>
           </div>
           <div class="page-column-header">
             <span class="text-color-normal">500ms</span>
-            <span class="text-code-label text-color-helper">--duration-modal</span>
+            <span class="text-code-label text-color-helper">--bravoixr-duration-modal</span>
           </div>
         </div>
       </div>
@@ -77,20 +79,20 @@
       <div>
         <div class="page-cluster">
           <div class="page-column-header">
-            <div style="inline-size:80px;block-size:80px;background:var(--color-secondary);border-radius:var(--radius-card);transition:transform var(--duration-modal) var(--ease-default)" data-motion-demo></div>
-            <span class="text-code-label text-color-helper">--ease-default</span>
+            <div style="inline-size:80px;block-size:80px;background:var(--bravoixr-color-secondary);border-radius:var(--bravoixr-radius-card);transition:transform var(--bravoixr-duration-modal) var(--bravoixr-ease-default)" data-motion-demo></div>
+            <span class="text-code-label text-color-helper">--bravoixr-ease-default</span>
           </div>
           <div class="page-column-header">
-            <div style="inline-size:80px;block-size:80px;background:var(--color-secondary);border-radius:var(--radius-card);transition:transform var(--duration-modal) var(--ease-enter)" data-motion-demo></div>
-            <span class="text-code-label text-color-helper">--ease-enter</span>
+            <div style="inline-size:80px;block-size:80px;background:var(--bravoixr-color-secondary);border-radius:var(--bravoixr-radius-card);transition:transform var(--bravoixr-duration-modal) var(--bravoixr-ease-enter)" data-motion-demo></div>
+            <span class="text-code-label text-color-helper">--bravoixr-ease-enter</span>
           </div>
           <div class="page-column-header">
-            <div style="inline-size:80px;block-size:80px;background:var(--color-secondary);border-radius:var(--radius-card);transition:transform var(--duration-modal) var(--ease-exit)" data-motion-demo></div>
-            <span class="text-code-label text-color-helper">--ease-exit</span>
+            <div style="inline-size:80px;block-size:80px;background:var(--bravoixr-color-secondary);border-radius:var(--bravoixr-radius-card);transition:transform var(--bravoixr-duration-modal) var(--bravoixr-ease-exit)" data-motion-demo></div>
+            <span class="text-code-label text-color-helper">--bravoixr-ease-exit</span>
           </div>
           <div class="page-column-header">
-            <div style="inline-size:80px;block-size:80px;background:var(--color-secondary);border-radius:var(--radius-card);transition:transform var(--duration-modal) var(--ease-loop)" data-motion-demo></div>
-            <span class="text-code-label text-color-helper">--ease-loop</span>
+            <div style="inline-size:80px;block-size:80px;background:var(--bravoixr-color-secondary);border-radius:var(--bravoixr-radius-card);transition:transform var(--bravoixr-duration-modal) var(--bravoixr-ease-loop)" data-motion-demo></div>
+            <span class="text-code-label text-color-helper">--bravoixr-ease-loop</span>
           </div>
         </div>
       </div>

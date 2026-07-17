@@ -1,65 +1,65 @@
 /* Semantic — Layout
  * Role tokens mapped onto layout primitives via var(). Not themed.
- * Radius, border, sizing, elevation, stacking (--layer-*), and spacing seam. */
+ * Radius, border, sizing, elevation, stacking (--bravoixr-layer-*), and spacing seam. */
 
 :root {
   /* Radius roles */
-  --radius-control: var(--radius-md);
-  --radius-card: var(--radius-lg);
-  --radius-modal: var(--radius-xl);
-  --radius-chip: var(--radius-sm);
-  --radius-pill: var(--radius-full);
+  --bravoixr-radius-control: var(--bravoixr-radius-md);
+  --bravoixr-radius-card: var(--bravoixr-radius-lg);
+  --bravoixr-radius-modal: var(--bravoixr-radius-xl);
+  --bravoixr-radius-chip: var(--bravoixr-radius-sm);
+  --bravoixr-radius-pill: var(--bravoixr-radius-full);
 
   /* Border-width roles */
-  --border-width: var(--border-default);
-  --border-width-strong: var(--border-strong);
+  --bravoixr-border-width: var(--bravoixr-border-default);
+  --bravoixr-border-width-strong: var(--bravoixr-border-strong);
 
   /* Sizing */
-  --control-height: var(--size-control);
-  --control-height-sm: var(--size-control-sm);
-  --card-min: var(--size-card-min);
-  --page-sidebar-size: var(--size-sidebar);
-  --page-row-header-size: var(--size-row-header);
-  --page-row-header-columns: var(--page-row-header-size) 1fr;
-  --page-column-header-size: var(--size-column-header);
-  --page-max: var(--breakpoint-max);
+  --bravoixr-control-height: var(--bravoixr-size-control);
+  --bravoixr-control-height-sm: var(--bravoixr-size-control-sm);
+  --bravoixr-card-min: var(--bravoixr-size-card-min);
+  --bravoixr-page-sidebar-size: var(--bravoixr-size-sidebar);
+  --bravoixr-page-row-header-size: var(--bravoixr-size-row-header);
+  --bravoixr-page-row-header-columns: var(--bravoixr-page-row-header-size) 1fr;
+  --bravoixr-page-column-header-size: var(--bravoixr-size-column-header);
+  --bravoixr-page-max: var(--bravoixr-breakpoint-max);
 
   /* Elevation — floating layers (resting surfaces use borders, no token) */
-  --shadow-menu: var(--shadow-sm);
-  --shadow-toast: var(--shadow-md);
-  --shadow-modal: var(--shadow-lg);
+  --bravoixr-shadow-menu: var(--bravoixr-shadow-sm);
+  --bravoixr-shadow-toast: var(--bravoixr-shadow-md);
+  --bravoixr-shadow-modal: var(--bravoixr-shadow-lg);
 
-  /* Stacking tiers (--layer-* avoids collision with primitive --z-*) */
-  --layer-base: var(--z-base);
-  --layer-sticky: var(--z-sticky);
-  --layer-dropdown: var(--z-dropdown);
-  --layer-overlay: var(--z-overlay);
-  --layer-modal: var(--z-modal);
-  --layer-popover: var(--z-popover);
-  --layer-toast: var(--z-toast);
+  /* Stacking tiers (--bravoixr-layer-* avoids collision with primitive --bravoixr-z-*) */
+  --bravoixr-layer-base: var(--bravoixr-z-base);
+  --bravoixr-layer-sticky: var(--bravoixr-z-sticky);
+  --bravoixr-layer-dropdown: var(--bravoixr-z-dropdown);
+  --bravoixr-layer-overlay: var(--bravoixr-z-overlay);
+  --bravoixr-layer-modal: var(--bravoixr-z-modal);
+  --bravoixr-layer-popover: var(--bravoixr-z-popover);
+  --bravoixr-layer-toast: var(--bravoixr-z-toast);
 
   /* Spacing seam — 1:1 re-export of the primitive scale for component use */
-  --spacing-1: var(--space-1);
-  --spacing-2: var(--space-2);
-  --spacing-3: var(--space-3);
-  --spacing-4: var(--space-4);
-  --spacing-5: var(--space-5);
-  --spacing-6: var(--space-6);
-  --spacing-7: var(--space-7);
-  --spacing-8: var(--space-8);
-  --spacing-9: var(--space-9);
-  --spacing-10: var(--space-10);
-  --spacing-11: var(--space-11);
-  --spacing-12: var(--space-12);
+  --bravoixr-spacing-1: var(--bravoixr-space-1);
+  --bravoixr-spacing-2: var(--bravoixr-space-2);
+  --bravoixr-spacing-3: var(--bravoixr-space-3);
+  --bravoixr-spacing-4: var(--bravoixr-space-4);
+  --bravoixr-spacing-5: var(--bravoixr-space-5);
+  --bravoixr-spacing-6: var(--bravoixr-space-6);
+  --bravoixr-spacing-7: var(--bravoixr-space-7);
+  --bravoixr-spacing-8: var(--bravoixr-space-8);
+  --bravoixr-spacing-9: var(--bravoixr-space-9);
+  --bravoixr-spacing-10: var(--bravoixr-space-10);
+  --bravoixr-spacing-11: var(--bravoixr-space-11);
+  --bravoixr-spacing-12: var(--bravoixr-space-12);
 }
 
 /* Mobile (<768): the page-row-header rail no longer sits beside its content — the
  * grid collapses to one column so the title rail stacks above the content it labels.
  * The breakpoint px is inlined because @media conditions can't read var(); it mirrors
- * --breakpoint-tablet (768px) in primitives/layout.css, offset by 0.02px to sit just
+ * --bravoixr-breakpoint-tablet (768px) in primitives/layout.css, offset by 0.02px to sit just
  * below the min-width boundary. */
 @media (max-width: 767.98px) {
   :root {
-    --page-row-header-columns: 1fr;
+    --bravoixr-page-row-header-columns: 1fr;
   }
 }

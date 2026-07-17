@@ -1,6 +1,7 @@
 /* bravoixr — single entry point.
- * Fixed import order: primitives → semantics → components. */
+ * Fixed import order: primitives → semantics → daisyui → components. */
 
 @import "./primitives/index.css";
 @import "./semantics/index.css";
+@import "./daisyui/theme.css";
 @import "./components/index.css";

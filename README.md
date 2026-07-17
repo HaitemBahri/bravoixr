@@ -10,13 +10,13 @@ The single source of truth for design identity: the values and styling that make
 
 - **Identity decisions** (`identity/`) — human-readable Markdown documenting the design taste, one file per category. The source everything else transcribes from.
 - **Design tokens** — two tiers in separate folders: `primitives/` (raw literal values) → `semantics/` (meaning). The portable source of truth.
-- **Component classes** (`components/`) — thin classes for reused elements (buttons, inputs, cards) that apply the semantic tokens. Behavior is not implemented here.
+- **Component classes** (`components/`) — thin classes for reused elements bravoixr's adopted component library, **daisyUI**, doesn't cover, plus small gap-override rules for the taste daisyUI's theme variables don't expose.
 
-The system is **framework-agnostic** — it names no component library. Each consuming app maps these semantic tokens onto whatever library it uses, on its own side.
+bravoixr adopts **daisyUI** as its component library: it feeds its own tokens into daisyUI's theme-variable contract, so daisyUI's own component classes render in bravoixr's identity with no bravoixr-authored class needed. Component behavior (modals, dropdowns, focus management, accessibility) is rented from daisyUI, never reimplemented.
 
 ## Principles
 
-- **Own the tokens and the taste, rent the mechanics.** Define identity (color, type, spacing, radius, elevation, motion, density); never re-implement modals, dropdowns, focus management, etc.
+- **Own the tokens and the taste, rent the mechanics from daisyUI.** Define identity (color, type, spacing, radius, elevation, motion, density); skin daisyUI's components rather than re-implementing modals, dropdowns, focus management, etc.
 - **One value per concept**, referenced everywhere — never inline a raw value.
 - **Component class only when reused** (2+ times) — never speculatively.
 - **CSS is the source today; portable to JSON/Style Dictionary** when a non-web (e.g. MAUI) target appears.
@@ -27,7 +27,8 @@ The system is **framework-agnostic** — it names no component library. Each con
 | --- | --- |
 | Primitive tokens | Raw values, no meaning (`--bravoixr-blue-600`) |
 | Semantic tokens | Meaning mapped onto primitives (`--bravoixr-color-primary`, `--bravoixr-btn-height`) |
-| Component classes | Apply semantic tokens to reused elements (`.btn-regular`) |
+| daisyUI theme bridge | Maps semantic tokens onto daisyUI's own theme CSS variables (`--color-primary`, `--radius-field`) |
+| Component classes | daisyUI's own classes for migrated components (`.btn-primary`); bravoixr's classes for the rest (`.input`, `.card`) |
 
 ## Structure
 
@@ -36,8 +37,9 @@ apps/bravoixr/         the design identity system
   identity/      design decisions, one Markdown file per category
   primitives/    raw literal CSS values (color, typography, layout, motion, icons)
   semantics/     meaning mapped onto primitives (+ inline dark theme)
-  components/    component classes for reused elements
-  index.css      single entry — import order: primitives → semantics → components
+  daisyui/       bridges semantic tokens onto daisyUI's theme CSS-variable contract
+  components/    component classes for elements daisyUI doesn't cover, plus gap overrides
+  index.css      single entry — import order: primitives → semantics → daisyui → components
 apps/preview/           preview site for the token layers and component classes
 ```
 
@@ -45,17 +47,23 @@ Five measurable categories (color, typography, layout, motion, icons) run throug
 
 ## Consuming bravoixr
 
-Import the single entry point and apply the **classes** — they are the public API:
+Load **daisyUI** (e.g. via CDN, pinned to a major version) **before** bravoixr's stylesheet, then apply classes — daisyUI's own for migrated components, bravoixr's for the rest:
 
 ```html
+<link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 <link rel="stylesheet" href="bravoixr/index.css">
 
-<button class="btn btn-solid">Save</button>
+<button class="btn btn-primary">Save</button>
 <input class="input">
 <div class="card">…</div>
 ```
 
-- **Classes first.** Build your UI from bravoixr's classes; each one bundles the correct combination of tokens, so you can't assemble an invalid pairing.
+This works without CSS specificity tricks: daisyUI's CSS ships inside Tailwind's cascade layers, and bravoixr's plain, unlayered CSS always wins over layered rules regardless of load order.
+
+**Current migration status:** `button` is daisyUI-skinned (`.btn`, `.btn-primary`, `.btn-secondary`, `.btn-success`, `.btn-warning`, `.btn-error`, `.btn-ghost`, `.btn-square`). `input`, `toggle`, and `card` are still full bravoixr implementations (`.input`, `.toggle-*`, `.card`), pending their own migration.
+
+- **Classes first.** Build your UI from classes — daisyUI's for migrated components, bravoixr's for the rest; each one bundles the correct combination of tokens, so you can't assemble an invalid pairing.
 - **Tokens are the escape hatch.** For layout, spacing, and one-offs no class covers, reference the semantic tokens directly (`gap: var(--bravoixr-spacing-5)`). Never reference primitives.
 - **Theming is explicit.** Always set both `data-theme` (`light` or `dark`) and `dir` (`ltr` or `rtl`) on the root element — the themed color/icon and scripted typography roles are defined per state with no default, so an unset context leaves them unresolved by design. Both attributes work on any subtree root too, so a nested island (e.g. a `data-theme="light"` card in a dark page, or a `dir="ltr"` block in an RTL page) fully overrides its context.
 - **Fonts.** Load the named fonts yourself (Bricolage Grotesque, IBM Plex Sans Arabic, JetBrains Mono, Material Symbols) — the system declares the family stacks only.

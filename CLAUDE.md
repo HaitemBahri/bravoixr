@@ -6,18 +6,19 @@ Project page → https://app.notion.com/p/3877e19de5c280eb803bd89e214880da
 
 ## What this project is
 
-The shared design identity system. See `README.md` for the full overview. In short: define design **tokens** and **taste**, and write thin **component classes** for reused elements — rent all component mechanics from libraries. The system is framework-agnostic: it names no component library; each consuming app maps the tokens onto whatever library it uses.
+The shared design identity system. See `README.md` for the full overview. In short: define design **tokens** and **taste**, then apply them two ways: feed them into **daisyUI**'s theme-variable contract so daisyUI's own component classes render in bravoixr's identity, and write thin **component classes** (or small gap-override rules) for elements daisyUI doesn't cover or taste it doesn't expose. daisyUI is bravoixr's adopted component library — mechanics are rented from it, not reimplemented.
 
 ## Hard rules
 
 - **Tokens are the only source of values.** Never inline a raw value (color, size, radius) in component CSS or anywhere else — always reference a token. Sole exception: `@media` **conditions** can't read `var()`, so breakpoint px are mirrored literally in the media-query text (with a comment pointing to the `--bravoixr-breakpoint-*` primitives); values *inside* the block still use tokens.
 - **Two tiers, kept separate.** Primitives (raw literal values) → semantic tokens (meaning). Component classes consume **semantic** tokens only, never primitives.
-- **Classes are the public API.** Consuming projects apply bravoixr's **classes**, not its raw tokens. Classes are built exclusively from semantic tokens and bundle the correct combinations, so consumers can't assemble invalid pairings. Semantic tokens are the internal seam and a *supported escape hatch* for layout/spacing/one-offs no class covers; primitives are never consumed directly. (Detail in **Consumption** below.)
+- **Classes are the public API — daisyUI's for migrated components, bravoixr's for the rest.** For a component daisyUI covers and bravoixr has migrated (currently: `button`), consumers apply **daisyUI's own classes**; bravoixr never reimplements what it already themes. For everything else, consumers apply **bravoixr's classes**, built exclusively from semantic tokens so consumers can't assemble invalid pairings. Either way, semantic tokens are the internal seam and a *supported escape hatch* for layout/spacing/one-offs no class covers; primitives are never consumed directly. (Detail in **Consumption** below.)
 - **Token values stay portable.** No `calc()`, `color-mix()`, relative color syntax, or nested `var()` math _inside a token's definition_ — store literal values so the token file can be exported to JSON/XAML later. Such functions are fine in component CSS.
-- **Rent the mechanics.** Do not implement modals, dropdowns, popovers, focus management, positioning, or accessibility. Use a component library (or a headless lib) and skin it.
+- **Rent the mechanics.** Component mechanics (modals, dropdowns, popovers, focus management, positioning, accessibility) are rented from **daisyUI**, bravoixr's adopted component library — never reimplemented. bravoixr skins daisyUI via the theme bridge (`daisyui/theme.css`) and, where needed, small override rules against daisyUI's own selectors.
 - **Component class only when reused 2+ times.** No speculative components. One-off styling stays as plain scoped CSS.
 - **Classes carry no conditionals.** A component class in `components/` never contains `[data-theme]`, `[dir]`, `:lang`, or `@media`. All context value-switching (theme, script, viewport) lives in `semantics/` by re-pointing role tokens; classes stay flow-relative and context-agnostic. (Detail in **Authoring a class** below.)
-- **Framework-agnostic.** bravoixr names no component library or base theme. Mapping the semantic tokens onto a library's own theme variables is each consuming app's responsibility, done on its side — not in this repo.
+- **daisyUI is the adopted component library.** bravoixr names daisyUI explicitly and is no longer framework-agnostic (an intentional reversal of the prior stance) — the theme bridge and gap-override rules both target daisyUI's actual selectors and CSS-variable contract, not a generic abstraction.
+- **bravoixr's own tokens are namespaced `--bravoixr-*`.** Every CSS custom property bravoixr defines (both primitive and semantic tiers) is prefixed, keeping it visibly distinct from daisyUI's (or any other rented library's) own CSS variables.
 
 ## Structure
 
@@ -26,27 +27,41 @@ The design identity system lives at `apps/bravoixr/` (deployable, per the global
 - `identity/` — human-readable design decisions, one Markdown file per category. The creative source the token layers transcribe from.
 - `primitives/` — raw literal CSS custom properties (no meaning, no `var()`). The portable source of truth.
 - `semantics/` — meaning mapped onto primitives (`--bravoixr-color-primary`, `--bravoixr-btn-height`). The single seam components reference. Dark theme is handled **inline** here (`[data-theme="dark"]`), no separate `themes/` folder.
-- `components/` — thin component classes for reused elements, consuming semantic tokens.
-- `index.css` — single entry point. Import order is fixed: **`primitives/` → `semantics/` → `components/`**.
+- `daisyui/` — bridges bravoixr's `--bravoixr-*` tokens onto daisyUI's own theme CSS-variable contract (`--color-primary`, `--radius-field`, etc.), under the same `[data-theme]` states `semantics/color.css` uses. Isolates all daisyUI coupling to this one layer. Filled in incrementally as components migrate — currently scoped to what `.btn` needs.
+- `components/` — for elements daisyUI doesn't cover (`page`, `text`, `icon`, and the still-unmigrated `input`, `toggle`, `card`), plus small gap-override rules against daisyUI's own selectors for migrated components (currently: `button`'s focus-visible ring). Consumes semantic tokens only.
+- `index.css` — single entry point. Import order is fixed: **`primitives/` → `semantics/` → `daisyui/` → `components/`**.
 
 ## Consumption
 
-bravoixr is layered as a **public/internal contract**:
+bravoixr is layered as a **public/internal contract**, split across two delivery mechanisms depending on whether a component has migrated to daisyUI:
 
 - **Primitives** (`--bravoixr-blue-600`) — raw values, no meaning. Internal; never consumed directly.
 - **Semantic tokens** (`--bravoixr-color-primary`, `--bravoixr-control-height`) — meaning mapped onto primitives; single vars. The internal seam — and a *supported escape hatch* consumers may use for layout, spacing, and one-offs no class covers (atomic tokens carry no combination risk).
-- **Classes** — built exclusively from semantic tokens; the **public API**. Consuming projects apply these. Because a class bundles the correct combination, consumers can't produce invalid pairings (low-contrast text on a fill, mismatched control anatomy).
+- **daisyUI's own classes** — the public API for migrated components (currently: `button` — `.btn`, `.btn-primary`, `.btn-secondary`, `.btn-success`, `.btn-warning`, `.btn-error`, `.btn-ghost`, `.btn-square`). bravoixr feeds its tokens into daisyUI's theme contract (`daisyui/theme.css`) so these classes render in bravoixr's identity with no bravoixr-authored class needed; only a few gap-override rules remain in `components/` for taste daisyUI's theme variables don't expose.
+- **bravoixr's own classes** — the public API for everything else: elements daisyUI doesn't cover (`page`, `text`, `icon`), and components not yet migrated (`input`, `toggle`, `card` — still full bravoixr implementations, unaffected by the daisyUI adoption for now).
 
-Class types:
+Consuming a migrated component means loading daisyUI (e.g. via CDN, pinned to a major version) **before** bravoixr's stylesheet, then applying daisyUI's classes directly:
 
-- **Component classes** (`.btn`, `.input`, `.card`) — reused elements.
+```html
+<link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<link rel="stylesheet" href="bravoixr/index.css">
+
+<button class="btn btn-primary">Save</button>
+```
+
+This works without CSS specificity tricks: daisyUI's CSS ships inside Tailwind's cascade layers, and bravoixr's plain, unlayered CSS always wins over layered rules regardless of load order.
+
+Class types (bravoixr's own, non-migrated components only):
+
+- **Component classes** (`.input`, `.card`) — reused elements.
 - **Combination classes** (e.g. `.surface-raised` setting background + text + border together) — how safe colour pairings are delivered, so consumers never hand-assemble colour roles.
 
-The **component class only when reused 2+ times / no speculative** rule still governs; the class catalogue grows with real reuse. Because classes are the contract, semantic-token wiring can be refactored without breaking consumers. Consumers still set `data-theme` / `dir` for theming and load the named fonts themselves (the system declares family stacks only).
+The **component class only when reused 2+ times / no speculative** rule still governs; the class catalogue grows with real reuse. Because classes (bravoixr's own, and daisyUI's for migrated components) are the contract, semantic-token wiring can be refactored without breaking consumers. Consumers still set `data-theme` / `dir` for theming and load the named fonts themselves (the system declares family stacks only).
 
-### Authoring a class (layer-3 rules)
+### Authoring a class or override (layer-3 rules)
 
-Every class in `components/` follows these four rules:
+Every class in `components/` — bravoixr's own classes and gap-override rules against daisyUI's selectors alike — follows these four rules:
 
 - **Semantic tokens only.** Reference semantic tokens — never primitives, never raw literal values.
 - **No conditionals in the class.** No `[data-theme]`, `[dir]`, `:lang`, or `@media` inside `components/`. All context value-switching (theme light/dark, script en/ar, viewport desktop/tablet/mobile) lives in `semantics/` by re-pointing role tokens.

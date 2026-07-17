@@ -10,7 +10,7 @@ The shared design identity system. See `README.md` for the full overview. In sho
 
 ## Hard rules
 
-- **Tokens are the only source of values.** Never inline a raw value (color, size, radius) in component CSS or anywhere else — always reference a token. Sole exception: `@media` **conditions** can't read `var()`, so breakpoint px are mirrored literally in the media-query text (with a comment pointing to the `--breakpoint-*` primitives); values *inside* the block still use tokens.
+- **Tokens are the only source of values.** Never inline a raw value (color, size, radius) in component CSS or anywhere else — always reference a token. Sole exception: `@media` **conditions** can't read `var()`, so breakpoint px are mirrored literally in the media-query text (with a comment pointing to the `--bravoixr-breakpoint-*` primitives); values *inside* the block still use tokens.
 - **Two tiers, kept separate.** Primitives (raw literal values) → semantic tokens (meaning). Component classes consume **semantic** tokens only, never primitives.
 - **Classes are the public API.** Consuming projects apply bravoixr's **classes**, not its raw tokens. Classes are built exclusively from semantic tokens and bundle the correct combinations, so consumers can't assemble invalid pairings. Semantic tokens are the internal seam and a *supported escape hatch* for layout/spacing/one-offs no class covers; primitives are never consumed directly. (Detail in **Consumption** below.)
 - **Token values stay portable.** No `calc()`, `color-mix()`, relative color syntax, or nested `var()` math _inside a token's definition_ — store literal values so the token file can be exported to JSON/XAML later. Such functions are fine in component CSS.
@@ -25,7 +25,7 @@ The design identity system lives at `apps/bravoixr/` (deployable, per the global
 
 - `identity/` — human-readable design decisions, one Markdown file per category. The creative source the token layers transcribe from.
 - `primitives/` — raw literal CSS custom properties (no meaning, no `var()`). The portable source of truth.
-- `semantics/` — meaning mapped onto primitives (`--color-primary`, `--btn-height`). The single seam components reference. Dark theme is handled **inline** here (`[data-theme="dark"]`), no separate `themes/` folder.
+- `semantics/` — meaning mapped onto primitives (`--bravoixr-color-primary`, `--bravoixr-btn-height`). The single seam components reference. Dark theme is handled **inline** here (`[data-theme="dark"]`), no separate `themes/` folder.
 - `components/` — thin component classes for reused elements, consuming semantic tokens.
 - `index.css` — single entry point. Import order is fixed: **`primitives/` → `semantics/` → `components/`**.
 
@@ -33,8 +33,8 @@ The design identity system lives at `apps/bravoixr/` (deployable, per the global
 
 bravoixr is layered as a **public/internal contract**:
 
-- **Primitives** (`--blue-600`) — raw values, no meaning. Internal; never consumed directly.
-- **Semantic tokens** (`--color-primary`, `--control-height`) — meaning mapped onto primitives; single vars. The internal seam — and a *supported escape hatch* consumers may use for layout, spacing, and one-offs no class covers (atomic tokens carry no combination risk).
+- **Primitives** (`--bravoixr-blue-600`) — raw values, no meaning. Internal; never consumed directly.
+- **Semantic tokens** (`--bravoixr-color-primary`, `--bravoixr-control-height`) — meaning mapped onto primitives; single vars. The internal seam — and a *supported escape hatch* consumers may use for layout, spacing, and one-offs no class covers (atomic tokens carry no combination risk).
 - **Classes** — built exclusively from semantic tokens; the **public API**. Consuming projects apply these. Because a class bundles the correct combination, consumers can't produce invalid pairings (low-contrast text on a fill, mismatched control anatomy).
 
 Class types:

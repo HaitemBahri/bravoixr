@@ -14,8 +14,8 @@
   min-block-size: 100dvh;
   display: flex;
   flex-direction: column;
-  background: var(--color-surface-page);
-  color: var(--color-text);
+  background: var(--bravoixr-color-surface-page);
+  color: var(--bravoixr-color-text);
 }
 
 /* Propagate border-box to everything on the canvas — box-sizing doesn't inherit
@@ -27,7 +27,7 @@
   box-sizing: inherit;
 }
 
-/* The content column — capped at --page-max and centred: the inline padding grows
+/* The content column — capped at --bravoixr-page-max and centred: the inline padding grows
  * to split the leftover width either side of the 1280 column on wide screens, and
  * never drops below the space-10 gutter on narrow ones. Inset by space-10 at the
  * block-start and flush (zero) at the block-end so the footer meets the viewport
@@ -38,8 +38,8 @@
  * content height as before. */
 .page-body {
   flex: 1 1 auto;
-  padding-block: var(--spacing-10) 0;
-  padding-inline: max(var(--spacing-10), calc((100% - var(--page-max)) / 2));
+  padding-block: var(--bravoixr-spacing-10) 0;
+  padding-inline: max(var(--bravoixr-spacing-10), calc((100% - var(--bravoixr-page-max)) / 2));
 }
 
 /* The page's top bar — wordmark at the inline-start, controls at the inline-end
@@ -50,44 +50,44 @@
  * than a floating card. Block padding + align-items:center size it to its
  * content, so it grows vertically as the content needs; the inline padding uses
  * the same centred-column formula as .page-body, so the bar content caps at
- * --page-max and lines up with the page column below while the raised fill still
+ * --bravoixr-page-max and lines up with the page column below while the raised fill still
  * bleeds edge to edge. The fill themes with the page via the semantic dark override. */
 .page-topbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: var(--spacing-5);
-  padding-block: var(--spacing-5);
-  padding-inline: max(var(--spacing-10), calc((100% - var(--page-max)) / 2));
-  background: var(--color-surface-raised);
+  gap: var(--bravoixr-spacing-5);
+  padding-block: var(--bravoixr-spacing-5);
+  padding-inline: max(var(--bravoixr-spacing-10), calc((100% - var(--bravoixr-page-max)) / 2));
+  background: var(--bravoixr-color-surface-raised);
 }
 
 /* The topbar's control cluster — a flex row grouping the toggle buttons with a
  * small gap. Sits as the inline-end child of .page-topbar. */
 .page-controls {
   display: flex;
-  gap: var(--spacing-3);
+  gap: var(--bravoixr-spacing-3);
 }
 
 /* A top-level section of the page canvas — carries the block rhythm that
  * separates one section from the next. */
 .page-section {
-  margin-block-end: var(--spacing-10);
+  margin-block-end: var(--bravoixr-spacing-10);
 }
 
 /* A responsive card grid — columns auto-fill from the card minimum, with the
  * block gap above it separating the grid from its section heading. */
 .page-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(var(--card-min), 1fr));
-  gap: var(--spacing-5);
-  margin-block-start: var(--spacing-7);
+  grid-template-columns: repeat(auto-fill, minmax(var(--bravoixr-card-min), 1fr));
+  gap: var(--bravoixr-spacing-5);
+  margin-block-start: var(--bravoixr-spacing-7);
 }
 
 /* The page's title block — heading plus description, sitting below the topbar
  * with the same block gap the topbar carries so the two chrome bands align. */
 .page-header {
-  margin-block-end: var(--spacing-8);
+  margin-block-end: var(--bravoixr-spacing-8);
 }
 
 /* The page's footer bar — wordmark at inline-start, actions at inline-end, on a
@@ -97,16 +97,16 @@
  * its own — no margins, no bleed tricks. Block padding + align-items:center size
  * it to its content, so it grows vertically as the content needs; the inline
  * padding uses the same centred-column formula as .page-body, so the bar content
- * caps at --page-max and lines up with the page column above while the sunken fill
+ * caps at --bravoixr-page-max and lines up with the page column above while the sunken fill
  * still bleeds edge to edge. Themes with the page via the semantic dark override. */
 .page-footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: var(--spacing-5);
-  padding-block: var(--spacing-5);
-  padding-inline: max(var(--spacing-10), calc((100% - var(--page-max)) / 2));
-  background: var(--color-surface-sunken);
+  gap: var(--bravoixr-spacing-5);
+  padding-block: var(--bravoixr-spacing-5);
+  padding-inline: max(var(--bravoixr-spacing-10), calc((100% - var(--bravoixr-page-max)) / 2));
+  background: var(--bravoixr-color-surface-sunken);
 }
 
 /* A horizontal stack that wraps — items sit inline-start to inline-end and drop
@@ -116,7 +116,7 @@
 .page-cluster {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--spacing-5);
+  gap: var(--bravoixr-spacing-5);
   align-items: start;
 }
 
@@ -127,7 +127,7 @@
 .page-stack {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-5);
+  gap: var(--bravoixr-spacing-5);
   align-items: start;
 }
 
@@ -135,8 +135,8 @@
  * rest, aligned to the block-start so a tall value doesn't drag the label down. */
 .page-row-header {
   display: grid;
-  grid-template-columns: var(--page-row-header-columns);
-  gap: var(--spacing-5);
+  grid-template-columns: var(--bravoixr-page-row-header-columns);
+  gap: var(--bravoixr-spacing-5);
   align-items: start;
 }
 
@@ -146,30 +146,30 @@
  * the page via the semantic dark override. */
 .page-row-header > :first-child {
   align-self: stretch;
-  padding-block: var(--spacing-4);
-  padding-inline: var(--spacing-5);
-  background: var(--color-surface-sunken);
-  border-radius: var(--radius-card);
+  padding-block: var(--bravoixr-spacing-4);
+  padding-inline: var(--bravoixr-spacing-5);
+  background: var(--bravoixr-color-surface-sunken);
+  border-radius: var(--bravoixr-radius-card);
 }
 
 /* The rail's title + description anatomy — a heading title over a quiet muted lede,
  * mirroring the card's text roles. The title's zero top margin lets the rail
  * padding govern the top edge. */
 .page-row-header-title {
-  font-family: var(--font-heading);
-  font-size: var(--text-minor-heading);
-  font-weight: var(--weight-minor-heading);
-  line-height: var(--leading-display);
-  letter-spacing: var(--tracking-display);
-  margin-block: 0 var(--spacing-3);
+  font-family: var(--bravoixr-font-heading);
+  font-size: var(--bravoixr-text-minor-heading);
+  font-weight: var(--bravoixr-weight-minor-heading);
+  line-height: var(--bravoixr-leading-display);
+  letter-spacing: var(--bravoixr-tracking-display);
+  margin-block: 0 var(--bravoixr-spacing-3);
 }
 
 .page-row-header-description {
-  font-family: var(--font-body);
-  font-size: var(--text-body);
-  font-weight: var(--weight-body);
-  line-height: var(--leading-prose);
-  color: var(--color-text-muted);
+  font-family: var(--bravoixr-font-body);
+  font-size: var(--bravoixr-text-body);
+  font-weight: var(--bravoixr-weight-body);
+  line-height: var(--bravoixr-leading-prose);
+  color: var(--bravoixr-color-text-muted);
   margin: 0;
 }
 
@@ -181,8 +181,8 @@
  * multi-line caption text wrapping within its now shrink-wrapped box. */
 .page-column-header {
   display: grid;
-  grid-template-rows: 1fr var(--page-column-header-size);
-  gap: var(--spacing-4);
+  grid-template-rows: 1fr var(--bravoixr-page-column-header-size);
+  gap: var(--bravoixr-spacing-4);
   justify-items: center;
   text-align: center;
 }
@@ -192,7 +192,7 @@
 .page-scroller {
   display: flex;
   flex-wrap: nowrap;
-  gap: var(--spacing-5);
+  gap: var(--bravoixr-spacing-5);
   overflow-inline: auto;
   block-size: 100%;
 }
@@ -205,7 +205,7 @@
 
 /* A fixed-width column beside the main content — the app rail. */
 .page-sidebar {
-  flex: 0 0 var(--page-sidebar-size);
+  flex: 0 0 var(--bravoixr-page-sidebar-size);
 }
 
 /* The primary column — fills the inline space left by the sidebar, with a zero
@@ -220,12 +220,12 @@
 .page-sticky {
   position: sticky;
   inset-block-start: 0;
-  z-index: var(--layer-sticky);
+  z-index: var(--bravoixr-layer-sticky);
 }
 
 /* A non-wrapping flex row that hosts a .page-sidebar and a .page-main side by
  * side, keeping them on one row with the gap between them. */
 .page-shell {
   display: flex;
-  gap: var(--spacing-6);
+  gap: var(--bravoixr-spacing-6);
 }

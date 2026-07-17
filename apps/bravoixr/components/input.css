@@ -8,41 +8,41 @@
 .input {
   box-sizing: border-box; /* absorbs the 1->2px focus border without outer reflow */
   width: 100%; /* controls are full-width by default; layout owns width */
-  height: var(--control-height);
+  height: var(--bravoixr-control-height);
   padding-block: 0;
-  padding-inline: var(--spacing-4);
-  border: var(--border-width) solid var(--color-border);
-  border-radius: var(--radius-control);
-  background: var(--color-surface-raised);
-  color: var(--color-text);
-  font-family: var(--font-body);
-  font-size: var(--text-body);
+  padding-inline: var(--bravoixr-spacing-4);
+  border: var(--bravoixr-border-width) solid var(--bravoixr-color-border);
+  border-radius: var(--bravoixr-radius-control);
+  background: var(--bravoixr-color-surface-raised);
+  color: var(--bravoixr-color-text);
+  font-family: var(--bravoixr-font-body);
+  font-size: var(--bravoixr-text-body);
 }
 
 .input::placeholder {
-  color: var(--color-text-subtle);
+  color: var(--bravoixr-color-text-subtle);
 }
 
 .input:focus {
-  border-width: var(--border-width-strong);
-  border-color: var(--color-border-focus);
+  border-width: var(--bravoixr-border-width-strong);
+  border-color: var(--bravoixr-color-border-focus);
 }
 
 .input:disabled {
   cursor: not-allowed;
-  background: var(--color-surface-sunken);
-  border-color: var(--color-border);
-  color: var(--color-text-subtle);
+  background: var(--bravoixr-color-surface-sunken);
+  border-color: var(--bravoixr-color-border);
+  color: var(--bravoixr-color-text-subtle);
 }
 
 /* Color — secondary/success/warning/error modifiers. Primary ships as the
  * implicit default (bare .input). Each modifier overrides only the resting
- * border-color; the focus ring stays --color-border-focus across every
+ * border-color; the focus ring stays --bravoixr-color-border-focus across every
  * variant, same as .toggle's :focus-visible outline ignores color role. */
-.input-secondary { border-color: var(--color-secondary); }
-.input-success    { border-color: var(--color-success); }
-.input-warning    { border-color: var(--color-warning); }
-.input-error      { border-color: var(--color-error); }
+.input-secondary { border-color: var(--bravoixr-color-secondary); }
+.input-success    { border-color: var(--bravoixr-color-success); }
+.input-warning    { border-color: var(--bravoixr-color-warning); }
+.input-error      { border-color: var(--bravoixr-color-error); }
 
 /* Field — a vertical stack pairing a label (and optional helper text) with
  * its input. align-self: stretch overrides page-stack's align-items:start,
@@ -51,6 +51,6 @@
 .input-field {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-2);
+  gap: var(--bravoixr-spacing-2);
   align-self: stretch;
 }

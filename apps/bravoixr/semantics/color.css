@@ -60,6 +60,16 @@
   --bravoixr-color-info-active-light: var(--bravoixr-blue-800);
   --bravoixr-color-info-active-dark: var(--bravoixr-blue-300);
 
+  /* Accent — Purple (tiny usages, promoted here only for the daisyUI accent role) */
+  --bravoixr-color-accent-light: var(--bravoixr-purple-600);
+  --bravoixr-color-accent-dark: var(--bravoixr-purple-500);
+
+  /* Neutral — inverts between themes: dark-on-light-page, light-on-dark-page */
+  --bravoixr-color-neutral-light: var(--bravoixr-neutral-950);
+  --bravoixr-color-neutral-dark: var(--bravoixr-neutral-50);
+  --bravoixr-color-neutral-content-light: var(--bravoixr-neutral-50);
+  --bravoixr-color-neutral-content-dark: var(--bravoixr-neutral-950);
+
   /* Surfaces — off-white canvas, white raised, sunken wells (light);
      off-black canvas, never pure black (dark) */
   --bravoixr-color-surface-page-light: var(--bravoixr-neutral-50);
@@ -115,6 +125,11 @@
   --bravoixr-color-info-hover: var(--bravoixr-color-info-hover-light);
   --bravoixr-color-info-active: var(--bravoixr-color-info-active-light);
 
+  --bravoixr-color-accent: var(--bravoixr-color-accent-light);
+
+  --bravoixr-color-neutral: var(--bravoixr-color-neutral-light);
+  --bravoixr-color-neutral-content: var(--bravoixr-color-neutral-content-light);
+
   --bravoixr-color-surface-page: var(--bravoixr-color-surface-page-light);
   --bravoixr-color-surface-raised: var(--bravoixr-color-surface-raised-light);
   --bravoixr-color-surface-sunken: var(--bravoixr-color-surface-sunken-light);
@@ -154,6 +169,11 @@
   --bravoixr-color-info: var(--bravoixr-color-info-dark);
   --bravoixr-color-info-hover: var(--bravoixr-color-info-hover-dark);
   --bravoixr-color-info-active: var(--bravoixr-color-info-active-dark);
+
+  --bravoixr-color-accent: var(--bravoixr-color-accent-dark);
+
+  --bravoixr-color-neutral: var(--bravoixr-color-neutral-dark);
+  --bravoixr-color-neutral-content: var(--bravoixr-color-neutral-content-dark);
 
   --bravoixr-color-surface-page: var(--bravoixr-color-surface-page-dark);
   --bravoixr-color-surface-raised: var(--bravoixr-color-surface-raised-dark);

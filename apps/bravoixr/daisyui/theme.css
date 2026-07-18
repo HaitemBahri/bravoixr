@@ -6,11 +6,7 @@
  *
  * Two full blocks, not a shared selector: color-scheme is a literal
  * per-theme value, and this mirrors daisyUI's own compiled source, which
- * also ships light and dark as two separate rules.
- *
- * --color-accent / --color-neutral are intentionally left unset — bravoixr
- * has no semantic token for either; daisyUI's own light/dark defaults
- * apply for those two roles specifically. */
+ * also ships light and dark as two separate rules. */
 
 [data-theme="light"] {
   color-scheme: light;
@@ -32,6 +28,10 @@
   --color-error-content: var(--bravoixr-color-text-on-primary-light);
   --color-info: var(--bravoixr-color-info-light);
   --color-info-content: var(--bravoixr-color-text-on-primary-light);
+  --color-accent: var(--bravoixr-color-accent-light);
+  --color-accent-content: var(--bravoixr-color-text-on-primary-light);
+  --color-neutral: var(--bravoixr-color-neutral-light);
+  --color-neutral-content: var(--bravoixr-color-neutral-content-light);
 
   --radius-field: var(--bravoixr-radius-control);
   --radius-selector: var(--bravoixr-radius-chip);
@@ -65,6 +65,10 @@
   --color-error-content: var(--bravoixr-color-text-on-primary-dark);
   --color-info: var(--bravoixr-color-info-dark);
   --color-info-content: var(--bravoixr-color-text-on-primary-dark);
+  --color-accent: var(--bravoixr-color-accent-dark);
+  --color-accent-content: var(--bravoixr-color-text-on-primary-dark);
+  --color-neutral: var(--bravoixr-color-neutral-dark);
+  --color-neutral-content: var(--bravoixr-color-neutral-content-dark);
 
   --radius-field: var(--bravoixr-radius-control);
   --radius-selector: var(--bravoixr-radius-chip);

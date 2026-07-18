@@ -1,28 +1,79 @@
 /* daisyUI — theme bridge
- * Feeds bravoixr's semantic tokens into daisyUI's own theme CSS-variable
- * contract, so daisyUI's stock component classes render in bravoixr's
- * identity with no CSS duplication. Isolates all daisyUI coupling to this
- * one file. Scoped to only what .btn needs today; the rest of daisyUI's
- * variable contract (--color-base-*, --color-accent, --color-neutral,
- * --radius-box, --radius-selector, --size-*) is added as more components
- * migrate. References --bravoixr-* tokens only, never primitives. */
+ * Overrides daisyUI's built-in "light" and "dark" themes with bravoixr's
+ * own semantic tokens (the *-light/*-dark tier in semantics/color.css), so
+ * daisyUI's stock component classes render in bravoixr's identity with no
+ * CSS duplication. Isolates all daisyUI coupling to this one file.
+ *
+ * Two full blocks, not a shared selector: color-scheme is a literal
+ * per-theme value, and this mirrors daisyUI's own compiled source, which
+ * also ships light and dark as two separate rules.
+ *
+ * --color-accent / --color-neutral are intentionally left unset — bravoixr
+ * has no semantic token for either; daisyUI's own light/dark defaults
+ * apply for those two roles specifically. */
 
-/* Both themes forward to the same --bravoixr-* names — the light/dark
- * values themselves already live one layer down in semantics/color.css. */
-[data-theme="light"],
-[data-theme="dark"] {
-  --color-primary: var(--bravoixr-color-primary);
-  --color-primary-content: var(--bravoixr-color-text-on-primary);
-  --color-secondary: var(--bravoixr-color-secondary);
-  --color-secondary-content: var(--bravoixr-color-text-on-primary);
-  --color-success: var(--bravoixr-color-success);
-  --color-success-content: var(--bravoixr-color-text-on-primary);
-  --color-warning: var(--bravoixr-color-warning);
-  --color-warning-content: var(--bravoixr-color-text-on-primary);
-  --color-error: var(--bravoixr-color-error);
-  --color-error-content: var(--bravoixr-color-text-on-primary);
+[data-theme="light"] {
+  color-scheme: light;
+
+  --color-base-100: var(--bravoixr-color-surface-page-light);
+  --color-base-200: var(--bravoixr-color-surface-raised-light);
+  --color-base-300: var(--bravoixr-color-surface-sunken-light);
+  --color-base-content: var(--bravoixr-color-text-light);
+
+  --color-primary: var(--bravoixr-color-primary-light);
+  --color-primary-content: var(--bravoixr-color-text-on-primary-light);
+  --color-secondary: var(--bravoixr-color-secondary-light);
+  --color-secondary-content: var(--bravoixr-color-text-on-primary-light);
+  --color-success: var(--bravoixr-color-success-light);
+  --color-success-content: var(--bravoixr-color-text-on-primary-light);
+  --color-warning: var(--bravoixr-color-warning-light);
+  --color-warning-content: var(--bravoixr-color-text-on-primary-light);
+  --color-error: var(--bravoixr-color-error-light);
+  --color-error-content: var(--bravoixr-color-text-on-primary-light);
+  --color-info: var(--bravoixr-color-info-light);
+  --color-info-content: var(--bravoixr-color-text-on-primary-light);
+
   --radius-field: var(--bravoixr-radius-control);
+  --radius-selector: var(--bravoixr-radius-chip);
+  --radius-box: var(--bravoixr-radius-card);
+
+  --size-field: calc(var(--bravoixr-control-height) / 10);
+  --size-selector: calc(var(--bravoixr-control-height) / 10);
+
   --border: var(--bravoixr-border-width);
   --depth: 0; /* daisyUI feature flag, not a design value — keeps bravoixr's flat, borderless taste */
+  --noise: 0;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --color-base-100: var(--bravoixr-color-surface-page-dark);
+  --color-base-200: var(--bravoixr-color-surface-raised-dark);
+  --color-base-300: var(--bravoixr-color-surface-sunken-dark);
+  --color-base-content: var(--bravoixr-color-text-dark);
+
+  --color-primary: var(--bravoixr-color-primary-dark);
+  --color-primary-content: var(--bravoixr-color-text-on-primary-dark);
+  --color-secondary: var(--bravoixr-color-secondary-dark);
+  --color-secondary-content: var(--bravoixr-color-text-on-primary-dark);
+  --color-success: var(--bravoixr-color-success-dark);
+  --color-success-content: var(--bravoixr-color-text-on-primary-dark);
+  --color-warning: var(--bravoixr-color-warning-dark);
+  --color-warning-content: var(--bravoixr-color-text-on-primary-dark);
+  --color-error: var(--bravoixr-color-error-dark);
+  --color-error-content: var(--bravoixr-color-text-on-primary-dark);
+  --color-info: var(--bravoixr-color-info-dark);
+  --color-info-content: var(--bravoixr-color-text-on-primary-dark);
+
+  --radius-field: var(--bravoixr-radius-control);
+  --radius-selector: var(--bravoixr-radius-chip);
+  --radius-box: var(--bravoixr-radius-card);
+
+  --size-field: calc(var(--bravoixr-control-height) / 10);
+  --size-selector: calc(var(--bravoixr-control-height) / 10);
+
+  --border: var(--bravoixr-border-width);
+  --depth: 0;
   --noise: 0;
 }

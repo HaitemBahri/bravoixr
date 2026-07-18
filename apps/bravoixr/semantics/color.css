@@ -3,97 +3,169 @@
  * every role is themed, so each state is an explicit block — [data-theme="light"] and
  * [data-theme="dark"], with no :root fallback. A theme must be set on the root element (or any
  * subtree root) for these roles to resolve; this keeps the toggle re-entrant at any nesting depth.
- * References color primitives only. */
+ * References color primitives only.
+ *
+ * Unconditional light/dark tier: every role also gets a *-light/*-dark pair at :root,
+ * referencing primitives directly — the single source of truth. The [data-theme] blocks
+ * below are thin lookups into that tier (unchanged public token names, unchanged resolved
+ * values). This lets other layers (e.g. daisyui/theme.css) read a role's light or dark
+ * value explicitly, without depending on which [data-theme] is currently active. */
 
-[data-theme="light"] {
+:root {
   /* Brand — primary (blue) */
-  --bravoixr-color-primary: var(--bravoixr-blue-600);
-  --bravoixr-color-primary-hover: var(--bravoixr-blue-700);
-  --bravoixr-color-primary-active: var(--bravoixr-blue-800);
+  --bravoixr-color-primary-light: var(--bravoixr-blue-600);
+  --bravoixr-color-primary-dark: var(--bravoixr-blue-500);
+  --bravoixr-color-primary-hover-light: var(--bravoixr-blue-700);
+  --bravoixr-color-primary-hover-dark: var(--bravoixr-blue-400);
+  --bravoixr-color-primary-active-light: var(--bravoixr-blue-800);
+  --bravoixr-color-primary-active-dark: var(--bravoixr-blue-300);
 
   /* Brand — secondary (teal) */
-  --bravoixr-color-secondary: var(--bravoixr-teal-600);
-  --bravoixr-color-secondary-hover: var(--bravoixr-teal-700);
-  --bravoixr-color-secondary-active: var(--bravoixr-teal-800);
+  --bravoixr-color-secondary-light: var(--bravoixr-teal-600);
+  --bravoixr-color-secondary-dark: var(--bravoixr-teal-500);
+  --bravoixr-color-secondary-hover-light: var(--bravoixr-teal-700);
+  --bravoixr-color-secondary-hover-dark: var(--bravoixr-teal-400);
+  --bravoixr-color-secondary-active-light: var(--bravoixr-teal-800);
+  --bravoixr-color-secondary-active-dark: var(--bravoixr-teal-300);
 
   /* Status — success (green) */
-  --bravoixr-color-success: var(--bravoixr-green-600);
-  --bravoixr-color-success-hover: var(--bravoixr-green-700);
-  --bravoixr-color-success-active: var(--bravoixr-green-800);
+  --bravoixr-color-success-light: var(--bravoixr-green-600);
+  --bravoixr-color-success-dark: var(--bravoixr-green-500);
+  --bravoixr-color-success-hover-light: var(--bravoixr-green-700);
+  --bravoixr-color-success-hover-dark: var(--bravoixr-green-400);
+  --bravoixr-color-success-active-light: var(--bravoixr-green-800);
+  --bravoixr-color-success-active-dark: var(--bravoixr-green-300);
 
   /* Status — warning (yellow) */
-  --bravoixr-color-warning: var(--bravoixr-yellow-600);
-  --bravoixr-color-warning-hover: var(--bravoixr-yellow-700);
-  --bravoixr-color-warning-active: var(--bravoixr-yellow-800);
+  --bravoixr-color-warning-light: var(--bravoixr-yellow-600);
+  --bravoixr-color-warning-dark: var(--bravoixr-yellow-500);
+  --bravoixr-color-warning-hover-light: var(--bravoixr-yellow-700);
+  --bravoixr-color-warning-hover-dark: var(--bravoixr-yellow-400);
+  --bravoixr-color-warning-active-light: var(--bravoixr-yellow-800);
+  --bravoixr-color-warning-active-dark: var(--bravoixr-yellow-300);
 
   /* Status — error (red) */
-  --bravoixr-color-error: var(--bravoixr-red-600);
-  --bravoixr-color-error-hover: var(--bravoixr-red-700);
-  --bravoixr-color-error-active: var(--bravoixr-red-800);
+  --bravoixr-color-error-light: var(--bravoixr-red-600);
+  --bravoixr-color-error-dark: var(--bravoixr-red-500);
+  --bravoixr-color-error-hover-light: var(--bravoixr-red-700);
+  --bravoixr-color-error-hover-dark: var(--bravoixr-red-400);
+  --bravoixr-color-error-active-light: var(--bravoixr-red-800);
+  --bravoixr-color-error-active-dark: var(--bravoixr-red-300);
 
-  /* Status — info (reuses blue) */
-  --bravoixr-color-info: var(--bravoixr-blue-600);
-  --bravoixr-color-info-hover: var(--bravoixr-blue-700);
-  --bravoixr-color-info-active: var(--bravoixr-blue-800);
+  /* Status — info (reuses blue, same as primary) */
+  --bravoixr-color-info-light: var(--bravoixr-blue-600);
+  --bravoixr-color-info-dark: var(--bravoixr-blue-500);
+  --bravoixr-color-info-hover-light: var(--bravoixr-blue-700);
+  --bravoixr-color-info-hover-dark: var(--bravoixr-blue-400);
+  --bravoixr-color-info-active-light: var(--bravoixr-blue-800);
+  --bravoixr-color-info-active-dark: var(--bravoixr-blue-300);
 
-  /* Surfaces — off-white canvas, white raised, sunken wells */
-  --bravoixr-color-surface-page: var(--bravoixr-neutral-50);
-  --bravoixr-color-surface-raised: var(--bravoixr-neutral-0);
-  --bravoixr-color-surface-sunken: var(--bravoixr-neutral-100);
+  /* Surfaces — off-white canvas, white raised, sunken wells (light);
+     off-black canvas, never pure black (dark) */
+  --bravoixr-color-surface-page-light: var(--bravoixr-neutral-50);
+  --bravoixr-color-surface-page-dark: var(--bravoixr-neutral-900);
+  --bravoixr-color-surface-raised-light: var(--bravoixr-neutral-0);
+  --bravoixr-color-surface-raised-dark: var(--bravoixr-neutral-800);
+  --bravoixr-color-surface-sunken-light: var(--bravoixr-neutral-100);
+  --bravoixr-color-surface-sunken-dark: var(--bravoixr-neutral-950);
 
-  /* Text — softer than pure black */
-  --bravoixr-color-text: var(--bravoixr-neutral-900);
-  --bravoixr-color-text-muted: var(--bravoixr-neutral-600);
-  --bravoixr-color-text-subtle: var(--bravoixr-neutral-500);
-  --bravoixr-color-text-inverse: var(--bravoixr-neutral-0);
-  --bravoixr-color-text-on-primary: var(--bravoixr-neutral-0);
+  /* Text — softer than pure black/white */
+  --bravoixr-color-text-light: var(--bravoixr-neutral-900);
+  --bravoixr-color-text-dark: var(--bravoixr-neutral-50);
+  --bravoixr-color-text-muted-light: var(--bravoixr-neutral-600);
+  --bravoixr-color-text-muted-dark: var(--bravoixr-neutral-400);
+  --bravoixr-color-text-subtle-light: var(--bravoixr-neutral-500);
+  --bravoixr-color-text-subtle-dark: var(--bravoixr-neutral-500);
+  --bravoixr-color-text-inverse-light: var(--bravoixr-neutral-0);
+  --bravoixr-color-text-inverse-dark: var(--bravoixr-neutral-900);
+  --bravoixr-color-text-on-primary-light: var(--bravoixr-neutral-0);
+  --bravoixr-color-text-on-primary-dark: var(--bravoixr-neutral-0);
 
   /* Border — "just visible" neutrals; focus uses brand */
-  --bravoixr-color-border: var(--bravoixr-neutral-200);
-  --bravoixr-color-border-strong: var(--bravoixr-neutral-300);
-  --bravoixr-color-border-focus: var(--bravoixr-blue-500);
+  --bravoixr-color-border-light: var(--bravoixr-neutral-200);
+  --bravoixr-color-border-dark: var(--bravoixr-neutral-700);
+  --bravoixr-color-border-strong-light: var(--bravoixr-neutral-300);
+  --bravoixr-color-border-strong-dark: var(--bravoixr-neutral-600);
+  --bravoixr-color-border-focus-light: var(--bravoixr-blue-500);
+  --bravoixr-color-border-focus-dark: var(--bravoixr-blue-400);
+}
+
+[data-theme="light"] {
+  --bravoixr-color-primary: var(--bravoixr-color-primary-light);
+  --bravoixr-color-primary-hover: var(--bravoixr-color-primary-hover-light);
+  --bravoixr-color-primary-active: var(--bravoixr-color-primary-active-light);
+
+  --bravoixr-color-secondary: var(--bravoixr-color-secondary-light);
+  --bravoixr-color-secondary-hover: var(--bravoixr-color-secondary-hover-light);
+  --bravoixr-color-secondary-active: var(--bravoixr-color-secondary-active-light);
+
+  --bravoixr-color-success: var(--bravoixr-color-success-light);
+  --bravoixr-color-success-hover: var(--bravoixr-color-success-hover-light);
+  --bravoixr-color-success-active: var(--bravoixr-color-success-active-light);
+
+  --bravoixr-color-warning: var(--bravoixr-color-warning-light);
+  --bravoixr-color-warning-hover: var(--bravoixr-color-warning-hover-light);
+  --bravoixr-color-warning-active: var(--bravoixr-color-warning-active-light);
+
+  --bravoixr-color-error: var(--bravoixr-color-error-light);
+  --bravoixr-color-error-hover: var(--bravoixr-color-error-hover-light);
+  --bravoixr-color-error-active: var(--bravoixr-color-error-active-light);
+
+  --bravoixr-color-info: var(--bravoixr-color-info-light);
+  --bravoixr-color-info-hover: var(--bravoixr-color-info-hover-light);
+  --bravoixr-color-info-active: var(--bravoixr-color-info-active-light);
+
+  --bravoixr-color-surface-page: var(--bravoixr-color-surface-page-light);
+  --bravoixr-color-surface-raised: var(--bravoixr-color-surface-raised-light);
+  --bravoixr-color-surface-sunken: var(--bravoixr-color-surface-sunken-light);
+
+  --bravoixr-color-text: var(--bravoixr-color-text-light);
+  --bravoixr-color-text-muted: var(--bravoixr-color-text-muted-light);
+  --bravoixr-color-text-subtle: var(--bravoixr-color-text-subtle-light);
+  --bravoixr-color-text-inverse: var(--bravoixr-color-text-inverse-light);
+  --bravoixr-color-text-on-primary: var(--bravoixr-color-text-on-primary-light);
+
+  --bravoixr-color-border: var(--bravoixr-color-border-light);
+  --bravoixr-color-border-strong: var(--bravoixr-color-border-strong-light);
+  --bravoixr-color-border-focus: var(--bravoixr-color-border-focus-light);
 }
 
 [data-theme="dark"] {
-  /* Brand — lighter steps for legibility on dark surfaces */
-  --bravoixr-color-primary: var(--bravoixr-blue-500);
-  --bravoixr-color-primary-hover: var(--bravoixr-blue-400);
-  --bravoixr-color-primary-active: var(--bravoixr-blue-300);
+  --bravoixr-color-primary: var(--bravoixr-color-primary-dark);
+  --bravoixr-color-primary-hover: var(--bravoixr-color-primary-hover-dark);
+  --bravoixr-color-primary-active: var(--bravoixr-color-primary-active-dark);
 
-  --bravoixr-color-secondary: var(--bravoixr-teal-500);
-  --bravoixr-color-secondary-hover: var(--bravoixr-teal-400);
-  --bravoixr-color-secondary-active: var(--bravoixr-teal-300);
+  --bravoixr-color-secondary: var(--bravoixr-color-secondary-dark);
+  --bravoixr-color-secondary-hover: var(--bravoixr-color-secondary-hover-dark);
+  --bravoixr-color-secondary-active: var(--bravoixr-color-secondary-active-dark);
 
-  --bravoixr-color-success: var(--bravoixr-green-500);
-  --bravoixr-color-success-hover: var(--bravoixr-green-400);
-  --bravoixr-color-success-active: var(--bravoixr-green-300);
+  --bravoixr-color-success: var(--bravoixr-color-success-dark);
+  --bravoixr-color-success-hover: var(--bravoixr-color-success-hover-dark);
+  --bravoixr-color-success-active: var(--bravoixr-color-success-active-dark);
 
-  --bravoixr-color-warning: var(--bravoixr-yellow-500);
-  --bravoixr-color-warning-hover: var(--bravoixr-yellow-400);
-  --bravoixr-color-warning-active: var(--bravoixr-yellow-300);
+  --bravoixr-color-warning: var(--bravoixr-color-warning-dark);
+  --bravoixr-color-warning-hover: var(--bravoixr-color-warning-hover-dark);
+  --bravoixr-color-warning-active: var(--bravoixr-color-warning-active-dark);
 
-  --bravoixr-color-error: var(--bravoixr-red-500);
-  --bravoixr-color-error-hover: var(--bravoixr-red-400);
-  --bravoixr-color-error-active: var(--bravoixr-red-300);
+  --bravoixr-color-error: var(--bravoixr-color-error-dark);
+  --bravoixr-color-error-hover: var(--bravoixr-color-error-hover-dark);
+  --bravoixr-color-error-active: var(--bravoixr-color-error-active-dark);
 
-  --bravoixr-color-info: var(--bravoixr-blue-500);
-  --bravoixr-color-info-hover: var(--bravoixr-blue-400);
-  --bravoixr-color-info-active: var(--bravoixr-blue-300);
+  --bravoixr-color-info: var(--bravoixr-color-info-dark);
+  --bravoixr-color-info-hover: var(--bravoixr-color-info-hover-dark);
+  --bravoixr-color-info-active: var(--bravoixr-color-info-active-dark);
 
-  /* Surfaces — off-black canvas, never pure black */
-  --bravoixr-color-surface-page: var(--bravoixr-neutral-900);
-  --bravoixr-color-surface-raised: var(--bravoixr-neutral-800);
-  --bravoixr-color-surface-sunken: var(--bravoixr-neutral-950);
+  --bravoixr-color-surface-page: var(--bravoixr-color-surface-page-dark);
+  --bravoixr-color-surface-raised: var(--bravoixr-color-surface-raised-dark);
+  --bravoixr-color-surface-sunken: var(--bravoixr-color-surface-sunken-dark);
 
-  /* Text */
-  --bravoixr-color-text: var(--bravoixr-neutral-50);
-  --bravoixr-color-text-muted: var(--bravoixr-neutral-400);
-  --bravoixr-color-text-subtle: var(--bravoixr-neutral-500);
-  --bravoixr-color-text-inverse: var(--bravoixr-neutral-900);
-  --bravoixr-color-text-on-primary: var(--bravoixr-neutral-0);
+  --bravoixr-color-text: var(--bravoixr-color-text-dark);
+  --bravoixr-color-text-muted: var(--bravoixr-color-text-muted-dark);
+  --bravoixr-color-text-subtle: var(--bravoixr-color-text-subtle-dark);
+  --bravoixr-color-text-inverse: var(--bravoixr-color-text-inverse-dark);
+  --bravoixr-color-text-on-primary: var(--bravoixr-color-text-on-primary-dark);
 
-  /* Border */
-  --bravoixr-color-border: var(--bravoixr-neutral-700);
-  --bravoixr-color-border-strong: var(--bravoixr-neutral-600);
-  --bravoixr-color-border-focus: var(--bravoixr-blue-400);
+  --bravoixr-color-border: var(--bravoixr-color-border-dark);
+  --bravoixr-color-border-strong: var(--bravoixr-color-border-strong-dark);
+  --bravoixr-color-border-focus: var(--bravoixr-color-border-focus-dark);
 }

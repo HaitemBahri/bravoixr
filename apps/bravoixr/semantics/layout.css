@@ -24,7 +24,6 @@
   --bravoixr-page-column-header-size: var(--bravoixr-size-column-header);
   --bravoixr-page-max: var(--bravoixr-breakpoint-max);
   --bravoixr-demo-box-size: var(--bravoixr-size-demo-box);
-  --bravoixr-demo-box-size-wide: var(--bravoixr-size-demo-box-wide);
 
   /* Elevation — floating layers (resting surfaces use borders, no token) */
   --bravoixr-shadow-menu: var(--bravoixr-shadow-sm);

@@ -26,6 +26,8 @@
   --bravoixr-size-row-header: 200px;
   --bravoixr-size-column-header: 48px;
   --bravoixr-size-swatch: 100px;
+  --bravoixr-size-demo-box: 96px;
+  --bravoixr-size-demo-box-wide: 160px;
 
   /* Radius — md default for controls, lg for cards */
   --bravoixr-radius-none: 0;

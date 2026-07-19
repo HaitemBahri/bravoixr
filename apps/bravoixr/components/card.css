@@ -69,3 +69,16 @@
   inline-size: 100%;
   block-size: auto;
 }
+
+/* Card demo — a plain sized box for specimens (color swatches, radius/border/
+ * shadow/motion demos) that don't want the card's full anatomy. No daisyUI
+ * equivalent; a pure bravoixr class. Sizes and fills the box — the constant,
+ * non-demonstrated part every specimen shares; whatever's actually under test
+ * (background on a color swatch, radius, border, shadow) stays inline per
+ * instance and overrides this default. */
+.card-demo {
+  inline-size: var(--bravoixr-demo-box-size);
+  block-size: var(--bravoixr-demo-box-size);
+  background: var(--bravoixr-color-surface-raised);
+  border-radius: var(--bravoixr-radius-card);
+}

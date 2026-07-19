@@ -23,7 +23,6 @@
   --bravoixr-page-row-header-columns: var(--bravoixr-page-row-header-size) 1fr;
   --bravoixr-page-column-header-size: var(--bravoixr-size-column-header);
   --bravoixr-page-max: var(--bravoixr-breakpoint-max);
-  --bravoixr-swatch-size: var(--bravoixr-size-swatch);
   --bravoixr-demo-box-size: var(--bravoixr-size-demo-box);
   --bravoixr-demo-box-size-wide: var(--bravoixr-size-demo-box-wide);
 

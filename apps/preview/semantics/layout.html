@@ -25,11 +25,18 @@
   <link rel="stylesheet" href="../../bravoixr/index.css">
 </head>
 <body class="page text-body">
-  <div class="page-topbar">
-    <span class="text-project-title">bravoixr</span>
-    <div class="page-controls">
-      <button class="btn btn-primary btn-square" type="button" data-toggle="theme" aria-label="Toggle theme"><span class="icon icon-md">contrast</span></button>
-      <button class="btn btn-primary btn-square" type="button" data-toggle="lang" aria-label="Toggle language"><span class="icon icon-md">translate</span></button>
+  <div class="navbar">
+    <div class="navbar-start">
+      <span class="text-project-title">bravoixr</span>
+    </div>
+    <div class="navbar-center">
+      <span class="text-body" data-en="Welcome" data-ar="مرحباً">Welcome</span>
+    </div>
+    <div class="navbar-end">
+      <div class="page-controls">
+        <button class="btn btn-primary btn-square" type="button" data-toggle="theme" aria-label="Toggle theme"><span class="icon icon-md">contrast</span></button>
+        <button class="btn btn-primary btn-square" type="button" data-toggle="lang" aria-label="Toggle language"><span class="icon icon-md">translate</span></button>
+      </div>
     </div>
   </div>
 
@@ -48,23 +55,23 @@
       <div>
         <div class="page-cluster">
           <div class="page-column-header">
-            <div class="card" style="inline-size:96px;block-size:96px;border:var(--bravoixr-border-width) solid var(--bravoixr-color-border-strong);border-radius:var(--bravoixr-radius-control)"></div>
+            <div class="card-demo" style="border-radius:var(--bravoixr-radius-control)"></div>
             <span class="text-code-label text-color-helper">--bravoixr-radius-control</span>
           </div>
           <div class="page-column-header">
-            <div class="card" style="inline-size:96px;block-size:96px;border:var(--bravoixr-border-width) solid var(--bravoixr-color-border-strong);border-radius:var(--bravoixr-radius-card)"></div>
+            <div class="card-demo" style="border-radius:var(--bravoixr-radius-card)"></div>
             <span class="text-code-label text-color-helper">--bravoixr-radius-card</span>
           </div>
           <div class="page-column-header">
-            <div class="card" style="inline-size:96px;block-size:96px;border:var(--bravoixr-border-width) solid var(--bravoixr-color-border-strong);border-radius:var(--bravoixr-radius-modal)"></div>
+            <div class="card-demo" style="border-radius:var(--bravoixr-radius-modal)"></div>
             <span class="text-code-label text-color-helper">--bravoixr-radius-modal</span>
           </div>
           <div class="page-column-header">
-            <div class="card" style="inline-size:96px;block-size:96px;border:var(--bravoixr-border-width) solid var(--bravoixr-color-border-strong);border-radius:var(--bravoixr-radius-chip)"></div>
+            <div class="card-demo" style="border-radius:var(--bravoixr-radius-chip)"></div>
             <span class="text-code-label text-color-helper">--bravoixr-radius-chip</span>
           </div>
           <div class="page-column-header">
-            <div class="card" style="inline-size:96px;block-size:96px;border:var(--bravoixr-border-width) solid var(--bravoixr-color-border-strong);border-radius:var(--bravoixr-radius-pill)"></div>
+            <div class="card-demo" style="border-radius:var(--bravoixr-radius-pill)"></div>
             <span class="text-code-label text-color-helper">--bravoixr-radius-pill</span>
           </div>
         </div>
@@ -79,11 +86,11 @@
       <div>
         <div class="page-cluster">
           <div class="page-column-header">
-            <div class="card" style="inline-size:96px;block-size:96px;border:var(--bravoixr-border-width) solid var(--bravoixr-color-border-strong)"></div>
+            <div class="card-demo" style="border:var(--bravoixr-border-width) solid var(--bravoixr-color-border-strong)"></div>
             <span class="text-code-label text-color-helper">--bravoixr-border-width</span>
           </div>
           <div class="page-column-header">
-            <div class="card" style="inline-size:96px;block-size:96px;border:var(--bravoixr-border-width-strong) solid var(--bravoixr-color-border-strong)"></div>
+            <div class="card-demo" style="border:var(--bravoixr-border-width-strong) solid var(--bravoixr-color-border-strong)"></div>
             <span class="text-code-label text-color-helper">--bravoixr-border-width-strong</span>
           </div>
         </div>
@@ -117,15 +124,15 @@
       <div>
         <div class="page-cluster">
           <div class="page-column-header">
-            <div class="card" style="inline-size:160px;block-size:96px;box-shadow:var(--bravoixr-shadow-menu)"></div>
+            <div class="card-demo" style="box-shadow:var(--bravoixr-shadow-menu)"></div>
             <span class="text-code-label text-color-helper">--bravoixr-shadow-menu</span>
           </div>
           <div class="page-column-header">
-            <div class="card" style="inline-size:160px;block-size:96px;box-shadow:var(--bravoixr-shadow-toast)"></div>
+            <div class="card-demo" style="box-shadow:var(--bravoixr-shadow-toast)"></div>
             <span class="text-code-label text-color-helper">--bravoixr-shadow-toast</span>
           </div>
           <div class="page-column-header">
-            <div class="card" style="inline-size:160px;block-size:96px;box-shadow:var(--bravoixr-shadow-modal)"></div>
+            <div class="card-demo" style="box-shadow:var(--bravoixr-shadow-modal)"></div>
             <span class="text-code-label text-color-helper">--bravoixr-shadow-modal</span>
           </div>
         </div>
@@ -181,9 +188,21 @@
 
   </main>
 
-  <footer class="page-footer">
-    <span class="text-body text-color-description" data-en="bravoixr · © 2026" data-ar="bravoixr · © ٢٠٢٦">bravoixr · © 2026</span>
-    <span class="text-body text-color-description">v0.1.0</span>
+  <footer class="footer">
+    <div>
+      <h6 class="footer-title">bravoixr</h6>
+      <span class="text-body text-color-description" data-en="© 2026" data-ar="© ٢٠٢٦">© 2026</span>
+    </div>
+    <div>
+      <h6 class="footer-title" data-en="Version" data-ar="الإصدار">Version</h6>
+      <span class="text-body text-color-description">v0.1.0</span>
+    </div>
+    <nav>
+      <h6 class="footer-title" data-en="Explore" data-ar="استكشف">Explore</h6>
+      <a class="link link-hover" data-href="../index.html" data-en="Home" data-ar="الرئيسية">Home</a>
+      <a class="link link-hover" data-href="../primitives/color.html" data-en="Primitives" data-ar="الأوّليّات">Primitives</a>
+      <a class="link link-hover" data-href="../components/button.html" data-en="Components" data-ar="المكوّنات">Components</a>
+    </nav>
   </footer>
 
   <script>
@@ -193,8 +212,8 @@
         var r = document.createElement('div');
         r.className = 'page-column-header';
         var bar = document.createElement('div');
-        // 16px bar height is tokenless demo geometry; length is the spacing role under test.
-        bar.style.cssText = 'block-size:16px;background:var(--bravoixr-color-primary);border-radius:var(--bravoixr-radius-chip);inline-size:var(--bravoixr-spacing-' + i + ')';
+        bar.className = 'badge badge-primary badge-xs';
+        bar.style.cssText = 'inline-size:var(--bravoixr-spacing-' + i + ')';
         var name = document.createElement('span');
         name.className = 'text-code-label text-color-helper';
         name.textContent = '--bravoixr-spacing-' + i;

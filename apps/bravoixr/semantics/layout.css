@@ -23,6 +23,7 @@
   --bravoixr-page-row-header-columns: var(--bravoixr-page-row-header-size) 1fr;
   --bravoixr-page-column-header-size: var(--bravoixr-size-column-header);
   --bravoixr-page-max: var(--bravoixr-breakpoint-max);
+  --bravoixr-swatch-size: var(--bravoixr-size-swatch);
 
   /* Elevation — floating layers (resting surfaces use borders, no token) */
   --bravoixr-shadow-menu: var(--bravoixr-shadow-sm);

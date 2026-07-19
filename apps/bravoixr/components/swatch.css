@@ -1,0 +1,9 @@
+/* Component — Swatch
+ * No daisyUI equivalent (a plain sized box, no rentable mechanics) — a pure
+ * bravoixr class. Sizes the box only; the fill itself stays inline per
+ * instance since it demos an arbitrary primitive/semantic color value being
+ * shown off, not a themed role a token could stand in for. */
+.color-swatch {
+  inline-size: var(--bravoixr-swatch-size);
+  block-size: var(--bravoixr-swatch-size);
+}

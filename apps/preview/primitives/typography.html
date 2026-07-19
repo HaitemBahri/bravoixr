@@ -25,11 +25,18 @@
   <link rel="stylesheet" href="../../bravoixr/index.css">
 </head>
 <body class="page text-body">
-  <div class="page-topbar">
-    <span class="text-project-title">bravoixr</span>
-    <div class="page-controls">
-      <button class="btn btn-primary btn-square" type="button" data-toggle="theme" aria-label="Toggle theme"><span class="icon icon-md">contrast</span></button>
-      <button class="btn btn-primary btn-square" type="button" data-toggle="lang" aria-label="Toggle language"><span class="icon icon-md">translate</span></button>
+  <div class="navbar">
+    <div class="navbar-start">
+      <span class="text-project-title">bravoixr</span>
+    </div>
+    <div class="navbar-center">
+      <span class="text-body" data-en="Welcome" data-ar="مرحباً">Welcome</span>
+    </div>
+    <div class="navbar-end">
+      <div class="page-controls">
+        <button class="btn btn-primary btn-square" type="button" data-toggle="theme" aria-label="Toggle theme"><span class="icon icon-md">contrast</span></button>
+        <button class="btn btn-primary btn-square" type="button" data-toggle="lang" aria-label="Toggle language"><span class="icon icon-md">translate</span></button>
+      </div>
     </div>
   </div>
 
@@ -48,7 +55,7 @@
 
     <section class="page-section">
       <h3 class="text-section-title" data-en="Font stacks" data-ar="عائلات الخطوط">Font stacks</h3>
-      <div style="display: grid; gap: var(--bravoixr-spacing-5);">
+      <div class="page-row-group">
         <div class="page-row-header">
           <div>
             <h4 class="page-row-header-title" data-en="latin" data-ar="لاتيني">latin</h4>
@@ -96,7 +103,7 @@
 
     <section class="page-section">
       <h3 class="text-section-title" data-en="Heading scale" data-ar="مقياس العناوين">Heading scale</h3>
-      <div style="display: grid; gap: var(--bravoixr-spacing-5);">
+      <div class="page-row-group">
         <div class="page-row-header">
           <div>
             <h4 class="page-row-header-title" data-en="h1" data-ar="h1">h1</h4>
@@ -200,7 +207,7 @@
 
     <section class="page-section">
       <h3 class="text-section-title" data-en="Body scale" data-ar="مقياس النص">Body scale</h3>
-      <div style="display: grid; gap: var(--bravoixr-spacing-5);">
+      <div class="page-row-group">
         <div class="page-row-header">
           <div>
             <h4 class="page-row-header-title" data-en="body1" data-ar="body1">body1</h4>
@@ -304,7 +311,7 @@
 
     <section class="page-section">
       <h3 class="text-section-title" data-en="Weights" data-ar="الأوزان">Weights</h3>
-      <div style="display: grid; gap: var(--bravoixr-spacing-5);">
+      <div class="page-row-group">
         <div class="page-row-header">
           <div>
             <h4 class="page-row-header-title" data-en="extralight" data-ar="خفيف جدًا">extralight</h4>
@@ -394,7 +401,7 @@
 
     <section class="page-section">
       <h3 class="text-section-title" data-en="Line-heights" data-ar="تباعد الأسطر">Line-heights</h3>
-      <div style="display: grid; gap: var(--bravoixr-spacing-5);">
+      <div class="page-row-group">
         <div class="page-row-header">
           <div>
             <h4 class="page-row-header-title" data-en="heading" data-ar="عنوان">heading</h4>
@@ -456,7 +463,7 @@
 
     <section class="page-section">
       <h3 class="text-section-title" data-en="Letter-spacing" data-ar="تباعد الأحرف">Letter-spacing</h3>
-      <div style="display: grid; gap: var(--bravoixr-spacing-5);">
+      <div class="page-row-group">
         <div class="page-row-header">
           <div>
             <h4 class="page-row-header-title" data-en="heading" data-ar="عنوان">heading</h4>
@@ -504,9 +511,21 @@
 
   </main>
 
-  <footer class="page-footer">
-    <span class="text-body text-color-description" data-en="bravoixr · © 2026" data-ar="bravoixr · © ٢٠٢٦">bravoixr · © 2026</span>
-    <span class="text-body text-color-description">v0.1.0</span>
+  <footer class="footer">
+    <div>
+      <h6 class="footer-title">bravoixr</h6>
+      <span class="text-body text-color-description" data-en="© 2026" data-ar="© ٢٠٢٦">© 2026</span>
+    </div>
+    <div>
+      <h6 class="footer-title" data-en="Version" data-ar="الإصدار">Version</h6>
+      <span class="text-body text-color-description">v0.1.0</span>
+    </div>
+    <nav>
+      <h6 class="footer-title" data-en="Explore" data-ar="استكشف">Explore</h6>
+      <a class="link link-hover" data-href="../index.html" data-en="Home" data-ar="الرئيسية">Home</a>
+      <a class="link link-hover" data-href="../semantics/color.html" data-en="Semantics" data-ar="الدلالات">Semantics</a>
+      <a class="link link-hover" data-href="../components/button.html" data-en="Components" data-ar="المكوّنات">Components</a>
+    </nav>
   </footer>
 
   <script src="../preview.js"></script>

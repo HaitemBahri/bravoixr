@@ -147,6 +147,14 @@
   align-items: start;
 }
 
+/* A vertical group of full-width rows — a block-rhythm gap between block-level
+ * children (typically .page-row-header rows) that keeps their own full inline
+ * size rather than shrink-wrapping, unlike .page-stack. */
+.page-row-group {
+  display: grid;
+  gap: var(--bravoixr-spacing-5);
+}
+
 /* A two-column label row — a fixed-width title column then content filling the
  * rest, aligned to the block-start so a tall value doesn't drag the label down. */
 .page-row-header {

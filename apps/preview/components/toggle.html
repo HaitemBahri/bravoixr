@@ -25,11 +25,18 @@
   <link rel="stylesheet" href="../../bravoixr/index.css">
 </head>
 <body class="page text-body">
-  <div class="page-topbar">
-    <span class="text-project-title">bravoixr</span>
-    <div class="page-controls">
-      <button class="btn btn-primary btn-square" type="button" data-toggle="theme" aria-label="Toggle theme"><span class="icon icon-md">contrast</span></button>
-      <button class="btn btn-primary btn-square" type="button" data-toggle="lang" aria-label="Toggle language"><span class="icon icon-md">translate</span></button>
+  <div class="navbar">
+    <div class="navbar-start">
+      <span class="text-project-title">bravoixr</span>
+    </div>
+    <div class="navbar-center">
+      <span class="text-body" data-en="Welcome" data-ar="مرحباً">Welcome</span>
+    </div>
+    <div class="navbar-end">
+      <div class="page-controls">
+        <button class="btn btn-primary btn-square" type="button" data-toggle="theme" aria-label="Toggle theme"><span class="icon icon-md">contrast</span></button>
+        <button class="btn btn-primary btn-square" type="button" data-toggle="lang" aria-label="Toggle language"><span class="icon icon-md">translate</span></button>
+      </div>
     </div>
   </div>
 
@@ -37,7 +44,7 @@
 
     <section class="page-section">
       <h2 class="text-page-title" data-en="Toggle" data-ar="المفتاح">Toggle</h2>
-      <p class="text-page-description text-color-description" data-en="Four selection controls skinned onto native form elements — switch, checkbox, radio, and chip. Each keeps its own keyboard support and accessibility; nothing here is reimplemented." data-ar="أربعة عناصر تحكّم للاختيار مطبَّقة على عناصر النماذج الأصلية — مفتاح، مربّع اختيار، زر اختيار، وشريحة. يحتفظ كلٌّ منها بدعمه للوحة المفاتيح وإمكانية الوصول؛ لا شيء هنا أُعيد تطبيقه.">Four selection controls skinned onto native form elements — switch, checkbox, radio, and chip. Each keeps its own keyboard support and accessibility; nothing here is reimplemented.</p>
+      <p class="text-page-description text-color-description" data-en="Three selection controls — switch, checkbox, and radio — using daisyUI's own classes directly. Each keeps its own keyboard support and accessibility; nothing here is reimplemented." data-ar="ثلاثة عناصر تحكّم للاختيار — مفتاح، مربّع اختيار، وزر اختيار — باستخدام أصناف داسي يو آي نفسها مباشرةً. يحتفظ كلٌّ منها بدعمه للوحة المفاتيح وإمكانية الوصول؛ لا شيء هنا أُعيد تطبيقه.">Three selection controls — switch, checkbox, and radio — using daisyUI's own classes directly. Each keeps its own keyboard support and accessibility; nothing here is reimplemented.</p>
     </section>
 
     <section class="page-section page-row-header">
@@ -47,26 +54,26 @@
       </div>
       <div>
         <div class="page-stack">
-          <div class="toggle-row">
-            <input class="toggle toggle-switch" type="checkbox" id="toggle-switch-primary" checked>
-            <label class="text-toggle-label" for="toggle-switch-primary" data-en="Notifications" data-ar="الإشعارات">Notifications</label>
-          </div>
-          <div class="toggle-row">
-            <input class="toggle toggle-switch toggle-switch-secondary" type="checkbox" id="toggle-switch-secondary" checked>
-            <label class="text-toggle-label" for="toggle-switch-secondary" data-en="Auto-save" data-ar="الحفظ التلقائي">Auto-save</label>
-          </div>
-          <div class="toggle-row">
-            <input class="toggle toggle-switch toggle-switch-success" type="checkbox" id="toggle-switch-success" checked>
-            <label class="text-toggle-label" for="toggle-switch-success" data-en="Email verified" data-ar="البريد الإلكتروني موثّق">Email verified</label>
-          </div>
-          <div class="toggle-row">
-            <input class="toggle toggle-switch toggle-switch-warning" type="checkbox" id="toggle-switch-warning" checked>
-            <label class="text-toggle-label" for="toggle-switch-warning" data-en="Beta features" data-ar="ميزات تجريبية">Beta features</label>
-          </div>
-          <div class="toggle-row">
-            <input class="toggle toggle-switch toggle-switch-error" type="checkbox" id="toggle-switch-error" checked>
-            <label class="text-toggle-label" for="toggle-switch-error" data-en="Do not disturb" data-ar="عدم الإزعاج">Do not disturb</label>
-          </div>
+          <label class="label">
+            <input class="toggle toggle-primary" type="checkbox" checked>
+            <span data-en="Notifications" data-ar="الإشعارات">Notifications</span>
+          </label>
+          <label class="label">
+            <input class="toggle toggle-secondary" type="checkbox" checked>
+            <span data-en="Auto-save" data-ar="الحفظ التلقائي">Auto-save</span>
+          </label>
+          <label class="label">
+            <input class="toggle toggle-success" type="checkbox" checked>
+            <span data-en="Email verified" data-ar="البريد الإلكتروني موثّق">Email verified</span>
+          </label>
+          <label class="label">
+            <input class="toggle toggle-warning" type="checkbox" checked>
+            <span data-en="Beta features" data-ar="ميزات تجريبية">Beta features</span>
+          </label>
+          <label class="label">
+            <input class="toggle toggle-error" type="checkbox" checked>
+            <span data-en="Do not disturb" data-ar="عدم الإزعاج">Do not disturb</span>
+          </label>
         </div>
       </div>
     </section>
@@ -78,26 +85,26 @@
       </div>
       <div>
         <div class="page-stack">
-          <div class="toggle-row">
-            <input class="toggle toggle-checkbox" type="checkbox" id="toggle-checkbox-primary" checked>
-            <label class="text-toggle-label" for="toggle-checkbox-primary" data-en="Remember me" data-ar="تذكّرني">Remember me</label>
-          </div>
-          <div class="toggle-row">
-            <input class="toggle toggle-checkbox toggle-checkbox-secondary" type="checkbox" id="toggle-checkbox-secondary" checked>
-            <label class="text-toggle-label" for="toggle-checkbox-secondary" data-en="Terms accepted" data-ar="تمّت الموافقة على الشروط">Terms accepted</label>
-          </div>
-          <div class="toggle-row">
-            <input class="toggle toggle-checkbox toggle-checkbox-success" type="checkbox" id="toggle-checkbox-success" checked>
-            <label class="text-toggle-label" for="toggle-checkbox-success" data-en="Newsletter" data-ar="النشرة الإخبارية">Newsletter</label>
-          </div>
-          <div class="toggle-row">
-            <input class="toggle toggle-checkbox toggle-checkbox-warning" type="checkbox" id="toggle-checkbox-warning" checked>
-            <label class="text-toggle-label" for="toggle-checkbox-warning" data-en="Show warnings" data-ar="إظهار التحذيرات">Show warnings</label>
-          </div>
-          <div class="toggle-row">
-            <input class="toggle toggle-checkbox toggle-checkbox-error" type="checkbox" id="toggle-checkbox-error" checked>
-            <label class="text-toggle-label" for="toggle-checkbox-error" data-en="Delete permanently" data-ar="حذف نهائي">Delete permanently</label>
-          </div>
+          <label class="label">
+            <input class="checkbox checkbox-primary" type="checkbox" checked>
+            <span data-en="Remember me" data-ar="تذكّرني">Remember me</span>
+          </label>
+          <label class="label">
+            <input class="checkbox checkbox-secondary" type="checkbox" checked>
+            <span data-en="Terms accepted" data-ar="تمّت الموافقة على الشروط">Terms accepted</span>
+          </label>
+          <label class="label">
+            <input class="checkbox checkbox-success" type="checkbox" checked>
+            <span data-en="Newsletter" data-ar="النشرة الإخبارية">Newsletter</span>
+          </label>
+          <label class="label">
+            <input class="checkbox checkbox-warning" type="checkbox" checked>
+            <span data-en="Show warnings" data-ar="إظهار التحذيرات">Show warnings</span>
+          </label>
+          <label class="label">
+            <input class="checkbox checkbox-error" type="checkbox" checked>
+            <span data-en="Delete permanently" data-ar="حذف نهائي">Delete permanently</span>
+          </label>
         </div>
       </div>
     </section>
@@ -110,185 +117,89 @@
       <div>
         <div class="page-cluster">
           <div class="page-column-header">
-            <div class="toggle-radio-group">
-              <div class="toggle-row">
-                <input class="toggle toggle-radio" type="radio" name="toggle-radio-group-primary" id="toggle-radio-primary-small" checked>
-                <label class="text-toggle-label" for="toggle-radio-primary-small" data-en="Small" data-ar="صغير">Small</label>
-              </div>
-              <div class="toggle-row">
-                <input class="toggle toggle-radio" type="radio" name="toggle-radio-group-primary" id="toggle-radio-primary-medium">
-                <label class="text-toggle-label" for="toggle-radio-primary-medium" data-en="Medium" data-ar="متوسط">Medium</label>
-              </div>
-              <div class="toggle-row">
-                <input class="toggle toggle-radio" type="radio" name="toggle-radio-group-primary" id="toggle-radio-primary-large">
-                <label class="text-toggle-label" for="toggle-radio-primary-large" data-en="Large" data-ar="كبير">Large</label>
-              </div>
+            <div class="page-stack">
+              <label class="label">
+                <input class="radio radio-primary" type="radio" name="toggle-radio-group-primary" checked>
+                <span data-en="Small" data-ar="صغير">Small</span>
+              </label>
+              <label class="label">
+                <input class="radio radio-primary" type="radio" name="toggle-radio-group-primary">
+                <span data-en="Medium" data-ar="متوسط">Medium</span>
+              </label>
+              <label class="label">
+                <input class="radio radio-primary" type="radio" name="toggle-radio-group-primary">
+                <span data-en="Large" data-ar="كبير">Large</span>
+              </label>
             </div>
-            <span class="text-toggle-label" data-en="Primary" data-ar="أساسي">Primary</span>
+            <span class="text-label" data-en="Primary" data-ar="أساسي">Primary</span>
           </div>
           <div class="page-column-header">
-            <div class="toggle-radio-group">
-              <div class="toggle-row">
-                <input class="toggle toggle-radio toggle-radio-secondary" type="radio" name="toggle-radio-group-secondary" id="toggle-radio-secondary-small" checked>
-                <label class="text-toggle-label" for="toggle-radio-secondary-small" data-en="Small" data-ar="صغير">Small</label>
-              </div>
-              <div class="toggle-row">
-                <input class="toggle toggle-radio toggle-radio-secondary" type="radio" name="toggle-radio-group-secondary" id="toggle-radio-secondary-medium">
-                <label class="text-toggle-label" for="toggle-radio-secondary-medium" data-en="Medium" data-ar="متوسط">Medium</label>
-              </div>
-              <div class="toggle-row">
-                <input class="toggle toggle-radio toggle-radio-secondary" type="radio" name="toggle-radio-group-secondary" id="toggle-radio-secondary-large">
-                <label class="text-toggle-label" for="toggle-radio-secondary-large" data-en="Large" data-ar="كبير">Large</label>
-              </div>
+            <div class="page-stack">
+              <label class="label">
+                <input class="radio radio-secondary" type="radio" name="toggle-radio-group-secondary" checked>
+                <span data-en="Small" data-ar="صغير">Small</span>
+              </label>
+              <label class="label">
+                <input class="radio radio-secondary" type="radio" name="toggle-radio-group-secondary">
+                <span data-en="Medium" data-ar="متوسط">Medium</span>
+              </label>
+              <label class="label">
+                <input class="radio radio-secondary" type="radio" name="toggle-radio-group-secondary">
+                <span data-en="Large" data-ar="كبير">Large</span>
+              </label>
             </div>
-            <span class="text-toggle-label" data-en="Secondary" data-ar="ثانوي">Secondary</span>
+            <span class="text-label" data-en="Secondary" data-ar="ثانوي">Secondary</span>
           </div>
           <div class="page-column-header">
-            <div class="toggle-radio-group">
-              <div class="toggle-row">
-                <input class="toggle toggle-radio toggle-radio-success" type="radio" name="toggle-radio-group-success" id="toggle-radio-success-small" checked>
-                <label class="text-toggle-label" for="toggle-radio-success-small" data-en="Small" data-ar="صغير">Small</label>
-              </div>
-              <div class="toggle-row">
-                <input class="toggle toggle-radio toggle-radio-success" type="radio" name="toggle-radio-group-success" id="toggle-radio-success-medium">
-                <label class="text-toggle-label" for="toggle-radio-success-medium" data-en="Medium" data-ar="متوسط">Medium</label>
-              </div>
-              <div class="toggle-row">
-                <input class="toggle toggle-radio toggle-radio-success" type="radio" name="toggle-radio-group-success" id="toggle-radio-success-large">
-                <label class="text-toggle-label" for="toggle-radio-success-large" data-en="Large" data-ar="كبير">Large</label>
-              </div>
+            <div class="page-stack">
+              <label class="label">
+                <input class="radio radio-success" type="radio" name="toggle-radio-group-success" checked>
+                <span data-en="Small" data-ar="صغير">Small</span>
+              </label>
+              <label class="label">
+                <input class="radio radio-success" type="radio" name="toggle-radio-group-success">
+                <span data-en="Medium" data-ar="متوسط">Medium</span>
+              </label>
+              <label class="label">
+                <input class="radio radio-success" type="radio" name="toggle-radio-group-success">
+                <span data-en="Large" data-ar="كبير">Large</span>
+              </label>
             </div>
-            <span class="text-toggle-label" data-en="Success" data-ar="نجاح">Success</span>
+            <span class="text-label" data-en="Success" data-ar="نجاح">Success</span>
           </div>
           <div class="page-column-header">
-            <div class="toggle-radio-group">
-              <div class="toggle-row">
-                <input class="toggle toggle-radio toggle-radio-warning" type="radio" name="toggle-radio-group-warning" id="toggle-radio-warning-small" checked>
-                <label class="text-toggle-label" for="toggle-radio-warning-small" data-en="Small" data-ar="صغير">Small</label>
-              </div>
-              <div class="toggle-row">
-                <input class="toggle toggle-radio toggle-radio-warning" type="radio" name="toggle-radio-group-warning" id="toggle-radio-warning-medium">
-                <label class="text-toggle-label" for="toggle-radio-warning-medium" data-en="Medium" data-ar="متوسط">Medium</label>
-              </div>
-              <div class="toggle-row">
-                <input class="toggle toggle-radio toggle-radio-warning" type="radio" name="toggle-radio-group-warning" id="toggle-radio-warning-large">
-                <label class="text-toggle-label" for="toggle-radio-warning-large" data-en="Large" data-ar="كبير">Large</label>
-              </div>
+            <div class="page-stack">
+              <label class="label">
+                <input class="radio radio-warning" type="radio" name="toggle-radio-group-warning" checked>
+                <span data-en="Small" data-ar="صغير">Small</span>
+              </label>
+              <label class="label">
+                <input class="radio radio-warning" type="radio" name="toggle-radio-group-warning">
+                <span data-en="Medium" data-ar="متوسط">Medium</span>
+              </label>
+              <label class="label">
+                <input class="radio radio-warning" type="radio" name="toggle-radio-group-warning">
+                <span data-en="Large" data-ar="كبير">Large</span>
+              </label>
             </div>
-            <span class="text-toggle-label" data-en="Warning" data-ar="تحذير">Warning</span>
+            <span class="text-label" data-en="Warning" data-ar="تحذير">Warning</span>
           </div>
           <div class="page-column-header">
-            <div class="toggle-radio-group">
-              <div class="toggle-row">
-                <input class="toggle toggle-radio toggle-radio-error" type="radio" name="toggle-radio-group-error" id="toggle-radio-error-small" checked>
-                <label class="text-toggle-label" for="toggle-radio-error-small" data-en="Small" data-ar="صغير">Small</label>
-              </div>
-              <div class="toggle-row">
-                <input class="toggle toggle-radio toggle-radio-error" type="radio" name="toggle-radio-group-error" id="toggle-radio-error-medium">
-                <label class="text-toggle-label" for="toggle-radio-error-medium" data-en="Medium" data-ar="متوسط">Medium</label>
-              </div>
-              <div class="toggle-row">
-                <input class="toggle toggle-radio toggle-radio-error" type="radio" name="toggle-radio-group-error" id="toggle-radio-error-large">
-                <label class="text-toggle-label" for="toggle-radio-error-large" data-en="Large" data-ar="كبير">Large</label>
-              </div>
-            </div>
-            <span class="text-toggle-label" data-en="Error" data-ar="خطأ">Error</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="page-section page-row-header">
-      <div>
-        <h3 class="page-row-header-title" data-en="Chip" data-ar="شريحة">Chip</h3>
-        <p class="page-row-header-description" data-en="A labelled, selectable pill — for filters or tags, single- or multi-select. Available in all five semantic color roles." data-ar="شريحة قابلة للاختيار ومُسمّاة — للتصفية أو الوسوم، اختيار مفرد أو متعدد. متوفر بجميع أدوار اللون الدلالية الخمسة.">A labelled, selectable pill — for filters or tags, single- or multi-select. Available in all five semantic color roles.</p>
-      </div>
-      <div>
-        <div class="page-cluster">
-          <div class="page-column-header">
-            <div class="page-cluster">
-              <label class="toggle-chip">
-                <input class="toggle-chip-input" type="radio" name="toggle-chip-group-primary" checked>
-                <span data-en="All" data-ar="الكل">All</span>
+            <div class="page-stack">
+              <label class="label">
+                <input class="radio radio-error" type="radio" name="toggle-radio-group-error" checked>
+                <span data-en="Small" data-ar="صغير">Small</span>
               </label>
-              <label class="toggle-chip">
-                <input class="toggle-chip-input" type="radio" name="toggle-chip-group-primary">
-                <span data-en="Active" data-ar="نشط">Active</span>
+              <label class="label">
+                <input class="radio radio-error" type="radio" name="toggle-radio-group-error">
+                <span data-en="Medium" data-ar="متوسط">Medium</span>
               </label>
-              <label class="toggle-chip">
-                <input class="toggle-chip-input" type="radio" name="toggle-chip-group-primary">
-                <span data-en="Archived" data-ar="مؤرشف">Archived</span>
+              <label class="label">
+                <input class="radio radio-error" type="radio" name="toggle-radio-group-error">
+                <span data-en="Large" data-ar="كبير">Large</span>
               </label>
             </div>
-            <span class="text-toggle-label" data-en="Primary" data-ar="أساسي">Primary</span>
-          </div>
-          <div class="page-column-header">
-            <div class="page-cluster">
-              <label class="toggle-chip toggle-chip-secondary">
-                <input class="toggle-chip-input" type="radio" name="toggle-chip-group-secondary" checked>
-                <span data-en="All" data-ar="الكل">All</span>
-              </label>
-              <label class="toggle-chip toggle-chip-secondary">
-                <input class="toggle-chip-input" type="radio" name="toggle-chip-group-secondary">
-                <span data-en="Active" data-ar="نشط">Active</span>
-              </label>
-              <label class="toggle-chip toggle-chip-secondary">
-                <input class="toggle-chip-input" type="radio" name="toggle-chip-group-secondary">
-                <span data-en="Archived" data-ar="مؤرشف">Archived</span>
-              </label>
-            </div>
-            <span class="text-toggle-label" data-en="Secondary" data-ar="ثانوي">Secondary</span>
-          </div>
-          <div class="page-column-header">
-            <div class="page-cluster">
-              <label class="toggle-chip toggle-chip-success">
-                <input class="toggle-chip-input" type="radio" name="toggle-chip-group-success" checked>
-                <span data-en="All" data-ar="الكل">All</span>
-              </label>
-              <label class="toggle-chip toggle-chip-success">
-                <input class="toggle-chip-input" type="radio" name="toggle-chip-group-success">
-                <span data-en="Active" data-ar="نشط">Active</span>
-              </label>
-              <label class="toggle-chip toggle-chip-success">
-                <input class="toggle-chip-input" type="radio" name="toggle-chip-group-success">
-                <span data-en="Archived" data-ar="مؤرشف">Archived</span>
-              </label>
-            </div>
-            <span class="text-toggle-label" data-en="Success" data-ar="نجاح">Success</span>
-          </div>
-          <div class="page-column-header">
-            <div class="page-cluster">
-              <label class="toggle-chip toggle-chip-warning">
-                <input class="toggle-chip-input" type="radio" name="toggle-chip-group-warning" checked>
-                <span data-en="All" data-ar="الكل">All</span>
-              </label>
-              <label class="toggle-chip toggle-chip-warning">
-                <input class="toggle-chip-input" type="radio" name="toggle-chip-group-warning">
-                <span data-en="Active" data-ar="نشط">Active</span>
-              </label>
-              <label class="toggle-chip toggle-chip-warning">
-                <input class="toggle-chip-input" type="radio" name="toggle-chip-group-warning">
-                <span data-en="Archived" data-ar="مؤرشف">Archived</span>
-              </label>
-            </div>
-            <span class="text-toggle-label" data-en="Warning" data-ar="تحذير">Warning</span>
-          </div>
-          <div class="page-column-header">
-            <div class="page-cluster">
-              <label class="toggle-chip toggle-chip-error">
-                <input class="toggle-chip-input" type="radio" name="toggle-chip-group-error" checked>
-                <span data-en="All" data-ar="الكل">All</span>
-              </label>
-              <label class="toggle-chip toggle-chip-error">
-                <input class="toggle-chip-input" type="radio" name="toggle-chip-group-error">
-                <span data-en="Active" data-ar="نشط">Active</span>
-              </label>
-              <label class="toggle-chip toggle-chip-error">
-                <input class="toggle-chip-input" type="radio" name="toggle-chip-group-error">
-                <span data-en="Archived" data-ar="مؤرشف">Archived</span>
-              </label>
-            </div>
-            <span class="text-toggle-label" data-en="Error" data-ar="خطأ">Error</span>
+            <span class="text-label" data-en="Error" data-ar="خطأ">Error</span>
           </div>
         </div>
       </div>
@@ -296,9 +207,21 @@
 
   </main>
 
-  <footer class="page-footer">
-    <span class="text-body text-color-description" data-en="bravoixr · © 2026" data-ar="bravoixr · © ٢٠٢٦">bravoixr · © 2026</span>
-    <span class="text-body text-color-description">v0.1.0</span>
+  <footer class="footer">
+    <div>
+      <h6 class="footer-title">bravoixr</h6>
+      <span class="text-body text-color-description" data-en="© 2026" data-ar="© ٢٠٢٦">© 2026</span>
+    </div>
+    <div>
+      <h6 class="footer-title" data-en="Version" data-ar="الإصدار">Version</h6>
+      <span class="text-body text-color-description">v0.1.0</span>
+    </div>
+    <nav>
+      <h6 class="footer-title" data-en="Explore" data-ar="استكشف">Explore</h6>
+      <a class="link link-hover" data-href="../index.html" data-en="Home" data-ar="الرئيسية">Home</a>
+      <a class="link link-hover" data-href="../primitives/color.html" data-en="Primitives" data-ar="الأوّليّات">Primitives</a>
+      <a class="link link-hover" data-href="../semantics/color.html" data-en="Semantics" data-ar="الدلالات">Semantics</a>
+    </nav>
   </footer>
 
   <script src="../preview.js"></script>

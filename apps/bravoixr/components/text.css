@@ -83,17 +83,6 @@
   line-height: var(--bravoixr-leading-prose);
   letter-spacing: var(--bravoixr-tracking-prose);
 }
-
-/* Toggle label — a dedicated caption/label class for toggle controls (switch,
- * checkbox, radio, chip specimens), typographically identical to .text-label. */
-.text-toggle-label {
-  font-family: var(--bravoixr-font-body);
-  font-size: var(--bravoixr-text-label);
-  font-weight: var(--bravoixr-weight-label);
-  line-height: var(--bravoixr-leading-prose);
-  letter-spacing: var(--bravoixr-tracking-prose);
-}
-
 .text-helper {
   font-family: var(--bravoixr-font-body);
   font-size: var(--bravoixr-text-helper);

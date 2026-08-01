@@ -5,95 +5,95 @@
 
 :root {
   /* Brand — Blue (primary; also serves info) */
-  --bravoixr-blue-50: #f4f6fa;
-  --bravoixr-blue-100: #e6ebf3;
-  --bravoixr-blue-200: #ccd7e6;
-  --bravoixr-blue-300: #a8bbd4;
-  --bravoixr-blue-400: #7e98bb;
-  --bravoixr-blue-500: #5c79a3;
-  --bravoixr-blue-600: #496187;
-  --bravoixr-blue-700: #3d4f6d;
-  --bravoixr-blue-800: #36435b;
-  --bravoixr-blue-900: #2f3a4d;
-  --bravoixr-blue-950: #1f2633;
+  --bravoixr-blue-50: #eef3ff;
+  --bravoixr-blue-100: #d5def3;
+  --bravoixr-blue-200: #bcc9e7;
+  --bravoixr-blue-300: #a3b4da;
+  --bravoixr-blue-400: #8b9fcd;
+  --bravoixr-blue-500: #738bc1;
+  --bravoixr-blue-600: #5c77b4;
+  --bravoixr-blue-700: #4663a7;
+  --bravoixr-blue-800: #304f99;
+  --bravoixr-blue-900: #1a3b8c;
+  --bravoixr-blue-950: #04257e;
 
   /* Brand — Teal (secondary) */
-  --bravoixr-teal-50: #f1f7f7;
-  --bravoixr-teal-100: #ddecec;
-  --bravoixr-teal-200: #bdd8d8;
-  --bravoixr-teal-300: #93bcbc;
-  --bravoixr-teal-400: #659a9b;
-  --bravoixr-teal-500: #487e7f;
-  --bravoixr-teal-600: #3a6667;
-  --bravoixr-teal-700: #325354;
-  --bravoixr-teal-800: #2d4445;
-  --bravoixr-teal-900: #293a3b;
-  --bravoixr-teal-950: #172324;
+  --bravoixr-teal-50: #e5f7f7;
+  --bravoixr-teal-100: #cae3e3;
+  --bravoixr-teal-200: #afcfcf;
+  --bravoixr-teal-300: #95bbbc;
+  --bravoixr-teal-400: #7ba8a9;
+  --bravoixr-teal-500: #609597;
+  --bravoixr-teal-600: #458285;
+  --bravoixr-teal-700: #277073;
+  --bravoixr-teal-800: #005d61;
+  --bravoixr-teal-900: #00494d;
+  --bravoixr-teal-950: #003639;
 
   /* State — Green (success) */
-  --bravoixr-green-50: #f3f7f1;
-  --bravoixr-green-100: #e4ede0;
-  --bravoixr-green-200: #c8dcc1;
-  --bravoixr-green-300: #a1c197;
-  --bravoixr-green-400: #76a06a;
-  --bravoixr-green-500: #588349;
-  --bravoixr-green-600: #45693a;
-  --bravoixr-green-700: #385330;
-  --bravoixr-green-800: #30442a;
-  --bravoixr-green-900: #293a25;
-  --bravoixr-green-950: #152011;
+  --bravoixr-green-50: #ebf7e5;
+  --bravoixr-green-100: #d1e3c8;
+  --bravoixr-green-200: #b7d0ac;
+  --bravoixr-green-300: #9dbd90;
+  --bravoixr-green-400: #84aa74;
+  --bravoixr-green-500: #6a9759;
+  --bravoixr-green-600: #51853d;
+  --bravoixr-green-700: #37731e;
+  --bravoixr-green-800: #206000;
+  --bravoixr-green-900: #154b00;
+  --bravoixr-green-950: #0c3700;
 
   /* State — Yellow (warning) */
-  --bravoixr-yellow-50: #faf8f0;
-  --bravoixr-yellow-100: #f3eed9;
-  --bravoixr-yellow-200: #e6dbb2;
-  --bravoixr-yellow-300: #d4c184;
-  --bravoixr-yellow-400: #c0a559;
-  --bravoixr-yellow-500: #a98c40;
-  --bravoixr-yellow-600: #8c7234;
-  --bravoixr-yellow-700: #6f592c;
-  --bravoixr-yellow-800: #5c4a29;
-  --bravoixr-yellow-900: #4f3f26;
-  --bravoixr-yellow-950: #2c2112;
+  --bravoixr-yellow-50: #fbf5de;
+  --bravoixr-yellow-100: #ebe0be;
+  --bravoixr-yellow-200: #dbcc9e;
+  --bravoixr-yellow-300: #ccb77e;
+  --bravoixr-yellow-400: #bda25d;
+  --bravoixr-yellow-500: #af8d39;
+  --bravoixr-yellow-600: #a07800;
+  --bravoixr-yellow-700: #8c6600;
+  --bravoixr-yellow-800: #775500;
+  --bravoixr-yellow-900: #624400;
+  --bravoixr-yellow-950: #4e3400;
 
   /* State — Red (error) */
-  --bravoixr-red-50: #faf4f3;
-  --bravoixr-red-100: #f3e3e1;
-  --bravoixr-red-200: #e7c8c4;
-  --bravoixr-red-300: #d6a39d;
-  --bravoixr-red-400: #c1756d;
-  --bravoixr-red-500: #a9544b;
-  --bravoixr-red-600: #8e413a;
-  --bravoixr-red-700: #743530;
-  --bravoixr-red-800: #61302c;
-  --bravoixr-red-900: #532c29;
-  --bravoixr-red-950: #2d1513;
+  --bravoixr-red-50: #ffeeec;
+  --bravoixr-red-100: #f8d3ce;
+  --bravoixr-red-200: #efb9b1;
+  --bravoixr-red-300: #e69e95;
+  --bravoixr-red-400: #db8479;
+  --bravoixr-red-500: #cf685e;
+  --bravoixr-red-600: #c34b44;
+  --bravoixr-red-700: #b52828;
+  --bravoixr-red-800: #9f0013;
+  --bravoixr-red-900: #80000e;
+  --bravoixr-red-950: #620009;
 
   /* Accent — Purple (tiny usages) */
-  --bravoixr-purple-50: #f6f4fa;
-  --bravoixr-purple-100: #ece7f3;
-  --bravoixr-purple-200: #d9cfe6;
-  --bravoixr-purple-300: #bdacd3;
-  --bravoixr-purple-400: #9c84bb;
-  --bravoixr-purple-500: #7e63a2;
-  --bravoixr-purple-600: #654e84;
-  --bravoixr-purple-700: #524069;
-  --bravoixr-purple-800: #443758;
-  --bravoixr-purple-900: #3a304b;
-  --bravoixr-purple-950: #241d31;
+  --bravoixr-purple-50: #f5efff;
+  --bravoixr-purple-100: #e1d7f5;
+  --bravoixr-purple-200: #cebfe9;
+  --bravoixr-purple-300: #baa7dc;
+  --bravoixr-purple-400: #a890d0;
+  --bravoixr-purple-500: #9678c3;
+  --bravoixr-purple-600: #8461b6;
+  --bravoixr-purple-700: #7349a9;
+  --bravoixr-purple-800: #62309c;
+  --bravoixr-purple-900: #520c8e;
+  --bravoixr-purple-950: #3e006f;
 
   /* Accent — Pink (tiny usages) */
-  --bravoixr-pink-50: #faf3f6;
-  --bravoixr-pink-100: #f3e2ea;
-  --bravoixr-pink-200: #e7c6d5;
-  --bravoixr-pink-300: #d4a0b7;
-  --bravoixr-pink-400: #bd7494;
-  --bravoixr-pink-500: #a35577;
-  --bravoixr-pink-600: #854460;
-  --bravoixr-pink-700: #6c374e;
-  --bravoixr-pink-800: #5a3042;
-  --bravoixr-pink-900: #4d2b39;
-  --bravoixr-pink-950: #2c1620;
+  --bravoixr-pink-50: #ffecf5;
+  --bravoixr-pink-100: #f5d1e1;
+  --bravoixr-pink-200: #eab7cd;
+  --bravoixr-pink-300: #dd9cba;
+  --bravoixr-pink-400: #d182a6;
+  --bravoixr-pink-500: #c36893;
+  --bravoixr-pink-600: #b54c80;
+  --bravoixr-pink-700: #a62e6d;
+  --bravoixr-pink-800: #94005a;
+  --bravoixr-pink-900: #770046;
+  --bravoixr-pink-950: #5a0034;
 
   /* Neutrals — cool gray (0 and 1000 are untinted anchors) */
   --bravoixr-neutral-0: #ffffff;

@@ -12,57 +12,62 @@
  * value explicitly, without depending on which [data-theme] is currently active. */
 
 :root {
-  /* Brand — primary (blue) */
-  --bravoixr-color-primary-light: var(--bravoixr-blue-600);
-  --bravoixr-color-primary-dark: var(--bravoixr-blue-500);
-  --bravoixr-color-primary-hover-light: var(--bravoixr-blue-700);
-  --bravoixr-color-primary-hover-dark: var(--bravoixr-blue-400);
-  --bravoixr-color-primary-active-light: var(--bravoixr-blue-800);
-  --bravoixr-color-primary-active-dark: var(--bravoixr-blue-300);
+  /* Brand — primary (blue)
+   * Base sits at 700 in both themes (not the visually "middle" step) because white
+   * text (--bravoixr-color-text-on-primary) is laid over it: 700 is the lightest step
+   * that still clears WCAG AA (4.5:1) after the 2026 ramp re-anchor. Dark-theme
+   * hover/active dip below AA — accepted, see identity/color.md history. */
+  --bravoixr-color-primary-light: var(--bravoixr-blue-700);
+  --bravoixr-color-primary-dark: var(--bravoixr-blue-700);
+  --bravoixr-color-primary-hover-light: var(--bravoixr-blue-800);
+  --bravoixr-color-primary-hover-dark: var(--bravoixr-blue-600);
+  --bravoixr-color-primary-active-light: var(--bravoixr-blue-900);
+  --bravoixr-color-primary-active-dark: var(--bravoixr-blue-500);
 
-  /* Brand — secondary (teal) */
-  --bravoixr-color-secondary-light: var(--bravoixr-teal-600);
-  --bravoixr-color-secondary-dark: var(--bravoixr-teal-500);
-  --bravoixr-color-secondary-hover-light: var(--bravoixr-teal-700);
-  --bravoixr-color-secondary-hover-dark: var(--bravoixr-teal-400);
-  --bravoixr-color-secondary-active-light: var(--bravoixr-teal-800);
-  --bravoixr-color-secondary-active-dark: var(--bravoixr-teal-300);
+  /* Brand — secondary (teal); see primary comment above for the 700-base rationale */
+  --bravoixr-color-secondary-light: var(--bravoixr-teal-700);
+  --bravoixr-color-secondary-dark: var(--bravoixr-teal-700);
+  --bravoixr-color-secondary-hover-light: var(--bravoixr-teal-800);
+  --bravoixr-color-secondary-hover-dark: var(--bravoixr-teal-600);
+  --bravoixr-color-secondary-active-light: var(--bravoixr-teal-900);
+  --bravoixr-color-secondary-active-dark: var(--bravoixr-teal-500);
 
-  /* Status — success (green) */
-  --bravoixr-color-success-light: var(--bravoixr-green-600);
-  --bravoixr-color-success-dark: var(--bravoixr-green-500);
-  --bravoixr-color-success-hover-light: var(--bravoixr-green-700);
-  --bravoixr-color-success-hover-dark: var(--bravoixr-green-400);
-  --bravoixr-color-success-active-light: var(--bravoixr-green-800);
-  --bravoixr-color-success-active-dark: var(--bravoixr-green-300);
+  /* Status — success (green); see primary comment above for the 700-base rationale */
+  --bravoixr-color-success-light: var(--bravoixr-green-700);
+  --bravoixr-color-success-dark: var(--bravoixr-green-700);
+  --bravoixr-color-success-hover-light: var(--bravoixr-green-800);
+  --bravoixr-color-success-hover-dark: var(--bravoixr-green-600);
+  --bravoixr-color-success-active-light: var(--bravoixr-green-900);
+  --bravoixr-color-success-active-dark: var(--bravoixr-green-500);
 
-  /* Status — warning (yellow) */
-  --bravoixr-color-warning-light: var(--bravoixr-yellow-600);
-  --bravoixr-color-warning-dark: var(--bravoixr-yellow-500);
-  --bravoixr-color-warning-hover-light: var(--bravoixr-yellow-700);
-  --bravoixr-color-warning-hover-dark: var(--bravoixr-yellow-400);
-  --bravoixr-color-warning-active-light: var(--bravoixr-yellow-800);
-  --bravoixr-color-warning-active-dark: var(--bravoixr-yellow-300);
+  /* Status — warning (yellow); see primary comment above for the 700-base rationale */
+  --bravoixr-color-warning-light: var(--bravoixr-yellow-700);
+  --bravoixr-color-warning-dark: var(--bravoixr-yellow-700);
+  --bravoixr-color-warning-hover-light: var(--bravoixr-yellow-800);
+  --bravoixr-color-warning-hover-dark: var(--bravoixr-yellow-600);
+  --bravoixr-color-warning-active-light: var(--bravoixr-yellow-900);
+  --bravoixr-color-warning-active-dark: var(--bravoixr-yellow-500);
 
-  /* Status — error (red) */
-  --bravoixr-color-error-light: var(--bravoixr-red-600);
-  --bravoixr-color-error-dark: var(--bravoixr-red-500);
-  --bravoixr-color-error-hover-light: var(--bravoixr-red-700);
-  --bravoixr-color-error-hover-dark: var(--bravoixr-red-400);
-  --bravoixr-color-error-active-light: var(--bravoixr-red-800);
-  --bravoixr-color-error-active-dark: var(--bravoixr-red-300);
+  /* Status — error (red); see primary comment above for the 700-base rationale */
+  --bravoixr-color-error-light: var(--bravoixr-red-700);
+  --bravoixr-color-error-dark: var(--bravoixr-red-700);
+  --bravoixr-color-error-hover-light: var(--bravoixr-red-800);
+  --bravoixr-color-error-hover-dark: var(--bravoixr-red-600);
+  --bravoixr-color-error-active-light: var(--bravoixr-red-900);
+  --bravoixr-color-error-active-dark: var(--bravoixr-red-500);
 
   /* Status — info (reuses blue, same as primary) */
-  --bravoixr-color-info-light: var(--bravoixr-blue-600);
-  --bravoixr-color-info-dark: var(--bravoixr-blue-500);
-  --bravoixr-color-info-hover-light: var(--bravoixr-blue-700);
-  --bravoixr-color-info-hover-dark: var(--bravoixr-blue-400);
-  --bravoixr-color-info-active-light: var(--bravoixr-blue-800);
-  --bravoixr-color-info-active-dark: var(--bravoixr-blue-300);
+  --bravoixr-color-info-light: var(--bravoixr-blue-700);
+  --bravoixr-color-info-dark: var(--bravoixr-blue-700);
+  --bravoixr-color-info-hover-light: var(--bravoixr-blue-800);
+  --bravoixr-color-info-hover-dark: var(--bravoixr-blue-600);
+  --bravoixr-color-info-active-light: var(--bravoixr-blue-900);
+  --bravoixr-color-info-active-dark: var(--bravoixr-blue-500);
 
-  /* Accent — Purple (tiny usages, promoted here only for the daisyUI accent role) */
-  --bravoixr-color-accent-light: var(--bravoixr-purple-600);
-  --bravoixr-color-accent-dark: var(--bravoixr-purple-500);
+  /* Accent — Purple (tiny usages, promoted here only for the daisyUI accent role);
+   * base at 700 in both themes for the same AA-contrast reason as primary above. */
+  --bravoixr-color-accent-light: var(--bravoixr-purple-700);
+  --bravoixr-color-accent-dark: var(--bravoixr-purple-700);
 
   /* Neutral — inverts between themes: dark-on-light-page, light-on-dark-page */
   --bravoixr-color-neutral-light: var(--bravoixr-neutral-950);

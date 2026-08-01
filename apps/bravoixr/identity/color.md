@@ -43,17 +43,17 @@ never compete with the blue/teal identity._
 
 | Step | Hex |
 | -- | -- |
-| 50 | `#f4f6fa` |
-| 100 | `#e6ebf3` |
-| 200 | `#ccd7e6` |
-| 300 | `#a8bbd4` |
-| 400 | `#7e98bb` |
-| 500 | `#5c79a3` |
-| 600 | `#496187` |
-| 700 | `#3d4f6d` |
-| 800 | `#36435b` |
-| 900 | `#2f3a4d` |
-| 950 | `#1f2633` |
+| 50 | `#eef3ff` |
+| 100 | `#d5def3` |
+| 200 | `#bcc9e7` |
+| 300 | `#a3b4da` |
+| 400 | `#8b9fcd` |
+| 500 | `#738bc1` |
+| 600 | `#5c77b4` |
+| 700 | `#4663a7` |
+| 800 | `#304f99` |
+| 900 | `#1a3b8c` |
+| 950 | `#04257e` |
 
 _Why: a muted slate-blue — trustworthy and modern, desaturated so it stays calm._
 
@@ -61,17 +61,17 @@ _Why: a muted slate-blue — trustworthy and modern, desaturated so it stays cal
 
 | Step | Hex |
 | -- | -- |
-| 50 | `#f1f7f7` |
-| 100 | `#ddecec` |
-| 200 | `#bdd8d8` |
-| 300 | `#93bcbc` |
-| 400 | `#659a9b` |
-| 500 | `#487e7f` |
-| 600 | `#3a6667` |
-| 700 | `#325354` |
-| 800 | `#2d4445` |
-| 900 | `#293a3b` |
-| 950 | `#172324` |
+| 50 | `#e5f7f7` |
+| 100 | `#cae3e3` |
+| 200 | `#afcfcf` |
+| 300 | `#95bbbc` |
+| 400 | `#7ba8a9` |
+| 500 | `#609597` |
+| 600 | `#458285` |
+| 700 | `#277073` |
+| 800 | `#005d61` |
+| 900 | `#00494d` |
+| 950 | `#003639` |
 
 _Why: a muted teal pairs with the blue without clashing — supporting, not competing._
 
@@ -81,17 +81,17 @@ _Why: a muted teal pairs with the blue without clashing — supporting, not comp
 
 | Step | Hex |
 | -- | -- |
-| 50 | `#f3f7f1` |
-| 100 | `#e4ede0` |
-| 200 | `#c8dcc1` |
-| 300 | `#a1c197` |
-| 400 | `#76a06a` |
-| 500 | `#588349` |
-| 600 | `#45693a` |
-| 700 | `#385330` |
-| 800 | `#30442a` |
-| 900 | `#293a25` |
-| 950 | `#152011` |
+| 50 | `#ebf7e5` |
+| 100 | `#d1e3c8` |
+| 200 | `#b7d0ac` |
+| 300 | `#9dbd90` |
+| 400 | `#84aa74` |
+| 500 | `#6a9759` |
+| 600 | `#51853d` |
+| 700 | `#37731e` |
+| 800 | `#206000` |
+| 900 | `#154b00` |
+| 950 | `#0c3700` |
 
 _Why: a soft, earthy green — clearly "good" without a vivid alert-green glare._
 
@@ -99,17 +99,17 @@ _Why: a soft, earthy green — clearly "good" without a vivid alert-green glare.
 
 | Step | Hex |
 | -- | -- |
-| 50 | `#faf8f0` |
-| 100 | `#f3eed9` |
-| 200 | `#e6dbb2` |
-| 300 | `#d4c184` |
-| 400 | `#c0a559` |
-| 500 | `#a98c40` |
-| 600 | `#8c7234` |
-| 700 | `#6f592c` |
-| 800 | `#5c4a29` |
-| 900 | `#4f3f26` |
-| 950 | `#2c2112` |
+| 50 | `#fbf5de` |
+| 100 | `#ebe0be` |
+| 200 | `#dbcc9e` |
+| 300 | `#ccb77e` |
+| 400 | `#bda25d` |
+| 500 | `#af8d39` |
+| 600 | `#a07800` |
+| 700 | `#8c6600` |
+| 800 | `#775500` |
+| 900 | `#624400` |
+| 950 | `#4e3400` |
 
 _Why: a muted gold rather than a bright yellow — caution that stays legible on light surfaces._
 
@@ -117,17 +117,17 @@ _Why: a muted gold rather than a bright yellow — caution that stays legible on
 
 | Step | Hex |
 | -- | -- |
-| 50 | `#faf4f3` |
-| 100 | `#f3e3e1` |
-| 200 | `#e7c8c4` |
-| 300 | `#d6a39d` |
-| 400 | `#c1756d` |
-| 500 | `#a9544b` |
-| 600 | `#8e413a` |
-| 700 | `#743530` |
-| 800 | `#61302c` |
-| 900 | `#532c29` |
-| 950 | `#2d1513` |
+| 50 | `#ffeeec` |
+| 100 | `#f8d3ce` |
+| 200 | `#efb9b1` |
+| 300 | `#e69e95` |
+| 400 | `#db8479` |
+| 500 | `#cf685e` |
+| 600 | `#c34b44` |
+| 700 | `#b52828` |
+| 800 | `#9f0013` |
+| 900 | `#80000e` |
+| 950 | `#620009` |
 
 _Why: a desaturated brick-red — serious and clear without feeling aggressive._
 
@@ -142,33 +142,33 @@ _Why: a desaturated brick-red — serious and clear without feeling aggressive._
 
 | Step | Hex |
 | -- | -- |
-| 50 | `#f6f4fa` |
-| 100 | `#ece7f3` |
-| 200 | `#d9cfe6` |
-| 300 | `#bdacd3` |
-| 400 | `#9c84bb` |
-| 500 | `#7e63a2` |
-| 600 | `#654e84` |
-| 700 | `#524069` |
-| 800 | `#443758` |
-| 900 | `#3a304b` |
-| 950 | `#241d31` |
+| 50 | `#f5efff` |
+| 100 | `#e1d7f5` |
+| 200 | `#cebfe9` |
+| 300 | `#baa7dc` |
+| 400 | `#a890d0` |
+| 500 | `#9678c3` |
+| 600 | `#8461b6` |
+| 700 | `#7349a9` |
+| 800 | `#62309c` |
+| 900 | `#520c8e` |
+| 950 | `#3e006f` |
 
 ### Pink
 
 | Step | Hex |
 | -- | -- |
-| 50 | `#faf3f6` |
-| 100 | `#f3e2ea` |
-| 200 | `#e7c6d5` |
-| 300 | `#d4a0b7` |
-| 400 | `#bd7494` |
-| 500 | `#a35577` |
-| 600 | `#854460` |
-| 700 | `#6c374e` |
-| 800 | `#5a3042` |
-| 900 | `#4d2b39` |
-| 950 | `#2c1620` |
+| 50 | `#ffecf5` |
+| 100 | `#f5d1e1` |
+| 200 | `#eab7cd` |
+| 300 | `#dd9cba` |
+| 400 | `#d182a6` |
+| 500 | `#c36893` |
+| 600 | `#b54c80` |
+| 700 | `#a62e6d` |
+| 800 | `#94005a` |
+| 900 | `#770046` |
+| 950 | `#5a0034` |
 
 _Why: purple and pink exist for small, occasional moments (tags, illustrations, charts); kept muted
 so they never read as a second brand color._
@@ -213,29 +213,29 @@ the brand temperature, so the whole UI shares one cool key._
 
 | Gradient | Stops |
 | -- | -- |
-| Blue 100 → 300 | `#e6ebf3` → `#a8bbd4` |
-| Blue 300 → 500 | `#a8bbd4` → `#5c79a3` |
-| Blue 500 → 700 | `#5c79a3` → `#3d4f6d` |
-| Blue 700 → 900 | `#3d4f6d` → `#2f3a4d` |
+| Blue 100 → 300 | `#d5def3` → `#a3b4da` |
+| Blue 300 → 500 | `#a3b4da` → `#738bc1` |
+| Blue 500 → 700 | `#738bc1` → `#4663a7` |
+| Blue 700 → 900 | `#4663a7` → `#1a3b8c` |
 
 ### Teal (single-hue) — 4 gradients
 
 | Gradient | Stops |
 | -- | -- |
-| Teal 100 → 300 | `#ddecec` → `#93bcbc` |
-| Teal 300 → 500 | `#93bcbc` → `#487e7f` |
-| Teal 500 → 700 | `#487e7f` → `#325354` |
-| Teal 700 → 900 | `#325354` → `#293a3b` |
+| Teal 100 → 300 | `#cae3e3` → `#95bbbc` |
+| Teal 300 → 500 | `#95bbbc` → `#609597` |
+| Teal 500 → 700 | `#609597` → `#277073` |
+| Teal 700 → 900 | `#277073` → `#00494d` |
 
 ### Blue–teal (matched level) — 5 gradients
 
 | Gradient | Stops |
 | -- | -- |
-| Blue 100 → Teal 100 | `#e6ebf3` → `#ddecec` |
-| Blue 300 → Teal 300 | `#a8bbd4` → `#93bcbc` |
-| Blue 500 → Teal 500 | `#5c79a3` → `#487e7f` |
-| Blue 700 → Teal 700 | `#3d4f6d` → `#325354` |
-| Blue 900 → Teal 900 | `#2f3a4d` → `#293a3b` |
+| Blue 100 → Teal 100 | `#d5def3` → `#cae3e3` |
+| Blue 300 → Teal 300 | `#a3b4da` → `#95bbbc` |
+| Blue 500 → Teal 500 | `#738bc1` → `#609597` |
+| Blue 700 → Teal 700 | `#4663a7` → `#277073` |
+| Blue 900 → Teal 900 | `#1a3b8c` → `#00494d` |
 
 _Why: the matched-level blue→teal set is the signature gradient; the single-hue sets cover subtle
 depth when a hue shift isn't wanted._

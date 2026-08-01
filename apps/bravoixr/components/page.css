@@ -31,7 +31,7 @@
  * to split the leftover width either side of the 1280 column on wide screens, and
  * never drops below the space-10 gutter on narrow ones. Inset by space-10 at the
  * block-start and flush (zero) at the block-end so the footer meets the viewport
- * bottom. Shares its inline formula with .page-topbar/.page-footer so all three
+ * bottom. Shares its inline formula with .navbar/.footer so all three
  * content columns align. As the growing child of the .page flex column
  * (flex: 1 1 auto), it absorbs the leftover block space so the footer is pushed
  * to the viewport bottom on short pages; on tall pages it simply takes its
@@ -42,28 +42,37 @@
   padding-inline: max(var(--bravoixr-spacing-10), calc((100% - var(--bravoixr-page-max)) / 2));
 }
 
-/* The page's top bar — wordmark at the inline-start, controls at the inline-end
- * (space-between across exactly two children), on a raised surface. A full-width
- * edge-to-edge band: it sits as a direct child of .page (outside .page-body's
- * inline inset), so as a block element it spans the whole window width on its
- * own — no margins, no bleed tricks. Flat/cornerless to read as chrome rather
- * than a floating card. Block padding + align-items:center size it to its
- * content, so it grows vertically as the content needs; the inline padding uses
- * the same centred-column formula as .page-body, so the bar content caps at
- * --bravoixr-page-max and lines up with the page column below while the raised fill still
- * bleeds edge to edge. The fill themes with the page via the semantic dark override. */
-.page-topbar {
+/* The page's top bar — a gap-override on daisyUI's own .navbar selector:
+ * daisyUI's .navbar-start/.navbar-center/.navbar-end sub-parts are used
+ * as-is for the wordmark/centre-content/controls layout (their
+ * flex-basis-50%-plus-shrink mechanics
+ * already centre a middle child correctly, nothing to override there).
+ * display/align-items are redeclared explicitly (matching daisyUI's own
+ * values) so the box model here is fully self-contained rather than leaning
+ * on daisyUI's layered rule for it. A full-width edge-to-edge band: it sits
+ * as a direct child of .page (outside .page-body's inline inset), so as a
+ * block element it spans the whole window width on its own — no margins, no
+ * bleed tricks — and the raised fill bleeds edge to edge with it. Flat/
+ * cornerless to read as chrome rather than a floating card. Block padding
+ * sizes it to its content (min-height reset to 0 so daisyUI's fixed 4rem
+ * doesn't pad it out); the inline padding uses the same centred-column
+ * formula as .page-body — since padding insets the *content* without
+ * shrinking the element's own box, the fill still spans full width while the
+ * navbar-start/center/end content caps at --bravoixr-page-max and lines up
+ * with the page column below. The fill themes with the page via the semantic
+ * dark override. */
+.navbar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: var(--bravoixr-spacing-5);
+  min-height: 0;
   padding-block: var(--bravoixr-spacing-5);
   padding-inline: max(var(--bravoixr-spacing-10), calc((100% - var(--bravoixr-page-max)) / 2));
   background: var(--bravoixr-color-surface-raised);
 }
 
 /* The topbar's control cluster — a flex row grouping the toggle buttons with a
- * small gap. Sits as the inline-end child of .page-topbar. */
+ * small gap. Sits inside .navbar's .navbar-end slot. */
 .page-controls {
   display: flex;
   gap: var(--bravoixr-spacing-3);
@@ -90,20 +99,27 @@
   margin-block-end: var(--bravoixr-spacing-8);
 }
 
-/* The page's footer bar — wordmark at inline-start, actions at inline-end, on a
- * sunken band (borderless, flat) so the fill recedes it from the canvas. A
- * full-width edge-to-edge band like .page-topbar: it sits as a direct child of
- * .page (outside .page-body's inline inset), spanning the whole window width on
- * its own — no margins, no bleed tricks. Block padding + align-items:center size
- * it to its content, so it grows vertically as the content needs; the inline
- * padding uses the same centred-column formula as .page-body, so the bar content
- * caps at --bravoixr-page-max and lines up with the page column above while the sunken fill
- * still bleeds edge to edge. Themes with the page via the semantic dark override. */
-.page-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--bravoixr-spacing-5);
+/* The page's footer bar — a gap-override on daisyUI's own .footer selector:
+ * its multi-column grid (each direct child becomes its own section, non-
+ * script/style/template grandchildren auto-stack via daisyUI's own inner
+ * grid) lays sections out in a row: brand+copyright, version, and an Explore
+ * link nav (.footer-title + .link/.link-hover, both daisyUI classes used
+ * as-is). display/grid-auto-flow are redeclared explicitly (matching
+ * daisyUI's own .footer/.footer-horizontal values) so, like .navbar, the box
+ * model here is fully self-contained rather than leaning on daisyUI's layered
+ * rules for it — no .footer-horizontal modifier class needed in markup. A
+ * full-width edge-to-edge band like .navbar: it sits as a direct child of
+ * .page (outside .page-body's inline inset), so as a block element it spans
+ * the whole window width on its own — no margins, no bleed tricks — and the
+ * sunken fill bleeds edge to edge with it, while this rule's inline padding
+ * insets the section content (without shrinking the element's own box) so it
+ * caps at --bravoixr-page-max and lines up with the page column above. Themes
+ * with the page via the semantic dark override. */
+.footer {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: start;
+  gap: var(--bravoixr-spacing-10);
   padding-block: var(--bravoixr-spacing-5);
   padding-inline: max(var(--bravoixr-spacing-10), calc((100% - var(--bravoixr-page-max)) / 2));
   background: var(--bravoixr-color-surface-sunken);
@@ -129,6 +145,14 @@
   flex-direction: column;
   gap: var(--bravoixr-spacing-5);
   align-items: start;
+}
+
+/* A vertical group of full-width rows — a block-rhythm gap between block-level
+ * children (typically .page-row-header rows) that keeps their own full inline
+ * size rather than shrink-wrapping, unlike .page-stack. */
+.page-row-group {
+  display: grid;
+  gap: var(--bravoixr-spacing-5);
 }
 
 /* A two-column label row — a fixed-width title column then content filling the

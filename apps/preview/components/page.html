@@ -25,11 +25,18 @@
   <link rel="stylesheet" href="../../bravoixr/index.css">
 </head>
 <body class="page text-body">
-  <div class="page-topbar">
-    <span class="text-project-title">bravoixr</span>
-    <div class="page-controls">
-      <button class="btn btn-primary btn-square" type="button" data-toggle="theme" aria-label="Toggle theme"><span class="icon icon-md">contrast</span></button>
-      <button class="btn btn-primary btn-square" type="button" data-toggle="lang" aria-label="Toggle language"><span class="icon icon-md">translate</span></button>
+  <div class="navbar">
+    <div class="navbar-start">
+      <span class="text-project-title">bravoixr</span>
+    </div>
+    <div class="navbar-center">
+      <span class="text-body" data-en="Welcome" data-ar="مرحباً">Welcome</span>
+    </div>
+    <div class="navbar-end">
+      <div class="page-controls">
+        <button class="btn btn-primary btn-square" type="button" data-toggle="theme" aria-label="Toggle theme"><span class="icon icon-md">contrast</span></button>
+        <button class="btn btn-primary btn-square" type="button" data-toggle="lang" aria-label="Toggle language"><span class="icon icon-md">translate</span></button>
+      </div>
     </div>
   </div>
 
@@ -39,18 +46,22 @@
       <p class="text-page-description text-color-description" data-en="Structural page-layout regions — headers, footers, clusters, label rows, sidebars, scrollers, and sticky bars. Each region renders nothing on its own, so every specimen drops a card inside to make its box legible." data-ar="مناطق تخطيط بنيوية للصفحة — الترويسات والتذييلات والتجميعات وصفوف العناوين والأشرطة الجانبية والأشرطة المنزلقة والأشرطة اللاصقة. لا تعرض أي منطقة شيئًا بذاتها، لذا يضع كل نموذج بطاقة بداخلها لإبراز حدودها.">Structural page-layout regions — headers, footers, clusters, label rows, sidebars, scrollers, and sticky bars. Each region renders nothing on its own, so every specimen drops a card inside to make its box legible.</p>
     </section>
 
-    <!-- page-topbar -->
+    <!-- navbar -->
     <section class="page-section page-row-header">
       <div>
         <h3 class="page-row-header-title" data-en="Topbar" data-ar="الشريط العلوي">Topbar</h3>
         <p class="page-row-header-description" data-en="Opens the screen — wordmark at the start, controls at the end, on a raised band." data-ar="يفتتح الشاشة — العلامة في البداية والأدوات في النهاية، على شريط بارز.">Opens the screen — wordmark at the start, controls at the end, on a raised band.</p>
       </div>
       <div>
-        <div class="page-topbar">
-          <span class="text-project-title">bravoixr</span>
-          <div class="page-controls">
-            <button class="btn btn-primary btn-square" type="button" aria-label="Theme"><span class="icon icon-md">contrast</span></button>
-            <button class="btn btn-primary btn-square" type="button" aria-label="Language"><span class="icon icon-md">translate</span></button>
+        <div class="navbar">
+          <div class="navbar-start">
+            <span class="text-project-title">bravoixr</span>
+          </div>
+          <div class="navbar-end">
+            <div class="page-controls">
+              <button class="btn btn-primary btn-square" type="button" aria-label="Theme"><span class="icon icon-md">contrast</span></button>
+              <button class="btn btn-primary btn-square" type="button" aria-label="Language"><span class="icon icon-md">translate</span></button>
+            </div>
           </div>
         </div>
       </div>
@@ -70,14 +81,14 @@
       </div>
     </section>
 
-    <!-- page-footer -->
+    <!-- footer -->
     <section class="page-section page-row-header">
       <div>
         <h3 class="page-row-header-title" data-en="Page footer" data-ar="تذييل الصفحة">Page footer</h3>
         <p class="page-row-header-description" data-en="Closes the page — wordmark at the start, links at the end, on a sunken band." data-ar="يختم الصفحة — العلامة في البداية والروابط في النهاية، على شريط غائر.">Closes the page — wordmark at the start, links at the end, on a sunken band.</p>
       </div>
       <div>
-        <div class="page-footer">
+        <div class="footer">
           <span class="text-body text-color-description" data-en="bravoixr · © 2026" data-ar="bravoixr · © ٢٠٢٦">bravoixr · © 2026</span>
           <div class="page-cluster">
             <a class="text-body text-color-description" data-en="Privacy" data-ar="الخصوصية">Privacy</a>
@@ -369,9 +380,21 @@
 
   </main>
 
-  <footer class="page-footer">
-    <span class="text-body text-color-description" data-en="bravoixr · © 2026" data-ar="bravoixr · © ٢٠٢٦">bravoixr · © 2026</span>
-    <span class="text-body text-color-description">v0.1.0</span>
+  <footer class="footer">
+    <div>
+      <h6 class="footer-title">bravoixr</h6>
+      <span class="text-body text-color-description" data-en="© 2026" data-ar="© ٢٠٢٦">© 2026</span>
+    </div>
+    <div>
+      <h6 class="footer-title" data-en="Version" data-ar="الإصدار">Version</h6>
+      <span class="text-body text-color-description">v0.1.0</span>
+    </div>
+    <nav>
+      <h6 class="footer-title" data-en="Explore" data-ar="استكشف">Explore</h6>
+      <a class="link link-hover" data-href="../index.html" data-en="Home" data-ar="الرئيسية">Home</a>
+      <a class="link link-hover" data-href="../primitives/color.html" data-en="Primitives" data-ar="الأوّليّات">Primitives</a>
+      <a class="link link-hover" data-href="../semantics/color.html" data-en="Semantics" data-ar="الدلالات">Semantics</a>
+    </nav>
   </footer>
 
   <script src="../preview.js"></script>

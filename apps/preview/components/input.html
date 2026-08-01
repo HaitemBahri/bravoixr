@@ -25,11 +25,18 @@
   <link rel="stylesheet" href="../../bravoixr/index.css">
 </head>
 <body class="page text-body">
-  <div class="page-topbar">
-    <span class="text-project-title">bravoixr</span>
-    <div class="page-controls">
-      <button class="btn btn-primary btn-square" type="button" data-toggle="theme" aria-label="Toggle theme"><span class="icon icon-md">contrast</span></button>
-      <button class="btn btn-primary btn-square" type="button" data-toggle="lang" aria-label="Toggle language"><span class="icon icon-md">translate</span></button>
+  <div class="navbar">
+    <div class="navbar-start">
+      <span class="text-project-title">bravoixr</span>
+    </div>
+    <div class="navbar-center">
+      <span class="text-body" data-en="Welcome" data-ar="مرحباً">Welcome</span>
+    </div>
+    <div class="navbar-end">
+      <div class="page-controls">
+        <button class="btn btn-primary btn-square" type="button" data-toggle="theme" aria-label="Toggle theme"><span class="icon icon-md">contrast</span></button>
+        <button class="btn btn-primary btn-square" type="button" data-toggle="lang" aria-label="Toggle language"><span class="icon icon-md">translate</span></button>
+      </div>
     </div>
   </div>
 
@@ -37,7 +44,7 @@
 
     <section class="page-section">
       <h2 class="text-page-title" data-en="Input" data-ar="حقل إدخال">Input</h2>
-      <p class="text-page-description text-color-description" data-en="A full-width text field with a just-visible border that becomes the 2px brand focus ring on click — no layout shift. Paired with its label, and optionally helper text. Available in all five semantic color roles." data-ar="حقل نصي بعرض كامل بحدّ واضح بالكاد يتحوّل إلى حلقة تركيز باللون الأساسي بسماكة 2 بكسل عند النقر — دون أي إزاحة في التخطيط. يُقرن بتسميته، واختياريًا بنص مساعد. متوفر بجميع أدوار اللون الدلالية الخمسة.">A full-width text field with a just-visible border that becomes the 2px brand focus ring on click — no layout shift. Paired with its label, and optionally helper text. Available in all five semantic color roles.</p>
+      <p class="text-page-description text-color-description" data-en="daisyUI's own text field, paired with its label and optionally helper text. Available in all five semantic color roles." data-ar="حقل نصي من داسي يو آي نفسها، يُقرن بتسميته واختياريًا بنص مساعد. متوفر بجميع أدوار اللون الدلالية الخمسة.">daisyUI's own text field, paired with its label and optionally helper text. Available in all five semantic color roles.</p>
     </section>
 
     <section class="page-section page-row-header">
@@ -47,30 +54,30 @@
       </div>
       <div>
         <div class="page-stack">
-          <div class="input-field">
-            <label class="text-label" for="input-label-primary" data-en="Primary" data-ar="أساسي">Primary</label>
-            <input class="input" type="text" id="input-label-primary" placeholder="Type something…" data-en="Type something…" data-ar="اكتب شيئًا…">
-          </div>
-          <div class="input-field">
-            <label class="text-label" for="input-label-secondary" data-en="Secondary" data-ar="ثانوي">Secondary</label>
+          <fieldset class="fieldset">
+            <label class="label" for="input-label-primary" data-en="Primary" data-ar="أساسي">Primary</label>
+            <input class="input input-primary" type="text" id="input-label-primary" placeholder="Type something…" data-en="Type something…" data-ar="اكتب شيئًا…">
+          </fieldset>
+          <fieldset class="fieldset">
+            <label class="label" for="input-label-secondary" data-en="Secondary" data-ar="ثانوي">Secondary</label>
             <input class="input input-secondary" type="text" id="input-label-secondary" placeholder="Type something…" data-en="Type something…" data-ar="اكتب شيئًا…">
-          </div>
-          <div class="input-field">
-            <label class="text-label" for="input-label-error" data-en="Error" data-ar="خطأ">Error</label>
+          </fieldset>
+          <fieldset class="fieldset">
+            <label class="label" for="input-label-error" data-en="Error" data-ar="خطأ">Error</label>
             <input class="input input-error" type="text" id="input-label-error" placeholder="Type something…" data-en="Type something…" data-ar="اكتب شيئًا…">
-          </div>
-          <div class="input-field">
-            <label class="text-label" for="input-label-warning" data-en="Warning" data-ar="تحذير">Warning</label>
+          </fieldset>
+          <fieldset class="fieldset">
+            <label class="label" for="input-label-warning" data-en="Warning" data-ar="تحذير">Warning</label>
             <input class="input input-warning" type="text" id="input-label-warning" placeholder="Type something…" data-en="Type something…" data-ar="اكتب شيئًا…">
-          </div>
-          <div class="input-field">
-            <label class="text-label" for="input-label-success" data-en="Success" data-ar="نجاح">Success</label>
+          </fieldset>
+          <fieldset class="fieldset">
+            <label class="label" for="input-label-success" data-en="Success" data-ar="نجاح">Success</label>
             <input class="input input-success" type="text" id="input-label-success" placeholder="Type something…" data-en="Type something…" data-ar="اكتب شيئًا…">
-          </div>
-          <div class="input-field">
-            <label class="text-label" for="input-label-disabled" data-en="Disabled" data-ar="معطّل">Disabled</label>
+          </fieldset>
+          <fieldset class="fieldset">
+            <label class="label" for="input-label-disabled" data-en="Disabled" data-ar="معطّل">Disabled</label>
             <input class="input" type="text" id="input-label-disabled" placeholder="Type something…" disabled data-en="Type something…" data-ar="اكتب شيئًا…">
-          </div>
+          </fieldset>
         </div>
       </div>
     </section>
@@ -82,45 +89,57 @@
       </div>
       <div>
         <div class="page-stack">
-          <div class="input-field">
-            <label class="text-label" for="input-helper-primary" data-en="Primary" data-ar="أساسي">Primary</label>
-            <input class="input" type="text" id="input-helper-primary" placeholder="Type something…" data-en="Type something…" data-ar="اكتب شيئًا…">
-            <span class="text-helper text-color-helper" data-en="Helper text" data-ar="نص مساعد">Helper text</span>
-          </div>
-          <div class="input-field">
-            <label class="text-label" for="input-helper-secondary" data-en="Secondary" data-ar="ثانوي">Secondary</label>
+          <fieldset class="fieldset">
+            <label class="label" for="input-helper-primary" data-en="Primary" data-ar="أساسي">Primary</label>
+            <input class="input input-primary" type="text" id="input-helper-primary" placeholder="Type something…" data-en="Type something…" data-ar="اكتب شيئًا…">
+            <span class="label" data-en="Helper text" data-ar="نص مساعد">Helper text</span>
+          </fieldset>
+          <fieldset class="fieldset">
+            <label class="label" for="input-helper-secondary" data-en="Secondary" data-ar="ثانوي">Secondary</label>
             <input class="input input-secondary" type="text" id="input-helper-secondary" placeholder="Type something…" data-en="Type something…" data-ar="اكتب شيئًا…">
-            <span class="text-helper text-color-helper" data-en="Helper text" data-ar="نص مساعد">Helper text</span>
-          </div>
-          <div class="input-field">
-            <label class="text-label" for="input-helper-error" data-en="Error" data-ar="خطأ">Error</label>
+            <span class="label" data-en="Helper text" data-ar="نص مساعد">Helper text</span>
+          </fieldset>
+          <fieldset class="fieldset">
+            <label class="label" for="input-helper-error" data-en="Error" data-ar="خطأ">Error</label>
             <input class="input input-error" type="text" id="input-helper-error" placeholder="Type something…" data-en="Type something…" data-ar="اكتب شيئًا…">
-            <span class="text-helper text-color-error" data-en="Helper text" data-ar="نص مساعد">Helper text</span>
-          </div>
-          <div class="input-field">
-            <label class="text-label" for="input-helper-warning" data-en="Warning" data-ar="تحذير">Warning</label>
+            <span class="label text-color-error" data-en="Helper text" data-ar="نص مساعد">Helper text</span>
+          </fieldset>
+          <fieldset class="fieldset">
+            <label class="label" for="input-helper-warning" data-en="Warning" data-ar="تحذير">Warning</label>
             <input class="input input-warning" type="text" id="input-helper-warning" placeholder="Type something…" data-en="Type something…" data-ar="اكتب شيئًا…">
-            <span class="text-helper text-color-warning" data-en="Helper text" data-ar="نص مساعد">Helper text</span>
-          </div>
-          <div class="input-field">
-            <label class="text-label" for="input-helper-success" data-en="Success" data-ar="نجاح">Success</label>
+            <span class="label text-color-warning" data-en="Helper text" data-ar="نص مساعد">Helper text</span>
+          </fieldset>
+          <fieldset class="fieldset">
+            <label class="label" for="input-helper-success" data-en="Success" data-ar="نجاح">Success</label>
             <input class="input input-success" type="text" id="input-helper-success" placeholder="Type something…" data-en="Type something…" data-ar="اكتب شيئًا…">
-            <span class="text-helper text-color-success" data-en="Helper text" data-ar="نص مساعد">Helper text</span>
-          </div>
-          <div class="input-field">
-            <label class="text-label" for="input-helper-disabled" data-en="Disabled" data-ar="معطّل">Disabled</label>
+            <span class="label text-color-success" data-en="Helper text" data-ar="نص مساعد">Helper text</span>
+          </fieldset>
+          <fieldset class="fieldset">
+            <label class="label" for="input-helper-disabled" data-en="Disabled" data-ar="معطّل">Disabled</label>
             <input class="input" type="text" id="input-helper-disabled" placeholder="Type something…" disabled data-en="Type something…" data-ar="اكتب شيئًا…">
-            <span class="text-helper text-color-helper" data-en="Helper text" data-ar="نص مساعد">Helper text</span>
-          </div>
+            <span class="label" data-en="Helper text" data-ar="نص مساعد">Helper text</span>
+          </fieldset>
         </div>
       </div>
     </section>
 
   </main>
 
-  <footer class="page-footer">
-    <span class="text-body text-color-description" data-en="bravoixr · © 2026" data-ar="bravoixr · © ٢٠٢٦">bravoixr · © 2026</span>
-    <span class="text-body text-color-description">v0.1.0</span>
+  <footer class="footer">
+    <div>
+      <h6 class="footer-title">bravoixr</h6>
+      <span class="text-body text-color-description" data-en="© 2026" data-ar="© ٢٠٢٦">© 2026</span>
+    </div>
+    <div>
+      <h6 class="footer-title" data-en="Version" data-ar="الإصدار">Version</h6>
+      <span class="text-body text-color-description">v0.1.0</span>
+    </div>
+    <nav>
+      <h6 class="footer-title" data-en="Explore" data-ar="استكشف">Explore</h6>
+      <a class="link link-hover" data-href="../index.html" data-en="Home" data-ar="الرئيسية">Home</a>
+      <a class="link link-hover" data-href="../primitives/color.html" data-en="Primitives" data-ar="الأوّليّات">Primitives</a>
+      <a class="link link-hover" data-href="../semantics/color.html" data-en="Semantics" data-ar="الدلالات">Semantics</a>
+    </nav>
   </footer>
 
   <script src="../preview.js"></script>

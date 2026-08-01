@@ -2,9 +2,6 @@
  * Imports the reused component set. Behavior is rented (from the consuming app's
  * component library), only skinned here. */
 
-@import "./button.css";
-@import "./input.css";
-@import "./toggle.css";
 @import "./card.css";
 @import "./page.css";
 @import "./icon.css";

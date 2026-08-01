@@ -1,19 +1,14 @@
 /* Component — Input
- * Thin class for the reused text-input element. Consumes semantic tokens only.
- * Resting state carries a just-visible border; focus swaps to the 2px emphasis ring.
- * Primary ships as the implicit default; secondary/success/warning/error are
- * opt-in border-color modifiers, matching .toggle-*'s/.btn-*'s five-role
- * convention. */
+ * Gap-override on daisyUI's own .input selector (same pattern as button.css):
+ * daisyUI's own .input-primary/-secondary/-success/-warning/-error classes
+ * (themed via daisyui/theme.css) drive every color role, and its own
+ * :focus/:focus-within outline drives the focus ring untouched — bravoixr
+ * only fills in the taste gaps daisyUI's theme variables don't expose. */
 
 .input {
-  box-sizing: border-box; /* absorbs the 1->2px focus border without outer reflow */
-  width: 100%; /* controls are full-width by default; layout owns width */
-  height: var(--bravoixr-control-height);
-  padding-block: 0;
-  padding-inline: var(--bravoixr-spacing-4);
-  border: var(--bravoixr-border-width) solid var(--bravoixr-color-border);
-  border-radius: var(--bravoixr-radius-control);
-  background: var(--bravoixr-color-surface-raised);
+  box-sizing: border-box; /* keeps width:100% + daisyUI's own padding-inline from overflowing the box */
+  width: 100%; /* controls are full-width by default; daisyUI's own default caps at 20rem */
+  background-color: var(--bravoixr-color-surface-raised);
   color: var(--bravoixr-color-text);
   font-family: var(--bravoixr-font-body);
   font-size: var(--bravoixr-text-body);
@@ -23,26 +18,10 @@
   color: var(--bravoixr-color-text-subtle);
 }
 
-.input:focus {
-  border-width: var(--bravoixr-border-width-strong);
-  border-color: var(--bravoixr-color-border-focus);
-}
-
 .input:disabled {
-  cursor: not-allowed;
-  background: var(--bravoixr-color-surface-sunken);
-  border-color: var(--bravoixr-color-border);
+  background-color: var(--bravoixr-color-surface-sunken);
   color: var(--bravoixr-color-text-subtle);
 }
-
-/* Color — secondary/success/warning/error modifiers. Primary ships as the
- * implicit default (bare .input). Each modifier overrides only the resting
- * border-color; the focus ring stays --bravoixr-color-border-focus across every
- * variant, same as .toggle's :focus-visible outline ignores color role. */
-.input-secondary { border-color: var(--bravoixr-color-secondary); }
-.input-success    { border-color: var(--bravoixr-color-success); }
-.input-warning    { border-color: var(--bravoixr-color-warning); }
-.input-error      { border-color: var(--bravoixr-color-error); }
 
 /* Field — a vertical stack pairing a label (and optional helper text) with
  * its input. align-self: stretch overrides page-stack's align-items:start,

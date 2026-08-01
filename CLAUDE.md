@@ -29,7 +29,7 @@ The design identity system lives at `apps/bravoixr/` (deployable, per the global
 - `primitives/` — raw literal CSS custom properties (no meaning, no `var()`). The portable source of truth.
 - `semantics/` — meaning mapped onto primitives (`--bravoixr-color-primary`, `--bravoixr-btn-height`). The single seam components reference. Dark theme is handled **inline** here (`[data-theme="dark"]`), no separate `themes/` folder.
 - `daisyui/` — bridges bravoixr's `--bravoixr-*` tokens onto daisyUI's own theme CSS-variable contract (`--color-primary`, `--radius-field`, etc.), under the same `[data-theme]` states `semantics/color.css` uses. Isolates all daisyUI coupling to this one layer. Filled in incrementally as components migrate — currently scoped to what `.btn` and `.input` need.
-- `components/` — for elements daisyUI doesn't cover (`page`, `text`, `icon`, and the still-unmigrated `toggle`, `card`), plus small gap-override rules against daisyUI's own selectors for migrated components (currently: `button`'s focus-visible ring; `input`'s width/background/typography taste). Consumes semantic tokens only.
+- `components/` — for elements daisyUI doesn't cover (`page`, `text`, `icon`, and the still-unmigrated `toggle`, `card`), plus small gap-override rules against daisyUI's own selectors for migrated components (currently: `button`'s focus-visible ring; `input` needs none — it's consumed as pure daisyUI, no bravoixr override at all). Consumes semantic tokens only.
 - `index.css` — single entry point. Import order is fixed: **`primitives/` → `semantics/` → `daisyui/` → `components/`**.
 
 ## Consumption

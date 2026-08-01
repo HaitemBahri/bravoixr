@@ -1,13 +1,14 @@
 /* Component — Card
- * Thin class for the reused card surface. Consumes semantic tokens only.
- * Resting raised surface: borderless, with the raised fill alone separating it
- * from the page — no border, no shadow. */
+ * Gap-override on daisyUI's own .card selector (same pattern as button.css):
+ * daisyUI's own .card already supplies display:flex/flex-direction:column and,
+ * once themed, the same border-radius via --radius-box — bravoixr only fills
+ * in the taste gaps daisyUI's base .card leaves unset (it carries no padding,
+ * background, or text color of its own). Resting raised surface: borderless,
+ * with the raised fill alone separating it from the page — no border, no
+ * shadow. */
 
 .card {
-  display: flex;
-  flex-direction: column; /* lets the footer push to the bottom edge when the card is taller than its content */
   padding: var(--bravoixr-spacing-5);
-  border-radius: var(--bravoixr-radius-card);
   background: var(--bravoixr-color-surface-raised);
   color: var(--bravoixr-color-text);
 }

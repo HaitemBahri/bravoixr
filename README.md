@@ -28,7 +28,7 @@ bravoixr adopts **daisyUI** as its component library: it feeds its own tokens in
 | Primitive tokens | Raw values, no meaning (`--bravoixr-blue-600`) |
 | Semantic tokens | Meaning mapped onto primitives (`--bravoixr-color-primary`, `--bravoixr-btn-height`) |
 | daisyUI theme bridge | Maps semantic tokens onto daisyUI's own theme CSS variables (`--color-primary`, `--radius-field`) |
-| Component classes | daisyUI's own classes for migrated components (`.btn-primary`, `.input-primary`); bravoixr's classes for the rest (`.card`) |
+| Component classes | daisyUI's own classes for migrated components (`.btn-primary`, `.input-primary`, `.toggle-primary`/`.checkbox-primary`/`.radio-primary`); bravoixr's classes for the rest (`.card-title`, `.card-description`, etc.) |
 
 ## Structure
 
@@ -61,7 +61,7 @@ Load **daisyUI** (e.g. via CDN, pinned to a major version) **before** bravoixr's
 
 This works without CSS specificity tricks: daisyUI's CSS ships inside Tailwind's cascade layers, and bravoixr's plain, unlayered CSS always wins over layered rules regardless of load order.
 
-**Current migration status:** `button` and `input` are daisyUI-skinned (`.btn`, `.btn-primary`, `.btn-secondary`, `.btn-success`, `.btn-warning`, `.btn-error`, `.btn-ghost`, `.btn-square`; `.input`, `.input-primary`, `.input-secondary`, `.input-success`, `.input-warning`, `.input-error`). `toggle` and `card` are still full bravoixr implementations (`.toggle-*`, `.card`), pending their own migration.
+**Current migration status:** `button`, `input`, and `toggle` are daisyUI-skinned (`.btn`, `.btn-primary`, `.btn-secondary`, `.btn-success`, `.btn-warning`, `.btn-error`, `.btn-ghost`, `.btn-square`; `.input`, `.input-primary`, `.input-secondary`, `.input-success`, `.input-warning`, `.input-error`; `.toggle`/`.checkbox`/`.radio` with the same five color-role modifiers). `card`'s own base class is a trimmed daisyUI gap-override, but its anatomy classes (`.card-title`, `.card-description`, `.card-header`, `.card-footer`, `.card-media`) are still full bravoixr implementations, pending their own migration.
 
 - **Classes first.** Build your UI from classes — daisyUI's for migrated components, bravoixr's for the rest; each one bundles the correct combination of tokens, so you can't assemble an invalid pairing.
 - **Tokens are the escape hatch.** For layout, spacing, and one-offs no class covers, reference the semantic tokens directly (`gap: var(--bravoixr-spacing-5)`). Never reference primitives.

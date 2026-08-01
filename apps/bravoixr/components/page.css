@@ -42,10 +42,10 @@
   padding-inline: max(var(--bravoixr-spacing-10), calc((100% - var(--bravoixr-page-max)) / 2));
 }
 
-/* The page's top bar — a gap-override on daisyUI's own .navbar selector (same
- * pattern as button.css's .btn:focus-visible): daisyUI's .navbar-start/
- * .navbar-center/.navbar-end sub-parts are used as-is for the wordmark/
- * centre-content/controls layout (their flex-basis-50%-plus-shrink mechanics
+/* The page's top bar — a gap-override on daisyUI's own .navbar selector:
+ * daisyUI's .navbar-start/.navbar-center/.navbar-end sub-parts are used
+ * as-is for the wordmark/centre-content/controls layout (their
+ * flex-basis-50%-plus-shrink mechanics
  * already centre a middle child correctly, nothing to override there).
  * display/align-items are redeclared explicitly (matching daisyUI's own
  * values) so the box model here is fully self-contained rather than leaning

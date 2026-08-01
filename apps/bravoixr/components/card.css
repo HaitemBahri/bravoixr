@@ -1,6 +1,7 @@
 /* Component — Card
- * Gap-override on daisyUI's own .card selector (same pattern as button.css):
- * daisyUI's own .card already supplies display:flex/flex-direction:column and,
+ * Gap-override on daisyUI's own .card selector (same pattern as .navbar/
+ * .footer in page.css): daisyUI's own .card already supplies
+ * display:flex/flex-direction:column and,
  * once themed, the same border-radius via --radius-box — bravoixr only fills
  * in the taste gaps daisyUI's base .card leaves unset (it carries no padding,
  * background, or text color of its own). Resting raised surface: borderless,

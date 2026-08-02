@@ -51,10 +51,6 @@
   padding-block-start: var(--bravoixr-spacing-4); /* minimum gap above the actions (kept even when margin-auto collapses to 0) */
 }
 
-.card-footer .btn:not(.btn-square) {
-  inline-size: auto; /* footer is the layout: non-square actions size to content, not full-width (square buttons keep their box) */
-}
-
 /* Media — a full-bleed region that cancels the card's default padding so
  * artwork runs edge to edge, clipped to the card's top corners. */
 .card-media {

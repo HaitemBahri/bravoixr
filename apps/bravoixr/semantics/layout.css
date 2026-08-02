@@ -20,7 +20,7 @@
   --bravoixr-card-min: var(--bravoixr-size-card-min);
   --bravoixr-page-sidebar-size: var(--bravoixr-size-sidebar);
   --bravoixr-page-row-header-size: var(--bravoixr-size-row-header);
-  --bravoixr-page-row-header-columns: var(--bravoixr-page-row-header-size) 1fr;
+  --bravoixr-page-row-header-columns: var(--bravoixr-page-row-header-size) var(--bravoixr-grid-fr);
   --bravoixr-page-column-header-size: var(--bravoixr-size-column-header);
   --bravoixr-page-max: var(--bravoixr-breakpoint-max);
   --bravoixr-demo-box-size: var(--bravoixr-size-demo-box);
@@ -61,6 +61,6 @@
  * below the min-width boundary. */
 @media (max-width: 767.98px) {
   :root {
-    --bravoixr-page-row-header-columns: 1fr;
+    --bravoixr-page-row-header-columns: var(--bravoixr-grid-fr);
   }
 }

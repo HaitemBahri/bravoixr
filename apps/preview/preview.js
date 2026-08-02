@@ -61,7 +61,26 @@
     box.addEventListener('mouseout', function () { box.style.transform = ''; });
   });
 
+  /* Version — read bravoixr's release.json live so the footer never goes stale.
+   * URL is derived from the already-loaded bravoixr stylesheet link so it works
+   * at any page depth without hardcoding a relative path per page. */
+  function loadVersion() {
+    var styleLink = document.querySelector('link[href$="bravoixr/index.css"]');
+    if (!styleLink) return;
+    var releaseUrl = styleLink.href.replace(/index\.css$/, 'release.json');
+    fetch(releaseUrl)
+      .then(function (res) { return res.json(); })
+      .then(function (data) {
+        if (!data.currentRelease) return;
+        document.querySelectorAll('[data-version]').forEach(function (el) {
+          el.textContent = data.currentRelease;
+        });
+      })
+      .catch(function () {}); /* network/file:// failure — keep the static fallback text */
+  }
+
   /* On load the inline snippet has already set the root attributes;
    * sync the specimen text to match. */
   swapText(currentLang());
+  loadVersion();
 })();

@@ -45,6 +45,8 @@ apps/preview/           preview site for the token layers and component classes
 
 Five measurable categories (color, typography, layout, motion, icons) run through `identity/`, `primitives/`, and `semantics/`. **Feel** (density, taste) and **media** (decorative-artwork direction) are `identity/`-only. `layout` combines spacing, sizing, radius, borders, elevation, and z-index.
 
+> Full, always-current usage instructions for consuming projects live in Notion: [Bravoixr v0.3.1](https://app.notion.com/p/3b17e19de5c28154bec8c701d67a9b3f) — kept in sync with each release.
+
 ## Consuming bravoixr
 
 Load **daisyUI** (e.g. via CDN, pinned to a major version) **before** bravoixr's stylesheet, then apply classes — daisyUI's own for migrated components, bravoixr's for the rest:

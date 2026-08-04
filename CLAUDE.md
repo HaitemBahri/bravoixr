@@ -3,6 +3,7 @@
 Project-specific rules for this repo. Global workspace rules still apply.
 
 Project page → https://app.notion.com/p/3877e19de5c280eb803bd89e214880da
+Consumer usage instructions → https://app.notion.com/p/3b17e19de5c28154bec8c701d67a9b3f (canonical, always-current usage doc for other projects — kept in sync with each release)
 
 ## What this project is
 
@@ -80,6 +81,8 @@ Five measurable categories carry through `identity/`, `primitives/`, and `semant
 ## Releases
 
 `release.json.currentRelease` is the source of truth for the active release (`vMAJOR.MINOR.PATCH`). Update it only during an explicit release cut.
+
+**Keep the consumer usage-instructions page in sync.** As part of each release cut, update the Notion page linked above in place — rename its title to `Bravoixr vX.Y.Z` and refresh its content to match the new release. Same page, same URL, so the links in this file and README.md never go stale.
 
 Future releases use the app-scoped naming: tag `bravoixr/vX.Y.Z`, release branch `release/bravoixr/vX.Y.Z`, Linear milestone `bravoixr vX.Y.Z`. Existing `v0.1.0`/`v0.2.0` tags, branches, and milestones are left as-is — naming rules apply going forward only. `preview` has no independent version or release of its own.
 

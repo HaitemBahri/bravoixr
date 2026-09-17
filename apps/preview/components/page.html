@@ -43,7 +43,8 @@
   <main class="page-body">
     <section class="page-section">
       <h2 class="text-page-title" data-en="Page" data-ar="الصفحة">Page</h2>
-      <p class="text-page-description text-color-description" data-en="Structural page-layout regions — headers, footers, clusters, label rows, sidebars, scrollers, and sticky bars. Each region renders nothing on its own, so every specimen drops a card inside to make its box legible." data-ar="مناطق تخطيط بنيوية للصفحة — الترويسات والتذييلات والتجميعات وصفوف العناوين والأشرطة الجانبية والأشرطة المنزلقة والأشرطة اللاصقة. لا تعرض أي منطقة شيئًا بذاتها، لذا يضع كل نموذج بطاقة بداخلها لإبراز حدودها.">Structural page-layout regions — headers, footers, clusters, label rows, sidebars, scrollers, and sticky bars. Each region renders nothing on its own, so every specimen drops a card inside to make its box legible.</p>
+      <p class="text-page-description text-color-description" data-en="Structural page-layout regions — headers, footers, layout primitives, label rows, sidebars, scrollers, and sticky bars. Each region renders nothing on its own, so every specimen drops a card inside to make its box legible." data-ar="مناطق تخطيط بنيوية للصفحة — الترويسات والتذييلات وأوّليّات التخطيط وصفوف العناوين والأشرطة الجانبية والأشرطة المنزلقة والأشرطة اللاصقة. لا تعرض أي منطقة شيئًا بذاتها، لذا يضع كل نموذج بطاقة بداخلها لإبراز حدودها.">Structural page-layout regions — headers, footers, layout primitives, label rows, sidebars, scrollers, and sticky bars. Each region renders nothing on its own, so every specimen drops a card inside to make its box legible.</p>
+      <p class="text-page-description text-color-description" data-en="Four generic layout primitives share one naming system: axis (row / column) crossed with sizing (pack — items keep their own size; fill — items stretch to fill; split — a fixed two-region layout). Row pack, Column pack, Column fill, and Row split below are worth comparing side by side." data-ar="تشترك أربع أوّليّات تخطيط عامة في نظام تسمية واحد: المحور (صف / عمود) متقاطعًا مع الحجم (تجميع — تحتفظ العناصر بحجمها الخاص؛ ملء — تتمدد العناصر لتملأ المساحة؛ تقسيم — تخطيط ثابت من منطقتين). يستحق كل من صف مجمّع وعمود مجمّع وعمود ممتلئ وصف مقسّم أدناه المقارنة جنبًا إلى جنب.">Four generic layout primitives share one naming system: axis (row / column) crossed with sizing (pack — items keep their own size; fill — items stretch to fill; split — a fixed two-region layout). Row pack, Column pack, Column fill, and Row split below are worth comparing side by side.</p>
     </section>
 
     <!-- navbar -->
@@ -90,7 +91,7 @@
       <div>
         <div class="footer">
           <span class="text-body text-color-description" data-en="bravoixr · © 2026" data-ar="bravoixr · © ٢٠٢٦">bravoixr · © 2026</span>
-          <div class="page-cluster">
+          <div class="page-row-pack">
             <a class="text-body text-color-description" data-en="Privacy" data-ar="الخصوصية">Privacy</a>
             <a class="text-body text-color-description" data-en="Terms" data-ar="الشروط">Terms</a>
             <a class="text-body text-color-description" data-en="Contact" data-ar="اتصل بنا">Contact</a>
@@ -99,14 +100,14 @@
       </div>
     </section>
 
-    <!-- page-cluster -->
+    <!-- page-row-pack -->
     <section class="page-section page-row-header">
       <div>
-        <h3 class="page-row-header-title" data-en="Cluster" data-ar="التجميعة">Cluster</h3>
-        <p class="page-row-header-description" data-en="A wrapping horizontal stack that flows items to the next row when space runs out." data-ar="رصّة أفقية تلتفّ، تنقل العناصر إلى السطر التالي عند نفاد المساحة.">A wrapping horizontal stack that flows items to the next row when space runs out.</p>
+        <h3 class="page-row-header-title" data-en="Row pack" data-ar="صف مجمّع">Row pack</h3>
+        <p class="page-row-header-description" data-en="A wrapping horizontal stack that flows items to the next row when space runs out. Items keep their own size — a &quot;pack.&quot;" data-ar="رصّة أفقية تلتفّ، تنقل العناصر إلى السطر التالي عند نفاد المساحة. تحتفظ العناصر بحجمها الخاص — أي &quot;تجميع.&quot;">A wrapping horizontal stack that flows items to the next row when space runs out. Items keep their own size — a "pack."</p>
       </div>
       <div>
-        <div class="page-cluster">
+        <div class="page-row-pack">
           <div class="card">
             <h3 class="card-title" data-en="Overview" data-ar="نظرة عامة">Overview</h3>
             <p class="card-description" data-en="This is a placeholder text. Wow!" data-ar="هذا نص عنصر نائب. رائع!">This is a placeholder text. Wow!</p>
@@ -153,6 +154,50 @@
       </div>
     </section>
 
+    <!-- page-column-pack -->
+    <section class="page-section page-row-header">
+      <div>
+        <h3 class="page-row-header-title" data-en="Column pack" data-ar="عمود مجمّع">Column pack</h3>
+        <p class="page-row-header-description" data-en="A vertical stack — items sit block-start to block-end with a consistent gap between them, keeping their own inline size rather than stretching to the container's width." data-ar="رصّة عمودية — تنتظم العناصر من بداية الكتلة إلى نهايتها بفجوة ثابتة بينها، وتحتفظ بحجمها الأفقي الخاص بدلًا من التمدد إلى عرض الحاوية.">A vertical stack — items sit block-start to block-end with a consistent gap between them, keeping their own inline size rather than stretching to the container's width.</p>
+      </div>
+      <div>
+        <div class="page-column-pack">
+          <div class="card">
+            <h3 class="card-title" data-en="Overview" data-ar="نظرة عامة">Overview</h3>
+            <p class="card-description" data-en="This is a placeholder text. Wow!" data-ar="هذا نص عنصر نائب. رائع!">This is a placeholder text. Wow!</p>
+          </div>
+          <div class="card">
+            <h3 class="card-title" data-en="Activity" data-ar="النشاط">Activity</h3>
+            <p class="card-description" data-en="This is a placeholder text. Wow!" data-ar="هذا نص عنصر نائب. رائع!">This is a placeholder text. Wow!</p>
+          </div>
+          <div class="card">
+            <h3 class="card-title" data-en="Members" data-ar="الأعضاء">Members</h3>
+            <p class="card-description" data-en="This is a placeholder text. Wow!" data-ar="هذا نص عنصر نائب. رائع!">This is a placeholder text. Wow!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- page-column-fill -->
+    <section class="page-section page-row-header">
+      <div>
+        <h3 class="page-row-header-title" data-en="Column fill" data-ar="عمود ممتلئ">Column fill</h3>
+        <p class="page-row-header-description" data-en="A vertical group of full-width rows — a block-rhythm gap between block-level children that keep their own full inline size rather than shrink-wrapping, unlike Column pack." data-ar="مجموعة عمودية من صفوف بعرض كامل — فجوة إيقاعية بين عناصر كتلية تحتفظ بعرضها الأفقي الكامل بدلًا من الانكماش، بخلاف العمود المجمّع.">A vertical group of full-width rows — a block-rhythm gap between block-level children that keep their own full inline size rather than shrink-wrapping, unlike Column pack.</p>
+      </div>
+      <div>
+        <div class="page-column-fill">
+          <div class="card">
+            <h3 class="card-title" data-en="Row one" data-ar="الصف الأول">Row one</h3>
+            <p class="card-description" data-en="Each row fills the full inline width of its container instead of shrinking to its content." data-ar="يملأ كل صف العرض الأفقي الكامل لحاويته بدلًا من الانكماش إلى حجم محتواه.">Each row fills the full inline width of its container instead of shrinking to its content.</p>
+          </div>
+          <div class="card">
+            <h3 class="card-title" data-en="Row two" data-ar="الصف الثاني">Row two</h3>
+            <p class="card-description" data-en="Compare this against Column pack above — same vertical stacking, opposite sizing behavior." data-ar="قارن هذا بالعمود المجمّع أعلاه — نفس التكديس العمودي، لكن بسلوك حجم معاكس.">Compare this against Column pack above — same vertical stacking, opposite sizing behavior.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- page-row-header -->
     <section class="page-section page-row-header">
       <div>
@@ -174,7 +219,7 @@
         <p class="page-row-header-description" data-en="A two-row stack — content on top, a fixed caption row centred beneath it." data-ar="رصّة من صفّين — المحتوى في الأعلى، وصف ثابت متوسّط تحته.">A two-row stack — content on top, a fixed caption row centred beneath it.</p>
       </div>
       <div>
-        <div class="page-cluster">
+        <div class="page-row-pack">
           <div class="page-column-header">
             <div class="card">
               <h3 class="card-title" data-en="128" data-ar="١٢٨">128</h3>
@@ -321,14 +366,14 @@
       </div>
     </section>
 
-    <!-- page-shell + page-sidebar + page-main -->
+    <!-- page-row-split + page-sidebar + page-main -->
     <section class="page-section page-row-header">
       <div>
-        <h3 class="page-row-header-title" data-en="Shell, sidebar & main" data-ar="الهيكل والشريط الجانبي والمحتوى">Shell, sidebar &amp; main</h3>
-        <p class="page-row-header-description" data-en="A fixed sidebar beside a main column that fills the remaining inline space." data-ar="شريط جانبي ثابت بجانب عمود رئيسي يملأ المساحة الأفقية المتبقّية.">A fixed sidebar beside a main column that fills the remaining inline space.</p>
+        <h3 class="page-row-header-title" data-en="Row split, sidebar & main" data-ar="صف مقسّم، شريط جانبي ومحتوى">Row split, sidebar &amp; main</h3>
+        <p class="page-row-header-description" data-en="A fixed sidebar beside a main column that fills the remaining inline space — a fixed two-region &quot;split,&quot; the third sizing behavior alongside pack and fill." data-ar="شريط جانبي ثابت بجانب عمود رئيسي يملأ المساحة الأفقية المتبقّية — أي &quot;تقسيم&quot; ثابت من منطقتين، وهو سلوك الحجم الثالث إلى جانب التجميع والملء.">A fixed sidebar beside a main column that fills the remaining inline space — a fixed two-region "split," the third sizing behavior alongside pack and fill.</p>
       </div>
       <div>
-        <div class="page-shell">
+        <div class="page-row-split">
           <div class="page-sidebar">
             <div class="card">
               <h3 class="card-title" data-en="Sidebar" data-ar="الشريط الجانبي">Sidebar</h3>
@@ -366,7 +411,7 @@
           <div class="card page-sticky">
             <h3 class="card-title" data-en="Sticky bar" data-ar="الشريط اللاصق">Sticky bar</h3>
           </div>
-          <div class="page-cluster">
+          <div class="page-row-pack">
             <div class="card"><p class="card-description" data-en="Scroll this box — the bar above stays pinned to the top while these rows scroll past." data-ar="مرّر هذا الصندوق — يبقى الشريط أعلاه مثبتًا في الأعلى بينما تمرّ هذه الصفوف.">Scroll this box — the bar above stays pinned to the top while these rows scroll past.</p></div>
             <div class="card"><p class="card-description" data-en="Scroll this box — the bar above stays pinned to the top while these rows scroll past." data-ar="مرّر هذا الصندوق — يبقى الشريط أعلاه مثبتًا في الأعلى بينما تمرّ هذه الصفوف.">Scroll this box — the bar above stays pinned to the top while these rows scroll past.</p></div>
             <div class="card"><p class="card-description" data-en="Scroll this box — the bar above stays pinned to the top while these rows scroll past." data-ar="مرّر هذا الصندوق — يبقى الشريط أعلاه مثبتًا في الأعلى بينما تمرّ هذه الصفوف.">Scroll this box — the bar above stays pinned to the top while these rows scroll past.</p></div>

@@ -138,11 +138,11 @@
         return col;
       }
 
-      // Builds a page-cluster of swatches from `pairs` ([role, caption]
+      // Builds a page-row-pack of swatches from `pairs` ([role, caption]
       // entries) into `container`.
       function buildCluster(container, pairs) {
         var cluster = document.createElement('div');
-        cluster.className = 'page-cluster';
+        cluster.className = 'page-row-pack';
         pairs.forEach(function (p) { cluster.appendChild(swatch(p[0], p[1])); });
         container.appendChild(cluster);
       }

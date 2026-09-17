@@ -125,32 +125,40 @@
   background: var(--bravoixr-color-surface-sunken);
 }
 
-/* A horizontal stack that wraps — items sit inline-start to inline-end and drop
- * to the next row when the container runs out of inline space. Items keep their
- * own block size (align-items: start) rather than stretching to the row's tallest,
- * so a row of unequal-height items stays ragged instead of padding the short ones. */
-.page-cluster {
+/* Layout primitives — named by two facets: axis (row = horizontal main axis,
+ * column = vertical main axis) and sizing (pack = children keep their own
+ * size, fill = children stretch to fill, split = a fixed two-region layout).
+ * The name alone predicts the mechanics; see .page-row-split further down for
+ * the third sizing behavior. */
+
+/* Row, pack — a horizontal stack that wraps: items sit inline-start to inline-
+ * end and drop to the next row when the container runs out of inline space.
+ * Items keep their own block size (align-items: start) rather than stretching
+ * to the row's tallest, so a row of unequal-height items stays ragged instead
+ * of padding the short ones. */
+.page-row-pack {
   display: flex;
   flex-wrap: wrap;
   gap: var(--bravoixr-spacing-5);
   align-items: start;
 }
 
-/* A vertical stack — items sit block-start to block-end with a consistent gap
- * between them. Items keep their own inline size (align-items: start) rather
- * than stretching to the container's width, mirroring .page-cluster's ragged-fit
- * behavior for its cross axis. */
-.page-stack {
+/* Column, pack — a vertical stack: items sit block-start to block-end with a
+ * consistent gap between them. Items keep their own inline size (align-items:
+ * start) rather than stretching to the container's width, mirroring
+ * .page-row-pack's ragged-fit behavior for its cross axis. */
+.page-column-pack {
   display: flex;
   flex-direction: column;
   gap: var(--bravoixr-spacing-5);
   align-items: start;
 }
 
-/* A vertical group of full-width rows — a block-rhythm gap between block-level
- * children (typically .page-row-header rows) that keeps their own full inline
- * size rather than shrink-wrapping, unlike .page-stack. */
-.page-row-group {
+/* Column, fill — a vertical group of full-width rows: a block-rhythm gap
+ * between block-level children (typically .page-row-header rows) that keeps
+ * their own full inline size rather than shrink-wrapping, unlike
+ * .page-column-pack. */
+.page-column-fill {
   display: grid;
   gap: var(--bravoixr-spacing-5);
 }
@@ -247,9 +255,11 @@
   z-index: var(--bravoixr-layer-sticky);
 }
 
-/* A non-wrapping flex row that hosts a .page-sidebar and a .page-main side by
- * side, keeping them on one row with the gap between them. */
-.page-shell {
+/* Row, split — a non-wrapping flex row that hosts a .page-sidebar and a
+ * .page-main side by side, keeping them on one row with the gap between
+ * them. The third sizing behavior alongside pack/fill: a fixed two-region
+ * layout rather than a general-purpose stack. */
+.page-row-split {
   display: flex;
   gap: var(--bravoixr-spacing-6);
 }

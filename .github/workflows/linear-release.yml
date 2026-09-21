@@ -20,16 +20,25 @@ jobs:
         id: version
         run: echo "version=${GITHUB_REF_NAME#bravoixr/}" >> "$GITHUB_OUTPUT"
 
+      - name: Load Linear access key from 1Password
+        id: op
+        uses: 1password/load-secrets-action@v2
+        with:
+          export-env: false
+        env:
+          OP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
+          LINEAR_ACCESS_KEY: op://Dev/Linear/LINEAR_ACCESS_KEY
+
       - name: Sync Linear release
         uses: linear/linear-release-action@v0
         with:
-          access_key: ${{ secrets.LINEAR_ACCESS_KEY }}
+          access_key: ${{ steps.op.outputs.LINEAR_ACCESS_KEY }}
           version: ${{ steps.version.outputs.version }}
           include_paths: apps/bravoixr/**
 
       - name: Complete Linear release
         uses: linear/linear-release-action@v0
         with:
-          access_key: ${{ secrets.LINEAR_ACCESS_KEY }}
+          access_key: ${{ steps.op.outputs.LINEAR_ACCESS_KEY }}
           command: complete
           version: ${{ steps.version.outputs.version }}

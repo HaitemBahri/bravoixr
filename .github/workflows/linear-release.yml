@@ -27,7 +27,7 @@ jobs:
           export-env: false
         env:
           OP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
-          LINEAR_ACCESS_KEY: op://Dev/Linear/LINEAR_ACCESS_KEY
+          LINEAR_ACCESS_KEY: op://Dev/Linear/credential
 
       - name: Sync Linear release
         uses: linear/linear-release-action@v0

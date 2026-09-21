@@ -33,6 +33,7 @@ jobs:
         uses: linear/linear-release-action@v0
         with:
           access_key: ${{ steps.op.outputs.LINEAR_ACCESS_KEY }}
+          name: bravoixr ${{ steps.version.outputs.version }}
           version: ${{ steps.version.outputs.version }}
           include_paths: apps/bravoixr/**
 

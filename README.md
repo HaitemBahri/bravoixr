@@ -45,7 +45,7 @@ apps/preview/           preview site for the token layers and component classes
 
 Five measurable categories (color, typography, layout, motion, icons) run through `identity/`, `primitives/`, and `semantics/`. **Feel** (density, taste) and **media** (decorative-artwork direction) are `identity/`-only. `layout` combines spacing, sizing, radius, borders, elevation, and z-index.
 
-> Full, always-current usage instructions for consuming projects live in Notion: [Bravoixr v0.3.3](https://app.notion.com/p/3b17e19de5c28154bec8c701d67a9b3f) — kept in sync with each release.
+> Full, always-current usage instructions for consuming projects live in Notion: [Bravoixr v0.4.2](https://app.notion.com/p/3b17e19de5c28154bec8c701d67a9b3f) — kept in sync with each release.
 
 ## Consuming bravoixr
 
@@ -73,7 +73,9 @@ This works without CSS specificity tricks: daisyUI's CSS ships inside Tailwind's
 
 ## Releases
 
-Versioned with a release cadence. `release.json.currentRelease` is the last shipped release; consumers pin a version.
+Versioned with a release cadence. `apps/bravoixr/release.json`'s `currentRelease` is the last shipped release; consumers pin a version.
+
+Each release is also recorded in Linear. Pushing a `bravoixr/vX.Y.Z` tag runs the `Linear Release` GitHub Actions workflow (`.github/workflows/linear-release.yml`), which creates and completes a matching Linear release from the commits under `apps/bravoixr/`.
 
 ## Targets
 

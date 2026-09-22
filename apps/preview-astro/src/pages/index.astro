@@ -8,6 +8,7 @@ import Page from 'bravoixr-astro/components/Page.astro';
 import PageBody from 'bravoixr-astro/components/PageBody.astro';
 import PageHeader from 'bravoixr-astro/components/PageHeader.astro';
 import PageSection from 'bravoixr-astro/components/PageSection.astro';
+import PageFooter from 'bravoixr-astro/components/PageFooter.astro';
 ---
 
 <!doctype html>
@@ -53,5 +54,21 @@ import PageSection from 'bravoixr-astro/components/PageSection.astro';
         <p>Capped and centred, absorbing the leftover block space.</p>
       </PageSection>
     </PageBody>
+
+    <PageFooter>
+      <div>
+        <h6 class="footer-title">bravoixr</h6>
+        <span>© 2026</span>
+      </div>
+      <div>
+        <h6 class="footer-title">Version</h6>
+        <span>v0.4.5</span>
+      </div>
+      <nav>
+        <h6 class="footer-title">Explore</h6>
+        <a class="link link-hover" href="#primitives">Primitives</a>
+        <a class="link link-hover" href="#semantics">Semantics</a>
+      </nav>
+    </PageFooter>
   </Page>
 </html>

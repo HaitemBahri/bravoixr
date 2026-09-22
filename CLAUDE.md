@@ -26,6 +26,10 @@ The shared design identity system. See `README.md` for the full overview. In sho
 
 The design identity system lives at `apps/bravoixr/` (deployable, per the global monorepo `apps/<app>/` convention); its preview site is the sibling app `apps/preview/`, with no versioning of its own. Paths below are relative to `apps/bravoixr/`.
 
+**Astro migration — in progress.** Two further apps are growing alongside the originals: `apps/bravoixr-astro/` (the system as an Astro package, absorbing each component as it migrates from a CSS class to an `.astro` component) and `apps/preview-astro/` (its preview). All four coexist until the migration completes, at which point `apps/bravoixr/` and `apps/preview/` are deleted and `bravoixr-astro` is renamed to `bravoixr`. Only the two new apps are npm workspace members — `apps/bravoixr/` and `apps/preview/` have no `package.json` and are not part of the workspace.
+
+**Freeze rule.** `apps/bravoixr-astro/` holds verbatim copies of `identity/`, `primitives/`, `semantics/` and `daisyui/`. Those four folders are **frozen in `apps/bravoixr/`** for the duration of the migration: no token, identity or bridge edit lands there. All such work goes to `apps/bravoixr-astro/` only. This removes copy drift by construction — there is exactly one editable copy.
+
 - `identity/` — human-readable design decisions, one Markdown file per category. The creative source the token layers transcribe from.
 - `primitives/` — raw literal CSS custom properties (no meaning, no `var()`). The portable source of truth.
 - `semantics/` — meaning mapped onto primitives (`--bravoixr-color-primary`, `--bravoixr-btn-height`). The single seam components reference. Dark theme is handled **inline** here (`[data-theme="dark"]`), no separate `themes/` folder.
@@ -34,6 +38,8 @@ The design identity system lives at `apps/bravoixr/` (deployable, per the global
 - `index.css` — single entry point. Import order is fixed: **`primitives/` → `semantics/` → `daisyui/` → `components/`**.
 
 ## Consumption
+
+**During the Astro migration, this section describes `apps/bravoixr/`, which remains the only consumable form.** `apps/bravoixr-astro/` is private, unpublished and resolvable only through a local workspace link — nothing consumes it yet, and consumers keep applying the classes below unchanged. The typed-component API replaces this section at cutover, not before.
 
 bravoixr is layered as a **public/internal contract**, split across two delivery mechanisms depending on whether a component has migrated to daisyUI:
 
@@ -81,6 +87,8 @@ Five measurable categories carry through `identity/`, `primitives/`, and `semant
 ## Releases
 
 `release.json.currentRelease` is the source of truth for the active release (`vMAJOR.MINOR.PATCH`). Update it only during an explicit release cut.
+
+**During the Astro migration:** neither `apps/bravoixr-astro/` nor `apps/preview-astro/` carries a `version` field in its `package.json`, deliberately — so no native manifest competes with `release.json`, which stays the sole version source of truth. The shift to `package.json` happens at cutover, not before. Note also that `.github/workflows/linear-release.yml` filters on `include_paths: apps/bravoixr/**`, which does not match `apps/bravoixr-astro/**`; this is left as-is because the cutover rename restores the glob on its own.
 
 **Keep the consumer usage-instructions page in sync.** As part of each release cut, update the Notion page linked above in place — rename its title to `Bravoixr vX.Y.Z` and refresh its content to match the new release, including its **Overridden classes** (gap-overrides on daisyUI selectors) and **bravoixr's own classes** (no daisyUI equivalent) sections — re-derive both from `apps/bravoixr/components/*.css` each time rather than hand-copying the previous release's lists, since classes get added or migrated over time. Same page, same URL, so the links in this file and README.md never go stale.
 

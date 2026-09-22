@@ -17,6 +17,9 @@
 node_modules/
 dist/
 
+# Astro generated types
+.astro/
+
 # .NET build output (if consumed by a .NET host)
 bin/
 obj/

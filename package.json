@@ -1,0 +1,8 @@
+{
+  "name": "bravoixr-monorepo",
+  "private": true,
+  "workspaces": [
+    "apps/bravoixr-astro",
+    "apps/preview-astro"
+  ]
+}

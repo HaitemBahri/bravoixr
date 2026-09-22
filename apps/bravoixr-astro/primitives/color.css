@@ -1,0 +1,112 @@
+/* Primitive — Color
+ * Raw, literal color ramps transcribed from identity/color.md.
+ * No meaning, no theming, no functions. Brand, state, accents, and neutrals only.
+ * Info reuses the blue ramp (no separate hue). Gradients are not primitives. */
+
+:root {
+  /* Brand — Blue (primary; also serves info) */
+  --bravoixr-blue-50: #eef3ff;
+  --bravoixr-blue-100: #d5def3;
+  --bravoixr-blue-200: #bcc9e7;
+  --bravoixr-blue-300: #a3b4da;
+  --bravoixr-blue-400: #8b9fcd;
+  --bravoixr-blue-500: #738bc1;
+  --bravoixr-blue-600: #5c77b4;
+  --bravoixr-blue-700: #4663a7;
+  --bravoixr-blue-800: #304f99;
+  --bravoixr-blue-900: #1a3b8c;
+  --bravoixr-blue-950: #04257e;
+
+  /* Brand — Teal (secondary) */
+  --bravoixr-teal-50: #e5f7f7;
+  --bravoixr-teal-100: #cae3e3;
+  --bravoixr-teal-200: #afcfcf;
+  --bravoixr-teal-300: #95bbbc;
+  --bravoixr-teal-400: #7ba8a9;
+  --bravoixr-teal-500: #609597;
+  --bravoixr-teal-600: #458285;
+  --bravoixr-teal-700: #277073;
+  --bravoixr-teal-800: #005d61;
+  --bravoixr-teal-900: #00494d;
+  --bravoixr-teal-950: #003639;
+
+  /* State — Green (success) */
+  --bravoixr-green-50: #ebf7e5;
+  --bravoixr-green-100: #d1e3c8;
+  --bravoixr-green-200: #b7d0ac;
+  --bravoixr-green-300: #9dbd90;
+  --bravoixr-green-400: #84aa74;
+  --bravoixr-green-500: #6a9759;
+  --bravoixr-green-600: #51853d;
+  --bravoixr-green-700: #37731e;
+  --bravoixr-green-800: #206000;
+  --bravoixr-green-900: #154b00;
+  --bravoixr-green-950: #0c3700;
+
+  /* State — Yellow (warning) */
+  --bravoixr-yellow-50: #fbf5de;
+  --bravoixr-yellow-100: #ebe0be;
+  --bravoixr-yellow-200: #dbcc9e;
+  --bravoixr-yellow-300: #ccb77e;
+  --bravoixr-yellow-400: #bda25d;
+  --bravoixr-yellow-500: #af8d39;
+  --bravoixr-yellow-600: #a07800;
+  --bravoixr-yellow-700: #8c6600;
+  --bravoixr-yellow-800: #775500;
+  --bravoixr-yellow-900: #624400;
+  --bravoixr-yellow-950: #4e3400;
+
+  /* State — Red (error) */
+  --bravoixr-red-50: #ffeeec;
+  --bravoixr-red-100: #f8d3ce;
+  --bravoixr-red-200: #efb9b1;
+  --bravoixr-red-300: #e69e95;
+  --bravoixr-red-400: #db8479;
+  --bravoixr-red-500: #cf685e;
+  --bravoixr-red-600: #c34b44;
+  --bravoixr-red-700: #b52828;
+  --bravoixr-red-800: #9f0013;
+  --bravoixr-red-900: #80000e;
+  --bravoixr-red-950: #620009;
+
+  /* Accent — Purple (tiny usages) */
+  --bravoixr-purple-50: #f5efff;
+  --bravoixr-purple-100: #e1d7f5;
+  --bravoixr-purple-200: #cebfe9;
+  --bravoixr-purple-300: #baa7dc;
+  --bravoixr-purple-400: #a890d0;
+  --bravoixr-purple-500: #9678c3;
+  --bravoixr-purple-600: #8461b6;
+  --bravoixr-purple-700: #7349a9;
+  --bravoixr-purple-800: #62309c;
+  --bravoixr-purple-900: #520c8e;
+  --bravoixr-purple-950: #3e006f;
+
+  /* Accent — Pink (tiny usages) */
+  --bravoixr-pink-50: #ffecf5;
+  --bravoixr-pink-100: #f5d1e1;
+  --bravoixr-pink-200: #eab7cd;
+  --bravoixr-pink-300: #dd9cba;
+  --bravoixr-pink-400: #d182a6;
+  --bravoixr-pink-500: #c36893;
+  --bravoixr-pink-600: #b54c80;
+  --bravoixr-pink-700: #a62e6d;
+  --bravoixr-pink-800: #94005a;
+  --bravoixr-pink-900: #770046;
+  --bravoixr-pink-950: #5a0034;
+
+  /* Neutrals — cool gray (0 and 1000 are untinted anchors) */
+  --bravoixr-neutral-0: #ffffff;
+  --bravoixr-neutral-50: #f5f6f9;
+  --bravoixr-neutral-100: #eaecf0;
+  --bravoixr-neutral-200: #d5d8de;
+  --bravoixr-neutral-300: #bbbec5;
+  --bravoixr-neutral-400: #9498a0;
+  --bravoixr-neutral-500: #6f727a;
+  --bravoixr-neutral-600: #565960;
+  --bravoixr-neutral-700: #3d4044;
+  --bravoixr-neutral-800: #282a2e;
+  --bravoixr-neutral-900: #181a1d;
+  --bravoixr-neutral-950: #0b0c0f;
+  --bravoixr-neutral-1000: #000000;
+}

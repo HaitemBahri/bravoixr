@@ -7,6 +7,7 @@ import 'bravoixr-astro/index.css';
 import Page from 'bravoixr-astro/components/Page.astro';
 import PageBody from 'bravoixr-astro/components/PageBody.astro';
 import PageHeader from 'bravoixr-astro/components/PageHeader.astro';
+import PageSection from 'bravoixr-astro/components/PageSection.astro';
 ---
 
 <!doctype html>
@@ -42,8 +43,15 @@ import PageHeader from 'bravoixr-astro/components/PageHeader.astro';
     </PageHeader>
 
     <PageBody>
-      <p>Page canvas — surface fill, document text colour, full-viewport flex column.</p>
-      <p>Content column — capped and centred, absorbing the leftover block space.</p>
+      <PageSection>
+        <h2>Page canvas</h2>
+        <p>Surface fill, document text colour, full-viewport flex column.</p>
+      </PageSection>
+
+      <PageSection>
+        <h2>Content column</h2>
+        <p>Capped and centred, absorbing the leftover block space.</p>
+      </PageSection>
     </PageBody>
   </Page>
 </html>

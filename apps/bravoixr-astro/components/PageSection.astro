@@ -1,0 +1,15 @@
+---
+/* Component — PageSection
+ * A top-level section of the page canvas — carries the block rhythm that
+ * separates one section from the next. A plain wrapper inside PageBody. */
+---
+
+<section>
+  <slot />
+</section>
+
+<style>
+  section {
+    margin-block-end: var(--bravoixr-spacing-10);
+  }
+</style>

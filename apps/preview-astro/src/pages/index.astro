@@ -6,6 +6,7 @@ import '../styles/global.css';
 import 'bravoixr-astro/index.css';
 import Page from 'bravoixr-astro/components/Page.astro';
 import PageBody from 'bravoixr-astro/components/PageBody.astro';
+import PageHeader from 'bravoixr-astro/components/PageHeader.astro';
 ---
 
 <!doctype html>
@@ -34,6 +35,12 @@ import PageBody from 'bravoixr-astro/components/PageBody.astro';
   </head>
 
   <Page>
+    <PageHeader>
+      <span slot="start">bravoixr</span>
+      <span slot="center">Welcome</span>
+      <button slot="end" class="btn btn-primary" type="button">Action</button>
+    </PageHeader>
+
     <PageBody>
       <p>Page canvas — surface fill, document text colour, full-viewport flex column.</p>
       <p>Content column — capped and centred, absorbing the leftover block space.</p>

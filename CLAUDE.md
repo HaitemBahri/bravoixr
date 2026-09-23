@@ -78,7 +78,15 @@ Every class in `components/` — bravoixr's own classes and gap-override rules a
 
 ### Authoring an Astro component (`apps/bravoixr-astro/components/`)
 
-**Layout.** Components are grouped by family, one folder each: `components/page/` (the page canvas and its chrome) and `components/container/` (`ContainerStack`, `ContainerGrid` — arrangement only, no appearance of their own), with `components/card/`, `components/text/`, `components/icon/` as those land. **Family folders are kebab-case; component files stay PascalCase** — `components/page/PageBody.astro`. The two casings in one path are deliberate: the folder is a path segment, so the workspace tie-breaker gives it kebab-case, while the filename *is* the identifier you import. `.astro` files cannot be re-exported through a JS barrel, so there is no index file and consumers import the full path.
+**Layout.** Components are grouped by family, one folder each, and each component's name carries its family — `page/PageBody.astro`, `display/DisplayCardTitle.astro`. Three families exist, splitting by what a component is *for*:
+
+| Folder | Role |
+| -- | -- |
+| `page/` | the page canvas and its chrome |
+| `container/` | arrangement — no appearance of their own |
+| `display/` | presentation of content |
+
+So a card is `display/DisplayCard*`, not a `card/` folder of its own: card is one display component, not a family. Future display components (badge, avatar, table, stat) join it there, and `text`/`icon` get their own families when they land. **Family folders are kebab-case; component files stay PascalCase** — `components/page/PageBody.astro`. The two casings in one path are deliberate: the folder is a path segment, so the workspace tie-breaker gives it kebab-case, while the filename *is* the identifier you import. `.astro` files cannot be re-exported through a JS barrel, so there is no index file and consumers import the full path.
 
 Note Astro derives a component's scope hash from its **file path**, so moving a component changes every `data-astro-cid-…` it emits, in both the HTML and the CSS. Nothing renders differently, but a pure file move produces a wholesale diff in the built output — compare by canonicalising the ids rather than byte-for-byte, and expect any snapshot of built CSS to need regenerating.
 

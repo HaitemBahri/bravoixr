@@ -1,7 +1,7 @@
 ---
-/* Component — CardImage
+/* Component — DisplayCardImage
  * A full-bleed media region that cancels the card's padding so artwork runs
- * edge to edge. Always the first child of a Card — both the padding
+ * edge to edge. Always the first child of a DisplayCard — both the padding
  * cancellation below and daisyUI's own figure:first-child rules depend on it.
  *
  * Renders a <figure> rather than a plain wrapper so daisyUI's corner handling
@@ -41,7 +41,7 @@ const { src, alt } = Astro.props;
   /* Side layout — cancel both block pads and the inline-start pad so the image
    * runs the full card height flush to the leading edge, then restore a gap
    * before the content beside it. Keyed off daisyUI's own .card-side, which
-   * Card owns: the class is card-level, so it cannot be passed down as a prop.
+   * DisplayCard owns: the class is card-level, so it cannot be passed down as a prop.
    * Compiles to `.card-side figure[data-astro-cid-…]`.
    *
    * This is a layout variant, not an ambient-context conditional — see the

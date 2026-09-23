@@ -14,12 +14,12 @@ import PageFooterColumn from 'bravoixr-astro/components/page/PageFooterColumn.as
 import PageFooterColumnItem from 'bravoixr-astro/components/page/PageFooterColumnItem.astro';
 import ContainerStack from 'bravoixr-astro/components/container/ContainerStack.astro';
 import ContainerGrid from 'bravoixr-astro/components/container/ContainerGrid.astro';
-import Card from 'bravoixr-astro/components/Card.astro';
-import CardImage from 'bravoixr-astro/components/CardImage.astro';
-import CardTitleBadge from 'bravoixr-astro/components/CardTitleBadge.astro';
-import CardTitle from 'bravoixr-astro/components/CardTitle.astro';
-import CardText from 'bravoixr-astro/components/CardText.astro';
-import CardFooter from 'bravoixr-astro/components/CardFooter.astro';
+import DisplayCard from 'bravoixr-astro/components/display/DisplayCard.astro';
+import DisplayCardImage from 'bravoixr-astro/components/display/DisplayCardImage.astro';
+import DisplayCardTitleBadge from 'bravoixr-astro/components/display/DisplayCardTitleBadge.astro';
+import DisplayCardTitle from 'bravoixr-astro/components/display/DisplayCardTitle.astro';
+import DisplayCardText from 'bravoixr-astro/components/display/DisplayCardText.astro';
+import DisplayCardFooter from 'bravoixr-astro/components/display/DisplayCardFooter.astro';
 
 // Same placeholder artwork the existing preview uses for its card-media demos.
 const placeholder =
@@ -78,23 +78,23 @@ const placeholder =
         title="Previews"
         description="Rendered specimens of each component, shown in both themes and both reading directions."
       >
-        <Card>
-          <CardImage src={placeholder} alt="" />
-          <CardTitleBadge>New</CardTitleBadge>
-          <CardTitle>Card title</CardTitle>
-          <CardText>Full-bleed media above the content.</CardText>
-          <CardText>A second line, exercising the repeating case.</CardText>
-          <CardFooter>
+        <DisplayCard>
+          <DisplayCardImage src={placeholder} alt="" />
+          <DisplayCardTitleBadge>New</DisplayCardTitleBadge>
+          <DisplayCardTitle>Card title</DisplayCardTitle>
+          <DisplayCardText>Full-bleed media above the content.</DisplayCardText>
+          <DisplayCardText>A second line, exercising the repeating case.</DisplayCardText>
+          <DisplayCardFooter>
             <button class="btn btn-ghost" type="button">Cancel</button>
             <button class="btn btn-primary" type="button">Save</button>
-          </CardFooter>
-        </Card>
+          </DisplayCardFooter>
+        </DisplayCard>
 
-        <Card side>
-          <CardImage src={placeholder} alt="" />
-          <CardTitle>Card title</CardTitle>
-          <CardText>Media beside the content, at the inline start.</CardText>
-        </Card>
+        <DisplayCard side>
+          <DisplayCardImage src={placeholder} alt="" />
+          <DisplayCardTitle>Card title</DisplayCardTitle>
+          <DisplayCardText>Media beside the content, at the inline start.</DisplayCardText>
+        </DisplayCard>
 
         <PageSubSection
           title="ContainerStack — row"

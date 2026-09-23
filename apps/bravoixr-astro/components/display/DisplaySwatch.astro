@@ -1,0 +1,54 @@
+---
+/* Component — DisplaySwatch
+ * The shell of a colour specimen: a card-like surface with a centred title,
+ * holding one or more DisplaySwatchColor children.
+ *
+ * The colours live in children rather than in props here because a shell may
+ * show more than one — a surface and the text colour on it, say — and a single
+ * hex label on the shell could not say which colour it described. Each child
+ * carries its own value and label.
+ *
+ * Renders the card surface itself rather than composing DisplayCard:
+ * DisplayCardTitle is not centred, and the encapsulation rule stops this
+ * component reaching in to centre it. The duplication is the trade-off the
+ * migration accepted in exchange for components that own their styling.
+ *
+ * The title is a <p>, not a heading. A colour ramp produces dozens of swatches,
+ * and a heading each would fill the document outline with labels rather than
+ * structure. */
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<div>
+  <p>{title}</p>
+  <slot />
+</div>
+
+<style>
+  div {
+    display: flex;
+    gap: var(--bravoixr-spacing-3);
+    flex-wrap: wrap;
+    padding: var(--bravoixr-spacing-5);
+    background: var(--bravoixr-color-surface-raised);
+    color: var(--bravoixr-color-text);
+    border-radius: var(--bravoixr-radius-card);
+  }
+
+  /* Full-width so the colours wrap beneath it rather than beside it. */
+  p {
+    flex-basis: 100%;
+    font-family: var(--bravoixr-font-heading);
+    font-size: var(--bravoixr-text-context-title);
+    font-weight: var(--bravoixr-weight-subsection-title);
+    line-height: var(--bravoixr-leading-display);
+    letter-spacing: var(--bravoixr-tracking-display);
+    text-align: center;
+    margin-block: 0 var(--bravoixr-spacing-3);
+  }
+</style>

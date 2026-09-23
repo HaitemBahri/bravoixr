@@ -1,0 +1,88 @@
+---
+/* Component — DisplaySwatchColor
+ * One colour inside a DisplaySwatch: the colour itself over a checkerboard,
+ * with its hex beneath it on the same checkerboard.
+ *
+ * The checkerboard exists to give an arbitrary colour a visible edge without a
+ * border. --bravoixr-neutral-0 is #ffffff and the raised surface resolves to
+ * that same token, so a white swatch on a plain card is invisible. Known limit,
+ * accepted: a checker built from neutrals disappears against *some* neutral
+ * swatch — this pair collides with neutral-50 and neutral-100, which both exist
+ * in the ramp.
+ *
+ * It uses the page and sunken surface roles rather than raised and sunken, so
+ * neither square is pure white in light theme and the dark pairing stays gentle.
+ * Both are semantic roles, so the checkerboard themes — which matters because
+ * the hex sits on it and takes --bravoixr-color-text, and the two would part
+ * company in dark mode if the field were fixed.
+ *
+ * `color` and `hex` are separate props on purpose. The fill comes from the token
+ * reference, so the swatch proves the token actually resolves — the failure that
+ * matters for a design system. The cost is that the two can drift apart; a
+ * build-time derivation from primitives/color.css would close that, but it
+ * belongs to the preview rather than here.
+ *
+ * `color` is an arbitrary value rather than one of a few known states, so it
+ * reaches the CSS as a custom property rather than a class — see CLAUDE.md,
+ * which reserves the data-attribute mechanism for enumerated variants. It is
+ * set directly on the root: Astro's define:vars stamps the same declaration
+ * onto every element in the template, and since custom properties inherit, the
+ * root alone is enough. */
+
+interface Props {
+  color: string;
+  hex: string;
+}
+
+const { color, hex } = Astro.props;
+---
+
+<div style={`--swatch-color: ${color}`}>
+  <span />
+  <code>{hex}</code>
+</div>
+
+<style>
+  div {
+    display: grid;
+    justify-items: center;
+    gap: var(--bravoixr-spacing-3);
+    padding: var(--bravoixr-spacing-3);
+
+    /* Checkerboard: two offset 45° gradients over a base fill. The tile is
+     * spacing-3 (8px), so the pattern repeats every 16px. */
+    background-color: var(--bravoixr-color-surface-page);
+    background-image:
+      linear-gradient(
+        45deg,
+        var(--bravoixr-color-surface-sunken) 25%,
+        transparent 25%,
+        transparent 75%,
+        var(--bravoixr-color-surface-sunken) 75%
+      ),
+      linear-gradient(
+        45deg,
+        var(--bravoixr-color-surface-sunken) 25%,
+        transparent 25%,
+        transparent 75%,
+        var(--bravoixr-color-surface-sunken) 75%
+      );
+    background-size:
+      calc(2 * var(--bravoixr-spacing-3)) calc(2 * var(--bravoixr-spacing-3));
+    background-position: 0 0, var(--bravoixr-spacing-3) var(--bravoixr-spacing-3);
+    border-radius: var(--bravoixr-radius-card);
+  }
+
+  span {
+    inline-size: var(--bravoixr-demo-box-size);
+    block-size: var(--bravoixr-demo-box-size);
+    background: var(--swatch-color);
+    border-radius: var(--bravoixr-radius-card);
+  }
+
+  code {
+    font-family: var(--bravoixr-font-code);
+    font-size: var(--bravoixr-text-code-label);
+    color: var(--bravoixr-color-text);
+  }
+</style>

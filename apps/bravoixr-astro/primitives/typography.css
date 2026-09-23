@@ -1,0 +1,53 @@
+/* Primitive — Typography
+ * Raw, literal type values transcribed from identity/typography.md.
+ * Font stacks, size scales (rem), weights, line-heights, letter-spacing. No functions.
+ * Base: 16px = 1rem. px values in the identity doc are documentation only. */
+
+:root {
+  /* Font stacks (family + generic only) */
+  --bravoixr-font-latin: 'Bricolage Grotesque', sans-serif;
+  --bravoixr-font-arabic: 'IBM Plex Sans Arabic', sans-serif;
+  --bravoixr-font-mono: 'JetBrains Mono', monospace;
+
+  /* Heading scale — h1 (84px) down to h7 (19px) */
+  --bravoixr-text-h1: 5.25rem;
+  --bravoixr-text-h2: 4.0625rem;
+  --bravoixr-text-h3: 3.1875rem;
+  --bravoixr-text-h4: 2.5rem;
+  --bravoixr-text-h5: 1.9375rem;
+  --bravoixr-text-h6: 1.5rem;
+  --bravoixr-text-h7: 1.1875rem;
+
+  /* Body scale — body1 (20px) down to body5 (12px); body3 is the default */
+  --bravoixr-text-body1: 1.25rem;
+  --bravoixr-text-body2: 1.125rem;
+  --bravoixr-text-body3: 1rem;
+  --bravoixr-text-body4: 0.875rem;
+  --bravoixr-text-body5: 0.75rem;
+
+  /* Code — code (14px), code2 (12px) */
+  --bravoixr-text-code: 0.875rem;
+  --bravoixr-text-code2: 0.75rem;
+
+  /* Weights (200–700, covered by both grotesques) */
+  --bravoixr-weight-extralight: 200;
+  --bravoixr-weight-light: 300;
+  --bravoixr-weight-regular: 400;
+  --bravoixr-weight-medium: 500;
+  --bravoixr-weight-semibold: 600;
+  --bravoixr-weight-bold: 700;
+
+  /* Line-heights (unitless) */
+  --bravoixr-leading-heading: 1.1;
+  --bravoixr-leading-body: 1.6;
+  --bravoixr-leading-body-arabic: 1.7;
+  --bravoixr-leading-code: 1.5;
+
+  /* Letter-spacing */
+  --bravoixr-tracking-heading: -0.02em;
+  --bravoixr-tracking-caps: 0.06em;
+  --bravoixr-tracking-normal: 0;
+
+  /* Measure — max line length for readable prose */
+  --bravoixr-measure-prose: 60ch;
+}

@@ -1,0 +1,61 @@
+---
+/* Component — PageSubSection
+ * The tier below PageSection — a named block inside a section, carrying a
+ * tighter block rhythm than the sections it sits between.
+ *
+ * Net-new rather than a migration: page.css has no .page-subsection rule, so
+ * the spacing-7 rhythm is this component's own.
+ *
+ * Mirrors PageSection's API exactly — optional, independent title and
+ * description props, content via the default slot — so the two tiers are
+ * interchangeable in use and differ only in heading level and rhythm. The
+ * heading is fixed at <h3>, one below PageSection's <h2>.
+ *
+ * Typography is transcribed from text.css, built from the same semantic tokens:
+ * the heading takes .text-subsection-title, and the description matches
+ * PageSection's exactly — .text-body's roles plus the muted colour and measure
+ * cap. See PageSection for why the declarations live here rather than
+ * referencing those classes.
+ *
+ * Nothing rendered here carries a class — bare element selectors plus Astro's
+ * scoping keep every rule below reachable only through this component. */
+
+interface Props {
+  /* Explicit `| undefined` — tsconfig extends astro/tsconfigs/strictest, where
+   * exactOptionalPropertyTypes means `?` alone does not admit undefined. */
+  title?: string | undefined;
+  description?: string | undefined;
+}
+
+const { title, description } = Astro.props;
+---
+
+<section>
+  {title && <h3>{title}</h3>}
+  {description && <p>{description}</p>}
+  <slot />
+</section>
+
+<style>
+  section {
+    margin-block-end: var(--bravoixr-spacing-7);
+  }
+
+  h3 {
+    font-family: var(--bravoixr-font-heading);
+    font-size: var(--bravoixr-text-subsection-title);
+    font-weight: var(--bravoixr-weight-subsection-title);
+    line-height: var(--bravoixr-leading-display);
+    letter-spacing: var(--bravoixr-tracking-display);
+  }
+
+  p {
+    font-family: var(--bravoixr-font-body);
+    font-size: var(--bravoixr-text-body);
+    font-weight: var(--bravoixr-weight-body);
+    line-height: var(--bravoixr-leading-prose);
+    letter-spacing: var(--bravoixr-tracking-prose);
+    max-inline-size: var(--bravoixr-measure-page-description);
+    color: var(--bravoixr-color-text-muted);
+  }
+</style>

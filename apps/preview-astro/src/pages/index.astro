@@ -1,0 +1,86 @@
+---
+// Demo page for the migrated page components. Grows as each component lands.
+// Order matters: daisyUI (layered) first, then bravoixr (unlayered), which
+// always wins regardless of load order.
+import '../styles/global.css';
+import 'bravoixr-astro/index.css';
+import Page from 'bravoixr-astro/components/Page.astro';
+import PageBody from 'bravoixr-astro/components/PageBody.astro';
+import PageHeader from 'bravoixr-astro/components/PageHeader.astro';
+import PageSection from 'bravoixr-astro/components/PageSection.astro';
+import PageSubSection from 'bravoixr-astro/components/PageSubSection.astro';
+import PageFooter from 'bravoixr-astro/components/PageFooter.astro';
+import PageFooterColumn from 'bravoixr-astro/components/PageFooterColumn.astro';
+import PageFooterColumnItem from 'bravoixr-astro/components/PageFooterColumnItem.astro';
+---
+
+<!doctype html>
+<html lang="en" dir="ltr" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>bravoixr — preview (Astro)</title>
+
+    <!-- Pre-paint: apply stored theme/lang before first paint (no flash). -->
+    <script is:inline>
+      (function () {
+        var t = localStorage.getItem('bravoixr-theme') || 'light';
+        var l = localStorage.getItem('bravoixr-lang') || 'en';
+        var r = document.documentElement;
+        r.setAttribute('data-theme', t);
+        if (l === 'ar') { r.setAttribute('dir', 'rtl'); r.setAttribute('lang', 'ar'); }
+        else { r.setAttribute('dir', 'ltr'); r.setAttribute('lang', 'en'); }
+      })();
+    </script>
+
+    <!-- Fonts: loaded by the preview (the consumer), never by the system CSS. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=IBM+Plex+Sans+Arabic:wght@200;300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" />
+  </head>
+
+  <Page>
+    <PageHeader>
+      <span slot="start">bravoixr</span>
+      <span slot="center">Welcome</span>
+      <button slot="end" class="btn btn-primary" type="button">Action</button>
+    </PageHeader>
+
+    <PageBody>
+      <PageSection
+        title="Design Tokens"
+        description="The two token tiers the system is built from. Primitives hold the raw values; semantics give them meaning, and are the only tier components are allowed to read."
+      >
+        <PageSubSection
+          title="Primitives"
+          description="Raw literal values with no meaning attached — the portable source of truth, exported as-is and never consumed directly."
+        />
+
+        <PageSubSection
+          title="Semantics"
+          description="Meaning mapped onto primitives. The single seam components reference, and where every context switch — theme, script, viewport — is resolved."
+        />
+      </PageSection>
+
+      <PageSection
+        title="Previews"
+        description="Rendered specimens of each component, shown in both themes and both reading directions."
+      />
+    </PageBody>
+
+    <PageFooter>
+      <PageFooterColumn title="bravoixr">
+        <PageFooterColumnItem>Copyright © 2026 - All right reserved</PageFooterColumnItem>
+      </PageFooterColumn>
+
+      <PageFooterColumn title="Version">
+        <PageFooterColumnItem>v0.4.5</PageFooterColumnItem>
+      </PageFooterColumn>
+
+      <PageFooterColumn title="Explore" nav>
+        <PageFooterColumnItem href="#primitives">Primitives</PageFooterColumnItem>
+        <PageFooterColumnItem href="#semantics">Semantics</PageFooterColumnItem>
+      </PageFooterColumn>
+    </PageFooter>
+  </Page>
+</html>

@@ -26,6 +26,10 @@ The shared design identity system. See `README.md` for the full overview. In sho
 
 The design identity system lives at `apps/bravoixr/` (deployable, per the global monorepo `apps/<app>/` convention); its preview site is the sibling app `apps/preview/`, with no versioning of its own. Paths below are relative to `apps/bravoixr/`.
 
+**Astro migration — in progress.** Two further apps are growing alongside the originals: `apps/bravoixr-astro/` (the system as an Astro package, absorbing each component as it migrates from a CSS class to an `.astro` component) and `apps/preview-astro/` (its preview). All four coexist until the migration completes, at which point `apps/bravoixr/` and `apps/preview/` are deleted and `bravoixr-astro` is renamed to `bravoixr`. Only the two new apps are npm workspace members — `apps/bravoixr/` and `apps/preview/` have no `package.json` and are not part of the workspace.
+
+**Freeze rule.** `apps/bravoixr-astro/` holds verbatim copies of `identity/`, `primitives/`, `semantics/` and `daisyui/`. Those four folders are **frozen in `apps/bravoixr/`** for the duration of the migration: no token, identity or bridge edit lands there. All such work goes to `apps/bravoixr-astro/` only. This removes copy drift by construction — there is exactly one editable copy.
+
 - `identity/` — human-readable design decisions, one Markdown file per category. The creative source the token layers transcribe from.
 - `primitives/` — raw literal CSS custom properties (no meaning, no `var()`). The portable source of truth.
 - `semantics/` — meaning mapped onto primitives (`--bravoixr-color-primary`, `--bravoixr-btn-height`). The single seam components reference. Dark theme is handled **inline** here (`[data-theme="dark"]`), no separate `themes/` folder.
@@ -34,6 +38,8 @@ The design identity system lives at `apps/bravoixr/` (deployable, per the global
 - `index.css` — single entry point. Import order is fixed: **`primitives/` → `semantics/` → `daisyui/` → `components/`**.
 
 ## Consumption
+
+**During the Astro migration, this section describes `apps/bravoixr/`, which remains the only consumable form.** `apps/bravoixr-astro/` is private, unpublished and resolvable only through a local workspace link — nothing consumes it yet, and consumers keep applying the classes below unchanged. The typed-component API replaces this section at cutover, not before.
 
 bravoixr is layered as a **public/internal contract**, split across two delivery mechanisms depending on whether a component has migrated to daisyUI:
 
@@ -70,6 +76,15 @@ Every class in `components/` — bravoixr's own classes and gap-override rules a
 - **Flow-relative.** Use logical properties (`padding-inline`, `margin-inline`, `border-inline`, `inset-inline`, `*-block`) so RTL mirrors automatically from `dir`; never physical `left` / `right` / `top` / `bottom` sides.
 - **Corollary.** If a class needs a value that varies by context, add or elevate a semantic role token rather than adding a conditional to the class.
 
+### Authoring an Astro component (`apps/bravoixr-astro/components/`)
+
+The four rules above carry over unchanged — semantic tokens only, no conditionals, flow-relative, elevate a role token rather than branching. Astro components add one more:
+
+- **A component's CSS lives in its own `<style>` block and is not reachable from outside it.** Nothing the component renders carries a class for bravoixr's own styling: a class in the DOM is a public selector a consumer can target and override. Style bare element selectors and let Astro's scoping do the work — `h2 { … }` compiles to `h2[data-astro-cid-…]`, which nothing outside the component can address.
+- **Rented classes are exempt.** daisyUI's own classes (`.navbar-start`, `.footer-title`, `.link`, …) stay on the markup as daisyUI's public API, per **Rent the mechanics**. The rule governs bravoixr-authored CSS, not the library's.
+- **Slotted content is never styled by the component.** Content passed through a `<slot />` is rendered by the consumer and never carries the scope attribute, so a scoped `p { … }` reaches the component's own description and leaves a consumer's `<p>` alone. This is what makes bare element selectors safe; it also means any rule that *must* reach slotted content needs an explicit `:global()`.
+- **Known exception — `Page.astro`.** Astro exempts `html`/`body` selectors from scoping, so Page's canvas rule emits as a global `body { … }`, and its box-sizing rule is deliberately `:global()` so it reaches every descendant. Both are unavoidable for that component; no other component may rely on either mechanism.
+
 ## Categories
 
 Five measurable categories carry through `identity/`, `primitives/`, and `semantics/` as same-named files: **color, typography, layout, motion, icons**. Two further categories are `identity/`-only with no token file: **feel** (density, taste rules) and **media** (decorative-artwork direction).
@@ -81,6 +96,8 @@ Five measurable categories carry through `identity/`, `primitives/`, and `semant
 ## Releases
 
 `release.json.currentRelease` is the source of truth for the active release (`vMAJOR.MINOR.PATCH`). Update it only during an explicit release cut.
+
+**During the Astro migration:** neither `apps/bravoixr-astro/` nor `apps/preview-astro/` carries a `version` field in its `package.json`, deliberately — so no native manifest competes with `release.json`, which stays the sole version source of truth. The shift to `package.json` happens at cutover, not before. Note also that `.github/workflows/linear-release.yml` filters on `include_paths: apps/bravoixr/**`, which does not match `apps/bravoixr-astro/**`; this is left as-is because the cutover rename restores the glob on its own.
 
 **Keep the consumer usage-instructions page in sync.** As part of each release cut, update the Notion page linked above in place — rename its title to `Bravoixr vX.Y.Z` and refresh its content to match the new release, including its **Overridden classes** (gap-overrides on daisyUI selectors) and **bravoixr's own classes** (no daisyUI equivalent) sections — re-derive both from `apps/bravoixr/components/*.css` each time rather than hand-copying the previous release's lists, since classes get added or migrated over time. Same page, same URL, so the links in this file and README.md never go stale.
 

@@ -1,0 +1,38 @@
+---
+/* Component — PageFooterColumn
+ * One column of the page footer: a title above whatever the slot holds. Takes
+ * the title as a prop rather than a slot so the structure is enforced — every
+ * column gets its heading in the same place, with daisyUI's own .footer-title
+ * rented as-is.
+ *
+ * The slot is deliberately open rather than a fixed list of links: the footer's
+ * columns are not all the same shape (brand and version hold plain text, a link
+ * nav holds links), and a links-only API would cover one case and leave the
+ * rest as hand-written markup. PageFooterColumnItem handles both.
+ *
+ * No styling of its own. daisyUI already makes every direct child of .footer a
+ * nested grid — `.footer > :not(script,style,template) { display: grid;
+ * place-items: start; gap: .5rem }` — which is what stacks the title above the
+ * slotted items. The mechanics are rented, so there is nothing to add here.
+ *
+ * `nav` is opt-in rather than inferred: a copyright or version column is not
+ * navigation, and wrapping it in a <nav> landmark misreports the page to screen
+ * reader users. Astro cannot introspect slot content, so the consumer declares
+ * it. */
+
+interface Props {
+  title: string;
+  /* Explicit `| undefined` — tsconfig extends astro/tsconfigs/strictest, where
+   * exactOptionalPropertyTypes means `?` alone does not admit undefined. */
+  nav?: boolean | undefined;
+}
+
+const { title, nav = false } = Astro.props;
+
+const Tag = nav ? 'nav' : 'div';
+---
+
+<Tag>
+  <h6 class="footer-title">{title}</h6>
+  <slot />
+</Tag>

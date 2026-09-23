@@ -1,0 +1,22 @@
+/* Primitive — Icons
+ * Raw, literal icon values transcribed from identity/icons.md.
+ * Font family, variable-font axes, and size scale. No var/calc/color-mix.
+ * Single set: Google Material Symbols (variable font), Rounded style. */
+
+:root {
+  /* Font family */
+  --bravoixr-icon-font: 'Material Symbols Rounded';
+
+  /* Variable-font axes */
+  --bravoixr-icon-wght: 400;
+  --bravoixr-icon-fill: 0;
+  --bravoixr-icon-opsz-floor: 20;
+  --bravoixr-icon-grade-light: 0;
+  --bravoixr-icon-grade-dark: -25;
+
+  /* Size scale — md (20px) is the default */
+  --bravoixr-icon-size-sm: 16px;
+  --bravoixr-icon-size-md: 20px;
+  --bravoixr-icon-size-lg: 24px;
+  --bravoixr-icon-size-xl: 32px;
+}

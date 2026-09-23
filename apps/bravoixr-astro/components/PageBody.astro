@@ -1,0 +1,25 @@
+---
+/* Component — PageBody
+ * The content column — capped at --bravoixr-page-max and centred: the inline
+ * padding grows to split the leftover width either side of the column on wide
+ * screens, and never drops below the space-10 gutter on narrow ones. Inset by
+ * space-10 at the block-start and flush (zero) at the block-end so the footer
+ * meets the viewport bottom. Shares its inline formula with PageHeader and
+ * PageFooter so all three content columns align.
+ *
+ * As the growing child of Page's flex column (flex: 1 1 auto), it absorbs the
+ * leftover block space so the footer is pushed to the viewport bottom on short
+ * pages; on tall pages it simply takes its content height. */
+---
+
+<main>
+  <slot />
+</main>
+
+<style>
+  main {
+    flex: 1 1 auto;
+    padding-block: var(--bravoixr-spacing-10) 0;
+    padding-inline: max(var(--bravoixr-spacing-10), calc((100% - var(--bravoixr-page-max)) / 2));
+  }
+</style>

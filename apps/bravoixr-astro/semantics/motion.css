@@ -1,0 +1,18 @@
+/* Semantic — Motion
+ * Role tokens mapped onto motion primitives via var(). Not themed.
+ * Duration and easing roles. */
+
+:root {
+  /* Duration roles */
+  --bravoixr-duration-default: var(--bravoixr-duration-base);
+  --bravoixr-duration-hover: var(--bravoixr-duration-fast);
+  --bravoixr-duration-panel: var(--bravoixr-duration-slow);
+  --bravoixr-duration-modal: var(--bravoixr-duration-slower);
+  --bravoixr-duration-none: var(--bravoixr-duration-instant);
+
+  /* Easing roles */
+  --bravoixr-ease-default: var(--bravoixr-ease-standard);
+  --bravoixr-ease-enter: var(--bravoixr-ease-decelerate);
+  --bravoixr-ease-exit: var(--bravoixr-ease-accelerate);
+  --bravoixr-ease-loop: var(--bravoixr-ease-linear);
+}

@@ -12,18 +12,11 @@ import PageSubSection from 'bravoixr-astro/components/page/PageSubSection.astro'
 import PageFooter from 'bravoixr-astro/components/page/PageFooter.astro';
 import PageFooterColumn from 'bravoixr-astro/components/page/PageFooterColumn.astro';
 import PageFooterColumnItem from 'bravoixr-astro/components/page/PageFooterColumnItem.astro';
-import ContainerStack from 'bravoixr-astro/components/container/ContainerStack.astro';
 import ContainerGrid from 'bravoixr-astro/components/container/ContainerGrid.astro';
 import DisplayCard from 'bravoixr-astro/components/display/DisplayCard.astro';
-import DisplayCardImage from 'bravoixr-astro/components/display/DisplayCardImage.astro';
-import DisplayCardTitleBadge from 'bravoixr-astro/components/display/DisplayCardTitleBadge.astro';
 import DisplayCardTitle from 'bravoixr-astro/components/display/DisplayCardTitle.astro';
 import DisplayCardText from 'bravoixr-astro/components/display/DisplayCardText.astro';
-import DisplayCardFooter from 'bravoixr-astro/components/display/DisplayCardFooter.astro';
 
-// Same placeholder artwork the existing preview uses for its card-media demos.
-const placeholder =
-  "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20320%20180%27%3E%3Crect%20width%3D%27320%27%20height%3D%27180%27%20fill%3D%27%23dfe3e8%27/%3E%3Ccircle%20cx%3D%27118%27%20cy%3D%2766%27%20r%3D%2715%27%20fill%3D%27%23b3bbc6%27/%3E%3Cpath%20d%3D%27M36%20152%20L118%2092%20L168%20126%20L214%2084%20L284%20152%20Z%27%20fill%3D%27%23b3bbc6%27/%3E%3C/svg%3E";
 ---
 
 <!doctype html>
@@ -66,74 +59,76 @@ const placeholder =
         <PageSubSection
           title="Primitives"
           description="Raw literal values with no meaning attached — the portable source of truth, exported as-is and never consumed directly."
-        />
+        >
+          <ContainerGrid>
+            <DisplayCard>
+              <DisplayCardTitle>Color</DisplayCardTitle>
+              <DisplayCardText>Brand, status, and accent ramps plus neutrals.</DisplayCardText>
+            </DisplayCard>
+
+            <DisplayCard>
+              <DisplayCardTitle>Typography</DisplayCardTitle>
+              <DisplayCardText>Font stacks, size scales, weights, leading, tracking.</DisplayCardText>
+            </DisplayCard>
+
+            <DisplayCard>
+              <DisplayCardTitle>Layout</DisplayCardTitle>
+              <DisplayCardText>Spacing, sizing, radius, borders, shadows, z-index.</DisplayCardText>
+            </DisplayCard>
+
+            <DisplayCard>
+              <DisplayCardTitle>Motion</DisplayCardTitle>
+              <DisplayCardText>Duration scale and easing curves.</DisplayCardText>
+            </DisplayCard>
+
+            <DisplayCard>
+              <DisplayCardTitle>Icons</DisplayCardTitle>
+              <DisplayCardText>Icon font, variable axes, and size scale.</DisplayCardText>
+            </DisplayCard>
+          </ContainerGrid>
+        </PageSubSection>
 
         <PageSubSection
           title="Semantics"
           description="Meaning mapped onto primitives. The single seam components reference, and where every context switch — theme, script, viewport — is resolved."
-        />
+        >
+          <ContainerGrid>
+            <DisplayCard>
+              <DisplayCardTitle>Color</DisplayCardTitle>
+              <DisplayCardText>
+                Role tokens for brand, status, surfaces, text, and borders — themed light/dark.
+              </DisplayCardText>
+            </DisplayCard>
+
+            <DisplayCard>
+              <DisplayCardTitle>Typography</DisplayCardTitle>
+              <DisplayCardText>
+                Family, size, weight, leading, and tracking roles — scripted and responsive.
+              </DisplayCardText>
+            </DisplayCard>
+
+            <DisplayCard>
+              <DisplayCardTitle>Layout</DisplayCardTitle>
+              <DisplayCardText>Radius, border, sizing, shadow, layer, and spacing roles.</DisplayCardText>
+            </DisplayCard>
+
+            <DisplayCard>
+              <DisplayCardTitle>Motion</DisplayCardTitle>
+              <DisplayCardText>Duration and easing roles for hovers, panels, and modals.</DisplayCardText>
+            </DisplayCard>
+
+            <DisplayCard>
+              <DisplayCardTitle>Icons</DisplayCardTitle>
+              <DisplayCardText>Family, axis, and size roles — with a theme-aware grade.</DisplayCardText>
+            </DisplayCard>
+          </ContainerGrid>
+        </PageSubSection>
       </PageSection>
 
       <PageSection
         title="Previews"
         description="Rendered specimens of each component, shown in both themes and both reading directions."
-      >
-        <DisplayCard>
-          <DisplayCardImage src={placeholder} alt="" />
-          <DisplayCardTitleBadge>New</DisplayCardTitleBadge>
-          <DisplayCardTitle>Card title</DisplayCardTitle>
-          <DisplayCardText>Full-bleed media above the content.</DisplayCardText>
-          <DisplayCardText>A second line, exercising the repeating case.</DisplayCardText>
-          <DisplayCardFooter>
-            <button class="btn btn-ghost" type="button">Cancel</button>
-            <button class="btn btn-primary" type="button">Save</button>
-          </DisplayCardFooter>
-        </DisplayCard>
-
-        <DisplayCard side>
-          <DisplayCardImage src={placeholder} alt="" />
-          <DisplayCardTitle>Card title</DisplayCardTitle>
-          <DisplayCardText>Media beside the content, at the inline start.</DisplayCardText>
-        </DisplayCard>
-
-        <PageSubSection
-          title="ContainerStack — row"
-          description="Wraps to a new line when inline space runs out. Narrow the window to see it."
-        >
-          <ContainerStack>
-            {Array.from({ length: 9 }, (_, i) => <span class="specimen">{i + 1}</span>)}
-          </ContainerStack>
-        </PageSubSection>
-
-        <PageSubSection
-          title="ContainerStack — column, unbounded"
-          description="With no height constraint the stack grows and never wraps, however many children it holds."
-        >
-          <ContainerStack axis="column">
-            {Array.from({ length: 5 }, (_, i) => <span class="specimen">{i + 1}</span>)}
-          </ContainerStack>
-        </PageSubSection>
-
-        <PageSubSection
-          title="ContainerStack — column, bounded"
-          description="The same stack inside an ancestor that caps its height. Now it wraps into a second column."
-        >
-          <div class="bounded">
-            <ContainerStack axis="column">
-              {Array.from({ length: 5 }, (_, i) => <span class="specimen">{i + 1}</span>)}
-            </ContainerStack>
-          </div>
-        </PageSubSection>
-
-        <PageSubSection
-          title="ContainerGrid"
-          description="Columns are decided by the available width, not by the consumer. Narrow the window and the count drops, down to one."
-        >
-          <ContainerGrid>
-            {Array.from({ length: 8 }, (_, i) => <div class="cell">{i + 1}</div>)}
-          </ContainerGrid>
-        </PageSubSection>
-      </PageSection>
+      />
     </PageBody>
 
     <PageFooter>
@@ -153,41 +148,3 @@ const placeholder =
   </Page>
 </html>
 
-<style>
-  /* Demo chrome — consumer-side only, never part of the system. Semantic tokens
-   * are the supported escape hatch for exactly this: layout and one-offs no
-   * component covers. */
-
-  /* A plain specimen so the stack's arrangement is what you actually see. */
-  .specimen {
-    display: grid;
-    place-items: center;
-    inline-size: var(--bravoixr-demo-box-size);
-    block-size: var(--bravoixr-demo-box-size);
-    background: var(--bravoixr-color-surface-raised);
-    border-radius: var(--bravoixr-radius-card);
-  }
-
-  /* The ancestor that supplies the height ContainerStack deliberately does not
-   * declare — three specimens plus two gaps, so the fourth has to wrap.
-   *
-   * display:flex matters as much as the height: a plain block with a height
-   * would not constrain its child at all, and the stack would simply overflow
-   * it. As a flex item the stack is stretched to the container's block-size by
-   * the default align-items:stretch, which is what makes its own height
-   * definite and lets the wrap engage. */
-  .bounded {
-    display: flex;
-    block-size: calc(3 * var(--bravoixr-demo-box-size) + 2 * var(--bravoixr-spacing-5));
-  }
-
-  /* A grid cell specimen — takes the column width the grid gives it, so the
-   * reflow is what you see rather than the cell's own sizing. */
-  .cell {
-    display: grid;
-    place-items: center;
-    block-size: var(--bravoixr-demo-box-size);
-    background: var(--bravoixr-color-surface-raised);
-    border-radius: var(--bravoixr-radius-card);
-  }
-</style>

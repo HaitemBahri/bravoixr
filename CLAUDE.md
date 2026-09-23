@@ -121,4 +121,5 @@ Future releases use the app-scoped naming: tag `bravoixr/vX.Y.Z`, release branch
 ## Working agreements
 
 - **Where rules live.** Always record any new rule, preference, convention, or remembered fact for this project in **this local `CLAUDE.md`** — never in the global `~/.claude` folder (no `~/.claude/projects/.../memory` files, no edits to the global `CLAUDE.md`).
+- **The preview's Previews section is off-limits.** Never add anything to the `Previews` section of `apps/preview-astro/src/pages/index.astro` without an explicit instruction to do so. Component demos go where the user asks for them, not there by default.
 - **No unapproved additions.** Deliver only what was explicitly discussed and approved. Do not introduce extra sections, values, or decisions on initiative — even if they seem in-scope or helpful. If something else seems warranted, propose it and ask before writing it in; confirm taste/scope decisions up front rather than authoring them speculatively.

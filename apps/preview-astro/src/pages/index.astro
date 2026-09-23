@@ -17,6 +17,7 @@ import CardImage from 'bravoixr-astro/components/CardImage.astro';
 import CardTitleBadge from 'bravoixr-astro/components/CardTitleBadge.astro';
 import CardTitle from 'bravoixr-astro/components/CardTitle.astro';
 import CardText from 'bravoixr-astro/components/CardText.astro';
+import CardFooter from 'bravoixr-astro/components/CardFooter.astro';
 
 // Same placeholder artwork the existing preview uses for its card-media demos.
 const placeholder =
@@ -81,6 +82,10 @@ const placeholder =
           <CardTitle>Card title</CardTitle>
           <CardText>Full-bleed media above the content.</CardText>
           <CardText>A second line, exercising the repeating case.</CardText>
+          <CardFooter>
+            <button class="btn btn-ghost" type="button">Cancel</button>
+            <button class="btn btn-primary" type="button">Save</button>
+          </CardFooter>
         </Card>
 
         <Card side>

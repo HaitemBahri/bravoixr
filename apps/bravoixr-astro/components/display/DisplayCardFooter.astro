@@ -1,0 +1,35 @@
+---
+/* Component — DisplayCardFooter
+ * The card's action row. A gap-override on daisyUI's own .card-actions, which
+ * supplies display:flex, flex-wrap and a gap; bravoixr overrides the gap with
+ * its own token and adds what daisyUI leaves out — end alignment, the bottom
+ * pin, and a minimum gap above the actions.
+ *
+ * display:flex is redeclared rather than left to daisyUI so the box model here
+ * is self-contained, matching the precedent .navbar and .footer set in page.css.
+ *
+ * justify-content:flex-end is flow-relative inside a flex container, so it
+ * mirrors under RTL with no physical left/right.
+ *
+ * margin-block-start:auto pins the row to the card's bottom edge when the card
+ * is taller than its content. That depends on DisplayCard being a flex column — which
+ * comes from daisyUI's rented .card — and it only works when DisplayCardFooter is the
+ * *last child*. Placed anywhere else the pin silently does nothing. Enforcing
+ * that would mean DisplayCard owning the position through a named slot, which would
+ * cost the flat composition this API is built around; it is left as a
+ * convention instead. */
+---
+
+<footer class="card-actions">
+  <slot />
+</footer>
+
+<style>
+  .card-actions {
+    display: flex;
+    gap: var(--bravoixr-spacing-3);
+    justify-content: flex-end;
+    margin-block-start: auto;
+    padding-block-start: var(--bravoixr-spacing-4);
+  }
+</style>

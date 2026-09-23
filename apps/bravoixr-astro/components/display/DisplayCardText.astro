@@ -1,0 +1,35 @@
+---
+/* Component — DisplayCardText
+ * Quiet muted body text inside a card.
+ *
+ * Named DisplayCardText rather than CardDescription because it is not one description
+ * per card: across apps/preview's 140 uses, 22 cards carry several and one
+ * carries ten. It is repeating body copy, which is why it cannot be a
+ * description prop on DisplayCard, and why it is a component rather than plain markup
+ * in the body slot — slotted content never carries the scope attribute, so it
+ * would render unstyled.
+ *
+ * Typography is transcribed from card.css's .card-description, built from the
+ * same semantic tokens; see DisplayCard for why the declarations live here rather than
+ * referencing that class.
+ *
+ * Nothing rendered here carries a class, so a consumer's own <p> in the card's
+ * body slot is untouched by the rule below. */
+---
+
+<p>
+  <slot />
+</p>
+
+<style>
+  p {
+    font-family: var(--bravoixr-font-body);
+    font-size: var(--bravoixr-text-body);
+    font-weight: var(--bravoixr-weight-body);
+    line-height: var(--bravoixr-leading-prose);
+    color: var(--bravoixr-color-text-muted);
+    /* Symmetrical, so flow-agnostic — kept as the source's shorthand. Spacing
+     * between consecutive DisplayCardText comes from the card's own flex column. */
+    margin: 0;
+  }
+</style>

@@ -9,6 +9,8 @@ import PageBody from 'bravoixr-astro/components/PageBody.astro';
 import PageHeader from 'bravoixr-astro/components/PageHeader.astro';
 import PageSection from 'bravoixr-astro/components/PageSection.astro';
 import PageFooter from 'bravoixr-astro/components/PageFooter.astro';
+import PageFooterColumn from 'bravoixr-astro/components/PageFooterColumn.astro';
+import PageFooterColumnItem from 'bravoixr-astro/components/PageFooterColumnItem.astro';
 ---
 
 <!doctype html>
@@ -56,19 +58,18 @@ import PageFooter from 'bravoixr-astro/components/PageFooter.astro';
     </PageBody>
 
     <PageFooter>
-      <div>
-        <h6 class="footer-title">bravoixr</h6>
-        <span>© 2026</span>
-      </div>
-      <div>
-        <h6 class="footer-title">Version</h6>
-        <span>v0.4.5</span>
-      </div>
-      <nav>
-        <h6 class="footer-title">Explore</h6>
-        <a class="link link-hover" href="#primitives">Primitives</a>
-        <a class="link link-hover" href="#semantics">Semantics</a>
-      </nav>
+      <PageFooterColumn title="bravoixr">
+        <PageFooterColumnItem>Copyright © 2026 - All right reserved</PageFooterColumnItem>
+      </PageFooterColumn>
+
+      <PageFooterColumn title="Version">
+        <PageFooterColumnItem>v0.4.5</PageFooterColumnItem>
+      </PageFooterColumn>
+
+      <PageFooterColumn title="Explore" nav>
+        <PageFooterColumnItem href="#primitives">Primitives</PageFooterColumnItem>
+        <PageFooterColumnItem href="#semantics">Semantics</PageFooterColumnItem>
+      </PageFooterColumn>
     </PageFooter>
   </Page>
 </html>

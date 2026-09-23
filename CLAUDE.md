@@ -78,6 +78,10 @@ Every class in `components/` — bravoixr's own classes and gap-override rules a
 
 ### Authoring an Astro component (`apps/bravoixr-astro/components/`)
 
+**Layout.** Components are grouped by family, one folder each: `components/page/`, and `components/card/`, `components/text/`, `components/icon/` as those land. **Family folders are kebab-case; component files stay PascalCase** — `components/page/PageBody.astro`. The two casings in one path are deliberate: the folder is a path segment, so the workspace tie-breaker gives it kebab-case, while the filename *is* the identifier you import. `.astro` files cannot be re-exported through a JS barrel, so there is no index file and consumers import the full path.
+
+Note Astro derives a component's scope hash from its **file path**, so moving a component changes every `data-astro-cid-…` it emits, in both the HTML and the CSS. Nothing renders differently, but a pure file move produces a wholesale diff in the built output — compare by canonicalising the ids rather than byte-for-byte, and expect any snapshot of built CSS to need regenerating.
+
 The four rules above carry over unchanged — semantic tokens only, no conditionals, flow-relative, elevate a role token rather than branching. Astro components add one more:
 
 - **A component's CSS lives in its own `<style>` block and is not reachable from outside it.** Nothing the component renders carries a class for bravoixr's own styling: a class in the DOM is a public selector a consumer can target and override. Style bare element selectors and let Astro's scoping do the work — `h2 { … }` compiles to `h2[data-astro-cid-…]`, which nothing outside the component can address.

@@ -26,6 +26,17 @@
     flex-direction: column;
     background: var(--bravoixr-color-surface-page);
     color: var(--bravoixr-color-text);
+
+    /* The page's base typography, inherited by everything that has no rule of
+     * its own. Transcribed from text.css's .text-body, which every consumer
+     * pairs with .page on the same element (`class="page text-body"`) — the two
+     * were never used apart, so the canvas owns both halves here: surface and
+     * text colour above, and the type they are read in below. */
+    font-family: var(--bravoixr-font-body);
+    font-size: var(--bravoixr-text-body);
+    font-weight: var(--bravoixr-weight-body);
+    line-height: var(--bravoixr-leading-prose);
+    letter-spacing: var(--bravoixr-tracking-prose);
   }
 
   /* Propagate border-box to everything on the canvas — box-sizing doesn't

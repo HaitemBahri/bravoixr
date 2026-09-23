@@ -1,0 +1,31 @@
+---
+/* Component — ContainerGrid
+ * A responsive grid that reflows its column count to fit the space available.
+ *
+ * The consumer never states a column count. The grid states a minimum column
+ * width and auto-fill decides how many fit — four across on a wide screen, two
+ * on a tablet, one on a phone — so it adapts with no media query, and stays
+ * compliant with the no-conditionals rule for free.
+ *
+ * No props. --bravoixr-container-column-min is currently the only token that
+ * fits the role, so a prop selecting among tokens would offer exactly one
+ * option. Add it when a second column size genuinely exists.
+ *
+ * No overflow handling either: auto-fill has no cap, so every child gets a cell
+ * and there is nothing to hide.
+ *
+ * No block-size, matching ContainerStack — height is the ancestor's
+ * responsibility. */
+---
+
+<div>
+  <slot />
+</div>
+
+<style>
+  div {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(var(--bravoixr-container-column-min), 1fr));
+    gap: var(--bravoixr-spacing-5);
+  }
+</style>

@@ -16,6 +16,7 @@ import Card from 'bravoixr-astro/components/Card.astro';
 import CardImage from 'bravoixr-astro/components/CardImage.astro';
 import CardTitleBadge from 'bravoixr-astro/components/CardTitleBadge.astro';
 import CardTitle from 'bravoixr-astro/components/CardTitle.astro';
+import CardText from 'bravoixr-astro/components/CardText.astro';
 
 // Same placeholder artwork the existing preview uses for its card-media demos.
 const placeholder =
@@ -78,12 +79,14 @@ const placeholder =
           <CardImage src={placeholder} alt="" />
           <CardTitleBadge>New</CardTitleBadge>
           <CardTitle>Card title</CardTitle>
-          <p>Card — full-bleed media above the content.</p>
+          <CardText>Full-bleed media above the content.</CardText>
+          <CardText>A second line, exercising the repeating case.</CardText>
         </Card>
 
         <Card side>
           <CardImage src={placeholder} alt="" />
-          <p>Card — media beside the content, at the inline start.</p>
+          <CardTitle>Card title</CardTitle>
+          <CardText>Media beside the content, at the inline start.</CardText>
         </Card>
       </PageSection>
     </PageBody>

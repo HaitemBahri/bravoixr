@@ -11,10 +11,11 @@
  * interchangeable in use and differ only in heading level and rhythm. The
  * heading is fixed at <h3>, one below PageSection's <h2>.
  *
- * Typography is transcribed from text.css's .text-subsection-title and
- * .text-page-description + .text-color-description, built from the same
- * semantic tokens; see PageSection for why the declarations live here rather
- * than referencing those classes.
+ * Typography is transcribed from text.css, built from the same semantic tokens:
+ * the heading takes .text-subsection-title, and the description matches
+ * PageSection's exactly — .text-body's roles plus the muted colour and measure
+ * cap. See PageSection for why the declarations live here rather than
+ * referencing those classes.
  *
  * Nothing rendered here carries a class — bare element selectors plus Astro's
  * scoping keep every rule below reachable only through this component. */
@@ -50,8 +51,8 @@ const { title, description } = Astro.props;
 
   p {
     font-family: var(--bravoixr-font-body);
-    font-size: var(--bravoixr-text-page-description);
-    font-weight: var(--bravoixr-weight-page-description);
+    font-size: var(--bravoixr-text-body);
+    font-weight: var(--bravoixr-weight-body);
     line-height: var(--bravoixr-leading-prose);
     letter-spacing: var(--bravoixr-tracking-prose);
     max-inline-size: var(--bravoixr-measure-page-description);

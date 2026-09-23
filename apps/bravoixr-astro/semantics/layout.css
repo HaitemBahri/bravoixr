@@ -18,6 +18,11 @@
   --bravoixr-control-height: var(--bravoixr-size-control);
   --bravoixr-control-height-sm: var(--bravoixr-size-control-sm);
   --bravoixr-card-min: var(--bravoixr-size-card-min);
+  /* The narrowest a container column may get before the grid drops one. Its own
+   * role rather than a reuse of --bravoixr-card-min: a general-purpose container
+   * holds more than cards, and naming its column minimum after them would
+   * misdescribe it. Shares the same primitive for now. */
+  --bravoixr-container-column-min: var(--bravoixr-size-card-min);
   --bravoixr-page-sidebar-size: var(--bravoixr-size-sidebar);
   --bravoixr-page-row-header-size: var(--bravoixr-size-row-header);
   --bravoixr-page-row-header-columns: var(--bravoixr-page-row-header-size) var(--bravoixr-grid-fr);

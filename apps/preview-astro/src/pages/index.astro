@@ -13,6 +13,7 @@ import PageFooter from 'bravoixr-astro/components/page/PageFooter.astro';
 import PageFooterColumn from 'bravoixr-astro/components/page/PageFooterColumn.astro';
 import PageFooterColumnItem from 'bravoixr-astro/components/page/PageFooterColumnItem.astro';
 import ContainerStack from 'bravoixr-astro/components/container/ContainerStack.astro';
+import ContainerGrid from 'bravoixr-astro/components/container/ContainerGrid.astro';
 ---
 
 <!doctype html>
@@ -95,6 +96,15 @@ import ContainerStack from 'bravoixr-astro/components/container/ContainerStack.a
             </ContainerStack>
           </div>
         </PageSubSection>
+
+        <PageSubSection
+          title="ContainerGrid"
+          description="Columns are decided by the available width, not by the consumer. Narrow the window and the count drops, down to one."
+        >
+          <ContainerGrid>
+            {Array.from({ length: 8 }, (_, i) => <div class="cell">{i + 1}</div>)}
+          </ContainerGrid>
+        </PageSubSection>
       </PageSection>
     </PageBody>
 
@@ -141,5 +151,15 @@ import ContainerStack from 'bravoixr-astro/components/container/ContainerStack.a
   .bounded {
     display: flex;
     block-size: calc(3 * var(--bravoixr-demo-box-size) + 2 * var(--bravoixr-spacing-5));
+  }
+
+  /* A grid cell specimen — takes the column width the grid gives it, so the
+   * reflow is what you see rather than the cell's own sizing. */
+  .cell {
+    display: grid;
+    place-items: center;
+    block-size: var(--bravoixr-demo-box-size);
+    background: var(--bravoixr-color-surface-raised);
+    border-radius: var(--bravoixr-radius-card);
   }
 </style>

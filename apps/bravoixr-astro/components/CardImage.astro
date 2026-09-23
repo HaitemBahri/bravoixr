@@ -1,0 +1,60 @@
+---
+/* Component — CardImage
+ * A full-bleed media region that cancels the card's padding so artwork runs
+ * edge to edge. Always the first child of a Card — both the padding
+ * cancellation below and daisyUI's own figure:first-child rules depend on it.
+ *
+ * Renders a <figure> rather than a plain wrapper so daisyUI's corner handling
+ * applies: it rounds a first-child figure to the card's radius and clips it,
+ * and switches *which* corners it rounds between the two layouts —
+ * `.card figure:first-child` rounds the block-start pair, `.card-side
+ * :where(figure:first-child)` the inline-start pair. bravoixr therefore carries
+ * no border-radius and no overflow of its own; those are rented.
+ *
+ * `src`/`alt` are props rather than a slot so the <img> is rendered here and
+ * the rule below scopes to it normally. Slotted content never carries the
+ * component's scope attribute, so a slot would force a :global() for the image.
+ * `alt` is required: a decorative image passes alt="" deliberately, whereas an
+ * omitted attribute is simply an accessibility defect. */
+
+interface Props {
+  src: string;
+  alt: string;
+}
+
+const { src, alt } = Astro.props;
+---
+
+<figure>
+  <img src={src} alt={alt} />
+</figure>
+
+<style>
+  /* Top layout — cancel the card's block-start and both inline pads, then
+   * restore a gap before the content below. */
+  figure {
+    margin-block-start: calc(-1 * var(--bravoixr-spacing-5));
+    margin-inline: calc(-1 * var(--bravoixr-spacing-5));
+    margin-block-end: var(--bravoixr-spacing-5);
+  }
+
+  /* Side layout — cancel both block pads and the inline-start pad so the image
+   * runs the full card height flush to the leading edge, then restore a gap
+   * before the content beside it. Keyed off daisyUI's own .card-side, which
+   * Card owns: the class is card-level, so it cannot be passed down as a prop.
+   * Compiles to `.card-side figure[data-astro-cid-…]`.
+   *
+   * This is a layout variant, not an ambient-context conditional — see the
+   * authoring rules in CLAUDE.md. */
+  :global(.card-side) figure {
+    margin-block: calc(-1 * var(--bravoixr-spacing-5));
+    margin-inline-start: calc(-1 * var(--bravoixr-spacing-5));
+    margin-inline-end: var(--bravoixr-spacing-5);
+  }
+
+  img {
+    display: block;
+    inline-size: 100%;
+    block-size: auto;
+  }
+</style>

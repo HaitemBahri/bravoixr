@@ -13,6 +13,11 @@ import PageFooter from 'bravoixr-astro/components/PageFooter.astro';
 import PageFooterColumn from 'bravoixr-astro/components/PageFooterColumn.astro';
 import PageFooterColumnItem from 'bravoixr-astro/components/PageFooterColumnItem.astro';
 import Card from 'bravoixr-astro/components/Card.astro';
+import CardImage from 'bravoixr-astro/components/CardImage.astro';
+
+// Same placeholder artwork the existing preview uses for its card-media demos.
+const placeholder =
+  "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20320%20180%27%3E%3Crect%20width%3D%27320%27%20height%3D%27180%27%20fill%3D%27%23dfe3e8%27/%3E%3Ccircle%20cx%3D%27118%27%20cy%3D%2766%27%20r%3D%2715%27%20fill%3D%27%23b3bbc6%27/%3E%3Cpath%20d%3D%27M36%20152%20L118%2092%20L168%20126%20L214%2084%20L284%20152%20Z%27%20fill%3D%27%23b3bbc6%27/%3E%3C/svg%3E";
 ---
 
 <!doctype html>
@@ -68,11 +73,13 @@ import Card from 'bravoixr-astro/components/Card.astro';
         description="Rendered specimens of each component, shown in both themes and both reading directions."
       >
         <Card>
-          <p>Card — raised surface, borderless.</p>
+          <CardImage src={placeholder} alt="" />
+          <p>Card — full-bleed media above the content.</p>
         </Card>
 
         <Card side>
-          <p>Card with side layout. Identical until CardImage lands.</p>
+          <CardImage src={placeholder} alt="" />
+          <p>Card — media beside the content, at the inline start.</p>
         </Card>
       </PageSection>
     </PageBody>

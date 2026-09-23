@@ -8,6 +8,7 @@ import Page from 'bravoixr-astro/components/Page.astro';
 import PageBody from 'bravoixr-astro/components/PageBody.astro';
 import PageHeader from 'bravoixr-astro/components/PageHeader.astro';
 import PageSection from 'bravoixr-astro/components/PageSection.astro';
+import PageSubSection from 'bravoixr-astro/components/PageSubSection.astro';
 import PageFooter from 'bravoixr-astro/components/PageFooter.astro';
 import PageFooterColumn from 'bravoixr-astro/components/PageFooterColumn.astro';
 import PageFooterColumnItem from 'bravoixr-astro/components/PageFooterColumnItem.astro';
@@ -46,15 +47,25 @@ import PageFooterColumnItem from 'bravoixr-astro/components/PageFooterColumnItem
     </PageHeader>
 
     <PageBody>
-      <PageSection>
-        <h2>Page canvas</h2>
-        <p>Surface fill, document text colour, full-viewport flex column.</p>
+      <PageSection
+        title="Design Tokens"
+        description="The two token tiers the system is built from. Primitives hold the raw values; semantics give them meaning, and are the only tier components are allowed to read."
+      >
+        <PageSubSection
+          title="Primitives"
+          description="Raw literal values with no meaning attached — the portable source of truth, exported as-is and never consumed directly."
+        />
+
+        <PageSubSection
+          title="Semantics"
+          description="Meaning mapped onto primitives. The single seam components reference, and where every context switch — theme, script, viewport — is resolved."
+        />
       </PageSection>
 
-      <PageSection>
-        <h2>Content column</h2>
-        <p>Capped and centred, absorbing the leftover block space.</p>
-      </PageSection>
+      <PageSection
+        title="Previews"
+        description="Rendered specimens of each component, shown in both themes and both reading directions."
+      />
     </PageBody>
 
     <PageFooter>

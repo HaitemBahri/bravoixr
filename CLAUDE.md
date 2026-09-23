@@ -76,6 +76,15 @@ Every class in `components/` — bravoixr's own classes and gap-override rules a
 - **Flow-relative.** Use logical properties (`padding-inline`, `margin-inline`, `border-inline`, `inset-inline`, `*-block`) so RTL mirrors automatically from `dir`; never physical `left` / `right` / `top` / `bottom` sides.
 - **Corollary.** If a class needs a value that varies by context, add or elevate a semantic role token rather than adding a conditional to the class.
 
+### Authoring an Astro component (`apps/bravoixr-astro/components/`)
+
+The four rules above carry over unchanged — semantic tokens only, no conditionals, flow-relative, elevate a role token rather than branching. Astro components add one more:
+
+- **A component's CSS lives in its own `<style>` block and is not reachable from outside it.** Nothing the component renders carries a class for bravoixr's own styling: a class in the DOM is a public selector a consumer can target and override. Style bare element selectors and let Astro's scoping do the work — `h2 { … }` compiles to `h2[data-astro-cid-…]`, which nothing outside the component can address.
+- **Rented classes are exempt.** daisyUI's own classes (`.navbar-start`, `.footer-title`, `.link`, …) stay on the markup as daisyUI's public API, per **Rent the mechanics**. The rule governs bravoixr-authored CSS, not the library's.
+- **Slotted content is never styled by the component.** Content passed through a `<slot />` is rendered by the consumer and never carries the scope attribute, so a scoped `p { … }` reaches the component's own description and leaves a consumer's `<p>` alone. This is what makes bare element selectors safe; it also means any rule that *must* reach slotted content needs an explicit `:global()`.
+- **Known exception — `Page.astro`.** Astro exempts `html`/`body` selectors from scoping, so Page's canvas rule emits as a global `body { … }`, and its box-sizing rule is deliberately `:global()` so it reaches every descendant. Both are unavoidable for that component; no other component may rely on either mechanism.
+
 ## Categories
 
 Five measurable categories carry through `identity/`, `primitives/`, and `semantics/` as same-named files: **color, typography, layout, motion, icons**. Two further categories are `identity/`-only with no token file: **feel** (density, taste rules) and **media** (decorative-artwork direction).

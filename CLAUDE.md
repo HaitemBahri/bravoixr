@@ -88,6 +88,8 @@ The four rules above carry over unchanged — semantic tokens only, no condition
 - **Rented classes are exempt.** daisyUI's own classes (`.navbar-start`, `.footer-title`, `.link`, …) stay on the markup as daisyUI's public API, per **Rent the mechanics**. The rule governs bravoixr-authored CSS, not the library's.
 - **Slotted content is never styled by the component.** Content passed through a `<slot />` is rendered by the consumer and never carries the scope attribute, so a scoped `p { … }` reaches the component's own description and leaves a consumer's `<p>` alone. This is what makes bare element selectors safe; it also means any rule that *must* reach slotted content needs an explicit `:global()`.
 - **Known exception — `Page.astro`.** Astro exempts `html`/`body` selectors from scoping, so Page's canvas rule emits as a global `body { … }`, and its box-sizing rule is deliberately `:global()` so it reaches every descendant. Both are unavoidable for that component; no other component may rely on either mechanism.
+- **A prop-driven variant reaches the CSS through a `data-` attribute, not a class.** A class on a rendered element is a public selector a consumer can target, which the first rule forbids. `<div data-axis={axis}>` with `div[data-axis="column"] { … }` compiles to `div[data-astro-cid-…][data-axis="column"]` — the rule stays in the component's own `<style>` and stays scoped to it. Use `define:vars` instead where the value is arbitrary rather than one of a few known states.
+- **A layout keyword from a prop is the one exception to Tokens are the only source of values.** `row`/`column` and the like are structure the consumer chooses, not design values; everything such a rule *sets* still comes from semantic tokens.
 
 ## Categories
 

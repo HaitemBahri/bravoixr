@@ -4,14 +4,16 @@
 // always wins regardless of load order.
 import '../styles/global.css';
 import 'bravoixr-astro/index.css';
-import Page from 'bravoixr-astro/components/Page.astro';
-import PageBody from 'bravoixr-astro/components/PageBody.astro';
-import PageHeader from 'bravoixr-astro/components/PageHeader.astro';
-import PageSection from 'bravoixr-astro/components/PageSection.astro';
-import PageSubSection from 'bravoixr-astro/components/PageSubSection.astro';
-import PageFooter from 'bravoixr-astro/components/PageFooter.astro';
-import PageFooterColumn from 'bravoixr-astro/components/PageFooterColumn.astro';
-import PageFooterColumnItem from 'bravoixr-astro/components/PageFooterColumnItem.astro';
+import Page from 'bravoixr-astro/components/page/Page.astro';
+import PageBody from 'bravoixr-astro/components/page/PageBody.astro';
+import PageHeader from 'bravoixr-astro/components/page/PageHeader.astro';
+import PageSection from 'bravoixr-astro/components/page/PageSection.astro';
+import PageSubSection from 'bravoixr-astro/components/page/PageSubSection.astro';
+import PageFooter from 'bravoixr-astro/components/page/PageFooter.astro';
+import PageFooterColumn from 'bravoixr-astro/components/page/PageFooterColumn.astro';
+import PageFooterColumnItem from 'bravoixr-astro/components/page/PageFooterColumnItem.astro';
+import ContainerStack from 'bravoixr-astro/components/container/ContainerStack.astro';
+import ContainerGrid from 'bravoixr-astro/components/container/ContainerGrid.astro';
 import Card from 'bravoixr-astro/components/Card.astro';
 import CardImage from 'bravoixr-astro/components/CardImage.astro';
 import CardTitleBadge from 'bravoixr-astro/components/CardTitleBadge.astro';
@@ -93,6 +95,44 @@ const placeholder =
           <CardTitle>Card title</CardTitle>
           <CardText>Media beside the content, at the inline start.</CardText>
         </Card>
+
+        <PageSubSection
+          title="ContainerStack — row"
+          description="Wraps to a new line when inline space runs out. Narrow the window to see it."
+        >
+          <ContainerStack>
+            {Array.from({ length: 9 }, (_, i) => <span class="specimen">{i + 1}</span>)}
+          </ContainerStack>
+        </PageSubSection>
+
+        <PageSubSection
+          title="ContainerStack — column, unbounded"
+          description="With no height constraint the stack grows and never wraps, however many children it holds."
+        >
+          <ContainerStack axis="column">
+            {Array.from({ length: 5 }, (_, i) => <span class="specimen">{i + 1}</span>)}
+          </ContainerStack>
+        </PageSubSection>
+
+        <PageSubSection
+          title="ContainerStack — column, bounded"
+          description="The same stack inside an ancestor that caps its height. Now it wraps into a second column."
+        >
+          <div class="bounded">
+            <ContainerStack axis="column">
+              {Array.from({ length: 5 }, (_, i) => <span class="specimen">{i + 1}</span>)}
+            </ContainerStack>
+          </div>
+        </PageSubSection>
+
+        <PageSubSection
+          title="ContainerGrid"
+          description="Columns are decided by the available width, not by the consumer. Narrow the window and the count drops, down to one."
+        >
+          <ContainerGrid>
+            {Array.from({ length: 8 }, (_, i) => <div class="cell">{i + 1}</div>)}
+          </ContainerGrid>
+        </PageSubSection>
       </PageSection>
     </PageBody>
 
@@ -112,3 +152,42 @@ const placeholder =
     </PageFooter>
   </Page>
 </html>
+
+<style>
+  /* Demo chrome — consumer-side only, never part of the system. Semantic tokens
+   * are the supported escape hatch for exactly this: layout and one-offs no
+   * component covers. */
+
+  /* A plain specimen so the stack's arrangement is what you actually see. */
+  .specimen {
+    display: grid;
+    place-items: center;
+    inline-size: var(--bravoixr-demo-box-size);
+    block-size: var(--bravoixr-demo-box-size);
+    background: var(--bravoixr-color-surface-raised);
+    border-radius: var(--bravoixr-radius-card);
+  }
+
+  /* The ancestor that supplies the height ContainerStack deliberately does not
+   * declare — three specimens plus two gaps, so the fourth has to wrap.
+   *
+   * display:flex matters as much as the height: a plain block with a height
+   * would not constrain its child at all, and the stack would simply overflow
+   * it. As a flex item the stack is stretched to the container's block-size by
+   * the default align-items:stretch, which is what makes its own height
+   * definite and lets the wrap engage. */
+  .bounded {
+    display: flex;
+    block-size: calc(3 * var(--bravoixr-demo-box-size) + 2 * var(--bravoixr-spacing-5));
+  }
+
+  /* A grid cell specimen — takes the column width the grid gives it, so the
+   * reflow is what you see rather than the cell's own sizing. */
+  .cell {
+    display: grid;
+    place-items: center;
+    block-size: var(--bravoixr-demo-box-size);
+    background: var(--bravoixr-color-surface-raised);
+    border-radius: var(--bravoixr-radius-card);
+  }
+</style>

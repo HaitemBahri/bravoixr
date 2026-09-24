@@ -1,8 +1,0 @@
-/* Components — thin class layer (semantic tokens applied to reused elements).
- * Imports the reused component set. Behavior is rented (from the consuming app's
- * component library), only skinned here. */
-
-@import "./card.css";
-@import "./page.css";
-@import "./icon.css";
-@import "./text.css";

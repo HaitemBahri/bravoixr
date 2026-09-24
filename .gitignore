@@ -13,7 +13,7 @@
 # Claude Code local settings
 .claude/settings.local.json
 
-# Node (if Tailwind/tooling is added later)
+# Node
 node_modules/
 dist/
 

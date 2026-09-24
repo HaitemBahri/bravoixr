@@ -1,0 +1,41 @@
+---
+/* Component — DisplayCardTitle
+ * The card's heading.
+ *
+ * A flex row rather than a plain block, so a title can sit beside an icon or a
+ * trailing element with the two baselines aligned. Content comes through a slot
+ * for the same reason — a string prop would forbid the companion element the
+ * row exists for. This differs from PageSection, where the title is a prop:
+ * there the heading is plain text by design.
+ *
+ * Renders a <p>, not a heading. A card title labels a component; it is not a
+ * step in the document's structure, and making it one flattened the outline —
+ * PageSubSection also renders <h3>, so cards inside one read as its siblings
+ * rather than its contents. DisplaySwatch reached the same conclusion for the
+ * same reason. This leaves h1/h2/h3 to PageBody, PageSection and
+ * PageSubSection, which are genuine structure, and removes any need for a level
+ * prop.
+ *
+ * Note the slot may hold only phrasing content — an inline icon beside the text
+ * is fine, a block-level child is not, since the parser would close the
+ * paragraph early. Switch to <div> if block content is ever needed; the rule
+ * below would need its selector changed to match. */
+---
+
+<p>
+  <slot />
+</p>
+
+<style>
+  p {
+    display: flex;
+    align-items: center;
+    gap: var(--bravoixr-spacing-2);
+    font-family: var(--bravoixr-font-heading);
+    font-size: var(--bravoixr-text-context-title);
+    font-weight: var(--bravoixr-weight-subsection-title);
+    line-height: var(--bravoixr-leading-display);
+    letter-spacing: var(--bravoixr-tracking-display);
+    margin-block: 0 var(--bravoixr-spacing-3);
+  }
+</style>

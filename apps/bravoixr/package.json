@@ -1,0 +1,7 @@
+{
+  "name": "bravoixr",
+  "private": true,
+  "peerDependencies": {
+    "astro": "^6"
+  }
+}

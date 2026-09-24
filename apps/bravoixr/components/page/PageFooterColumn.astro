@@ -1,0 +1,63 @@
+---
+/* Component — PageFooterColumn
+ * One column of the page footer: a title above whatever the slot holds. Takes
+ * the title as a prop rather than a slot so the structure is enforced — every
+ * column gets its heading in the same place.
+ *
+ * The slot is deliberately open rather than a fixed list of links: the footer's
+ * columns are not all the same shape (brand and version hold plain text, a link
+ * nav holds links), and a links-only API would cover one case and leave the
+ * rest as hand-written markup. PageFooterColumnItem handles both.
+ *
+ * The column is its own grid with place-items: start, which stacks the title
+ * above the slotted items and keeps each one shrink-wrapped to its content
+ * rather than stretched across the column — so a link's hover underline spans
+ * the word, not the column width.
+ *
+ * `nav` is opt-in rather than inferred: a copyright or version column is not
+ * navigation, and wrapping it in a <nav> landmark misreports the page to screen
+ * reader users. Astro cannot introspect slot content, so the consumer declares
+ * it.
+ *
+ * The title is <h6> — the smallest heading, since a footer column label sits
+ * below every structural heading on the page and should not compete with
+ * PageSubSection's <h3> in the document outline. */
+
+interface Props {
+  title: string;
+  /* Explicit `| undefined` — tsconfig extends astro/tsconfigs/strictest, where
+   * exactOptionalPropertyTypes means `?` alone does not admit undefined. */
+  nav?: boolean | undefined;
+}
+
+const { title, nav = false } = Astro.props;
+
+const Tag = nav ? 'nav' : 'div';
+---
+
+<Tag>
+  <h6>{title}</h6>
+  <slot />
+</Tag>
+
+<style>
+  div,
+  nav {
+    display: grid;
+    place-items: start;
+    gap: var(--bravoixr-spacing-3);
+  }
+
+  /* Uppercase with the widened tracking the uppercase role carries — small caps
+   * set solid read as a cramped block without it. Muted so the column labels
+   * sit behind their contents rather than competing with them. */
+  h6 {
+    font-family: var(--bravoixr-font-heading);
+    font-size: var(--bravoixr-text-label);
+    font-weight: var(--bravoixr-weight-label);
+    letter-spacing: var(--bravoixr-tracking-uppercase);
+    text-transform: uppercase;
+    color: var(--bravoixr-color-text-muted);
+    margin-block: 0;
+  }
+</style>

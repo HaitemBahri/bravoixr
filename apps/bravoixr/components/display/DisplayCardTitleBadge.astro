@@ -1,0 +1,35 @@
+---
+/* Component — DisplayCardTitleBadge
+ * A small label above the card title — a short qualifier such as a status or a
+ * category. Plain text, deliberately not a pill: a border, background and
+ * corner radius are not wanted here.
+ *
+ * Renders as a sibling *before* DisplayCardTitle, never nested inside it.
+ * DisplayCardTitle is a flex row, so a nested badge would sit beside the title
+ * rather than above it.
+ *
+ * Two taste decisions want a look at the rendered preview:
+ *   - <p> as the element. <small> would add "side comment" semantics that may
+ *     not be wanted; a <span> would need forcing to block.
+ *   - No colour, so the badge inherits the card's text colour; muted may read
+ *     better for a qualifier.
+ *
+ * margin-block: 0 is declared rather than assumed. The library ships no reset,
+ * so a <p> otherwise takes the browser's 1em block margins and the badge would
+ * float away from the title it labels. */
+---
+
+<p>
+  <slot />
+</p>
+
+<style>
+  p {
+    font-family: var(--bravoixr-font-body);
+    font-size: var(--bravoixr-text-label);
+    font-weight: var(--bravoixr-weight-label);
+    line-height: var(--bravoixr-leading-prose);
+    letter-spacing: var(--bravoixr-tracking-prose);
+    margin-block: 0;
+  }
+</style>

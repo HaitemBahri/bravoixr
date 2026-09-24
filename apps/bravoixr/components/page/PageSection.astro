@@ -1,0 +1,69 @@
+---
+/* Component — PageSection
+ * A top-level section of the page canvas — carries the block rhythm that
+ * separates one section from the next, and owns its own heading and lede.
+ *
+ * Title and description are props rather than slotted markup so the structure
+ * is enforced: every section puts its heading in the same place, at the same
+ * level, with the same typography. Both are optional and independent — a
+ * section that is pure content stays valid, and nothing is rendered for an
+ * absent prop.
+ *
+ * The heading level is fixed at <h2>: the component name encodes the tier, and
+ * PageSubSection takes <h3> below it. No level prop until a real case needs one.
+ *
+ * The description takes body type plus a muted colour and a capped measure — a
+ * section lede is body copy, not page-level intro text, but it still wants a
+ * capped line length.
+ *
+ * margin-block: 0 is declared on the description rather than assumed. The
+ * library ships no reset, so a <p> would otherwise take the browser's own block
+ * margins.
+ *
+ * Nothing rendered here carries a class: a class in the DOM is a public
+ * selector a consumer could target. Bare element selectors plus Astro's scoping
+ * keep every rule below reachable only through this component. Slotted content
+ * never carries the scope attribute, so a consumer's own <p> in the slot is
+ * untouched by the description rule. */
+
+interface Props {
+  /* Explicit `| undefined` — tsconfig extends astro/tsconfigs/strictest, where
+   * exactOptionalPropertyTypes means `?` alone does not admit undefined. */
+  title?: string | undefined;
+  description?: string | undefined;
+}
+
+const { title, description } = Astro.props;
+---
+
+<section>
+  {title && <h2>{title}</h2>}
+  {description && <p>{description}</p>}
+  <slot />
+</section>
+
+<style>
+  section {
+    margin-block-end: var(--bravoixr-spacing-10);
+  }
+
+  h2 {
+    font-family: var(--bravoixr-font-heading);
+    font-size: var(--bravoixr-text-section-title);
+    font-weight: var(--bravoixr-weight-section-title);
+    line-height: var(--bravoixr-leading-display);
+    letter-spacing: var(--bravoixr-tracking-display);
+    margin-block: 0 var(--bravoixr-spacing-4);
+  }
+
+  p {
+    font-family: var(--bravoixr-font-body);
+    font-size: var(--bravoixr-text-body);
+    font-weight: var(--bravoixr-weight-body);
+    line-height: var(--bravoixr-leading-prose);
+    letter-spacing: var(--bravoixr-tracking-prose);
+    max-inline-size: var(--bravoixr-measure-page-description);
+    color: var(--bravoixr-color-text-muted);
+    margin-block: 0;
+  }
+</style>

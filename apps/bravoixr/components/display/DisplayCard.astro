@@ -1,0 +1,52 @@
+---
+/* Component — DisplayCard
+ * A raised surface holding a card's parts. Resting state is borderless, with
+ * the raised fill alone separating it from the page — no border, no shadow.
+ *
+ * The flex column is load-bearing rather than incidental: DisplayCardFooter's
+ * margin-block-start:auto pin depends on it to push the action row to the
+ * card's bottom edge.
+ *
+ * overflow: hidden clips the children to the rounded corners, which is what
+ * lets DisplayCardImage bleed to the card's edges without squaring them off. It
+ * also means the image needs no corner rounding of its own in either layout.
+ *
+ * `side` puts DisplayCardImage beside the content instead of above it. Being a
+ * flex row it mirrors automatically under RTL — image at the inline start, left
+ * in LTR and right in RTL — so no physical left/right appears anywhere.
+ * align-items: stretch makes the image column run the card's full height.
+ *
+ * The variant reaches the CSS as a data attribute rather than a class, so the
+ * rule stays inside this component's scope and nothing outside can target it.
+ * DisplayCard owns it because it is card-level; DisplayCardImage reads it off
+ * the ancestor. */
+
+interface Props {
+  /* Explicit `| undefined` — tsconfig extends astro/tsconfigs/strictest, where
+   * exactOptionalPropertyTypes means `?` alone does not admit undefined. */
+  side?: boolean | undefined;
+}
+
+const { side = false } = Astro.props;
+---
+
+<div data-side={side ? '' : undefined}>
+  <slot />
+</div>
+
+<style>
+  div {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding: var(--bravoixr-spacing-5);
+    border-radius: var(--bravoixr-radius-card);
+    background: var(--bravoixr-color-surface-raised);
+    color: var(--bravoixr-color-text);
+  }
+
+  div[data-side] {
+    flex-direction: row;
+    align-items: stretch;
+  }
+</style>

@@ -8,8 +8,8 @@
  * Unconditional light/dark tier: every role also gets a *-light/*-dark pair at :root,
  * referencing primitives directly — the single source of truth. The [data-theme] blocks
  * below are thin lookups into that tier (unchanged public token names, unchanged resolved
- * values). This lets other layers (e.g. daisyui/theme.css) read a role's light or dark
- * value explicitly, without depending on which [data-theme] is currently active. */
+ * values). This lets a component read a role's light or dark value explicitly, without
+ * depending on which [data-theme] is currently active. */
 
 :root {
   /* Brand — primary (blue)
@@ -64,8 +64,10 @@
   --bravoixr-color-info-active-light: var(--bravoixr-blue-900);
   --bravoixr-color-info-active-dark: var(--bravoixr-blue-500);
 
-  /* Accent — Purple (tiny usages, promoted here only for the daisyUI accent role);
-   * base at 700 in both themes for the same AA-contrast reason as primary above. */
+  /* Accent — Purple (tiny usages); base at 700 in both themes for the same
+   * AA-contrast reason as primary above. Promoted to a semantic role for an
+   * external theme contract that no longer exists — it has no consumer in the
+   * library today, and is a candidate for removal if none appears. */
   --bravoixr-color-accent-light: var(--bravoixr-purple-700);
   --bravoixr-color-accent-dark: var(--bravoixr-purple-700);
 

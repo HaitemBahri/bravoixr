@@ -1,0 +1,27 @@
+---
+/* Component — PageHeaderCenter
+ * The centre region of the page's top bar.
+ *
+ * Claims grid column 2 of PageHeader's `1fr auto 1fr` track list explicitly
+ * rather than relying on source order. Because the two outer columns are equal
+ * fractions, column 2 sits at the bar's centre regardless of whether either
+ * sibling region is present — so a header carrying only a centre is genuinely
+ * centred.
+ *
+ * justify-content: center centres the region's own content within the column,
+ * which matters only when something else stretches the column. */
+---
+
+<div>
+  <slot />
+</div>
+
+<style>
+  div {
+    grid-column: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--bravoixr-spacing-3);
+  }
+</style>

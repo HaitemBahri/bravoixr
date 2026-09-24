@@ -1,10 +1,10 @@
 /* Primitive — Layout
- * Raw, literal structural/spatial values transcribed from identity/layout.md.
+ * Raw, literal structural/spatial values.
  * Spacing, sizing, radius, borders, shadows, z-index, breakpoints. No var/calc/color-mix.
  * Spatial values in px; shadows are literal composite box-shadow strings. */
 
 :root {
-  /* Spacing — 12-step ramp on a 4px base (rem in identity is documentation only) */
+  /* Spacing — 12-step ramp on a 4px base (rem equivalents are documentation only) */
   --bravoixr-space-1: 2px;
   --bravoixr-space-2: 4px;
   --bravoixr-space-3: 8px;

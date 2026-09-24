@@ -8,12 +8,11 @@ A set of `.astro` components — with typed props, slots and their own scoped st
 
 Two halves:
 
-- **Tokens** define the identity: colour, typography, layout, motion, icons.
+- **Tokens** define the identity: colour, typography, layout, icons.
 - **Components** consume them, so a project imports a component rather than assembling classes and hoping the combination is valid.
 
 ## Contents
 
-- **Identity decisions** (`identity/`) — human-readable Markdown documenting the design taste, one file per category. The source everything else transcribes from.
 - **Design tokens** — two tiers in separate folders: `primitives/` (raw literal values) → `semantics/` (meaning). The portable source of truth.
 - **Components** (`components/`) — grouped by family: `page/` for the canvas and its chrome, `container/` for arrangement, `display/` for presenting content.
 
@@ -38,15 +37,14 @@ Two halves:
 
 ```
 apps/bravoixr/     the component library
-  identity/      design decisions, one Markdown file per category
-  primitives/    raw literal CSS values (color, typography, layout, motion, icons)
+  primitives/    raw literal CSS values (color, typography, layout, icons)
   semantics/     meaning mapped onto primitives (+ inline dark theme)
   components/    Astro components, grouped page/ container/ display/
   index.css      token entry — import order: primitives → semantics
 apps/preview/      preview site for the tokens and components
 ```
 
-Five measurable categories (color, typography, layout, motion, icons) run through `identity/`, `primitives/` and `semantics/`. **Feel** (density, taste) and **media** (decorative-artwork direction) are `identity/`-only. `layout` combines spacing, sizing, radius, borders, elevation and z-index.
+Four categories (color, typography, layout, icons) run through `primitives/` and `semantics/`. `layout` combines spacing, sizing, radius, borders, elevation and z-index. There is no motion category — durations and easing curves were defined and never consumed, so they were removed rather than kept as a scale nothing referenced.
 
 ## Consuming bravoixr
 

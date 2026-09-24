@@ -1,7 +1,7 @@
 /* Primitive — Typography
- * Raw, literal type values transcribed from identity/typography.md.
+ * Raw, literal type values.
  * Font stacks, size scales (rem), weights, line-heights, letter-spacing. No functions.
- * Base: 16px = 1rem. px values in the identity doc are documentation only. */
+ * Base: 16px = 1rem. px values here are documentation only. */
 
 :root {
   /* Font stacks (family + generic only) */

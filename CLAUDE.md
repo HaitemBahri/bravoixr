@@ -30,7 +30,6 @@ Two halves:
 
 The library is `apps/bravoixr/`; its preview site is the sibling app `apps/preview/`. Both are npm workspace members. Paths below are relative to `apps/bravoixr/`.
 
-- `identity/` — human-readable design decisions, one Markdown file per category. The creative source the token layers transcribe from.
 - `primitives/` — raw literal CSS custom properties (no meaning, no `var()`). The portable source of truth.
 - `semantics/` — meaning mapped onto primitives (`--bravoixr-color-primary`). The single seam components reference. Dark theme is handled **inline** here (`[data-theme="dark"]`), no separate `themes/` folder.
 - `components/` — the Astro components, grouped by family. See **Authoring an Astro component** below.
@@ -81,9 +80,10 @@ Every component follows these rules:
 
 ## Categories
 
-Five measurable categories carry through `identity/`, `primitives/` and `semantics/` as same-named files: **color, typography, layout, motion, icons**. Two further categories are `identity/`-only with no token file: **feel** (density, taste rules) and **media** (decorative-artwork direction).
+Four categories carry through `primitives/` and `semantics/` as same-named files: **color, typography, layout, icons**.
 
 - `layout` is the combined structural/spatial system: spacing, sizing, radius, border widths, elevation (shadows), and z-index / layers.
+- **There is no motion category.** Durations and easing curves were defined and never consumed, and were removed rather than left as a scale nothing referenced. A component needing a transition is the trigger to author one deliberately — not to restore the old scale from history.
 - **Surface boundary:** surface *colors* live in `color` (they theme in dark mode); surface *shadow + stacking* live in `layout`.
 - **Cross-category rule:** a semantic category file references only the matching primitive category (semantic `color.css` → primitive color tokens only, etc.).
 

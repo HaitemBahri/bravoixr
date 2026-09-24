@@ -1,23 +1,14 @@
 ---
 /* Component — PageHeader
  * The page's top bar. Its regions are PageHeaderStart, PageHeaderCenter and
- * PageHeaderEnd, placed by the consumer in that order. They carry daisyUI's own
- * navbar-start/-center/-end classes, rented as-is: their flex mechanics already
- * centre the middle child, so there is nothing to override there.
+ * PageHeaderEnd, each placing itself in an explicit grid column.
  *
- * Those mechanics depend on both halves being present — navbar-start and
- * navbar-end are each width:50%, while navbar-center has no width and does not
- * shrink. All three, or start plus end, behave as expected. A header carrying
- * *only* a centre is left-aligned rather than centred, and one carrying only an
- * end lands mid-bar rather than at the far edge, because its 50% box starts at
- * the inline edge and justifies within itself. Use start and end together to
- * keep the geometry predictable.
- *
- * The outer element keeps daisyUI's .navbar class, and this component's own
- * rule overrides it: display/align-items are redeclared explicitly (matching
- * daisyUI's values) so the box model here is fully self-contained rather than
- * leaning on daisyUI's layered rule, and min-height: 0 resets daisyUI's fixed
- * 4rem so block padding sizes the bar to its content.
+ * A three-column `1fr auto 1fr` grid: the outer columns split the leftover
+ * width evenly and the centre takes exactly its content, which is what centres
+ * the middle region against the bar rather than against its siblings. Because
+ * each region names its own column, the geometry holds for any subset — a
+ * header carrying only a centre is still centred, and one carrying only an end
+ * still sits at the far edge. Region order in the markup is therefore free.
  *
  * A full-width edge-to-edge band: as a direct child of Page (outside PageBody's
  * inline inset) it spans the whole window width on its own — no margins, no
@@ -30,16 +21,16 @@
  * override. */
 ---
 
-<header class="navbar">
+<header>
   <slot />
 </header>
 
 <style>
-  .navbar {
-    display: flex;
+  header {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
     gap: var(--bravoixr-spacing-5);
-    min-height: 0;
     padding-block: var(--bravoixr-spacing-5);
     padding-inline: max(var(--bravoixr-spacing-10), calc((100% - var(--bravoixr-page-max)) / 2));
     background: var(--bravoixr-color-surface-raised);

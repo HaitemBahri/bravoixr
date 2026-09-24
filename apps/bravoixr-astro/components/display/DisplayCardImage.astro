@@ -1,15 +1,12 @@
 ---
 /* Component — DisplayCardImage
  * A full-bleed media region that cancels the card's padding so artwork runs
- * edge to edge. Always the first child of a DisplayCard — both the padding
- * cancellation below and daisyUI's own figure:first-child rules depend on it.
+ * edge to edge. Always the first child of a DisplayCard — the padding
+ * cancellation below assumes it.
  *
- * Renders a <figure> rather than a plain wrapper so daisyUI's corner handling
- * applies: it rounds a first-child figure to the card's radius and clips it,
- * and switches *which* corners it rounds between the two layouts —
- * `.card figure:first-child` rounds the block-start pair, `.card-side
- * :where(figure:first-child)` the inline-start pair. bravoixr therefore carries
- * no border-radius and no overflow of its own; those are rented.
+ * Carries no border-radius and no overflow of its own: DisplayCard clips its
+ * children to the card's radius, so the corners come out right in both layouts
+ * without this component knowing which one it is in.
  *
  * `src`/`alt` are props rather than a slot so the <img> is rendered here and
  * the rule below scopes to it normally. Slotted content never carries the
@@ -40,13 +37,13 @@ const { src, alt } = Astro.props;
 
   /* Side layout — cancel both block pads and the inline-start pad so the image
    * runs the full card height flush to the leading edge, then restore a gap
-   * before the content beside it. Keyed off daisyUI's own .card-side, which
-   * DisplayCard owns: the class is card-level, so it cannot be passed down as a prop.
-   * Compiles to `.card-side figure[data-astro-cid-…]`.
+   * before the content beside it. Keyed off the data attribute DisplayCard
+   * owns: the variant is card-level, so it cannot be passed down as a prop.
+   * Compiles to `[data-side] figure[data-astro-cid-…]`.
    *
    * This is a layout variant, not an ambient-context conditional — see the
    * authoring rules in CLAUDE.md. */
-  :global(.card-side) figure {
+  :global([data-side]) figure {
     margin-block: calc(-1 * var(--bravoixr-spacing-5));
     margin-inline-start: calc(-1 * var(--bravoixr-spacing-5));
     margin-inline-end: var(--bravoixr-spacing-5);

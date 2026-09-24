@@ -1,19 +1,26 @@
 ---
 /* Component — PageHeaderStart
- * The start region of the page's top bar. Carries daisyUI's own navbar-start class,
- * rented for its layout mechanics — the three regions use flex-basis sizing
- * that centres the middle child, which is why PageHeader does not reimplement
- * them.
+ * The start region of the page's top bar.
  *
- * No styling of its own: daisyUI supplies the whole behaviour, so this is pure
- * structure.
+ * Claims grid column 1 of PageHeader's `1fr auto 1fr` track list explicitly
+ * rather than relying on source order, so the region lands correctly whatever
+ * subset of the three is present and whatever order they appear in.
  *
- * Order matters. The regions only lay out correctly when Start, Center and End
- * appear in that order inside PageHeader — placed otherwise the centring breaks
- * with no error. The same unenforced-ordering trade-off DisplayCardImage and
- * DisplayCardFooter carry. */
+ * justify-content: start is flow-relative inside a flex container, so the
+ * region's own content packs to the inline start and mirrors under RTL with no
+ * physical left/right. */
 ---
 
-<div class="navbar-start">
+<div>
   <slot />
 </div>
+
+<style>
+  div {
+    grid-column: 1;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: var(--bravoixr-spacing-3);
+  }
+</style>

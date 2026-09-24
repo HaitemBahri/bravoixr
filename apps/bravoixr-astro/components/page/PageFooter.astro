@@ -1,31 +1,30 @@
 ---
 /* Component — PageFooter
- * The page's footer bar. daisyUI's own .footer grid is rented: each direct
- * child of the slot becomes its own section (non-script/style/template
- * grandchildren auto-stack via daisyUI's inner grid), laying sections out in a
- * row — typically brand/copyright, version, and a link nav using daisyUI's
- * .footer-title and .link/.link-hover as-is.
+ * The page's footer bar. Each direct child of the slot becomes one column, laid
+ * out in a row by the grid below; PageFooterColumn stacks its own contents.
  *
- * The outer element keeps daisyUI's .footer class, and this component's own
- * rule overrides it: display/grid-auto-flow are redeclared explicitly (matching
- * daisyUI's own .footer/.footer-horizontal values) so, like PageHeader, the box
- * model here is fully self-contained rather than leaning on daisyUI's layered
- * rules — and no .footer-horizontal modifier is needed in markup.
+ * grid-auto-flow: column means columns are created as children arrive rather
+ * than declared up front, so the footer takes however many PageFooterColumns it
+ * is given without the component knowing the count — which it could not learn
+ * anyway, since Astro slots are opaque.
+ *
+ * align-items: start keeps columns top-aligned rather than stretched, so a tall
+ * column does not drag the others' content down with it.
  *
  * A full-width edge-to-edge band like PageHeader: as a direct child of Page
  * (outside PageBody's inline inset) it spans the whole window width on its own,
  * and the sunken fill bleeds edge to edge with it, while this rule's inline
- * padding insets the section content — without shrinking the element's own box
+ * padding insets the column content — without shrinking the element's own box
  * — so it caps at --bravoixr-page-max and lines up with the page column above.
  * Themes with the page via the semantic dark override. */
 ---
 
-<footer class="footer">
+<footer>
   <slot />
 </footer>
 
 <style>
-  .footer {
+  footer {
     display: grid;
     grid-auto-flow: column;
     align-items: start;

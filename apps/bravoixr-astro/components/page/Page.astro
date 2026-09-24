@@ -28,10 +28,10 @@
     color: var(--bravoixr-color-text);
 
     /* The page's base typography, inherited by everything that has no rule of
-     * its own. Transcribed from text.css's .text-body, which every consumer
-     * pairs with .page on the same element (`class="page text-body"`) — the two
-     * were never used apart, so the canvas owns both halves here: surface and
-     * text colour above, and the type they are read in below. */
+     * its own. The canvas owns both halves: surface and text colour above, and
+     * the type they are read in below. Components that need different type
+     * declare it; everything else inherits from here, which is why the library
+     * needs no separate base-text rule. */
     font-family: var(--bravoixr-font-body);
     font-size: var(--bravoixr-text-body);
     font-weight: var(--bravoixr-weight-body);
@@ -48,7 +48,7 @@
    * subtree regardless.
    *
    * Note Astro leaves `html`/`body` selectors unscoped by design, so the rule
-   * above emits as a plain `body { … }` — matching what `.page` on <body> did. */
+   * above emits as a plain `body { … }` rather than a scoped selector. */
   body :global(*),
   body :global(*)::before,
   body :global(*)::after {

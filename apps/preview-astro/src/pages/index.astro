@@ -1,8 +1,5 @@
 ---
-// Demo page for the migrated page components. Grows as each component lands.
-// Order matters: daisyUI (layered) first, then bravoixr (unlayered), which
-// always wins regardless of load order.
-import '../styles/global.css';
+// Demo page for the page components. Grows as each component lands.
 import 'bravoixr-astro/index.css';
 import Page from 'bravoixr-astro/components/page/Page.astro';
 import PageBody from 'bravoixr-astro/components/page/PageBody.astro';
@@ -51,9 +48,7 @@ import DisplayCardText from 'bravoixr-astro/components/display/DisplayCardText.a
     <PageHeader>
       <PageHeaderStart>bravoixr</PageHeaderStart>
       <PageHeaderCenter>Welcome</PageHeaderCenter>
-      <PageHeaderEnd>
-        <button class="btn btn-primary" type="button">Action</button>
-      </PageHeaderEnd>
+      <PageHeaderEnd />
     </PageHeader>
 
     <PageBody

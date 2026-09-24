@@ -1,26 +1,22 @@
 ---
 /* Component — DisplayCardTitleBadge
  * A small label above the card title — a short qualifier such as a status or a
- * category. Plain text, deliberately not a pill: daisyUI's own .badge carries a
- * border, background and --radius-selector, none of which are wanted here, so
- * it is not rented.
+ * category. Plain text, deliberately not a pill: a border, background and
+ * corner radius are not wanted here.
  *
- * Renders as a sibling *before* DisplayCardTitle, never nested inside it. daisyUI's
- * .card-title is a flex row (align-items:center; gap:.5rem), so a nested badge
- * would sit beside the title rather than above it.
+ * Renders as a sibling *before* DisplayCardTitle, never nested inside it.
+ * DisplayCardTitle is a flex row, so a nested badge would sit beside the title
+ * rather than above it.
  *
- * Typography is transcribed from text.css's .text-label, built from the same
- * semantic tokens; see DisplayCard for why the declarations live here rather than
- * referencing that class.
- *
- * Three taste decisions were left at their most faithful value rather than
- * invented, and want a look at the rendered preview:
+ * Two taste decisions want a look at the rendered preview:
  *   - <p> as the element. <small> would add "side comment" semantics that may
  *     not be wanted; a <span> would need forcing to block.
- *   - No colour. .text-label sets none, so the badge inherits the card's text
- *     colour; muted may read better for a qualifier.
- *   - No margin. .text-label sets none and Tailwind's preflight zeroes the
- *     browser default, so the badge sits flush above the title. */
+ *   - No colour, so the badge inherits the card's text colour; muted may read
+ *     better for a qualifier.
+ *
+ * margin-block: 0 is declared rather than assumed. The library ships no reset,
+ * so a <p> otherwise takes the browser's 1em block margins and the badge would
+ * float away from the title it labels. */
 ---
 
 <p>
@@ -34,5 +30,6 @@
     font-weight: var(--bravoixr-weight-label);
     line-height: var(--bravoixr-leading-prose);
     letter-spacing: var(--bravoixr-tracking-prose);
+    margin-block: 0;
   }
 </style>

@@ -9,10 +9,44 @@
  *
  * As the growing child of Page's flex column (flex: 1 1 auto), it absorbs the
  * leftover block space so the footer is pushed to the viewport bottom on short
- * pages; on tall pages it simply takes its content height. */
+ * pages; on tall pages it simply takes its content height.
+ *
+ * It also owns the page's title block. The props sit here rather than on Page
+ * because Page renders <body>: a title block there would emit as a sibling of
+ * the topbar, above the header band and at full window width. Here it is inside
+ * the content column, so it inherits the capped, centred measure for free.
+ *
+ * The heading is <h1> — the page title is the document's heading, and it leaves
+ * PageSection's <h2> and PageSubSection's <h3> correctly below it. The old
+ * preview is inconsistent on this (one <h1>, seventeen <h2>), so the component
+ * picks rather than follows.
+ *
+ * Typography is transcribed from text.css's .text-page-title and
+ * .text-page-description + .text-color-description, built from the same
+ * semantic tokens; see PageSection for why the declarations live here rather
+ * than referencing those classes. Note the description keeps the *page-level*
+ * size role, unlike PageSection, which moved to the body role because a section
+ * lede is body copy — a page lede is genuinely the larger one. */
+
+interface Props {
+  /* Explicit `| undefined` — tsconfig extends astro/tsconfigs/strictest, where
+   * exactOptionalPropertyTypes means `?` alone does not admit undefined. */
+  title?: string | undefined;
+  description?: string | undefined;
+}
+
+const { title, description } = Astro.props;
 ---
 
 <main>
+  {
+    (title || description) && (
+      <header>
+        {title && <h1>{title}</h1>}
+        {description && <p>{description}</p>}
+      </header>
+    )
+  }
   <slot />
 </main>
 
@@ -21,5 +55,31 @@
     flex: 1 1 auto;
     padding-block: var(--bravoixr-spacing-10) 0;
     padding-inline: max(var(--bravoixr-spacing-10), calc((100% - var(--bravoixr-page-max)) / 2));
+  }
+
+  /* The block carries its trailing space as one unit. Putting it on the
+   * description instead would lose it whenever only a title is given, since the
+   * two props are independent. */
+  header {
+    margin-block-end: var(--bravoixr-spacing-8);
+  }
+
+  h1 {
+    font-family: var(--bravoixr-font-heading);
+    font-size: var(--bravoixr-text-page-title);
+    font-weight: var(--bravoixr-weight-page-title);
+    line-height: var(--bravoixr-leading-display);
+    letter-spacing: var(--bravoixr-tracking-display);
+    margin-block: 0 var(--bravoixr-spacing-5);
+  }
+
+  p {
+    font-family: var(--bravoixr-font-body);
+    font-size: var(--bravoixr-text-page-description);
+    font-weight: var(--bravoixr-weight-page-description);
+    line-height: var(--bravoixr-leading-prose);
+    letter-spacing: var(--bravoixr-tracking-prose);
+    max-inline-size: var(--bravoixr-measure-page-description);
+    color: var(--bravoixr-color-text-muted);
   }
 </style>

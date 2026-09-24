@@ -7,6 +7,9 @@ import 'bravoixr-astro/index.css';
 import Page from 'bravoixr-astro/components/page/Page.astro';
 import PageBody from 'bravoixr-astro/components/page/PageBody.astro';
 import PageHeader from 'bravoixr-astro/components/page/PageHeader.astro';
+import PageHeaderStart from 'bravoixr-astro/components/page/PageHeaderStart.astro';
+import PageHeaderCenter from 'bravoixr-astro/components/page/PageHeaderCenter.astro';
+import PageHeaderEnd from 'bravoixr-astro/components/page/PageHeaderEnd.astro';
 import PageSection from 'bravoixr-astro/components/page/PageSection.astro';
 import PageSubSection from 'bravoixr-astro/components/page/PageSubSection.astro';
 import PageFooter from 'bravoixr-astro/components/page/PageFooter.astro';
@@ -46,9 +49,11 @@ import DisplayCardText from 'bravoixr-astro/components/display/DisplayCardText.a
 
   <Page>
     <PageHeader>
-      <span slot="start">bravoixr</span>
-      <span slot="center">Welcome</span>
-      <button slot="end" class="btn btn-primary" type="button">Action</button>
+      <PageHeaderStart>bravoixr</PageHeaderStart>
+      <PageHeaderCenter>Welcome</PageHeaderCenter>
+      <PageHeaderEnd>
+        <button class="btn btn-primary" type="button">Action</button>
+      </PageHeaderEnd>
     </PageHeader>
 
     <PageBody>

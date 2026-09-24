@@ -7,6 +7,9 @@ import 'bravoixr-astro/index.css';
 import Page from 'bravoixr-astro/components/page/Page.astro';
 import PageBody from 'bravoixr-astro/components/page/PageBody.astro';
 import PageHeader from 'bravoixr-astro/components/page/PageHeader.astro';
+import PageHeaderStart from 'bravoixr-astro/components/page/PageHeaderStart.astro';
+import PageHeaderCenter from 'bravoixr-astro/components/page/PageHeaderCenter.astro';
+import PageHeaderEnd from 'bravoixr-astro/components/page/PageHeaderEnd.astro';
 import PageSection from 'bravoixr-astro/components/page/PageSection.astro';
 import PageSubSection from 'bravoixr-astro/components/page/PageSubSection.astro';
 import PageFooter from 'bravoixr-astro/components/page/PageFooter.astro';
@@ -46,19 +49,22 @@ import DisplayCardText from 'bravoixr-astro/components/display/DisplayCardText.a
 
   <Page>
     <PageHeader>
-      <span slot="start">bravoixr</span>
-      <span slot="center">Welcome</span>
-      <button slot="end" class="btn btn-primary" type="button">Action</button>
+      <PageHeaderStart>bravoixr</PageHeaderStart>
+      <PageHeaderCenter>Welcome</PageHeaderCenter>
+      <PageHeaderEnd>
+        <button class="btn btn-primary" type="button">Action</button>
+      </PageHeaderEnd>
     </PageHeader>
 
-    <PageBody>
+    <PageBody
+      title="Design identity preview"
+      description="bravoixr's tokens and components, rendered through the Astro component library."
+    >
       <PageSection
         title="Design Tokens"
-        description="The two token tiers the system is built from. Primitives hold the raw values; semantics give them meaning, and are the only tier components are allowed to read."
       >
         <PageSubSection
           title="Primitives"
-          description="Raw literal values with no meaning attached — the portable source of truth, exported as-is and never consumed directly."
         >
           <ContainerGrid>
             <DisplayCard>
@@ -90,7 +96,6 @@ import DisplayCardText from 'bravoixr-astro/components/display/DisplayCardText.a
 
         <PageSubSection
           title="Semantics"
-          description="Meaning mapped onto primitives. The single seam components reference, and where every context switch — theme, script, viewport — is resolved."
         >
           <ContainerGrid>
             <DisplayCard>
@@ -127,7 +132,6 @@ import DisplayCardText from 'bravoixr-astro/components/display/DisplayCardText.a
 
       <PageSection
         title="Previews"
-        description="Rendered specimens of each component, shown in both themes and both reading directions."
       />
     </PageBody>
 

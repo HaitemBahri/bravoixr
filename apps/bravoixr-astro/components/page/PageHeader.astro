@@ -1,9 +1,17 @@
 ---
 /* Component — PageHeader
- * The page's top bar. daisyUI's own .navbar-start/.navbar-center/.navbar-end
- * sub-parts are rented as-is for the wordmark / centre-content / controls
- * layout — their flex-basis-50%-plus-shrink mechanics already centre a middle
- * child correctly, so there is nothing to override there.
+ * The page's top bar. Its regions are PageHeaderStart, PageHeaderCenter and
+ * PageHeaderEnd, placed by the consumer in that order. They carry daisyUI's own
+ * navbar-start/-center/-end classes, rented as-is: their flex mechanics already
+ * centre the middle child, so there is nothing to override there.
+ *
+ * Those mechanics depend on both halves being present — navbar-start and
+ * navbar-end are each width:50%, while navbar-center has no width and does not
+ * shrink. All three, or start plus end, behave as expected. A header carrying
+ * *only* a centre is left-aligned rather than centred, and one carrying only an
+ * end lands mid-bar rather than at the far edge, because its 50% box starts at
+ * the inline edge and justifies within itself. Use start and end together to
+ * keep the geometry predictable.
  *
  * The outer element keeps daisyUI's .navbar class, and this component's own
  * rule overrides it: display/align-items are redeclared explicitly (matching
@@ -17,15 +25,13 @@
  * cornerless, to read as chrome rather than a floating card. The inline padding
  * uses the same centred-column formula as PageBody: since padding insets the
  * *content* without shrinking the element's own box, the fill still spans full
- * width while the start/center/end content caps at --bravoixr-page-max and
- * lines up with the page column below. The fill themes with the page via the
- * semantic dark override. */
+ * width while the region content caps at --bravoixr-page-max and lines up with
+ * the page column below. The fill themes with the page via the semantic dark
+ * override. */
 ---
 
 <header class="navbar">
-  <div class="navbar-start"><slot name="start" /></div>
-  <div class="navbar-center"><slot name="center" /></div>
-  <div class="navbar-end"><slot name="end" /></div>
+  <slot />
 </header>
 
 <style>

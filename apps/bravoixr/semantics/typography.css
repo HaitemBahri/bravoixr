@@ -80,7 +80,7 @@
   --bravoixr-tracking-uppercase: var(--bravoixr-tracking-normal);
 }
 
-/* Viewport axis — the responsive heading "elevator" (identity/typography.md § Responsive behavior).
+/* Viewport axis — the responsive heading "elevator".
  * :root above holds the desktop steps; each band re-points the size roles one step down the fixed
  * ladder — pure var() indirection, no fluid math, so the ladder stays portable.
  * The breakpoint px are inlined here because @media conditions can't read var(); they mirror

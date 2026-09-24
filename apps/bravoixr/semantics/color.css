@@ -16,7 +16,7 @@
    * Base sits at 700 in both themes (not the visually "middle" step) because white
    * text (--bravoixr-color-text-on-primary) is laid over it: 700 is the lightest step
    * that still clears WCAG AA (4.5:1) after the 2026 ramp re-anchor. Dark-theme
-   * hover/active dip below AA — accepted, see identity/color.md history. */
+   * hover/active dip below AA — accepted deliberately. */
   --bravoixr-color-primary-light: var(--bravoixr-blue-700);
   --bravoixr-color-primary-dark: var(--bravoixr-blue-700);
   --bravoixr-color-primary-hover-light: var(--bravoixr-blue-800);

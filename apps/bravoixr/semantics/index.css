@@ -1,8 +1,7 @@
 /* Semantics — role token layer (meaning mapped onto primitives).
- * Imports the five measurable categories in canonical order. */
+ * Imports the four measurable categories in canonical order. */
 
 @import "./color.css";
 @import "./typography.css";
 @import "./layout.css";
-@import "./motion.css";
 @import "./icons.css";

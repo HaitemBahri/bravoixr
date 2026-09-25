@@ -3,9 +3,9 @@
  * The page canvas: sets the base background and the document text colour
  * together, so a consumer gets a legible canvas that theme-flips via the
  * semantic dark overrides. It is also the sticky-footer host: a full-viewport-
- * height flex column so its header/body/footer children stack top-to-bottom and
+ * height flex column so its header/main/footer children stack top-to-bottom and
  * the footer is held at the viewport bottom even when the content is short (see
- * PageBody). align-items stays at the default stretch, so the full-width header
+ * PageMain). align-items stays at the default stretch, so the full-width header
  * and footer bands still bleed edge to edge.
  *
  * Renders <body> itself. The consumer's page owns <html> and <head>, and keeps

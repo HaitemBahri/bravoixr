@@ -54,7 +54,7 @@ import DisplayCard from 'bravoixr/components/display/DisplayCard.astro';
 
 ## Authoring an Astro component (`apps/bravoixr/components/`)
 
-**Layout.** Components are grouped by family, one folder each, and each component's name carries its family — `page/PageBody.astro`, `display/DisplayCardTitle.astro`. Three families exist, splitting by what a component is *for*:
+**Layout.** Components are grouped by family, one folder each, and each component's name carries its family — `page/PageMain.astro`, `display/DisplayCardTitle.astro`. Three families exist, splitting by what a component is *for*:
 
 | Folder | Role |
 | -- | -- |

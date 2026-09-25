@@ -2,16 +2,18 @@
 // Demo page for the page components. Grows as each component lands.
 import 'bravoixr/index.css';
 import Page from 'bravoixr/components/page/Page.astro';
-import PageBody from 'bravoixr/components/page/PageBody.astro';
 import PageHeader from 'bravoixr/components/page/PageHeader.astro';
-import PageHeaderStart from 'bravoixr/components/page/PageHeaderStart.astro';
-import PageHeaderCenter from 'bravoixr/components/page/PageHeaderCenter.astro';
-import PageHeaderEnd from 'bravoixr/components/page/PageHeaderEnd.astro';
+import PageBrand from 'bravoixr/components/page/PageBrand.astro';
+import PageMain from 'bravoixr/components/page/PageMain.astro';
+import PageMainContainer from 'bravoixr/components/page/PageMainContainer.astro';
 import PageSection from 'bravoixr/components/page/PageSection.astro';
 import PageSubSection from 'bravoixr/components/page/PageSubSection.astro';
 import PageFooter from 'bravoixr/components/page/PageFooter.astro';
-import PageFooterColumn from 'bravoixr/components/page/PageFooterColumn.astro';
-import PageFooterColumnItem from 'bravoixr/components/page/PageFooterColumnItem.astro';
+import PageFooterMain from 'bravoixr/components/page/PageFooterMain.astro';
+import PageFooterBrand from 'bravoixr/components/page/PageFooterBrand.astro';
+import PageFooterNav from 'bravoixr/components/page/PageFooterNav.astro';
+import PageFooterNavItem from 'bravoixr/components/page/PageFooterNavItem.astro';
+import PageFooterBottom from 'bravoixr/components/page/PageFooterBottom.astro';
 import ContainerGrid from 'bravoixr/components/container/ContainerGrid.astro';
 import DisplayCard from 'bravoixr/components/display/DisplayCard.astro';
 import DisplayCardTitle from 'bravoixr/components/display/DisplayCardTitle.astro';
@@ -46,93 +48,94 @@ import DisplayCardText from 'bravoixr/components/display/DisplayCardText.astro';
 
   <Page>
     <PageHeader>
-      <PageHeaderStart>bravoixr</PageHeaderStart>
-      <PageHeaderCenter>Welcome</PageHeaderCenter>
-      <PageHeaderEnd />
+      <PageBrand>bravoixr</PageBrand>
     </PageHeader>
 
-    <PageBody
-      title="Design identity preview"
-      description="bravoixr's tokens and components, rendered through the Astro component library."
-    >
-      <PageSection
-        title="Design Tokens"
+    <PageMain>
+      <PageMainContainer
+        title="Design identity preview"
+        description="bravoixr's tokens and components, rendered through the Astro component library."
       >
-        <PageSubSection
-          title="Primitives"
+        <PageSection
+          title="Design Tokens"
         >
-          <ContainerGrid>
-            <DisplayCard>
-              <DisplayCardTitle>Color</DisplayCardTitle>
-              <DisplayCardText>Brand, status, and accent ramps plus neutrals.</DisplayCardText>
-            </DisplayCard>
+          <PageSubSection
+            title="Primitives"
+          >
+            <ContainerGrid>
+              <DisplayCard>
+                <DisplayCardTitle>Color</DisplayCardTitle>
+                <DisplayCardText>Brand, status, and accent ramps plus neutrals.</DisplayCardText>
+              </DisplayCard>
 
-            <DisplayCard>
-              <DisplayCardTitle>Typography</DisplayCardTitle>
-              <DisplayCardText>Font stacks, size scales, weights, leading, tracking.</DisplayCardText>
-            </DisplayCard>
+              <DisplayCard>
+                <DisplayCardTitle>Typography</DisplayCardTitle>
+                <DisplayCardText>Font stacks, size scales, weights, leading, tracking.</DisplayCardText>
+              </DisplayCard>
 
-            <DisplayCard>
-              <DisplayCardTitle>Layout</DisplayCardTitle>
-              <DisplayCardText>Spacing, sizing, radius, borders, shadows, z-index.</DisplayCardText>
-            </DisplayCard>
+              <DisplayCard>
+                <DisplayCardTitle>Layout</DisplayCardTitle>
+                <DisplayCardText>Spacing, sizing, radius, borders, shadows, z-index.</DisplayCardText>
+              </DisplayCard>
 
-            <DisplayCard>
-              <DisplayCardTitle>Icons</DisplayCardTitle>
-              <DisplayCardText>Icon font, variable axes, and size scale.</DisplayCardText>
-            </DisplayCard>
-          </ContainerGrid>
-        </PageSubSection>
+              <DisplayCard>
+                <DisplayCardTitle>Icons</DisplayCardTitle>
+                <DisplayCardText>Icon font, variable axes, and size scale.</DisplayCardText>
+              </DisplayCard>
+            </ContainerGrid>
+          </PageSubSection>
 
-        <PageSubSection
-          title="Semantics"
-        >
-          <ContainerGrid>
-            <DisplayCard>
-              <DisplayCardTitle>Color</DisplayCardTitle>
-              <DisplayCardText>
-                Role tokens for brand, status, surfaces, text, and borders — themed light/dark.
-              </DisplayCardText>
-            </DisplayCard>
+          <PageSubSection
+            title="Semantics"
+          >
+            <ContainerGrid>
+              <DisplayCard>
+                <DisplayCardTitle>Color</DisplayCardTitle>
+                <DisplayCardText>
+                  Role tokens for brand, status, surfaces, text, and borders — themed light/dark.
+                </DisplayCardText>
+              </DisplayCard>
 
-            <DisplayCard>
-              <DisplayCardTitle>Typography</DisplayCardTitle>
-              <DisplayCardText>
-                Family, size, weight, leading, and tracking roles — scripted and responsive.
-              </DisplayCardText>
-            </DisplayCard>
+              <DisplayCard>
+                <DisplayCardTitle>Typography</DisplayCardTitle>
+                <DisplayCardText>
+                  Family, size, weight, leading, and tracking roles — scripted and responsive.
+                </DisplayCardText>
+              </DisplayCard>
 
-            <DisplayCard>
-              <DisplayCardTitle>Layout</DisplayCardTitle>
-              <DisplayCardText>Radius, border, sizing, shadow, layer, and spacing roles.</DisplayCardText>
-            </DisplayCard>
+              <DisplayCard>
+                <DisplayCardTitle>Layout</DisplayCardTitle>
+                <DisplayCardText>Radius, border, sizing, shadow, layer, and spacing roles.</DisplayCardText>
+              </DisplayCard>
 
-            <DisplayCard>
-              <DisplayCardTitle>Icons</DisplayCardTitle>
-              <DisplayCardText>Family, axis, and size roles — with a theme-aware grade.</DisplayCardText>
-            </DisplayCard>
-          </ContainerGrid>
-        </PageSubSection>
-      </PageSection>
+              <DisplayCard>
+                <DisplayCardTitle>Icons</DisplayCardTitle>
+                <DisplayCardText>Family, axis, and size roles — with a theme-aware grade.</DisplayCardText>
+              </DisplayCard>
+            </ContainerGrid>
+          </PageSubSection>
+        </PageSection>
 
-      <PageSection
-        title="Previews"
-      />
-    </PageBody>
+        <PageSection
+          title="Previews"
+        />
+      </PageMainContainer>
+    </PageMain>
 
     <PageFooter>
-      <PageFooterColumn title="bravoixr">
-        <PageFooterColumnItem>Copyright © 2026 - All right reserved</PageFooterColumnItem>
-      </PageFooterColumn>
+      <PageFooterMain>
+        <PageFooterBrand>bravoixr</PageFooterBrand>
 
-      <PageFooterColumn title="Version">
-        <PageFooterColumnItem>v0.4.5</PageFooterColumnItem>
-      </PageFooterColumn>
+        <PageFooterNav title="Explore">
+          <PageFooterNavItem href="#primitives">Primitives</PageFooterNavItem>
+          <PageFooterNavItem href="#semantics">Semantics</PageFooterNavItem>
+        </PageFooterNav>
+      </PageFooterMain>
 
-      <PageFooterColumn title="Explore" nav>
-        <PageFooterColumnItem href="#primitives">Primitives</PageFooterColumnItem>
-        <PageFooterColumnItem href="#semantics">Semantics</PageFooterColumnItem>
-      </PageFooterColumn>
+      <PageFooterBottom>
+        <span>Copyright © 2026 - All right reserved</span>
+        <span>v0.4.5</span>
+      </PageFooterBottom>
     </PageFooter>
   </Page>
 </html>

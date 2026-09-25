@@ -1,24 +1,24 @@
 ---
 /* Component — PageHeader
- * The page's top bar. Its regions are PageHeaderStart, PageHeaderCenter and
- * PageHeaderEnd, each placing itself in an explicit grid column.
+ * The page's top bar. Its regions are PageBrand, PageNav and PageActions,
+ * each placing itself in an explicit grid column.
  *
  * A three-column `1fr auto 1fr` grid: the outer columns split the leftover
  * width evenly and the centre takes exactly its content, which is what centres
  * the middle region against the bar rather than against its siblings. Because
  * each region names its own column, the geometry holds for any subset — a
- * header carrying only a centre is still centred, and one carrying only an end
+ * header carrying only a nav is still centred, and one carrying only actions
  * still sits at the far edge. Region order in the markup is therefore free.
  *
- * A full-width edge-to-edge band: as a direct child of Page (outside PageBody's
- * inline inset) it spans the whole window width on its own — no margins, no
+ * A full-width edge-to-edge band: as a direct child of Page (outside PageMain's
+ * content tracks) it spans the whole window width on its own — no margins, no
  * bleed tricks — and the raised fill bleeds edge to edge with it. Flat and
  * cornerless, to read as chrome rather than a floating card. The inline padding
- * uses the same centred-column formula as PageBody: since padding insets the
- * *content* without shrinking the element's own box, the fill still spans full
- * width while the region content caps at --bravoixr-page-max and lines up with
- * the page column below. The fill themes with the page via the semantic dark
- * override. */
+ * uses the same centred-column formula as PageMain's gutters: since padding
+ * insets the *content* without shrinking the element's own box, the fill still
+ * spans full width while the region content caps at --bravoixr-page-max and
+ * lines up with the page column below. The fill themes with the page via the
+ * semantic dark override. */
 ---
 
 <header>

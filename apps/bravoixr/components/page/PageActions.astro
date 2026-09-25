@@ -1,0 +1,26 @@
+---
+/* Component — PageActions
+ * The actions region of the page's top bar — buttons, toggles, account menus.
+ *
+ * Claims grid column 3 of PageHeader's `1fr auto 1fr` track list explicitly
+ * rather than relying on source order, so the region sits at the far inline
+ * end even when it is the only one present.
+ *
+ * justify-content: end is flow-relative inside a flex container, so the
+ * region's own content packs to the inline end and mirrors under RTL with no
+ * physical left/right. */
+---
+
+<div>
+  <slot />
+</div>
+
+<style>
+  div {
+    grid-column: 3;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: var(--bravoixr-spacing-3);
+  }
+</style>

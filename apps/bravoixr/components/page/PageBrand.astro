@@ -1,0 +1,28 @@
+---
+/* Component — PageBrand
+ * The brand region of the page's top bar — logo, name, or both.
+ *
+ * Claims grid column 1 of PageHeader's `1fr auto 1fr` track list explicitly
+ * rather than relying on source order, so the region lands at the inline start
+ * whatever subset of the three regions is present and whatever order they
+ * appear in. Each region owning its column is what replaces named slots: a
+ * consumer cannot put the brand in the wrong place.
+ *
+ * justify-content: start is flow-relative inside a flex container, so the
+ * region's own content packs to the inline start and mirrors under RTL with no
+ * physical left/right. */
+---
+
+<div>
+  <slot />
+</div>
+
+<style>
+  div {
+    grid-column: 1;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: var(--bravoixr-spacing-3);
+  }
+</style>

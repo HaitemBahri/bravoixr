@@ -20,19 +20,58 @@
  * Nothing rendered here carries a class — bare element selectors plus Astro's
  * scoping keep every rule below reachable only through this component. */
 
+/* A text prop may carry one script or both — see PageSection for the full note.
+ * Redeclared here rather than imported: the library has no cross-component
+ * imports, and SpacingStep is duplicated across the layout family likewise. */
+type BilingualText = string | { en: string; ar: string };
+
 interface Props {
   /* Explicit `| undefined` — tsconfig extends astro/tsconfigs/strictest, where
    * exactOptionalPropertyTypes means `?` alone does not admit undefined. */
-  title?: string | undefined;
-  description?: string | undefined;
+  title?: BilingualText | undefined;
+  description?: BilingualText | undefined;
 }
 
 const { title, description } = Astro.props;
 ---
 
 <section>
-  {title && <h3>{title}</h3>}
-  {description && <p>{description}</p>}
+  {
+    title !== undefined && (
+      <h3>
+        {typeof title === 'string' ? (
+          title
+        ) : (
+          <>
+            <span data-script="latin" lang="en">
+              {title.en}
+            </span>
+            <span data-script="arabic" lang="ar">
+              {title.ar}
+            </span>
+          </>
+        )}
+      </h3>
+    )
+  }
+  {
+    description !== undefined && (
+      <p>
+        {typeof description === 'string' ? (
+          description
+        ) : (
+          <>
+            <span data-script="latin" lang="en">
+              {description.en}
+            </span>
+            <span data-script="arabic" lang="ar">
+              {description.ar}
+            </span>
+          </>
+        )}
+      </p>
+    )
+  }
   <slot />
 </section>
 
@@ -59,5 +98,14 @@ const { title, description } = Astro.props;
     max-inline-size: var(--bravoixr-measure-page-description);
     color: var(--bravoixr-color-text-muted);
     margin-block: 0;
+  }
+
+  /* Script switching — see PageSection for why the spans carry no dir. */
+  span[data-script="latin"] {
+    display: var(--bravoixr-script-latin);
+  }
+
+  span[data-script="arabic"] {
+    display: var(--bravoixr-script-arabic);
   }
 </style>

@@ -1,0 +1,58 @@
+---
+/* Component — LayoutContainer
+ * Answers "where does content sit horizontally?" — caps the content at a
+ * width and positions the capped box within its parent.
+ *
+ * `width` picks the cap: `page` (--bravoixr-page-max, the default) or `prose`
+ * (--bravoixr-measure-prose, a comfortable reading measure). The cap applies to
+ * the *content*: the spacing-10 inline gutters sit outside it, so a prose
+ * container still gives its text the full measure. That is done with calc() on
+ * max-inline-size rather than box-sizing: content-box — Page makes every
+ * descendant inherit its box-sizing, so switching this box to content-box would
+ * silently switch everything inside it too.
+ *
+ * inline-size: 100% makes the box fill its parent up to the cap. Without it,
+ * auto margins shrink the box to its content inside a flex parent — Page's
+ * body is one.
+ *
+ * `align` positions the box with auto inline margins: centred by default, or
+ * packed to the inline start or end. Margins are flow-relative, so start and
+ * end mirror under RTL.
+ *
+ * Both variants reach the CSS through data attributes, keeping the rules
+ * scoped; nothing rendered here carries a class. */
+
+interface Props {
+  /* Explicit `| undefined` — tsconfig extends astro/tsconfigs/strictest, where
+   * exactOptionalPropertyTypes means `?` alone does not admit undefined. */
+  width?: 'page' | 'prose' | undefined;
+  align?: 'center' | 'start' | 'end' | undefined;
+}
+
+const { width = 'page', align = 'center' } = Astro.props;
+---
+
+<div data-width={width} data-align={align}>
+  <slot />
+</div>
+
+<style>
+  div {
+    inline-size: 100%;
+    max-inline-size: calc(var(--bravoixr-page-max) + 2 * var(--bravoixr-spacing-10));
+    padding-inline: var(--bravoixr-spacing-10);
+    margin-inline: auto;
+  }
+
+  div[data-width='prose'] {
+    max-inline-size: calc(var(--bravoixr-measure-prose) + 2 * var(--bravoixr-spacing-10));
+  }
+
+  div[data-align='start'] {
+    margin-inline: 0 auto;
+  }
+
+  div[data-align='end'] {
+    margin-inline: auto 0;
+  }
+</style>

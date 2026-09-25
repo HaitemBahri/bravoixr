@@ -29,7 +29,7 @@ Every component renders one `<div>` with a default slot.
 - **Gap** is a spacing step `1`–`12` and maps to `--bravoixr-spacing-N`. It's set as `--bravoixr-layout-gap` on the root on every render, so a nested layout component never inherits its parent's gap.
 - **Variants** reach the CSS through `data-` attributes (`data-align`, `data-side`, …), never through classes.
 - **No `@media`.** Responsiveness comes from the space available: auto-fill in `LayoutGrid`, wrapping in `LayoutCluster` and `LayoutSplit`.
-- **Block size is the ancestor's job.** Nothing declares a height. `LayoutCenter` on the block axis only centres when its parent gives it a definite height.
+- **Block size is the ancestor's job.** Nothing sets a height. `LayoutCenter` declares `min-block-size: 100%` so it fills a parent with a definite height, and only centres on the block axis inside one.
 - **Only `LayoutSplit` styles slotted content.** It sizes its two children through `:global()`. The rest use `gap` and alignment only.
 
 ## Replaces `container/`

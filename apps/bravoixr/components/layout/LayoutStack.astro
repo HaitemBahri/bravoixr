@@ -1,0 +1,54 @@
+---
+/* Component — LayoutStack
+ * Answers "how do things sit vertically?" — children flow down the block axis
+ * with an even gap between them.
+ *
+ * `gap` is a step on the spacing scale (1–12, default 5). It is written onto
+ * this component's own root as --bravoixr-layout-gap on every render, never
+ * left to inherit: custom properties inherit, so a nested layout component
+ * that skipped the declaration would pick up its parent's gap. Setting a
+ * custom property on the root is the pattern CLAUDE.md prescribes for a value
+ * chosen by prop; the value is always a semantic spacing token.
+ *
+ * `align` places children on the inline axis — stretched to the full width by
+ * default, or packed to the start, centre or end at their own width. The
+ * values are flow-relative, so start and end mirror under RTL.
+ *
+ * No block-size is declared — height is the ancestor's responsibility. */
+
+type SpacingStep = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
+
+interface Props {
+  /* Explicit `| undefined` — tsconfig extends astro/tsconfigs/strictest, where
+   * exactOptionalPropertyTypes means `?` alone does not admit undefined. */
+  gap?: SpacingStep | undefined;
+  align?: 'stretch' | 'start' | 'center' | 'end' | undefined;
+}
+
+const { gap = 5, align = 'stretch' } = Astro.props;
+---
+
+<div data-align={align} style={`--bravoixr-layout-gap: var(--bravoixr-spacing-${gap})`}>
+  <slot />
+</div>
+
+<style>
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--bravoixr-layout-gap);
+  }
+
+  div[data-align='start'] {
+    align-items: start;
+  }
+
+  div[data-align='center'] {
+    align-items: center;
+  }
+
+  div[data-align='end'] {
+    align-items: end;
+  }
+</style>

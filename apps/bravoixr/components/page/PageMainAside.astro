@@ -1,0 +1,27 @@
+---
+/* Component — PageMainAside
+ * The rail beside the page's content column — related links, a table of
+ * contents, supporting notes.
+ *
+ * Renders <aside> so the rail is announced as complementary content. Its
+ * presence is also what switches PageMain to the two-track capped row, via
+ * PageMain's `:has(> aside)` rule.
+ *
+ * `span 1 / content-end` places it in the last content track of PageMain's
+ * grid: the rail beside the container on desktop, and the single shared track
+ * below it — so it stacks under the container — once the row collapses. The
+ * grid lines are flow-relative, so the rail sits at the inline end and mirrors
+ * under RTL. min-inline-size: 0 lets long content wrap inside the rail rather
+ * than widening its track. */
+---
+
+<aside>
+  <slot />
+</aside>
+
+<style>
+  aside {
+    grid-column: span 1 / content-end;
+    min-inline-size: 0;
+  }
+</style>

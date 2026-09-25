@@ -52,5 +52,5 @@ Page                          <body> — consumer owns <html>/<head>
 2. **Header regions claim their own grid column** — no named slots, so a region can't land in the wrong place. `PageNav` renders `<nav>`.
 3. **`PageHero` is a direct child of `PageMain`**, so it can bleed edge to edge. On a page with a hero, the hero carries the `<h1>` and the container's `title`/`description` are left unset.
 4. **`PageMainContainer` owns the page `<h1>`.** Container and aside share the capped row, sized by
-   `--bravoixr-page-aside-columns` (`1fr` + `--bravoixr-page-sidebar-size`, 280px); below 1024px it
+   `--bravoixr-page-aside-columns` (`1fr`, a spacing-10 gap track, `--bravoixr-page-sidebar-size` 280px); below 1024px it
    re-points to `1fr` in `semantics/layout.css`, stacking the aside under the container.

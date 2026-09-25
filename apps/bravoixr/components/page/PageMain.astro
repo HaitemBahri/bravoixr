@@ -1,0 +1,57 @@
+---
+/* Component — PageMain
+ * The page's main region — the host for a full-bleed hero above a capped row
+ * holding PageMainContainer and, optionally, PageMainAside.
+ *
+ * One grid does both jobs. The outer tracks are the page gutters, sized with
+ * the same centred-column formula PageHeader and PageFooter use for their
+ * inline padding, so the content tracks between them line up with the header
+ * and footer content. A hero spans full-start / full-end and bleeds edge to
+ * edge; the container and aside sit between content-start and content-end.
+ * PageMain itself carries no inline padding — that is what leaves the hero free
+ * to bleed without margin tricks.
+ *
+ * The content tracks depend on whether an aside is present. Without one there
+ * is a single track, so the container takes the full capped width. With one,
+ * the tracks come from --bravoixr-page-aside-columns (container, gap, rail),
+ * which semantics/layout.css collapses to one track below desktop so the aside
+ * stacks under the container. The `:has()` test is structural — it reads this
+ * component's own children, not ambient context. Astro leaves the argument
+ * of :has() unscoped, so the bare `aside` matches the one PageMainAside
+ * renders even though it carries PageMainAside's scope attribute, not this
+ * component's. (A :global() wrapper there is emitted literally and makes the
+ * whole rule invalid.)
+ *
+ * As the growing child of Page's flex column (flex: 1 1 auto), it absorbs the
+ * leftover block space so the footer is pushed to the viewport bottom on short
+ * pages. align-content: start keeps the rows at their content height while it
+ * does. Inset by space-10 at the block-start and flush at the block-end, as the
+ * old PageBody was; row-gap separates the hero, container and stacked aside. */
+---
+
+<main>
+  <slot />
+</main>
+
+<style>
+  main {
+    flex: 1 1 auto;
+    display: grid;
+    grid-template-columns:
+      [full-start] max(var(--bravoixr-spacing-10), calc((100% - var(--bravoixr-page-max)) / 2))
+      [content-start] minmax(0, var(--bravoixr-grid-fr))
+      [content-end] max(var(--bravoixr-spacing-10), calc((100% - var(--bravoixr-page-max)) / 2))
+      [full-end];
+    align-content: start;
+    row-gap: var(--bravoixr-spacing-10);
+    padding-block: var(--bravoixr-spacing-10) 0;
+  }
+
+  main:has(> aside) {
+    grid-template-columns:
+      [full-start] max(var(--bravoixr-spacing-10), calc((100% - var(--bravoixr-page-max)) / 2))
+      [content-start] var(--bravoixr-page-aside-columns)
+      [content-end] max(var(--bravoixr-spacing-10), calc((100% - var(--bravoixr-page-max)) / 2))
+      [full-end];
+  }
+</style>

@@ -1,0 +1,21 @@
+---
+/* Component — PageFooterBrand
+ * The brand column of the footer's main band — a logo, the product name, a
+ * tagline.
+ *
+ * A grid with place-items: start stacks its slotted items and keeps each one
+ * shrink-wrapped to its content rather than stretched across the column,
+ * matching the rhythm of the PageFooterNav columns beside it. */
+---
+
+<div>
+  <slot />
+</div>
+
+<style>
+  div {
+    display: grid;
+    place-items: start;
+    gap: var(--bravoixr-spacing-3);
+  }
+</style>

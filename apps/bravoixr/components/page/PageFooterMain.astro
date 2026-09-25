@@ -1,0 +1,27 @@
+---
+/* Component — PageFooterMain
+ * The footer's main band. Each direct child — a PageFooterBrand or a
+ * PageFooterNav — becomes one column, laid out in a row.
+ *
+ * grid-auto-flow: column means columns are created as children arrive rather
+ * than declared up front, so the band takes however many children it is given
+ * without the component knowing the count — which it could not learn anyway,
+ * since Astro slots are opaque. The columns follow the inline axis, so the row
+ * mirrors under RTL.
+ *
+ * align-items: start keeps columns top-aligned rather than stretched, so a tall
+ * column does not drag the others' content down with it. */
+---
+
+<div>
+  <slot />
+</div>
+
+<style>
+  div {
+    display: grid;
+    grid-auto-flow: column;
+    align-items: start;
+    gap: var(--bravoixr-spacing-10);
+  }
+</style>

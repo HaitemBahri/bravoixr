@@ -43,12 +43,8 @@ const { title, description } = Astro.props;
               title
             ) : (
               <>
-                <span data-script="latin" lang="en">
-                  {title.en}
-                </span>
-                <span data-script="arabic" lang="ar">
-                  {title.ar}
-                </span>
+                <span data-script="latin" lang="en">{title.en}</span>
+                <span data-script="arabic" lang="ar">{title.ar}</span>
               </>
             )}
           </h1>
@@ -59,12 +55,8 @@ const { title, description } = Astro.props;
               description
             ) : (
               <>
-                <span data-script="latin" lang="en">
-                  {description.en}
-                </span>
-                <span data-script="arabic" lang="ar">
-                  {description.ar}
-                </span>
+                <span data-script="latin" lang="en">{description.en}</span>
+                <span data-script="arabic" lang="ar">{description.ar}</span>
               </>
             )}
           </p>

@@ -36,12 +36,8 @@ const { title } = Astro.props;
         title
       ) : (
         <>
-          <span data-script="latin" lang="en">
-            {title.en}
-          </span>
-          <span data-script="arabic" lang="ar">
-            {title.ar}
-          </span>
+          <span data-script="latin" lang="en">{title.en}</span>
+          <span data-script="arabic" lang="ar">{title.ar}</span>
         </>
       )
     }

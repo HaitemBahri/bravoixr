@@ -43,12 +43,8 @@ const both = en !== undefined && ar !== undefined;
 {
   both ? (
     <>
-      <span data-script="latin" lang="en">
-        {en}
-      </span>
-      <span data-script="arabic" lang="ar">
-        {ar}
-      </span>
+      <span data-script="latin" lang="en">{en}</span>
+      <span data-script="arabic" lang="ar">{ar}</span>
     </>
   ) : (
     (en ?? ar)

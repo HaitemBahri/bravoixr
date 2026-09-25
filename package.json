@@ -4,5 +4,12 @@
   "workspaces": [
     "apps/bravoixr",
     "apps/preview"
-  ]
+  ],
+  "scripts": {
+    "check": "npm run check -w bravoixr && npm run check -w preview"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "typescript": "^6.0.3"
+  }
 }

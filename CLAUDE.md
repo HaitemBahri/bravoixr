@@ -59,7 +59,7 @@ import DisplayCard from 'bravoixr/components/display/DisplayCard.astro';
 | Folder | Role |
 | -- | -- |
 | `page/` | the page canvas and its chrome |
-| `container/` | arrangement — no appearance of their own |
+| `layout/` | arrangement — no appearance of their own |
 | `display/` | presentation of content |
 
 **Family folders are kebab-case; component files stay PascalCase.** The two casings in one path are deliberate: the folder is a path segment, so the workspace tie-breaker gives it kebab-case, while the filename *is* the identifier you import. `.astro` files cannot be re-exported through a JS barrel, so there is no index file and consumers import the full path.

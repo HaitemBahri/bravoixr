@@ -1,0 +1,68 @@
+---
+/* Component — LayoutSplit
+ * Answers "how do two regions divide space?" — a fixed side pane beside a
+ * flexible main pane, stacking the two when there is no longer room for both.
+ *
+ * Takes exactly two children. `side` names which one is the side pane: the
+ * first child for `start` (the default), the last for `end`. Source order is
+ * the reading order, so a side pane at the inline end is written last — and
+ * the flex row is flow-relative, so both arrangements mirror under RTL.
+ *
+ * The switch between side-by-side and stacked needs no media query. The side
+ * pane is based at --bravoixr-page-sidebar-size and may grow; the main pane is
+ * based at zero, grows 9999 times as fast (so the side pane's share of the
+ * leftover rounds to nothing), and refuses to be narrower than half the
+ * container. While both fit, the main pane takes all the leftover space
+ * and the side pane keeps its size. Once the main pane would drop below 50%,
+ * flex-wrap moves the pair onto two lines, and each then grows to the full
+ * width. The switch point follows the container, not the viewport.
+ *
+ * This is the one layout component that styles slotted content — sizing the
+ * two panes is its whole job. Slotted children are rendered by the consumer and
+ * never carry this component's scope attribute, so each child rule needs an
+ * explicit :global(); the rules still only reach this component's own direct
+ * children.
+ *
+ * `gap` is a step on the spacing scale (1–12, default 5), written onto the
+ * root as --bravoixr-layout-gap on every render so a nested layout component
+ * never inherits it; see LayoutStack. It separates the panes side by side and
+ * stacked alike. */
+
+type SpacingStep = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
+
+interface Props {
+  /* Explicit `| undefined` — tsconfig extends astro/tsconfigs/strictest, where
+   * exactOptionalPropertyTypes means `?` alone does not admit undefined. */
+  gap?: SpacingStep | undefined;
+  side?: 'start' | 'end' | undefined;
+}
+
+const { gap = 5, side = 'start' } = Astro.props;
+---
+
+<div data-side={side} style={`--bravoixr-layout-gap: var(--bravoixr-spacing-${gap})`}>
+  <slot />
+</div>
+
+<style>
+  div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--bravoixr-layout-gap);
+  }
+
+  /* Every child starts as the main pane; the side rules below override the
+   * one child that is the side pane. */
+  div > :global(*) {
+    flex-basis: 0;
+    flex-grow: 9999;
+    min-inline-size: 50%;
+  }
+
+  div[data-side='start'] > :global(:first-child),
+  div[data-side='end'] > :global(:last-child) {
+    flex-basis: var(--bravoixr-page-sidebar-size);
+    flex-grow: 1;
+    min-inline-size: 0;
+  }
+</style>

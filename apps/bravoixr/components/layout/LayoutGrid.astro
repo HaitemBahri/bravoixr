@@ -1,0 +1,44 @@
+---
+/* Component — LayoutGrid
+ * Answers "how do things occupy a grid?" — a grid that reflows its column
+ * count to fit the space available.
+ *
+ * The consumer never states a column count. The grid states a minimum column
+ * width (--bravoixr-container-column-min) and auto-fill decides how many fit —
+ * several across on a wide screen, fewer on a tablet, one on a phone — so it
+ * adapts with no media query. The minimum is wrapped in min(…, 100%): in a
+ * container narrower than the minimum the single column shrinks to fit rather
+ * than overflowing it.
+ *
+ * `gap` is a step on the spacing scale (1–12, default 5), written onto the
+ * root as --bravoixr-layout-gap on every render so a nested layout component
+ * never inherits it; see LayoutStack. It applies to rows and columns alike.
+ *
+ * Tracks fill in the inline direction, so the grid mirrors under RTL. No
+ * block-size — height is the ancestor's responsibility. */
+
+type SpacingStep = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
+
+interface Props {
+  /* Explicit `| undefined` — tsconfig extends astro/tsconfigs/strictest, where
+   * exactOptionalPropertyTypes means `?` alone does not admit undefined. */
+  gap?: SpacingStep | undefined;
+}
+
+const { gap = 5 } = Astro.props;
+---
+
+<div style={`--bravoixr-layout-gap: var(--bravoixr-spacing-${gap})`}>
+  <slot />
+</div>
+
+<style>
+  div {
+    display: grid;
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(min(var(--bravoixr-container-column-min), 100%), 1fr)
+    );
+    gap: var(--bravoixr-layout-gap);
+  }
+</style>

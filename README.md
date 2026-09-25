@@ -14,7 +14,7 @@ Two halves:
 ## Contents
 
 - **Design tokens** — two tiers in separate folders: `primitives/` (raw literal values) → `semantics/` (meaning). The portable source of truth.
-- **Components** (`components/`) — grouped by family: `page/` for the canvas and its chrome, `container/` for arrangement, `display/` for presenting content.
+- **Components** (`components/`) — grouped by family: `page/` for the canvas and its chrome, `layout/` for arrangement, `display/` for presenting content.
 
 ## Principles
 
@@ -39,7 +39,7 @@ Two halves:
 apps/bravoixr/     the component library
   primitives/    raw literal CSS values (color, typography, layout, icons)
   semantics/     meaning mapped onto primitives (+ inline dark theme)
-  components/    Astro components, grouped page/ container/ display/
+  components/    Astro components, grouped page/ layout/ display/
   index.css      token entry — import order: primitives → semantics
 apps/preview/      preview site for the tokens and components
 ```

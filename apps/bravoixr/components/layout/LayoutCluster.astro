@@ -1,0 +1,71 @@
+---
+/* Component — LayoutCluster
+ * Answers "how do things sit horizontally?" — children flow along the inline
+ * axis and wrap onto new lines when they run out of room, so a row of tags,
+ * buttons or links adapts to any width with no media query.
+ *
+ * `gap` is a step on the spacing scale (1–12, default 5), written onto the
+ * root as --bravoixr-layout-gap on every render so a nested layout component
+ * never inherits it; see LayoutStack. The one gap applies between items and
+ * between wrapped lines alike.
+ *
+ * `justify` distributes items along the row — packed to the start by default,
+ * or centred, packed to the end, or spread with the space between them.
+ * `align` places them on the block axis — centred by default, which is what a
+ * row of mixed-height controls usually wants, or start, end or baseline. All
+ * of it is flow-relative, so the row mirrors under RTL. */
+
+type SpacingStep = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
+
+interface Props {
+  /* Explicit `| undefined` — tsconfig extends astro/tsconfigs/strictest, where
+   * exactOptionalPropertyTypes means `?` alone does not admit undefined. */
+  gap?: SpacingStep | undefined;
+  justify?: 'start' | 'center' | 'end' | 'between' | undefined;
+  align?: 'center' | 'start' | 'end' | 'baseline' | undefined;
+}
+
+const { gap = 5, justify = 'start', align = 'center' } = Astro.props;
+---
+
+<div
+  data-justify={justify}
+  data-align={align}
+  style={`--bravoixr-layout-gap: var(--bravoixr-spacing-${gap})`}
+>
+  <slot />
+</div>
+
+<style>
+  div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: center;
+    gap: var(--bravoixr-layout-gap);
+  }
+
+  div[data-justify='center'] {
+    justify-content: center;
+  }
+
+  div[data-justify='end'] {
+    justify-content: end;
+  }
+
+  div[data-justify='between'] {
+    justify-content: space-between;
+  }
+
+  div[data-align='start'] {
+    align-items: start;
+  }
+
+  div[data-align='end'] {
+    align-items: end;
+  }
+
+  div[data-align='baseline'] {
+    align-items: baseline;
+  }
+</style>

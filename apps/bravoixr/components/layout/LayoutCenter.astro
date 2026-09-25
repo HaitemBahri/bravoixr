@@ -1,0 +1,53 @@
+---
+/* Component — LayoutCenter
+ * Answers "how is something centred?" — centres its children on the inline
+ * axis, the block axis, or both.
+ *
+ * `axis` picks the direction: `both` (the default), `inline` (horizontal in a
+ * horizontal writing mode) or `block` (vertical). It is a grid: justify-items
+ * centres each child across the inline axis, while align-content packs the
+ * rows together at the block centre — so several children stay together as a
+ * group in the middle rather than spreading into evenly split rows.
+ *
+ * Block centring needs space to centre within. The component declares
+ * min-block-size: 100%, so it fills a parent that has a definite height —
+ * a fixed block-size, a stretched flex or grid item, a full-viewport region —
+ * and centres inside it. In an auto-height parent the percentage resolves to
+ * nothing and the component is exactly as tall as its content, where block
+ * centring has no visible effect. It never sets a height of its own; that
+ * stays the ancestor's responsibility.
+ *
+ * The variant reaches the CSS through a data attribute; nothing rendered here
+ * carries a class. */
+
+interface Props {
+  /* Explicit `| undefined` — tsconfig extends astro/tsconfigs/strictest, where
+   * exactOptionalPropertyTypes means `?` alone does not admit undefined. */
+  axis?: 'both' | 'inline' | 'block' | undefined;
+}
+
+const { axis = 'both' } = Astro.props;
+---
+
+<div data-axis={axis}>
+  <slot />
+</div>
+
+<style>
+  div {
+    display: grid;
+    min-block-size: 100%;
+    justify-items: center;
+    align-content: center;
+  }
+
+  /* Rows pack at the block start rather than stretching: inline centring must
+   * leave the vertical layout exactly as an ordinary block would. */
+  div[data-axis='inline'] {
+    align-content: start;
+  }
+
+  div[data-axis='block'] {
+    justify-items: normal;
+  }
+</style>

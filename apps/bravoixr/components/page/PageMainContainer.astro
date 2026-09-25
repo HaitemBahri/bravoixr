@@ -1,0 +1,78 @@
+---
+/* Component — PageMainContainer
+ * The page's content column — the capped, centred column the sections live
+ * in — and the owner of the page's title block.
+ *
+ * Places itself in the first content track of PageMain's grid
+ * (`content-start / span 1`): the full capped width when the page has no aside,
+ * the flexible track beside the rail when it does, and the shared track above
+ * the stacked aside below desktop. min-inline-size: 0 lets wide content wrap or
+ * scroll inside the column rather than widening its track and pushing the rail
+ * off the page.
+ *
+ * The heading is <h1> — the page title is the document's heading, and it leaves
+ * PageSection's <h2> and PageSubSection's <h3> correctly below it. On a page
+ * with a PageHero the hero carries the <h1> instead, and this component's title
+ * and description are left unset, so the page still has exactly one.
+ *
+ * Typography carries over from the old PageBody's title block. The description
+ * keeps the *page-level* size role, unlike PageSection, which uses the body
+ * role because a section lede is body copy — a page lede is genuinely the
+ * larger one. margin-block is declared on both text elements: the library ships
+ * no reset. */
+
+interface Props {
+  /* Explicit `| undefined` — tsconfig extends astro/tsconfigs/strictest, where
+   * exactOptionalPropertyTypes means `?` alone does not admit undefined. */
+  title?: string | undefined;
+  description?: string | undefined;
+}
+
+const { title, description } = Astro.props;
+---
+
+<div>
+  {
+    (title || description) && (
+      <header>
+        {title && <h1>{title}</h1>}
+        {description && <p>{description}</p>}
+      </header>
+    )
+  }
+  <slot />
+</div>
+
+<style>
+  div {
+    grid-column: content-start / span 1;
+    min-inline-size: 0;
+  }
+
+  /* The block carries its trailing space as one unit. Putting it on the
+   * description instead would lose it whenever only a title is given, since the
+   * two props are independent. */
+  header {
+    margin-block-end: var(--bravoixr-spacing-8);
+  }
+
+  h1 {
+    font-family: var(--bravoixr-font-heading);
+    font-size: var(--bravoixr-text-page-title);
+    font-weight: var(--bravoixr-weight-page-title);
+    line-height: var(--bravoixr-leading-display);
+    letter-spacing: var(--bravoixr-tracking-display);
+    margin-block: 0 var(--bravoixr-spacing-5);
+  }
+
+  p {
+    font-family: var(--bravoixr-font-body);
+    font-size: var(--bravoixr-text-page-description);
+    font-weight: var(--bravoixr-weight-page-description);
+    line-height: var(--bravoixr-leading-prose);
+    letter-spacing: var(--bravoixr-tracking-prose);
+    max-inline-size: var(--bravoixr-measure-page-description);
+    color: var(--bravoixr-color-text-muted);
+    margin-block: 0;
+  }
+</style>

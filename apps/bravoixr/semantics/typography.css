@@ -61,6 +61,23 @@
   /* Letter-spacing — Latin tracks headings and caps */
   --bravoixr-tracking-display: var(--bravoixr-tracking-heading);
   --bravoixr-tracking-uppercase: var(--bravoixr-tracking-caps);
+
+  /* Script switching — the show/hide pair a bilingual component keys off, so it
+   * can drop the wrong script without writing a [dir] selector of its own. A
+   * component that carries both scripts wraps each in a span and sets its
+   * display from these roles; the visible one always matches the ambient dir.
+   *
+   * `contents` rather than `block`: it removes the span's own box entirely, so
+   * the text lays out as a direct child of the heading or paragraph around it.
+   * That lets one pair serve every component whether its parent is block, flex
+   * or grid — a display keyword would have to be duplicated per layout mode.
+   * `none` on the other side removes that subtree outright, so the hidden
+   * script is not rendered, announced, selected or copied.
+   *
+   * These are the only roles here holding a CSS keyword rather than a mapped
+   * primitive. They are still literal values, so the tokens stay portable. */
+  --bravoixr-script-latin: contents;
+  --bravoixr-script-arabic: none;
 }
 
 [dir="rtl"] {
@@ -78,6 +95,10 @@
   /* Letter-spacing — Arabic is cursive and joined, so it is never tracked */
   --bravoixr-tracking-display: var(--bravoixr-tracking-normal);
   --bravoixr-tracking-uppercase: var(--bravoixr-tracking-normal);
+
+  /* Script switching — the mirror of the pair in the ltr block above */
+  --bravoixr-script-latin: none;
+  --bravoixr-script-arabic: contents;
 }
 
 /* Viewport axis — the responsive heading "elevator".

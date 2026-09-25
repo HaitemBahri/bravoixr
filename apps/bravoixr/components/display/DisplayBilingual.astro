@@ -1,0 +1,90 @@
+---
+/* Component — DisplayBilingual
+ * A run of text carried in both scripts, for the components that take their
+ * content through a slot rather than a prop.
+ *
+ * The page family takes bilingual text as props, but DisplayCardTitle,
+ * DisplayCardText, PageBrand, PageFooterBrand, PageFooterNavItem,
+ * PageFooterBottom, PageActions and PageNav all take slotted content instead.
+ * Doubling each of those into named slots would change eight public APIs for
+ * one concern; this component drops into the slot they already have and leaves
+ * them untouched:
+ *
+ *   <DisplayCardTitle>
+ *     <DisplayBilingual en="Color" ar="اللون" />
+ *   </DisplayCardTitle>
+ *
+ * It has no appearance of its own — it sets display and nothing else, so the
+ * text inherits every type role from whatever component it is slotted into.
+ *
+ * When both scripts are given, each is wrapped in a span and the
+ * --bravoixr-script-* roles drop the one that does not match the ambient dir.
+ * When only one is given, it renders bare and stays visible under both
+ * directions: a missing translation must fall back to the script that exists,
+ * never to an empty element. That also makes a plain proper noun — a name, a
+ * version number — correct by default.
+ *
+ * Renders no wrapper of its own. A wrapper would be a box between the slotted
+ * text and the component styling it, which would break a parent that lays its
+ * slot out as a flex or grid child. */
+
+interface Props {
+  /* Explicit `| undefined` — tsconfig extends astro/tsconfigs/strictest, where
+   * exactOptionalPropertyTypes means `?` alone does not admit undefined. */
+  en?: string | undefined;
+  ar?: string | undefined;
+}
+
+const { en, ar } = Astro.props;
+
+const both = en !== undefined && ar !== undefined;
+
+/* The single-script case still gets a span, so the text keeps a lang of its own.
+ * Rendering it bare would leave Arabic inheriting the document's lang — a
+ * screen reader would then read it with an English voice. The span is
+ * display: contents, so it costs no box and lays out exactly as bare text. */
+const only = both ? undefined : (en ?? ar);
+const onlyLang = en !== undefined ? 'en' : 'ar';
+---
+
+{
+  both ? (
+    <>
+      <span data-script="latin" lang="en">{en}</span>
+      <span data-script="arabic" lang="ar">{ar}</span>
+    </>
+  ) : (
+    only !== undefined && (
+      <span data-script="only" lang={onlyLang}>
+        {only}
+      </span>
+    )
+  )
+}
+
+<style>
+  /* Script switching. The roles resolve from the ambient dir, so exactly one
+   * span is `contents` — its own box dropped, the text laid out as a direct
+   * child of the component this is slotted into, which is what keeps a flex or
+   * grid parent laying it out as it would a bare string. The other is `none`,
+   * so the hidden script is not rendered, announced, selected or copied.
+   *
+   * The spans must never carry a dir of their own: that would re-resolve these
+   * roles from the span's own [dir] block, so it would compute `contents` for
+   * itself and never hide. */
+  span[data-script="latin"] {
+    display: var(--bravoixr-script-latin);
+  }
+
+  span[data-script="arabic"] {
+    display: var(--bravoixr-script-arabic);
+  }
+
+  /* The lone script is never switched — it is the only text there is, so it
+   * shows under both directions. `contents` keeps its box out of the tree, so
+   * a flex or grid parent lays it out exactly as it would a bare string. A
+   * structural keyword, not a design value, so it is not a token. */
+  span[data-script="only"] {
+    display: contents;
+  }
+</style>

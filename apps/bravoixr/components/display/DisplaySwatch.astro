@@ -17,15 +17,31 @@
  * and a heading each would fill the document outline with labels rather than
  * structure. */
 
+/* A text prop may carry one script or both — see PageSection for the full note.
+ * Redeclared here rather than imported: the library has no cross-component
+ * imports, and SpacingStep is duplicated across the layout family likewise. */
+type BilingualText = string | { en: string; ar: string };
+
 interface Props {
-  title: string;
+  title: BilingualText;
 }
 
 const { title } = Astro.props;
 ---
 
 <div>
-  <p>{title}</p>
+  <p>
+    {
+      typeof title === 'string' ? (
+        title
+      ) : (
+        <>
+          <span data-script="latin" lang="en">{title.en}</span>
+          <span data-script="arabic" lang="ar">{title.ar}</span>
+        </>
+      )
+    }
+  </p>
   <slot />
 </div>
 
@@ -50,5 +66,14 @@ const { title } = Astro.props;
     letter-spacing: var(--bravoixr-tracking-display);
     text-align: center;
     margin-block: 0 var(--bravoixr-spacing-3);
+  }
+
+  /* Script switching — see DisplayBilingual for why the spans carry no dir. */
+  span[data-script="latin"] {
+    display: var(--bravoixr-script-latin);
+  }
+
+  span[data-script="arabic"] {
+    display: var(--bravoixr-script-arabic);
   }
 </style>

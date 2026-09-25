@@ -18,7 +18,15 @@ import LayoutGrid from 'bravoixr/components/layout/LayoutGrid.astro';
 import DisplayCard from 'bravoixr/components/display/DisplayCard.astro';
 import DisplayCardTitle from 'bravoixr/components/display/DisplayCardTitle.astro';
 import DisplayCardText from 'bravoixr/components/display/DisplayCardText.astro';
+import DisplayBilingual from 'bravoixr/components/display/DisplayBilingual.astro';
 
+// Text props take { en, ar }; slots take <DisplayBilingual>. Both ship the two
+// scripts and let the --bravoixr-script-* roles drop the one that does not
+// match dir, so the page swaps language with no reload.
+//
+// "bravoixr" and the version number stay plain strings — a proper noun and a
+// numeral read the same in both scripts, and a plain string renders under
+// either direction by design.
 ---
 
 <!doctype html>
@@ -53,72 +61,119 @@ import DisplayCardText from 'bravoixr/components/display/DisplayCardText.astro';
 
     <PageMain>
       <PageMainContainer
-        title="Design identity preview"
-        description="bravoixr's tokens and components, rendered through the Astro component library."
+        title={{ en: 'Design identity preview', ar: 'معاينة الهوية البصرية' }}
+        description={{
+          en: "bravoixr's tokens and components, rendered through the Astro component library.",
+          ar: 'رموز bravoixr ومكوّناتها، معروضة عبر مكتبة مكوّنات Astro.',
+        }}
       >
-        <PageSection
-          title="Design Tokens"
-        >
-          <PageSubSection
-            title="Primitives"
-          >
+        <PageSection title={{ en: 'Design Tokens', ar: 'رموز التصميم' }}>
+          <PageSubSection title={{ en: 'Primitives', ar: 'القيم الأولية' }}>
             <LayoutGrid>
               <DisplayCard>
-                <DisplayCardTitle>Color</DisplayCardTitle>
-                <DisplayCardText>Brand, status, and accent ramps plus neutrals.</DisplayCardText>
+                <DisplayCardTitle>
+                  <DisplayBilingual en="Color" ar="اللون" />
+                </DisplayCardTitle>
+                <DisplayCardText>
+                  <DisplayBilingual
+                    en="Brand, status, and accent ramps plus neutrals."
+                    ar="تدرّجات الهوية والحالات والتمييز، إضافة إلى المحايدة."
+                  />
+                </DisplayCardText>
               </DisplayCard>
 
               <DisplayCard>
-                <DisplayCardTitle>Typography</DisplayCardTitle>
-                <DisplayCardText>Font stacks, size scales, weights, leading, tracking.</DisplayCardText>
+                <DisplayCardTitle>
+                  <DisplayBilingual en="Typography" ar="الطباعة" />
+                </DisplayCardTitle>
+                <DisplayCardText>
+                  <DisplayBilingual
+                    en="Font stacks, size scales, weights, leading, tracking."
+                    ar="عائلات الخطوط ومقاييس الأحجام والأوزان وتباعد الأسطر والحروف."
+                  />
+                </DisplayCardText>
               </DisplayCard>
 
               <DisplayCard>
-                <DisplayCardTitle>Layout</DisplayCardTitle>
-                <DisplayCardText>Spacing, sizing, radius, borders, shadows, z-index.</DisplayCardText>
+                <DisplayCardTitle>
+                  <DisplayBilingual en="Layout" ar="التخطيط" />
+                </DisplayCardTitle>
+                <DisplayCardText>
+                  <DisplayBilingual
+                    en="Spacing, sizing, radius, borders, shadows, z-index."
+                    ar="المسافات والأحجام والاستدارة والحدود والظلال وترتيب الطبقات."
+                  />
+                </DisplayCardText>
               </DisplayCard>
 
               <DisplayCard>
-                <DisplayCardTitle>Icons</DisplayCardTitle>
-                <DisplayCardText>Icon font, variable axes, and size scale.</DisplayCardText>
+                <DisplayCardTitle>
+                  <DisplayBilingual en="Icons" ar="الأيقونات" />
+                </DisplayCardTitle>
+                <DisplayCardText>
+                  <DisplayBilingual
+                    en="Icon font, variable axes, and size scale."
+                    ar="خط الأيقونات ومحاوره المتغيّرة ومقياس الأحجام."
+                  />
+                </DisplayCardText>
               </DisplayCard>
             </LayoutGrid>
           </PageSubSection>
 
-          <PageSubSection
-            title="Semantics"
-          >
+          <PageSubSection title={{ en: 'Semantics', ar: 'الأدوار الدلالية' }}>
             <LayoutGrid>
               <DisplayCard>
-                <DisplayCardTitle>Color</DisplayCardTitle>
+                <DisplayCardTitle>
+                  <DisplayBilingual en="Color" ar="اللون" />
+                </DisplayCardTitle>
                 <DisplayCardText>
-                  Role tokens for brand, status, surfaces, text, and borders — themed light/dark.
+                  <DisplayBilingual
+                    en="Role tokens for brand, status, surfaces, text, and borders — themed light/dark."
+                    ar="رموز الأدوار للهوية والحالات والأسطح والنص والحدود — بسمتين فاتحة وداكنة."
+                  />
                 </DisplayCardText>
               </DisplayCard>
 
               <DisplayCard>
-                <DisplayCardTitle>Typography</DisplayCardTitle>
+                <DisplayCardTitle>
+                  <DisplayBilingual en="Typography" ar="الطباعة" />
+                </DisplayCardTitle>
                 <DisplayCardText>
-                  Family, size, weight, leading, and tracking roles — scripted and responsive.
+                  <DisplayBilingual
+                    en="Family, size, weight, leading, and tracking roles — scripted and responsive."
+                    ar="أدوار العائلة والحجم والوزن وتباعد الأسطر والحروف — متغيّرة بالخط ومستجيبة."
+                  />
                 </DisplayCardText>
               </DisplayCard>
 
               <DisplayCard>
-                <DisplayCardTitle>Layout</DisplayCardTitle>
-                <DisplayCardText>Radius, border, sizing, shadow, layer, and spacing roles.</DisplayCardText>
+                <DisplayCardTitle>
+                  <DisplayBilingual en="Layout" ar="التخطيط" />
+                </DisplayCardTitle>
+                <DisplayCardText>
+                  <DisplayBilingual
+                    en="Radius, border, sizing, shadow, layer, and spacing roles."
+                    ar="أدوار الاستدارة والحدود والأحجام والظلال والطبقات والمسافات."
+                  />
+                </DisplayCardText>
               </DisplayCard>
 
               <DisplayCard>
-                <DisplayCardTitle>Icons</DisplayCardTitle>
-                <DisplayCardText>Family, axis, and size roles — with a theme-aware grade.</DisplayCardText>
+                <DisplayCardTitle>
+                  <DisplayBilingual en="Icons" ar="الأيقونات" />
+                </DisplayCardTitle>
+                <DisplayCardText>
+                  <DisplayBilingual
+                    en="Family, axis, and size roles — with a theme-aware grade."
+                    ar="أدوار العائلة والمحور والحجم — مع درجة تتبع السمة."
+                  />
+                </DisplayCardText>
               </DisplayCard>
             </LayoutGrid>
           </PageSubSection>
         </PageSection>
 
-        <PageSection
-          title="Previews"
-        />
+        <PageSection title={{ en: 'Previews', ar: 'المعاينات' }} />
       </PageMainContainer>
     </PageMain>
 
@@ -126,17 +181,25 @@ import DisplayCardText from 'bravoixr/components/display/DisplayCardText.astro';
       <PageFooterMain>
         <PageFooterBrand>bravoixr</PageFooterBrand>
 
-        <PageFooterNav title="Explore">
-          <PageFooterNavItem href="#primitives">Primitives</PageFooterNavItem>
-          <PageFooterNavItem href="#semantics">Semantics</PageFooterNavItem>
+        <PageFooterNav title={{ en: 'Explore', ar: 'استكشف' }}>
+          <PageFooterNavItem href="#primitives">
+            <DisplayBilingual en="Primitives" ar="القيم الأولية" />
+          </PageFooterNavItem>
+          <PageFooterNavItem href="#semantics">
+            <DisplayBilingual en="Semantics" ar="الأدوار الدلالية" />
+          </PageFooterNavItem>
         </PageFooterNav>
       </PageFooterMain>
 
       <PageFooterBottom>
-        <span>Copyright © 2026 - All right reserved</span>
+        <span>
+          <DisplayBilingual
+            en="Copyright © 2026 - All right reserved"
+            ar="حقوق النشر © 2026 - جميع الحقوق محفوظة"
+          />
+        </span>
         <span>v0.4.5</span>
       </PageFooterBottom>
     </PageFooter>
   </Page>
 </html>
-

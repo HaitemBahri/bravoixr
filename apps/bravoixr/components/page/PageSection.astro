@@ -46,7 +46,7 @@ const { title, description } = Astro.props;
 
 <section>
   {
-    title !== undefined && (
+    title && (
       <h2>
         {typeof title === 'string' ? (
           title
@@ -60,7 +60,7 @@ const { title, description } = Astro.props;
     )
   }
   {
-    description !== undefined && (
+    description && (
       <p>
         {typeof description === 'string' ? (
           description

@@ -38,6 +38,13 @@ interface Props {
 const { en, ar } = Astro.props;
 
 const both = en !== undefined && ar !== undefined;
+
+/* The single-script case still gets a span, so the text keeps a lang of its own.
+ * Rendering it bare would leave Arabic inheriting the document's lang — a
+ * screen reader would then read it with an English voice. The span is
+ * display: contents, so it costs no box and lays out exactly as bare text. */
+const only = both ? undefined : (en ?? ar);
+const onlyLang = en !== undefined ? 'en' : 'ar';
 ---
 
 {
@@ -47,7 +54,11 @@ const both = en !== undefined && ar !== undefined;
       <span data-script="arabic" lang="ar">{ar}</span>
     </>
   ) : (
-    (en ?? ar)
+    only !== undefined && (
+      <span data-script="only" lang={onlyLang}>
+        {only}
+      </span>
+    )
   )
 }
 
@@ -67,5 +78,13 @@ const both = en !== undefined && ar !== undefined;
 
   span[data-script="arabic"] {
     display: var(--bravoixr-script-arabic);
+  }
+
+  /* The lone script is never switched — it is the only text there is, so it
+   * shows under both directions. `contents` keeps its box out of the tree, so
+   * a flex or grid parent lays it out exactly as it would a bare string. A
+   * structural keyword, not a design value, so it is not a token. */
+  span[data-script="only"] {
+    display: contents;
   }
 </style>

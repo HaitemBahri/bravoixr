@@ -35,9 +35,9 @@ const { title, description } = Astro.props;
 
 <section>
   {
-    (title !== undefined || description !== undefined) && (
+    (title || description) && (
       <header>
-        {title !== undefined && (
+        {title && (
           <h1>
             {typeof title === 'string' ? (
               title
@@ -49,7 +49,7 @@ const { title, description } = Astro.props;
             )}
           </h1>
         )}
-        {description !== undefined && (
+        {description && (
           <p>
             {typeof description === 'string' ? (
               description

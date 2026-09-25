@@ -65,11 +65,12 @@ A pair renders **both** scripts, each in its own `<span>`; `--bravoixr-script-la
 
 A plain string is treated as script-agnostic and renders bare in both directions. Use it for proper nouns, numerals and anything that should not change.
 
-Three consequences worth knowing:
+Four consequences worth knowing:
 
 - **Both strings ship in the HTML.** Harmless for an app; on a public page it is duplicated content in the markup.
 - **Attributes cannot switch.** An attribute has no box for CSS to drop, so `PageFooterNav`'s `aria-label` takes the Latin string in both directions, and `DisplayCardImage`'s `alt` stays a plain string. This is a ceiling of the mechanism, not a gap.
 - **The spans carry no `dir` of their own.** One that did would re-resolve the switching roles from its own `[dir]` block and never hide.
+- **`dir` is required, as everywhere else in the system.** The switching roles are defined only inside the `[dir]` blocks, with no `:root` default — the same rule the scripted typography roles follow. Without `dir` the roles do not resolve, `display` falls back to its initial value, and **both** scripts render one after the other. That is the designed failure: an unset context shows everything rather than silently hiding content.
 
 ## Decisions
 

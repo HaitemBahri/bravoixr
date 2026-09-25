@@ -24,6 +24,11 @@
    * misdescribe it. Shares the same primitive for now. */
   --bravoixr-container-column-min: var(--bravoixr-size-card-min);
   --bravoixr-page-sidebar-size: var(--bravoixr-size-sidebar);
+  /* PageMain's capped row when it holds an aside: the container's flexible
+   * track, the gap as a track of its own, then the aside rail. The gap is a
+   * track rather than a column-gap because a column-gap would also open beside
+   * the page gutters and push the content off the header's column. */
+  --bravoixr-page-aside-columns: var(--bravoixr-grid-fr) var(--bravoixr-spacing-10) var(--bravoixr-page-sidebar-size);
   --bravoixr-page-row-header-size: var(--bravoixr-size-row-header);
   --bravoixr-page-row-header-columns: var(--bravoixr-page-row-header-size) var(--bravoixr-grid-fr);
   --bravoixr-page-column-header-size: var(--bravoixr-size-column-header);
@@ -67,5 +72,15 @@
 @media (max-width: 767.98px) {
   :root {
     --bravoixr-page-row-header-columns: var(--bravoixr-grid-fr);
+  }
+}
+
+/* Below desktop (<1024): the page aside no longer sits beside the container —
+ * the capped row collapses to one track so the aside stacks under it. The px
+ * mirrors --bravoixr-breakpoint-desktop (1024px) in primitives/layout.css,
+ * offset by 0.02px to sit just below the min-width boundary. */
+@media (max-width: 1023.98px) {
+  :root {
+    --bravoixr-page-aside-columns: var(--bravoixr-grid-fr);
   }
 }

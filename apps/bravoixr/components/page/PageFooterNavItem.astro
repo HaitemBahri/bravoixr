@@ -1,9 +1,7 @@
 ---
-/* Component — PageFooterColumnItem
- * One entry inside a PageFooterColumn. With an href it renders a link; without
- * one it renders plain text — so the same component serves a link nav and a
- * copyright or version line, and no column has to fall back to hand-written
- * markup.
+/* Component — PageFooterNavItem
+ * One link inside a PageFooterNav. Always an <a>, with href required: plain
+ * text such as a copyright or version line belongs in PageFooterBottom.
  *
  * Items are flat siblings of the column's title, not a <ul>/<li> list. The
  * column is a grid, so each direct child is already a row; a list wrapper would
@@ -24,19 +22,15 @@
  * some backgrounds; the border-focus role is the system's own answer. */
 
 interface Props {
-  /* Explicit `| undefined` — tsconfig extends astro/tsconfigs/strictest, where
-   * exactOptionalPropertyTypes means `?` alone does not admit undefined. */
-  href?: string | undefined;
+  href: string;
 }
 
 const { href } = Astro.props;
-
-const Tag = href ? 'a' : 'span';
 ---
 
-<Tag href={href}>
+<a href={href}>
   <slot />
-</Tag>
+</a>
 
 <style>
   a {

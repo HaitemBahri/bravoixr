@@ -1,0 +1,29 @@
+---
+/* Component — PageNav
+ * The primary navigation of the page's top bar.
+ *
+ * Renders <nav> so the region is announced as a navigation landmark — unlike
+ * the brand and actions regions, its content is always navigation, so the
+ * element is fixed rather than opt-in.
+ *
+ * Claims grid column 2 of PageHeader's `1fr auto 1fr` track list explicitly.
+ * Because the two outer columns are equal fractions, column 2 sits at the bar's
+ * centre regardless of whether either sibling region is present.
+ *
+ * justify-content: center centres the region's own content within the column,
+ * which matters only when something else stretches the column. */
+---
+
+<nav>
+  <slot />
+</nav>
+
+<style>
+  nav {
+    grid-column: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--bravoixr-spacing-3);
+  }
+</style>

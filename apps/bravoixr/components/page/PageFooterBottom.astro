@@ -1,0 +1,21 @@
+---
+/* Component — PageFooterBottom
+ * The footer's bottom band — the copyright line, the version, legal links.
+ *
+ * A wrapping flex row: its items sit side by side on wide screens and wrap onto
+ * new lines on narrow ones rather than overflowing. The row follows the inline
+ * axis, so it mirrors under RTL. Text colour is inherited from the footer. */
+---
+
+<div>
+  <slot />
+</div>
+
+<style>
+  div {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--bravoixr-spacing-5);
+  }
+</style>

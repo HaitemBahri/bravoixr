@@ -54,16 +54,19 @@ Import the token entry point, then the components:
 ---
 import 'bravoixr/index.css';
 import Page from 'bravoixr/components/page/Page.astro';
-import PageBody from 'bravoixr/components/page/PageBody.astro';
+import PageMain from 'bravoixr/components/page/PageMain.astro';
+import PageMainContainer from 'bravoixr/components/page/PageMainContainer.astro';
 import DisplayCard from 'bravoixr/components/display/DisplayCard.astro';
 ---
 
 <html lang="en" dir="ltr" data-theme="light">
   <head>…</head>
   <Page>
-    <PageBody title="Colour" description="Brand, status and accent ramps.">
-      <DisplayCard>…</DisplayCard>
-    </PageBody>
+    <PageMain>
+      <PageMainContainer title="Colour" description="Brand, status and accent ramps.">
+        <DisplayCard>…</DisplayCard>
+      </PageMainContainer>
+    </PageMain>
   </Page>
 </html>
 ```

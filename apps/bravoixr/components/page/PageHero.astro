@@ -1,0 +1,73 @@
+---
+/* Component — PageHero
+ * The page's intro band — a full-bleed opening above the content column, with
+ * the page title, its lede, and a slot for media or calls to action.
+ *
+ * Spans full-start / full-end of PageMain's grid, so the band runs edge to edge
+ * while its inline padding — the same centred-column formula PageHeader and
+ * PageFooter use — keeps its content on the page column. It has no fill of its
+ * own: it sits on the page canvas and is set apart by space alone, with the
+ * largest block padding in the scale (spacing-12).
+ *
+ * It carries the page's <h1>. A page with a hero leaves PageMainContainer's
+ * title and description unset, so the document still has exactly one <h1> and
+ * PageSection's <h2> sits directly below it in the outline.
+ *
+ * Title and description share PageMainContainer's page-level roles, so a page
+ * reads the same whichever of the two introduces it. The text block's
+ * trailing space applies only when slotted content follows it — an empty slot
+ * renders nothing, leaving the block as the last child. */
+
+interface Props {
+  /* Explicit `| undefined` — tsconfig extends astro/tsconfigs/strictest, where
+   * exactOptionalPropertyTypes means `?` alone does not admit undefined. */
+  title?: string | undefined;
+  description?: string | undefined;
+}
+
+const { title, description } = Astro.props;
+---
+
+<section>
+  {
+    (title || description) && (
+      <header>
+        {title && <h1>{title}</h1>}
+        {description && <p>{description}</p>}
+      </header>
+    )
+  }
+  <slot />
+</section>
+
+<style>
+  section {
+    grid-column: full-start / full-end;
+    padding-block: var(--bravoixr-spacing-12);
+    padding-inline: max(var(--bravoixr-spacing-10), calc((100% - var(--bravoixr-page-max)) / 2));
+  }
+
+  header:not(:last-child) {
+    margin-block-end: var(--bravoixr-spacing-8);
+  }
+
+  h1 {
+    font-family: var(--bravoixr-font-heading);
+    font-size: var(--bravoixr-text-page-title);
+    font-weight: var(--bravoixr-weight-page-title);
+    line-height: var(--bravoixr-leading-display);
+    letter-spacing: var(--bravoixr-tracking-display);
+    margin-block: 0 var(--bravoixr-spacing-5);
+  }
+
+  p {
+    font-family: var(--bravoixr-font-body);
+    font-size: var(--bravoixr-text-page-description);
+    font-weight: var(--bravoixr-weight-page-description);
+    line-height: var(--bravoixr-leading-prose);
+    letter-spacing: var(--bravoixr-tracking-prose);
+    max-inline-size: var(--bravoixr-measure-page-description);
+    color: var(--bravoixr-color-text-muted);
+    margin-block: 0;
+  }
+</style>

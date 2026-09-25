@@ -1,6 +1,6 @@
 # Layout Components
 
-Content-agnostic layout primitives. They control layout, spacing, sizing, alignment and responsive behaviour, and never carry application-specific UI or business logic. Each answers one question:
+Content-agnostic layout components. They control layout, spacing, sizing, alignment and responsive behaviour, and never carry application-specific UI or business logic. Each answers one question:
 
 | Component | Answers |
 | -- | -- |
@@ -26,7 +26,7 @@ Every component renders one `<div>` with a default slot.
 
 ## Shared rules
 
-- **Gap** is a spacing step `1`–`12` and maps to `--bravoixr-spacing-N`. It's set as `--bravoixr-layout-gap` on the root on every render, so a nested primitive never inherits its parent's gap.
+- **Gap** is a spacing step `1`–`12` and maps to `--bravoixr-spacing-N`. It's set as `--bravoixr-layout-gap` on the root on every render, so a nested layout component never inherits its parent's gap.
 - **Variants** reach the CSS through `data-` attributes (`data-align`, `data-side`, …), never through classes.
 - **No `@media`.** Responsiveness comes from the space available: auto-fill in `LayoutGrid`, wrapping in `LayoutCluster` and `LayoutSplit`.
 - **Block size is the ancestor's job.** Nothing declares a height. `LayoutCenter` on the block axis only centres when its parent gives it a definite height.

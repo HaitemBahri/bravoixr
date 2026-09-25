@@ -24,9 +24,31 @@ Page                          <body> — consumer owns <html>/<head>
     └── PageFooterBottom
 ```
 
+## Props and slots
+
+| Component | Renders | Props | Slot |
+| -- | -- | -- | -- |
+| `Page` | `<body>` | — | header, main, footer |
+| `PageHeader` | `<header>` | — | header regions |
+| `PageBrand` | `<div>`, column 1 | — | logo / name |
+| `PageNav` | `<nav>`, column 2 | — | links |
+| `PageActions` | `<div>`, column 3 | — | buttons, toggles |
+| `PageMain` | `<main>` | — | hero, container, aside |
+| `PageHero` | `<section>` | `title?`, `description?` — title is the `<h1>` | media, calls to action |
+| `PageMainContainer` | `<div>` | `title?`, `description?` — title is the `<h1>` | sections |
+| `PageSection` | `<section>` | `title?`, `description?` — `<h2>` | content, subsections |
+| `PageSubSection` | `<section>` | `title?`, `description?` — `<h3>` | content |
+| `PageMainAside` | `<aside>` | — | rail content |
+| `PageFooter` | `<footer>` | — | main, bottom |
+| `PageFooterMain` | `<div>` | — | brand, navs |
+| `PageFooterBrand` | `<div>` | — | logo / tagline |
+| `PageFooterNav` | `<nav>` | `title` (required) | nav items |
+| `PageFooterNavItem` | `<a>` | `href` (required) | link text |
+| `PageFooterBottom` | `<div>` | — | copyright, version |
+
 ## Decisions
 
 1. **`Page` renders `<body>` only.** The consumer keeps `<html>`/`<head>`, `data-theme`, `dir` and fonts.
 2. **Header regions claim their own grid column** — no named slots, so a region can't land in the wrong place. `PageNav` renders `<nav>`.
-3. **`PageHero` is a direct child of `PageMain`**, so it can bleed edge to edge. On a page with a hero, the container's `title`/`description` are left unset.
+3. **`PageHero` is a direct child of `PageMain`**, so it can bleed edge to edge. On a page with a hero, the hero carries the `<h1>` and the container's `title`/`description` are left unset.
 4. **`PageMainContainer` owns the page `<h1>`.** Container and aside share the capped row. The aside's width and its stacking breakpoint come from `semantics/` tokens (no `@media` in the component).
